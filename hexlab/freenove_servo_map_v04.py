@@ -25,6 +25,14 @@ SERVO_CHANNELS = {
     "ml": (19, 20, 21),
     "fl": (16, 17, 18),
 }
+# IMPORTANT: the upstream Onshape/URDF names are mirrored relative to
+# Freenove control.py's vendor leg numbering. This mapping is established
+# by the motor joint names, not by guessing from "left" or "right".
+# E.g. CAD front-left ("fl") has channels (15,14,13): vendor front-right.
+CAD_TO_VENDOR_LEG = {
+    "fr": "fl", "mr": "ml", "br": "bl",
+    "bl": "br", "ml": "mr", "fl": "fr",
+}
 CHANNEL_KINDS = ("coxa", "femur", "tibia")
 SOURCE_REF = "Freenove/Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi@b7d228cc870b0a802d3768bfcf742f85fa8695f6"
 
@@ -64,6 +72,16 @@ def vendor_angles_to_servo_degrees(
     else:
         raw = (a + ca, 90 + b + cb, 180 - (c + cc))
     return tuple(max(0., min(180., v)) for v in raw)
+
+
+def vendor_leg_for_cad(cad_suffix: str) -> str:
+    """Find vendor wiring equivalent for a community CAD body suffix."""
+    if set(CAD_TO_VENDOR_LEG) != set(VENDOR_LEGS) or set(CAD_TO_VENDOR_LEG.values()) != set(VENDOR_LEGS):
+        raise ValueError("Incomplete CAD/vendor wiring remap")
+    try:
+        return CAD_TO_VENDOR_LEG[cad_suffix]
+    except KeyError as exc:
+        raise ValueError(f"Unknown CAD leg suffix: {cad_suffix}") from exc
 
 
 def cad_joint_names(leg: str) -> tuple[str, str, str]:
