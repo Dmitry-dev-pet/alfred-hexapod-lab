@@ -45,6 +45,32 @@ def get_trajectory(model,orig,legs,forward,step,lift,duty,samples=36):
     return qplans,errors
 
 
+
+def receipt_filename(gait: str, mass: str, *, friction: float = 1.1,
+                     step: float = .035, lift: float = .020,
+                     period: float = 2.4, seconds: float = 8.0) -> str:
+    """Parameter-qualified JSON name; do not overwrite a different experiment.
+
+    Keep historical default receipt names stable for existing evidence, but
+    include every varied physical/control input in non-default filenames.
+    """
+    if gait not in ('tripod', 'wave') or mass not in ('lower', 'nominal', 'upper'):
+        raise ValueError('Unknown gait or mass scenario')
+    def tag(value: float, *, digits: int = 5) -> str:
+        val=f'{value:.{digits}f}'.rstrip('0').rstrip('.')
+        return val.replace('.', 'p')
+    name=f'cad30_gait_{gait}_{mass}'
+    for key,value,base,scale in (
+        ('mu',friction,1.1,1),
+        ('stepmm',step,.035,1000),
+        ('liftmm',lift,.020,1000),
+        ('periods',period,2.4,1),
+        ('durations',seconds,8.,1),
+    ):
+        if abs(value-base)>1.e-9:
+            name+=f'_{key}{tag(value*scale)}'
+    return name+'.json'
+
 def gait_run(gait='tripod',mass='nominal',step=.035,lift=.020,period=2.4,seconds=8.0,*,frames_hz=9.0,friction=1.1):
     assert gait in ('tripod','wave')
     path=ROOT/'source'/'mjcf'/f'scene_local30_{mass}.xml'
@@ -132,8 +158,8 @@ def gait_run(gait='tripod',mass='nominal',step=.035,lift=.020,period=2.4,seconds
       'trace':results,'qpos_samples':state,
       'limitations':['Only 30 of 32 visual STL downloaded; 19 visual proxy instances','Masses and motor/contact properties are estimates','No servo PWM/shaft angle calibration','Fixed-phase open-loop locomotion; not yet local insect leg coordination']
     }
-    suffix='' if abs(friction-1.1)<1e-10 else f'_mu{str(friction).replace(chr(46),chr(112))}'
-    out=ROOT/'results'/f'cad30_gait_{gait}_{mass}{suffix}.json'
+    out=ROOT/'results'/receipt_filename(
+        gait,mass,friction=friction,step=step,lift=lift,period=period,seconds=seconds)
     out.write_text(json.dumps(report,indent=2)+'\n')
     return report
 
