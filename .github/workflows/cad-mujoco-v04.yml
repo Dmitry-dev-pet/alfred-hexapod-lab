@@ -7,6 +7,8 @@ on:
       - "scripts/cad_v04_contact_audit.py"
       - "hexlab/stand_geometry_v04.py"
       - "hexlab/stand_v04.py"
+      - "hexlab/step_one_leg_v04.py"
+      - "hexlab/freenove_servo_map_v04.py"
       - "scripts/render_cad_v04.py"
       - "hexlab/community_mass_v04.py"
       - "data/fnk0052_cad_assets_lock.json"
@@ -68,6 +70,23 @@ jobs:
               print(scenario, "stable", h["duration_s"],
                     "s", "contacts", h["last_0p4s_min_contact_legs"],
                     "torque", h["max_applied_abs_torque_nm"])
+          PY
+      - name: First front-right leg lift, forward swing and touchdown under gravity
+        run: |
+          python -m hexlab.step_one_leg_v04 --scenario nominal --out results/cad_v04_first_step_nominal.json
+      - name: Audit one-leg step as an experiment (including negative results)
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path("results/cad_v04_first_step_nominal.json").read_text())
+          print("step candidate_success=", r["candidate_success"])
+          print("observable metrics:", json.dumps(r["observed"], indent=2))
+          print("success criteria:", json.dumps(r["criteria"], indent=2))
+          assert r["vendor_servo_channels_and_joint_names"] == ["motor15","motor14","motor13"]
+          assert r["cad_to_vendor_PWM_signs_calibrated"] is False
+          assert all(isinstance(v, bool) for v in r["criteria"].values())
+          assert len(r["trace_50hz"]) >= 100
           PY
       - name: Validate lower and upper mass scenarios with same immutable external CAD
         run: |
