@@ -5,6 +5,7 @@ on:
     paths:
       - "hexlab/cad_mujoco_v04.py"
       - "scripts/cad_v04_contact_audit.py"
+      - "scripts/render_cad_v04.py"
       - "hexlab/community_mass_v04.py"
       - "data/fnk0052_cad_assets_lock.json"
       - "data/fnk0052_community_mass_scenarios.json"
@@ -35,6 +36,18 @@ jobs:
         run: |
           python -m hexlab.cad_mujoco_v04 --scenario lower --offline --load-mujoco --output-receipt results/cad_v04_lower.json
           python -m hexlab.cad_mujoco_v04 --scenario upper --offline --load-mujoco --output-receipt results/cad_v04_upper.json
+      - name: Optional CAD geometry diagnostic preview (no mesh assets in artifacts)
+        continue-on-error: true
+        run: |
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_v04.py --scenario nominal --out results/cad_v04_preview.png
+      - name: Share diagnostic PNG preview with Freenove attribution
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freenove-v04-cad-preview
+          path: results/cad_v04_preview.png
+          if-no-files-found: warn
+          retention-days: 30
       - name: Expose numeric receipts only (no third-party CAD files)
         uses: actions/upload-artifact@v4
         with:
