@@ -10,7 +10,7 @@ from pathlib import Path
 import json, math, sys
 import numpy as np
 import mujoco
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT))
 from hexlab.stand_v04 import static_pose,hold_under_gravity
 from hexlab.stand_geometry_v04 import load_legs,tip_world
@@ -45,10 +45,14 @@ def get_trajectory(model,orig,legs,forward,step,lift,duty,samples=36):
     return qplans,errors
 
 
-def gait_run(gait='tripod',mass='nominal',step=.035,lift=.020,period=2.4,seconds=8.0,*,frames_hz=9.0):
+def gait_run(gait='tripod',mass='nominal',step=.035,lift=.020,period=2.4,seconds=8.0,*,frames_hz=9.0,friction=1.1):
     assert gait in ('tripod','wave')
     path=ROOT/'source'/'mjcf'/f'scene_local30_{mass}.xml'
     model=mujoco.MjModel.from_xml_path(str(path))
+    if not (.1<=friction<=2.0):raise ValueError('Outside tested friction sensitivity range')
+    model.geom_friction[model.geom('floor').id,0]=friction
+    for code in CODES:
+        model.geom_friction[model.geom(f'tibia{code}_collision_0').id,0]=friction
     data=mujoco.MjData(model)
     legs=load_legs(model,data,mujoco)
     fit=static_pose(model,data,mujoco,legs,.145,.15)
@@ -112,6 +116,7 @@ def gait_run(gait='tripod',mass='nominal',step=.035,lift=.020,period=2.4,seconds
     end=results[-1]
     report={
       'gait':gait,'scenario':mass,'initial_stand_verified':True,'duration_s':round(float(data.time-start_data_time),4),
+      'ground_tibia_sliding_friction_mu_assumed':friction,
       'finished_full_duration':len(results)>0 and not fall and (k+1)==n,
       'model_source':'MattiaGrigoli original MJCF at 5c9a84c; 30 of 32 real STL; 2 visual-only box proxies',
       'physics':'MuJoCo '+mujoco.__version__,'robot_mass_kg':round(float(model.body_mass.sum()),6),
@@ -127,7 +132,8 @@ def gait_run(gait='tripod',mass='nominal',step=.035,lift=.020,period=2.4,seconds
       'trace':results,'qpos_samples':state,
       'limitations':['Only 30 of 32 visual STL downloaded; 19 visual proxy instances','Masses and motor/contact properties are estimates','No servo PWM/shaft angle calibration','Fixed-phase open-loop locomotion; not yet local insect leg coordination']
     }
-    out=ROOT/'results'/f'cad30_gait_{gait}_{mass}.json'
+    suffix='' if abs(friction-1.1)<1e-10 else f'_mu{str(friction).replace(chr(46),chr(112))}'
+    out=ROOT/'results'/f'cad30_gait_{gait}_{mass}{suffix}.json'
     out.write_text(json.dumps(report,indent=2)+'\n')
     return report
 
@@ -135,7 +141,7 @@ if __name__=='__main__':
     import argparse
     p=argparse.ArgumentParser()
     p.add_argument('--gait',choices=['tripod','wave'],default='tripod');p.add_argument('--mass',choices=['lower','nominal','upper'],default='nominal')
-    p.add_argument('--step',type=float,default=.035);p.add_argument('--lift',type=float,default=.020);p.add_argument('--period',type=float,default=2.4);p.add_argument('--seconds',type=float,default=8.)
+    p.add_argument('--step',type=float,default=.035);p.add_argument('--lift',type=float,default=.020);p.add_argument('--period',type=float,default=2.4);p.add_argument('--seconds',type=float,default=8.);p.add_argument('--friction',type=float,default=1.1)
     a=p.parse_args()
-    r=gait_run(a.gait,a.mass,a.step,a.lift,a.period,a.seconds)
+    r=gait_run(a.gait,a.mass,a.step,a.lift,a.period,a.seconds,friction=a.friction)
     print(json.dumps({k:v for k,v in r.items() if k not in ('trace','qpos_samples')},indent=2))
