@@ -32,7 +32,7 @@ SIZE_LIMIT = 12 * 1024 * 1024
 
 def git_blob_sha(payload: bytes) -> str:
     """Git hashes each blob using the header 'blob <len>\\0'."""
-    header = b"blob " + str(len(payload)).encode("ascii") + b"\\0"
+    header = b"blob " + str(len(payload)).encode("ascii") + bytes((0,))
     return hashlib.sha1(header + payload).hexdigest()
 
 
