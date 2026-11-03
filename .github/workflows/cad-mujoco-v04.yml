@@ -123,19 +123,23 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
-      - name: Optional physics-trace video of one lifted and replanted leg
-        continue-on-error: true
+      - name: Install Pillow for descriptive FR-leg overlay
+        run: python -m pip install "Pillow>=11,<13"
+      - name: Render clearer side-on and frontal camera replays from same physics
         run: |
-          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_step_v04.py --fps 10
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_step_v04.py --view side --fps 12 --video results/first_single_leg_step_side.mp4 --gif results/first_single_leg_step_side.gif
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_step_v04.py --view front --fps 12 --video results/first_single_leg_step_front.mp4 --gif results/first_single_leg_step_front.gif
       - name: Publish genuine MuJoCo first-step GIF and MP4 (not source CAD)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: freenove-v04-first-step-replay
           path: |
-            results/first_single_leg_step.mp4
-            results/first_single_leg_step.gif
-          if-no-files-found: warn
+            results/first_single_leg_step_side.mp4
+            results/first_single_leg_step_side.gif
+            results/first_single_leg_step_front.mp4
+            results/first_single_leg_step_front.gif
+          if-no-files-found: error
           retention-days: 30
       - name: Expose numeric receipts only (no third-party CAD files)
         uses: actions/upload-artifact@v4
