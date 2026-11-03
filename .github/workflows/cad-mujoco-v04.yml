@@ -57,12 +57,15 @@ jobs:
         continue-on-error: true
         run: |
           xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_v04.py --scenario nominal --out results/cad_v04_preview.png
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_v04.py --scenario nominal --pose-receipt results/cad_v04_stand_nominal.json --out results/cad_v04_stand.png
       - name: Share diagnostic PNG preview with Freenove attribution
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: freenove-v04-cad-preview
-          path: results/cad_v04_preview.png
+          path: |
+            results/cad_v04_preview.png
+            results/cad_v04_stand.png
           if-no-files-found: warn
           retention-days: 30
       - name: Expose numeric receipts only (no third-party CAD files)
