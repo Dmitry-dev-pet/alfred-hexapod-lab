@@ -67,7 +67,7 @@
       "duration_s": 5,
       "all_six_legs_contact_last_0p4s": true,
       "torque_max_nm": 0.227,
-      "max_tilt_deg": 0.07,
+      "max_tilt_deg": 0.071,
       "final_tilt_deg": 0.071,
       "final_root_z_m": 0.139187,
       "max_horizontal_drift_m": 0.00004,
