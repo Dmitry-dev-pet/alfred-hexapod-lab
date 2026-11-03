@@ -1,0 +1,103 @@
+{
+  "schema_version": "fnk0052_first_single_leg_step_v04/1",
+  "tested_at_utc": "2026-11-03",
+  "experiment": "Unloaded single-leg forward reposition from stable CAD-based pose",
+  "result": "THREE_SIMULATED_MASS_SCENARIOS_PASSED",
+  "physical_robot_tested": false,
+  "hardware_pwm_calibrated": false,
+  "experiment_source": {
+    "project_repo": "Dmitry-dev-pet/alfred-hexapod-lab",
+    "github_actions_run": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/actions/runs/41697642029",
+    "github_actions_head_sha": "988d99356e583c945044c4bbe6c168d0c8a8873a",
+    "numeric_receipts_artifact": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/actions/runs/41697642029/artifacts/13260809546",
+    "upstream_cad_commit": "5c9a84c16335b30036e451c691d2c544abf4bc72",
+    "actuator_geometry_code": "hexlab/step_one_leg_v04.py",
+    "vendor_wiring_code": "hexlab/freenove_servo_map_v04.py",
+    "vendor_source": "https://github.com/Freenove/Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi/blob/b7d228cc870b0a802d3768bfcf742f85fa8695f6/Code/Server/control.py"
+  },
+  "historical_correction": {
+    "first_attempt_failed_run": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/actions/runs/41696761076",
+    "finding": "Community CAD left/right suffixes are mirrored relative to Freenove control.py motor channels",
+    "test_cad_suffix": "fl",
+    "verified_vendor_leg": "FR",
+    "vendor_motor_channels": [
+      15,
+      14,
+      13
+    ],
+    "note": "Assert all six channel groups by motor number, not by apparent suffix"
+  },
+  "method": {
+    "planned_step_forward_m": 0.028,
+    "planned_lift_m": 0.026,
+    "actual_toe_marker": "Farthest tibia CAD mesh vertex; not physically verified rubber tip",
+    "forward_direction": "CAD front-vs-rear hip pair (+Y)",
+    "pre_stabilization_s": 1,
+    "motion_phase_durations_s": {
+      "lift": 0.8,
+      "swing": 0.8,
+      "lower": 0.8,
+      "recover": 1
+    },
+    "controller": "PD torque 7.0*(q_target-q)-0.32*qdot, 0.7Nm assumed cap; C1-continuous joint-space interpolation",
+    "actuator_limit_not_a_continuous_rating_nm": 0.7,
+    "support_constraint": "None: feet and body are free, actual floor contacts are solved by MuJoCo",
+    "test_definition": "One toe moves forward and recontacts; torso does not perform a forward locomotion step"
+  },
+  "scenarios": [
+    {
+      "case": "lower",
+      "estimated_robot_mass_kg": 1.644,
+      "passed": true,
+      "toe_forward_m": 0.028233,
+      "mesh_lift_m": 0.020828,
+      "swing_off_ground_fraction": 1,
+      "five_support_contact_fraction": 1,
+      "landing_tail_contact_fraction": 1,
+      "min_support_polygon_margin_m": 0.101649,
+      "max_body_tilt_deg": 0.483,
+      "max_xy_drift_m": 0.000783,
+      "max_torque_nm": 0.2435,
+      "saturated_controller_steps": 0
+    },
+    {
+      "case": "nominal",
+      "estimated_robot_mass_kg": 1.804868,
+      "passed": true,
+      "toe_forward_m": 0.028208,
+      "mesh_lift_m": 0.020324,
+      "swing_off_ground_fraction": 1,
+      "five_support_contact_fraction": 1,
+      "landing_tail_contact_fraction": 1,
+      "min_support_polygon_margin_m": 0.101536,
+      "max_body_tilt_deg": 0.53,
+      "max_xy_drift_m": 0.000852,
+      "max_torque_nm": 0.2657,
+      "saturated_controller_steps": 0
+    },
+    {
+      "case": "upper",
+      "estimated_robot_mass_kg": 2.08,
+      "passed": true,
+      "toe_forward_m": 0.028165,
+      "mesh_lift_m": 0.019441,
+      "swing_off_ground_fraction": 1,
+      "five_support_contact_fraction": 1,
+      "landing_tail_contact_fraction": 1,
+      "min_support_polygon_margin_m": 0.100989,
+      "max_body_tilt_deg": 0.616,
+      "max_xy_drift_m": 0.000978,
+      "max_torque_nm": 0.3061,
+      "saturated_controller_steps": 0
+    }
+  ],
+  "remaining_validation": [
+    "CAD suffix/channel wiring is checked but actual shaft directions, neutral PWM and per-leg calibration are unknown",
+    "Servo torque-speed, current, voltage sag, backlash, thermal limits and controller latency not calibrated",
+    "The foot shape is a convex hull proxy from original tibia CAD; true pads/contact materials unknown",
+    "No randomized perturbation or variable slope/friction stress tests have been run",
+    "One foot forward != full tripod or distributed walking and != true net body locomotion",
+    "No hardware has been purchased/commanded; original STEP/STL not redistributed"
+  ],
+  "next_step": "Repeat on alternate legs and ground conditions, then use local coordination rules to produce stable body displacement; do not assume transfer until real hardware calibration."
+}
