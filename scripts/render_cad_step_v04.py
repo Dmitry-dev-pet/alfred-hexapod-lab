@@ -62,8 +62,8 @@ def render(report_path: Path, video: Path, gif: Path, cache: Path, fps: int = 10
     cam.type = mujoco.mjtCamera.mjCAMERA_FREE
     views = {
         # Lower than the previous overhead view, camera toward front/near side.
-        "side": {"lookat": (-.045, .11, .12), "distance": .56, "azimuth": 163, "elevation": -11},
-        "front": {"lookat": (-.02, .14, .12), "distance": .60, "azimuth": 96, "elevation": -15},
+        "side": {"lookat": (0., .075, .115), "distance": .76, "azimuth": 150, "elevation": -13},
+        "front": {"lookat": (0., .06, .115), "distance": .84, "azimuth": 96, "elevation": -15},
     }
     if view not in views:
         raise ValueError(f"Unknown camera view: {view}")
