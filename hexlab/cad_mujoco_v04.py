@@ -338,6 +338,9 @@ def main() -> None:
         if not math.isclose(loaded_mass, expected, rel_tol=1e-5, abs_tol=1e-5):
             raise AssertionError(f"MuJoCo mass {loaded_mass} does not match source estimate {expected}")
         initial_body_z = float(data.xpos[model.body("base_link_2").id][2])
+        mass_weights = np.asarray(model.body_mass).reshape(-1, 1)
+        initial_com = (np.asarray(data.xipos) * mass_weights).sum(axis=0) / loaded_mass
+        initial_contacts = int(data.ncon)
         for i in range(50):  # 0.1 simulated seconds: compile/contact smoke test only
             mujoco.mj_step(model, data)
             if not np.all(np.isfinite(data.qpos)):
@@ -347,7 +350,10 @@ def main() -> None:
                        "njnt": model.njnt, "ngeom": model.ngeom,
                        "nactuator": model.nu, "initial_torso_z_m": initial_body_z,
                        "end_torso_z_m": float(data.xpos[model.body("base_link_2").id][2]),
-                       "smoke_steps": 50})
+                       "smoke_steps": 50,
+                       "initial_com_world_xyz_m": [round(float(x), 6) for x in initial_com],
+                       "initial_contact_pairs": initial_contacts,
+                       "end_contact_pairs": int(data.ncon)})
     if args.output_receipt:
         args.output_receipt.parent.mkdir(parents=True, exist_ok=True)
         args.output_receipt.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
