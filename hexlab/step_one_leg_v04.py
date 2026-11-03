@@ -262,6 +262,7 @@ def experiment(
                 "moving_mesh_min_z_m": round(lifted_mesh_z,6),
                 "toe_forward_m": round(float(np.dot(toe[:2]-baseline_tip[:2],forward_xy)), 6),
                 "max_abs_command_nm": round(float(np.max(np.abs(torque))),4),
+                "qpos_snapshot": [round(float(q),8) for q in data.qpos],
             })
 
     swing_frames = [x for x in log if x["phase"] == "swing"]
