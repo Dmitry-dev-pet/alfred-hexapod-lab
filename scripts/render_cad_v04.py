@@ -27,9 +27,9 @@ def write_png(path: Path, rgb) -> None:
         raise ValueError("Expected RGB renderer image")
     def chunk(tag, data):
         return struct.pack(">I",len(data)) + tag + data + struct.pack(">I",zlib.crc32(tag+data)&0xffffffff)
-    raw = b"".join(b"\\x00" + row.tobytes() for row in rgb)
+    raw = b"".join(bytes([0]) + row.tobytes() for row in rgb)
     result = (
-        b"\\x89PNG\\r\\n\\x1a\\n" +
+        bytes.fromhex("89504e470d0a1a0a") +
         chunk(b"IHDR", struct.pack(">IIBBBBB",width,height,8,2,0,0,0)) +
         chunk(b"IDAT", zlib.compress(raw,6)) +
         chunk(b"IEND",b"")
