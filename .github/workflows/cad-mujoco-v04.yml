@@ -41,7 +41,14 @@ jobs:
           python scripts/cad_v04_contact_audit.py --scenario nominal --out results/cad_v04_contact_audit.json
       - name: Solve six-leg CAD standing pose and attempt gravity-loaded hold
         run: |
-          python -m hexlab.stand_v04 --scenario nominal --duration 1.5 --out results/cad_v04_stand_nominal.json
+          python -m hexlab.stand_v04 --scenario nominal --duration 5 --out results/cad_v04_stand_nominal.json
+      - name: Check angular reserve with longer foot radius
+        run: |
+          python -m hexlab.stand_v04 --scenario nominal --duration 3 --radial-extension 0.15 --out results/cad_v04_stand_nominal_radial150.json
+      - name: Check low and high robot mass robustness
+        run: |
+          python -m hexlab.stand_v04 --scenario lower --duration 3 --out results/cad_v04_stand_lower.json
+          python -m hexlab.stand_v04 --scenario upper --duration 3 --out results/cad_v04_stand_upper.json
       - name: Validate lower and upper mass scenarios with same immutable external CAD
         run: |
           python -m hexlab.cad_mujoco_v04 --scenario lower --offline --load-mujoco --output-receipt results/cad_v04_lower.json
