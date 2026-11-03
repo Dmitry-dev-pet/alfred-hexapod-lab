@@ -57,7 +57,7 @@ def main():
         report = json.loads(args.pose_receipt.read_text(encoding="utf-8"))
         if report["scenario"] != args.scenario:
             raise ValueError("Mismatched standing-pose scenario")
-        q = report["qpos_candidate"]
+        q = report.get("hold_test", {}).get("final_qpos") or report["qpos_candidate"]
         if len(q) != model.nq:
             raise ValueError(f"Expected {model.nq} joint positions, got {len(q)}")
         data.qpos[:] = q
