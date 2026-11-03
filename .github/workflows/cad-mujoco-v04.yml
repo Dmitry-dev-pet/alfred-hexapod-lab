@@ -119,6 +119,10 @@ jobs:
             results/cad_v04_stand.png
           if-no-files-found: warn
           retention-days: 30
+      - name: Install FFmpeg for physics-trace replay
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
       - name: Optional physics-trace video of one lifted and replanted leg
         continue-on-error: true
         run: |
