@@ -57,7 +57,7 @@ def main():
     cam.distance=.85
     cam.azimuth=115
     cam.elevation=-25
-    with mujoco.Renderer(model,height=600,width=800) as render:
+    with mujoco.Renderer(model,height=480,width=640) as render:
         render.update_scene(data,camera=cam)
         picture=render.render()
         write_png(args.out,picture)
