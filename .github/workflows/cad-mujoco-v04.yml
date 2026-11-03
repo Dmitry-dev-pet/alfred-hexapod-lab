@@ -8,6 +8,7 @@ on:
       - "hexlab/stand_geometry_v04.py"
       - "hexlab/stand_v04.py"
       - "hexlab/step_one_leg_v04.py"
+      - "scripts/render_cad_step_v04.py"
       - "hexlab/freenove_servo_map_v04.py"
       - "scripts/render_cad_v04.py"
       - "hexlab/community_mass_v04.py"
@@ -74,6 +75,10 @@ jobs:
       - name: First front-right leg lift, forward swing and touchdown under gravity
         run: |
           python -m hexlab.step_one_leg_v04 --scenario nominal --out results/cad_v04_first_step_nominal.json
+      - name: Test first-step robustness against the two mass bounds
+        run: |
+          python -m hexlab.step_one_leg_v04 --scenario lower --out results/cad_v04_first_step_lower.json
+          python -m hexlab.step_one_leg_v04 --scenario upper --out results/cad_v04_first_step_upper.json
       - name: Audit one-leg step as an experiment (including negative results)
         run: |
           python - <<'PY'
@@ -87,6 +92,13 @@ jobs:
           assert r["cad_to_vendor_PWM_signs_calibrated"] is False
           assert all(isinstance(v, bool) for v in r["criteria"].values())
           assert len(r["trace_50hz"]) >= 100
+          assert r["candidate_success"], r["criteria"]
+          for bound in ("lower", "upper"):
+              x = json.loads(Path(f"results/cad_v04_first_step_{bound}.json").read_text())
+              print(bound, "candidate_success=", x["candidate_success"], "observed=", json.dumps(x["observed"]))
+              assert x["selected_vendor_leg"] == "fr"
+              assert x["cad_vendor_wiring_crosscheck"]["fl"]["joint_channels"] == ["motor15","motor14","motor13"]
+              assert len(x["trace_50hz"]) >= 100
           PY
       - name: Validate lower and upper mass scenarios with same immutable external CAD
         run: |
@@ -105,6 +117,20 @@ jobs:
           path: |
             results/cad_v04_preview.png
             results/cad_v04_stand.png
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Optional physics-trace video of one lifted and replanted leg
+        continue-on-error: true
+        run: |
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_step_v04.py --fps 10
+      - name: Publish genuine MuJoCo first-step GIF and MP4 (not source CAD)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freenove-v04-first-step-replay
+          path: |
+            results/first_single_leg_step.mp4
+            results/first_single_leg_step.gif
           if-no-files-found: warn
           retention-days: 30
       - name: Expose numeric receipts only (no third-party CAD files)
