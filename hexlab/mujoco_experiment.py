@@ -9,7 +9,7 @@ import math
 import time
 from pathlib import Path
 
-from .mujoco_model import LEGS, write_model
+from .mujoco_model import LEGS, write_model, neutral_leg_angles
 
 
 def run(seconds: float = 10.0, mode: str = "tripod", out: Path = Path("results/mujoco_run.json")) -> dict:
@@ -31,22 +31,23 @@ def run(seconds: float = 10.0, mode: str = "tripod", out: Path = Path("results/m
     # A minimal illustrative position-control baseline (not neuroWalknet).
     # No commanded body translation: any forward motion must result from simulated contacts.
     period = 1.8
+    neutral_yaw, neutral_hip, neutral_knee = neutral_leg_angles()
     for it in range(steps):
         t = it*model.opt.timestep
         for leg_id, (name,*_) in enumerate(LEGS):
             base = leg_id*3
             phase = (t / period + (leg_id % 2)*0.5) % 1.0
             if mode == "stand":
-                yaw, hip, knee = 0.0, 0.55, 0.70
+                yaw, hip, knee = neutral_yaw, neutral_hip, neutral_knee
             else:
                 # First half of cycle = swing. The sine lifts the foot.
                 if phase < 0.5:
                     theta = phase * 2*math.pi
                     yaw, hip, knee = (-0.18+0.36*(phase/0.5),
-                                      0.55+0.17*math.sin(theta),
-                                      0.70+0.20*math.sin(theta))
+                                      neutral_hip+0.17*math.sin(theta),
+                                      neutral_knee+0.20*math.sin(theta))
                 else:
-                    yaw, hip, knee = 0.18-0.36*((phase-0.5)/0.5), 0.55, 0.70
+                    yaw, hip, knee = 0.18-0.36*((phase-0.5)/0.5), neutral_hip, neutral_knee
             data.ctrl[base:base+3] = (yaw,hip,knee)
         mujoco.mj_step(model,data)
         if it%25 == 0:

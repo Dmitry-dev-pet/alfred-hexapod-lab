@@ -16,20 +16,22 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from hexlab.mujoco_model import neutral_leg_angles
 
 
 def control_tripod(data, t, legs=6, period=1.8):
+    _, neutral_hip, neutral_knee = neutral_leg_angles()
     for leg_id in range(legs):
         base = leg_id * 3
         phase = (t / period + (leg_id % 2) * 0.5) % 1.0
         if phase < 0.5:
             theta = phase * 2 * math.pi
             yaw = -0.18 + 0.36 * (phase / 0.5)
-            hip = 0.55 + 0.17 * math.sin(theta)
-            knee = 0.70 + 0.20 * math.sin(theta)
+            hip = neutral_hip + 0.17 * math.sin(theta)
+            knee = neutral_knee + 0.20 * math.sin(theta)
         else:
             yaw = 0.18 - 0.36 * ((phase - 0.5) / 0.5)
-            hip, knee = 0.55, 0.70
+            hip, knee = neutral_hip, neutral_knee
         data.ctrl[base:base + 3] = (yaw, hip, knee)
 
 
