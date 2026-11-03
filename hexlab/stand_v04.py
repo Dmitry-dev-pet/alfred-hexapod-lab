@@ -23,7 +23,7 @@ from .simulation import support_margin
 
 ROOT = Path(__file__).resolve().parents[1]
 STAND_HEIGHT_M = 0.145
-TARGET_RADIAL_EXTENSION_M = 0.115
+TARGET_RADIAL_EXTENSION_M = 0.150
 FOOT_TARGET_CLEARANCE_M = 0.004
 MAX_CALIBRATION_JOINT_ANGLE_RAD = 1.65
 
@@ -125,6 +125,10 @@ def static_pose(model, data, mujoco, legs: list[dict], height: float,
         "min_tibia_all_m": round(min(minima.values()),6),
         "max_tibia_all_m": round(max(minima.values()),6),
         "fit_all_legs_under_15mm": all(x["within_15mm"] for x in fitted),
+        "fit_all_legs_under_5mm": all(x["position_error_mm"] < 5 for x in fitted),
+        "max_abs_joint_angle_rad": round(max(abs(v) for x in fitted for v in x["qpos_rad"]), 6),
+        "minimum_optimizer_angle_reserve_rad": round(
+            MAX_CALIBRATION_JOINT_ANGLE_RAD - max(abs(v) for x in fitted for v in x["qpos_rad"]), 6),
         "joint_poses": fitted,
         "note": "A numerical pose based on real joint axes; toe landmarks are inferred from CAD and not verified against physical contact pads",
     }
@@ -253,9 +257,10 @@ def experiment(case: str, duration: float = 2.0, *,
     report["hold_test"] = hold_under_gravity(model,data,mujoco,initial_qpos,duration)
     # NOTE candidate fit and hold must both pass before claiming a stable pose.
     report["six_leg_standing_candidate_succeeded"] = (
-        result_pose["fit_all_legs_under_15mm"] and
-        result_pose["static_com_in_toe_polygon_margin_m"] > .02 and
-        result_pose["min_tibia_all_m"] > -.015 and
+        result_pose["fit_all_legs_under_5mm"] and
+        result_pose["minimum_optimizer_angle_reserve_rad"] > .10 and
+        result_pose["static_com_in_toe_polygon_margin_m"] > .05 and
+        result_pose["min_tibia_all_m"] > -.005 and
         report["hold_test"]["stable_by_proxy_thresholds"]
     )
     return report
