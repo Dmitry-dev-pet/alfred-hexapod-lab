@@ -6,6 +6,7 @@ on:
       - "hexlab/cad_mujoco_v04.py"
       - "scripts/cad_v04_contact_audit.py"
       - "hexlab/stand_geometry_v04.py"
+      - "hexlab/stand_v04.py"
       - "scripts/render_cad_v04.py"
       - "hexlab/community_mass_v04.py"
       - "data/fnk0052_cad_assets_lock.json"
@@ -27,6 +28,8 @@ jobs:
           python-version: "3.13"
       - name: Install tested MuJoCo runtime
         run: python -m pip install mujoco==3.14.0
+      - name: Install numerical inverse kinematics dependency
+        run: python -m pip install "scipy>=1.14,<2"
       - name: Download and audit upstream geometry, build nominal physical assembly
         run: |
           python -m hexlab.cad_mujoco_v04 --scenario nominal --load-mujoco --output-receipt results/cad_v04_nominal.json
@@ -36,6 +39,9 @@ jobs:
       - name: Audit CAD foot mesh geometry and home pose against floor
         run: |
           python scripts/cad_v04_contact_audit.py --scenario nominal --out results/cad_v04_contact_audit.json
+      - name: Solve six-leg CAD standing pose and attempt gravity-loaded hold
+        run: |
+          python -m hexlab.stand_v04 --scenario nominal --duration 1.5 --out results/cad_v04_stand_nominal.json
       - name: Validate lower and upper mass scenarios with same immutable external CAD
         run: |
           python -m hexlab.cad_mujoco_v04 --scenario lower --offline --load-mujoco --output-receipt results/cad_v04_lower.json
