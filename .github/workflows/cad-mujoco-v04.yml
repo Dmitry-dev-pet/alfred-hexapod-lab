@@ -5,6 +5,7 @@ on:
     paths:
       - "hexlab/cad_mujoco_v04.py"
       - "scripts/cad_v04_contact_audit.py"
+      - "hexlab/stand_geometry_v04.py"
       - "scripts/render_cad_v04.py"
       - "hexlab/community_mass_v04.py"
       - "data/fnk0052_cad_assets_lock.json"
@@ -29,6 +30,9 @@ jobs:
       - name: Download and audit upstream geometry, build nominal physical assembly
         run: |
           python -m hexlab.cad_mujoco_v04 --scenario nominal --load-mujoco --output-receipt results/cad_v04_nominal.json
+      - name: Extract physical CAD joint axes and distal tibia landmarks
+        run: |
+          python -m hexlab.stand_geometry_v04 --scenario nominal --out results/cad_v04_leg_geometry.json
       - name: Audit CAD foot mesh geometry and home pose against floor
         run: |
           python scripts/cad_v04_contact_audit.py --scenario nominal --out results/cad_v04_contact_audit.json
