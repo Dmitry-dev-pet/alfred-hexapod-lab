@@ -10,3 +10,9 @@ venv/
 results/*.ppm
 # Downloaded third-party CAD (Freenove; separate license, never commit)
 .cache/
+
+# Keep Freenove OEM STL/MJCF files in private Drive, not this code repository
+/source/
+/results/*.mp4
+/results/*.gif
+/results/*.png
