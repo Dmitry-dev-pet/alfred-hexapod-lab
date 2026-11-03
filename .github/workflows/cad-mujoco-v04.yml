@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "hexlab/cad_mujoco_v04.py"
+      - "scripts/cad_v04_contact_audit.py"
       - "hexlab/community_mass_v04.py"
       - "data/fnk0052_cad_assets_lock.json"
       - "data/fnk0052_community_mass_scenarios.json"
@@ -27,6 +28,9 @@ jobs:
       - name: Download and audit upstream geometry, build nominal physical assembly
         run: |
           python -m hexlab.cad_mujoco_v04 --scenario nominal --load-mujoco --output-receipt results/cad_v04_nominal.json
+      - name: Audit CAD foot mesh geometry and home pose against floor
+        run: |
+          python scripts/cad_v04_contact_audit.py --scenario nominal --out results/cad_v04_contact_audit.json
       - name: Validate lower and upper mass scenarios with same immutable external CAD
         run: |
           python -m hexlab.cad_mujoco_v04 --scenario lower --offline --load-mujoco --output-receipt results/cad_v04_lower.json
