@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="freenove_fnk0052_approx">
+  <compiler angle="radian" autolimits="true" inertiafromgeom="true" />
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" />
+  <default>
+    <joint damping="0.035" armature="0.003" />
+    <geom condim="4" friction="1.3 0.005 0.0001" solref="0.007 1" solimp="0.9 0.95 0.001" />
+  </default>
+  <visual>
+    <global offwidth="960" offheight="720" />
+  </visual>
+  <worldbody>
+    <light name="sun" pos="-0.3 0 2" dir="0 0 -1" />
+    <geom name="floor" type="plane" size="2 2 0.05" rgba="0.82 0.82 0.80 1" />
+    <body name="torso" pos="0 0 0.165">
+      <freejoint name="root" />
+      <geom name="torso_geom" type="box" size="0.125 0.078 0.025" mass="0.52" rgba="0.12 0.18 0.21 1" />
+      <site name="com_marker" type="sphere" size="0.007" rgba="1 0.2 0.1 1" />
+      <camera name="tracking" pos="-0.7 -0.6 0.45" xyaxes="0.62 -0.79 0 0.36 0.28 0.89" mode="trackcom" />
+      <body name="front_left_coxa" pos="0.094 0.071 0" quat="0.9335804 0 0 0.3583679">
+        <joint name="front_left_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="front_left_femur" pos="0.033 0 0">
+          <joint name="front_left_hip" type="hinge" axis="0 1 0" range="-0.35 1.25" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="front_left_tibia" pos="0.09 0 0">
+            <joint name="front_left_knee" type="hinge" axis="0 1 0" range="0.0 2.0" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="front_left_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="front_left_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="middle_left_coxa" pos="0 0.087 0" quat="0.7071068 0 0 0.7071068">
+        <joint name="middle_left_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="middle_left_femur" pos="0.033 0 0">
+          <joint name="middle_left_hip" type="hinge" axis="0 1 0" range="-0.35 1.25" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="middle_left_tibia" pos="0.09 0 0">
+            <joint name="middle_left_knee" type="hinge" axis="0 1 0" range="0.0 2.0" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="middle_left_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="middle_left_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="rear_left_coxa" pos="-0.094 0.071 0" quat="0.3583679 0 0 0.9335804">
+        <joint name="rear_left_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="rear_left_femur" pos="0.033 0 0">
+          <joint name="rear_left_hip" type="hinge" axis="0 1 0" range="-0.35 1.25" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="rear_left_tibia" pos="0.09 0 0">
+            <joint name="rear_left_knee" type="hinge" axis="0 1 0" range="0.0 2.0" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="rear_left_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="rear_left_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="front_right_coxa" pos="0.094 -0.071 0" quat="0.9335804 0 0 -0.3583679">
+        <joint name="front_right_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="front_right_femur" pos="0.033 0 0">
+          <joint name="front_right_hip" type="hinge" axis="0 1 0" range="-0.35 1.25" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="front_right_tibia" pos="0.09 0 0">
+            <joint name="front_right_knee" type="hinge" axis="0 1 0" range="0.0 2.0" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="front_right_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="front_right_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="middle_right_coxa" pos="0 -0.087 0" quat="0.7071068 0 0 -0.7071068">
+        <joint name="middle_right_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="middle_right_femur" pos="0.033 0 0">
+          <joint name="middle_right_hip" type="hinge" axis="0 1 0" range="-0.35 1.25" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="middle_right_tibia" pos="0.09 0 0">
+            <joint name="middle_right_knee" type="hinge" axis="0 1 0" range="0.0 2.0" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="middle_right_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="middle_right_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="rear_right_coxa" pos="-0.094 -0.071 0" quat="0.3583679 0 0 -0.9335804">
+        <joint name="rear_right_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="rear_right_femur" pos="0.033 0 0">
+          <joint name="rear_right_hip" type="hinge" axis="0 1 0" range="-0.35 1.25" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="rear_right_tibia" pos="0.09 0 0">
+            <joint name="rear_right_knee" type="hinge" axis="0 1 0" range="0.0 2.0" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="rear_right_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="rear_right_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="front_left_yaw_motor" joint="front_left_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="front_left_hip_motor" joint="front_left_hip" kp="8" ctrlrange="-0.35 1.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="front_left_knee_motor" joint="front_left_knee" kp="8" ctrlrange="0.0 2.0" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="middle_left_yaw_motor" joint="middle_left_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="middle_left_hip_motor" joint="middle_left_hip" kp="8" ctrlrange="-0.35 1.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="middle_left_knee_motor" joint="middle_left_knee" kp="8" ctrlrange="0.0 2.0" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="rear_left_yaw_motor" joint="rear_left_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="rear_left_hip_motor" joint="rear_left_hip" kp="8" ctrlrange="-0.35 1.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="rear_left_knee_motor" joint="rear_left_knee" kp="8" ctrlrange="0.0 2.0" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="front_right_yaw_motor" joint="front_right_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="front_right_hip_motor" joint="front_right_hip" kp="8" ctrlrange="-0.35 1.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="front_right_knee_motor" joint="front_right_knee" kp="8" ctrlrange="0.0 2.0" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="middle_right_yaw_motor" joint="middle_right_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="middle_right_hip_motor" joint="middle_right_hip" kp="8" ctrlrange="-0.35 1.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="middle_right_knee_motor" joint="middle_right_knee" kp="8" ctrlrange="0.0 2.0" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="rear_right_yaw_motor" joint="rear_right_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="rear_right_hip_motor" joint="rear_right_hip" kp="8" ctrlrange="-0.35 1.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="rear_right_knee_motor" joint="rear_right_knee" kp="8" ctrlrange="0.0 2.0" forcerange="-0.7 0.7" forcelimited="true" />
+  </actuator>
+  <sensor>
+    <framequat name="torso_orientation" objtype="body" objname="torso" />
+    <framepos name="torso_position" objtype="body" objname="torso" />
+    <touch name="front_left_contact" site="front_left_foot_site" />
+    <touch name="middle_left_contact" site="middle_left_foot_site" />
+    <touch name="rear_left_contact" site="rear_left_foot_site" />
+    <touch name="front_right_contact" site="front_right_foot_site" />
+    <touch name="middle_right_contact" site="middle_right_foot_site" />
+    <touch name="rear_right_contact" site="rear_right_foot_site" />
+  </sensor>
+  <keyframe>
+    <key name="stand" qpos="0 0 0.165 1 0 0 0 0 0.55 0.7 0 0.55 0.7 0 0.55 0.7 0 0.55 0.7 0 0.55 0.7 0 0.55 0.7" ctrl="0 0.55 0.7 0 0.55 0.7 0 0.55 0.7 0 0.55 0.7 0 0.55 0.7 0 0.55 0.7" />
+  </keyframe>
+</mujoco>

@@ -1,0 +1,25 @@
+name: Build reproducible MuJoCo wheelhouse
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'runtime/requirements.txt'
+      - 'runtime/build_wheelhouse.sh'
+      - '.github/workflows/build-mujoco-runtime.yml'
+      - 'scripts/make_wheelhouse_manifest.py'
+jobs:
+  wheelhouse:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: bash runtime/build_wheelhouse.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mujoco-3.14.0-python313-linux-x64-offline
+          path: |
+            dist/mujoco-3.14.0-py313-linux-x64-offline.tar.gz
+            dist/mujoco-3.14.0-py313-linux-x64-offline.tar.gz.sha256
+          retention-days: 30

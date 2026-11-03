@@ -1,0 +1,26 @@
+{
+  "snapshot_date": "2026-11-03",
+  "files": {
+    ".github/workflows/build-mujoco-runtime.yml": "2e0afa6fcde249844d51dce5ac08bffec8840086a08b89cc8c5ad10daab07834",
+    "README.md": "838271cc163a485b426b038290f25184346e4346db758f7fc7f6fdaf613f3905",
+    "hexlab/__init__.py": "253ea3e3dd414ed746f252d8061d6991a40a60424faff32c8e013cd377845bc1",
+    "hexlab/mujoco_experiment.py": "ad87eae34571320a2d5e208f758692a188595ca5d3d727e10a80a1fb3eae2720",
+    "hexlab/mujoco_model.py": "1357bda40865ce35f60bdea43488c0ffa0953c8cc85e41a122c7cc68f2077719",
+    "hexlab/run_experiment.py": "4ee2add76c77d058e203732213de4ca7d2f590cd5d4a042bdeec5e52363a0bde",
+    "hexlab/simulation.py": "1174e1774f98c4d87979e7f6dc43af21189ada945a30d43e8c599683bb708327",
+    "models/freenove_fnk0052_approx.xml": "f0eee5e6b67f44cbdb232c3ab1157f335053709a43250b2afbd3c022a44cb2e1",
+    "plot_results.py": "4424f7c12aa2cfe718a4612bcca1a83557c2ca53b88929e32a3c2185c0bd382c",
+    "render_pilot.py": "90634269cad12afb66309a6ee8204688a9fb0692768c517f59c893844fc7a369",
+    "results/pilot_margins.png": "7d6cc57d4105fb7fb1671fe58f95a35451855d8c1e3a1b1dd054990b1c3a8abc",
+    "results/pilot_results.json": "a8f401bac09bc6708c8dc257ecf0dadc49c1ae9e05448371c2b8e6d8852dae3d",
+    "results/robot_pose_kinematic.png": "9f90ef4e3d365da1d5517deb01b38851a0d93c5610ba4b7f324043ac62a1ead8",
+    "runtime/STATUS.md": "69d7d481d26d0036efd84120c1e45527b162b1961e72cb7d407b01256db54e93",
+    "runtime/build_wheelhouse.sh": "9ff84c399ffc01adbcb29f6ff86a859eacb1dcbea29bfef89b9ebfd84a67ec64",
+    "runtime/requirements.txt": "26d39c42170ae90230ef13bb77a1af90a4ab540690777afff8c6a8bd96e80005",
+    "runtime/restore_wheelhouse.sh": "ecf2fb0e998edfa6239dfd2873119d72abdb4600019127e1792e37f9e89c9e06",
+    "scripts/make_wheelhouse_manifest.py": "12b007bbd76262f09142ae4690b1eedc60cc1beb7e073194282af363b0ef7bc0",
+    "scripts/preview_pose.py": "516fc21ccbee35ac54fee689bf38ce4c5aa0b75f14363703269434b96924b88b",
+    "tests/test_mujoco_model.py": "5b6d1983afa020c6679aa12d6a14f2beda87b5db59d056866301817adb42974a",
+    "tests/test_simulation.py": "2309716b6941e7c9a411b6cc3c9c3e905f3e18f4451178efbb9c9032eb5fdbc4"
+  }
+}

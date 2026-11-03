@@ -1,0 +1,37 @@
+{
+  "timestamp_utc": "2026-11-03T16:29:29.987913+00:00",
+  "mujoco_version": "3.14.0",
+  "python_abi": "cp313",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "wheelhouse_archive": "mujoco-3.14.0-python313-linux-x64-offline.tar.gz",
+  "wheelhouse_sha256": "6d14d0c17294bac5436e1167ca4a97c30061da8efaa0a2b904c171bcac4a7b13",
+  "wheels_verified": 10,
+  "github_run_url": "https://github.com/Dmitry-dev-pet/truthrail/actions/runs/41674000645",
+  "model": "models/freenove_fnk0052_approx.xml",
+  "model_calibrated": false,
+  "stand": {
+    "seconds": 2.0,
+    "n_steps": 1000,
+    "start_x": 0.0,
+    "end_x": -0.0,
+    "min_height_m": 0.16139,
+    "steps_without_contacts": 1,
+    "wall_seconds": 0.047
+  },
+  "tripod": {
+    "seconds": 10.0,
+    "n_steps": 5000,
+    "start_x": -0.0,
+    "end_x": 0.00535,
+    "min_height_m": 0.16382,
+    "steps_without_contacts": 1,
+    "wall_seconds": 0.23
+  },
+  "render": "results/mujoco_first_render.png",
+  "unit_tests": "12 passed",
+  "limitations": [
+    "assumed mass, inertia, servo torque and friction",
+    "gait not optimized",
+    "no actual robot telemetry"
+  ]
+}

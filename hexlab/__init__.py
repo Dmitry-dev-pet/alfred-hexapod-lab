@@ -1,0 +1,1 @@
+"""Hexapod walking lab: a deliberately conservative *kinematic* pilot."""
