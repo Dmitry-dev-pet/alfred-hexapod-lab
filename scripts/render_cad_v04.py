@@ -1,0 +1,68 @@
+"""Optional CAD-accurate preview from the verified upstream MuJoCo meshes.
+
+Renders our estimated-mass model; not a photographic depiction of a real
+assembled robot. The image is a *diagnostic*, not a validated standing pose.
+
+Usage on headless Ubuntu:
+  xvfb-run -a python scripts/render_cad_v04.py --out results/cad_v04_preview.png
+"""
+from __future__ import annotations
+
+import argparse
+import struct
+import sys
+import zlib
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from hexlab.cad_mujoco_v04 import DEFAULT_CACHE, build
+
+
+def write_png(path: Path, rgb) -> None:
+    """Store a displayable 8-bit RGB PNG using the standard library only."""
+    height, width, channels = rgb.shape
+    if channels != 3:
+        raise ValueError("Expected RGB renderer image")
+    def chunk(tag, data):
+        return struct.pack(">I",len(data)) + tag + data + struct.pack(">I",zlib.crc32(tag+data)&0xffffffff)
+    raw = b"".join(b"\\x00" + row.tobytes() for row in rgb)
+    result = (
+        b"\\x89PNG\\r\\n\\x1a\\n" +
+        chunk(b"IHDR", struct.pack(">IIBBBBB",width,height,8,2,0,0,0)) +
+        chunk(b"IDAT", zlib.compress(raw,6)) +
+        chunk(b"IEND",b"")
+    )
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_bytes(result)
+
+
+def main():
+    p=argparse.ArgumentParser()
+    p.add_argument("--scenario",choices=("nominal","lower","upper"),default="nominal")
+    p.add_argument("--cache",type=Path,default=DEFAULT_CACHE)
+    p.add_argument("--out",type=Path,default=ROOT/"results/cad_v04_preview.png")
+    args=p.parse_args()
+
+    import mujoco
+
+    xml, _receipt = build(args.scenario, cache=args.cache,offline=True)
+    model = mujoco.MjModel.from_xml_path(str(xml))
+    data = mujoco.MjData(model)
+    mujoco.mj_forward(model,data)
+    cam=mujoco.MjvCamera()
+    cam.type=mujoco.mjtCamera.mjCAMERA_FREE
+    cam.lookat[:]=(0,0,.15)
+    cam.distance=.85
+    cam.azimuth=115
+    cam.elevation=-25
+    with mujoco.Renderer(model,height=600,width=800) as render:
+        render.update_scene(data,camera=cam)
+        picture=render.render()
+        write_png(args.out,picture)
+    print("Preview",args.out,args.out.stat().st_size,"bytes")
+
+
+if __name__=="__main__":
+    main()
