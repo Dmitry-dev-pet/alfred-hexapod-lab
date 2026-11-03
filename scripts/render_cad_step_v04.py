@@ -18,8 +18,10 @@ sys.path.insert(0, str(ROOT))
 from hexlab.cad_mujoco_v04 import DEFAULT_CACHE, build
 
 
-def render(report_path: Path, video: Path, gif: Path, cache: Path, fps: int = 10):
+def render(report_path: Path, video: Path, gif: Path, cache: Path, fps: int = 10, view: str = 'side'):
     import mujoco
+    import numpy as np
+    from PIL import Image, ImageDraw, ImageFont
     from render_video import make_gif
 
     result = json.loads(report_path.read_text(encoding="utf-8"))
@@ -33,6 +35,14 @@ def render(report_path: Path, video: Path, gif: Path, cache: Path, fps: int = 10
     scene, _ = build(result["scenario"], cache=cache, offline=True)
     model = mujoco.MjModel.from_xml_path(str(scene))
     data = mujoco.MjData(model)
+
+    # Mark the actual motor15/14/13 leg visibly without changing physics.
+    # CAD 'fl' is vendor front-right (opposite handedness to CAD names).
+    colored_bodies = {int(model.body(name).id) for name in ("coxafl", "femurfl", "tibiafl")}
+    for gid in range(model.ngeom):
+        if int(model.geom_bodyid[gid]) in colored_bodies and int(model.geom_group[gid]) == 2:
+            model.geom_matid[gid] = -1
+            model.geom_rgba[gid] = np.array([1.0, 0.29, 0.04, 1.0])
 
     duration = float(trace[-1]["t_s"])
     nframes = round(duration * fps)
@@ -50,10 +60,22 @@ def render(report_path: Path, video: Path, gif: Path, cache: Path, fps: int = 10
     ]
     cam = mujoco.MjvCamera()
     cam.type = mujoco.mjtCamera.mjCAMERA_FREE
-    cam.lookat[:] = (0., .04, .13)
-    cam.distance = .72
-    cam.azimuth = 125
-    cam.elevation = -28
+    views = {
+        # Lower than the previous overhead view, camera toward front/near side.
+        "side": {"lookat": (-.045, .11, .12), "distance": .56, "azimuth": 163, "elevation": -11},
+        "front": {"lookat": (-.02, .14, .12), "distance": .60, "azimuth": 96, "elevation": -15},
+    }
+    if view not in views:
+        raise ValueError(f"Unknown camera view: {view}")
+    spec = views[view]
+    cam.lookat[:] = spec["lookat"]
+    cam.distance = spec["distance"]
+    cam.azimuth = spec["azimuth"]
+    cam.elevation = spec["elevation"]
+    try:
+        font = ImageFont.truetype("DejaVuSans.ttf", 17)
+    except OSError:
+        font = ImageFont.load_default()
 
     proc = subprocess.Popen(command, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
@@ -70,7 +92,13 @@ def render(report_path: Path, video: Path, gif: Path, cache: Path, fps: int = 10
                 data.time = closest["t_s"]
                 mujoco.mj_forward(model, data)
                 renderer.update_scene(data, camera=cam)
-                proc.stdin.write(renderer.render().tobytes())
+                frame = Image.fromarray(renderer.render())
+                overlay = ImageDraw.Draw(frame)
+                phase = closest.get("phase", "moving").upper()
+                label = f"FR leg (orange)  |  {phase}  |  MuJoCo v0.4"
+                overlay.rounded_rectangle((8, 8, 390, 42), radius=8, fill=(18, 26, 39))
+                overlay.text((18, 14), label, font=font, fill=(255, 255, 255))
+                proc.stdin.write(frame.tobytes())
     finally:
         if proc.stdin is not None:
             proc.stdin.close()
@@ -87,6 +115,8 @@ def render(report_path: Path, video: Path, gif: Path, cache: Path, fps: int = 10
         "mp4_bytes": video.stat().st_size,
         "replayed_actual_simulation": True,
         "real_hardware": False,
+        "highlighted_vendor_leg": "FR",
+        "camera_view": view,
     }, indent=2))
 
 
@@ -96,9 +126,10 @@ def main():
     p.add_argument("--video", type=Path, default=ROOT/"results/first_single_leg_step.mp4")
     p.add_argument("--gif", type=Path, default=ROOT/"results/first_single_leg_step.gif")
     p.add_argument("--fps", type=int, default=10)
+    p.add_argument("--view", choices=("side","front"), default="side")
     p.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
     a = p.parse_args()
-    render(a.report, a.video, a.gif, a.cache, a.fps)
+    render(a.report, a.video, a.gif, a.cache, a.fps, a.view)
 
 if __name__ == "__main__":
     main()
