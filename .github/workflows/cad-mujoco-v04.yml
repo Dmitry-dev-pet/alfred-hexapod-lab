@@ -1,0 +1,40 @@
+name: Freenove CAD MuJoCo integration v0.4
+
+on:
+  pull_request:
+    paths:
+      - "hexlab/cad_mujoco_v04.py"
+      - "hexlab/community_mass_v04.py"
+      - "data/fnk0052_cad_assets_lock.json"
+      - "data/fnk0052_community_mass_scenarios.json"
+      - ".github/workflows/cad-mujoco-v04.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cad-physics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install tested MuJoCo runtime
+        run: python -m pip install mujoco==3.14.0
+      - name: Download and audit upstream geometry, build nominal physical assembly
+        run: |
+          python -m hexlab.cad_mujoco_v04 --scenario nominal --load-mujoco --output-receipt results/cad_v04_nominal.json
+      - name: Validate lower and upper mass scenarios with same immutable external CAD
+        run: |
+          python -m hexlab.cad_mujoco_v04 --scenario lower --offline --load-mujoco --output-receipt results/cad_v04_lower.json
+          python -m hexlab.cad_mujoco_v04 --scenario upper --offline --load-mujoco --output-receipt results/cad_v04_upper.json
+      - name: Expose numeric receipts only (no third-party CAD files)
+        uses: actions/upload-artifact@v4
+        with:
+          name: freenove-v04-physics-receipts
+          path: results/cad_v04_*.json
+          if-no-files-found: error
+          retention-days: 30
