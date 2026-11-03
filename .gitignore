@@ -8,3 +8,5 @@ venv/
 *.tar.gz
 *.zip
 results/*.ppm
+# Downloaded third-party CAD (Freenove; separate license, never commit)
+.cache/
