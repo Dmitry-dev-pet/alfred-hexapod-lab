@@ -9,6 +9,7 @@ Usage on headless Ubuntu:
 from __future__ import annotations
 
 import argparse
+import json
 import struct
 import sys
 import zlib
@@ -43,6 +44,8 @@ def main():
     p.add_argument("--scenario",choices=("nominal","lower","upper"),default="nominal")
     p.add_argument("--cache",type=Path,default=DEFAULT_CACHE)
     p.add_argument("--out",type=Path,default=ROOT/"results/cad_v04_preview.png")
+    p.add_argument("--pose-receipt",type=Path,
+                   help="Use the candidate qpos from the constrained six-leg stand receipt")
     args=p.parse_args()
 
     import mujoco
@@ -50,11 +53,19 @@ def main():
     xml, _receipt = build(args.scenario, cache=args.cache,offline=True)
     model = mujoco.MjModel.from_xml_path(str(xml))
     data = mujoco.MjData(model)
+    if args.pose_receipt is not None:
+        report = json.loads(args.pose_receipt.read_text(encoding="utf-8"))
+        if report["scenario"] != args.scenario:
+            raise ValueError("Mismatched standing-pose scenario")
+        q = report["qpos_candidate"]
+        if len(q) != model.nq:
+            raise ValueError(f"Expected {model.nq} joint positions, got {len(q)}")
+        data.qpos[:] = q
     mujoco.mj_forward(model,data)
     cam=mujoco.MjvCamera()
     cam.type=mujoco.mjtCamera.mjCAMERA_FREE
-    cam.lookat[:]=(0,0,.15)
-    cam.distance=.85
+    cam.lookat[:]=(0,0,.10 if args.pose_receipt else .15)
+    cam.distance=.77 if args.pose_receipt else .85
     cam.azimuth=115
     cam.elevation=-25
     with mujoco.Renderer(model,height=480,width=640) as render:
