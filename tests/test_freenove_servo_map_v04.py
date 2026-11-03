@@ -2,8 +2,8 @@
 import math
 import unittest
 from hexlab.freenove_servo_map_v04 import (
-    VENDOR_LEGS, SERVO_CHANNELS, channel_map, cad_joint_names,
-    vendor_angles_to_servo_degrees
+    VENDOR_LEGS, SERVO_CHANNELS, CAD_TO_VENDOR_LEG, channel_map, cad_joint_names,
+    vendor_angles_to_servo_degrees, vendor_leg_for_cad
 )
 
 
@@ -26,6 +26,18 @@ class FreenoveServoReferenceTests(unittest.TestCase):
             self.assertEqual(vendor_angles_to_servo_degrees(leg,(90,15,30)), (90,75,30))
         for leg in VENDOR_LEGS[3:]:
             self.assertEqual(vendor_angles_to_servo_degrees(leg,(90,15,30)), (90,105,150))
+
+    def test_all_six_cad_names_mirror_vendor_side(self):
+        self.assertEqual(CAD_TO_VENDOR_LEG, {
+            "fr":"fl", "mr":"ml", "br":"bl",
+            "bl":"br", "ml":"mr", "fl":"fr",
+        })
+        self.assertEqual(cad_joint_names(vendor_leg_for_cad("fl")),
+                         ("motor15","motor14","motor13"))
+        self.assertEqual(cad_joint_names(vendor_leg_for_cad("fr")),
+                         ("motor16","motor17","motor18"))
+        with self.assertRaises(ValueError):
+            vendor_leg_for_cad("xyz")
 
     def test_clamp_and_calibration_signs(self):
         self.assertEqual(vendor_angles_to_servo_degrees("fr",(90,15,30),(5,2,4)),
