@@ -17,7 +17,7 @@ from pathlib import Path
 
 from .cad_mujoco_v04 import DEFAULT_CACHE
 
-SELECTED_LEG = "fr"
+SELECTED_LEG = "fl"  # CAD suffix; vendor front-right channels 15/14/13
 STEP_FORWARD_M = 0.028
 STEP_LIFT_M = 0.026
 MAX_IK_ANGLE = 1.70
@@ -144,12 +144,12 @@ def experiment(
     from .stand_v04 import STAND_HEIGHT_M, TARGET_RADIAL_EXTENSION_M, static_pose, hold_under_gravity
     from .stand_geometry_v04 import load_legs, tip_world, geom_mesh_world_vertices
     from .simulation import support_margin
-    from .freenove_servo_map_v04 import cad_joint_names
+    from .freenove_servo_map_v04 import cad_joint_names, vendor_leg_for_cad
 
     if scenario not in ("lower", "nominal", "upper"):
         raise ValueError("Unknown mass scenario")
-    if leg_name != "fr":
-        raise ValueError("Only front-right first-step experiment is validated")
+    if leg_name != "fl":
+        raise ValueError("Only vendor front-right (= CAD 'fl') first-step experiment is validated")
     if not (0.005 <= step_forward <= .05 and 0.005 <= lift <= .05):
         raise ValueError("Unreasonable step dimensions")
 
@@ -158,12 +158,26 @@ def experiment(
     data = mujoco.MjData(model)
     legs = load_legs(model, data, mujoco)
     leg = next(x for x in legs if x["suffix"] == leg_name)
+    # Confirm *all six* community leg labels against vendor wiring by motor
+    # channel; the source CAD left/right suffixes are mirrored!
+    crosscheck = {}
+    for cad_leg in legs:
+        actual = tuple(
+            mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_JOINT, i)
+            for i in cad_leg["jids"]
+        )
+        vendor_name = vendor_leg_for_cad(cad_leg["suffix"])
+        expected = cad_joint_names(vendor_name)
+        if actual != expected:
+            raise AssertionError(
+                f"CAD {cad_leg['suffix']} maps to vendor {vendor_name}; "
+                f"expected {expected}, found {actual}")
+        crosscheck[cad_leg["suffix"]] = {
+            "vendor_leg": vendor_name, "joint_channels": list(actual)}
     model_joint_names = tuple(
         mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_JOINT, i)
         for i in leg["jids"]
     )
-    if model_joint_names != cad_joint_names(leg_name):
-        raise AssertionError(f"Vendor/CAD joint-channel mapping differs: {model_joint_names}")
     fit = static_pose(model, data, mujoco, legs,
                       STAND_HEIGHT_M, TARGET_RADIAL_EXTENSION_M)
     initial_qpos = np.asarray(data.qpos).copy()
@@ -282,7 +296,9 @@ def experiment(
         "test":"First single-leg step, forward +Y derived from CAD hip geometry",
         "scenario":scenario,
         "model_mass_kg":round(float(sum(model.body_mass)),6),
-        "selected_leg":leg_name,
+        "selected_cad_leg":leg_name,
+        "selected_vendor_leg":vendor_leg_for_cad(leg_name),
+        "cad_vendor_wiring_crosscheck":crosscheck,
         "vendor_servo_channels_and_joint_names":list(model_joint_names),
         "authoritative_joint_PWM_mapping_verified":False,
         "cad_to_vendor_PWM_signs_calibrated":False,
@@ -333,7 +349,7 @@ def experiment(
 def main() -> None:
     p=argparse.ArgumentParser()
     p.add_argument("--scenario",choices=("lower","nominal","upper"),default="nominal")
-    p.add_argument("--leg",choices=("fr",),default="fr")
+    p.add_argument("--leg",choices=("fl",),default=SELECTED_LEG)
     p.add_argument("--lift-mm",type=float,default=STEP_LIFT_M * 1000)
     p.add_argument("--forward-mm",type=float,default=STEP_FORWARD_M * 1000)
     p.add_argument("--cache",type=Path,default=DEFAULT_CACHE)
