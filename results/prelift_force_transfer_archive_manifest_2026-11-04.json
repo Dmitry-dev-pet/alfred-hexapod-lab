@@ -1,0 +1,26 @@
+{
+  "schema": "fnk0052_CAD30_prelift_gait_archive/1",
+  "created_utc": "2026-11-04",
+  "archive_name": "FNK0052_prelift_force_gait_2026-11-04_no_CAD.zip",
+  "archive_bytes": 2044786,
+  "sha256": "d8f4adfe22273e7dd6536cf9c415af4b9ebf6b237be973b029ad06a5ffdfef03",
+  "drive_url": "https://drive.google.com/file/d/1rpBGyiuF17S3aYavhqQx5q6N1c6qn87a/view?usp=drivesdk",
+  "contains_original_CAD_STL": false,
+  "complete_run_count": 20,
+  "baseline_controls_exactly_reproduced": 10,
+  "contents": [
+    "7 source/protocol/test files",
+    "20 full MuJoCo physics traces",
+    "1 compact aggregated report",
+    "1 8-second MP4 true-qpos replay",
+    "1 GIF",
+    "2 PNG images",
+    "internal SHA256_CONTENTS.json"
+  ],
+  "upstream_CAD30_archive": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk",
+  "prior_comparison_archive": "https://drive.google.com/file/d/1o2oWFtjSV0X7UYyHe4i8qB7twMzvxVez/view?usp=drivesdk",
+  "receipt_sha256": "3a491e089bef2b7ab73817c8785e5fe9d5e6bdfa5351fc172731927756b891f7",
+  "physical_robot_tested": false,
+  "original_cad_distribution": "never commit CAD meshes; private Drive archive is prerequisite for local replay",
+  "negative_findings": "At friction mu=0.3, unloading gate almost stops walking, and all-contact-loss persists in both conditions."
+}
