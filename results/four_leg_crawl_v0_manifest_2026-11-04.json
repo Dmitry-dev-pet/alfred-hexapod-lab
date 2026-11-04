@@ -1,0 +1,47 @@
+{
+  "experiment": "FNK0052_four_leg_crawl_v0_negative",
+  "date": "2026-11-04",
+  "contains_original_Freenove_CAD": false,
+  "files": {
+    "experiments/cad30/four_leg_crawl_v0.py": {
+      "bytes": 6473,
+      "sha256": "410637b639fbc260902844c660654cfa2a1a03f470f79555278a51f70d6d913a"
+    },
+    "experiments/cad30/four_leg_support_gate.py": {
+      "bytes": 1203,
+      "sha256": "d651849bcf247b0d178644394f70ef31297093f1e9d70782b34d2e9605331c7b"
+    },
+    "experiments/cad30/test_four_leg_crawl_v0.py": {
+      "bytes": 1467,
+      "sha256": "4401d8c1f5f365c7bfca7e931f8d139504e743afb274c69aeaa004582f74e729"
+    },
+    "experiments/cad30/render_four_leg_crawl_v0.py": {
+      "bytes": 2271,
+      "sha256": "1c3c5c30ebe3131d697127f637341f6ffa851435f61b0b4506fad74b6424c5cb"
+    },
+    "experiments/cad30/README_FOUR_LEG_CRAWL_V0.md": {
+      "bytes": 5515,
+      "sha256": "f81c2fc0a86ae21ed39080ae22519a388708dcc23e24994fc0600ec40048e9df"
+    },
+    "results/four_leg_crawl_v0_sweep_2026-11-04.json": {
+      "bytes": 9015,
+      "sha256": "4bb1f63dc47336e555aad427fce7ff8999a82becf7142becad7847ffe6ae955e"
+    },
+    "results/four_leg_crawl_wave_nominal_trace.json": {
+      "bytes": 315787,
+      "sha256": "bbd4e0d44e1ca683e2f344bd0ac58ca42e19375f6f11932cddcf96f9e6cf6f91"
+    },
+    "media/four_leg_cycle_failed_diagnostic.mp4": {
+      "bytes": 173683,
+      "sha256": "2cbdb9af919d39b9a2a9587679d319ce19c11ef8f44f0251f9f7a80d86b42d95"
+    },
+    "media/four_leg_cycle_failed_diagnostic.gif": {
+      "bytes": 264003,
+      "sha256": "dfeaaa83283f145f917102cfdff9f16cd267ed6d59fcdbde604fc0bfd7c58317"
+    },
+    "media/four_leg_cycle_failed_keyframe.png": {
+      "bytes": 110717,
+      "sha256": "85a697ba0bc0ff2caf1bebc4c079cb15aed796cffaf279138293d9ebb8a0285a"
+    }
+  }
+}
