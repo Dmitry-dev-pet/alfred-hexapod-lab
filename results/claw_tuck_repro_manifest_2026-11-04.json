@@ -1,0 +1,66 @@
+{
+  "experiments/cad30/claw_tuck_compare_v1.py": {
+    "sha256": "d5c1c1f2558adef01cd2113cb4b94795aeb319d73e1c1773b9cb8c923fffb937",
+    "bytes": 10522
+  },
+  "experiments/cad30/analyze_claw_tuck_report.py": {
+    "sha256": "3cb6a08605d70237b782f65aa028c64eccb4e9be145df1d48237b35df8e5ef9e",
+    "bytes": 4634
+  },
+  "experiments/cad30/test_claw_tuck_compare_v1.py": {
+    "sha256": "35c570b01e70292d77db0fa1c5479047b2782ee2208e10301e21e5d5937e72b9",
+    "bytes": 3417
+  },
+  "experiments/cad30/README_CLAW_TUCK_COMPARISON_2026-11-04.md": {
+    "sha256": "f872fe3ed306456db2d14f8ca6906f0760fff768e48752231be53460be38fc9f",
+    "bytes": 9265
+  },
+  "scripts/export_claw_tuck_comparison.py": {
+    "sha256": "f0c240d55b835602636bdd1dc5cbd82c0d0ebb23c5614eeac2fb6b51d0ce6e7e",
+    "bytes": 6623
+  },
+  "results/claw_tuck_compare_2026-11-04.json": {
+    "sha256": "d94932f19b2413142435eb300cf5c230ff2bf5237da71aa61ec8215d24bbd623",
+    "bytes": 586190
+  },
+  "results/claw_tuck_comparison_compact_2026-11-04.json": {
+    "sha256": "46b9feba4b69fe37c7bc118383f5a9e21c6b85e79ad9af26ca0520aad0283c33",
+    "bytes": 5527
+  },
+  "docs/hexapod/folding/index.html": {
+    "sha256": "8e28ce0f9c9fa5be2c3776506d93a9e18c613077ca214ff083924d59b2285197",
+    "bytes": 6336
+  },
+  "docs/hexapod/folding/app.js": {
+    "sha256": "0030fbed975512410e39c4d31921ba8fbb2ff966daa04406ad590e10532cec0b",
+    "bytes": 19112
+  },
+  "docs/hexapod/folding/style.css": {
+    "sha256": "50583588e5d0a6f32ea7469b1fc20e272cf167761f1240a48122115bc91ba332",
+    "bytes": 6904
+  },
+  "docs/hexapod/data/fold-extended.json": {
+    "sha256": "978999bcd854214373d6f8a00733fd305a572a6d48c741ec2d5a749b0d87eb83",
+    "bytes": 72605
+  },
+  "docs/hexapod/data/fold-semi_tucked.json": {
+    "sha256": "0a50c89ba65b0b9475f78213de17f2c59624122a35cfde81fae164efe8b686c6",
+    "bytes": 72664
+  },
+  "docs/hexapod/data/fold-compact.json": {
+    "sha256": "3a4089e05dc96c5568ee873488382d02b4cf42d9c2aac82f63c018887725e714",
+    "bytes": 72572
+  },
+  "docs/hexapod/data/cad-rig-fold-extended.json": {
+    "sha256": "a8d81a3807862df6590954b5611b8232ad75e0f930a65f18d41ccaba24f3b812",
+    "bytes": 232986
+  },
+  "docs/hexapod/data/cad-rig-fold-semi_tucked.json": {
+    "sha256": "d2a3ac09c50e7bccca2d7c5e811b1ae9aede7f20b022b7e4d35aa626972161d8",
+    "bytes": 232989
+  },
+  "docs/hexapod/data/cad-rig-fold-compact.json": {
+    "sha256": "6132541f385e79f1b93e6677acda5c1bd9e8b7ff316f6352ee798cf33957a3cb",
+    "bytes": 233008
+  }
+}

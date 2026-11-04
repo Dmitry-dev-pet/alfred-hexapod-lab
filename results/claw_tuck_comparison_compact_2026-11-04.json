@@ -1,0 +1,167 @@
+{
+  "schema": "claw-tuck-cad30-comparison-v1",
+  "purpose": "Compare 3 preplanned raised front-leg postures after six-grounded->four-support transition; no gait",
+  "physics": "MuJoCo 3.14.0, CAD30 nominal estimated mass 1.804868 kg; friction μ=1.1; PD gain 7 / 0.32; assumed servo cap ±0.7 Nm",
+  "started_from_six_grounded": true,
+  "calculated_trajectory_seconds_after_settle": 9.3,
+  "pre_stabilization_seconds": 1.0,
+  "joint_bound_for_IK_radians": 1.7,
+  "comparison": {
+    "extended": {
+      "pose": "extended",
+      "final_COM_y_mm": -22.61,
+      "final_COM_margin_mm": 23.318,
+      "min_four_contacts_after_front_unload": 4,
+      "min_margin_during_fold_mm": 23.318,
+      "max_tilt_during_fold_deg": 2.74,
+      "motor_saturation_fraction": 0.0,
+      "peak_unclipped_motor_torque_nm": 0.50958,
+      "final_joint_margin_to_1p7_deg": -0.087,
+      "min_torso_tibia_proxy_distance_mm": 72.382,
+      "min_inter_tibia_proxy_distance_mm": 168.272,
+      "final_front_tibia_min_height_mm": 96.548,
+      "final_front_toe_horizontal_dist_mm": 166.204,
+      "final_front_legs": [
+        {
+          "code": "fl",
+          "q": [
+            0.007862,
+            1.097357,
+            1.70151
+          ],
+          "tip_xyz_m": [
+            -0.152105,
+            0.178474,
+            0.098072
+          ],
+          "hip_to_toe_horizontal_m": 0.16620559758123754
+        },
+        {
+          "code": "fr",
+          "q": [
+            -0.007835,
+            -1.097442,
+            -1.70151
+          ],
+          "tip_xyz_m": [
+            0.152082,
+            0.178481,
+            0.098071
+          ],
+          "hip_to_toe_horizontal_m": 0.1662032280921108
+        }
+      ],
+      "passed_strict_proxy_checks": true,
+      "delta_vs_extended_final_margin_mm": 0.0,
+      "delta_vs_extended_COM_y_mm": 0.0,
+      "delta_vs_extended_toe_horizontal_mm": 0.0
+    },
+    "semi_tucked": {
+      "pose": "semi_tucked",
+      "final_COM_y_mm": -25.523,
+      "final_COM_margin_mm": 26.233,
+      "min_four_contacts_after_front_unload": 4,
+      "min_margin_during_fold_mm": 23.558,
+      "max_tilt_during_fold_deg": 2.676,
+      "motor_saturation_fraction": 0.0,
+      "peak_unclipped_motor_torque_nm": 0.50148,
+      "final_joint_margin_to_1p7_deg": 3.372,
+      "min_torso_tibia_proxy_distance_mm": 52.444,
+      "min_inter_tibia_proxy_distance_mm": 112.586,
+      "final_front_tibia_min_height_mm": 161.275,
+      "final_front_toe_horizontal_dist_mm": 141.588,
+      "final_front_legs": [
+        {
+          "code": "fl",
+          "q": [
+            0.025001,
+            1.641101,
+            1.594023
+          ],
+          "tip_xyz_m": [
+            -0.137602,
+            0.15852,
+            0.178669
+          ],
+          "hip_to_toe_horizontal_m": 0.1415887921660168
+        },
+        {
+          "code": "fr",
+          "q": [
+            -0.024941,
+            -1.641147,
+            -1.593974
+          ],
+          "tip_xyz_m": [
+            0.13758,
+            0.158526,
+            0.178669
+          ],
+          "hip_to_toe_horizontal_m": 0.1415868380524829
+        }
+      ],
+      "passed_strict_proxy_checks": true,
+      "delta_vs_extended_final_margin_mm": 2.915,
+      "delta_vs_extended_COM_y_mm": -2.913,
+      "delta_vs_extended_toe_horizontal_mm": -24.616
+    },
+    "compact": {
+      "pose": "compact",
+      "final_COM_y_mm": -25.884,
+      "final_COM_margin_mm": 26.594,
+      "min_four_contacts_after_front_unload": 4,
+      "min_margin_during_fold_mm": 23.558,
+      "max_tilt_during_fold_deg": 2.668,
+      "motor_saturation_fraction": 0.0,
+      "peak_unclipped_motor_torque_nm": 0.50048,
+      "final_joint_margin_to_1p7_deg": 0.835,
+      "min_torso_tibia_proxy_distance_mm": 48.605,
+      "min_inter_tibia_proxy_distance_mm": 108.077,
+      "final_front_tibia_min_height_mm": 157.875,
+      "final_front_toe_horizontal_dist_mm": 125.08,
+      "final_front_legs": [
+        {
+          "code": "fl",
+          "q": [
+            0.040214,
+            1.685406,
+            1.175284
+          ],
+          "tip_xyz_m": [
+            -0.127917,
+            0.145144,
+            0.228822
+          ],
+          "hip_to_toe_horizontal_m": 0.12508098205674992
+        },
+        {
+          "code": "fr",
+          "q": [
+            -0.040127,
+            -1.68542,
+            -1.175199
+          ],
+          "tip_xyz_m": [
+            0.127896,
+            0.145149,
+            0.228822
+          ],
+          "hip_to_toe_horizontal_m": 0.12507934122139885
+        }
+      ],
+      "passed_strict_proxy_checks": true,
+      "delta_vs_extended_final_margin_mm": 3.276,
+      "delta_vs_extended_COM_y_mm": -3.274,
+      "delta_vs_extended_toe_horizontal_mm": -41.124
+    }
+  },
+  "recommended": "semi_tucked",
+  "reason": "Semi-tucked captures most observed extra stability margin while keeping ~3.4 deg to the conservative IK angular bound, versus <1 deg for compact; no measured hardware motor limits.",
+  "limitations": [
+    "Model geometry inertias/servo torque-speed/friction are estimated, not physically calibrated",
+    "Torso-to-tibia mesh proxy and tibia-tibia distances measured, but all visual STL mesh self-collisions are not physically enabled; no complete collision guarantee",
+    "The three postures are candidates, not a continuous pose optimization or proof of global optimum",
+    "The study does not test full four-legged walking and cannot predict the real robot balance",
+    "No real-world energy/power or temperature model available"
+  ]
+}
