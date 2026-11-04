@@ -1,0 +1,214 @@
+{
+  "schema": "cad30_unrestricted_contact_diagnostic_v1",
+  "status": "NEGATIVE_TWO_SUPPORT_PD_BASELINE",
+  "simulated_model": "Freenove FNK0052 CAD30, MuJoCo 3.14, nominal 1.8048682 kg",
+  "experimental_control": "Kp=7 Kd=0.32, nominal +/-0.7 Nm cap, 5mm IK target lift, 0.4s hold, no balancing MPC",
+  "dt_seconds": 0.002,
+  "duration_each_seconds": 2.4,
+  "contact_threshold_Fz_N": 0.08,
+  "cases_total": 9,
+  "two_support_pairs_tested": 6,
+  "two_support_achieved_count": 0,
+  "data_source_model_archive_sha256": "f2986c6256a19df59769db2ce0bdd9ea4cfee1ca36c27fb2d221da8c2a0afd53",
+  "safe_state_sha256": "fdf2ab92241e074b848e68090d155b173150398534543a83faf8c84885a02884",
+  "no_robot_hardware_tested": true,
+  "limitations": "Not a walking test, not true MPC, only one nominal initial state, no repeated trials or uncertainty sensitivity",
+  "cases": [
+    {
+      "case": "four",
+      "requested_lifted": [],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 0,
+      "actual_four_loaded_steps": 1200,
+      "exact_requested_contact_frames_during_0p4s_hold": 200,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {},
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.4,
+      "max_tilt_deg": 2.5622,
+      "min_body_height_m": 0.115271,
+      "max_motor_command_Nm": 0.560443,
+      "max_abs_leg_joint_rad": 1.666504,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "three_rear_bl",
+      "requested_lifted": [
+        "bl"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 706,
+      "actual_four_loaded_steps": 494,
+      "exact_requested_contact_frames_during_0p4s_hold": 200,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {
+        "bl": 200
+      },
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.4,
+      "max_tilt_deg": 2.5762,
+      "min_body_height_m": 0.115224,
+      "max_motor_command_Nm": 0.581765,
+      "max_abs_leg_joint_rad": 1.699457,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "three_middle_ml",
+      "requested_lifted": [
+        "ml"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 657,
+      "actual_four_loaded_steps": 543,
+      "exact_requested_contact_frames_during_0p4s_hold": 0,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {},
+      "hold_unintended_unloaded_counts": {
+        "br": 200
+      },
+      "longest_exact_contact_mode_s": 0.0,
+      "max_tilt_deg": 3.4721,
+      "min_body_height_m": 0.113425,
+      "max_motor_command_Nm": 0.582344,
+      "max_abs_leg_joint_rad": 1.668852,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "two_middles_ml_mr",
+      "requested_lifted": [
+        "ml",
+        "mr"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 0,
+      "actual_four_loaded_steps": 1200,
+      "exact_requested_contact_frames_during_0p4s_hold": 0,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {},
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.0,
+      "max_tilt_deg": 3.9632,
+      "min_body_height_m": 0.11083,
+      "max_motor_command_Nm": 0.595828,
+      "max_abs_leg_joint_rad": 1.666504,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "two_rears_bl_br",
+      "requested_lifted": [
+        "bl",
+        "br"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 0,
+      "actual_four_loaded_steps": 1200,
+      "exact_requested_contact_frames_during_0p4s_hold": 0,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {},
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.0,
+      "max_tilt_deg": 2.5093,
+      "min_body_height_m": 0.115282,
+      "max_motor_command_Nm": 0.559056,
+      "max_abs_leg_joint_rad": 1.704352,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "two_left_ml_bl",
+      "requested_lifted": [
+        "ml",
+        "bl"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 435,
+      "actual_four_loaded_steps": 765,
+      "exact_requested_contact_frames_during_0p4s_hold": 0,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {
+        "bl": 200
+      },
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.0,
+      "max_tilt_deg": 2.6626,
+      "min_body_height_m": 0.113199,
+      "max_motor_command_Nm": 0.615653,
+      "max_abs_leg_joint_rad": 1.699454,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "two_right_mr_br",
+      "requested_lifted": [
+        "mr",
+        "br"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 429,
+      "actual_four_loaded_steps": 771,
+      "exact_requested_contact_frames_during_0p4s_hold": 0,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {
+        "br": 200
+      },
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.0,
+      "max_tilt_deg": 2.6622,
+      "min_body_height_m": 0.113198,
+      "max_motor_command_Nm": 0.615103,
+      "max_abs_leg_joint_rad": 1.699454,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "two_diag_ml_br",
+      "requested_lifted": [
+        "ml",
+        "br"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 764,
+      "actual_four_loaded_steps": 436,
+      "exact_requested_contact_frames_during_0p4s_hold": 0,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {
+        "br": 200
+      },
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.0,
+      "max_tilt_deg": 3.4722,
+      "min_body_height_m": 0.113423,
+      "max_motor_command_Nm": 0.584869,
+      "max_abs_leg_joint_rad": 1.699487,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    },
+    {
+      "case": "two_diag_mr_bl",
+      "requested_lifted": [
+        "mr",
+        "bl"
+      ],
+      "actual_two_loaded_steps": 0,
+      "actual_three_loaded_steps": 766,
+      "actual_four_loaded_steps": 434,
+      "exact_requested_contact_frames_during_0p4s_hold": 0,
+      "hold_total_frames": 200,
+      "hold_requested_unloaded_counts": {
+        "bl": 200
+      },
+      "hold_unintended_unloaded_counts": {},
+      "longest_exact_contact_mode_s": 0.0,
+      "max_tilt_deg": 3.4759,
+      "min_body_height_m": 0.113424,
+      "max_motor_command_Nm": 0.583718,
+      "max_abs_leg_joint_rad": 1.699487,
+      "torque_saturation_physics_steps": 0,
+      "front_pair_unexpected_contact_steps": 0
+    }
+  ]
+}
