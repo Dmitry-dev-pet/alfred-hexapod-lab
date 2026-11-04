@@ -347,8 +347,8 @@ async function load() {
 function animate(timestamp) {
   requestAnimationFrame(animate);
   if(prevTime!==null && running && trajectory) {
-    t=Math.min(trajectory.duration_s,t+(timestamp-prevTime)/1000*Number(speed.value));
-    if(t===trajectory.duration_s) togglePlay(false);
+    t=(t+(timestamp-prevTime)/1000*Number(speed.value))%trajectory.duration_s;
+    // Keep the recorded physical motion looping, as in a video player.
     applyFrame(t);
   }
   prevTime=timestamp;

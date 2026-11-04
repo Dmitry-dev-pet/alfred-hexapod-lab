@@ -1,0 +1,30 @@
+{
+  "schema": "hexapod-library/v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "tripod-60",
+      "title": "Tripod",
+      "detail": "Обычная походка · 60 с · 1,10 м",
+      "duration_s": 60,
+      "href": "/hexapod/",
+      "files": []
+    },
+    {
+      "id": "claws-10",
+      "title": "Клешни",
+      "detail": "Поднятые передние ноги · 10 с",
+      "duration_s": 10,
+      "href": "/hexapod/claws/",
+      "files": []
+    },
+    {
+      "id": "six-to-four",
+      "title": "Переход 6 → 4",
+      "detail": "Подготовка четырёхопорной стойки · 7 с",
+      "duration_s": 7,
+      "href": "/hexapod/six-to-four/",
+      "files": []
+    }
+  ]
+}
