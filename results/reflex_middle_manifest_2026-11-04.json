@@ -1,0 +1,72 @@
+{
+  "date_utc": "2026-11-04",
+  "contents": [
+    {
+      "file": "cad30/reflex_unload_middle.py",
+      "size_bytes": 13526,
+      "sha256": "0658a1a7680f5459b0e3be47d2f1c5a8934c3d1604c6a0ae7fd03d43a3ef06e4"
+    },
+    {
+      "file": "cad30/sweep_reflex_unload.py",
+      "size_bytes": 2013,
+      "sha256": "7efc4834eb3db15b0bcba650ad7178e3b6c8589d748cfef0e871faf06fcc758a"
+    },
+    {
+      "file": "cad30/test_reflex_unload_middle.py",
+      "size_bytes": 2040,
+      "sha256": "a51c2248ed91d16951be823e5ec233017ebb8300fc1e725eed768d2e461a8fa8"
+    },
+    {
+      "file": "cad30/render_reflex_unload.py",
+      "size_bytes": 3909,
+      "sha256": "36a1e5024d8cc6859c23c9f0f38a6715328298dab4a82967cb7185f508a17e3a"
+    },
+    {
+      "file": "cad30/README_MIDDLE_LOAD_REFLEX.md",
+      "size_bytes": 10792,
+      "sha256": "459d974171266f263f8cdd7e508d2a48a9be5e204ff0bc850ded818009cbe0e7"
+    },
+    {
+      "file": "cad30/results/reflex_middle_support_sweep_2026-11-04.json",
+      "size_bytes": 13875,
+      "sha256": "478d8d0977f8b9211779519a68a3ccb0bde38f2e8ae883d24fade2b4edb84454"
+    },
+    {
+      "file": "cad30/results/reflex_shift_nominal_mu11.json",
+      "size_bytes": 281703,
+      "sha256": "ac35ee30ca73ac718129dee323937d723905362df5fbbf92c6117c8f2350db2b"
+    },
+    {
+      "file": "cad30/results/no_feedback_nominal_mu11.json",
+      "size_bytes": 280863,
+      "sha256": "3dfca3c34f3ab32017a9ca930c2097260467b51df360a037b33040e64f1649a1"
+    },
+    {
+      "file": "cad30/results/reflex_sweep_stdout_2026-11-04.txt",
+      "size_bytes": 3522,
+      "sha256": "3637b0c061279313197020a9a1547569f5636018acb9dcb08ae4c43cf1114d1b"
+    },
+    {
+      "file": "reflex_media/reflex_middle_keyframe.png",
+      "size_bytes": 138437,
+      "sha256": "d6d8850907c7631ec6072af1ebdf90da85e7be30d7628b61eadc671e5b106edd"
+    },
+    {
+      "file": "reflex_media/reflex_middle_load_comparison.png",
+      "size_bytes": 55402,
+      "sha256": "32316b571f64b842ce369bf86809cdc402af00a26d3f06eda0d7f87fa098c452"
+    },
+    {
+      "file": "reflex_media/reflex_middle_no_liftoff.mp4",
+      "size_bytes": 229586,
+      "sha256": "b6d0f5bae4087489d9aab86ffa1715149df9fead4218607fdab890155cfd3fb9"
+    },
+    {
+      "file": "reflex_media/reflex_middle_no_liftoff.gif",
+      "size_bytes": 389943,
+      "sha256": "2c3f34ddf5c48acb9edf01f3bde7572ed7e266c93fb7f4d0afe947f8cec7a09c"
+    }
+  ],
+  "model": "Freenove CAD30 assets excluded due to their original rights",
+  "verified_git_receipt": "not yet; update in PR"
+}
