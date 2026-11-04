@@ -1,0 +1,1314 @@
+{
+  "schema": "CAD30_2_3_4_instantaneous_point_contact_feasibility_v1",
+  "model": "Freenove FNK0052 CAD30 nominal; mass/inertia/friction/servos not hardware-calibrated",
+  "foot_contacts": "hypothetical one point force at center of actual tibia contact for each supporting foot",
+  "planning": "virtual forward COM translation while all 4 feet fixed; Mink IK and gravity-only preflight",
+  "assumptions": {
+    "joint_accel_bound_rad_s2": 35.0,
+    "body_linear_accel_bound_m_s2": 1.0,
+    "body_angular_accel_search_limit_rad_s2": 40.0,
+    "model_torque_utilization": 0.9,
+    "swing_foot_min_up_accel_m_s2": 0.5,
+    "friction_coefficient": 1.1,
+    "stance_site_accel_approx": "Jqdd=0, evaluated with qvel=0; no qdot Jacobian term",
+    "not_a_gait": true,
+    "no_dynamic_rollout": true
+  },
+  "poses": {
+    "0": {
+      "status": "virtual_four_foot_kinematics",
+      "max_joint_rad": 1.66252955792,
+      "cases": {
+        "ml/mr/bl/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.7326,
+              -0.6183,
+              7.4184
+            ],
+            "mr": [
+              -3.4545,
+              0.5139,
+              7.6885
+            ],
+            "bl": [
+              -0.1222,
+              0.1829,
+              0.2
+            ],
+            "br": [
+              -0.7926,
+              -0.5296,
+              0.8666
+            ]
+          },
+          "dynamics_residual": 3.552713678800501e-15,
+          "contact_inequality_residual": 1.1102230246251565e-16,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/bl": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              3.2936,
+              -0.4398,
+              7.0502
+            ],
+            "mr": [
+              -4.2359,
+              -0.2247,
+              8.3627
+            ],
+            "bl": [
+              -0.9211,
+              -0.1832,
+              0.8537
+            ]
+          },
+          "dynamics_residual": 5.368969158148218e-16,
+          "contact_inequality_residual": 1.9960755083136535e-16,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.8174,
+              -0.866,
+              7.6075
+            ],
+            "mr": [
+              -3.3051,
+              0.3114,
+              7.6494
+            ],
+            "br": [
+              -1.0044,
+              -0.1998,
+              0.931
+            ]
+          },
+          "dynamics_residual": 3.552713678800501e-15,
+          "contact_inequality_residual": 1.6653345369377348e-16,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/mr": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 21.76377,
+          "angular_accel_local_xyz_rad_s2": [
+            21.76377,
+            -13.72607,
+            -1.74802
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            0.15983
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              7.3799,
+              0.3453,
+              9.0906
+            ],
+            "mr": [
+              -9.1666,
+              -1.0286,
+              9.7663
+            ]
+          },
+          "dynamics_residual": 1.5432100042289676e-14,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 21.76377
+        },
+        "ml/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        }
+      }
+    },
+    "2": {
+      "status": "virtual_four_foot_kinematics",
+      "max_joint_rad": 1.6475147736953588,
+      "cases": {
+        "ml/mr/bl/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.35,
+              -0.5248,
+              7.4464
+            ],
+            "mr": [
+              -3.9525,
+              -0.8942,
+              7.7988
+            ],
+            "bl": [
+              0.1222,
+              0.1829,
+              0.2
+            ],
+            "br": [
+              -0.1562,
+              0.7854,
+              0.728
+            ]
+          },
+          "dynamics_residual": 8.881784197001252e-16,
+          "contact_inequality_residual": 2.7755575615628914e-17,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/bl": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              3.0308,
+              -0.6746,
+              7.1119
+            ],
+            "mr": [
+              -4.0882,
+              -0.3378,
+              8.3358
+            ],
+            "bl": [
+              -0.8092,
+              0.161,
+              0.75
+            ]
+          },
+          "dynamics_residual": 7.105427357601002e-15,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.759,
+              -0.8151,
+              7.6336
+            ],
+            "mr": [
+              -3.3953,
+              0.2314,
+              7.7607
+            ],
+            "br": [
+              -0.8515,
+              -0.1694,
+              0.7893
+            ]
+          },
+          "dynamics_residual": 3.552713678800501e-15,
+          "contact_inequality_residual": 9.027981574273499e-17,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/mr": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 15.57401,
+          "angular_accel_local_xyz_rad_s2": [
+            15.57401,
+            -15.57401,
+            -1.85944
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -0.51074,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              4.2431,
+              0.3231,
+              8.2756
+            ],
+            "mr": [
+              -5.1751,
+              -1.1347,
+              8.5923
+            ]
+          },
+          "dynamics_residual": 8.881784197001252e-16,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 15.57401
+        },
+        "ml/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        }
+      }
+    },
+    "4": {
+      "status": "virtual_four_foot_kinematics",
+      "max_joint_rad": 1.63845868915,
+      "cases": {
+        "ml/mr/bl/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.404,
+              -0.4149,
+              7.4746
+            ],
+            "mr": [
+              -4.0969,
+              -0.7932,
+              7.9093
+            ],
+            "bl": [
+              0.1829,
+              0.1222,
+              0.2
+            ],
+            "br": [
+              -0.1264,
+              0.6355,
+              0.5891
+            ]
+          },
+          "dynamics_residual": 4.440892098500626e-16,
+          "contact_inequality_residual": 2.0816681711721685e-17,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/bl": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.5128,
+              0.1317,
+              7.4072
+            ],
+            "mr": [
+              -4.2204,
+              -0.456,
+              8.4805
+            ],
+            "bl": [
+              -0.1638,
+              -0.5132,
+              0.4976
+            ]
+          },
+          "dynamics_residual": 5.342948306008566e-16,
+          "contact_inequality_residual": 5.551115123125783e-17,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              4.1589,
+              -0.3295,
+              8.4133
+            ],
+            "mr": [
+              -2.8126,
+              -0.391,
+              7.2754
+            ],
+            "br": [
+              0.6165,
+              -0.1226,
+              0.5715
+            ]
+          },
+          "dynamics_residual": 8.881784197001252e-16,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/mr": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 10.82505,
+          "angular_accel_local_xyz_rad_s2": [
+            10.82505,
+            -10.82505,
+            5.34034
+          ],
+          "base_accel_world_xyz_m_s2": [
+            1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              9.1944,
+              -0.0851,
+              8.676
+            ],
+            "mr": [
+              -7.1946,
+              -0.8266,
+              8.0397
+            ]
+          },
+          "dynamics_residual": 1.7763568394002505e-15,
+          "contact_inequality_residual": 1.2212453270876722e-15,
+          "minimal_ang_accel_bound": 10.82505
+        },
+        "ml/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        }
+      }
+    },
+    "6": {
+      "status": "virtual_four_foot_kinematics",
+      "max_joint_rad": 1.63845868915,
+      "cases": {
+        "ml/mr/bl/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.87926,
+          "forces_N": {
+            "ml": [
+              7.4587,
+              -0.5939,
+              7.5028
+            ],
+            "mr": [
+              -8.6525,
+              -0.1683,
+              8.02
+            ],
+            "bl": [
+              0.0429,
+              0.2158,
+              0.2
+            ],
+            "br": [
+              -0.4855,
+              0.0966,
+              0.45
+            ]
+          },
+          "dynamics_residual": 3.552713678800501e-15,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/bl": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              6.9225,
+              0.1222,
+              7.5197
+            ],
+            "mr": [
+              -8.875,
+              -0.5743,
+              8.5074
+            ],
+            "bl": [
+              0.0762,
+              -0.383,
+              0.355
+            ]
+          },
+          "dynamics_residual": 9.614704865601453e-16,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.5856,
+              -0.73,
+              7.6862
+            ],
+            "mr": [
+              -3.7566,
+              -0.4826,
+              7.9837
+            ],
+            "br": [
+              -0.3089,
+              0.4622,
+              0.5054
+            ]
+          },
+          "dynamics_residual": 4.440892098500626e-16,
+          "contact_inequality_residual": 1.6653345369377348e-16,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/mr": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 5.89623,
+          "angular_accel_local_xyz_rad_s2": [
+            5.89623,
+            -5.89623,
+            5.89623
+          ],
+          "base_accel_world_xyz_m_s2": [
+            1.0,
+            -0.0,
+            1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              8.4057,
+              -0.3496,
+              10.1387
+            ],
+            "mr": [
+              -6.3808,
+              -0.6747,
+              9.5139
+            ]
+          },
+          "dynamics_residual": 1.0369309577651364e-15,
+          "contact_inequality_residual": 2.220446049250313e-16,
+          "minimal_ang_accel_bound": 5.89623
+        },
+        "ml/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        }
+      }
+    },
+    "8": {
+      "status": "virtual_four_foot_kinematics",
+      "max_joint_rad": 1.63845868915,
+      "cases": {
+        "ml/mr/bl/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.4834,
+              -0.2974,
+              7.3905
+            ],
+            "mr": [
+              -2.5738,
+              0.0576,
+              7.3736
+            ],
+            "bl": [
+              -0.2158,
+              -0.0429,
+              0.2
+            ],
+            "br": [
+              -0.9477,
+              0.6332,
+              1.0362
+            ]
+          },
+          "dynamics_residual": 8.87744738831131e-16,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/bl": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -0.70244,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              8.1742,
+              -0.4252,
+              7.5766
+            ],
+            "mr": [
+              -8.7919,
+              -0.563,
+              8.1959
+            ],
+            "bl": [
+              -0.3677,
+              0.2457,
+              0.402
+            ]
+          },
+          "dynamics_residual": 3.83026943495679e-15,
+          "contact_inequality_residual": 1.2628786905111156e-15,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.6123,
+              -0.6931,
+              7.7125
+            ],
+            "mr": [
+              -3.6962,
+              -0.1339,
+              8.0952
+            ],
+            "br": [
+              -0.3922,
+              0.078,
+              0.3635
+            ]
+          },
+          "dynamics_residual": 7.105427357601002e-15,
+          "contact_inequality_residual": 9.552736741190923e-18,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/mr": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.75598,
+          "angular_accel_local_xyz_rad_s2": [
+            0.75598,
+            -0.75598,
+            0.75598
+          ],
+          "base_accel_world_xyz_m_s2": [
+            1.0,
+            -0.0,
+            1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              9.0973,
+              -0.5707,
+              10.1163
+            ],
+            "mr": [
+              -7.2561,
+              -0.5569,
+              9.3793
+            ]
+          },
+          "dynamics_residual": 7.105427357601002e-15,
+          "contact_inequality_residual": 8.881784197001252e-16,
+          "minimal_ang_accel_bound": 0.75598
+        },
+        "ml/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        }
+      }
+    },
+    "10": {
+      "status": "virtual_four_foot_kinematics",
+      "max_joint_rad": 1.63845868915,
+      "cases": {
+        "ml/mr/bl/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.4856,
+              -0.4332,
+              7.5893
+            ],
+            "mr": [
+              -3.7218,
+              -0.1524,
+              8.1784
+            ],
+            "bl": [
+              -0.0256,
+              0.2158,
+              0.2
+            ],
+            "br": [
+              -0.2158,
+              -0.0429,
+              0.2
+            ]
+          },
+          "dynamics_residual": 4.440892098500626e-16,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/bl": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              6.9744,
+              -0.3945,
+              7.5613
+            ],
+            "mr": [
+              -8.748,
+              -0.6475,
+              8.4218
+            ],
+            "bl": [
+              -0.0429,
+              0.2158,
+              0.2
+            ]
+          },
+          "dynamics_residual": 1.5543122344752192e-15,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.6836,
+              -0.601,
+              7.754
+            ],
+            "mr": [
+              -3.941,
+              -0.1006,
+              8.2487
+            ],
+            "br": [
+              -0.2158,
+              -0.0429,
+              0.2
+            ]
+          },
+          "dynamics_residual": 8.881784197001252e-16,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/mr": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.7125,
+              -0.5198,
+              7.7541
+            ],
+            "mr": [
+              -4.4359,
+              -0.6153,
+              8.4877
+            ]
+          },
+          "dynamics_residual": 7.105427357601002e-15,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        }
+      }
+    },
+    "12": {
+      "status": "virtual_four_foot_kinematics",
+      "max_joint_rad": 1.63845868915,
+      "cases": {
+        "ml/mr/bl/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              6.8298,
+              -0.003,
+              7.5858
+            ],
+            "mr": [
+              -8.6632,
+              -0.4048,
+              8.1453
+            ],
+            "bl": [
+              0.2158,
+              -0.0429,
+              0.2
+            ],
+            "br": [
+              0.1222,
+              0.1829,
+              0.2
+            ]
+          },
+          "dynamics_residual": 8.177106994994299e-15,
+          "contact_inequality_residual": 2.7755575615628914e-17,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/bl": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              6.5019,
+              -0.105,
+              7.4777
+            ],
+            "mr": [
+              -8.7365,
+              -0.6126,
+              8.4672
+            ],
+            "bl": [
+              0.2158,
+              0.0429,
+              0.2
+            ]
+          },
+          "dynamics_residual": 2.55351295663786e-15,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/mr/br": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.7119,
+              -0.1591,
+              7.6915
+            ],
+            "mr": [
+              -4.5938,
+              -0.2853,
+              8.2585
+            ],
+            "br": [
+              0.2158,
+              -0.0429,
+              0.2
+            ]
+          },
+          "dynamics_residual": 2.55351295663786e-15,
+          "contact_inequality_residual": 0.0,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/mr": {
+          "feasible": true,
+          "angular_accel_max_rad_s2": 0.0,
+          "angular_accel_local_xyz_rad_s2": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "base_accel_world_xyz_m_s2": [
+            -1.0,
+            -0.0,
+            -1.0
+          ],
+          "max_abs_joint_accel_rad_s2": 35.0,
+          "max_motor_fraction": 0.9,
+          "forces_N": {
+            "ml": [
+              2.4112,
+              -0.5928,
+              7.5926
+            ],
+            "mr": [
+              -4.6296,
+              -0.4156,
+              8.562
+            ]
+          },
+          "dynamics_residual": 2.55351295663786e-15,
+          "contact_inequality_residual": 1.1102230246251565e-16,
+          "minimal_ang_accel_bound": 0.0
+        },
+        "ml/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "ml/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/bl": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "mr/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        },
+        "bl/br": {
+          "feasible": false,
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+        }
+      }
+    }
+  }
+}
