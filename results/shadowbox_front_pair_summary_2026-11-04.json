@@ -1,0 +1,347 @@
+{
+  "experiment": "FNK0052 high front-pair four-support air-jab, physical MuJoCo CAD30",
+  "date": "2026-11-04",
+  "model": "pinned Freenove CAD30 upstream commit 5c9a84c; 30 original STL; two visual-only proxies",
+  "source": "local self-contained Python 3.13 / MuJoCo 3.14.0, not remote CI",
+  "physics_not_calibrated_to_hardware": true,
+  "real_robot_tested": false,
+  "motor_speed_modelled": false,
+  "impact_target_present": false,
+  "neural_or_autonomous_control": false,
+  "conditions": {
+    "mass_scenarios": [
+      "lower",
+      "nominal",
+      "upper"
+    ],
+    "friction_mu": [
+      1.1,
+      0.6,
+      0.3
+    ],
+    "control_shifts_m": [
+      0.0,
+      0.02,
+      0.03,
+      0.04
+    ],
+    "programmed_trajectory": {
+      "lift_m": 0.14,
+      "guard_forward_m": 0.05,
+      "jab_forward_m": 0.09,
+      "shift_m": 0.04
+    },
+    "duration_s": 10.0,
+    "pd_kp": 7.0,
+    "pd_kd": 0.32,
+    "motor_torque_cap_nm": 0.7,
+    "imu_noise_modelled": false
+  },
+  "rows": [
+    {
+      "mass_scenario": "lower",
+      "mass_model_kg": 1.644,
+      "friction_mu_assumed": 1.1,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": true,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.1052,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.02264,
+      "max_tilt_guard_and_jabs_deg": 2.484,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03675,
+        "fr": 0.03668
+      },
+      "max_abs_torque_nm": 0.44046,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.052,
+      "max_abs_command_joint_speed_rad_s": 4.373,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "lower",
+      "mass_model_kg": 1.644,
+      "friction_mu_assumed": 0.6,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": true,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.09734,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.02258,
+      "max_tilt_guard_and_jabs_deg": 3.179,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03701,
+        "fr": 0.03684
+      },
+      "max_abs_torque_nm": 0.57393,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.235,
+      "max_abs_command_joint_speed_rad_s": 4.571,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "lower",
+      "mass_model_kg": 1.644,
+      "friction_mu_assumed": 0.3,
+      "high_guard_and_air_jabs_contact_valid": false,
+      "high_guard_and_air_jabs_valid": false,
+      "torque_saturation_observed": true,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": -0.0002,
+      "min_support_COM_margin_during_guard_and_jabs_m": -1.0,
+      "max_tilt_guard_and_jabs_deg": 19.194,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03485,
+        "fr": 0.0342
+      },
+      "max_abs_torque_nm": 0.7,
+      "motor_torque_saturation_fraction": 0.3878,
+      "max_abs_actual_joint_speed_rad_s": 4.941,
+      "max_abs_command_joint_speed_rad_s": 5.12,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "nominal",
+      "mass_model_kg": 1.804868,
+      "friction_mu_assumed": 1.1,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": true,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.10384,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.0223,
+      "max_tilt_guard_and_jabs_deg": 2.681,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03678,
+        "fr": 0.03669
+      },
+      "max_abs_torque_nm": 0.48026,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.059,
+      "max_abs_command_joint_speed_rad_s": 4.381,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "nominal",
+      "mass_model_kg": 1.804868,
+      "friction_mu_assumed": 0.6,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": true,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.09504,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.02218,
+      "max_tilt_guard_and_jabs_deg": 3.437,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03703,
+        "fr": 0.03688
+      },
+      "max_abs_torque_nm": 0.62766,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.274,
+      "max_abs_command_joint_speed_rad_s": 4.613,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "nominal",
+      "mass_model_kg": 1.804868,
+      "friction_mu_assumed": 0.3,
+      "high_guard_and_air_jabs_contact_valid": false,
+      "high_guard_and_air_jabs_valid": false,
+      "torque_saturation_observed": true,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": -0.00014,
+      "min_support_COM_margin_during_guard_and_jabs_m": -1.0,
+      "max_tilt_guard_and_jabs_deg": 19.329,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03447,
+        "fr": 0.03337
+      },
+      "max_abs_torque_nm": 0.7,
+      "motor_torque_saturation_fraction": 0.39,
+      "max_abs_actual_joint_speed_rad_s": 5.008,
+      "max_abs_command_joint_speed_rad_s": 5.175,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "upper",
+      "mass_model_kg": 2.08,
+      "friction_mu_assumed": 1.1,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": true,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.10139,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.02131,
+      "max_tilt_guard_and_jabs_deg": 3.039,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.0368,
+        "fr": 0.03673
+      },
+      "max_abs_torque_nm": 0.55222,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.073,
+      "max_abs_command_joint_speed_rad_s": 4.396,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "upper",
+      "mass_model_kg": 2.08,
+      "friction_mu_assumed": 0.6,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": false,
+      "torque_saturation_observed": true,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.09146,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.02136,
+      "max_tilt_guard_and_jabs_deg": 3.855,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03705,
+        "fr": 0.03692
+      },
+      "max_abs_torque_nm": 0.7,
+      "motor_torque_saturation_fraction": 0.1406,
+      "max_abs_actual_joint_speed_rad_s": 4.322,
+      "max_abs_command_joint_speed_rad_s": 4.665,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "mass_scenario": "upper",
+      "mass_model_kg": 2.08,
+      "friction_mu_assumed": 0.3,
+      "high_guard_and_air_jabs_contact_valid": false,
+      "high_guard_and_air_jabs_valid": false,
+      "torque_saturation_observed": true,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": -0.00018,
+      "min_support_COM_margin_during_guard_and_jabs_m": -0.22916,
+      "max_tilt_guard_and_jabs_deg": 19.576,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03341,
+        "fr": 0.03179
+      },
+      "max_abs_torque_nm": 0.7,
+      "motor_torque_saturation_fraction": 0.393,
+      "max_abs_actual_joint_speed_rad_s": 5.041,
+      "max_abs_command_joint_speed_rad_s": 5.228,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    }
+  ],
+  "weight_shift_controls": [
+    {
+      "shift_m": 0.0,
+      "mass_scenario": "nominal",
+      "mass_model_kg": 1.804868,
+      "friction_mu_assumed": 1.1,
+      "high_guard_and_air_jabs_contact_valid": false,
+      "high_guard_and_air_jabs_valid": false,
+      "torque_saturation_observed": true,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": -0.00028,
+      "min_support_COM_margin_during_guard_and_jabs_m": -1.0,
+      "max_tilt_guard_and_jabs_deg": 29.021,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03252,
+        "fr": 0.02515
+      },
+      "max_abs_torque_nm": 0.7,
+      "motor_torque_saturation_fraction": 0.0254,
+      "max_abs_actual_joint_speed_rad_s": 4.314,
+      "max_abs_command_joint_speed_rad_s": 4.381,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "shift_m": 0.02,
+      "mass_scenario": "nominal",
+      "mass_model_kg": 1.804868,
+      "friction_mu_assumed": 1.1,
+      "high_guard_and_air_jabs_contact_valid": false,
+      "high_guard_and_air_jabs_valid": false,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.10394,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.00605,
+      "max_tilt_guard_and_jabs_deg": 2.221,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03684,
+        "fr": 0.03674
+      },
+      "max_abs_torque_nm": 0.51637,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.059,
+      "max_abs_command_joint_speed_rad_s": 4.381,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "shift_m": 0.03,
+      "mass_scenario": "nominal",
+      "mass_model_kg": 1.804868,
+      "friction_mu_assumed": 1.1,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": true,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.10487,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.01511,
+      "max_tilt_guard_and_jabs_deg": 2.089,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03683,
+        "fr": 0.03674
+      },
+      "max_abs_torque_nm": 0.4984,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.059,
+      "max_abs_command_joint_speed_rad_s": 4.381,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    },
+    {
+      "shift_m": 0.04,
+      "mass_scenario": "nominal",
+      "mass_model_kg": 1.804868,
+      "friction_mu_assumed": 1.1,
+      "high_guard_and_air_jabs_contact_valid": true,
+      "high_guard_and_air_jabs_valid": true,
+      "torque_saturation_observed": false,
+      "complete": true,
+      "min_front_mesh_clearance_during_guard_and_jabs_m": 0.10384,
+      "min_support_COM_margin_during_guard_and_jabs_m": 0.0223,
+      "max_tilt_guard_and_jabs_deg": 2.681,
+      "measured_forward_jab_excursion_m": {
+        "fl": 0.03678,
+        "fr": 0.03669
+      },
+      "max_abs_torque_nm": 0.48026,
+      "motor_torque_saturation_fraction": 0.0,
+      "max_abs_actual_joint_speed_rad_s": 4.059,
+      "max_abs_command_joint_speed_rad_s": 4.381,
+      "end_six_contact_restore_fraction": 1.0,
+      "failure_reason": null
+    }
+  ],
+  "counts": {
+    "matrix_conditions": 9,
+    "contacts_balance_pass": 6,
+    "contacts_balance_no_motor_saturation_pass": 5,
+    "failed_grounding_or_balance": 3,
+    "support_contact_pass_but_actuator_saturated": 1
+  },
+  "caveats": [
+    "This is choreographed joint-space motion, not a learned punch, not autonomous stance adaptation",
+    "All strict passes are within the approximate simulated motor torque limit but DO NOT establish real actuator feasibility",
+    "No servo speed-torque curve, thermal limitations, backlash, supply sag, friction validation",
+    "No object is hit; no striking or impact force has been measured"
+  ]
+}
