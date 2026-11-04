@@ -5,7 +5,10 @@ import unittest
 from pathlib import Path
 import numpy as np
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=next((p for p in Path(__file__).resolve().parents
+           if (p/'experiments/cad30/optimized_claw_gait.py').is_file()
+           and (p/'source/mjcf/scene_local30_nominal.xml').is_file()),None)
+if ROOT is None:raise RuntimeError('Restore private CAD30 source/ alongside first-party code')
 sys.path.insert(0,str(ROOT/'experiments'/'cad30'))
 sys.path.insert(0,str(ROOT))
 from optimized_claw_gait import (optimal_com_target,choose_one_or_two,init_model,
