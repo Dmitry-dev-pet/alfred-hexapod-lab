@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-11-04",
+  "project": "Alfred Hexapod Lab controller reuse audit",
+  "files": {
+    "README.md": "28bf04f224fb0d782bd855be74a03a896d3af995b1efc1f53a43a54e89017a3e",
+    "audit_pupper_crawl.py": "e15394f9da5ab7fa20bec64985c2fbf0c9cb15ccf65ffd2c3bbb515606af6ee4",
+    "test_audit_pupper_crawl.py": "5bd24fc9735ba2e2475294f2713f9df0db7c854b9620a1d533442cb2085f6aa3",
+    "vendor/stanford_pupper/Gaits.py": "fad994e67b544c4772ffdfcef96c934038e9f20407c88c2897bc9c7af197152b",
+    "vendor/stanford_pupper/LICENSE": "8194b844eb6763d58e5e115213ac7b0d3e3f0c9cc55052fe9bd7b10d1c2ddb3b",
+    "results/pupper_cad30_scheduler_audit_2026-11-04.json": "e476d53589f5a60fee203708e0a677b773f2c00686bb17026543f5ad8d0ed804"
+  },
+  "upstream_copyright": "Stanford Student Robotics; MIT",
+  "upstream_git_blob_sha_Gaits": "66b74523c51af9ee879c79ea472f3d2c6506e32d",
+  "upstream_git_blob_sha_LICENSE": "5b34c5e28a5de607329239ef1b9b7224d6423c55",
+  "dynamics_executed": false
+}
