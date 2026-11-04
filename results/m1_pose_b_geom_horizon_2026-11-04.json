@@ -1,0 +1,103 @@
+{
+  "study": "m1_pose_B_necessary_geometry_only",
+  "provenance": {
+    "source": "Drive 16nMoh9fS5wu0BnJj_sbbHld2TpytEbRg / viewer/middle-step-negative.json frame 92 t=9.3s",
+    "pose": "semi_tucked B from draft PR #25",
+    "robot": "Freenove FNK0052 CAD30 nominal (hardware not calibrated)",
+    "units": "millimeters for reported distances",
+    "no_CAD_meshes_in_repo": true
+  },
+  "inputs": {
+    "com_xy_m": [
+      0.0001142,
+      -0.0255225
+    ],
+    "toe_xyz_m": {
+      "ml": [
+        -0.23897,
+        0.00109,
+        0.0003
+      ],
+      "mr": [
+        0.23897,
+        0.00109,
+        0.0003
+      ],
+      "bl": [
+        -0.14367,
+        -0.19826,
+        0
+      ],
+      "br": [
+        0.14367,
+        -0.19825,
+        0
+      ]
+    },
+    "hip_xyz_m": {
+      "ml": [
+        -0.085,
+        -0.0324,
+        0.13164
+      ],
+      "mr": [
+        0.085,
+        -0.03239,
+        0.13163
+      ],
+      "bl": [
+        -0.055,
+        -0.10831,
+        0.13528
+      ],
+      "br": [
+        0.055,
+        -0.10831,
+        0.13527
+      ]
+    },
+    "reach_upper_bound_m": 0.233,
+    "reach_outer_polygon_sides": 96,
+    "margin_required_mm": 5,
+    "forward_progress_required_mm": 20
+  },
+  "current_four_toe_margin_mm": 26.613,
+  "first_lift_results": {
+    "bl": {
+      "triangle_margin_mm": 26.613,
+      "minimum_unconstrained_COM_shift_mm": 0,
+      "max_margin_upper_bound_all4feet_reachable_mm": 64.599
+    },
+    "br": {
+      "triangle_margin_mm": 26.613,
+      "minimum_unconstrained_COM_shift_mm": 0,
+      "max_margin_upper_bound_all4feet_reachable_mm": 64.554
+    },
+    "ml": {
+      "triangle_margin_mm": -86.76,
+      "minimum_unconstrained_COM_shift_mm": 91.76,
+      "max_margin_upper_bound_all4feet_reachable_mm": -14.037
+    },
+    "mr": {
+      "triangle_margin_mm": -86.861,
+      "minimum_unconstrained_COM_shift_mm": 91.861,
+      "max_margin_upper_bound_all4feet_reachable_mm": -14.13
+    }
+  },
+  "complete_cycle_straight_forward_strides": [
+    {
+      "stride_mm": 20,
+      "permutations_tested": 24,
+      "relaxed_lp_feasible": 0
+    },
+    {
+      "stride_mm": 40,
+      "permutations_tested": 24,
+      "relaxed_lp_feasible": 0
+    }
+  ],
+  "status": "RESTRICTED_NEGATIVE",
+  "local_tests": "5/5 PASS",
+  "interpretation": "No complete cycle under fixed torso pitch/roll/height, original pose-B support setup, all-feet optimistic 233mm reach and straight-forward-only foothold placement. Not a proof about arbitrary trajectories or physical robot.",
+  "next": "Optimize foothold XY and torso translation/orientation/height over full cycle, then true IK + stance wrench LP/QP and dynamic MuJoCo rollout."
+}
