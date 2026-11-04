@@ -130,7 +130,10 @@ function resetCamera() {
   const s = trajectory.frames[Math.max(0,Math.min(trajectory.frames.length-1,Math.round(t/trajectory.sample_interval_s)))];
   const c = rootCenter(s);
   orbit.target.copy(c);
-  camera.position.copy(c).add(new THREE.Vector3(.49,.34,.63));
+  // Portrait tablets have a narrower horizontal field of view.
+  const ratio=viewer.clientWidth/Math.max(1,viewer.clientHeight);
+  const portraitScale=ratio<.9?Math.min(1.85,.9/ratio):1;
+  camera.position.copy(c).add(new THREE.Vector3(.49,.34,.63).multiplyScalar(portraitScale));
   lastBodyWorld.copy(c);
   orbit.update();
 }

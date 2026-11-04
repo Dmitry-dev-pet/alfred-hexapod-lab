@@ -122,17 +122,22 @@
   speed.addEventListener('change',()=>{if(nativeSpeed)nativeSpeed.value=speed.value;show();});
   q('.hx-reset').addEventListener('click',()=>{document.getElementById('reset-camera')?.click();notice('Камера возвращена');show();});
   // Taps toggle playback controls; finger drags stay reserved for OrbitControls.
-  let down=null;
-  stage.addEventListener('pointerdown',e=>{down={id:e.pointerId,x:e.clientX,y:e.clientY,at:performance.now()};},{passive:true});
+  let down=null;const activePointers=new Set();
+  stage.addEventListener('pointerdown',e=>{
+    activePointers.add(e.pointerId);
+    down=activePointers.size===1?{id:e.pointerId,x:e.clientX,y:e.clientY,at:performance.now()}:null;
+  },{passive:true});
   stage.addEventListener('pointerup',e=>{
-    if(!down||e.pointerId!==down.id)return;
+    const isSingleTap=activePointers.size===1 && down && e.pointerId===down.id;
+    activePointers.delete(e.pointerId);
+    if(!isSingleTap)return;
     const diff=Math.hypot(e.clientX-down.x,e.clientY-down.y);
     if(diff<9&&performance.now()-down.at<450){
       if(visible){visible=false;clearTimeout(hideTimer);shell.classList.add('hx-hidden');}else show();
     }
     down=null;
   },{passive:true});
-  stage.addEventListener('pointercancel',()=>{down=null;},{passive:true});
+  stage.addEventListener('pointercancel',e=>{activePointers.delete(e.pointerId);down=null;},{passive:true});
   function sync(){
     const time=Number(nativeSeek.value)||0,max=Number(nativeSeek.max)||60;
     if(document.activeElement!==slider){slider.max=String(max);slider.value=String(Math.min(max,time));}
