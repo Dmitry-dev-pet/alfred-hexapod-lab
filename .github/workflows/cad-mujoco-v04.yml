@@ -1,0 +1,150 @@
+name: Freenove CAD MuJoCo integration v0.4
+
+on:
+  pull_request:
+    paths:
+      - "hexlab/cad_mujoco_v04.py"
+      - "scripts/cad_v04_contact_audit.py"
+      - "hexlab/stand_geometry_v04.py"
+      - "hexlab/stand_v04.py"
+      - "hexlab/step_one_leg_v04.py"
+      - "scripts/render_cad_step_v04.py"
+      - "hexlab/freenove_servo_map_v04.py"
+      - "scripts/render_cad_v04.py"
+      - "hexlab/community_mass_v04.py"
+      - "data/fnk0052_cad_assets_lock.json"
+      - "data/fnk0052_community_mass_scenarios.json"
+      - ".github/workflows/cad-mujoco-v04.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cad-physics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install tested MuJoCo runtime
+        run: python -m pip install mujoco==3.14.0
+      - name: Install numerical inverse kinematics dependency
+        run: python -m pip install "scipy>=1.14,<2"
+      - name: Download and audit upstream geometry, build nominal physical assembly
+        run: |
+          python -m hexlab.cad_mujoco_v04 --scenario nominal --load-mujoco --output-receipt results/cad_v04_nominal.json
+      - name: Extract physical CAD joint axes and distal tibia landmarks
+        run: |
+          python -m hexlab.stand_geometry_v04 --scenario nominal --out results/cad_v04_leg_geometry.json
+      - name: Audit CAD foot mesh geometry and home pose against floor
+        run: |
+          python scripts/cad_v04_contact_audit.py --scenario nominal --out results/cad_v04_contact_audit.json
+      - name: Solve six-leg CAD standing pose and attempt gravity-loaded hold
+        run: |
+          python -m hexlab.stand_v04 --scenario nominal --duration 5 --out results/cad_v04_stand_nominal.json
+      - name: Compare narrow legacy radial placement against improved stance
+        run: |
+          python -m hexlab.stand_v04 --scenario nominal --duration 1.5 --radial-extension 0.115 --out results/cad_v04_stand_narrow115.json
+      - name: Check low and high robot mass robustness
+        run: |
+          python -m hexlab.stand_v04 --scenario lower --duration 3 --out results/cad_v04_stand_lower.json
+          python -m hexlab.stand_v04 --scenario upper --duration 3 --out results/cad_v04_stand_upper.json
+      - name: Assert reproducible stable stand in all three mass scenarios
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for scenario in ("nominal", "lower", "upper"):
+              path = Path(f"results/cad_v04_stand_{scenario}.json")
+              r = json.loads(path.read_text())
+              p = r["fit"]
+              h = r["hold_test"]
+              assert r["six_leg_standing_candidate_succeeded"], (scenario, p, h)
+              assert p["fit_all_legs_under_5mm"]
+              assert p["minimum_optimizer_angle_reserve_rad"] > .10
+              assert p["min_tibia_all_m"] > -.005
+              assert h["last_0p4s_min_contact_legs"] == 6
+              assert h["max_applied_abs_torque_nm"] < .7
+              print(scenario, "stable", h["duration_s"],
+                    "s", "contacts", h["last_0p4s_min_contact_legs"],
+                    "torque", h["max_applied_abs_torque_nm"])
+          PY
+      - name: First front-right leg lift, forward swing and touchdown under gravity
+        run: |
+          python -m hexlab.step_one_leg_v04 --scenario nominal --out results/cad_v04_first_step_nominal.json
+      - name: Test first-step robustness against the two mass bounds
+        run: |
+          python -m hexlab.step_one_leg_v04 --scenario lower --out results/cad_v04_first_step_lower.json
+          python -m hexlab.step_one_leg_v04 --scenario upper --out results/cad_v04_first_step_upper.json
+      - name: Audit one-leg step as an experiment (including negative results)
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path("results/cad_v04_first_step_nominal.json").read_text())
+          print("step candidate_success=", r["candidate_success"])
+          print("observable metrics:", json.dumps(r["observed"], indent=2))
+          print("success criteria:", json.dumps(r["criteria"], indent=2))
+          assert r["vendor_servo_channels_and_joint_names"] == ["motor15","motor14","motor13"]
+          assert r["cad_to_vendor_PWM_signs_calibrated"] is False
+          assert all(isinstance(v, bool) for v in r["criteria"].values())
+          assert len(r["trace_50hz"]) >= 100
+          assert r["candidate_success"], r["criteria"]
+          for bound in ("lower", "upper"):
+              x = json.loads(Path(f"results/cad_v04_first_step_{bound}.json").read_text())
+              print(bound, "candidate_success=", x["candidate_success"], "observed=", json.dumps(x["observed"]))
+              assert x["selected_vendor_leg"] == "fr"
+              assert x["cad_vendor_wiring_crosscheck"]["fl"]["joint_channels"] == ["motor15","motor14","motor13"]
+              assert len(x["trace_50hz"]) >= 100
+          PY
+      - name: Validate lower and upper mass scenarios with same immutable external CAD
+        run: |
+          python -m hexlab.cad_mujoco_v04 --scenario lower --offline --load-mujoco --output-receipt results/cad_v04_lower.json
+          python -m hexlab.cad_mujoco_v04 --scenario upper --offline --load-mujoco --output-receipt results/cad_v04_upper.json
+      - name: Optional CAD geometry diagnostic preview (no mesh assets in artifacts)
+        continue-on-error: true
+        run: |
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_v04.py --scenario nominal --out results/cad_v04_preview.png
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_v04.py --scenario nominal --pose-receipt results/cad_v04_stand_nominal.json --out results/cad_v04_stand.png
+      - name: Share diagnostic PNG preview with Freenove attribution
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freenove-v04-cad-preview
+          path: |
+            results/cad_v04_preview.png
+            results/cad_v04_stand.png
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Install FFmpeg for physics-trace replay
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Install Pillow for descriptive FR-leg overlay
+        run: python -m pip install "Pillow>=11,<13"
+      - name: Render clearer side-on and frontal camera replays from same physics
+        run: |
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_step_v04.py --view side --fps 12 --video results/first_single_leg_step_side.mp4 --gif results/first_single_leg_step_side.gif
+          xvfb-run -a env MUJOCO_GL=glfw python scripts/render_cad_step_v04.py --view front --fps 12 --video results/first_single_leg_step_front.mp4 --gif results/first_single_leg_step_front.gif
+      - name: Publish genuine MuJoCo first-step GIF and MP4 (not source CAD)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freenove-v04-first-step-replay
+          path: |
+            results/first_single_leg_step_side.mp4
+            results/first_single_leg_step_side.gif
+            results/first_single_leg_step_front.mp4
+            results/first_single_leg_step_front.gif
+          if-no-files-found: error
+          retention-days: 30
+      - name: Expose numeric receipts only (no third-party CAD files)
+        uses: actions/upload-artifact@v4
+        with:
+          name: freenove-v04-physics-receipts
+          path: results/cad_v04_*.json
+          if-no-files-found: error
+          retention-days: 30

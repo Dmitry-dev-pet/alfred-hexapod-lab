@@ -1,0 +1,180 @@
+{
+  "schema": "fnk0052_pinned_external_cad_assets/1",
+  "upstream": "MattiaGrigoli/autonomous_hexapod",
+  "pr_commit": "5c9a84c16335b30036e451c691d2c544abf4bc72",
+  "directory": "src/freenove_description",
+  "mjcf": {
+    "mjcf/base.xml": {
+      "sha_git_blob": "9c6a0e716f6c4a8c043c05d4882dffd2c304ace3",
+      "size_bytes": 76851
+    },
+    "mjcf/scene.xml": {
+      "sha_git_blob": "2ce578aefe16cdebb481e402728dcaa40edd0906",
+      "size_bytes": 863
+    }
+  },
+  "meshes": [
+    {
+      "name": "acoplecircular.stl",
+      "sha_git_blob": "bf03f9754e451e22fe453e881dc942734cc96c6c",
+      "size_bytes": 290684
+    },
+    {
+      "name": "batteryholder.stl",
+      "sha_git_blob": "b6ee0244c0ae1884bb4855db4545ea19f125c107",
+      "size_bytes": 61084
+    },
+    {
+      "name": "batterysupport.stl",
+      "sha_git_blob": "85adcac504d2cfd79aed7966c261c8a79765815b",
+      "size_bytes": 309884
+    },
+    {
+      "name": "bigservo1.stl",
+      "sha_git_blob": "19d036a31eb42f86a35f254a7b5a1cf31d8e2d53",
+      "size_bytes": 3590184
+    },
+    {
+      "name": "bigservo2.stl",
+      "sha_git_blob": "2f0e144a6c7dbe5328fc31e166ede2d730fbfc45",
+      "size_bytes": 684
+    },
+    {
+      "name": "bigservo3.stl",
+      "sha_git_blob": "c91d5e6fa9f0d54dc9fecaa66d6fff921dbecadd",
+      "size_bytes": 30284
+    },
+    {
+      "name": "bigservo4.stl",
+      "sha_git_blob": "0f87658c7d3c5aa106f5d3ec068077a0fb322cf4",
+      "size_bytes": 197484
+    },
+    {
+      "name": "bottomcoxa.stl",
+      "sha_git_blob": "b658c61e91f6a7679d17ceccc8350cb6c45d174d",
+      "size_bytes": 158884
+    },
+    {
+      "name": "bottomplate.stl",
+      "sha_git_blob": "55674e1c7bebee56bd5d1bfce60c617c642d0b05",
+      "size_bytes": 383684
+    },
+    {
+      "name": "camera.stl",
+      "sha_git_blob": "c1ff56b84691465ad180d877ecdefba57520f965",
+      "size_bytes": 111684
+    },
+    {
+      "name": "faceplate.stl",
+      "sha_git_blob": "8944d6d76fcbcc8cbac956738bba93ce51d84f63",
+      "size_bytes": 96684
+    },
+    {
+      "name": "facesupport.stl",
+      "sha_git_blob": "e8472c76b335737e89e9b9d186861e9143716b55",
+      "size_bytes": 250484
+    },
+    {
+      "name": "femur.stl",
+      "sha_git_blob": "5d27b5cdee5b019fb8d86e946808f880ad26e2e9",
+      "size_bytes": 167184
+    },
+    {
+      "name": "headpitch.stl",
+      "sha_git_blob": "0afd738633da1b4f628dc4f1c1ccf26abdf02fc8",
+      "size_bytes": 72884
+    },
+    {
+      "name": "logo_plate1.stl",
+      "sha_git_blob": "19e2b80987182d2d02329a9496e8f48c2fd0054c",
+      "size_bytes": 9284
+    },
+    {
+      "name": "logo_plate2.stl",
+      "sha_git_blob": "fd53594de7da2deed7376f6de54a3da4e95e480a",
+      "size_bytes": 684
+    },
+    {
+      "name": "logo_plate3.stl",
+      "sha_git_blob": "4a9dda7ffd95e9604e725c8d140c32e7eafd53ba",
+      "size_bytes": 14484
+    },
+    {
+      "name": "logo_plate4.stl",
+      "sha_git_blob": "0955606e632b18b543470e23b7dd0e8de83c33ea",
+      "size_bytes": 504484
+    },
+    {
+      "name": "necksupport.stl",
+      "sha_git_blob": "1f1f8d3ed6dac013b8e7e879c67c410edac90709",
+      "size_bytes": 48484
+    },
+    {
+      "name": "servosupport.stl",
+      "sha_git_blob": "320656613b670b37c66a48bbcb64103ac65a57e6",
+      "size_bytes": 395684
+    },
+    {
+      "name": "smallservo.stl",
+      "sha_git_blob": "82506a57cde824ea79e3c863a0884b4518fd1d17",
+      "size_bytes": 251684
+    },
+    {
+      "name": "tibia.stl",
+      "sha_git_blob": "9735aa378715d1d7ccd1f0649227835e90c1f43c",
+      "size_bytes": 195284
+    },
+    {
+      "name": "topcoxa.stl",
+      "sha_git_blob": "5ef6c961419ca1ed9aba1f4b3c6737dbbb15e710",
+      "size_bytes": 210084
+    },
+    {
+      "name": "topplate.stl",
+      "sha_git_blob": "79f486fe04af780c61e472edb3084836bcd8ed83",
+      "size_bytes": 1057284
+    },
+    {
+      "name": "ultrasonic_hc_sr04__ultrasonic_hc_sr04_pcb_1_solid1.stl",
+      "sha_git_blob": "131943ac494f1d4fb79bcbf63a0684ba546cbfeb",
+      "size_bytes": 59084
+    },
+    {
+      "name": "ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid1.stl",
+      "sha_git_blob": "63f1fdc4caa997682f7549576804d2509a2e685c",
+      "size_bytes": 14484
+    },
+    {
+      "name": "ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid2.stl",
+      "sha_git_blob": "506f30b4cc651beb6df9838f788b0a2dd6d6597c",
+      "size_bytes": 14484
+    },
+    {
+      "name": "ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_1_solid3.stl",
+      "sha_git_blob": "a6be3ed22fcee1acd0389e2eeb572c9e99ffadcf",
+      "size_bytes": 338584
+    },
+    {
+      "name": "ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid1.stl",
+      "sha_git_blob": "875494f9f71421819c3a54cd9bb70925229e2472",
+      "size_bytes": 14484
+    },
+    {
+      "name": "ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid2.stl",
+      "sha_git_blob": "baa07b88be904b26fdc668b7f69ed1fd8b848ad3",
+      "size_bytes": 14484
+    },
+    {
+      "name": "ultrasonic_hc_sr04__ultrasonic_hc_sr04_ultrasonic_2_solid3.stl",
+      "sha_git_blob": "b9ec7c046aa02a7e025e0f8080002f595f3e7a47",
+      "size_bytes": 338584
+    },
+    {
+      "name": "yawhead.stl",
+      "sha_git_blob": "5128da1d24b0b43d3557b2b871048a816757be77",
+      "size_bytes": 61484
+    }
+  ],
+  "source_license": "https://github.com/MattiaGrigoli/autonomous_hexapod/blob/main/LICENSE-3RD-PARTY.md",
+  "attribution": "Freenove original CAD, published with author Mattia Grigoli's explicit permission. These assets are not MIT-licensed. We store only references/checksums."
+}

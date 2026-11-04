@@ -1,0 +1,428 @@
+{
+  "schema_version": "fnk0052-cad30-feedback-comparison/1",
+  "date_utc": "2026-11-03",
+  "environment": "OpenAI in-session Python 3.13 + local MuJoCo 3.14.0; no GitHub Actions used for these experiments",
+  "source": "MattiaGrigoli/autonomous_hexapod",
+  "upstream_mjcf_commit": "5c9a84c16335b30036e451c691d2c544abf4bc72",
+  "cad_geometry_verified_STL_count": 30,
+  "cad_geometry_missing_visual_only": [
+    "topplate.stl",
+    "bigservo1.stl"
+  ],
+  "real_tibia_ground_collision_mesh_count": 6,
+  "mass_scenarios_kg": {
+    "lower": 1.644,
+    "nominal": 1.804868,
+    "upper": 2.08
+  },
+  "physics_assumptions": {
+    "gravity_ms2": 9.81,
+    "PD_Kp": 7.0,
+    "PD_Kd": 0.32,
+    "leg_torque_limit_nm_assumed": 0.7,
+    "planned_step_m": 0.035,
+    "planned_foot_lift_m": 0.02,
+    "planned_period_s": 2.4,
+    "pre_stand_s": 1.0,
+    "motion_s": 8.0,
+    "ground_contact_mu_varied": [
+      1.1,
+      0.6,
+      0.3
+    ]
+  },
+  "nominal_friction_sensitivity": [
+    {
+      "friction_mu_assumed": 1.1,
+      "cases": {
+        "tripod": {
+          "advance_cm": 11.921,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 3,
+          "fraction_below_3_contacts": 0.0,
+          "fraction_below_5_contacts": 0.52618,
+          "mean_grounded_legs": 4.389,
+          "peak_torque_nm": 0.39151,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 0.358,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 295,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.093,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 0.4348,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 1.2103,
+            "total_stance_tip_proxy_displacement_mm": 27.43,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          }
+        },
+        "wave": {
+          "advance_cm": 10.065,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 3,
+          "fraction_below_3_contacts": 0.0,
+          "fraction_below_5_contacts": 0.07232,
+          "mean_grounded_legs": 5.037,
+          "peak_torque_nm": 0.39901,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 0.551,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 344,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.0879,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 0.348,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 1.3021,
+            "total_stance_tip_proxy_displacement_mm": 30.23,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          }
+        },
+        "contact": {
+          "advance_cm": 10.144,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 3,
+          "fraction_below_3_contacts": 0.0,
+          "fraction_below_5_contacts": 0.13965,
+          "mean_grounded_legs": 4.99,
+          "peak_torque_nm": 0.62968,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 0.6744,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 339,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.1196,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 0.6456,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 1.9609,
+            "total_stance_tip_proxy_displacement_mm": 40.53,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          },
+          "completed_touchdowns": 15,
+          "liftoff_events": 16,
+          "touchdown_timeout_steps": 0,
+          "foot_extension_m": 0.006
+        }
+      }
+    },
+    {
+      "friction_mu_assumed": 0.6,
+      "cases": {
+        "tripod": {
+          "advance_cm": 12.007,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 1,
+          "fraction_below_3_contacts": 0.06983,
+          "fraction_below_5_contacts": 0.50873,
+          "mean_grounded_legs": 4.247,
+          "peak_torque_nm": 0.49637,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 0.259,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 269,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.3116,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 1.1648,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 3.3488,
+            "total_stance_tip_proxy_displacement_mm": 83.82,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          }
+        },
+        "wave": {
+          "advance_cm": 10.879,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 2,
+          "fraction_below_3_contacts": 0.00748,
+          "fraction_below_5_contacts": 0.18204,
+          "mean_grounded_legs": 4.878,
+          "peak_torque_nm": 0.47969,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 0.921,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 315,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.1901,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 0.9497,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 2.9247,
+            "total_stance_tip_proxy_displacement_mm": 59.87,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          }
+        },
+        "contact": {
+          "advance_cm": 11.301,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 2,
+          "fraction_below_3_contacts": 0.00249,
+          "fraction_below_5_contacts": 0.25187,
+          "mean_grounded_legs": 4.828,
+          "peak_torque_nm": 0.47734,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 0.9777,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 320,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.2188,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 1.0032,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 2.9727,
+            "total_stance_tip_proxy_displacement_mm": 70.03,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          },
+          "completed_touchdowns": 16,
+          "liftoff_events": 17,
+          "touchdown_timeout_steps": 0,
+          "foot_extension_m": 0.006
+        }
+      }
+    },
+    {
+      "friction_mu_assumed": 0.3,
+      "cases": {
+        "tripod": {
+          "advance_cm": 11.374,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 0,
+          "fraction_below_3_contacts": 0.0399,
+          "fraction_below_5_contacts": 0.46633,
+          "mean_grounded_legs": 4.461,
+          "peak_torque_nm": 0.6902,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 0.338,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 289,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.8762,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 3.1428,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 5.9981,
+            "total_stance_tip_proxy_displacement_mm": 253.22,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          }
+        },
+        "wave": {
+          "advance_cm": 10.956,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 0,
+          "fraction_below_3_contacts": 0.00748,
+          "fraction_below_5_contacts": 0.23441,
+          "mean_grounded_legs": 4.895,
+          "peak_torque_nm": 0.58018,
+          "saturation_fraction": 0.0,
+          "max_tilt_deg": 1.295,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 319,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.5195,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 1.9794,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 7.6067,
+            "total_stance_tip_proxy_displacement_mm": 165.71,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          }
+        },
+        "contact": {
+          "advance_cm": 11.826,
+          "simulated_s": 8.0,
+          "completed_without_fall": true,
+          "min_grounded_legs": 0,
+          "fraction_below_3_contacts": 0.00748,
+          "fraction_below_5_contacts": 0.26933,
+          "mean_grounded_legs": 4.803,
+          "peak_torque_nm": 0.7,
+          "saturation_fraction": 0.00075,
+          "max_tilt_deg": 1.2833,
+          "stand_stance_tip_proxy_slip": {
+            "samples": 73,
+            "stance_adjacent_foot_contact_pairs": 320,
+            "mean_stance_tip_proxy_displacement_mm_per_sample": 0.4993,
+            "p95_stance_tip_proxy_displacement_mm_per_sample": 1.9261,
+            "max_stance_tip_proxy_displacement_mm_per_sample": 6.0339,
+            "total_stance_tip_proxy_displacement_mm": 159.77,
+            "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+          },
+          "completed_touchdowns": 17,
+          "liftoff_events": 18,
+          "touchdown_timeout_steps": 0,
+          "foot_extension_m": 0.006
+        }
+      }
+    }
+  ],
+  "reactive_controller_mass_sensitivity": [
+    {
+      "mass_case": "lower",
+      "mass_kg": 1.644,
+      "metrics": {
+        "advance_cm": 10.035,
+        "simulated_s": 8.0,
+        "completed_without_fall": true,
+        "min_grounded_legs": 3,
+        "fraction_below_3_contacts": 0.0,
+        "fraction_below_5_contacts": 0.17456,
+        "mean_grounded_legs": 4.968,
+        "peak_torque_nm": 0.56829,
+        "saturation_fraction": 0.0,
+        "max_tilt_deg": 0.6386,
+        "stand_stance_tip_proxy_slip": {
+          "samples": 73,
+          "stance_adjacent_foot_contact_pairs": 331,
+          "mean_stance_tip_proxy_displacement_mm_per_sample": 0.0914,
+          "p95_stance_tip_proxy_displacement_mm_per_sample": 0.4434,
+          "max_stance_tip_proxy_displacement_mm_per_sample": 0.974,
+          "total_stance_tip_proxy_displacement_mm": 30.27,
+          "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+        },
+        "completed_touchdowns": 15,
+        "liftoff_events": 16,
+        "touchdown_timeout_steps": 0,
+        "foot_extension_m": 0.006
+      }
+    },
+    {
+      "mass_case": "nominal",
+      "mass_kg": 1.804868,
+      "metrics": {
+        "advance_cm": 10.144,
+        "simulated_s": 8.0,
+        "completed_without_fall": true,
+        "min_grounded_legs": 3,
+        "fraction_below_3_contacts": 0.0,
+        "fraction_below_5_contacts": 0.13965,
+        "mean_grounded_legs": 4.99,
+        "peak_torque_nm": 0.62968,
+        "saturation_fraction": 0.0,
+        "max_tilt_deg": 0.6744,
+        "stand_stance_tip_proxy_slip": {
+          "samples": 73,
+          "stance_adjacent_foot_contact_pairs": 339,
+          "mean_stance_tip_proxy_displacement_mm_per_sample": 0.1196,
+          "p95_stance_tip_proxy_displacement_mm_per_sample": 0.6456,
+          "max_stance_tip_proxy_displacement_mm_per_sample": 1.9609,
+          "total_stance_tip_proxy_displacement_mm": 40.53,
+          "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+        },
+        "completed_touchdowns": 15,
+        "liftoff_events": 16,
+        "touchdown_timeout_steps": 0,
+        "foot_extension_m": 0.006
+      }
+    },
+    {
+      "mass_case": "upper",
+      "mass_kg": 2.08,
+      "metrics": {
+        "advance_cm": 10.218,
+        "simulated_s": 8.0,
+        "completed_without_fall": true,
+        "min_grounded_legs": 3,
+        "fraction_below_3_contacts": 0.0,
+        "fraction_below_5_contacts": 0.08728,
+        "mean_grounded_legs": 5.062,
+        "peak_torque_nm": 0.7,
+        "saturation_fraction": 0.01125,
+        "max_tilt_deg": 0.7439,
+        "stand_stance_tip_proxy_slip": {
+          "samples": 73,
+          "stance_adjacent_foot_contact_pairs": 345,
+          "mean_stance_tip_proxy_displacement_mm_per_sample": 0.1067,
+          "p95_stance_tip_proxy_displacement_mm_per_sample": 0.548,
+          "max_stance_tip_proxy_displacement_mm_per_sample": 2.1401,
+          "total_stance_tip_proxy_displacement_mm": 36.8,
+          "caution": "This is tibia farthest-vertex tracking, NOT measured real footpad slip. Some relative motion is foot rotation on mesh contact hull."
+        },
+        "completed_touchdowns": 15,
+        "liftoff_events": 16,
+        "touchdown_timeout_steps": 0,
+        "foot_extension_m": 0.006
+      }
+    }
+  ],
+  "reactive_landing_target_ablation": [
+    {
+      "receipt_file": "cad30_gait_contact_nominal_no_landing_target.json",
+      "advance_cm": 4.469,
+      "touchdowns": 7,
+      "timeout_sim_steps": 1442,
+      "explicit_landing_target_enabled": false,
+      "extra_extension_mm": 6.0
+    },
+    {
+      "receipt_file": "cad30_gait_contact_nominal_extension0mm.json",
+      "advance_cm": 10.025,
+      "touchdowns": 15,
+      "timeout_sim_steps": 0,
+      "explicit_landing_target_enabled": true,
+      "extra_extension_mm": 0.0
+    },
+    {
+      "receipt_file": "cad30_gait_contact_nominal.json",
+      "advance_cm": 10.144,
+      "touchdowns": 15,
+      "timeout_sim_steps": 0,
+      "explicit_landing_target_enabled": true,
+      "extra_extension_mm": 6.0
+    }
+  ],
+  "reactive_touchdown_dwell_100ms_ablation": [
+    {
+      "friction_mu": 1.1,
+      "advance_cm": 8.803,
+      "min_contacts": 3,
+      "mean_contacts": 5.035
+    },
+    {
+      "friction_mu": 0.6,
+      "advance_cm": 9.378,
+      "min_contacts": 2,
+      "mean_contacts": 4.89
+    },
+    {
+      "friction_mu": 0.3,
+      "advance_cm": 9.827,
+      "min_contacts": 0,
+      "mean_contacts": 4.92
+    }
+  ],
+  "decision": "Touchdown IK target is essential to prevent hanging swing; 6mm extra extension is secondary. Under mu=.6 reactive reduces time with <3 contacts versus tripod, but no controller avoids all reduced-ground-support events at mu=.3. Do not claim robust insect locomotion.",
+  "classification": "Contact-gated heuristic with independent leg stance clocks and neighbor inhibition/excitation plus global one-leg safety cap. NOT validated Walknet or neuroWalknet.",
+  "literature": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7205325/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3755227/"
+  ],
+  "limitations": [
+    "Foot-contact support is measured in MuJoCo, never on a real robot.",
+    "Tripod and wave are open-loop, contact version uses event-driven local clocks but retains global cap.",
+    "At low friction touchdown sometimes coincides with all six feet momentarily off the floor.",
+    "Visual 2/32 missing meshes have no contact, but no servo mass/geometry was measured.",
+    "Tip proxy is a farthest CAD mesh vertex, and its movement can include rotation/rolling, not just surface slip.",
+    "Torque-speed and power delivery, servo backlash, electronics, friction and real PWM joint calibration unknown.",
+    "Numerical angle bound 1.7 rad has not been validated as a hardware travel limit.",
+    "8 simulated seconds per experiment on flat floor is not a comprehensive stability test."
+  ],
+  "receipt_sha256_by_filename": {
+    "cad30_gait_tripod_nominal.json": "d8e09c9d11fb29b32b8a956091c362a5b5f949c6e2a893eb62bff902b9ebad9c",
+    "cad30_gait_wave_nominal.json": "2fa773c64dae8e94db7f2a17716b73dc4a5321f0fdf7d84276105bf22bb49601",
+    "cad30_gait_contact_nominal.json": "09fd24ef352988bd366ee654ee1bc7ced9c9e4c59e75a4f04819dae0e3975439",
+    "cad30_gait_tripod_nominal_mu0p6.json": "0ad11be6abc2bb4979c57a68858ecb38a5d894ee74be980557c41d8d6dbfd35f",
+    "cad30_gait_wave_nominal_mu0p6.json": "cd73e0f93bdaaf6941f3cc187a945e13778b5305e731d7b12883e726dbe69775",
+    "cad30_gait_contact_nominal_mu0p6.json": "9fb10cb0b5483e357f6e140753a799f67094bdacc95b33bfc7c9347b30f4a943",
+    "cad30_gait_tripod_nominal_mu0p3.json": "290e617e59166928ec30c7cc342a684d1a0ced6433510e0db0c3d3939a53156c",
+    "cad30_gait_wave_nominal_mu0p3.json": "3d70030578ff710fd43d56ed9b499f86b4f4ded88541da09c2fb01cd1ed4d906",
+    "cad30_gait_contact_nominal_mu0p3.json": "ab6f546b8c39bdb2630c972050ec3c3d04cb202eedd2961fe0fd5eab0b1f7cee",
+    "cad30_gait_contact_lower.json": "c00cbe245af8eb29452953e8e60cc50b76ba4d3e3a408be8dfdd58c6a8154424",
+    "cad30_gait_contact_upper.json": "0efc7dde8b19c7ef3a6c3481cda9a76e768ba10600bca9e495933ecf671161e7",
+    "cad30_gait_contact_nominal_no_landing_target.json": "2d40ff4fd13b1e28a8471eda4477194697747b478ba1f8c688fefdbde043c045",
+    "cad30_gait_contact_nominal_extension0mm.json": "c942a51794cf1f8e1888fa646e8874e0eb9525011ee95a5b6096ada501c840aa",
+    "cad30_gait_contact_nominal_dwell100ms.json": "9fea579f26610f87a2a1cf900c654b203fdfb67241498499b3c2945934b7e2a9",
+    "cad30_gait_contact_nominal_mu0p6_dwell100ms.json": "37d1d6ab7771d09d15896e630c4709dd776478f8ac594ebb4058ae7ec74f9569",
+    "cad30_gait_contact_nominal_mu0p3_dwell100ms.json": "5d00f04423f222964a1f3b9e1332e5cc385f96e5468fbb9cc553a691c3e22558"
+  },
+  "related_source_files": {
+    "local_contact_gait.py": "d9309e56fc8c19db8a4422261df36c64d85e6a7b40db2270752ce1dce03057be",
+    "locomotion_cad30.py": "20d7ca126b139f6e4300a6d629b75a5a601810446bc1b2c6017ee4a3f36e0718",
+    "measure_stance_slip.py": "d2ea5481ab21b3e7fcc22406668519be54abf12b08e8f634744100bbdc481277",
+    "tests/test_contact_feedback.py": "63ee9c1af85e03b38460e67114078da380623f5c99562d2b33c8215f7304b5d2"
+  },
+  "drive_original_cad_bundle": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk"
+}

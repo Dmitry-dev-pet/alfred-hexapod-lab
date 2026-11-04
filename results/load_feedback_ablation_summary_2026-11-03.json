@@ -1,0 +1,668 @@
+{
+  "schema": "fnk0052_cad30_load_feedback_ablation/1",
+  "date_utc": "2026-11-03",
+  "physics": "Local MuJoCo 3.14.0, CAD30 (30 of 32 original meshes, six tibia contact hulls), free base and torque-limited PD",
+  "scenario": "Nominal 1.804868kg; 8s motion after 1s stabilization; dt 0.002s; 50Hz diagnostics",
+  "seed_policy": "Preselected five seeds from earlier decentralized experiment; same randomized initial conditions across variants",
+  "mass_estimates_are_measured": false,
+  "motor_model_is_calibrated": false,
+  "force_sensor": "MuJoCo mj_contactForce normal forces on tibia-floor contacts; no physical load cell, no noise, EMA filter",
+  "gate": {
+    "max_self_ratio_to_ideal_leg_load": 1.4,
+    "min_each_neighbor_ratio_to_ideal_leg_load": 0.35,
+    "ema_tau_s": 0.05
+  },
+  "rows": [
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 11,
+      "root_advance_cm": 11.695,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.618,
+      "peak_tau_nm": 0.32547,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed11_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 11,
+      "root_advance_cm": 11.7,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.615,
+      "peak_tau_nm": 0.32547,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 52
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed11_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 11,
+      "root_advance_cm": 11.695,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.616,
+      "peak_tau_nm": 0.32852,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "unloaded_neighbor": 14,
+        "heavy_lifting_leg": 53
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed11_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 23,
+      "root_advance_cm": 11.717,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.68,
+      "peak_tau_nm": 0.40456,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed23_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 23,
+      "root_advance_cm": 11.699,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.672,
+      "peak_tau_nm": 0.41407,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 97
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed23_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 23,
+      "root_advance_cm": 11.707,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.676,
+      "peak_tau_nm": 0.41407,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 97,
+        "unloaded_neighbor": 48
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed23_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 37,
+      "root_advance_cm": 12.149,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.52,
+      "peak_tau_nm": 0.36182,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 18,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed37_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 37,
+      "root_advance_cm": 12.138,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.512,
+      "peak_tau_nm": 0.35551,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 74
+      },
+      "lift_count": 18,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed37_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 37,
+      "root_advance_cm": 12.102,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.508,
+      "peak_tau_nm": 0.35808,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "unloaded_neighbor": 116,
+        "heavy_lifting_leg": 65
+      },
+      "lift_count": 18,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed37_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 51,
+      "root_advance_cm": 11.726,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00499,
+      "max_tilt_deg": 0.588,
+      "peak_tau_nm": 0.4083,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed51_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 51,
+      "root_advance_cm": 11.73,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00249,
+      "max_tilt_deg": 0.588,
+      "peak_tau_nm": 0.4083,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 27
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed51_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 51,
+      "root_advance_cm": 11.729,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00499,
+      "max_tilt_deg": 0.588,
+      "peak_tau_nm": 0.4083,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "unloaded_neighbor": 3,
+        "heavy_lifting_leg": 27
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed51_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 97,
+      "root_advance_cm": 11.872,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.562,
+      "peak_tau_nm": 0.38633,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed97_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 97,
+      "root_advance_cm": 11.883,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.555,
+      "peak_tau_nm": 0.38633,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 47
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed97_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 97,
+      "root_advance_cm": 11.942,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.546,
+      "peak_tau_nm": 0.38995,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 34,
+        "unloaded_neighbor": 154
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 1.1,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed97_nominal_mu1p1.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 11,
+      "root_advance_cm": 12.946,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00249,
+      "max_tilt_deg": 0.812,
+      "peak_tau_nm": 0.44458,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed11_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 11,
+      "root_advance_cm": 12.924,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00499,
+      "max_tilt_deg": 0.812,
+      "peak_tau_nm": 0.42122,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 48
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed11_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 11,
+      "root_advance_cm": 12.917,
+      "min_grounded_legs": 3,
+      "fraction_below_3_contacts": 0.0,
+      "max_tilt_deg": 0.812,
+      "peak_tau_nm": 0.42398,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "unloaded_neighbor": 5,
+        "heavy_lifting_leg": 46
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed11_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 23,
+      "root_advance_cm": 12.435,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00249,
+      "max_tilt_deg": 0.953,
+      "peak_tau_nm": 0.66273,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed23_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 23,
+      "root_advance_cm": 12.653,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00748,
+      "max_tilt_deg": 0.68,
+      "peak_tau_nm": 0.43351,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 84
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed23_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 23,
+      "root_advance_cm": 12.667,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00499,
+      "max_tilt_deg": 0.676,
+      "peak_tau_nm": 0.43351,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 83,
+        "unloaded_neighbor": 30
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed23_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 37,
+      "root_advance_cm": 12.519,
+      "min_grounded_legs": 1,
+      "fraction_below_3_contacts": 0.01247,
+      "max_tilt_deg": 0.627,
+      "peak_tau_nm": 0.51858,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed37_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 37,
+      "root_advance_cm": 12.475,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.01746,
+      "max_tilt_deg": 0.761,
+      "peak_tau_nm": 0.52445,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 55
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed37_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 37,
+      "root_advance_cm": 12.496,
+      "min_grounded_legs": 2,
+      "fraction_below_3_contacts": 0.00748,
+      "max_tilt_deg": 0.743,
+      "peak_tau_nm": 0.51949,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "unloaded_neighbor": 21,
+        "heavy_lifting_leg": 54
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.6,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed37_nominal_mu0p6.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 11,
+      "root_advance_cm": 12.788,
+      "min_grounded_legs": 0,
+      "fraction_below_3_contacts": 0.01496,
+      "max_tilt_deg": 1.002,
+      "peak_tau_nm": 0.65087,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {},
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.3,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed11_nominal_mu0p3.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 11,
+      "root_advance_cm": 12.759,
+      "min_grounded_legs": 0,
+      "fraction_below_3_contacts": 0.01247,
+      "max_tilt_deg": 1.002,
+      "peak_tau_nm": 0.65087,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 19
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.3,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed11_nominal_mu0p3.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 11,
+      "root_advance_cm": 12.771,
+      "min_grounded_legs": 0,
+      "fraction_below_3_contacts": 0.01746,
+      "max_tilt_deg": 1.002,
+      "peak_tau_nm": 0.62452,
+      "saturation_fraction": 0.0,
+      "liftoff_block_reasons": {
+        "unloaded_neighbor": 16,
+        "heavy_lifting_leg": 19
+      },
+      "lift_count": 20,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.3,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed11_nominal_mu0p3.json"
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 23,
+      "root_advance_cm": 12.302,
+      "min_grounded_legs": 0,
+      "fraction_below_3_contacts": 0.02244,
+      "max_tilt_deg": 1.052,
+      "peak_tau_nm": 0.7,
+      "saturation_fraction": 0.00425,
+      "liftoff_block_reasons": {},
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.3,
+      "full_receipt_file": "load_feedback_neighbor_inhibit_seed23_nominal_mu0p3.json"
+    },
+    {
+      "mode": "neighbor_force_gate",
+      "seed": 23,
+      "root_advance_cm": 12.251,
+      "min_grounded_legs": 0,
+      "fraction_below_3_contacts": 0.00998,
+      "max_tilt_deg": 1.135,
+      "peak_tau_nm": 0.7,
+      "saturation_fraction": 0.0045,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 55
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.3,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_seed23_nominal_mu0p3.json"
+    },
+    {
+      "mode": "neighbor_force_gate_supported",
+      "seed": 23,
+      "root_advance_cm": 12.259,
+      "min_grounded_legs": 0,
+      "fraction_below_3_contacts": 0.00748,
+      "max_tilt_deg": 1.141,
+      "peak_tau_nm": 0.7,
+      "saturation_fraction": 0.004,
+      "liftoff_block_reasons": {
+        "heavy_lifting_leg": 57,
+        "unloaded_neighbor": 17
+      },
+      "lift_count": 19,
+      "touchdown_count": 18,
+      "finished_full_duration": true,
+      "friction_mu": 0.3,
+      "full_receipt_file": "load_feedback_neighbor_force_gate_supported_seed23_nominal_mu0p3.json"
+    }
+  ],
+  "aggregates": {
+    "1.1": {
+      "seeds": [
+        11,
+        23,
+        37,
+        51,
+        97
+      ],
+      "modes": {
+        "neighbor_inhibit": {
+          "mean_advance_cm": 11.8318,
+          "mean_peak_tilt_deg": 0.5936,
+          "mean_fraction_below_3": 0.001,
+          "num_runs_with_below_3": 1,
+          "min_grounded_legs": 2,
+          "mean_saturation_fraction": 0.0,
+          "total_lift": 96,
+          "all_completed": true
+        },
+        "neighbor_force_gate": {
+          "mean_advance_cm": 11.83,
+          "mean_peak_tilt_deg": 0.5884,
+          "mean_fraction_below_3": 0.0005,
+          "num_runs_with_below_3": 1,
+          "min_grounded_legs": 2,
+          "mean_saturation_fraction": 0.0,
+          "total_lift": 96,
+          "all_completed": true
+        },
+        "neighbor_force_gate_supported": {
+          "mean_advance_cm": 11.835,
+          "mean_peak_tilt_deg": 0.5868,
+          "mean_fraction_below_3": 0.001,
+          "num_runs_with_below_3": 1,
+          "min_grounded_legs": 2,
+          "mean_saturation_fraction": 0.0,
+          "total_lift": 96,
+          "all_completed": true
+        }
+      }
+    },
+    "0.6": {
+      "seeds": [
+        11,
+        23,
+        37
+      ],
+      "modes": {
+        "neighbor_inhibit": {
+          "mean_advance_cm": 12.6333,
+          "mean_peak_tilt_deg": 0.7973,
+          "mean_fraction_below_3": 0.00582,
+          "num_runs_with_below_3": 3,
+          "min_grounded_legs": 1,
+          "mean_saturation_fraction": 0.0,
+          "total_lift": 58,
+          "all_completed": true
+        },
+        "neighbor_force_gate": {
+          "mean_advance_cm": 12.684,
+          "mean_peak_tilt_deg": 0.751,
+          "mean_fraction_below_3": 0.00998,
+          "num_runs_with_below_3": 3,
+          "min_grounded_legs": 2,
+          "mean_saturation_fraction": 0.0,
+          "total_lift": 58,
+          "all_completed": true
+        },
+        "neighbor_force_gate_supported": {
+          "mean_advance_cm": 12.6933,
+          "mean_peak_tilt_deg": 0.7437,
+          "mean_fraction_below_3": 0.00416,
+          "num_runs_with_below_3": 2,
+          "min_grounded_legs": 2,
+          "mean_saturation_fraction": 0.0,
+          "total_lift": 58,
+          "all_completed": true
+        }
+      }
+    },
+    "0.3": {
+      "seeds": [
+        11,
+        23
+      ],
+      "modes": {
+        "neighbor_inhibit": {
+          "mean_advance_cm": 12.545,
+          "mean_peak_tilt_deg": 1.027,
+          "mean_fraction_below_3": 0.0187,
+          "num_runs_with_below_3": 2,
+          "min_grounded_legs": 0,
+          "mean_saturation_fraction": 0.00213,
+          "total_lift": 39,
+          "all_completed": true
+        },
+        "neighbor_force_gate": {
+          "mean_advance_cm": 12.505,
+          "mean_peak_tilt_deg": 1.0685,
+          "mean_fraction_below_3": 0.01122,
+          "num_runs_with_below_3": 2,
+          "min_grounded_legs": 0,
+          "mean_saturation_fraction": 0.00225,
+          "total_lift": 39,
+          "all_completed": true
+        },
+        "neighbor_force_gate_supported": {
+          "mean_advance_cm": 12.515,
+          "mean_peak_tilt_deg": 1.0715,
+          "mean_fraction_below_3": 0.01247,
+          "num_runs_with_below_3": 2,
+          "min_grounded_legs": 0,
+          "mean_saturation_fraction": 0.002,
+          "total_lift": 39,
+          "all_completed": true
+        }
+      }
+    }
+  },
+  "warning": "Evaluate both negative and positive outcomes; do not infer real robot transfer from model"
+}

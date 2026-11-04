@@ -1,0 +1,98 @@
+{
+  "version": "v0.4-standing-candidate-1",
+  "date_utc": "2026-11-03",
+  "status": "SIMULATED_SIX_LEG_STAND_SUCCESS_NOT_HARDWARE_VALIDATED",
+  "source_commit": "babfdbc8f48a2c8075a5e3e6c9753eb89d122b5d",
+  "github_actions_run": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/actions/runs/41694142862",
+  "ci_assertions_run": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/actions/runs/41694203512",
+  "upstream_cad_commit": "5c9a84c16335b30036e451c691d2c544abf4bc72",
+  "physics": "MuJoCo 3.14.0",
+  "methodology": "CAD tibia farthest-vertex candidate; six individual bounded least_squares problems using MuJoCo joint Jacobians; body height 0.145m, radial extension 0.15m, 0.004m toe clearance; hold using 0.7 Nm cap and PD torque, no fixed feet/body.",
+  "stance_parameters": {
+    "root_initial_height_m": 0.145,
+    "foot_radial_offset_from_hip_m": 0.15,
+    "foot_target_height_m": 0.004,
+    "optimization_joint_angle_abs_limit_rad": 1.65,
+    "remaining_joint_angle_solver_margin_rad": 0.196084,
+    "static_foot_polygon_margin_m": 0.189531
+  },
+  "leg_angles_rad": {
+    "ml": [
+      0.016639,
+      0.126427,
+      1.453916
+    ],
+    "bl": [
+      0.016647,
+      0.094778,
+      1.422296
+    ],
+    "br": [
+      -0.016647,
+      -0.094776,
+      -1.422296
+    ],
+    "mr": [
+      -0.016646,
+      -0.123174,
+      -1.450675
+    ],
+    "fr": [
+      -0.016651,
+      -0.108483,
+      -1.435985
+    ],
+    "fl": [
+      0.016647,
+      0.108482,
+      1.435986
+    ]
+  },
+  "cases": [
+    {
+      "mass_kg": 1.644,
+      "scenario": "lower",
+      "duration_s": 3,
+      "all_six_legs_contact_last_0p4s": true,
+      "torque_max_nm": 0.21,
+      "max_tilt_deg": null,
+      "final_tilt_deg": 0.063,
+      "final_root_z_m": 0.139544,
+      "max_horizontal_drift_m": 0.000036,
+      "proxy_stable": true
+    },
+    {
+      "mass_kg": 1.804868,
+      "scenario": "nominal",
+      "duration_s": 5,
+      "all_six_legs_contact_last_0p4s": true,
+      "torque_max_nm": 0.227,
+      "max_tilt_deg": 0.071,
+      "final_tilt_deg": 0.071,
+      "final_root_z_m": 0.139187,
+      "max_horizontal_drift_m": 0.00004,
+      "proxy_stable": true
+    },
+    {
+      "mass_kg": 2.08,
+      "scenario": "upper",
+      "duration_s": 3,
+      "all_six_legs_contact_last_0p4s": true,
+      "torque_max_nm": 0.26,
+      "max_tilt_deg": null,
+      "final_tilt_deg": 0.086,
+      "final_root_z_m": 0.139173,
+      "max_horizontal_drift_m": 0.00005,
+      "proxy_stable": true
+    }
+  ],
+  "assumptions": [
+    "CAD part masses and actuators uncalibrated; +/-0.7Nm actuator cap is only an assumption",
+    "Contact uses tibia convex hull meshes and simplified torso collider",
+    "Candidate toe points are selected as farthest tibia vertices from knee, not verified contact pad geometry",
+    "Joint angle limit 1.65 rad is an experimental optimizer bound, not confirmed physical servo travel",
+    "No measured transfer to physical robot",
+    "Servo thermal limits, motor speed, voltage/current sag, backlash, compliance not modelled"
+  ],
+  "next_validation": "Verify servo angle calibration and detailed contact geometry; run perturbation/one-leg liftoff tests with fixed total mass, compare across friction/servo caps."
+}

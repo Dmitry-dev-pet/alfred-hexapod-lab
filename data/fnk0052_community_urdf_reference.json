@@ -1,0 +1,1187 @@
+{
+  "schema_version": "fnk0052_community_urdf_reference/1",
+  "reference_model": "big_hexapod",
+  "data_role": "UNVALIDATED CAD-derived URDF model. Numerical facts only. Not physical measurements. Joint axis frame and mass placements require scrutiny.",
+  "upstream": {
+    "repo": "MattiaGrigoli/autonomous_hexapod",
+    "revision": "95cf4682c79fbe48a8151bd123e5595009a57d60",
+    "urdf_url": "https://github.com/MattiaGrigoli/autonomous_hexapod/blob/95cf4682c79fbe48a8151bd123e5595009a57d60/src/freenove_description/urdf/robot.urdf",
+    "cad_step_url": "https://github.com/MattiaGrigoli/autonomous_hexapod/tree/95cf4682c79fbe48a8151bd123e5595009a57d60/meshes/original_cad",
+    "licensing_url": "https://github.com/MattiaGrigoli/autonomous_hexapod/blob/95cf4682c79fbe48a8151bd123e5595009a57d60/LICENSE-3RD-PARTY.md",
+    "attribution": "Mattia Grigoli (MIT software); original CAD designs by Freenove. No 3D meshes or STEP are duplicated here.",
+    "extracted_at_utc": "2026-11-03"
+  },
+  "completeness": {
+    "links": 25,
+    "joints": 24,
+    "actuated_joints": 20,
+    "servo_big_mesh_instances": 18,
+    "servo_small_mesh_instances": 2,
+    "total_urdf_mass_kg": 1.130196604
+  },
+  "limitations": [
+    "Masses and inertia are Onshape-exported values with unknown material and servo-density validity, NOT weighed.",
+    "URDF includes all 18 large servo representations and 2 small: do not ADD them again as missing components.",
+    "URDF omits Raspberry Pi, battery cells and some screw/wiring/board mass; author explicitly warns about omitted small parts.",
+    "Bodies may attribute motors to moving coxa rather than fixed chassis; check which servos rotate before dynamics.",
+    "URDF mesh collision geometry is not optimized for MuJoCo; do not import heavy collision meshes without simplification."
+  ],
+  "links": [
+    {
+      "name": "base_link_2",
+      "mass_kg": 0.233494,
+      "com_origin_xyz_m": [
+        -1.19252e-7,
+        -0.0173565,
+        0.000659493
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.000752837,
+        "ixy": 1.527e-9,
+        "ixz": 3.95e-10,
+        "iyy": 0.000931158,
+        "iyz": 4.11461e-7,
+        "izz": 0.000697545
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "base_link",
+      "mass_kg": 1e-9,
+      "com_origin_xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0,
+        "ixy": 0,
+        "ixz": 0,
+        "iyy": 0,
+        "iyz": 0,
+        "izz": 0
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "imu",
+      "mass_kg": 1e-9,
+      "com_origin_xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0,
+        "ixy": 0,
+        "ixz": 0,
+        "iyy": 0,
+        "iyz": 0,
+        "izz": 0
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "coxaml",
+      "mass_kg": 0.082623,
+      "com_origin_xyz_m": [
+        0.0105732,
+        0.016596,
+        -0.0264025
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000401323,
+        "ixy": -0.00000233345,
+        "ixz": -4.90162e-7,
+        "iyy": 0.0000274452,
+        "iyz": 0.00000209445,
+        "izz": 0.000039625
+      },
+      "servo_mesh_instances": {
+        "big": 2,
+        "small": 0
+      }
+    },
+    {
+      "name": "femurml",
+      "mass_kg": 0.0144792,
+      "com_origin_xyz_m": [
+        0.0427903,
+        -0.0139281,
+        -0.00394246
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000191001,
+        "ixy": 0.00000395825,
+        "ixz": 0,
+        "iyy": 0.0000127823,
+        "iyz": 0,
+        "izz": 0.0000145894
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "tibiaml",
+      "mass_kg": 0.0425984,
+      "com_origin_xyz_m": [
+        0.0168324,
+        -0.0000378781,
+        -0.0222966
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000726686,
+        "ixy": 4.51097e-7,
+        "ixz": -0.00000300842,
+        "iyy": 0.0000303744,
+        "iyz": 1.6772e-8,
+        "izz": 0.0000267985
+      },
+      "servo_mesh_instances": {
+        "big": 1,
+        "small": 0
+      }
+    },
+    {
+      "name": "coxabl",
+      "mass_kg": 0.082623,
+      "com_origin_xyz_m": [
+        0.0105732,
+        0.016596,
+        -0.0264025
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000401323,
+        "ixy": -0.00000233345,
+        "ixz": -4.90162e-7,
+        "iyy": 0.0000274452,
+        "iyz": 0.00000209445,
+        "izz": 0.000039625
+      },
+      "servo_mesh_instances": {
+        "big": 2,
+        "small": 0
+      }
+    },
+    {
+      "name": "femurbl",
+      "mass_kg": 0.0144792,
+      "com_origin_xyz_m": [
+        0.0414881,
+        0.0174281,
+        -0.00394246
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000263889,
+        "ixy": -0.0000048022,
+        "ixz": 0,
+        "iyy": 0.0000120534,
+        "iyz": 0,
+        "izz": 0.0000145894
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "tibiabl",
+      "mass_kg": 0.0425984,
+      "com_origin_xyz_m": [
+        0.0168324,
+        -0.0000378781,
+        -0.0222966
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000726686,
+        "ixy": 4.51097e-7,
+        "ixz": -0.00000300842,
+        "iyy": 0.0000303744,
+        "iyz": 1.6772e-8,
+        "izz": 0.0000267985
+      },
+      "servo_mesh_instances": {
+        "big": 1,
+        "small": 0
+      }
+    },
+    {
+      "name": "coxabr",
+      "mass_kg": 0.082623,
+      "com_origin_xyz_m": [
+        0.0105732,
+        -0.016596,
+        -0.0264025
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000401323,
+        "ixy": 0.00000233345,
+        "ixz": -4.90162e-7,
+        "iyy": 0.0000274452,
+        "iyz": -0.00000209445,
+        "izz": 0.000039625
+      },
+      "servo_mesh_instances": {
+        "big": 2,
+        "small": 0
+      }
+    },
+    {
+      "name": "femurbr",
+      "mass_kg": 0.0144792,
+      "com_origin_xyz_m": [
+        0.0414881,
+        -0.0174281,
+        -0.00394246
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000263889,
+        "ixy": 0.0000048022,
+        "ixz": 0,
+        "iyy": 0.0000120534,
+        "iyz": 0,
+        "izz": 0.0000145894
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "tibiabr",
+      "mass_kg": 0.0425984,
+      "com_origin_xyz_m": [
+        0.0168324,
+        0.000037861,
+        -0.0222966
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000726686,
+        "ixy": -4.51098e-7,
+        "ixz": -0.00000300842,
+        "iyy": 0.0000303744,
+        "iyz": -1.6771e-8,
+        "izz": 0.0000267985
+      },
+      "servo_mesh_instances": {
+        "big": 1,
+        "small": 0
+      }
+    },
+    {
+      "name": "coxamr",
+      "mass_kg": 0.082623,
+      "com_origin_xyz_m": [
+        0.0105732,
+        -0.016596,
+        -0.0264025
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000401323,
+        "ixy": 0.00000233345,
+        "ixz": -4.90162e-7,
+        "iyy": 0.0000274452,
+        "iyz": -0.00000209445,
+        "izz": 0.000039625
+      },
+      "servo_mesh_instances": {
+        "big": 2,
+        "small": 0
+      }
+    },
+    {
+      "name": "femurmr",
+      "mass_kg": 0.0144792,
+      "com_origin_xyz_m": [
+        0.045,
+        0,
+        -0.00394246
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 6.21615e-7,
+        "ixy": 0,
+        "ixz": 0,
+        "iyy": 0.0000140707,
+        "iyz": 0,
+        "izz": 0.0000145894
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "tibiamr",
+      "mass_kg": 0.0425984,
+      "com_origin_xyz_m": [
+        0.0168324,
+        0.000037861,
+        -0.0222966
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000726686,
+        "ixy": -4.51098e-7,
+        "ixz": -0.00000300842,
+        "iyy": 0.0000303744,
+        "iyz": -1.6771e-8,
+        "izz": 0.0000267985
+      },
+      "servo_mesh_instances": {
+        "big": 1,
+        "small": 0
+      }
+    },
+    {
+      "name": "coxafr",
+      "mass_kg": 0.082623,
+      "com_origin_xyz_m": [
+        0.0105732,
+        -0.016596,
+        -0.0264025
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000401323,
+        "ixy": 0.00000233345,
+        "ixz": -4.90162e-7,
+        "iyy": 0.0000274452,
+        "iyz": -0.00000209445,
+        "izz": 0.000039625
+      },
+      "servo_mesh_instances": {
+        "big": 2,
+        "small": 0
+      }
+    },
+    {
+      "name": "femurfr",
+      "mass_kg": 0.0144792,
+      "com_origin_xyz_m": [
+        0,
+        -0.045,
+        -0.00394246
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000140707,
+        "ixy": 0,
+        "ixz": 0,
+        "iyy": 6.21615e-7,
+        "iyz": 0,
+        "izz": 0.0000145894
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "tibiafr",
+      "mass_kg": 0.0425984,
+      "com_origin_xyz_m": [
+        0.0168324,
+        0.000037861,
+        -0.0222966
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000726686,
+        "ixy": -4.51098e-7,
+        "ixz": -0.00000300842,
+        "iyy": 0.0000303744,
+        "iyz": -1.6771e-8,
+        "izz": 0.0000267985
+      },
+      "servo_mesh_instances": {
+        "big": 1,
+        "small": 0
+      }
+    },
+    {
+      "name": "coxafl",
+      "mass_kg": 0.082623,
+      "com_origin_xyz_m": [
+        0.0105732,
+        0.016596,
+        -0.0264025
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000401323,
+        "ixy": -0.00000233345,
+        "ixz": -4.90162e-7,
+        "iyy": 0.0000274452,
+        "iyz": 0.00000209445,
+        "izz": 0.000039625
+      },
+      "servo_mesh_instances": {
+        "big": 2,
+        "small": 0
+      }
+    },
+    {
+      "name": "femurfl",
+      "mass_kg": 0.0144792,
+      "com_origin_xyz_m": [
+        0,
+        0.045,
+        -0.00394246
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000140707,
+        "ixy": 0,
+        "ixz": 0,
+        "iyy": 6.21615e-7,
+        "iyz": 0,
+        "izz": 0.0000145894
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "tibiafl",
+      "mass_kg": 0.0425984,
+      "com_origin_xyz_m": [
+        0.0168324,
+        -0.0000378781,
+        -0.0222966
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000726686,
+        "ixy": 4.51097e-7,
+        "ixz": -0.00000300842,
+        "iyy": 0.0000303744,
+        "iyz": 1.6772e-8,
+        "izz": 0.0000267985
+      },
+      "servo_mesh_instances": {
+        "big": 1,
+        "small": 0
+      }
+    },
+    {
+      "name": "neck",
+      "mass_kg": 0.0239856,
+      "com_origin_xyz_m": [
+        -0.0052,
+        -0.00245004,
+        -0.0267393
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.00000563655,
+        "ixy": -3.9842e-8,
+        "ixz": -1.13883e-7,
+        "iyy": 0.00000626446,
+        "iyz": -3.5041e-8,
+        "izz": 0.00000269831
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 2
+      }
+    },
+    {
+      "name": "face",
+      "mass_kg": 0.0345134,
+      "com_origin_xyz_m": [
+        -0.00338941,
+        -0.0244654,
+        0.0131434
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0.0000116067,
+        "ixy": -5.06469e-7,
+        "ixz": 4.61645e-7,
+        "iyy": 0.0000155511,
+        "iyz": 0.00000230014,
+        "izz": 0.0000105883
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "camera",
+      "mass_kg": 1e-9,
+      "com_origin_xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0,
+        "ixy": 0,
+        "ixz": 0,
+        "iyy": 0,
+        "iyz": 0,
+        "izz": 0
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    },
+    {
+      "name": "ultrasonic",
+      "mass_kg": 1e-9,
+      "com_origin_xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "com_origin_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": {
+        "ixx": 0,
+        "ixy": 0,
+        "ixz": 0,
+        "iyy": 0,
+        "iyz": 0,
+        "izz": 0
+      },
+      "servo_mesh_instances": {
+        "big": 0,
+        "small": 0
+      }
+    }
+  ],
+  "joints": [
+    {
+      "name": "base_link_frame",
+      "type": "fixed",
+      "parent": "base_link_2",
+      "child": "base_link",
+      "origin_xyz_m": [
+        0,
+        -0.0299999,
+        0.00205788
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        -1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "imu_frame",
+      "type": "fixed",
+      "parent": "base_link_2",
+      "child": "imu",
+      "origin_xyz_m": [
+        -0.0083064,
+        0.00833695,
+        -0.039948
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        0,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "motor10",
+      "type": "revolute",
+      "parent": "femurml",
+      "child": "tibiaml",
+      "origin_xyz_m": [
+        0.0855806,
+        -0.0278562,
+        0
+      ],
+      "origin_rpy_rad": [
+        -3.14159,
+        0,
+        -0.296706
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor11",
+      "type": "revolute",
+      "parent": "coxaml",
+      "child": "femurml",
+      "origin_xyz_m": [
+        -0.0119,
+        0.033,
+        -0.0394
+      ],
+      "origin_rpy_rad": [
+        1.5708,
+        -0.296706,
+        1.5708
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor12",
+      "type": "revolute",
+      "parent": "base_link_2",
+      "child": "coxaml",
+      "origin_xyz_m": [
+        -0.085,
+        -0.0019,
+        0
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor31",
+      "type": "revolute",
+      "parent": "femurbl",
+      "child": "tibiabl",
+      "origin_xyz_m": [
+        0.0829762,
+        0.0348561,
+        0
+      ],
+      "origin_rpy_rad": [
+        3.14159,
+        0,
+        0.383972
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor8",
+      "type": "revolute",
+      "parent": "coxabl",
+      "child": "femurbl",
+      "origin_xyz_m": [
+        -0.0119,
+        0.033,
+        -0.0394
+      ],
+      "origin_rpy_rad": [
+        1.5708,
+        0.383972,
+        1.5708
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor9",
+      "type": "revolute",
+      "parent": "base_link_2",
+      "child": "coxabl",
+      "origin_xyz_m": [
+        -0.055,
+        -0.0019,
+        0.076
+      ],
+      "origin_rpy_rad": [
+        1.5708,
+        0.626445,
+        -3.14159
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor27",
+      "type": "revolute",
+      "parent": "femurbr",
+      "child": "tibiabr",
+      "origin_xyz_m": [
+        0.0829762,
+        -0.0348561,
+        0
+      ],
+      "origin_rpy_rad": [
+        -3.14159,
+        0,
+        -0.383972
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor23",
+      "type": "revolute",
+      "parent": "coxabr",
+      "child": "femurbr",
+      "origin_xyz_m": [
+        -0.0119,
+        -0.033,
+        -0.0394
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        0.383972,
+        -1.5708
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor22",
+      "type": "revolute",
+      "parent": "base_link_2",
+      "child": "coxabr",
+      "origin_xyz_m": [
+        0.055,
+        -0.0019,
+        0.076
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        0.626445,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor21",
+      "type": "revolute",
+      "parent": "femurmr",
+      "child": "tibiamr",
+      "origin_xyz_m": [
+        0.09,
+        0,
+        0
+      ],
+      "origin_rpy_rad": [
+        3.14159,
+        0,
+        -0.0147262
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor20",
+      "type": "revolute",
+      "parent": "coxamr",
+      "child": "femurmr",
+      "origin_xyz_m": [
+        -0.0119,
+        -0.033,
+        -0.0394
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        0.0147262,
+        -1.5708
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor19",
+      "type": "revolute",
+      "parent": "base_link_2",
+      "child": "coxamr",
+      "origin_xyz_m": [
+        0.085,
+        -0.0019,
+        0
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor18",
+      "type": "revolute",
+      "parent": "femurfr",
+      "child": "tibiafr",
+      "origin_xyz_m": [
+        0,
+        -0.09,
+        0
+      ],
+      "origin_rpy_rad": [
+        -3.14159,
+        0,
+        -1.5708
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor17",
+      "type": "revolute",
+      "parent": "coxafr",
+      "child": "femurfr",
+      "origin_xyz_m": [
+        -0.0119,
+        -0.033,
+        -0.0394
+      ],
+      "origin_rpy_rad": [
+        0,
+        1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor16",
+      "type": "revolute",
+      "parent": "base_link_2",
+      "child": "coxafr",
+      "origin_xyz_m": [
+        0.055,
+        -0.0019,
+        -0.076
+      ],
+      "origin_rpy_rad": [
+        1.5708,
+        0.626445,
+        3.14159
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor13",
+      "type": "revolute",
+      "parent": "femurfl",
+      "child": "tibiafl",
+      "origin_xyz_m": [
+        0,
+        0.09,
+        0
+      ],
+      "origin_rpy_rad": [
+        -3.14159,
+        0,
+        1.5708
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor14",
+      "type": "revolute",
+      "parent": "coxafl",
+      "child": "femurfl",
+      "origin_xyz_m": [
+        -0.0119,
+        0.033,
+        -0.0394
+      ],
+      "origin_rpy_rad": [
+        0,
+        1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor15",
+      "type": "revolute",
+      "parent": "base_link_2",
+      "child": "coxafl",
+      "origin_xyz_m": [
+        -0.055,
+        -0.0019,
+        -0.076
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        0.626445,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "camera_frame",
+      "type": "fixed",
+      "parent": "face",
+      "child": "camera",
+      "origin_xyz_m": [
+        0.0123472,
+        -0.0288,
+        0.0167
+      ],
+      "origin_rpy_rad": [
+        1.5708,
+        -1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "ultrasonic_frame",
+      "type": "fixed",
+      "parent": "face",
+      "child": "ultrasonic",
+      "origin_xyz_m": [
+        -0.012,
+        -0.0301724,
+        0.0297
+      ],
+      "origin_rpy_rad": [
+        1.5708,
+        -1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "motor0",
+      "type": "revolute",
+      "parent": "neck",
+      "child": "face",
+      "origin_xyz_m": [
+        -0.0104,
+        -0.0177,
+        -0.0416
+      ],
+      "origin_rpy_rad": [
+        -1.5708,
+        -1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "motor1",
+      "type": "revolute",
+      "parent": "base_link_2",
+      "child": "neck",
+      "origin_xyz_m": [
+        0,
+        0.0068,
+        -0.083
+      ],
+      "origin_rpy_rad": [
+        1.5708,
+        -1.5708,
+        0
+      ],
+      "axis_xyz": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

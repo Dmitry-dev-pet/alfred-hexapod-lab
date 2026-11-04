@@ -1,0 +1,86 @@
+{
+  "schema_version": "fnk0052_contact_low_friction_control/1",
+  "source": "local MuJoCo 3.14.0, CAD30 Freenove original tibia contact meshes; two visual proxies; no GitHub Actions",
+  "mass_kg": 1.804868,
+  "assumed_ground_friction_mu": 0.3,
+  "baseline": {
+    "path": "results/cad30_gait_contact_nominal_mu0p3.json",
+    "sha256": "ab6f546b8c39bdb2630c972050ec3c3d04cb202eedd2961fe0fd5eab0b1f7cee",
+    "advance_m": 0.118259,
+    "min_grounded_legs": 0,
+    "samples_below_three_contacts": 3,
+    "mean_grounded_legs": 4.803,
+    "max_body_tilt_deg": 1.2833,
+    "max_abs_torque_nm": 0.7,
+    "saturation_fraction": 0.00075,
+    "touchdowns": 17,
+    "liftoffs": 18,
+    "missed_touchdown_steps": 0,
+    "step_length_command_m": 0.035,
+    "lift_command_m": 0.02,
+    "gait_period_s": 2.4,
+    "duration_s": 8.0,
+    "dropouts": [
+      {
+        "time_s": 0.042,
+        "n_contacts": 0,
+        "swinging": []
+      },
+      {
+        "time_s": 0.142,
+        "n_contacts": 2,
+        "swinging": []
+      },
+      {
+        "time_s": 0.802,
+        "n_contacts": 2,
+        "swinging": []
+      }
+    ]
+  },
+  "conservative_swing": {
+    "path": "results/cad30_gait_contact_nominal_mu0p3_dwell80ms.json",
+    "sha256": "e80fa453dd707b008cb4a2c241f96b0259b97a2c11638faad3ca958375081aa8",
+    "advance_m": 0.042759,
+    "min_grounded_legs": 0,
+    "samples_below_three_contacts": 2,
+    "mean_grounded_legs": 5.122,
+    "max_body_tilt_deg": 1.0546,
+    "max_abs_torque_nm": 0.55468,
+    "saturation_fraction": 0.0,
+    "touchdowns": 12,
+    "liftoffs": 13,
+    "missed_touchdown_steps": 0,
+    "step_length_command_m": 0.02,
+    "lift_command_m": 0.012,
+    "gait_period_s": 3.2,
+    "duration_s": 8.0,
+    "dropouts": [
+      {
+        "time_s": 0.042,
+        "n_contacts": 0,
+        "swinging": []
+      },
+      {
+        "time_s": 6.642,
+        "n_contacts": 1,
+        "swinging": [
+          "br"
+        ]
+      }
+    ]
+  },
+  "conservative_params": {
+    "stride_m": 0.02,
+    "lift_m": 0.012,
+    "period_s": 3.2,
+    "support_margin_gate_m": 0.035,
+    "touchdown_dwell_s": 0.08
+  },
+  "finding": "Shorter slower steps lower peak torque and rare contact deficits but do not prevent transient complete loss of physical foot-ground contact. This is an UNSTABLE negative result, not a working slippery-floor gait.",
+  "limitations": [
+    "Locomotion stress result from estimated servo torque and contact friction only; no physical robot",
+    "Transient all-contact loss at t=0.042s may also be influenced by initial settle/model contact switch",
+    "At t=6.642s a swing leg moved while only one remaining tibia was touching; future controller requires in-swing recovery and tip slip/force proxy feedback."
+  ]
+}

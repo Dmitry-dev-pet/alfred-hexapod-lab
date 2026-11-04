@@ -1,0 +1,327 @@
+{
+  "schema_version": "0.4-draft-1",
+  "target": "Freenove Big Hexapod Robot Kit FNK0052",
+  "state": "RECONSTRUCTION_IN_PROGRESS_NOT_A_VALIDATED_DIGITAL_TWIN",
+  "sources": {
+    "vendor_control": {
+      "url": "https://github.com/Freenove/Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi/blob/b7d228cc870b0a802d3768bfcf742f85fa8695f6/Code/Server/control.py",
+      "retrieved": "2026-11-03",
+      "scope": "Nominal kinematic lengths, points, leg coordinate transformations. Not CAD or physical mass."
+    },
+    "vendor_parts": {
+      "url": "https://docs.freenove.com/projects/fnk0052/en/latest/fnk0052/codes/tutorial/List.html",
+      "retrieved": "2026-11-03",
+      "scope": "Kit BOM and counts; does not document measured component masses."
+    },
+    "vendor_assembly": {
+      "url": "https://docs.freenove.com/projects/fnk0052/en/latest/fnk0052/codes/tutorial/2_Assembly.html",
+      "retrieved": "2026-11-03",
+      "scope": "Assembly orientation, acrylic parts and head, not dimensioned mechanical drawings."
+    },
+    "vendor_store": {
+      "url": "https://store.freenove.com/products/fnk0052",
+      "retrieved": "2026-11-03",
+      "scope": "Four 18650 batteries and Raspberry Pi not included in kit."
+    },
+    "lab_legacy": {
+      "url": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/blob/main/hexlab/mujoco_model.py",
+      "retrieved": "2026-11-03",
+      "scope": "Explicit ASSUMPTIONS in pilot v0.3, not manufacturer specification."
+    }
+  },
+  "geometry": {
+    "effective_leg_link_lengths_mm": {
+      "value": [
+        33,
+        90,
+        110
+      ],
+      "unit": "mm",
+      "kind": "documented_in_vendor_control_code",
+      "source": "vendor_control",
+      "meaning": "l1,l2,l3 effective kinematic link lengths; not individual material/plate dimensions."
+    },
+    "default_foot_reference_points_mm": {
+      "value": [
+        [
+          137.1,
+          189.4,
+          -25
+        ],
+        [
+          225,
+          0,
+          -25
+        ],
+        [
+          137.1,
+          -189.4,
+          -25
+        ],
+        [
+          -137.1,
+          -189.4,
+          -25
+        ],
+        [
+          -225,
+          0,
+          -25
+        ],
+        [
+          -137.1,
+          189.4,
+          -25
+        ]
+      ],
+      "unit": "mm",
+      "kind": "documented_in_vendor_control_code",
+      "source": "vendor_control",
+      "meaning": "control.py body_points in its local reference frame; default z=-25 is software convention, not measured body-ground height."
+    },
+    "body_structure_reference_points_mm": {
+      "value": [
+        [
+          55,
+          76,
+          0
+        ],
+        [
+          85,
+          0,
+          0
+        ],
+        [
+          55,
+          -76,
+          0
+        ],
+        [
+          -55,
+          -76,
+          0
+        ],
+        [
+          -85,
+          0,
+          0
+        ],
+        [
+          -55,
+          76,
+          0
+        ]
+      ],
+      "unit": "mm",
+      "kind": "documented_in_vendor_control_code",
+      "source": "vendor_control",
+      "meaning": "Points in calculate_posture_balance() for posture compensation; NOT yet validated as physical joint centres."
+    },
+    "leg_frame_transform_angles_deg": {
+      "value": [
+        54,
+        0,
+        -54,
+        -126,
+        180,
+        126
+      ],
+      "unit": "degree",
+      "kind": "documented_in_vendor_control_code",
+      "source": "vendor_control",
+      "meaning": "Rotations used by transform_coordinates(), in leg order 1..6; not yet a validated 3D rigid-body frame model."
+    },
+    "leg_radial_transform_offsets_mm": {
+      "value": [
+        94,
+        85,
+        94,
+        94,
+        85,
+        94
+      ],
+      "unit": "mm",
+      "kind": "documented_in_vendor_control_code",
+      "source": "vendor_control",
+      "meaning": "Scalar offsets subtracted in transform_coordinates(), not independent measurements."
+    },
+    "actual_servo_axis_positions_mm": {
+      "value": null,
+      "unit": "mm",
+      "kind": "unverified",
+      "source": null,
+      "meaning": "Need physical CAD or measurements; do not substitute body_structure as joint centres."
+    },
+    "acrylic_plate_thickness_mm": {
+      "value": null,
+      "unit": "mm",
+      "kind": "unverified",
+      "source": null,
+      "meaning": "Requires mechanical drawings, known material/thickness or measurements."
+    },
+    "joint_axis_sign_mapping": {
+      "value": null,
+      "unit": "mapping",
+      "kind": "unverified",
+      "source": "vendor_assembly",
+      "meaning": "Must reproduce left/right servo orientation and reconcile with control.py before dynamics."
+    }
+  },
+  "mass_ledger": [
+    {
+      "id": "leg_servos",
+      "count": 18,
+      "source": "vendor_parts",
+      "mass_each_kg": null,
+      "location": "moving_leg_and_base_joints",
+      "note": "Exact servo SKU, version, mass and rotor mounting need verification."
+    },
+    {
+      "id": "head_servos",
+      "count": 2,
+      "source": "vendor_parts",
+      "mass_each_kg": null,
+      "location": "pan_tilt_head",
+      "note": "Two separate servos, may be excluded in optional future custom hardware variant."
+    },
+    {
+      "id": "acrylic_chassis",
+      "count": 1,
+      "source": "vendor_parts",
+      "mass_each_kg": null,
+      "location": "body",
+      "note": "Assembly, exact thickness, outline and quantity of each plate not yet digitised."
+    },
+    {
+      "id": "leg_mechanics",
+      "count": 6,
+      "source": "vendor_assembly",
+      "mass_each_kg": null,
+      "location": "moving_legs",
+      "note": "Include moving brackets, acrylic pieces, servo arms and feet; do NOT double-count servo masses."
+    },
+    {
+      "id": "other_fasteners",
+      "count": 1,
+      "source": "vendor_assembly",
+      "mass_each_kg": null,
+      "location": "distributed",
+      "note": "Standoffs, nuts and screws; distribute onto actual bodies after reconstruction."
+    },
+    {
+      "id": "servo_control_shield",
+      "count": 1,
+      "source": "vendor_parts",
+      "mass_each_kg": null,
+      "location": "body",
+      "note": "Freenove shield, board version-dependent."
+    },
+    {
+      "id": "body_electronics",
+      "count": 1,
+      "source": "vendor_parts",
+      "mass_each_kg": null,
+      "location": "body",
+      "note": "IMU, LED and wiring; source gives presence but no measured mass."
+    },
+    {
+      "id": "head_sensors",
+      "count": 1,
+      "source": "vendor_parts",
+      "mass_each_kg": null,
+      "location": "head",
+      "note": "Camera and ultrasonic sensor; split into moving elements before inertial modelling."
+    },
+    {
+      "id": "battery_holders",
+      "count": 2,
+      "source": "vendor_parts",
+      "mass_each_kg": null,
+      "location": "body",
+      "note": "Two holders documented."
+    },
+    {
+      "id": "batteries_18650",
+      "count": 4,
+      "source": "vendor_store",
+      "mass_each_kg": null,
+      "location": "body",
+      "note": "Batteries not included; mass depends on actual selected cells."
+    },
+    {
+      "id": "raspberry_pi",
+      "count": 1,
+      "source": "vendor_store",
+      "mass_each_kg": null,
+      "location": "body",
+      "note": "Not included; exact installed model and accessories must be specified."
+    },
+    {
+      "id": "esp32_and_interface",
+      "count": 1,
+      "source": null,
+      "mass_each_kg": null,
+      "location": "body",
+      "note": "PLANNED custom variant only, interface/power/physical mounting unknown."
+    }
+  ],
+  "configurations": {
+    "stock_pi": {
+      "status": "reference_assembly_not_measured",
+      "components": [
+        "leg_servos",
+        "head_servos",
+        "acrylic_chassis",
+        "leg_mechanics",
+        "other_fasteners",
+        "servo_control_shield",
+        "body_electronics",
+        "head_sensors",
+        "battery_holders",
+        "batteries_18650",
+        "raspberry_pi"
+      ],
+      "note": "Reconstruction target with user-supplied Pi and four cells."
+    },
+    "proposed_esp32": {
+      "status": "DESIGN_PROPOSAL_UNVERIFIED",
+      "components": [
+        "leg_servos",
+        "head_servos",
+        "acrylic_chassis",
+        "leg_mechanics",
+        "other_fasteners",
+        "servo_control_shield",
+        "body_electronics",
+        "head_sensors",
+        "battery_holders",
+        "batteries_18650",
+        "esp32_and_interface"
+      ],
+      "note": "Provisional swap of compute module ONLY; compatibility with factory shield/power and possible removal of head require engineering verification."
+    }
+  },
+  "prior_v03_approximation": {
+    "status": "ASSUMED_NOT_MANUFACTURER_DATA",
+    "source": "lab_legacy",
+    "torso_mass_kg": 0.52,
+    "per_leg_segment_masses_kg": [
+      0.045,
+      0.065,
+      0.034
+    ],
+    "per_foot_mass_kg": 0.003,
+    "total_simple_geom_mass_kg": 1.402,
+    "note": "Masses of the 18 servos, batteries and hardware were not separately accounted for. This number is not actual robot mass."
+  },
+  "evidence_gates": {
+    "coordinate_frames_verified": false,
+    "actual_joint_axes_verified": false,
+    "kinematic_validation_against_vendor_code": false,
+    "assembled_geometry_verified": false,
+    "component_mass_budget_complete": false,
+    "distributed_inertia_verified": false,
+    "contact_and_actuator_parameters_calibrated": false,
+    "physical_robot_validation": false
+  }
+}

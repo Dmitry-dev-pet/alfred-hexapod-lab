@@ -1,0 +1,136 @@
+{
+  "schema_version": "fnk0052_community_mass_scenarios/1",
+  "target": "Freenove FNK0052 full 18-DOF stock walking mechanism, 2-DOF head, 4x18650, Raspberry Pi 4B",
+  "headline": "Illustrative mass estimate conditional on CAD and MG996R-like 55g servo analogue: 1.80 kg nominal, scenario envelope ~1.64-2.08 kg. NOT a measured confidence interval.",
+  "is_measured_mass": false,
+  "completeness": "CAD geometry available, masses to be calibrated. Do not set physics-validation gates to true from this estimate.",
+  "sources": {
+    "cad_urdf": "https://github.com/MattiaGrigoli/autonomous_hexapod/blob/95cf4682c79fbe48a8151bd123e5595009a57d60/src/freenove_description/urdf/robot.urdf",
+    "cad_reddit": "https://www.reddit.com/r/ROS/comments/1vnoubf/project_ros2_full_conversion_of_the_freenove_big/",
+    "vendor_parts": "https://docs.freenove.com/projects/fnk0052/en/latest/fnk0052/codes/tutorial/List.html",
+    "vendor_assembly": "https://docs.freenove.com/projects/fnk0052/en/latest/fnk0052/codes/tutorial/2_Assembly.html",
+    "mg996r_analogue": "https://www.plexylab.com/shop/mg996r-servomotor-de-13-kgcm-alto-torque-engranajes-metalicos-1492/document/18",
+    "battery_exemplar": "https://www.manualshelf.com/manual/samsung/inr18650-25r/datasheet-english/page-3.html",
+    "pi4_mass": "https://magazine.raspberrypi.com/articles/raspberry-pi-4-specs-benchmarks"
+  },
+  "reference_cad_urdf_mass_kg": 1.130196604,
+  "reference_cad_servo_meshes": {
+    "big": 18,
+    "small": 2
+  },
+  "calculations": {
+    "units": "kg",
+    "method": "sum(count * per_group_mass_scenario_kg); rows with CAD body masses REPLACE model masses rather than adding again.",
+    "scenario_totals_kg": {
+      "lower": 1.644,
+      "nominal": 1.804868,
+      "upper": 2.08
+    },
+    "rows": [
+      {
+        "id": "cad_static_chassis_and_holders",
+        "count": 1,
+        "lower_kg": 0.22,
+        "nominal_kg": 0.233494,
+        "upper_kg": 0.25,
+        "source": [
+          "cad_urdf"
+        ],
+        "method": "CAD base_link_2 0.233494 kg; tolerance of model materials (not measured). Includes battery holders and acrylic; excludes cells/actual Pi/shield."
+      },
+      {
+        "id": "coxa_group_per_leg",
+        "count": 6,
+        "lower_kg": 0.115,
+        "nominal_kg": 0.12,
+        "upper_kg": 0.13,
+        "source": [
+          "cad_urdf",
+          "mg996r_analogue"
+        ],
+        "method": "Each coxa model (0.082623 kg) depicts TWO big servos + brackets. MG996R (55g) is only a similar-sized proxy, NOT confirmed stock. Nominal 2*55g + 10g brackets; uncertainty from servo and material."
+      },
+      {
+        "id": "femur_group_per_leg",
+        "count": 6,
+        "lower_kg": 0.012,
+        "nominal_kg": 0.0144792,
+        "upper_kg": 0.02,
+        "source": [
+          "cad_urdf"
+        ],
+        "method": "Non-servo femur plates derived from URDF 0.0144792 kg; actual material density unknown."
+      },
+      {
+        "id": "tibia_group_per_leg",
+        "count": 6,
+        "lower_kg": 0.058,
+        "nominal_kg": 0.065,
+        "upper_kg": 0.075,
+        "source": [
+          "cad_urdf",
+          "mg996r_analogue"
+        ],
+        "method": "Each tibia model (0.0425984 kg) depicts ONE big servo + tip/plate. Nominal 55g analogue + 10g hardware. No extra servo outside this group."
+      },
+      {
+        "id": "head_pan_tilt_assembly",
+        "count": 1,
+        "lower_kg": 0.052,
+        "nominal_kg": 0.058499,
+        "upper_kg": 0.08,
+        "source": [
+          "cad_urdf"
+        ],
+        "method": "CAD neck 0.0239856 + face 0.0345134 kg; 2 small servo meshes already present. Not measured."
+      },
+      {
+        "id": "18650_high_current_cells",
+        "count": 4,
+        "lower_kg": 0.042,
+        "nominal_kg": 0.045,
+        "upper_kg": 0.05,
+        "source": [
+          "vendor_parts",
+          "battery_exemplar"
+        ],
+        "method": "Cells excluded from stock kit. 45g example is Samsung INR18650-25R, compatible-size high-current class, not claim of exact user-selected SKU."
+      },
+      {
+        "id": "raspberry_pi_4_board",
+        "count": 1,
+        "lower_kg": 0.044,
+        "nominal_kg": 0.046,
+        "upper_kg": 0.06,
+        "source": [
+          "pi4_mass",
+          "vendor_parts"
+        ],
+        "method": "Nominal Pi 4B 46g (official magazine); additional heatsink/cables can increase actual. This scenario is only stock_pi4."
+      },
+      {
+        "id": "not_in_CAD_control_electronics_wires_screws",
+        "count": 1,
+        "lower_kg": 0.05,
+        "nominal_kg": 0.09,
+        "upper_kg": 0.14,
+        "source": [
+          "cad_reddit",
+          "vendor_parts",
+          "vendor_assembly"
+        ],
+        "method": "Explicit allowance for shield, IMU module, cable harness, omitted screws/standoffs; range is engineering judgment, not a measurement. Avoid counting built-in holders/head plates twice."
+      }
+    ]
+  },
+  "warnings": [
+    "CAD origin includes 18 large and 2 small servo VISUAL parts. Adding 20 servo masses to 1.130 kg double-counts them.",
+    "Large servo is unknown in the real kit; MG996R 55 g is an analogue and its stall torque is not a continuous torque.",
+    "CAD masses reflect unknown CAD material/density, not physical weighing. Some mass is hidden in servo geometries and misassigned to rotating parts.",
+    "Exact centre of gravity cannot be asserted until batteries/Pi/shield are placed and servo mounting frames validated.",
+    "Range is sensitivity to assumed component masses, NOT a probabilistic 95%-CI or guaranteed physical mass.",
+    "2.66 kg vendor/marketplace listing is likely package weight with tools/box; not established as assembled robot weight.",
+    "The custom ESP32 variant must be modelled separately after its power, sensors and mounting are chosen."
+  ],
+  "no_support_contact": "User explicitly chose open sources/community reverse engineering; do not contact vendor."
+}

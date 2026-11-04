@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="freenove_fnk0052_approx">
+  <compiler angle="radian" autolimits="true" inertiafromgeom="true" />
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" />
+  <default>
+    <joint damping="0.035" armature="0.003" />
+    <geom condim="4" friction="1.3 0.005 0.0001" solref="0.007 1" solimp="0.9 0.95 0.001" />
+  </default>
+  <visual>
+    <global offwidth="960" offheight="720" />
+  </visual>
+  <worldbody>
+    <light name="sun" pos="-0.3 0 2" dir="0 0 -1" />
+    <geom name="floor" type="plane" size="2 2 0.05" rgba="0.82 0.82 0.80 1" />
+    <body name="torso" pos="0 0 0.066">
+      <freejoint name="root" />
+      <geom name="torso_geom" type="box" size="0.105 0.068 0.018" mass="0.52" rgba="0.12 0.18 0.21 1" />
+      <site name="com_marker" type="sphere" size="0.007" rgba="1 0.2 0.1 1" />
+      <camera name="tracking" pos="-0.7 -0.6 0.45" xyaxes="0.62 -0.79 0 0.36 0.28 0.89" mode="trackcom" />
+      <body name="leg1_coxa" pos="0.055 0.076 -0.014" quat="0.8910065 0 0 0.4539905">
+        <joint name="leg1_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="leg1_femur" pos="0.033 0 0">
+          <joint name="leg1_hip" type="hinge" axis="0 1 0" range="-1.05 1.50" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="leg1_tibia" pos="0.09 0 0">
+            <joint name="leg1_knee" type="hinge" axis="0 1 0" range="0.0 2.25" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="leg1_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="leg1_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="leg2_coxa" pos="0.085 0 -0.014" quat="1 0 0 0">
+        <joint name="leg2_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="leg2_femur" pos="0.033 0 0">
+          <joint name="leg2_hip" type="hinge" axis="0 1 0" range="-1.05 1.50" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="leg2_tibia" pos="0.09 0 0">
+            <joint name="leg2_knee" type="hinge" axis="0 1 0" range="0.0 2.25" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="leg2_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="leg2_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="leg3_coxa" pos="0.055 -0.076 -0.014" quat="0.8910065 0 0 -0.4539905">
+        <joint name="leg3_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="leg3_femur" pos="0.033 0 0">
+          <joint name="leg3_hip" type="hinge" axis="0 1 0" range="-1.05 1.50" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="leg3_tibia" pos="0.09 0 0">
+            <joint name="leg3_knee" type="hinge" axis="0 1 0" range="0.0 2.25" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="leg3_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="leg3_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="leg4_coxa" pos="-0.055 -0.076 -0.014" quat="0.4539905 0 0 -0.8910065">
+        <joint name="leg4_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="leg4_femur" pos="0.033 0 0">
+          <joint name="leg4_hip" type="hinge" axis="0 1 0" range="-1.05 1.50" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="leg4_tibia" pos="0.09 0 0">
+            <joint name="leg4_knee" type="hinge" axis="0 1 0" range="0.0 2.25" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="leg4_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="leg4_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="leg5_coxa" pos="-0.085 0 -0.014" quat="6.123234e-17 0 0 1">
+        <joint name="leg5_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="leg5_femur" pos="0.033 0 0">
+          <joint name="leg5_hip" type="hinge" axis="0 1 0" range="-1.05 1.50" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="leg5_tibia" pos="0.09 0 0">
+            <joint name="leg5_knee" type="hinge" axis="0 1 0" range="0.0 2.25" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="leg5_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="leg5_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+      <body name="leg6_coxa" pos="-0.055 0.076 -0.014" quat="0.4539905 0 0 0.8910065">
+        <joint name="leg6_yaw" type="hinge" axis="0 0 1" range="-0.65 0.65" />
+        <geom type="capsule" fromto="0 0 0 0.033 0 0" size="0.014" mass="0.045" rgba="0.15 0.43 0.62 1" />
+        <body name="leg6_femur" pos="0.033 0 0">
+          <joint name="leg6_hip" type="hinge" axis="0 1 0" range="-1.05 1.50" />
+          <geom type="capsule" fromto="0 0 0 0.09 0 0" size="0.013" mass="0.065" rgba="0.24 0.52 0.68 1" />
+          <body name="leg6_tibia" pos="0.09 0 0">
+            <joint name="leg6_knee" type="hinge" axis="0 1 0" range="0.0 2.25" />
+            <geom type="capsule" fromto="0 0 0 0.11 0 0" size="0.010" mass="0.034" rgba="0.33 0.63 0.72 1" />
+            <geom name="leg6_foot_geom" type="sphere" pos="0.11 0 0" size="0.013" mass="0.003" rgba="0.90 0.54 0.19 1" />
+            <site name="leg6_foot_site" type="sphere" pos="0.11 0 0" size="0.014" rgba="1 0 0 0.3" />
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="leg1_yaw_motor" joint="leg1_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg1_hip_motor" joint="leg1_hip" kp="8" ctrlrange="-1.05 1.50" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg1_knee_motor" joint="leg1_knee" kp="8" ctrlrange="0.0 2.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg2_yaw_motor" joint="leg2_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg2_hip_motor" joint="leg2_hip" kp="8" ctrlrange="-1.05 1.50" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg2_knee_motor" joint="leg2_knee" kp="8" ctrlrange="0.0 2.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg3_yaw_motor" joint="leg3_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg3_hip_motor" joint="leg3_hip" kp="8" ctrlrange="-1.05 1.50" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg3_knee_motor" joint="leg3_knee" kp="8" ctrlrange="0.0 2.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg4_yaw_motor" joint="leg4_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg4_hip_motor" joint="leg4_hip" kp="8" ctrlrange="-1.05 1.50" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg4_knee_motor" joint="leg4_knee" kp="8" ctrlrange="0.0 2.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg5_yaw_motor" joint="leg5_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg5_hip_motor" joint="leg5_hip" kp="8" ctrlrange="-1.05 1.50" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg5_knee_motor" joint="leg5_knee" kp="8" ctrlrange="0.0 2.25" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg6_yaw_motor" joint="leg6_yaw" kp="8" ctrlrange="-0.65 0.65" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg6_hip_motor" joint="leg6_hip" kp="8" ctrlrange="-1.05 1.50" forcerange="-0.7 0.7" forcelimited="true" />
+    <position name="leg6_knee_motor" joint="leg6_knee" kp="8" ctrlrange="0.0 2.25" forcerange="-0.7 0.7" forcelimited="true" />
+  </actuator>
+  <sensor>
+    <framequat name="torso_orientation" objtype="body" objname="torso" />
+    <framepos name="torso_position" objtype="body" objname="torso" />
+    <touch name="leg1_contact" site="leg1_foot_site" />
+    <touch name="leg2_contact" site="leg2_foot_site" />
+    <touch name="leg3_contact" site="leg3_foot_site" />
+    <touch name="leg4_contact" site="leg4_foot_site" />
+    <touch name="leg5_contact" site="leg5_foot_site" />
+    <touch name="leg6_contact" site="leg6_foot_site" />
+  </sensor>
+  <keyframe>
+    <key name="stand" qpos="0 0 0.066 1 0 0 0 0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592" ctrl="0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592 0 -0.768378 1.944592" />
+  </keyframe>
+</mujoco>
