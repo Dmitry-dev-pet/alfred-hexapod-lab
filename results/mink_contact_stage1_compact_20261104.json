@@ -1,0 +1,298 @@
+{
+  "schema": "fnk0052_cad30_mink_contact_planner_stage1_2026-11-04",
+  "status": "PARTIAL_ONE_LEG_RECOVERY_SUCCESS_FULL_HORIZON_NOT_PROVEN",
+  "environment": {
+    "python": "3.13.5",
+    "mink": "1.4.0",
+    "mujoco": "3.14.0",
+    "qpsolvers": "4.13.0",
+    "daqp": "0.11.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "model_assumptions": {
+    "mass_kg": 1.8048682,
+    "mu": 1.1,
+    "leg_torque_cap_Nm": 0.7,
+    "research_joint_abs_rad": 1.7,
+    "servo_calibrated": false,
+    "original_B_historical_transition_respected_research_limit": false
+  },
+  "input_archive_sha256": {
+    "cad30_xml_mesh_bundle": "f2986c6256a19df59769db2ce0bdd9ea4cfee1ca36c27fb2d221da8c2a0afd53",
+    "original_B_trace_bundle": "dbc782200d58a78b811840c0af67fef52d8e7666d727f14d9ecc6d0d1727ca6e",
+    "safe_pose_json": "fdf2ab92241e074b848e68090d155b173150398534543a83faf8c84885a02884"
+  },
+  "static_preflight": {
+    "schema": "mink_cad30_step_g2_local_diagnostic_v1",
+    "mujoco": "3.14.0",
+    "mink": "1.4.0",
+    "safe_snapshot": "cad30_safe_pose_B_nominal.json",
+    "cases": {
+      "bl": {
+        "status": "ONE_STEP_STATIC_NODES_PASS",
+        "node_count": 24,
+        "min_margin_mm": 15.409273724829593,
+        "max_abs_joint_rad": 1.6546367007978282,
+        "max_target_error_mm": 0.1916877498472104,
+        "max_motor_fraction": 0.5715642919336837,
+        "blocked_node": null,
+        "autonomous_first_step_authorized": false,
+        "reason": "No proven four-step horizon / terminal viability; kinematic/LP snapshots are not physical contacts."
+      },
+      "br": {
+        "status": "ONE_STEP_STATIC_NODES_PASS",
+        "node_count": 24,
+        "min_margin_mm": 15.4092201309833,
+        "max_abs_joint_rad": 1.6546596824983224,
+        "max_target_error_mm": 0.1916877498472104,
+        "max_motor_fraction": 0.5715642919336837,
+        "blocked_node": null,
+        "autonomous_first_step_authorized": false,
+        "reason": "No proven four-step horizon / terminal viability; kinematic/LP snapshots are not physical contacts."
+      }
+    },
+    "after_two_hypothetical_rear_20mm": {
+      "ml": {
+        "current_three_support_margin_mm": -87.20473869123119,
+        "minimum_com_shift_for_5mm_margin_mm": 92.20473869123116
+      },
+      "mr": {
+        "current_three_support_margin_mm": -87.29352321093103,
+        "minimum_com_shift_for_5mm_margin_mm": 92.29352321093104
+      }
+    },
+    "four_step_cycle_found": false,
+    "autonomous_first_step_authorized": false,
+    "dynamics": "NOT CHECKED BY THIS SCRIPT",
+    "warning": "Initial historical B trajectory exceeded provisional ±1.7 rad; no claim of strict 6-to-4 start."
+  },
+  "single_foot_actual_dynamic": {
+    "bl": {
+      "status": "DYNAMIC_VETO_NEXT_STEP",
+      "math_preflight_nodes": 24,
+      "physics_step_s": 0.002,
+      "time_s": 4.819999999999691,
+      "min_loaded_stance_legs": 3,
+      "min_signed_margin_mm": 11.61251258707041,
+      "min_positive_loaded_Fz_N": 0.12401419415104645,
+      "maximum_joint_abs_rad": 1.666504429732805,
+      "peak_motor_command_Nm": 0.5324551603893308,
+      "saturation_steps": 0,
+      "steps_with_less_than_3_loaded": 0,
+      "lift_observed": true,
+      "touchdown_observed": true,
+      "end_loaded_legs": [
+        "ml",
+        "mr",
+        "bl"
+      ],
+      "start_COM": [
+        0.00010454273721035465,
+        -0.015270450207442039,
+        0.10371727385687324
+      ],
+      "end_COM": [
+        -0.00013790202331941502,
+        -0.01057639493759665,
+        0.1172826613572265
+      ],
+      "COM_forward_delta_mm": 4.694055269845388,
+      "actual_foot_forward_delta_mm": 19.25811542919745,
+      "end_contact_site_z_mm": {
+        "ml": -0.0019347492773019725,
+        "mr": -0.0020795480764612684,
+        "bl": 0.0024046447421322004,
+        "br": 0.045836007140503954
+      },
+      "autonomous_next_step_authorized": false,
+      "notes": "Only one exploratory leg, no four-step lookahead. Dynamic feedback not used to correct unexpected contact loss. Not hardware safe."
+    },
+    "br": {
+      "status": "DYNAMIC_VETO_NEXT_STEP",
+      "math_preflight_nodes": 24,
+      "physics_step_s": 0.002,
+      "time_s": 4.819999999999691,
+      "min_loaded_stance_legs": 3,
+      "min_signed_margin_mm": 11.601540537886681,
+      "min_positive_loaded_Fz_N": 0.1385976645149034,
+      "maximum_joint_abs_rad": 1.666504429732805,
+      "peak_motor_command_Nm": 0.5324551603893308,
+      "saturation_steps": 0,
+      "steps_with_less_than_3_loaded": 0,
+      "lift_observed": true,
+      "touchdown_observed": true,
+      "end_loaded_legs": [
+        "ml",
+        "mr",
+        "br"
+      ],
+      "start_COM": [
+        0.00010454273721035465,
+        -0.015270450207442039,
+        0.10371727385687324
+      ],
+      "end_COM": [
+        0.00033356329254358115,
+        -0.010565410302474562,
+        0.1172843260727916
+      ],
+      "COM_forward_delta_mm": 4.705039904967477,
+      "actual_foot_forward_delta_mm": 19.26007379873218,
+      "autonomous_next_step_authorized": false,
+      "notes": "Only one exploratory leg, no four-step lookahead. Dynamic feedback not used to correct unexpected contact loss. Not hardware safe."
+    }
+  },
+  "same_state_recovery_comparison": {
+    "schema": "cad30_contact_recovery_mink_feedback_v1",
+    "cases": {
+      "0.0": {
+        "push_mm": 0.0,
+        "unloaded_leg": "br",
+        "loaded_legs_at_end": [
+          "ml",
+          "mr",
+          "bl"
+        ],
+        "Fz_at_end_N": {
+          "ml": 7.993019197466553,
+          "mr": 8.599744361915231,
+          "bl": 1.088637370122857,
+          "br": 0.024383263046999358
+        },
+        "min_legs_all_timesteps": 3,
+        "positive_margin_min_mm": 11.375498812907326,
+        "min_0p2s_all_four_loaded": false,
+        "all_four_force_bearing_at_end_ge_0p2N": false,
+        "max_joint_abs_rad": 1.6365462424810038,
+        "max_motor_command_Nm": 0.5236769529216625,
+        "saturated_timesteps": 0,
+        "fraction_of_steps_four_loaded": 0.0025,
+        "recovery_passed_local_dynamics": false,
+        "autonomous_second_step_authorized": false
+      },
+      "0.25": {
+        "push_mm": 0.25,
+        "unloaded_leg": "br",
+        "loaded_legs_at_end": [
+          "ml",
+          "mr",
+          "bl",
+          "br"
+        ],
+        "Fz_at_end_N": {
+          "ml": 8.076822621399636,
+          "mr": 8.536309470670536,
+          "bl": 0.952164048438792,
+          "br": 0.14050599910581324
+        },
+        "min_legs_all_timesteps": 3,
+        "positive_margin_min_mm": 11.298228329863866,
+        "min_0p2s_all_four_loaded": true,
+        "all_four_force_bearing_at_end_ge_0p2N": false,
+        "max_joint_abs_rad": 1.6365462424810542,
+        "max_motor_command_Nm": 0.519643351138775,
+        "saturated_timesteps": 0,
+        "fraction_of_steps_four_loaded": 0.85,
+        "recovery_passed_local_dynamics": false,
+        "autonomous_second_step_authorized": false
+      },
+      "0.5": {
+        "push_mm": 0.5,
+        "unloaded_leg": "br",
+        "loaded_legs_at_end": [
+          "ml",
+          "mr",
+          "bl",
+          "br"
+        ],
+        "Fz_at_end_N": {
+          "ml": 8.16188782764733,
+          "mr": 8.472280457009438,
+          "bl": 0.8137286581308301,
+          "br": 0.25792017735568834
+        },
+        "min_legs_all_timesteps": 3,
+        "positive_margin_min_mm": 11.21516940771855,
+        "min_0p2s_all_four_loaded": true,
+        "all_four_force_bearing_at_end_ge_0p2N": true,
+        "max_joint_abs_rad": 1.6365462424811048,
+        "max_motor_command_Nm": 0.5153734394687025,
+        "saturated_timesteps": 0,
+        "fraction_of_steps_four_loaded": 0.8725,
+        "recovery_passed_local_dynamics": true,
+        "autonomous_second_step_authorized": false
+      },
+      "1.0": {
+        "push_mm": 1.0,
+        "unloaded_leg": "br",
+        "loaded_legs_at_end": [
+          "ml",
+          "mr",
+          "bl",
+          "br"
+        ],
+        "Fz_at_end_N": {
+          "ml": 8.332495769017987,
+          "mr": 8.345454630952064,
+          "bl": 0.5365579798269187,
+          "br": 0.4912910949649282
+        },
+        "min_legs_all_timesteps": 3,
+        "positive_margin_min_mm": 11.02742661066061,
+        "min_0p2s_all_four_loaded": true,
+        "all_four_force_bearing_at_end_ge_0p2N": true,
+        "max_joint_abs_rad": 1.6365462424812058,
+        "max_motor_command_Nm": 0.5145824344121299,
+        "saturated_timesteps": 0,
+        "fraction_of_steps_four_loaded": 0.9025,
+        "recovery_passed_local_dynamics": true,
+        "autonomous_second_step_authorized": false
+      },
+      "2.0": {
+        "push_mm": 2.0,
+        "unloaded_leg": "br",
+        "loaded_legs_at_end": [
+          "ml",
+          "mr",
+          "br"
+        ],
+        "Fz_at_end_N": {
+          "ml": 8.66757442045063,
+          "mr": 8.111299303691819,
+          "bl": 0.0,
+          "br": 0.9269654853877914
+        },
+        "min_legs_all_timesteps": 3,
+        "positive_margin_min_mm": 10.482929948092762,
+        "min_0p2s_all_four_loaded": false,
+        "all_four_force_bearing_at_end_ge_0p2N": false,
+        "max_joint_abs_rad": 1.636546242481409,
+        "max_motor_command_Nm": 0.5294688895139399,
+        "saturated_timesteps": 0,
+        "fraction_of_steps_four_loaded": 0.1225,
+        "recovery_passed_local_dynamics": false,
+        "autonomous_second_step_authorized": false
+      }
+    },
+    "contact_feedback_proven_in_nominal_simulation": true,
+    "complete_four_leg_gait_proven": false,
+    "limits": "One sample only; very small PWM-servo proxy; start derived from historical unsafe B; no full horizon and no hardware calibration"
+  },
+  "decisions": {
+    "mink_ik_candidate_default": true,
+    "custom_WBC_retained_as_control": true,
+    "one_physical_swing_and_recovery_observed": true,
+    "complete_4_step_gait": false,
+    "autonomous_next_step_enabled": false,
+    "hardware_safe": false
+  },
+  "limitations": [
+    "One nominal friction/mass/torque assumption, without measured servo calibration",
+    "Only one rear leg completes an individual swing and four-point recontact after feedback",
+    "Originates from a four-leg pose reached after an earlier segment outside the provisional ±1.7 rad limit",
+    "No four-step MPC or terminal viability certification, and no strict 6-to-4 start",
+    "All kinematic preflight poses are virtual and do not certify continuous dynamics",
+    "Contact threshold 0.08N per leg for loaded detection; end 0.2N minimum for recovery"
+  ]
+}
