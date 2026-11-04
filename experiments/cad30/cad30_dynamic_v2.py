@@ -101,7 +101,7 @@ class Experiment:
   return {'feasible':True,'motor_fraction_cap':motor_frac_cap,'force_minimum_N':.2,'lp_max_tau_ratio':round(float(np.max(abs(tau)/self.cap)),6),
           'predicted_Fz_N':[round(float(x),4) for x in F[:,2]],'max_eq_error':float(np.max(abs(aeq@sol.x-beq)))}
 
- def choose_safe_target(self,target=.66):
+ def choose_safe_target(self,target=1.66):
   obs=self.observation(); jb,jq=self.matrices(obs); J=np.c_[jb,jq]
   q=self.d.qpos[self.qads].copy();scales=np.r_[np.full(3,.005),np.full(3,.008),np.full(18,.03)];H=np.diag(1/scales**2)
   bounds=[(-.012,.012)]*3+[(-.012,.012)]*3+[(max(-.12,-target-x),min(.12,target-x)) for x in q]
@@ -157,7 +157,7 @@ class Experiment:
  def hold(self,goal,duration,phase):
   for _ in range(int(round(duration/self.m.opt.timestep))):self.step_control(goal,phase)
 
- def run(self,target=.66,micros=3):
+ def run(self,target=1.66,micros=3):
   self.d.qpos[:]=self.initial;self.d.qvel[:]=0;self.d.time=0;mj.mj_forward(self.m,self.d)
   u0=self.d.qpos[self.aq].copy()
   self.hold(u0,.8,'baseline_settle')
@@ -221,9 +221,15 @@ class Experiment:
 def main():
  p=argparse.ArgumentParser()
  p.add_argument('--model',type=Path,required=True);p.add_argument('--replay-zip',type=Path,required=True)
- p.add_argument('--target',type=float,default=1.66);p.add_argument('--micro-count',type=int,default=3)
+ p.add_argument('--target',type=float,default=1.66);p.add_argument('--micro-count',type=int,default=3);p.add_argument('--mu',type=float,default=1.1)
  p.add_argument('--out',type=Path)
- a=p.parse_args();r=Experiment(a.model,a.replay_zip).run(a.target,a.micro_count)
+ a=p.parse_args();r=Experiment(a.model,a.replay_zip,mu=a.mu).run(a.target,a.micro_count)
+ def safe_json(o):
+  if isinstance(o,dict):return {k:safe_json(v) for k,v in o.items()}
+  if isinstance(o,(list,tuple)):return [safe_json(x) for x in o]
+  if isinstance(o,float) and not np.isfinite(o):return None
+  return o
+ r=safe_json(r)
  if a.out:
   a.out.parent.mkdir(parents=True,exist_ok=True)
   a.out.write_text(json.dumps(r,ensure_ascii=False,indent=2,allow_nan=False))
