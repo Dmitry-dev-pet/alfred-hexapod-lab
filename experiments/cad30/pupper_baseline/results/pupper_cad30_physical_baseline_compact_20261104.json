@@ -1,0 +1,127 @@
+{
+  "schema": "fnk0052-pupper-mink-cad30-physical-baseline/1",
+  "date_utc": "2026-11-04",
+  "overall_status": "ONE_REAL_FOUR_SUPPORT_REAR_SWING_PASS__FULL_GAIT_NOT_YET",
+  "environment": {
+    "model": "Freenove FNK0052 CAD30 nominal from owner private Drive",
+    "original_meshes_in_repo": false,
+    "mujoco": "3.14.0",
+    "mink": "1.4.0",
+    "mass_kg": 1.8048682,
+    "mu": 1.1,
+    "physics_dt_s": 0.002,
+    "joint_pd_kp": 7,
+    "joint_pd_kd": 0.32,
+    "leg_tau_cap_Nm_research_nominal": 0.7,
+    "joint_limit_rad_research_nominal": 1.7,
+    "known_hardware_calibration": false
+  },
+  "phases": {
+    "six_support_raise": {
+      "source": "existing local IK/PD; no Pupper",
+      "input": "physical original settled six-support model",
+      "pass": true,
+      "root_raise_mm": 28.588423770589205,
+      "minimum_loaded_legs_every_physics_step": 6,
+      "max_joint_abs_rad": 1.4784948574087284,
+      "peak_motor_command_Nm": 0.15920679552809025,
+      "saturation_ticks": 0
+    },
+    "pupper_stance_six_contact_prebalance": {
+      "source": "upstream Stanford Pupper StanceController+Mink+dynamic MuJoCo",
+      "status": "PHYSICAL_PREBALANCE_PASS",
+      "target_body_back_mm": 35.0,
+      "actual_root_delta_Y_mm": -36.393663976940545,
+      "minimum_loaded_legs_every_physics_step": 6,
+      "max_joint_abs_rad": 1.4035441669036157,
+      "peak_motor_command_Nm": 0.16706343325816744,
+      "saturation_ticks": 0
+    },
+    "mink_front_pair_unload": {
+      "source": "Mink IK front pair + free-body dynamic MuJoCo",
+      "status": "FOUR_CONTACT_STAND_FROM_SIX",
+      "rear_push_mm": 0.0,
+      "command_front_raise_mm": 80.0,
+      "front_toe_height_above_ground_mm": {
+        "fl": 72.2208192765951,
+        "fr": 72.21662654564886
+      },
+      "minimum_stance_loaded_all_physics_steps": 4,
+      "minimum_support_polygon_margin_mm": 21.629585289573033,
+      "peak_motor_command_Nm": 0.3519658682853734,
+      "max_joint_abs_rad": 1.4137958518569465,
+      "saturation_steps": 0,
+      "final_Fz_N": {
+        "ml": 7.877625528058888,
+        "mr": 7.884627950803613,
+        "bl": 0.9704642664850687,
+        "br": 0.9730429954575517,
+        "fr": 0,
+        "fl": 0
+      }
+    },
+    "pupper_swing_bl_one_step": {
+      "source": "upstream Stanford Pupper SwingLegController+Mink+dynamic MuJoCo",
+      "pass": true,
+      "leg": "bl",
+      "target_toe_forward_mm": 20.0,
+      "physical_toe_forward_mm": 20.345188747858845,
+      "true_liftoff_seen": true,
+      "touchdown_four_loaded": true,
+      "minimum_loaded_supports_each_physics_step": 3,
+      "minimum_actual_contact_support_margin_mm": 21.179452147718766,
+      "swing_duration_s": 2.0,
+      "peak_motor_command_Nm": 0.42454843169616463,
+      "max_joint_abs_rad": 1.6139109786485222,
+      "saturation_steps": 0,
+      "physical_root_forward_during_swing_mm": 0.0375970579683943,
+      "final_Fz_N": {
+        "ml": 8.14879,
+        "mr": 7.62008,
+        "bl": 0.53535,
+        "br": 1.40155,
+        "fr": 0.0,
+        "fl": 0.0
+      }
+    }
+  },
+  "whole_experiment": {
+    "root_forward_Y_from_original_six_leg_start_mm": -34.335643335366655,
+    "COM_forward_Y_from_original_six_leg_start_mm": -29.085471964606683,
+    "walked_four_leg_cycle": false,
+    "repeatable_positive_net_forward_motion": false
+  },
+  "next_step_geometry": {
+    "ml": -82.08927080363775,
+    "mr": -91.4631291849556,
+    "bl": 21.542842439489487,
+    "br": 21.542842439489487
+  },
+  "next_middle_lift_veto": true,
+  "local_test_results": {
+    "tests_total": 8,
+    "tests_passed": 8,
+    "real_cad30_dynamic_tests": 5,
+    "pupper_unit_tests": 3
+  },
+  "physics_receipts": [
+    "raise_30mm_result.json",
+    "pupper_stance_prebalance_35mm.json",
+    "front_pair_shift35_p0.json",
+    "pupper_four_bl20_simple.json"
+  ],
+  "source_attribution": {
+    "upstream": "https://github.com/stanfordroboticsclub/StanfordQuadruped",
+    "commit": "dc0c5e2089cf2c0aac3c59982a4f140c31803175",
+    "license": "MIT",
+    "exact_canonical_code_in_GitHub": true,
+    "local_zip_vendor_copies": "small functional excerpts as used in local simulation"
+  },
+  "limitations": [
+    "Quasistatic geometric support and observed contact count are not proof of hardware robustness.",
+    "Hardware servo limits, actual friction, mass and torque not calibrated.",
+    "The positive step displacement is the toe, NOT net robot movement.",
+    "The next middle swing has negative static margin at the observed COM and is not authorized without new preparation.",
+    "No complete four-step gait nor repeatable walking."
+  ]
+}
