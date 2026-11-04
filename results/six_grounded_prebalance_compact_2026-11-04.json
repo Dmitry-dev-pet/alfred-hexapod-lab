@@ -1,0 +1,183 @@
+{
+  "schema": "FNK0052_six_grounded_prebalance_2026-11-04/1",
+  "status": "physics positive nominal 1.1 only; NOT 4leg walking",
+  "source": "Freenove FNK0052 CAD30 30 original STL locally; source not redistributed",
+  "model": "MuJoCo 3.14.0 Python 3.13.5",
+  "init": "six tibia floor contacts after a 1s gravitational hold",
+  "strategy": "bounded grid search; chose 38mm with transition reserve, not global optimum",
+  "selected": {
+    "model_friction_mu": 1.1,
+    "shift_cmd_mm": 38.0,
+    "front_z_command_mm": 10.0,
+    "after_prep_com_xy_m": [
+      0.00012,
+      -0.0205
+    ],
+    "after_prep_four_margin_mm": 20.79,
+    "after_unload_four_margin_mm": 23.56,
+    "after_unload_front_load_N": 0.0,
+    "after_unload_front_contacts": 0,
+    "min_contacts_all_steps": 4,
+    "min_stance_contacts_all_steps": 4,
+    "high_claw_clearances_mm": {
+      "fl": 98.73,
+      "fr": 98.73
+    },
+    "peak_unclipped_control_Nm": 0.476,
+    "motor_saturation_fraction": 0.0
+  },
+  "candidates_mu1p1": [
+    {
+      "model_friction_mu": 1.1,
+      "shift_cmd_mm": 38.0,
+      "front_z_command_mm": 10.0,
+      "after_prep_com_xy_m": [
+        0.00012,
+        -0.0205
+      ],
+      "after_prep_four_margin_mm": 20.79,
+      "after_unload_four_margin_mm": 23.56,
+      "after_unload_front_load_N": 0.0,
+      "after_unload_front_contacts": 0,
+      "min_contacts_all_steps": 4,
+      "min_stance_contacts_all_steps": 4,
+      "high_claw_clearances_mm": {
+        "fl": 98.73,
+        "fr": 98.73
+      },
+      "peak_unclipped_control_Nm": 0.476,
+      "motor_saturation_fraction": 0.0
+    },
+    {
+      "model_friction_mu": 1.1,
+      "shift_cmd_mm": 39.75,
+      "front_z_command_mm": 10.0,
+      "after_prep_com_xy_m": [
+        0.00012,
+        -0.02149
+      ],
+      "after_prep_four_margin_mm": 21.79,
+      "after_unload_four_margin_mm": 24.71,
+      "after_unload_front_load_N": 0.0,
+      "after_unload_front_contacts": 0,
+      "min_contacts_all_steps": 4,
+      "min_stance_contacts_all_steps": 4,
+      "high_claw_clearances_mm": {
+        "fl": 98.55,
+        "fr": 98.55
+      },
+      "peak_unclipped_control_Nm": 0.473,
+      "motor_saturation_fraction": 0.0
+    },
+    {
+      "model_friction_mu": 1.1,
+      "shift_cmd_mm": 40.0,
+      "front_z_command_mm": 10.0,
+      "after_prep_com_xy_m": [
+        0.00012,
+        -0.02167
+      ],
+      "after_prep_four_margin_mm": 21.97,
+      "after_unload_four_margin_mm": 24.89,
+      "after_unload_front_load_N": 0.0,
+      "after_unload_front_contacts": 0,
+      "min_contacts_all_steps": 3,
+      "min_stance_contacts_all_steps": 3,
+      "high_claw_clearances_mm": {
+        "fl": 98.52,
+        "fr": 98.52
+      },
+      "peak_unclipped_control_Nm": 0.472,
+      "motor_saturation_fraction": 0.0
+    },
+    {
+      "model_friction_mu": 1.1,
+      "shift_cmd_mm": 42.0,
+      "front_z_command_mm": 10.0,
+      "after_prep_com_xy_m": [
+        0.00012,
+        -0.02282
+      ],
+      "after_prep_four_margin_mm": 23.13,
+      "after_unload_four_margin_mm": 26.29,
+      "after_unload_front_load_N": 0.0,
+      "after_unload_front_contacts": 0,
+      "min_contacts_all_steps": 3,
+      "min_stance_contacts_all_steps": 2,
+      "high_claw_clearances_mm": {
+        "fl": 98.38,
+        "fr": 98.38
+      },
+      "peak_unclipped_control_Nm": 0.469,
+      "motor_saturation_fraction": 0.0
+    },
+    {
+      "model_friction_mu": 1.1,
+      "shift_cmd_mm": 43.76,
+      "front_z_command_mm": 10.0,
+      "after_prep_com_xy_m": [
+        0.00012,
+        -0.02383
+      ],
+      "after_prep_four_margin_mm": 24.16,
+      "after_unload_four_margin_mm": 27.49,
+      "after_unload_front_load_N": 0.0,
+      "after_unload_front_contacts": 0,
+      "min_contacts_all_steps": 3,
+      "min_stance_contacts_all_steps": 2,
+      "high_claw_clearances_mm": {
+        "fl": 98.28,
+        "fr": 98.28
+      },
+      "peak_unclipped_control_Nm": 0.466,
+      "motor_saturation_fraction": 0.0
+    }
+  ],
+  "negative_friction": [
+    {
+      "model_friction_mu": 0.6,
+      "shift_cmd_mm": 38.0,
+      "min_stance_contacts_all_steps": 1,
+      "min_contacts_all_steps": 2,
+      "motor_saturation_fraction": 0.0,
+      "after_unload_front_contacts": 0,
+      "high_claw_clearances_mm": {
+        "fl": 95.38,
+        "fr": 95.38
+      }
+    },
+    {
+      "model_friction_mu": 0.3,
+      "shift_cmd_mm": 38.0,
+      "min_stance_contacts_all_steps": 0,
+      "min_contacts_all_steps": 0,
+      "motor_saturation_fraction": 0.25676,
+      "after_unload_front_contacts": 2,
+      "high_claw_clearances_mm": {
+        "fl": -0.0,
+        "fr": -0.0
+      }
+    }
+  ],
+  "sha256": {
+    "results/six_grounded_claws_mu1p1_2026-11-04.json": "918b6c30666b1d03b2b27cc892edac52a1ef0f734bead000f456ad443f058961",
+    "results/six_grounded_claws_mu0p6_2026-11-04.json": "a5ce2b21a8ee07ca18df42435bd31090265863bd8033fe8ff9ff31af6fb4d39c",
+    "results/six_grounded_claws_mu0p3_2026-11-04.json": "ba5e5e16437082d30a823b2f65ac62c4163f0e946d75974dd259e61c650d4408",
+    "scripts/export_six_grounded_prebalance.py": "b7d62c6bb8d1c915ce173f6dbd102e03a5f2c35232c727579dececfa67215d79",
+    "experiments/cad30/six_grounded_prebalance_v1.py": "03b4a96daa85ca4382905b156a5e82ec508d5812bdb5133dae28b76705c85f93",
+    "experiments/cad30/test_six_grounded_prebalance_v1.py": "a4547456b02c2b8bd7b3651bc74ef7d00b739ad0cd1e4194788618707848aa35"
+  },
+  "geometry": {
+    "initial_COM_y_m": 0.00803478,
+    "initial_future_four_support_margin_mm": -8.0153,
+    "ideal_chebyshev_COM_y_m_unconstrained": -0.09822397,
+    "ideal_max_margin_mm_unconstrained": 98.24347,
+    "physical_model_validity": "estimated parameters; goal not attainable within this local IK scan"
+  },
+  "notes": [
+    "Four remaining legs must be in contact at every dt=0.002s, not only endpoints",
+    "10mm front toe IK command unloads physical front contact; then raise front clearances ~99mm",
+    "No 4leg swing, no self-organized or autonomous controller",
+    "Full qpos/50Hz receipts stored in private Drive archive"
+  ]
+}
