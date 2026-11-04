@@ -1,0 +1,22 @@
+{
+  "schema": "fnk0052_cad30_static_oracle_artifact/1",
+  "date_utc": "2026-11-04",
+  "drive_url": "https://drive.google.com/file/d/1hzw1PXSu00eZSfvLF4wveBQbSHVmqWK7/view?usp=drivesdk",
+  "file_name": "FNK0052_CAD30_static_support_math_2026-11-04_no_CAD.zip",
+  "size_bytes": 133230,
+  "archive_sha256": "fb56a6fddf0c886e7738d03563a525421a37b3d4ae778a3776154c3fb551aff5",
+  "contains_original_CAD_mesh_files": false,
+  "tested_66_static_conditions": true,
+  "test_count_passed": 11,
+  "mu_values": [
+    1.1,
+    0.6,
+    0.3
+  ],
+  "circular_cone_boundary_witness": [
+    "br",
+    "mr"
+  ],
+  "model_CAD30_source": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk",
+  "caveat": "Stance-only static contact feasibility under assumed model; not walking or hardware stability"
+}
