@@ -1,0 +1,45 @@
+{
+  "schema": "cad30_fourstep_dynamic_independent_v1",
+  "status": "DYNAMIC_CHECK_ABORTED",
+  "stopped_reason": "post-touchdown lost 4 supports at node 23 bl_touchdown_4",
+  "true_gait_verified": false,
+  "servo_real_world_calibrated": false,
+  "physics_dt_s": 0.002,
+  "node_duration_s": 0.18,
+  "model_friction_mu": 1.1,
+  "prep_waypoints_planned": 90,
+  "prep_waypoints_executed": 24,
+  "cycle_waypoints_planned": 69,
+  "cycle_waypoints_executed": 0,
+  "min_loaded_stance_legs": 3,
+  "min_physical_support_margin_mm": 10.486273343138057,
+  "max_joint_abs_rad": 1.666504429732805,
+  "peak_commanded_motor_Nm": 0.5324551603893308,
+  "peak_unclipped_motor_Nm": 0.5324551603893308,
+  "motor_saturation_count": 0,
+  "start_nominal_COM_xyz_m": [
+    0.00010454273721035465,
+    -0.015270450207442039,
+    0.10371727385687324
+  ],
+  "end_physical_COM_xyz_m": [
+    -0.0005911149643027617,
+    -0.009455648067394969,
+    0.11735272062158568
+  ],
+  "actual_COM_movement_from_initial_mm": [
+    -0.6956577015131162,
+    5.81480214004707,
+    13.63544676471244
+  ],
+  "actual_cycle_start_COM_xyz_m": null,
+  "actual_cycle_COM_movement_mm": null,
+  "physics_duration_s": 4.46999999999973,
+  "last_phase": "bl_touchdown_4",
+  "last_loaded": [
+    "ml",
+    "mr",
+    "bl"
+  ],
+  "notes": "The kinematic root waypoints are NOT enforced. Only actuated joint goals are commanded with torque-clipped PD; consecutive steps abort after loss of contact."
+}

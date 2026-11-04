@@ -1,0 +1,88 @@
+{
+  "schema": "cad30_mink_full_cycle_archive_v1",
+  "date": "2026-11-04",
+  "provenance": {
+    "model_archive_drive": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view",
+    "initial_B_archive_drive": "https://drive.google.com/file/d/15mcLT9KHRrxAnjSG7KTTCc02K6aBDJb1/view",
+    "initial_4-contact_state_sha256": "fdf2ab92241e074b848e68090d155b173150398534543a83faf8c84885a02884",
+    "mu": 1.1,
+    "nominal_leg_torque_cap_Nm": 0.7,
+    "model_approx_mass_kg": 1.805,
+    "research_joint_limit_rad": 1.7,
+    "original_6_to_4_transition_within_research_limit": false
+  },
+  "full_math_cycle_sampled_feasible": true,
+  "free_base_physical_full_cycle_proven": false,
+  "dynamics_block": "First prep rear touchdown leaves opposite rear foot unweighted; execution aborted",
+  "adaptive_local_contact_recovery_passes_mm": [
+    1.5,
+    2.0
+  ],
+  "unit_tests": {
+    "real_CAD30": 5,
+    "passed": 5
+  },
+  "no_original_STL_in_archive": true,
+  "files": [
+    {
+      "path": "code/four_step_lookahead_v1.py",
+      "sha256": "ba0ca2bb8fd976334f00ce807a952f875573edce2ed45c48e0fb5fcf565e3aa2",
+      "bytes": 10449
+    },
+    {
+      "path": "code/four_step_physical_v1.py",
+      "sha256": "faacd69f3273b78e5958e6fab1deb953cc9023ecdc9f99354b315022a5727300",
+      "bytes": 9177
+    },
+    {
+      "path": "code/four_step_contact_recovery_v1.py",
+      "sha256": "63c0dea29658084e957a6b2e3fd7faedc650c87a8f4533651aad88c08a8de016",
+      "bytes": 6051
+    },
+    {
+      "path": "code/test_four_step_lookahead_v1.py",
+      "sha256": "3c0b08dea40ba047f6404097615040951c1cf8d55a36eff8a9867f071cbeefa0",
+      "bytes": 4208
+    },
+    {
+      "path": "README_MINK_FOUR_STEP_LOOKAHEAD_2026-11-04.md",
+      "sha256": "b36123d06214e95acf56ce6eda73ce153604606af495471eedc063c4cc05d859",
+      "bytes": 16010
+    },
+    {
+      "path": "results/four_step_horizon_receipt.json",
+      "sha256": "b5182f5b012181c9db97c38d58dcd3ce88c3d82974b6a8a43669ba02ed374d67",
+      "bytes": 3584
+    },
+    {
+      "path": "results/four_step_waypoints_full.json",
+      "sha256": "7d958c71755f78ebcab3140ddd2c1c277ff7c4648dc5764bb231a6644b5f25db",
+      "bytes": 129738
+    },
+    {
+      "path": "results/four_step_physics_abort_full.json",
+      "sha256": "26f3cbbd318a777f498806a5dcd5ea8a6f9d5595386f6939805480e5eea2dedd",
+      "bytes": 47296
+    },
+    {
+      "path": "results/four_step_feedback_recovery_full.json",
+      "sha256": "5fb2d760d62b3b92a76906a337cd799035865d79e6ba10f5418291e20d0dd106",
+      "bytes": 16995
+    },
+    {
+      "path": "results/four_step_dynamic_stop_compact.json",
+      "sha256": "64c7845a5489535975b7767add16d2020b9e67436caf0c6adf9169a1ec155107",
+      "bytes": 1440
+    },
+    {
+      "path": "results/four_step_contact_recovery_compact.json",
+      "sha256": "800bd39182e4b80e72df8206b53eeffdbe359fb7f54b0573926418b9a51b09a1",
+      "bytes": 3529
+    },
+    {
+      "path": "source_state/cad30_safe_pose_B_nominal.json",
+      "sha256": "fdf2ab92241e074b848e68090d155b173150398534543a83faf8c84885a02884",
+      "bytes": 1579
+    }
+  ]
+}
