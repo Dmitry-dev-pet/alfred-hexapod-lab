@@ -1,0 +1,171 @@
+{
+  "schema": "pupper_scheduler_cad30_geometry_audit/1",
+  "status": "SCHEDULER_COMPATIBLE; STATIC_SUPPORT_NOT_READY",
+  "source_upstream": "https://github.com/stanfordroboticsclub/StanfordQuadruped/blob/dc0c5e2089cf2c0aac3c59982a4f140c31803175/src/Gaits.py",
+  "source_license": "MIT, Stanford Student Robotics 2020",
+  "source_unmodified": true,
+  "model": {
+    "mass_kg": 1.8048682,
+    "nmesh": 30,
+    "mujoco_version": "3.14.0",
+    "nq": 27
+  },
+  "four_walk_legs": [
+    "ml",
+    "mr",
+    "bl",
+    "br"
+  ],
+  "two_front_manipulator_legs": [
+    "fl",
+    "fr"
+  ],
+  "pupper_semantic_mapping": {
+    "front_left": "ml",
+    "front_right": "mr",
+    "hind_left": "bl",
+    "hind_right": "br"
+  },
+  "derived_from_recorded_pose": "cad30_safe_pose_B_nominal.json",
+  "COM_world_xyz_m": [
+    0.000104543,
+    -0.01527045,
+    0.103717274
+  ],
+  "toe_contact_centroid_world_xyz_m": {
+    "ml": [
+      -0.24080804,
+      0.000922097,
+      -1.914e-06
+    ],
+    "mr": [
+      0.240800876,
+      0.000924478,
+      -1.915e-06
+    ],
+    "bl": [
+      -0.143647786,
+      -0.198678393,
+      -5.4e-07
+    ],
+    "br": [
+      0.143644417,
+      -0.198672337,
+      -5.46e-07
+    ]
+  },
+  "contact_points_per_leg": {
+    "ml": 2,
+    "mr": 2,
+    "bl": 1,
+    "br": 1,
+    "fl": 0,
+    "fr": 0
+  },
+  "phase_count": 8,
+  "swing_leg_order": [
+    "bl",
+    "mr",
+    "br",
+    "ml"
+  ],
+  "phase_ticks": [
+    60,
+    40,
+    60,
+    40,
+    60,
+    40,
+    60,
+    40
+  ],
+  "minimum_supporting_legs_by_schedule": 3,
+  "scheduler_phases": [
+    {
+      "phase": 0,
+      "tick": 0,
+      "swing": [],
+      "support_count": 4,
+      "static_5mm_allowed_at_initial_pose": true
+    },
+    {
+      "phase": 1,
+      "tick": 60,
+      "swing": [
+        "bl"
+      ],
+      "support_count": 3,
+      "static_5mm_allowed_at_initial_pose": true
+    },
+    {
+      "phase": 2,
+      "tick": 100,
+      "swing": [],
+      "support_count": 4,
+      "static_5mm_allowed_at_initial_pose": true
+    },
+    {
+      "phase": 3,
+      "tick": 160,
+      "swing": [
+        "mr"
+      ],
+      "support_count": 3,
+      "static_5mm_allowed_at_initial_pose": false
+    },
+    {
+      "phase": 4,
+      "tick": 200,
+      "swing": [],
+      "support_count": 4,
+      "static_5mm_allowed_at_initial_pose": true
+    },
+    {
+      "phase": 5,
+      "tick": 260,
+      "swing": [
+        "br"
+      ],
+      "support_count": 3,
+      "static_5mm_allowed_at_initial_pose": true
+    },
+    {
+      "phase": 6,
+      "tick": 300,
+      "swing": [],
+      "support_count": 4,
+      "static_5mm_allowed_at_initial_pose": true
+    },
+    {
+      "phase": 7,
+      "tick": 360,
+      "swing": [
+        "ml"
+      ],
+      "support_count": 3,
+      "static_5mm_allowed_at_initial_pose": false
+    }
+  ],
+  "static_leave_one_leg_out_margin_mm": {
+    "ml": -96.53695,
+    "mr": -96.63399,
+    "bl": 16.19374,
+    "br": 16.19374
+  },
+  "static_liftoff_feasible_at_fixed_COM_with_5mm_margin": {
+    "ml": false,
+    "mr": false,
+    "bl": true,
+    "br": true
+  },
+  "hardware_motion_approved": false,
+  "dynamic_walk_achieved": false,
+  "notes": [
+    "Pupper upstream default is a two-at-once diagonal trot and is NOT used here.",
+    "This audit changes only the contact phase configuration; it does not automatically add COM weight shifting.",
+    "Static point-in-support-triangle is necessary for slow statically stable steps, but NOT a motor/force feasibility proof.",
+    "Actual MuJoCo contact positions are averaged geometrically (not weighted by Fz).",
+    "No swing motions, contact force trajectories, servo output, or closed-loop walking were run.",
+    "The archived state descends from an earlier six-to-four transition that did not satisfy all provisional joint limits."
+  ]
+}
