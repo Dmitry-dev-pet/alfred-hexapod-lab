@@ -137,6 +137,7 @@ def refresh_library():
     if not local_ids.issubset(remote_ids):
         raise ValueError("Remote catalog unexpectedly removes installed experiments")
     installed = 0
+    local_file_index = {f["path"]: f for entry in local["entries"] for f in entry.get("files", [])}
     with tempfile.TemporaryDirectory(prefix=".hexapod-sync-", dir=ROOT) as temp_name:
         stage = Path(temp_name)
         staged = []
@@ -149,7 +150,10 @@ def refresh_library():
                         raise ValueError("Existing asset is not a regular file")
                     existing = hashlib.sha256(destination.read_bytes()).hexdigest()
                     if existing != wanted_sha:
-                        raise ValueError("Immutable local asset differs: " + file["path"])
+                        cached = local_file_index.get(file["path"], {})
+                        if cached.get("sha256") != wanted_sha or cached.get("local_sha256") != existing:
+                            raise ValueError("Immutable local asset differs: " + file["path"])
+                        file["local_sha256"] = existing
                     continue
                 if any(previous[1] == destination for previous in staged):
                     raise ValueError("Duplicate asset across simulations")
@@ -190,6 +194,7 @@ def refresh_library():
                         b"/vendor/three/examples/jsm/")
                 if destination.suffix == ".js" and re.search(rb"https?://[^\s'\"]+\.(?:js|json|stl)", payload):
                     raise ValueError("Remote asset references from executable script")
+                file["local_sha256"] = hashlib.sha256(payload).hexdigest()
                 staging = stage / file["path"]
                 staging.parent.mkdir(parents=True, exist_ok=True)
                 staging.write_bytes(payload)
