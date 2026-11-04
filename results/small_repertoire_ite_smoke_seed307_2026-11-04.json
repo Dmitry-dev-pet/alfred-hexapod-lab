@@ -1,0 +1,404 @@
+{
+  "status": "SMALL_6_CANDIDATE_IT_AND_E_STYLE_PROOF_OF_CONCEPT_NOT_PUBLISHED_IT_AND_E",
+  "simulator": "MuJoCo 3.14.0",
+  "robot": "CAD30 FNK0052 approx",
+  "archive_seed_intact": 97,
+  "damaged_seed_heldout": 307,
+  "fault": "fl 3 motors off and tibia collision off at t=3s, masses retained",
+  "physics_dt_s": 0.002,
+  "online_evaluation_count": 4,
+  "controls": {
+    "duration_s": 8,
+    "mu": 1.1,
+    "mass_kg": 1.804868,
+    "motor_torque_max_nm_assumed": 0.7
+  },
+  "candidate_policies": [
+    {
+      "name": "short_slow",
+      "stride_m": 0.02,
+      "lift_m": 0.012,
+      "period_s": 2.8,
+      "descriptor": [
+        0.1666666666666667,
+        0.13333333333333333,
+        0.8333333333333331
+      ],
+      "intact": {
+        "reward": 3.368,
+        "progress_cm_t3_to_t8": 3.368,
+        "frac_lt3_post": 0.0,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 3,
+        "max_tilt_deg_post": 0.561,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.3469,
+        "finished_full_duration": true
+      }
+    },
+    {
+      "name": "small_standard",
+      "stride_m": 0.025,
+      "lift_m": 0.014,
+      "period_s": 2.4,
+      "descriptor": [
+        0.3333333333333334,
+        0.26666666666666666,
+        0.4999999999999999
+      ],
+      "intact": {
+        "reward": 5.158,
+        "progress_cm_t3_to_t8": 5.158,
+        "frac_lt3_post": 0.0,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 3,
+        "max_tilt_deg_post": 0.555,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.3592,
+        "finished_full_duration": true
+      }
+    },
+    {
+      "name": "existing_baseline",
+      "stride_m": 0.035,
+      "lift_m": 0.02,
+      "period_s": 2.4,
+      "descriptor": [
+        0.6666666666666669,
+        0.6666666666666667,
+        0.4999999999999999
+      ],
+      "intact": {
+        "reward": 7.617,
+        "progress_cm_t3_to_t8": 7.617,
+        "frac_lt3_post": 0.0,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 3,
+        "max_tilt_deg_post": 0.562,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.3863,
+        "finished_full_duration": true
+      }
+    },
+    {
+      "name": "long_slow",
+      "stride_m": 0.04,
+      "lift_m": 0.018,
+      "period_s": 2.6,
+      "descriptor": [
+        0.8333333333333334,
+        0.5333333333333332,
+        0.6666666666666667
+      ],
+      "intact": {
+        "reward": 8.008,
+        "progress_cm_t3_to_t8": 8.008,
+        "frac_lt3_post": 0.0,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 3,
+        "max_tilt_deg_post": 0.578,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.3884,
+        "finished_full_duration": true
+      }
+    },
+    {
+      "name": "small_fast",
+      "stride_m": 0.025,
+      "lift_m": 0.018,
+      "period_s": 2.0,
+      "descriptor": [
+        0.3333333333333334,
+        0.5333333333333332,
+        0.16666666666666663
+      ],
+      "intact": {
+        "reward": 5.935,
+        "progress_cm_t3_to_t8": 5.935,
+        "frac_lt3_post": 0.0,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 3,
+        "max_tilt_deg_post": 0.497,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.3807,
+        "finished_full_duration": true
+      }
+    },
+    {
+      "name": "long_low_fast",
+      "stride_m": 0.035,
+      "lift_m": 0.012,
+      "period_s": 2.0,
+      "descriptor": [
+        0.6666666666666669,
+        0.13333333333333333,
+        0.16666666666666663
+      ],
+      "intact": {
+        "reward": 8.291,
+        "progress_cm_t3_to_t8": 8.291,
+        "frac_lt3_post": 0.0,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 3,
+        "max_tilt_deg_post": 0.583,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.435,
+        "finished_full_duration": true
+      }
+    }
+  ],
+  "online_trials": [
+    {
+      "trial": 1,
+      "candidate": "long_low_fast",
+      "idx": 5,
+      "score": {
+        "reward": 1.7077,
+        "progress_cm_t3_to_t8": 2.871,
+        "frac_lt3_post": 0.13546,
+        "frac_zero_post": 0.00398,
+        "min_contacts_post": 0,
+        "max_tilt_deg_post": 3.448,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.7,
+        "finished_full_duration": true
+      },
+      "selection": {
+        "acquisition": [
+          3.668,
+          5.458,
+          7.917,
+          8.308,
+          6.235,
+          8.591
+        ],
+        "posterior_delta_mean": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "posterior_std": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "selected_index": 5,
+        "tested_indices": []
+      }
+    },
+    {
+      "trial": 2,
+      "candidate": "long_slow",
+      "idx": 3,
+      "score": {
+        "reward": 2.8506,
+        "progress_cm_t3_to_t8": 3.998,
+        "frac_lt3_post": 0.14343,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 1,
+        "max_tilt_deg_post": 5.229,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.7,
+        "finished_full_duration": true
+      },
+      "selection": {
+        "acquisition": [
+          2.892107,
+          2.880044,
+          6.282448,
+          6.849433,
+          3.894188,
+          null
+        ],
+        "posterior_delta_mean": [
+          -0.773731,
+          -2.553489,
+          -1.624893,
+          -1.450891,
+          -2.320755,
+          -6.330096
+        ],
+        "posterior_std": [
+          0.992791,
+          0.918442,
+          0.967803,
+          0.974415,
+          0.933144,
+          0.196116
+        ],
+        "selected_index": 3,
+        "tested_indices": [
+          5
+        ]
+      }
+    },
+    {
+      "trial": 3,
+      "candidate": "existing_baseline",
+      "idx": 2,
+      "score": {
+        "reward": 3.273,
+        "progress_cm_t3_to_t8": 4.261,
+        "frac_lt3_post": 0.12351,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 1,
+        "max_tilt_deg_post": 5.603,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.7,
+        "finished_full_duration": true
+      },
+      "selection": {
+        "acquisition": [
+          2.462016,
+          2.111811,
+          3.712065,
+          null,
+          3.463923,
+          null
+        ],
+        "posterior_delta_mean": [
+          -1.20182,
+          -3.314817,
+          -4.114949,
+          -5.007564,
+          -2.74889,
+          -6.363118
+        ],
+        "posterior_std": [
+          0.986121,
+          0.895427,
+          0.700046,
+          0.195916,
+          0.926043,
+          0.195916
+        ],
+        "selected_index": 2,
+        "tested_indices": [
+          5,
+          3
+        ]
+      }
+    },
+    {
+      "trial": 4,
+      "candidate": "small_fast",
+      "idx": 4,
+      "score": {
+        "reward": 1.5952,
+        "progress_cm_t3_to_t8": 3.157,
+        "frac_lt3_post": 0.19522,
+        "frac_zero_post": 0.0,
+        "min_contacts_post": 1,
+        "max_tilt_deg_post": 4.839,
+        "fell_by_threshold": false,
+        "peak_tau_nm": 0.7,
+        "finished_full_duration": true
+      },
+      "selection": {
+        "acquisition": [
+          2.448829,
+          2.049974,
+          null,
+          null,
+          3.344299,
+          null
+        ],
+        "posterior_delta_mean": [
+          -1.21475,
+          -3.371216,
+          -4.326715,
+          -5.019176,
+          -2.85092,
+          -6.364825
+        ],
+        "posterior_std": [
+          0.985264,
+          0.877298,
+          0.192306,
+          0.192408,
+          0.867398,
+          0.195841
+        ],
+        "selected_index": 4,
+        "tested_indices": [
+          5,
+          3,
+          2
+        ]
+      }
+    }
+  ],
+  "chosen_best": {
+    "trial": 3,
+    "candidate": "existing_baseline",
+    "idx": 2,
+    "score": {
+      "reward": 3.273,
+      "progress_cm_t3_to_t8": 4.261,
+      "frac_lt3_post": 0.12351,
+      "frac_zero_post": 0.0,
+      "min_contacts_post": 1,
+      "max_tilt_deg_post": 5.603,
+      "fell_by_threshold": false,
+      "peak_tau_nm": 0.7,
+      "finished_full_duration": true
+    },
+    "selection": {
+      "acquisition": [
+        2.462016,
+        2.111811,
+        3.712065,
+        null,
+        3.463923,
+        null
+      ],
+      "posterior_delta_mean": [
+        -1.20182,
+        -3.314817,
+        -4.114949,
+        -5.007564,
+        -2.74889,
+        -6.363118
+      ],
+      "posterior_std": [
+        0.986121,
+        0.895427,
+        0.700046,
+        0.195916,
+        0.926043,
+        0.195916
+      ],
+      "selected_index": 2,
+      "tested_indices": [
+        5,
+        3
+      ]
+    }
+  },
+  "fixed_reference": {
+    "reward": 3.273,
+    "progress_cm_t3_to_t8": 4.261,
+    "frac_lt3_post": 0.12351,
+    "frac_zero_post": 0.0,
+    "min_contacts_post": 1,
+    "max_tilt_deg_post": 5.603,
+    "fell_by_threshold": false,
+    "peak_tau_nm": 0.7,
+    "finished_full_duration": true
+  },
+  "notes": [
+    "No MAP-Elites archive trained; six hand-selected candidates only.",
+    "Not original pyite/ite_v2; independent compact GP selector follows its conceptual equations.",
+    "All damaged evaluations reset the simulation and therefore consume full simulated trials, not single-episode adaptation.",
+    "Intact archive was computed at a different seed, no damaged results entered the prior.",
+    "No neuroWalknet run; the currently used neighbor-inhibition rule is only a heuristic.",
+    "No validation against a physical servo or robot; do not compare speeds with original ResiBots.",
+    "A successful episode may have one or two ground supports; none is asserted safe."
+  ]
+}
