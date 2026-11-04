@@ -1,0 +1,567 @@
+{
+  "schema": "alfred_hexapod_CAD30_rear_foothold/1",
+  "date": "2026-11-04",
+  "model": "MuJoCo 3.14.0, Freenove FNK0052 CAD30, uncalibrated virtual physical model",
+  "fixed_confirmatory_plan": [
+    {
+      "mass": "lower",
+      "mu": 1.1,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "lower",
+      "mu": 0.6,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "lower",
+      "mu": 0.3,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "nominal",
+      "mu": 1.1,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "nominal",
+      "mu": 0.6,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "nominal",
+      "mu": 0.3,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "upper",
+      "mu": 1.1,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "upper",
+      "mu": 0.6,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    },
+    {
+      "mass": "upper",
+      "mu": 0.3,
+      "rear_leg": "br",
+      "dx": 0.04,
+      "dy": 0.2
+    }
+  ],
+  "selection_note": "Right rear +200mm forward/+40mm outward chosen after exploratory target sweep. 3x3 sweep is a confirmation conditional on that selection, not a blind preregistered test.",
+  "control_same_rear_120mm_forward": {
+    "fail": null,
+    "dx": 0.04,
+    "dy": 0.12,
+    "rear_leg": "br",
+    "candidate": "mr",
+    "mass": "nominal",
+    "mu": 1.1,
+    "selected_after_exploratory_search": true,
+    "not_reactive_foothold_selection": true,
+    "no_com_in_controller": true,
+    "safe_rear_reposition": false,
+    "min_rear_mesh_vertex_distance_to_middle_m": 0.0614,
+    "rear_middle_tip_xy_distance_m": 0.09646,
+    "min_rear_swing_support_legs": 2,
+    "min_support_legs_rear_phase": 2,
+    "min_margin_rear_phase_m": -0.02319,
+    "max_sensor_gate_dwell_s": 0.0,
+    "gate_release_count": 0,
+    "post_middle_load_N": 6.369,
+    "peak_torque_nm": 0.5606409989577017,
+    "saturation_fraction": 0.0,
+    "ik_errors_m": {
+      "lift": 1e-05,
+      "swing": 0.01068,
+      "land": 3e-05
+    },
+    "rear_max_clearance_m": 0.01716,
+    "rear_min_clearance_m": 0.0,
+    "post_reposition_contact_frac": 1.0,
+    "front_clear_frac": 1.0,
+    "min_other_three_contacts": 3,
+    "margin_last_m": -0.02724,
+    "margin_max_m": -0.02704,
+    "com_last": [
+      0.0004,
+      -0.0166
+    ],
+    "rear_tip_last": [
+      0.1852,
+      -0.0792
+    ],
+    "time_run_s": 0.6
+  },
+  "mirror_nominal_left_rear": {
+    "fail": null,
+    "dx": -0.04,
+    "dy": 0.2,
+    "rear_leg": "bl",
+    "candidate": "ml",
+    "mass": "nominal",
+    "mu": 1.1,
+    "selected_after_exploratory_search": true,
+    "not_reactive_foothold_selection": true,
+    "no_com_in_controller": true,
+    "safe_rear_reposition": false,
+    "min_rear_mesh_vertex_distance_to_middle_m": 0.02735,
+    "rear_middle_tip_xy_distance_m": 0.05433,
+    "min_rear_swing_support_legs": 2,
+    "min_support_legs_rear_phase": 2,
+    "min_margin_rear_phase_m": -0.02365,
+    "max_sensor_gate_dwell_s": 0.0,
+    "gate_release_count": 0,
+    "post_middle_load_N": 5.563,
+    "peak_torque_nm": 0.5393062412901866,
+    "saturation_fraction": 0.0,
+    "ik_errors_m": {
+      "lift": 0.00463,
+      "swing": 4e-05,
+      "land": 6e-05
+    },
+    "rear_max_clearance_m": 0.02109,
+    "rear_min_clearance_m": -0.0,
+    "post_reposition_contact_frac": 1.0,
+    "front_clear_frac": 1.0,
+    "min_other_three_contacts": 3,
+    "margin_last_m": 0.01579,
+    "margin_max_m": 0.01582,
+    "com_last": [
+      0.0021,
+      -0.0159
+    ],
+    "rear_tip_last": [
+      -0.1844,
+      0.0004
+    ],
+    "time_run_s": 0.7
+  },
+  "pass_counts": {
+    "safe_rear_reposition": 3,
+    "total": 9,
+    "middle_leg_swing_gate_release": 0
+  },
+  "results": [
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "lower",
+      "mu": 1.1,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": true,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.02723,
+      "rear_middle_tip_xy_distance_m": 0.05401,
+      "min_rear_swing_support_legs": 3,
+      "min_support_legs_rear_phase": 3,
+      "min_margin_rear_phase_m": 0.01581,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 4.971,
+      "peak_torque_nm": 0.495351145205876,
+      "saturation_fraction": 0.0,
+      "ik_errors_m": {
+        "lift": 0.00452,
+        "swing": 4e-05,
+        "land": 6e-05
+      },
+      "rear_max_clearance_m": 0.02134,
+      "rear_min_clearance_m": -0.0,
+      "post_reposition_contact_frac": 1.0,
+      "front_clear_frac": 1.0,
+      "min_other_three_contacts": 3,
+      "margin_last_m": 0.01629,
+      "margin_max_m": 0.01632,
+      "com_last": [
+        -0.0018,
+        -0.0162
+      ],
+      "rear_tip_last": [
+        0.1846,
+        0.0007
+      ],
+      "time_run_s": 0.6
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "lower",
+      "mu": 0.6,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": true,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.0264,
+      "rear_middle_tip_xy_distance_m": 0.05556,
+      "min_rear_swing_support_legs": 3,
+      "min_support_legs_rear_phase": 3,
+      "min_margin_rear_phase_m": 0.01526,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 5.854,
+      "peak_torque_nm": 0.6258979200424484,
+      "saturation_fraction": 0.0,
+      "ik_errors_m": {
+        "lift": 0.00403,
+        "swing": 4e-05,
+        "land": 5e-05
+      },
+      "rear_max_clearance_m": 0.02114,
+      "rear_min_clearance_m": -0.0,
+      "post_reposition_contact_frac": 1.0,
+      "front_clear_frac": 1.0,
+      "min_other_three_contacts": 3,
+      "margin_last_m": 0.01421,
+      "margin_max_m": 0.01432,
+      "com_last": [
+        -0.0015,
+        -0.007
+      ],
+      "rear_tip_last": [
+        0.1868,
+        0.0076
+      ],
+      "time_run_s": 0.7
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "lower",
+      "mu": 0.3,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": false,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.01871,
+      "rear_middle_tip_xy_distance_m": 0.08018,
+      "min_rear_swing_support_legs": 1,
+      "min_support_legs_rear_phase": 1,
+      "min_margin_rear_phase_m": -0.22989,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 5.402,
+      "peak_torque_nm": 0.7,
+      "saturation_fraction": 0.7293333333333333,
+      "ik_errors_m": {
+        "lift": 0.00623,
+        "swing": 4e-05,
+        "land": 4e-05
+      },
+      "rear_max_clearance_m": 0.00034,
+      "rear_min_clearance_m": -5e-05,
+      "post_reposition_contact_frac": 0.9916666666666667,
+      "front_clear_frac": 0.0,
+      "min_other_three_contacts": 1,
+      "margin_last_m": -0.00124,
+      "margin_max_m": -0.00118,
+      "com_last": [
+        0.0015,
+        0.0139
+      ],
+      "rear_tip_last": [
+        0.1908,
+        0.0092
+      ],
+      "time_run_s": 0.9
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "nominal",
+      "mu": 1.1,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": true,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.02735,
+      "rear_middle_tip_xy_distance_m": 0.05435,
+      "min_rear_swing_support_legs": 3,
+      "min_support_legs_rear_phase": 3,
+      "min_margin_rear_phase_m": 0.01547,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 5.559,
+      "peak_torque_nm": 0.5413945150522625,
+      "saturation_fraction": 0.0,
+      "ik_errors_m": {
+        "lift": 0.00463,
+        "swing": 4e-05,
+        "land": 6e-05
+      },
+      "rear_max_clearance_m": 0.02107,
+      "rear_min_clearance_m": -0.0,
+      "post_reposition_contact_frac": 1.0,
+      "front_clear_frac": 1.0,
+      "min_other_three_contacts": 3,
+      "margin_last_m": 0.01581,
+      "margin_max_m": 0.01584,
+      "com_last": [
+        -0.0019,
+        -0.0159
+      ],
+      "rear_tip_last": [
+        0.1844,
+        0.0004
+      ],
+      "time_run_s": 0.6
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "nominal",
+      "mu": 0.6,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": false,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.02613,
+      "rear_middle_tip_xy_distance_m": 0.05592,
+      "min_rear_swing_support_legs": 2,
+      "min_support_legs_rear_phase": 2,
+      "min_margin_rear_phase_m": -0.02332,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 6.529,
+      "peak_torque_nm": 0.6850835224665147,
+      "saturation_fraction": 0.0,
+      "ik_errors_m": {
+        "lift": 0.00404,
+        "swing": 4e-05,
+        "land": 5e-05
+      },
+      "rear_max_clearance_m": 0.02095,
+      "rear_min_clearance_m": 0.0,
+      "post_reposition_contact_frac": 1.0,
+      "front_clear_frac": 1.0,
+      "min_other_three_contacts": 3,
+      "margin_last_m": 0.01345,
+      "margin_max_m": 0.01361,
+      "com_last": [
+        -0.0014,
+        -0.0064
+      ],
+      "rear_tip_last": [
+        0.1871,
+        0.0074
+      ],
+      "time_run_s": 0.6
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "nominal",
+      "mu": 0.3,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": false,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.01844,
+      "rear_middle_tip_xy_distance_m": 0.07964,
+      "min_rear_swing_support_legs": 2,
+      "min_support_legs_rear_phase": 2,
+      "min_margin_rear_phase_m": -0.23074,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 5.264,
+      "peak_torque_nm": 0.7,
+      "saturation_fraction": 0.7297777777777777,
+      "ik_errors_m": {
+        "lift": 0.00594,
+        "swing": 4e-05,
+        "land": 4e-05
+      },
+      "rear_max_clearance_m": 0.00019,
+      "rear_min_clearance_m": -5e-05,
+      "post_reposition_contact_frac": 0.9916666666666667,
+      "front_clear_frac": 0.0,
+      "min_other_three_contacts": 1,
+      "margin_last_m": -0.00147,
+      "margin_max_m": -0.00144,
+      "com_last": [
+        0.0007,
+        0.0102
+      ],
+      "rear_tip_last": [
+        0.191,
+        0.0051
+      ],
+      "time_run_s": 0.9
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "upper",
+      "mu": 1.1,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": false,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.02755,
+      "rear_middle_tip_xy_distance_m": 0.05489,
+      "min_rear_swing_support_legs": 2,
+      "min_support_legs_rear_phase": 2,
+      "min_margin_rear_phase_m": -0.023,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 6.611,
+      "peak_torque_nm": 0.6222109829357851,
+      "saturation_fraction": 0.0,
+      "ik_errors_m": {
+        "lift": 0.00483,
+        "swing": 4e-05,
+        "land": 6e-05
+      },
+      "rear_max_clearance_m": 0.02065,
+      "rear_min_clearance_m": -0.0,
+      "post_reposition_contact_frac": 1.0,
+      "front_clear_frac": 1.0,
+      "min_other_three_contacts": 3,
+      "margin_last_m": 0.01472,
+      "margin_max_m": 0.01476,
+      "com_last": [
+        -0.0019,
+        -0.0151
+      ],
+      "rear_tip_last": [
+        0.1841,
+        -0.0002
+      ],
+      "time_run_s": 0.6
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "upper",
+      "mu": 0.6,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": false,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.02163,
+      "rear_middle_tip_xy_distance_m": 0.05434,
+      "min_rear_swing_support_legs": 0,
+      "min_support_legs_rear_phase": 0,
+      "min_margin_rear_phase_m": -0.21294,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 4.403,
+      "peak_torque_nm": 0.7,
+      "saturation_fraction": 0.5966666666666667,
+      "ik_errors_m": {
+        "lift": 0.00406,
+        "swing": 4e-05,
+        "land": 5e-05
+      },
+      "rear_max_clearance_m": 0.01029,
+      "rear_min_clearance_m": -0.00012,
+      "post_reposition_contact_frac": 1.0,
+      "front_clear_frac": 0.0,
+      "min_other_three_contacts": 3,
+      "margin_last_m": -0.00177,
+      "margin_max_m": -0.00177,
+      "com_last": [
+        0.0006,
+        0.0036
+      ],
+      "rear_tip_last": [
+        0.2043,
+        -0.016
+      ],
+      "time_run_s": 0.8
+    },
+    {
+      "fail": null,
+      "dx": 0.04,
+      "dy": 0.2,
+      "rear_leg": "br",
+      "candidate": "mr",
+      "mass": "upper",
+      "mu": 0.3,
+      "selected_after_exploratory_search": true,
+      "not_reactive_foothold_selection": true,
+      "no_com_in_controller": true,
+      "safe_rear_reposition": false,
+      "min_rear_mesh_vertex_distance_to_middle_m": 0.01775,
+      "rear_middle_tip_xy_distance_m": 0.07857,
+      "min_rear_swing_support_legs": 0,
+      "min_support_legs_rear_phase": 0,
+      "min_margin_rear_phase_m": -0.23258,
+      "max_sensor_gate_dwell_s": 0.0,
+      "gate_release_count": 0,
+      "post_middle_load_N": 5.419,
+      "peak_torque_nm": 0.7,
+      "saturation_fraction": 0.7322222222222222,
+      "ik_errors_m": {
+        "lift": 0.00538,
+        "swing": 4e-05,
+        "land": 4e-05
+      },
+      "rear_max_clearance_m": 0.00013,
+      "rear_min_clearance_m": -7e-05,
+      "post_reposition_contact_frac": 0.9916666666666667,
+      "front_clear_frac": 0.008333333333333333,
+      "min_other_three_contacts": 1,
+      "margin_last_m": -0.00234,
+      "margin_max_m": -0.00206,
+      "com_last": [
+        -0.0007,
+        0.0085
+      ],
+      "rear_tip_last": [
+        0.1917,
+        0.0017
+      ],
+      "time_run_s": 1.0
+    }
+  ],
+  "conclusions": [
+    "Repositioning changes support polygon and can make leave-one-middle COM margin positive",
+    "No middle foot liftoff, no four-legged gait or forward walking validated",
+    "No physical servo calibration; mesh collision simplified to tibia hulls"
+  ]
+}

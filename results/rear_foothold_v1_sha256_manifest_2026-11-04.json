@@ -1,0 +1,65 @@
+{
+  "schema": "fnk0052-rear-foothold-verified/1",
+  "date": "2026-11-04",
+  "model": "Freenove CAD30 MuJoCo 3.14.0, uncalibrated",
+  "original_proprietary_CAD_included": false,
+  "results_represent_actual_recorded_simulation_states": true,
+  "walking_claimed": false,
+  "files": [
+    {
+      "path": "code/rear_foothold_reposition_v1.py",
+      "size_bytes": 9167,
+      "sha256": "81e6e9af4a4e66c25c37d750f6b28adbdcc642195092dae87e02d7264ef2d312"
+    },
+    {
+      "path": "code/sweep_rear_foothold_v1.py",
+      "size_bytes": 2691,
+      "sha256": "03c929f38ba7be35cd9c360b1ecc58b33764fb64b5f751cb4f8ad5bb09980f7e"
+    },
+    {
+      "path": "code/test_rear_foothold_v1.py",
+      "size_bytes": 1982,
+      "sha256": "67cb01a0cd4146f53d63dd33253681c04130067ef8dd127f7d6bed46ff951d06"
+    },
+    {
+      "path": "code/render_rear_foothold_v1.py",
+      "size_bytes": 4937,
+      "sha256": "d7b41ed2fcc41ce0fbfda66057dbea7c3c1b18b4dbbefb355108499f19a54de4"
+    },
+    {
+      "path": "README_REAR_FOOTHOLD_V1.md",
+      "size_bytes": 12848,
+      "sha256": "d1b66ec868c89e90b9e8e87067cfab52bc307f013fe680cd299ddafc8dcdce97"
+    },
+    {
+      "path": "results/rear_foothold_v1_confirmatory_2026-11-04.json",
+      "size_bytes": 15429,
+      "sha256": "efd07f2924fd36b163407eff5d2eba88f4c7889672c135b3b46cf56534e6b29a"
+    },
+    {
+      "path": "results/rear_foothold_v1_nominal_right_trace_2026-11-04.json",
+      "size_bytes": 340313,
+      "sha256": "04944848b06780e131e51f02aa75f3cef75cba512c3996289f16ab2019c4d9f9"
+    },
+    {
+      "path": "media/rear_foothold_reposition_v1.mp4",
+      "size_bytes": 185698,
+      "sha256": "e35bac595237cc980a3a2b64e18b0f84f73f9638d48647218a96465ab8ce2132"
+    },
+    {
+      "path": "media/rear_foothold_reposition_v1.gif",
+      "size_bytes": 303740,
+      "sha256": "4358b452d95f85f5b4c7e4da64e3c4809ce1a1f0a8ce13f45e46871af1344232"
+    },
+    {
+      "path": "media/rear_reposition_keyframe.png",
+      "size_bytes": 147833,
+      "sha256": "a1db314e2a1f188764305bb43e4e0e62201eb6f5272d974b25b5a12a17744f9d"
+    },
+    {
+      "path": "media/rear_foothold_support_geometry.png",
+      "size_bytes": 89227,
+      "sha256": "b2282c02fb8fb3e41e525e0b394698744202fe7554851b2e787907e6fc122d73"
+    }
+  ]
+}
