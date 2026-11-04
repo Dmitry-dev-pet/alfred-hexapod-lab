@@ -1,0 +1,94 @@
+{
+  "schema": "cad30_mink_four_leg_horizon_sampled_v1",
+  "status": "FOUR_STEP_SAMPLED_QUASISTATIC_CANDIDATE",
+  "physical_gait_validated": false,
+  "autonomous_motor_execution_authorized": false,
+  "poses_source": "Dynamically integrated B (archive semi_tucked t=9.3s) -> initial .8s hold -> 1.5s rebalance target 1.66 rad -> .8s hold -> 1.95s hold (5.05s total), nominal mu=1.1, Kp=7 Kd=.32",
+  "model": "FNK0052 CAD30 nominal, MuJoCo 3.14.0 + Mink 1.4.0, friction mu=1.1, no servo calibration",
+  "prep": {
+    "stages": [
+      "12x2mm body raise",
+      "bl outward+forward reposition",
+      "br outward+forward reposition",
+      "54x2mm body backward reposition"
+    ],
+    "extra_preparation_swings": [
+      "bl",
+      "br"
+    ],
+    "waypoints": 90,
+    "body_recenter_command_mm": -108.0,
+    "cycle_start_com_xyz_m": [
+      0.00010456165219321146,
+      -0.10436539031497828,
+      0.1207633947283135
+    ],
+    "initial_safe_com_xyz_m": [
+      0.00010454273721035465,
+      -0.015270450207442039,
+      0.10371727385687324
+    ],
+    "initial_6_to_4_strict_IK_verified": false
+  },
+  "cycle": {
+    "swung_legs": [
+      "ml",
+      "mr",
+      "bl",
+      "br"
+    ],
+    "each_foot_advanced_mm": 20.0,
+    "middle_toe_inward_mm": 30.0,
+    "rear_toe_preposition_outward_mm": 30.0,
+    "cycle_forward_rebalance_mm": 30,
+    "additional_pre_br_balance_mm": 12,
+    "waypoints": 69,
+    "COM_forward_progress_from_after_prep_mm": 40.66458876232258,
+    "COM_forward_progress_from_original_safe_snapshot_mm": -48.43035134521366,
+    "minimum_sampled_support_margin_mm": 5.874636197076621,
+    "minimum_sampled_model_Fz_N": 0.5966368702211072,
+    "maximum_sampled_motor_fraction": 0.7655908023460548,
+    "maximum_joint_absolute_rad": 1.6811208817915222,
+    "maximum_anchored_toe_target_error_mm": 0.1923628070227299,
+    "final_com_xyz_m": [
+      0.00010474207404431267,
+      -0.0637008015526557,
+      0.12325195241522903
+    ],
+    "terminal_immediate_next_step": {
+      "ml": {
+        "margin_mm": -7.617214075621375,
+        "motor_fraction": null,
+        "lp_feasible": false,
+        "possible_now_static": false
+      },
+      "mr": {
+        "margin_mm": -7.70272856235845,
+        "motor_fraction": null,
+        "lp_feasible": false,
+        "possible_now_static": false
+      },
+      "bl": {
+        "margin_mm": 7.70272856235845,
+        "motor_fraction": 0.6915235118620462,
+        "lp_feasible": true,
+        "possible_now_static": true
+      },
+      "br": {
+        "margin_mm": 7.617214075621388,
+        "motor_fraction": 0.69315246553797,
+        "lp_feasible": true,
+        "possible_now_static": true
+      }
+    },
+    "terminal_viable_at_least_one_quasistatic": true
+  },
+  "limitations": [
+    "PREPARATION includes two extra rear-foot swings; the counted cycle is the FOUR subsequent ML/MR/BL/BR swings.",
+    "Whole-body COM retreats during preparation; progress from original nominal safe pose is NOT positive. Reported cycle progress starts after preparation.",
+    "Virtual root translation between kinematic poses is not applied by actuators. No free-base dynamic rollout yet and NO successful hardware gait.",
+    "Each point statically passed Mink IK and contact wrench LP; interpolation between sample points, collisions, slip, actual transient Fz and torque NOT checked.",
+    "Recorded safe snapshot descended from historical 6\u21924 transition that transiently exceeded research bound 1.7rad.",
+    "Terminal immediate static viability is a necessary snapshot proxy, NOT a viability proof of a second full cycle."
+  ]
+}
