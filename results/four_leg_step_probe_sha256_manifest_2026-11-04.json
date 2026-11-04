@@ -1,0 +1,46 @@
+{
+  "name": "FNK0052 4leg probe (NOT continuous walking)",
+  "created_on": "2026-11-04",
+  "files": {
+    "cad30/probe_four_leg_rear_step.py": {
+      "size": 5543,
+      "sha256": "8bdb7df5bcf7c949b2aa1c528c191de0a2b7919faa40ea6eba147ea0fbcb2f08"
+    },
+    "cad30/sweep_four_leg_step_probe.py": {
+      "size": 3814,
+      "sha256": "19adea4a96eab170a220ca95d56507bb8b9b3308cc9941386bc0c1b1326149e3"
+    },
+    "cad30/test_four_leg_step_probe.py": {
+      "size": 1561,
+      "sha256": "b6772fc1f2bcd4b3ebde98a48a969381cad166703bd70e7f6671155a7709c109"
+    },
+    "cad30/render_four_leg_step_probe.py": {
+      "size": 2715,
+      "sha256": "02c7b7e2210ad312d14eb702719c2d0fdda4f1d68a46e021d800397d7ec40d98"
+    },
+    "cad30/README_FOUR_LEG_STEP_PROBE.md": {
+      "size": 8069,
+      "sha256": "083175ad0e76891d0482805639c21553f6183ee775a207a13c8f10b7864614ef"
+    },
+    "cad30/results/four_leg_step_probe_2026-11-04.json": {
+      "size": 9494,
+      "sha256": "6eea6176cef309a770efd5e99aa5efd12fe867adf635088ac57c2bde3b453895"
+    },
+    "cad30/results/four_leg_rear_nominal_trace.json": {
+      "size": 157962,
+      "sha256": "5dffa2257afb79a533ed2d0950a619ca9298b23456090615266a51a5eda0da8c"
+    },
+    "four_leg_media/four_support_rear_single_step.gif": {
+      "size": 160273,
+      "sha256": "8c379db3687fc5c0089101793a7b2828b183a2896c7d37bc49af3007cd32b521"
+    },
+    "four_leg_media/four_support_rear_single_step.mp4": {
+      "size": 132391,
+      "sha256": "9e81d6aa883a61c969be4fd6688bc5535763d560bd2b8c244c6ddadd6d396157"
+    },
+    "four_leg_media/four_support_rear_step.png": {
+      "size": 145062,
+      "sha256": "27180836e7ca51c9f7d744fbe4bfae1b88d15f4c9c9ed92235c28294334e13f5"
+    }
+  }
+}
