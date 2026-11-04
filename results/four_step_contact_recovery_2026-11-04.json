@@ -1,0 +1,139 @@
+{
+  "schema": "cad30_prep_contact_recovery_v1",
+  "status": "FEEDBACK_LOCAL_SUCCESS_ONLY",
+  "model": "nominal MuJoCo 3.14, mu=1.1, research joint cap 1.7 rad",
+  "autonomous_followup_authorized": false,
+  "full_cycle_dynamic_validated": false,
+  "warning": "Recovered contact at one static step; full future plan must be regenerated from measured qpos/qvel.",
+  "cases": {
+    "0": {
+      "push_mm": 0,
+      "status": "DYNAMIC_RECOVERY_VETO",
+      "loaded_end": [
+        "ml",
+        "mr",
+        "bl"
+      ],
+      "end_fz_N": {
+        "ml": 8.010947601151788,
+        "mr": 8.681045324318372,
+        "bl": 1.0138328767957392,
+        "br": 0.0
+      },
+      "min_loaded_all": 3,
+      "min_margin_mm": 9.776799133076993,
+      "max_joint_rad": 1.636597627622453,
+      "max_tau_Nm": 0.516563274999038,
+      "saturations": 0,
+      "tail_0p2_s_all_four": false
+    },
+    "0.5": {
+      "push_mm": 0.5,
+      "status": "DYNAMIC_RECOVERY_VETO",
+      "loaded_end": [
+        "ml",
+        "mr",
+        "bl"
+      ],
+      "end_fz_N": {
+        "ml": 8.011050199644643,
+        "mr": 8.681036738177708,
+        "bl": 1.0137533306086652,
+        "br": 0.0
+      },
+      "min_loaded_all": 3,
+      "min_margin_mm": 9.77591316179178,
+      "max_joint_rad": 1.636597627629192,
+      "max_tau_Nm": 0.5165579509849898,
+      "saturations": 0,
+      "tail_0p2_s_all_four": false
+    },
+    "1.0": {
+      "push_mm": 1.0,
+      "status": "DYNAMIC_RECOVERY_VETO",
+      "loaded_end": [
+        "ml",
+        "mr",
+        "bl",
+        "br"
+      ],
+      "end_fz_N": {
+        "ml": 8.099827225221784,
+        "mr": 8.61654626397787,
+        "bl": 0.884454498056807,
+        "br": 0.10502075209521981
+      },
+      "min_loaded_all": 3,
+      "min_margin_mm": 9.717825317664811,
+      "max_joint_rad": 1.6365976276359309,
+      "max_tau_Nm": 0.5137298700957557,
+      "saturations": 0,
+      "tail_0p2_s_all_four": true
+    },
+    "1.5": {
+      "push_mm": 1.5,
+      "status": "DYNAMIC_RECOVERY_PASS",
+      "loaded_end": [
+        "ml",
+        "mr",
+        "bl",
+        "br"
+      ],
+      "end_fz_N": {
+        "ml": 8.274848115544028,
+        "mr": 8.494425917981783,
+        "bl": 0.6306337804290607,
+        "br": 0.3059840647816141
+      },
+      "min_loaded_all": 3,
+      "min_margin_mm": 9.541937408500043,
+      "max_joint_rad": 1.6365976276426695,
+      "max_tau_Nm": 0.5063838493294004,
+      "saturations": 0,
+      "tail_0p2_s_all_four": true
+    },
+    "2.0": {
+      "push_mm": 2.0,
+      "status": "DYNAMIC_RECOVERY_PASS",
+      "loaded_end": [
+        "ml",
+        "mr",
+        "bl",
+        "br"
+      ],
+      "end_fz_N": {
+        "ml": 8.45472176859033,
+        "mr": 8.370009431556191,
+        "bl": 0.36997306611523606,
+        "br": 0.511164268924613
+      },
+      "min_loaded_all": 3,
+      "min_margin_mm": 9.347669979412723,
+      "max_joint_rad": 1.636597627649457,
+      "max_tau_Nm": 0.5166783504558805,
+      "saturations": 0,
+      "tail_0p2_s_all_four": true
+    },
+    "3.0": {
+      "push_mm": 3.0,
+      "status": "DYNAMIC_RECOVERY_VETO",
+      "loaded_end": [
+        "ml",
+        "mr",
+        "br"
+      ],
+      "end_fz_N": {
+        "ml": 8.716944049992005,
+        "mr": 8.216168275434505,
+        "bl": 0.0,
+        "br": 0.7728287376271681
+      },
+      "min_loaded_all": 3,
+      "min_margin_mm": 8.73904392267661,
+      "max_joint_rad": 1.6365976276629774,
+      "max_tau_Nm": 0.5266255903070487,
+      "saturations": 0,
+      "tail_0p2_s_all_four": false
+    }
+  }
+}
