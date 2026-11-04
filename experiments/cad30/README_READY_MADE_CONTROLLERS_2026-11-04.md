@@ -61,3 +61,17 @@ PYTHONPATH=experiments/cad30 python -m unittest -v test_mink_cad30_probe
 ```
 
 Скрипт не посылает команды приводам; все проверки в MuJoCo — чисто кинематические. `main` остаётся неизменным, это **draft** для ревью.
+
+## Update 4 November 2026 — Mink now actually installed and executed
+
+Previous "upstream unavailable" status below is preserved as a historical first audit result, **but has now been superseded by the executed run**.
+
+- Exact offline dependency bundle: [Google Drive — Mink cp313 Linux x86-64 wheelhouse](https://drive.google.com/file/d/1hnDaarQNdj5_Y94BJ9aNA4j2xRQ-kowv/view?usp=drivesdk), ZIP SHA256 `13ceedb3ad570d65bf53a4d14b258efeb8243e286ffc5c6f015501c000d2d93d`, size 85,237,243 bytes. It contains 14 verified official wheels plus SHA256SUMS and manifest. Not suitable for macOS ARM64 execution.
+- [GitHub Actions run #41913088085](https://github.com/Dmytry-lab/runner-smoke/actions/runs/41913088085): `Dmytry-lab/runner-smoke` isolated self-hosted Mac M4 downloaded cross-platform Linux wheels with `pip download`, then Ubuntu Python 3.13 installed them with `pip --no-index` and successfully imported Mink 1.4.0, QPSolvers 4.13.0, DAQP 0.11.0 and MuJoCo 3.14.0. **No numerical robot simulation occurred in GitHub Actions.**
+- The same Drive-stored ZIP was fetched back and its archive SHA-256 independently checked; package installed offline into an isolated Linux venv in the ChatGPT compute container.
+- On real CAD30 archived pose B, **Mink + DAQP actually solved** the small kinematic correction. Requested base motion (0,+0.350,-0.100) mm, achieved nearly exact. Largest anchored stance-toe marker drift after `mj_forward`: **0.000657 mm**. Largest hinge increment: **0.002188 rad**. Kinematic gate PASS; hardware approval FALSE.
+- Previous custom WBC example gave 0.000865 mm drift and 0.002767 rad max increment but also requested additional small rotations and uses different costs. These are **not a controlled apples-to-apples speed/accuracy comparison**.
+- Six local test results: existing readiness suite 4 PASS + 1 SKIP (old "not installed" test deliberately skipped now); new **real Mink solver integration test 1 PASS**. Latest machine-readable record: `results/mink_cad30_installed_2026-11-04.json`; new test: `experiments/cad30/test_mink_installed_integration.py`.
+- The source pose B still has two joints slightly outside the provisional |q|≤1.7 rad research IK constraint; physical servo limits and dynamic stability remain unknown. Mink's success is geometric only, NOT real four-legged walking.
+
+**Next**: put Mink and the custom WBC under exactly matched pose objectives/limits, then use Mink as a candidate IK module while separately retaining wrench/torque/contact MPC constraints.
