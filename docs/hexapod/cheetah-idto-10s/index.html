@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101923">
+  <meta name="description" content="Mini Cheetah: настоящая 10-секундная симуляция Drake + IDTO MPC, измеренные положения и нагрузки четырёх ног.">
+  <title>Hexapod Lab — Mini Cheetah · 10 с MPC</title>
+  <link rel="stylesheet" href="/hexapod/claws/style.css">
+  <link rel="stylesheet" href="/hexapod/player-shell.css">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+ <main class="layout">
+  <header class="topbar"><div class="brand"><span class="brand-mark">⬡</span><div><strong>HEXAPOD LAB</strong><small>MIT Mini Cheetah · Drake + IDTO</small></div></div></header>
+  <section class="stage" aria-label="Настоящая физическая запись Mini Cheetah">
+   <div id="viewer" role="img" aria-label="3D скелет Mini Cheetah, реальная кинематика из Drake MPC; перетаскивайте для поворота"></div>
+   <div class="stage-info"><div class="pill">IDTO MPC · 10 С · ЧЕТВЕРОНОГИЙ</div><div class="measure"><span id="distance">0,00</span><small>м, фактическое продвижение</small></div></div>
+   <div class="stage-right"><div><b id="feet">—</b><small>НЕСУЩИЕ НОГИ</small></div></div>
+   <div class="stage-phase"><strong id="phase-label">Загрузка физической записи…</strong><small id="support-margin">Измеренная реакция четырёх стоп</small></div>
+   <div class="stage-help">Поворот — перетаскивание · масштаб — двумя пальцами</div>
+   <div class="stage-bottom-tag" id="cad-status">Схематическая геометрия по URDF · реальное движение Drake</div>
+   <div class="error" id="error" hidden role="alert"></div>
+  </section>
+  <section class="controls" aria-label="Воспроизведение">
+   <div class="transport"><button id="play" class="play" aria-label="Пауза">Ⅱ</button>
+     <div class="scrubber"><input id="seek" type="range" min="0" max="10" step="0.01" value="0" aria-label="Момент записи"><div class="timeline-label"><span id="clock">00:00</span><span>00:10</span></div></div>
+     <label class="speedlabel">Скорость <select id="speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option selected value="1">1×</option><option value="2">2×</option></select></label>
+   </div>
+   <div class="options"><label><input id="follow" type="checkbox" checked> Следить за корпусом</label>
+      <label><input id="contacts" type="checkbox" checked> Подсветка опор</label><label><input id="path" type="checkbox"> Путь</label>
+      <button id="reset-camera" class="text-button">Сброс камеры</button></div>
+  </section>
+  <footer>
+   <div><strong>Исходный Mini Cheetah, не Freenove</strong> · 10,0 с Drake 1.30.0 / IDTO · 201 измеренная поза, 50 мс между отсчётами · 3,47 м прогресса · <a href="https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/pull/33" target="_blank" rel="noopener noreferrer">оригинальный эксперимент PR #33</a></div>
+   <div>Положения корпуса и суставов, кинематика URDF и силы четырёх стоп — по настоящей записи Drake. Визуализация — схематический скелет, НЕ оригинальные OBJ/3D-меши Mini Cheetah. Нагрузки дискретизованы каждые 50 мс и не доказывают контакты между отсчётами. Не является походкой Freenove и не подтверждает ограничений его сервоприводов.</div>
+  </footer>
+ </main>
+ <script type="module" src="/hexapod/cheetah-idto-10s/app.js"></script>
+ <script type="module" src="/hexapod/player-shell.js"></script>
+</body>
+</html>

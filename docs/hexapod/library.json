@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 3,
+  "revision": 4,
   "entries": [
     {
       "id": "tripod-60",
@@ -283,6 +283,30 @@
           "path": "hexapod/data/cad-rig-contact-two-diag-mr-bl.json",
           "sha256": "569a9771c0f85f794c4517742fbe04b68b22f709b7ecf9dd40b6959ccd6eac4b",
           "size": 139340
+        }
+      ]
+    },
+    {
+      "id": "cheetah-idto-10s",
+      "title": "Mini Cheetah · MPC",
+      "detail": "Drake · динамическая рысь · 10 с · 3,47 м · другой робот",
+      "duration_s": 10,
+      "href": "/hexapod/cheetah-idto-10s/",
+      "files": [
+        {
+          "path": "hexapod/cheetah-idto-10s/index.html",
+          "sha256": "bf53b5d986cc09551f9226061fd70a391de91ce7b53d60c98df7dd48fc9ec816",
+          "size": 4370
+        },
+        {
+          "path": "hexapod/cheetah-idto-10s/app.js",
+          "sha256": "39bdc796a6820e68485b29b9e1ba9a2b25acaa11ec41d3b22b581ac40807b8e0",
+          "size": 8006
+        },
+        {
+          "path": "hexapod/data/cheetah-idto-10s.json",
+          "sha256": "3e594d05e6846b2eaac5bbba108bc2bde5910a295b0c785b0b3e3aa5ffd411ef",
+          "size": 110025
         }
       ]
     }
