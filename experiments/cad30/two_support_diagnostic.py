@@ -110,7 +110,7 @@ def motion(t):
     return 0.,'hold_landed'
 
 
-def simulate(model_file:Path,state_file:Path,lifted:tuple[str,...],tmax=2.4):
+def simulate(model_file:Path,state_file:Path,lifted:tuple[str,...],tmax=2.4,capture_qpos=False):
     m,d,legs,qa,da,caps,goal,targets=prepare(model_file,state_file)
     m.opt.timestep=.002
     for suffix in (*STANCE,*FRONT):
@@ -132,6 +132,12 @@ def simulate(model_file:Path,state_file:Path,lifted:tuple[str,...],tmax=2.4):
     final_fz={};hold_exact_matches=0;hold_steps=0;hold_best_streak=0;hold_streak=0
     hold_wrongly_unloaded=Counter();hold_commanded_unloaded=Counter();sample_foot_clearance_mm=[]
     front_unintended_contact_steps=0
+    recordings=[] if capture_qpos else None
+    if capture_qpos:
+        initial_fz,_=contact_forces(m,d,floor,geomleg)
+        recordings.append({'t_s':0.0,'qpos':[float(x) for x in d.qpos],
+                           'contact_mask':[k for k in STANCE if initial_fz[k]>FORCE_N],
+                           'fz_N':{k:float(initial_fz[k]) for k in STANCE},'phase':'initial'})
     for i in range(N):
         t=i*dt;alpha,phase=motion(t)
         command=goal+alpha*(model_goal-goal)
@@ -179,6 +185,12 @@ def simulate(model_file:Path,state_file:Path,lifted:tuple[str,...],tmax=2.4):
                 sample_foot_clearance_mm.append({k:round(float(tip_world(m,d,legs[k])[2]-
                                        (0.0 if k not in ('ml','mr') else .00035))*1000,3) for k in lifted})
         final_fz=fz
+        if capture_qpos and ((i+1)%25==0 or i==N-1):
+            recordings.append({'t_s':round(float(d.time),6),
+                               'qpos':[float(x) for x in d.qpos],
+                               'contact_mask':list(loaded),
+                               'fz_N':{k:float(fz[k]) for k in STANCE},
+                               'phase':phase})
     com_end=com_world(m,d)
     result={'schema':'cad30_three_vs_two_support_short_diagnostic_v1','requested_lifted_legs':list(lifted),
            'model':str(model_file),'initial_safe_snapshot':str(state_file),
@@ -215,6 +227,8 @@ def simulate(model_file:Path,state_file:Path,lifted:tuple[str,...],tmax=2.4):
                           'Foot contact forces measured from MuJoCo; front pair must remain lifted',
                           'No dynamic balance optimizer: failure cannot disprove feasibility with MPC'],
            'trace_50ms':trace}
+    if capture_qpos:
+        result['recorded_qpos_20hz']=recordings
     return result
 
 
