@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-04",
+  "viewer": "https://hexapod-lab-viewer.pages.dev/",
+  "branch": "feature/threejs-60s-physical-replay-20261104",
+  "mode": "original_CAD_hotlinked_from_pinned_upstream",
+  "source": "MattiaGrigoli/autonomous_hexapod",
+  "pinned_commit": "5c9a84c16335b30036e451c691d2c544abf4bc72",
+  "owner_original_CAD": "Freenove",
+  "original_STL_count": 30,
+  "original_CAD_local_stl_copies_on_pages": false,
+  "missing_STL": ["topplate.stl", "bigservo1.stl"],
+  "visual_geometry_count": 146,
+  "bodies_per_frame": 27,
+  "physical_replay_samples": 1501,
+  "duration_s": 60,
+  "simulation_recomputed": false,
+  "tests": {"count": 8, "passed": 8, "checks": ["mj_forward body poses", "raw STL to MuJoCo compiled vertices", "pinned upstream URLs", "CAD asset exclusion"]},
+  "limitations": ["Uncalibrated physical parameters", "Source STLs served from upstream; network needed", "Two visual-only proxy meshes", "Licence is upstream third-party permission, not MIT"]
+}

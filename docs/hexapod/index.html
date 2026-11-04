@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101923">
+  <meta name="description" content="Hexapod Lab: 60 секунд настоящей физической симуляции MuJoCo, интерактивный Three.js просмотрщик.">
+  <title>Hexapod Lab — 60 секунд ходьбы</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main class="layout">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">⬡</span><div><strong>HEXAPOD LAB</strong><small>Freenove FNK0052 · CAD30</small></div></div>
+      <div class="topright"><span class="live-dot" aria-hidden="true"></span><span>ЗАПИСЬ MUJOCO</span><a class="repo" href="./claws/">Клешни · 3D</a><a class="repo" href="./six-to-four/">6→4 · 3D</a><a class="repo" href="./folding/">Поджатие A/B/C · 3D</a><a class="repo" href="https://github.com/Dmitry-dev-pet/alfred-hexapod-lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+    </header>
+    <section class="stage" aria-label="Интерактивный 3D просмотрщик ходьбы">
+      <div id="viewer" role="img" aria-label="Трёхмерное воспроизведение движения шестиногого робота. Перетащите для вращения камеры, увеличивайте двумя пальцами."></div>
+      <div class="stage-info">
+        <div class="pill"><span class="pulse"></span> ФИЗИЧЕСКАЯ ТРАЕКТОРИЯ</div>
+        <div class="measure"><span id="distance">0,00</span><small>м вдоль маршрута</small></div>
+      </div>
+      <div class="stage-right">
+        <div><b id="feet">—</b><small>НОГ В ОПОРЕ</small></div>
+        <div><b id="mode">TRIPOD</b><small>ПОХОДКА</small></div>
+      </div>
+      <div class="stage-help" id="stage-help">Перетаскивание — вращение камеры · Два пальца — масштаб</div>
+      <div class="stage-bottom-tag" id="cad-status" aria-live="polite">CAD загружается из исходного репозитория Freenove / Mattia Grigoli…</div>
+      <div class="error" id="error" role="alert" hidden></div>
+    </section>
+    <section class="controls" aria-label="Управление воспроизведением">
+      <div class="transport">
+        <button id="play" class="play" aria-label="Пауза" title="Пауза / воспроизведение">Ⅱ</button>
+        <div class="scrubber"><input id="seek" type="range" min="0" max="60" step="0.01" value="0" aria-label="Позиция во времени"><div class="timeline-label"><span id="clock">00:00</span><span>01:00</span></div></div>
+        <label class="speedlabel" for="speed">Скорость <select id="speed" aria-label="Скорость воспроизведения"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option selected value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+      </div>
+      <div class="options">
+        <label><input type="checkbox" id="show-cad" checked> Оригинальный CAD</label>
+        <label><input type="checkbox" id="follow" checked> Следить за роботом</label>
+        <label><input type="checkbox" id="contacts" checked> Контакты ног</label>
+        <label><input type="checkbox" id="path" checked> Траектория</label>
+        <button id="reset-camera" class="text-button">Вернуть камеру</button>
+      </div>
+    </section>
+    <footer>
+      <div><strong>60 секунд · 30 000 шагов MuJoCo</strong> · 1,805 кг (модельная масса) · ограничение момента 0,7 Н·м</div>
+      <div>CAD: © Freenove, исходные STL опубликованы <a href="https://github.com/MattiaGrigoli/autonomous_hexapod/blob/main/LICENSE-3RD-PARTY.md" target="_blank" rel="noopener noreferrer">Mattia Grigoli с разрешения Freenove</a>. 30/32 STL; 2 детали заменены. Неофициальная некоммерческая исследовательская визуализация. Это воспроизведение численного опыта, не управление реальным роботом. Физические параметры не откалиброваны.</div>
+    </footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
