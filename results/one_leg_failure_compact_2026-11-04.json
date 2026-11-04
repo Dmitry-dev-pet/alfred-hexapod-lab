@@ -1,0 +1,366 @@
+{
+  "schema": "fnk0052_cad30_one_leg_failure/1",
+  "date_utc": "2026-11-04",
+  "physical_robot_tested": false,
+  "source_commit": "5c9a84c16335b30036e451c691d2c544abf4bc72",
+  "model_mass_kg": 1.804868,
+  "mu_assumed": 1.1,
+  "max_assumed_motor_torque_nm": 0.7,
+  "cad_failure_leg_fl_vendor_leg": "FR",
+  "damage_at_t_s": 3.0,
+  "damage": "tibia contact disabled, three actuator control torques zero, leg mass retained",
+  "controller_notified_fault": false,
+  "runs": [
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 23,
+      "fault_leg_physics_only": null,
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 11.717,
+      "post_fault_advance_cm": 7.772,
+      "final_drift_cm": -0.061,
+      "max_tilt_deg": 0.68,
+      "post_fault_min_contacts": 3,
+      "active_motor_saturation_fraction": 0.0,
+      "failed_motor_requested_saturation_fraction": 0.0,
+      "liftoffs_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 4
+      },
+      "touchdowns_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 3
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 3.641,
+        "bl": 2.539,
+        "br": 2.559,
+        "mr": 3.21,
+        "fr": 3.25,
+        "fl": 2.641
+      },
+      "induced_recovery_press_samples": 0
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 23,
+      "fault_leg_physics_only": "fl",
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 5.916,
+      "post_fault_advance_cm": 1.97,
+      "final_drift_cm": 0.195,
+      "max_tilt_deg": 5.671,
+      "post_fault_min_contacts": 1,
+      "active_motor_saturation_fraction": 0.0045,
+      "failed_motor_requested_saturation_fraction": 0.611,
+      "liftoffs_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "touchdowns_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 4.848,
+        "bl": 3.295,
+        "br": 1.566,
+        "mr": 2.375,
+        "fr": 5.682,
+        "fl": 0.0
+      },
+      "induced_recovery_press_samples": 0
+    },
+    {
+      "mode": "neighbor_recover",
+      "seed": 23,
+      "fault_leg_physics_only": "fl",
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 5.749,
+      "post_fault_advance_cm": 1.804,
+      "final_drift_cm": 0.153,
+      "max_tilt_deg": 5.69,
+      "post_fault_min_contacts": 1,
+      "active_motor_saturation_fraction": 0.0065,
+      "failed_motor_requested_saturation_fraction": 0.611,
+      "liftoffs_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "touchdowns_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 5.136,
+        "bl": 2.704,
+        "br": 2.198,
+        "mr": 1.931,
+        "fr": 5.702,
+        "fl": 0.0
+      },
+      "induced_recovery_press_samples": 191
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 11,
+      "fault_leg_physics_only": null,
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 11.695,
+      "post_fault_advance_cm": 7.79,
+      "final_drift_cm": 0.017,
+      "max_tilt_deg": 0.618,
+      "post_fault_min_contacts": 4,
+      "active_motor_saturation_fraction": 0.0,
+      "failed_motor_requested_saturation_fraction": 0.0,
+      "liftoffs_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 4
+      },
+      "touchdowns_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 3
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 3.234,
+        "bl": 2.834,
+        "br": 2.467,
+        "mr": 3.227,
+        "fr": 3.164,
+        "fl": 2.753
+      },
+      "induced_recovery_press_samples": 0
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 11,
+      "fault_leg_physics_only": "fl",
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 6.347,
+      "post_fault_advance_cm": 2.442,
+      "final_drift_cm": 0.139,
+      "max_tilt_deg": 0.615,
+      "post_fault_min_contacts": 2,
+      "active_motor_saturation_fraction": 0.0,
+      "failed_motor_requested_saturation_fraction": 0.6195,
+      "liftoffs_by_leg": {
+        "ml": 1,
+        "bl": 2,
+        "br": 3,
+        "mr": 1,
+        "fr": 1,
+        "fl": 2
+      },
+      "touchdowns_by_leg": {
+        "ml": 1,
+        "bl": 2,
+        "br": 3,
+        "mr": 1,
+        "fr": 1,
+        "fl": 1
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 4.319,
+        "bl": 3.596,
+        "br": 1.172,
+        "mr": 1.931,
+        "fr": 6.557,
+        "fl": 0.0
+      },
+      "induced_recovery_press_samples": 0
+    },
+    {
+      "mode": "neighbor_recover",
+      "seed": 11,
+      "fault_leg_physics_only": "fl",
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 6.19,
+      "post_fault_advance_cm": 2.285,
+      "final_drift_cm": -0.018,
+      "max_tilt_deg": 0.727,
+      "post_fault_min_contacts": 2,
+      "active_motor_saturation_fraction": 0.0,
+      "failed_motor_requested_saturation_fraction": 0.6195,
+      "liftoffs_by_leg": {
+        "ml": 1,
+        "bl": 2,
+        "br": 3,
+        "mr": 1,
+        "fr": 1,
+        "fl": 2
+      },
+      "touchdowns_by_leg": {
+        "ml": 1,
+        "bl": 2,
+        "br": 3,
+        "mr": 1,
+        "fr": 1,
+        "fl": 1
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 5.097,
+        "bl": 2.302,
+        "br": 2.578,
+        "mr": 0.996,
+        "fr": 6.644,
+        "fl": 0.0
+      },
+      "induced_recovery_press_samples": 223
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 37,
+      "fault_leg_physics_only": null,
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 12.149,
+      "post_fault_advance_cm": 7.893,
+      "final_drift_cm": 0.01,
+      "max_tilt_deg": 0.52,
+      "post_fault_min_contacts": 3,
+      "active_motor_saturation_fraction": 0.0,
+      "failed_motor_requested_saturation_fraction": 0.0,
+      "liftoffs_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 3
+      },
+      "touchdowns_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 3
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 3.263,
+        "bl": 3.042,
+        "br": 2.164,
+        "mr": 3.278,
+        "fr": 3.357,
+        "fl": 2.528
+      },
+      "induced_recovery_press_samples": 0
+    },
+    {
+      "mode": "neighbor_inhibit",
+      "seed": 37,
+      "fault_leg_physics_only": "fl",
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 10.865,
+      "post_fault_advance_cm": 6.609,
+      "final_drift_cm": 0.94,
+      "max_tilt_deg": 4.84,
+      "post_fault_min_contacts": 1,
+      "active_motor_saturation_fraction": 0.003,
+      "failed_motor_requested_saturation_fraction": 0.6122,
+      "liftoffs_by_leg": {
+        "ml": 4,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "touchdowns_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 4.34,
+        "bl": 4.016,
+        "br": 1.135,
+        "mr": 2.868,
+        "fr": 5.541,
+        "fl": 0.0
+      },
+      "induced_recovery_press_samples": 0
+    },
+    {
+      "mode": "neighbor_recover",
+      "seed": 37,
+      "fault_leg_physics_only": "fl",
+      "duration_s": 8.0,
+      "completed": true,
+      "root_advance_cm": 11.062,
+      "post_fault_advance_cm": 6.806,
+      "final_drift_cm": 0.812,
+      "max_tilt_deg": 4.97,
+      "post_fault_min_contacts": 1,
+      "active_motor_saturation_fraction": 0.0055,
+      "failed_motor_requested_saturation_fraction": 0.6122,
+      "liftoffs_by_leg": {
+        "ml": 4,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "touchdowns_by_leg": {
+        "ml": 3,
+        "bl": 3,
+        "br": 3,
+        "mr": 3,
+        "fr": 3,
+        "fl": 1
+      },
+      "post_fault_mean_normal_force_by_leg_N": {
+        "ml": 4.528,
+        "bl": 3.545,
+        "br": 1.405,
+        "mr": 2.347,
+        "fr": 5.71,
+        "fl": 0.0
+      },
+      "induced_recovery_press_samples": 223
+    }
+  ]
+}
