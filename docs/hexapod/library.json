@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 2,
+  "revision": 3,
   "entries": [
     {
       "id": "tripod-60",
@@ -53,6 +53,236 @@
           "path": "hexapod/data/cad-rig-power-loss-collapse-12s.json",
           "sha256": "49483965de4bf814199eb572b5afa4277fdbf8d0842df44ffba9cbce733913f4",
           "size": 523443
+        }
+      ]
+    },
+    {
+      "id": "contact-four",
+      "title": "4 опоры · удержание",
+      "detail": "Контроль · стойка без перестановки · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-four/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/contact-four/index.html",
+          "sha256": "290115b1e6d961db62be300efa4fa11c8de503a2bf5930b3c8bc072830d98ffe",
+          "size": 3831
+        },
+        {
+          "path": "hexapod/data/contact-four-points.json",
+          "sha256": "3a0b1ea96b90a8bc737481d394e91986391eef3b572e3f7f178c7bdfedac88eb",
+          "size": 47816
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-four.json",
+          "sha256": "273e7e27471aaf238f958f932a622b48fcca7a6ec8b4b2b02b078637f26cd39d",
+          "size": 139004
+        },
+        {
+          "path": "hexapod/contact-diag-app.js",
+          "sha256": "c12085d1be7eb264815df664630090268522a78f511092aee4be651b19487612",
+          "size": 10564
+        }
+      ]
+    },
+    {
+      "id": "contact-three-rear-bl",
+      "title": "3 опоры · задняя левая",
+      "detail": "Подъём bl подтверждён · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-three-rear-bl/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/contact-three-rear-bl/index.html",
+          "sha256": "19860ea7ce79b98699788a68964daaa0e6c9813ca50e2d6e3774e3f16c7f64f2",
+          "size": 3823
+        },
+        {
+          "path": "hexapod/data/contact-three-rear-bl-points.json",
+          "sha256": "fd0b58fff7779f6876b6df876730f956d93647837482974b51bf802ccab0bec2",
+          "size": 47597
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-three-rear-bl.json",
+          "sha256": "f01aa726e457336db6cdcf80bc1320000f7fe5a541ce33b370283680b9350da9",
+          "size": 139295
+        }
+      ]
+    },
+    {
+      "id": "contact-three-middle-ml",
+      "title": "3 опоры · средняя левая",
+      "detail": "Команда ml не сработала: разгрузилась br · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-three-middle-ml/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-three-middle-ml/index.html",
+          "sha256": "042a7efa011aaf93f10617195f5ed1459c786526d8c5f8260643943f155e8f54",
+          "size": 3844
+        },
+        {
+          "path": "hexapod/data/contact-three-middle-ml-points.json",
+          "sha256": "25073080109b6471e47b3f9b2f4ba32dd33e379a3a74176e6c55e486b0ead7b1",
+          "size": 47715
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-three-middle-ml.json",
+          "sha256": "a0a7a2c88fb57c0e81cc46fecc31f0819ef1f9519aae9c3a8db71e598edeb748",
+          "size": 139604
+        }
+      ]
+    },
+    {
+      "id": "contact-two-middles-ml-mr",
+      "title": "2 опоры? · обе средние",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-middles-ml-mr/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-middles-ml-mr/index.html",
+          "sha256": "9957e84a2a48509e2e4939cdbc8f008c9262b6ff49e2a935e33dea841a73a893",
+          "size": 3870
+        },
+        {
+          "path": "hexapod/data/contact-two-middles-ml-mr-points.json",
+          "sha256": "7ab295b96242c37213f5b241c45b98d12e0a01e201fa0ebac3dc33d28bb2e867",
+          "size": 47825
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-middles-ml-mr.json",
+          "sha256": "f0d5cbcd5ea7ae87c6ffdf1bd2524c206951c2ec7a41406265c7f9e80e159819",
+          "size": 138985
+        }
+      ]
+    },
+    {
+      "id": "contact-two-rears-bl-br",
+      "title": "2 опоры? · обе задние",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-rears-bl-br/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-rears-bl-br/index.html",
+          "sha256": "dda3afafcbd08a0d906a6dc0406f152cf44cd96a0e7c55de255da2729818f575",
+          "size": 3868
+        },
+        {
+          "path": "hexapod/data/contact-two-rears-bl-br-points.json",
+          "sha256": "28c4b697bf99c7cb7a6455018fe4a5d6f364c3d329408638583496dc0a1acf07",
+          "size": 47798
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-rears-bl-br.json",
+          "sha256": "972faa1ba7ad553927d30bf78cb721a90ff91ced2ea79bc62d1ea68291d92143",
+          "size": 138930
+        }
+      ]
+    },
+    {
+      "id": "contact-two-left-ml-bl",
+      "title": "2 опоры? · левая пара",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-left-ml-bl/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-left-ml-bl/index.html",
+          "sha256": "5ec835ac7740064f4ed8d5bc371b632e7dc18d615eb72d18fc607b07ae5e143b",
+          "size": 3868
+        },
+        {
+          "path": "hexapod/data/contact-two-left-ml-bl-points.json",
+          "sha256": "d6bc63ad1993fcc954e7cf36429857d9d6f71c92aa858ced619d9f32c4ba7a95",
+          "size": 47741
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-left-ml-bl.json",
+          "sha256": "4dbe8f2fe5636bbff7033dbbbed8c06927cd1b61dbbd4ab81a83fd0373a556cc",
+          "size": 139537
+        }
+      ]
+    },
+    {
+      "id": "contact-two-right-mr-br",
+      "title": "2 опоры? · правая пара",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-right-mr-br/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-right-mr-br/index.html",
+          "sha256": "2589380c14eb508b86f44063453f6c9b35cc2d5da30446693758da1f6ee7944a",
+          "size": 3870
+        },
+        {
+          "path": "hexapod/data/contact-two-right-mr-br-points.json",
+          "sha256": "0dc9c9181fd5f64d561ae6b8d55e105a23f7ad2dd568d0f0846ef0bb9953f144",
+          "size": 47705
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-right-mr-br.json",
+          "sha256": "040b8205e690591c5acdb563d1f0888027bd9e2dac0fe508845473aa41d463e9",
+          "size": 139373
+        }
+      ]
+    },
+    {
+      "id": "contact-two-diag-ml-br",
+      "title": "2 опоры? · диагональ ml/br",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-diag-ml-br/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-diag-ml-br/index.html",
+          "sha256": "ad72a6626c3d81d4fec8d394f26a7dd90c44262e05f5ddeb2b0fa5f697b9eec3",
+          "size": 3873
+        },
+        {
+          "path": "hexapod/data/contact-two-diag-ml-br-points.json",
+          "sha256": "421c58c72844cd3ce6a6fb12b05554745217699d2e62917b33136bc645161817",
+          "size": 47754
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-diag-ml-br.json",
+          "sha256": "ef2a08194b71796bf553b9c7eccf43b7e9eb13b9e9c95d28f8e7d6bb14817f8d",
+          "size": 139686
+        }
+      ]
+    },
+    {
+      "id": "contact-two-diag-mr-bl",
+      "title": "2 опоры? · диагональ mr/bl",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-diag-mr-bl/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-diag-mr-bl/index.html",
+          "sha256": "2d5c6396143b7b349e37a4575c79f02f75287adaa02761896c2d15b63051b521",
+          "size": 3873
+        },
+        {
+          "path": "hexapod/data/contact-two-diag-mr-bl-points.json",
+          "sha256": "41b7b35f935f9698f3494781ee8f858ec7a77c31e893e5125e4777304bf6162b",
+          "size": 47663
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-diag-mr-bl.json",
+          "sha256": "569a9771c0f85f794c4517742fbe04b68b22f709b7ecf9dd40b6959ccd6eac4b",
+          "size": 139340
         }
       ]
     }
