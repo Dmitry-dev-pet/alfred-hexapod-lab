@@ -1,0 +1,532 @@
+{
+  "schema": "FNK0052_optimizer_claw_balance_compact/1",
+  "date_utc": "2026-11-04",
+  "model": "Freenove FNK0052 CAD30 MuJoCo 3.14.0 1.804868kg; 30 source meshes+2 visual proxies",
+  "model_limitations": "Estimated torque/friction/mass; 2ms physics, 50Hz diagnostics, 10Hz quasistatic force oracle; not hardware validated",
+  "candidate_cases": {
+    "one_claw_step_mu1p1": {
+      "claws": [
+        "fl"
+      ],
+      "mu": 1.1,
+      "planned_support_shift_m": 0.0,
+      "posture_reach_success": true,
+      "full_cycle_clean_support": true,
+      "selected_stance_step": "br",
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 100.764,
+      "min_support_margin_mm_after_lift": 100.59,
+      "min_contact_count_after_lift": 4,
+      "hold_max_tilt_deg": 0.661,
+      "peak_tau_nm": 0.30694,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": false,
+      "duration_s": 12.5,
+      "sha256_full_trace": "d835e533ee635e7f7ecafb47be8466550c90ca72aa0e97e86dd04c45cc257f8c",
+      "source_file": "c1_mu1.1_step.json",
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        },
+        {
+          "t": 3.55,
+          "event": "stance_swing_selected",
+          "leg": "br"
+        }
+      ]
+    },
+    "one_claw_step_mu0p6": {
+      "claws": [
+        "fl"
+      ],
+      "mu": 0.6,
+      "planned_support_shift_m": 0.0,
+      "posture_reach_success": true,
+      "selected_stance_step": "br",
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 8.428,
+      "hold_max_tilt_deg": 0.8246,
+      "peak_tau_nm": 0.38568,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": false,
+      "duration_s": 12.5,
+      "sha256_full_trace": "6df5d50e572d7c91aee3733efbd98b037c13d4d70d7e12a2c9bb2dcd447155b7",
+      "source_file": "final_claw1_0.6_step.json",
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        },
+        {
+          "t": 3.55,
+          "event": "stance_swing_selected",
+          "leg": "br"
+        }
+      ]
+    },
+    "both_claws_hold_mu1p1": {
+      "claws": [
+        "fl",
+        "fr"
+      ],
+      "mu": 1.1,
+      "planned_support_shift_m": 0.04376,
+      "posture_reach_success": true,
+      "full_cycle_clean_support": true,
+      "selected_stance_step": null,
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 25.669,
+      "min_support_margin_mm_after_lift": 3.961,
+      "min_contact_count_after_lift": 4,
+      "hold_max_tilt_deg": 2.9962,
+      "peak_tau_nm": 0.46267,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": false,
+      "duration_s": 12.5,
+      "sha256_full_trace": "12a9bc2db6384e3b2a47018272770a9bf385a492237a936d5adf184b0f25d433",
+      "source_file": "c2_mu1.1_no.json",
+      "prep_candidate_search": [
+        {
+          "shift_m": 0.028253,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.8359,
+          "predicted_motor_fraction": 0.5355167,
+          "predicted_support_margin_mm": 13.195,
+          "score": 0.873258
+        },
+        {
+          "shift_m": 0.032131,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.6787,
+          "predicted_motor_fraction": 0.5240691,
+          "predicted_support_margin_mm": 16.708,
+          "score": 0.810043
+        },
+        {
+          "shift_m": 0.036008,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.5581,
+          "predicted_motor_fraction": 0.5143107,
+          "predicted_support_margin_mm": 19.406,
+          "score": 0.770599
+        },
+        {
+          "shift_m": 0.039885,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.4583,
+          "predicted_motor_fraction": 0.5051457,
+          "predicted_support_margin_mm": 21.637,
+          "score": 0.741386
+        },
+        {
+          "shift_m": 0.043763,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.3583,
+          "predicted_motor_fraction": 0.4959741,
+          "predicted_support_margin_mm": 23.875,
+          "score": 0.714496
+        }
+      ],
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        }
+      ]
+    },
+    "both_claws_step_mu1p1_negative": {
+      "claws": [
+        "fl",
+        "fr"
+      ],
+      "mu": 1.1,
+      "planned_support_shift_m": 0.04376,
+      "posture_reach_success": true,
+      "full_cycle_clean_support": false,
+      "selected_stance_step": "bl",
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 25.75,
+      "min_support_margin_mm_after_lift": -4.308,
+      "min_contact_count_after_lift": 3,
+      "hold_max_tilt_deg": 2.9673,
+      "peak_tau_nm": 0.49563,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": true,
+      "duration_s": 12.5,
+      "sha256_full_trace": "aeafa3c73e947757fa8525ad80e4072d605ddfaba235b21d85ec03fd20e7782b",
+      "source_file": "c2_mu1.1_step.json",
+      "prep_candidate_search": [
+        {
+          "shift_m": 0.028253,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.8359,
+          "predicted_motor_fraction": 0.5355167,
+          "predicted_support_margin_mm": 13.195,
+          "score": 0.873258
+        },
+        {
+          "shift_m": 0.032131,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.6787,
+          "predicted_motor_fraction": 0.5240691,
+          "predicted_support_margin_mm": 16.708,
+          "score": 0.810043
+        },
+        {
+          "shift_m": 0.036008,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.5581,
+          "predicted_motor_fraction": 0.5143107,
+          "predicted_support_margin_mm": 19.406,
+          "score": 0.770599
+        },
+        {
+          "shift_m": 0.039885,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.4583,
+          "predicted_motor_fraction": 0.5051457,
+          "predicted_support_margin_mm": 21.637,
+          "score": 0.741386
+        },
+        {
+          "shift_m": 0.043763,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.3583,
+          "predicted_motor_fraction": 0.4959741,
+          "predicted_support_margin_mm": 23.875,
+          "score": 0.714496
+        }
+      ],
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        },
+        {
+          "t": 3.55,
+          "event": "stance_swing_selected",
+          "leg": "bl"
+        },
+        {
+          "t": 10.722,
+          "event": "abort_negative_dynamic_support_margin",
+          "margin_mm": -4.308
+        }
+      ]
+    },
+    "both_claws_hold_mu0p6_borderline": {
+      "claws": [
+        "fl",
+        "fr"
+      ],
+      "mu": 0.6,
+      "planned_support_shift_m": 0.04437,
+      "posture_reach_success": true,
+      "full_cycle_clean_support": false,
+      "selected_stance_step": null,
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 26.321,
+      "min_support_margin_mm_after_lift": -0.612,
+      "min_contact_count_after_lift": 4,
+      "hold_max_tilt_deg": 3.7389,
+      "peak_tau_nm": 0.59678,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": false,
+      "duration_s": 12.5,
+      "sha256_full_trace": "3b74375c1aee6cd5de1989d852d28440fc00e4404c5a09495eb0754d98024bbd",
+      "source_file": "c2_mu0.6_no.json",
+      "prep_candidate_search": [
+        {
+          "shift_m": 0.028324,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.7724,
+          "predicted_motor_fraction": 0.6667942,
+          "predicted_support_margin_mm": 14.832,
+          "score": 0.886586
+        },
+        {
+          "shift_m": 0.032336,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.6164,
+          "predicted_motor_fraction": 0.6613087,
+          "predicted_support_margin_mm": 18.386,
+          "score": 0.832399
+        },
+        {
+          "shift_m": 0.036348,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.4881,
+          "predicted_motor_fraction": 0.6583151,
+          "predicted_support_margin_mm": 21.295,
+          "score": 0.796219
+        },
+        {
+          "shift_m": 0.04036,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.3822,
+          "predicted_motor_fraction": 0.6528274,
+          "predicted_support_margin_mm": 23.702,
+          "score": 0.768664
+        },
+        {
+          "shift_m": 0.044373,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.2786,
+          "predicted_motor_fraction": 0.6507054,
+          "predicted_support_margin_mm": 26.07,
+          "score": 0.74474
+        }
+      ],
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        }
+      ]
+    },
+    "both_claws_hold_mu0p3_rejected": {
+      "sha256_full_trace": "85f4d33d874876bedf06c6f06c4bd4110e0cd99cf9ae182a9658fcf1968ac66e",
+      "source_file": "c2_mu0.3_no.json",
+      "prep_candidate_search": [
+        {
+          "shift_m": 0.028505,
+          "feasible": false,
+          "predicted_post_lift_load_std_N": 10.0,
+          "predicted_motor_fraction": 1.0511319,
+          "predicted_support_margin_mm": 15.353,
+          "score": null
+        },
+        {
+          "shift_m": 0.032589,
+          "feasible": false,
+          "predicted_post_lift_load_std_N": 10.0,
+          "predicted_motor_fraction": 1.0370767,
+          "predicted_support_margin_mm": 18.97,
+          "score": null
+        },
+        {
+          "shift_m": 0.036673,
+          "feasible": false,
+          "predicted_post_lift_load_std_N": 10.0,
+          "predicted_motor_fraction": 1.0248738,
+          "predicted_support_margin_mm": 22.028,
+          "score": null
+        },
+        {
+          "shift_m": 0.040757,
+          "feasible": false,
+          "predicted_post_lift_load_std_N": 10.0,
+          "predicted_motor_fraction": 1.0144528,
+          "predicted_support_margin_mm": 24.326,
+          "score": null
+        },
+        {
+          "shift_m": 0.044841,
+          "feasible": false,
+          "predicted_post_lift_load_std_N": 10.0,
+          "predicted_motor_fraction": 1.0028685,
+          "predicted_support_margin_mm": 26.933,
+          "score": null
+        }
+      ]
+    },
+    "auto_mobility_mu1p1": {
+      "claws": [
+        "fl"
+      ],
+      "mu": 1.1,
+      "planned_support_shift_m": 0.0,
+      "posture_reach_success": true,
+      "full_cycle_clean_support": true,
+      "selected_stance_step": "br",
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 100.764,
+      "min_support_margin_mm_after_lift": 100.59,
+      "min_contact_count_after_lift": 4,
+      "hold_max_tilt_deg": 0.661,
+      "peak_tau_nm": 0.30694,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": false,
+      "duration_s": 12.5,
+      "automatic_motion_approved": true,
+      "automatic_mode_priority": "mobility",
+      "sha256_full_trace": "e91072e36403215b2c61b8b59db241edd76ab9624a627ad3bb4c6380596f0d7b",
+      "source_file": "final_auto_mobility_mu1p1.json",
+      "automatic_fallback_trials": [
+        {
+          "claw_count": 2,
+          "stance_step": true,
+          "approved": false
+        },
+        {
+          "claw_count": 1,
+          "stance_step": true,
+          "approved": true
+        }
+      ],
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        },
+        {
+          "t": 3.55,
+          "event": "stance_swing_selected",
+          "leg": "br"
+        }
+      ]
+    },
+    "auto_claws_mu1p1": {
+      "claws": [
+        "fl",
+        "fr"
+      ],
+      "mu": 1.1,
+      "planned_support_shift_m": 0.04376,
+      "posture_reach_success": true,
+      "full_cycle_clean_support": true,
+      "selected_stance_step": null,
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 25.669,
+      "min_support_margin_mm_after_lift": 3.961,
+      "min_contact_count_after_lift": 4,
+      "hold_max_tilt_deg": 2.9962,
+      "peak_tau_nm": 0.46267,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": false,
+      "duration_s": 12.5,
+      "automatic_motion_approved": true,
+      "automatic_mode_priority": "claws",
+      "sha256_full_trace": "8d27a9923a866a8fced0de9951fd70dc5a0bb4641bc43cb6e68f8f0c44c9a3bc",
+      "source_file": "auto_claws_1.1.json",
+      "automatic_fallback_trials": [
+        {
+          "claw_count": 2,
+          "stance_step": true,
+          "approved": false
+        },
+        {
+          "claw_count": 2,
+          "stance_step": false,
+          "approved": true
+        }
+      ],
+      "prep_candidate_search": [
+        {
+          "shift_m": 0.028253,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.8359,
+          "predicted_motor_fraction": 0.5355167,
+          "predicted_support_margin_mm": 13.195,
+          "score": 0.873258
+        },
+        {
+          "shift_m": 0.032131,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.6787,
+          "predicted_motor_fraction": 0.5240691,
+          "predicted_support_margin_mm": 16.708,
+          "score": 0.810043
+        },
+        {
+          "shift_m": 0.036008,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.5581,
+          "predicted_motor_fraction": 0.5143107,
+          "predicted_support_margin_mm": 19.406,
+          "score": 0.770599
+        },
+        {
+          "shift_m": 0.039885,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.4583,
+          "predicted_motor_fraction": 0.5051457,
+          "predicted_support_margin_mm": 21.637,
+          "score": 0.741386
+        },
+        {
+          "shift_m": 0.043763,
+          "feasible": true,
+          "predicted_post_lift_load_std_N": 3.3583,
+          "predicted_motor_fraction": 0.4959741,
+          "predicted_support_margin_mm": 23.875,
+          "score": 0.714496
+        }
+      ],
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        }
+      ]
+    },
+    "auto_claws_mu0p6": {
+      "claws": [
+        "fl"
+      ],
+      "mu": 0.6,
+      "planned_support_shift_m": 0.0,
+      "posture_reach_success": true,
+      "full_cycle_clean_support": true,
+      "selected_stance_step": "br",
+      "front_contacts_restored_before_recenter": true,
+      "recovery_shift_fraction_remaining": 0.0,
+      "hold_min_support_margin_mm": 8.428,
+      "min_support_margin_mm_after_lift": 8.428,
+      "min_contact_count_after_lift": 3,
+      "hold_max_tilt_deg": 0.8246,
+      "peak_tau_nm": 0.38568,
+      "motor_saturation_step_fraction": 0.0,
+      "abort": false,
+      "duration_s": 12.5,
+      "automatic_motion_approved": true,
+      "automatic_mode_priority": "claws",
+      "sha256_full_trace": "c0663f2a8d67c64c04291329354803e0a74739e498cf223ebaf3bcf3e273cada",
+      "source_file": "auto_claws_0.6.json",
+      "automatic_fallback_trials": [
+        {
+          "claw_count": 2,
+          "stance_step": true,
+          "approved": false
+        },
+        {
+          "claw_count": 2,
+          "stance_step": false,
+          "approved": false
+        },
+        {
+          "claw_count": 1,
+          "stance_step": true,
+          "approved": true
+        }
+      ],
+      "events_compact": [
+        {
+          "t": 2.05,
+          "event": "front_lift_checked",
+          "allowed": true
+        },
+        {
+          "t": 3.55,
+          "event": "stance_swing_selected",
+          "leg": "br"
+        }
+      ]
+    }
+  }
+}

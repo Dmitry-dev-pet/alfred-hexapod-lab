@@ -1,0 +1,24 @@
+{
+  "schema": "FNK0052_CAD30_optimized_claw_archive/1",
+  "date_utc": "2026-11-04",
+  "drive_url": "https://drive.google.com/file/d/1zNiMOuQB2nVAeX48Td5C0my1ldmz5I8j/view?usp=drivesdk",
+  "filename": "FNK0052_optimized_claw_balance_2026-11-04_v2_no_CAD.zip",
+  "size_bytes": 2259619,
+  "sha256": "617e0cfb382511bfac4b26fc03e7fb5c267f42733674c28f067718d4a59f6272",
+  "contains_original_CAD_binary": false,
+  "file_count_including_internal_sha256_manifest": 20,
+  "includes": [
+    "full MuJoCo physical qpos and 50Hz force/contact traces (successful and failed)",
+    "model-based five-candidate COM shift search",
+    "time-varying LP and normal-force balancing QP source",
+    "dynamic one/two-front-claw and rear-leg swing experiment",
+    "video and animated GIF from recorded simulator states",
+    "support margin graph",
+    "6 independent tests",
+    "per-file SHA-256 list"
+  ],
+  "requires_existing_private_CAD30": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk",
+  "depends_on_review_PR16_static_oracle": true,
+  "status": "simulated-only; continuous dynamic optimality NOT established; no hardware validation",
+  "archive_revision": "v2 corrected unittest repo root; original data identical"
+}
