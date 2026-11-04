@@ -1,0 +1,116 @@
+{
+  "schema": "fnk0052_force_transfer_mechanism/1",
+  "model": "CAD30 FNK0052 nominal, 30 genuine STL + 2 visual proxies",
+  "experiment_date_utc": "2026-11-04",
+  "mujoco_version": "3.14.0",
+  "mass_kg_assumed": 1.804868,
+  "ground_mu_assumed": 1.1,
+  "torque_cap_Nm_assumed": 0.7,
+  "stand_duration_s_after_initial_stabilization": 1.5,
+  "CAD_leg_fl_vendor_label": "FR (CAD mirrored, NOT real vendor FL)",
+  "initial_conditions_identical_for_all_trials": true,
+  "dose_study": [
+    {
+      "command_mm": 1,
+      "intact_stand_FL_normal_N": 3.136,
+      "two_neighbor_feedforward_FL_normal_N": 2.2385,
+      "two_neighbor_feedforward_min_contacts": 6,
+      "two_neighbor_feedforward_max_tau_Nm": 0.19193,
+      "local_feedback_FL_force_target_N": 1.5,
+      "local_feedback_FL_normal_N": 2.2416,
+      "local_feedback_mean_neighbor_command_mm": 1.0,
+      "local_feedback_min_contacts": 6,
+      "local_feedback_max_tau_Nm": 0.19556,
+      "local_feedback_tilt_deg": 0.0674
+    },
+    {
+      "command_mm": 2,
+      "intact_stand_FL_normal_N": 3.136,
+      "two_neighbor_feedforward_FL_normal_N": 1.412,
+      "two_neighbor_feedforward_min_contacts": 6,
+      "two_neighbor_feedforward_max_tau_Nm": 0.22981,
+      "local_feedback_FL_force_target_N": 1.5,
+      "local_feedback_FL_normal_N": 1.4975,
+      "local_feedback_mean_neighbor_command_mm": 1.9114,
+      "local_feedback_min_contacts": 6,
+      "local_feedback_max_tau_Nm": 0.23106,
+      "local_feedback_tilt_deg": 0.128
+    },
+    {
+      "command_mm": 4,
+      "intact_stand_FL_normal_N": 3.136,
+      "two_neighbor_feedforward_FL_normal_N": 0.1059,
+      "two_neighbor_feedforward_min_contacts": 5,
+      "two_neighbor_feedforward_max_tau_Nm": 0.2917,
+      "local_feedback_FL_force_target_N": 1.5,
+      "local_feedback_FL_normal_N": 1.5038,
+      "local_feedback_mean_neighbor_command_mm": 1.8953,
+      "local_feedback_min_contacts": 6,
+      "local_feedback_max_tau_Nm": 0.2583,
+      "local_feedback_tilt_deg": 0.1293
+    }
+  ],
+  "archived_dynamic_active_support_audit": [
+    {
+      "mu": 1.1,
+      "n_paired_seeds": 5,
+      "mean_bias_mm_across_all_legs_times": 0.05046,
+      "fraction_leg_times_bias_gt_0p1mm": 0.066085,
+      "max_bias_mm": 2.277,
+      "total_liftoffs": 96,
+      "mean_max_neighbor_bias_at_liftoff_mm": 0.374521,
+      "fraction_liftoffs_with_neighbor_bias_ge_1mm": 0.09375,
+      "mean_fraction_below_3_contacts_2ms_baseline": 0.00095,
+      "mean_fraction_below_3_contacts_2ms_active": 0.00105,
+      "mean_peak_tilt_deg_baseline": 0.5868,
+      "mean_peak_tilt_deg_active": 0.6678
+    },
+    {
+      "mu": 0.6,
+      "n_paired_seeds": 3,
+      "mean_bias_mm_across_all_legs_times": 0.054705,
+      "fraction_leg_times_bias_gt_0p1mm": 0.067193,
+      "max_bias_mm": 3.314,
+      "total_liftoffs": 58,
+      "mean_max_neighbor_bias_at_liftoff_mm": 0.382793,
+      "fraction_liftoffs_with_neighbor_bias_ge_1mm": 0.137931,
+      "mean_fraction_below_3_contacts_2ms_baseline": 0.011583,
+      "mean_fraction_below_3_contacts_2ms_active": 0.013833,
+      "mean_peak_tilt_deg_baseline": 0.743667,
+      "mean_peak_tilt_deg_active": 0.853667
+    },
+    {
+      "mu": 0.3,
+      "n_paired_seeds": 2,
+      "mean_bias_mm_across_all_legs_times": 0.099894,
+      "fraction_leg_times_bias_gt_0p1mm": 0.09123,
+      "max_bias_mm": 3.53,
+      "total_liftoffs": 39,
+      "mean_max_neighbor_bias_at_liftoff_mm": 0.851436,
+      "fraction_liftoffs_with_neighbor_bias_ge_1mm": 0.333333,
+      "mean_fraction_below_3_contacts_2ms_baseline": 0.0155,
+      "mean_fraction_below_3_contacts_2ms_active": 0.01575,
+      "mean_peak_tilt_deg_baseline": 1.0715,
+      "mean_peak_tilt_deg_active": 1.8355
+    }
+  ],
+  "existing_active_support_archive_sha256": "c79bd1b32605fd071a6e39d1c4982956ad92800cc69276e35d792d536d393679",
+  "raw_receipts_sha256": {
+    "1mm": "89be1927a69c8345f3608f91598a86465e7c0462a73eeea3b94e13b69703aef1",
+    "2mm": "10bb3eac8e1fad81755e66bd6c0759bcb5466cd8924b5d56959651d35405a52e",
+    "4mm": "a013728389ced563574a6b7bebbfd2c4b92777ef4fb82ca5b9426b0f4916ba82"
+  },
+  "interpretation": [
+    "The simulated plant mechanically redistributes loads with small local foot-target offsets.",
+    "Existing gait heuristic applies commanded offsets rarely and too late; it does NOT track a force setpoint.",
+    "This supports a timing/force-regulation mechanism hypothesis but does not prove it during locomotion.",
+    "The standalone local feedback trial regulates FL load during 6-leg standing, not after damage."
+  ],
+  "warnings": [
+    "MuJoCo force reading is simulator-side, not a physical load cell.",
+    "No measurements for PWM, servo torque-speed/power, or compliant rubber feet.",
+    "CAD toe marker and contact hull differ from verified physical footpad.",
+    "Lost contact of one unloaded leg is not necessarily a fall, but must be monitored.",
+    "No real robot tests or robust sample-statistical generalization."
+  ]
+}
