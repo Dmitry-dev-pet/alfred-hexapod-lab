@@ -1,0 +1,21 @@
+{
+  "schema": "fnk0052_local_load_transfer_archive/1",
+  "date_utc": "2026-11-04",
+  "file_name": "FNK0052_force_transfer_mechanism_2026-11-04_no_CAD.zip",
+  "drive_url": "https://drive.google.com/file/d/1DJD2pNu3MyOFRHBnR9dyroxqzUpbHxRu/view?usp=drivesdk",
+  "size_bytes": 148110,
+  "sha256": "92bba684b1e5bb01013b7ef50acbc69b26d94aa33c7befe95af26cc0961e41b4",
+  "contains_third_party_STL": false,
+  "contains": [
+    "3 executed dose-response JSON receipts at 1/2/4mm with 50Hz time-series",
+    "Local 1.5N force-target feedback static experiment",
+    "20 prior paired dynamic trial metrics re-analyzed from stored trace ZIP",
+    "Reproduction scripts and numerical report",
+    "PNG dose-response graph",
+    "SHA256_CONTENTS.json"
+  ],
+  "prior_CAD30_zip_url": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk",
+  "prior_active_support_zip_url": "https://drive.google.com/file/d/1o2oWFtjSV0X7UYyHe4i8qB7twMzvxVez/view?usp=drivesdk",
+  "prior_active_support_zip_sha256": "c79bd1b32605fd071a6e39d1c4982956ad92800cc69276e35d792d536d393679",
+  "status": "Simulation-only static force experiment and reanalysis of earlier dynamic tests, no hardware claim"
+}
