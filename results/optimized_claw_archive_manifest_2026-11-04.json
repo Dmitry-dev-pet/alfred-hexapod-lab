@@ -1,10 +1,10 @@
 {
   "schema": "FNK0052_CAD30_optimized_claw_archive/1",
   "date_utc": "2026-11-04",
-  "drive_url": "https://drive.google.com/file/d/1sX3PyGZO6DX5D0gj0xJVuX0JAhW45abZ/view?usp=drivesdk",
-  "filename": "FNK0052_optimized_claw_balance_2026-11-04_no_CAD.zip",
-  "size_bytes": 2259424,
-  "sha256": "bf0a16b76608333ec4ca74b0dc0cc9670156f55b64d2377ef6486fc357070cae",
+  "drive_url": "https://drive.google.com/file/d/1zNiMOuQB2nVAeX48Td5C0my1ldmz5I8j/view?usp=drivesdk",
+  "filename": "FNK0052_optimized_claw_balance_2026-11-04_v2_no_CAD.zip",
+  "size_bytes": 2259619,
+  "sha256": "617e0cfb382511bfac4b26fc03e7fb5c267f42733674c28f067718d4a59f6272",
   "contains_original_CAD_binary": false,
   "file_count_including_internal_sha256_manifest": 20,
   "includes": [
@@ -19,5 +19,6 @@
   ],
   "requires_existing_private_CAD30": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk",
   "depends_on_review_PR16_static_oracle": true,
-  "status": "simulated-only; continuous dynamic optimality NOT established; no hardware validation"
+  "status": "simulated-only; continuous dynamic optimality NOT established; no hardware validation",
+  "archive_revision": "v2 corrected unittest repo root; original data identical"
 }
