@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-11-04",
+  "schema": "pupper-physical-baseline-sha256/1",
+  "note": "Sha256 of byte content as included, excluding this manifest",
+  "files": {
+    "six_contact_raise.py": "fb6afd28535d1717237331818d0605409ae03ebf81c377b2c94ec637faba79a7",
+    "pupper_stance_prebalance.py": "529b2fb5d30a2110e0949a00d92df947e4a38d986eb0b83e12d27630bd150131",
+    "front_pair_unload.py": "2e98247dbf884f17d4e35bcbf69630f418db9e3514f78794cc3914c3d1bb5604",
+    "pupper_four_first_swing.py": "01cec5a174cd27b174408cc99b3c10b0cae64cbbad1e9cf6dba887165c836d19",
+    "test_pupper_cad30_baseline.py": "396dd903662df0878981e05247e12cd03fd008effab81ad2fec6e00739eda533",
+    "transforms3d/__init__.py": "3fc028fe05a6f59abb4f2972f7d04e9637c136092f2bfd1e7c4db9743e5abe45",
+    "transforms3d/euler.py": "41b0f3abac045578a6fdebfcf2c2bc15a83a8bc837070e0a735e856a5222d798",
+    "README_PUPPER_PHYSICAL_BASELINE_2026-11-04.md": "42c31b21b18990e8eb90e4149bbf8672ee87bade34dc7efa9511f9a2b88a4997",
+    "pupper_cad30_physical_baseline_compact_20261104.json": "c2d8dcea3b922601cf728543249f8d0d993dfcfbc6118e685704bd8157132deb",
+    "raise_30mm_result.json": "0c14c3016fbc3854e69f5f9c47935a57dd452610e757168859da99e00f6641d4",
+    "pupper_stance_prebalance_35mm.json": "bfcaf5a8332844b1294162ea90fe9b326c1c8cd4e38a5d2576c77ac52d18d231",
+    "front_pair_shift35_p0.json": "52632a8fc3612ad8252fad75d17cb4fa42c2abdfef2eb2d1684117b70b655951",
+    "pupper_four_bl20_simple.json": "4e10b5165ea1618a16e8d729595a204f0321b96e6333d8907c4adc65d0dc0989",
+    "vendor/stanford_pupper/Gaits.py": "fad994e67b544c4772ffdfcef96c934038e9f20407c88c2897bc9c7af197152b",
+    "vendor/stanford_pupper/StanceController.py": "abe67a79fd4685fc39b1fe7f3cfac164a32bb3474243f38b2bdd28697a2e16a3",
+    "vendor/stanford_pupper/SwingLegController.py": "f8aae16e4673d290fbe97f77ddd39cc3251b97b9f51b90f40ac284b831e99a24",
+    "vendor/stanford_pupper/LICENSE": "8194b844eb6763d58e5e115213ac7b0d3e3f0c9cc55052fe9bd7b10d1c2ddb3b"
+  }
+}
