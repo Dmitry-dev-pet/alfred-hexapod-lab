@@ -1,0 +1,148 @@
+{
+  "schema": "FNK0052_CAD30_event_math_optimizer_holdout/1",
+  "date_utc": "2026-11-04",
+  "test_scope": "Three paired 8-second held-out initial seeds at assumed flat-ground mu1.1.",
+  "model": "CAD30 30/32 original STL, 6 tibia convex mesh contacts; no validated real hardware",
+  "physics": "MuJoCo 3.14.0, free base, 2ms physical step, ±0.7Nm assumed leg motors, nominal 1.804868kg",
+  "planner": "event-based greedy contact choice, LP min-max torque, optional QP load redistribution, finite 20/35 mm IK touchdown choices; no fixed tripod/wave phase order",
+  "not_mpc": true,
+  "not_neurowalknet": true,
+  "not_globally_optimal": true,
+  "unchanged_between_arms": [
+    "6-leg CAD geometry and estimated masses",
+    "same seed",
+    "same μ",
+    "same bounds/IK",
+    "same contact scorer",
+    "same candidate enumeration",
+    "8-second duration"
+  ],
+  "arm_delta": "Only whether the target-contact-normal-force error changes the bounded foot-z position setpoint.",
+  "pairs": [
+    {
+      "seed": 101,
+      "mu": 1.1,
+      "base": {
+        "advance_cm": 10.0287,
+        "mean_target_force_abs_error_N": 1.0087,
+        "min_contacts_2ms": 2,
+        "fraction_below3_2ms": 0.007,
+        "fraction_negative_support_margin_sampled_50hz": 0.037406,
+        "peak_tau_nm": 0.65458,
+        "liftoffs": 16,
+        "touchdowns": 15
+      },
+      "force": {
+        "advance_cm": 11.9676,
+        "mean_target_force_abs_error_N": 0.3433,
+        "min_contacts_2ms": 3,
+        "fraction_below3_2ms": 0.0,
+        "fraction_negative_support_margin_sampled_50hz": 0.002494,
+        "peak_tau_nm": 0.37712,
+        "liftoffs": 18,
+        "touchdowns": 18,
+        "max_abs_foot_z_offset_mm": 1.8
+      },
+      "file_sha256": {
+        "base": "524315001469934fca0a8f14102a17b2a933c3fd66de3e40fe978d9a9616a906",
+        "force": "d15824986814751ed3ff11a9879ec8b8b904bf9cad78d7cc0c9ddb89498a9343"
+      }
+    },
+    {
+      "seed": 133,
+      "mu": 1.1,
+      "base": {
+        "advance_cm": 11.8103,
+        "mean_target_force_abs_error_N": 0.9384,
+        "min_contacts_2ms": 3,
+        "fraction_below3_2ms": 0.0,
+        "fraction_negative_support_margin_sampled_50hz": 0.0,
+        "peak_tau_nm": 0.4102,
+        "liftoffs": 18,
+        "touchdowns": 18
+      },
+      "force": {
+        "advance_cm": 11.8553,
+        "mean_target_force_abs_error_N": 0.5633,
+        "min_contacts_2ms": 3,
+        "fraction_below3_2ms": 0.0,
+        "fraction_negative_support_margin_sampled_50hz": 0.0,
+        "peak_tau_nm": 0.40339,
+        "liftoffs": 18,
+        "touchdowns": 18,
+        "max_abs_foot_z_offset_mm": 1.8
+      },
+      "file_sha256": {
+        "base": "b721d0056b495702cfbf011c014bf4e55902cda7e3db697dd5033bef6f56d325",
+        "force": "64e5df6f4ab906defdfd756aec7946341df6fef39e56739c7f57dc1b97bafcea"
+      }
+    },
+    {
+      "seed": 197,
+      "mu": 1.1,
+      "base": {
+        "advance_cm": 10.2238,
+        "mean_target_force_abs_error_N": 1.0251,
+        "min_contacts_2ms": 2,
+        "fraction_below3_2ms": 0.00725,
+        "fraction_negative_support_margin_sampled_50hz": 0.034913,
+        "peak_tau_nm": 0.62665,
+        "liftoffs": 16,
+        "touchdowns": 16
+      },
+      "force": {
+        "advance_cm": 11.2017,
+        "mean_target_force_abs_error_N": 0.6734,
+        "min_contacts_2ms": 2,
+        "fraction_below3_2ms": 0.00325,
+        "fraction_negative_support_margin_sampled_50hz": 0.034913,
+        "peak_tau_nm": 0.48574,
+        "liftoffs": 16,
+        "touchdowns": 16,
+        "max_abs_foot_z_offset_mm": 1.8
+      },
+      "file_sha256": {
+        "base": "418185952eb8a161e5139c0876456e37b88fd6a3c1eea043dd2bf0cb89caaab6",
+        "force": "bdd2715fbec07be826e35aa4915534c572bc963cc6c67009ef15bbeb88d4a49d"
+      }
+    }
+  ],
+  "means": {
+    "advance_cm": {
+      "base": 10.6876,
+      "force": 11.674867
+    },
+    "mean_target_force_abs_error_N": {
+      "base": 0.990733,
+      "force": 0.526667
+    },
+    "fraction_below3_2ms": {
+      "base": 0.00475,
+      "force": 0.001083
+    },
+    "fraction_negative_support_margin_sampled_50hz": {
+      "base": 0.024106,
+      "force": 0.012469
+    },
+    "peak_tau_nm": {
+      "base": 0.56381,
+      "force": 0.422083
+    },
+    "liftoffs": {
+      "base": 16.666667,
+      "force": 17.333333
+    },
+    "advance_gain_percent_of_group_means": 9.24,
+    "force_target_mae_improvement_percent_of_group_means": 46.84
+  },
+  "n_paired_seeds": 3,
+  "limitations": [
+    "3 paired seeds cannot support statistical generalization",
+    "Both arms show transient negative support polygon margins in some runs despite ≥3 contacts",
+    "Only mu=1.1 has completed paired force-tracking controls in this run; low-friction force-tracking outcomes are unavailable",
+    "Static LP witness does not guarantee safe dynamic rollout, touchdown or cycle recovery",
+    "Foot placement uses only two discrete IK trajectories; global optimality not shown",
+    "μ and torque curves, backlash, contact feet geometry and sensor noise are not calibrated",
+    "Motor/force controller uses simulator-perfect contact forces; no on-hardware evidence"
+  ]
+}
