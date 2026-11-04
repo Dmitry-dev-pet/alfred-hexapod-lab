@@ -1,0 +1,177 @@
+{
+  "schema": "FNK0052_event_claw_crawl_v1/1",
+  "seed": 101,
+  "mass_kg": 1.804868,
+  "mu": 0.6,
+  "assumed_tau_cap_Nm": 0.7,
+  "real_hardware_calibrated": false,
+  "uses_central_static_LP_QP": true,
+  "leg_order_preprogrammed": false,
+  "seconds_simulated": 10.0,
+  "integration_finished": true,
+  "strict_four_leg_walk": false,
+  "reason_if_not_success": "full_4-leg_cycle_or_support_margin_not_met",
+  "lift_approved": true,
+  "front_pair_held_clear": true,
+  "front_pair_returned": true,
+  "minimum_actual_contacts_2ms": 2,
+  "fraction_below_three_2ms": 0.0036,
+  "negative_margin_sample_fraction_50Hz": 0.005988,
+  "max_torque_Nm": 0.7,
+  "saturation_fraction": 0.0002,
+  "steps_attempted": 2,
+  "commanded_touchdown_legs": [
+    "bl",
+    "br"
+  ],
+  "verified_liftoff_touchdowns": [
+    {
+      "leg": "bl",
+      "t": 5.07
+    },
+    {
+      "leg": "br",
+      "t": 6.892
+    }
+  ],
+  "new_leg_cycle_coverage": 2,
+  "forward_motion_4leg_interval_m": 0.00195,
+  "oracle_calls": 9,
+  "support_reposition_attempts": 0,
+  "swing_vetoes": 0,
+  "events": [
+    {
+      "t": 2.0,
+      "event": "front_lift_oracle",
+      "approved": true,
+      "support_margin_mm": 20.47,
+      "max_motor_fraction": 0.6584266
+    },
+    {
+      "t": 3.25,
+      "event": "claws_elevated"
+    },
+    {
+      "t": 3.45,
+      "event": "candidates_checked",
+      "choices": [
+        {
+          "leg": "ml",
+          "allow": false,
+          "margin_m": -0.09239647575433955,
+          "torque_fraction": 1.5,
+          "ik_stride_m": 0
+        },
+        {
+          "leg": "bl",
+          "allow": true,
+          "margin_m": 0.0207099,
+          "torque_fraction": 0.7554033,
+          "ik_stride_m": -0.008
+        },
+        {
+          "leg": "br",
+          "allow": true,
+          "margin_m": 0.0207099,
+          "torque_fraction": 0.7563571,
+          "ik_stride_m": -0.008
+        },
+        {
+          "leg": "mr",
+          "allow": false,
+          "margin_m": -0.0924416608462699,
+          "torque_fraction": 1.5,
+          "ik_stride_m": 0
+        }
+      ]
+    },
+    {
+      "t": 3.45,
+      "event": "swing_approved",
+      "leg": "bl",
+      "margin_mm": 20.71,
+      "motor_fraction": 0.755,
+      "stride_m": -0.008
+    },
+    {
+      "t": 4.65,
+      "event": "swing_command_finished",
+      "leg": "bl",
+      "contact_after": true
+    },
+    {
+      "t": 5.07,
+      "event": "touchdown_checked",
+      "leg": "bl",
+      "contacted": true,
+      "verified_liftoff": true,
+      "off_contact_ms": 936.0,
+      "max_tibia_clearance_mm": 2.41,
+      "body_y_change_m": 0.00104
+    },
+    {
+      "t": 5.27,
+      "event": "candidates_checked",
+      "choices": [
+        {
+          "leg": "ml",
+          "allow": false,
+          "margin_m": -0.09676948434758703,
+          "torque_fraction": 1.5,
+          "ik_stride_m": 0
+        },
+        {
+          "leg": "bl",
+          "allow": true,
+          "margin_m": 0.0200945,
+          "torque_fraction": 0.7880996,
+          "ik_stride_m": 0.007
+        },
+        {
+          "leg": "br",
+          "allow": true,
+          "margin_m": 0.0200945,
+          "torque_fraction": 0.7873297,
+          "ik_stride_m": -0.008
+        },
+        {
+          "leg": "mr",
+          "allow": false,
+          "margin_m": -0.09358754104254129,
+          "torque_fraction": 1.5,
+          "ik_stride_m": 0
+        }
+      ]
+    },
+    {
+      "t": 5.27,
+      "event": "swing_approved",
+      "leg": "br",
+      "margin_mm": 20.095,
+      "motor_fraction": 0.787,
+      "stride_m": -0.008
+    },
+    {
+      "t": 6.472,
+      "event": "swing_command_finished",
+      "leg": "br",
+      "contact_after": true
+    },
+    {
+      "t": 6.892,
+      "event": "touchdown_checked",
+      "leg": "br",
+      "contacted": true,
+      "verified_liftoff": true,
+      "off_contact_ms": 934.0,
+      "max_tibia_clearance_mm": 2.37,
+      "body_y_change_m": 0.00063
+    }
+  ],
+  "limitations": [
+    "Exploratory central quasistatic oracle is not neuroWalknet or a proven stable controller",
+    "Actual moments/friction/mass/servo speed are not calibrated",
+    "Viewer/MP4 MUST use these saved physical qpos only; no staged gait",
+    "Recorded contacts and COM margin are sampled and cannot prove continuous-time safety"
+  ]
+}

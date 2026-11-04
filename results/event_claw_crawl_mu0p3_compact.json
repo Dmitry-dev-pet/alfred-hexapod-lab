@@ -1,0 +1,45 @@
+{
+  "schema": "FNK0052_event_claw_crawl_v1/1",
+  "seed": 101,
+  "mass_kg": 1.804868,
+  "mu": 0.3,
+  "assumed_tau_cap_Nm": 0.7,
+  "real_hardware_calibrated": false,
+  "uses_central_static_LP_QP": true,
+  "leg_order_preprogrammed": false,
+  "seconds_simulated": 10.0,
+  "integration_finished": true,
+  "strict_four_leg_walk": false,
+  "reason_if_not_success": "full_4-leg_cycle_or_support_margin_not_met",
+  "lift_approved": false,
+  "front_pair_held_clear": false,
+  "front_pair_returned": true,
+  "minimum_actual_contacts_2ms": 0,
+  "fraction_below_three_2ms": 0.0022,
+  "negative_margin_sample_fraction_50Hz": 0.017964,
+  "max_torque_Nm": 0.7,
+  "saturation_fraction": 0.0002,
+  "steps_attempted": 0,
+  "commanded_touchdown_legs": [],
+  "verified_liftoff_touchdowns": [],
+  "new_leg_cycle_coverage": 0,
+  "forward_motion_4leg_interval_m": 0.0,
+  "oracle_calls": 1,
+  "support_reposition_attempts": 0,
+  "swing_vetoes": 0,
+  "events": [
+    {
+      "t": 2.0,
+      "event": "front_lift_oracle",
+      "approved": false,
+      "support_margin_mm": 20.978,
+      "max_motor_fraction": 1.0302233
+    }
+  ],
+  "limitations": [
+    "Exploratory central quasistatic oracle is not neuroWalknet or a proven stable controller",
+    "Actual moments/friction/mass/servo speed are not calibrated",
+    "Viewer/MP4 MUST use these saved physical qpos only; no staged gait",
+    "Recorded contacts and COM margin are sampled and cannot prove continuous-time safety"
+  ]
+}
