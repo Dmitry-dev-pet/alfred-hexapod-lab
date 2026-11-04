@@ -40,6 +40,7 @@
       "micro_completed": 0,
       "minimum_loaded_contacts_all_physics_steps": 0,
       "bad_physics_steps": 401,
+      "lp_checked": true,
       "lp_feasible": false
     },
     "mu_0p3": {
@@ -47,7 +48,8 @@
       "micro_completed": 0,
       "minimum_loaded_contacts_all_physics_steps": 0,
       "bad_physics_steps": 402,
-      "lp_feasible": true
+      "lp_checked": false,
+      "lp_feasible": null
     }
   },
   "limits": [
