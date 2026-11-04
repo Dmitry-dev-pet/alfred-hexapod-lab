@@ -1,0 +1,35 @@
+{
+  "study": "mink-vs-local-kinematic-feasibility-probe-v1",
+  "model": "Original FNK0052 CAD30 nominal, 30 meshes + four massless added sites",
+  "mujoco_version": "3.14.0",
+  "source_pose": "saved dynamic semi_tucked B at t=9.3s",
+  "qpos_len": 27,
+  "nv": 26,
+  "nu": 20,
+  "reconstructed_contact_site_error_m": 9.880693154833485e-17,
+  "research_1p7rad_violations": [
+    {
+      "joint": "motor31",
+      "position_rad": 1.70841061
+    },
+    {
+      "joint": "motor27",
+      "position_rad": -1.70845257
+    }
+  ],
+  "mink": {
+    "status": "UNAVAILABLE",
+    "reason": "No module named 'mink'",
+    "mink_not_run": true,
+    "kinematic_gate_pass": false,
+    "hardware_approved": false
+  },
+  "baseline": {
+    "source": "Existing PR #29 local WBC on pose B, same contact points",
+    "reported_previous_max_drift_mm": 0.000865,
+    "reported_previous_max_hinge_delta_rad": 0.0027669522,
+    "not_timed_this_run": true,
+    "not_same_task_weights": true
+  },
+  "warning": "This does not establish dynamic stability, walking, contact planning, hardware torque limits, or comparable real-time performance."
+}

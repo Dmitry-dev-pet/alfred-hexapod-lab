@@ -1,0 +1,7 @@
+# Isolated evaluation environment, not the project's primary requirements.
+# Official distributions published by upstream on PyPI.
+# Mink 1.4.0 published 2026-11-01.
+mujoco==3.14.0
+mink==1.4.0
+qpsolvers==4.13.0
+daqp==0.11.0

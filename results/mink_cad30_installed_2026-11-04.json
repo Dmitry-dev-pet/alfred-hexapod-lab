@@ -1,0 +1,73 @@
+{
+  "schema": "fnk0052-mink1.4.0-real-cad30-offline-install-validation/1",
+  "date": "2026-11-04",
+  "workflow_run": "https://github.com/Dmytry-lab/runner-smoke/actions/runs/41913088085",
+  "workflow_conclusion": "success (mac M4 download + Ubuntu Linux cp313 offline install/import)",
+  "wheelhouse_drive": "https://drive.google.com/file/d/1hnDaarQNdj5_Y94BJ9aNA4j2xRQ-kowv/view",
+  "wheelhouse_zip_sha256": "13ceedb3ad570d65bf53a4d14b258efeb8243e286ffc5c6f015501c000d2d93d",
+  "wheelhouse_size_bytes": 85237243,
+  "versions": {
+    "mink": "1.4.0",
+    "mujoco": "3.14.0",
+    "qpsolvers": "4.13.0",
+    "daqp": "0.11.0"
+  },
+  "comparison": {
+    "study": "mink-vs-local-kinematic-feasibility-probe-v1",
+    "model": "Original FNK0052 CAD30 nominal, 30 meshes + four massless added sites",
+    "mujoco_version": "3.14.0",
+    "source_pose": "saved dynamic semi_tucked B at t=9.3s",
+    "qpos_len": 27,
+    "nv": 26,
+    "nu": 20,
+    "reconstructed_contact_site_error_m": 9.880693154833485e-17,
+    "research_1p7rad_violations": [
+      {
+        "joint": "motor31",
+        "position_rad": 1.70841061
+      },
+      {
+        "joint": "motor27",
+        "position_rad": -1.70845257
+      }
+    ],
+    "mink": {
+      "status": "RUN",
+      "mink_version": "1.4.0",
+      "solver": "daqp",
+      "max_foot_drift_mm": 0.0006570126493126179,
+      "achieved_body_xyz_delta_mm": [
+        -6.822240526411366e-12,
+        0.3499991384266071,
+        -0.09999936523596986
+      ],
+      "body_target_xyz_delta_mm": [
+        0.0,
+        0.35,
+        -0.1
+      ],
+      "max_hinge_delta_rad": 0.002188318467548911,
+      "joint_bound": "XML ±pi (NOT hardware)",
+      "kinematic_gate_pass": true,
+      "hardware_approved": false
+    },
+    "baseline": {
+      "source": "Existing PR #29 local WBC on pose B, same contact points",
+      "reported_previous_max_drift_mm": 0.000865,
+      "reported_previous_max_hinge_delta_rad": 0.0027669522,
+      "not_timed_this_run": true,
+      "not_same_task_weights": true
+    },
+    "warning": "This does not establish dynamic stability, walking, contact planning, hardware torque limits, or comparable real-time performance."
+  },
+  "tests": {
+    "existing_readiness": "5 tests, 4 pass, 1 skipped because Mink installed",
+    "new_installed_solver": "1 test PASS"
+  },
+  "limitations": [
+    "One kinematic pose; does not use dynamic torque control, friction, slip, or prove safe gait",
+    "Original custom WBC comparison uses slightly different requested orientation and objective weights; numbers are illustrative, not controlled head-to-head benchmark",
+    "Two joints remain over research IK limit ±1.7rad in source pose B",
+    "Offline wheelhouse targets Linux x86_64 CPython 3.13, not macOS ARM64"
+  ]
+}

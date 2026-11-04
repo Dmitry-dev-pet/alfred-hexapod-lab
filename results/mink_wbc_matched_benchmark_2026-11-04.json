@@ -1,0 +1,428 @@
+{
+  "schema": "cad30-mink-vs-custom-WBC-1",
+  "status": "KINEMATIC_MATCHED_TASK_PASS",
+  "source": "FNK0052 CAD30 with four massless sites at original physical contacts; archived semi_tucked B t=9.3s",
+  "versions": {
+    "mink": "1.4.0",
+    "mujoco": "3.14.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "daqp": "0.11.0"
+  },
+  "geometry": {
+    "model_meshes": 30,
+    "qpos": 27,
+    "nvel": 26,
+    "contact_site_reconstruction_m": 9.880693154833485e-17
+  },
+  "model_joint_limits": "XML ±pi rad; two pose-B joints exceed provisional research ±1.7 rad",
+  "cases": {
+    "forward_0p35mm": {
+      "requested_body_delta_world": [
+        0.0,
+        0.00035,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0006124209687689725,
+        "rms_foot_drift_mm": 0.0005259253340025201,
+        "max_joint_delta_rad": 0.0022785430508260184,
+        "foot_movement_mm": [
+          0.00042209858777631523,
+          0.0004220622598064025,
+          0.0006124209687689725,
+          0.0006123941670518061
+        ],
+        "median_solver_ms": 0.3745415,
+        "median_call_ms": 1.6517265
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0002465526578974939,
+        "rms_foot_drift_mm": 0.00018661666848534086,
+        "max_joint_delta_rad": 0.0022832477559375786,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          9.417321215257147e-05,
+          9.415420344442288e-05,
+          0.0002465526578974939,
+          0.00024653864361711086
+        ],
+        "median_solver_ms": 0.4110235,
+        "median_call_ms": 4.705288
+      }
+    },
+    "backward_0p35mm": {
+      "requested_body_delta_world": [
+        0.0,
+        -0.00035,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0006120323071887871,
+        "rms_foot_drift_mm": 0.000525792837098941,
+        "max_joint_delta_rad": 0.0022785430508260184,
+        "foot_movement_mm": [
+          0.00042233208267145717,
+          0.0004222957843709923,
+          0.0006120323071887871,
+          0.0006120055290471339
+        ],
+        "median_solver_ms": 0.3424955,
+        "median_call_ms": 1.663394
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0002466981880041316,
+        "rms_foot_drift_mm": 0.00018689414625111176,
+        "max_joint_delta_rad": 0.002273837052985561,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          9.489038859624068e-05,
+          9.487130865649233e-05,
+          0.0002466981880041316,
+          0.0002466838879883828
+        ],
+        "median_solver_ms": 0.432167,
+        "median_call_ms": 4.7483915
+      }
+    },
+    "lateral_0p35mm": {
+      "requested_body_delta_world": [
+        0.00035,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0006340906838890354,
+        "rms_foot_drift_mm": 0.0005955932877966449,
+        "max_joint_delta_rad": 0.004197433062091937,
+        "foot_movement_mm": [
+          0.0005554129570600635,
+          0.0005539099634038634,
+          0.0006340906838890354,
+          0.00063368340837561
+        ],
+        "median_solver_ms": 0.3445705,
+        "median_call_ms": 1.6680275
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 0.000256902090429062,
+        "rms_foot_drift_mm": 0.00025133553646325575,
+        "max_joint_delta_rad": 0.004202014555223954,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          0.00024710225467439336,
+          0.0002443960494111504,
+          0.000256691585871688,
+          0.000256902090429062
+        ],
+        "median_solver_ms": 0.460283,
+        "median_call_ms": 5.0604145
+      }
+    },
+    "lift_body_0p25mm": {
+      "requested_body_delta_world": [
+        0.0,
+        0.0,
+        0.00025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 0.00035345380528088645,
+        "rms_foot_drift_mm": 0.0003381353308425944,
+        "max_joint_delta_rad": 0.002805505977698498,
+        "foot_movement_mm": [
+          0.00032209727219733545,
+          0.0003220836780878845,
+          0.0003534513643218822,
+          0.00035345380528088645
+        ],
+        "median_solver_ms": 0.3087465,
+        "median_call_ms": 1.541991
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0003046629410399402,
+        "rms_foot_drift_mm": 0.00029012081181046775,
+        "max_joint_delta_rad": 0.002805521904621938,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          0.00027483412786864965,
+          0.000274803517689299,
+          0.0003046629410399402,
+          0.0003046474404347083
+        ],
+        "median_solver_ms": 0.4584615,
+        "median_call_ms": 4.75188
+      }
+    },
+    "lower_body_0p25mm": {
+      "requested_body_delta_world": [
+        0.0,
+        0.0,
+        -0.00025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 0.00035315218277817874,
+        "rms_foot_drift_mm": 0.0003376889481181071,
+        "max_joint_delta_rad": 0.002805505977698498,
+        "foot_movement_mm": [
+          0.0003214909527409131,
+          0.00032147735826124833,
+          0.0003531497047352175,
+          0.00035315218277817874
+        ],
+        "median_solver_ms": 0.278938,
+        "median_call_ms": 1.4347005
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 0.00030425912137727545,
+        "rms_foot_drift_mm": 0.00028953037066447234,
+        "max_joint_delta_rad": 0.0028054887687817,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          0.0002740349755709919,
+          0.00027400431921858917,
+          0.00030425912137727545,
+          0.000304243643188348
+        ],
+        "median_solver_ms": 0.4259585,
+        "median_call_ms": 4.918439
+      }
+    },
+    "forward_down": {
+      "requested_body_delta_world": [
+        0.0,
+        0.00035,
+        -0.0001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0006569494160325932,
+        "rms_foot_drift_mm": 0.0005777914234265522,
+        "max_joint_delta_rad": 0.00218832314011068,
+        "foot_movement_mm": [
+          0.00048593754305896366,
+          0.0004859063832525733,
+          0.0006569494160325932,
+          0.000656923794420465
+        ],
+        "median_solver_ms": 0.3420955,
+        "median_call_ms": 1.920607
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0002585753004086433,
+        "rms_foot_drift_mm": 0.00020735168938166028,
+        "max_joint_delta_rad": 0.0021889011088478683,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          0.00013832674681838223,
+          0.00013831880712998274,
+          0.0002585753004086433,
+          0.00025855623195946337
+        ],
+        "median_solver_ms": 0.384815,
+        "median_call_ms": 4.7161425
+      }
+    },
+    "roll_0p3mrad": {
+      "requested_body_delta_world": [
+        0.0,
+        0.0,
+        0.0,
+        0.0003,
+        0.0,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 1.7187533622263696e-05,
+        "rms_foot_drift_mm": 1.3499186079543949e-05,
+        "max_joint_delta_rad": 0.0005382176983103532,
+        "foot_movement_mm": [
+          8.311743790621139e-06,
+          8.309766213449716e-06,
+          1.7187533622263696e-05,
+          1.7186142320516494e-05
+        ],
+        "median_solver_ms": 0.394977,
+        "median_call_ms": 1.748765
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 6.420915825460423e-06,
+        "rms_foot_drift_mm": 4.6218520796665015e-06,
+        "max_joint_delta_rad": 0.0005382361665969837,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          1.2265654943098904e-06,
+          1.2258676769578103e-06,
+          6.420915825460423e-06,
+          6.419555442114395e-06
+        ],
+        "median_solver_ms": 0.374732,
+        "median_call_ms": 4.773583
+      }
+    },
+    "pitch_0p3mrad": {
+      "requested_body_delta_world": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0003,
+        0.0
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 7.563077293485105e-06,
+        "rms_foot_drift_mm": 6.844164431192565e-06,
+        "max_joint_delta_rad": 0.000528029432872638,
+        "foot_movement_mm": [
+          6.049772240228736e-06,
+          6.046921167263892e-06,
+          7.550179410837166e-06,
+          7.563077293485105e-06
+        ],
+        "median_solver_ms": 0.359874,
+        "median_call_ms": 1.9391425
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 1.4902332966451192e-06,
+        "rms_foot_drift_mm": 1.4322524316228453e-06,
+        "max_joint_delta_rad": 0.000528025665628179,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          1.4313670293256756e-06,
+          1.4902332966451192e-06,
+          1.3567009924550999e-06,
+          1.4474611143513223e-06
+        ],
+        "median_solver_ms": 0.4546415,
+        "median_call_ms": 4.659639
+      }
+    },
+    "yaw_0p3mrad": {
+      "requested_body_delta_world": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0003
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 1.539131189741322e-05,
+        "rms_foot_drift_mm": 1.3708622792672244e-05,
+        "max_joint_delta_rad": 0.0006208657267993569,
+        "foot_movement_mm": [
+          1.1755451817562097e-05,
+          1.1862068057236305e-05,
+          1.5359478100967754e-05,
+          1.539131189741322e-05
+        ],
+        "median_solver_ms": 0.3855745,
+        "median_call_ms": 1.5779405
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 5.096642405562124e-06,
+        "rms_foot_drift_mm": 4.949176545056322e-06,
+        "max_joint_delta_rad": 0.0006208871843104147,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          4.787498292742686e-06,
+          4.852060271470579e-06,
+          5.053612698394205e-06,
+          5.096642405562124e-06
+        ],
+        "median_solver_ms": 0.459524,
+        "median_call_ms": 5.125693
+      }
+    },
+    "combined_twist": {
+      "requested_body_delta_world": [
+        0.0,
+        0.00035,
+        -0.0001,
+        0.0003,
+        -0.0002,
+        0.00015
+      ],
+      "custom": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0008653138222553554,
+        "rms_foot_drift_mm": 0.0007146542910493796,
+        "max_joint_delta_rad": 0.002766952156877573,
+        "foot_movement_mm": [
+          0.0006499919615335846,
+          0.0005297964480045081,
+          0.0008653138222553554,
+          0.0007687530068224269
+        ],
+        "median_solver_ms": 0.335828,
+        "median_call_ms": 1.596684
+      },
+      "mink": {
+        "ok": true,
+        "max_foot_drift_mm": 0.0003711100419553279,
+        "rms_foot_drift_mm": 0.0002568915983655676,
+        "max_joint_delta_rad": 0.0027673277233535853,
+        "max_frozen_base_velocity": 0.0,
+        "foot_movement_mm": [
+          0.00017229577330644445,
+          0.00013300013306435937,
+          0.0003711100419553279,
+          0.00028084807478203597
+        ],
+        "median_solver_ms": 0.415704,
+        "median_call_ms": 4.8123075
+      }
+    }
+  },
+  "summary": {
+    "cases_total": 10,
+    "both_pass": 10,
+    "max_custom_drift_mm": 0.0008653138222553554,
+    "max_mink_drift_mm": 0.0003711100419553279,
+    "median_case_solver_custom_ms": 0.343533,
+    "median_case_solver_mink_ms": 0.42906275000000005,
+    "median_case_call_custom_ms": 1.65756025,
+    "median_case_call_mink_ms": 4.7627315
+  },
+  "limitations": [
+    "Only one archived pose, 10 tiny goals; no physical simulation, no torque/contact stability, no hardware approval",
+    "Both use same fixed exact base increment and foot markers, with hinge delta limited ±0.02rad, front/head frozen",
+    "Two solvers use different residual objective/scaling and optimize from slightly different linearization points",
+    "Solver timing excludes per-run task setup; call time includes it but not Jacobian construction or contacts. Neither is a real-time guarantee",
+    "Results do not establish 4-leg gait, MPC, or superiority under full task distribution"
+  ]
+}
