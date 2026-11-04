@@ -17,11 +17,12 @@
     if(path==='/hexapod/'&&safeHref(last)&&last!==path){location.replace(last);return;}
   }catch{}
   let entries=fallback,opened=false,visible=true,hideTimer,toastTimer;
+  const sourceLabel=location.pathname.startsWith('/hexapod/cheetah-idto-')?'DRAKE · MPC · REPLAY':'MUJOCO · REPLAY';
   const shell=document.createElement('div');shell.id='hx-shell';
   shell.innerHTML=[
     '<div class="hx-top"><button type="button" class="hx-select" aria-label="Выбрать симуляцию">',
     '<small>СИМУЛЯЦИЯ</small><span class="hx-title">Tripod</span><b aria-hidden="true">⌄</b>',
-    '</button><span class="hx-record">MUJOCO · REPLAY</span></div>',
+    '</button><span class="hx-record">'+sourceLabel+'</span></div>',
     '<div class="hx-controls"><div class="hx-transport">',
     '<button type="button" class="hx-play" aria-label="Пауза">Ⅱ</button>',
     '<div class="hx-progress"><input class="hx-seek" type="range" aria-label="Время записи" min="0" max="60" step=".01" value="0">',
@@ -33,7 +34,7 @@
     '<div class="hx-shade" hidden></div>',
     '<section class="hx-sheet" role="dialog" aria-modal="true" aria-label="Библиотека симуляций" hidden>',
     '<div class="hx-grip"></div><div class="hx-sheet-head"><div><strong>Симуляции</strong>',
-    '<small>Физические эксперименты MuJoCo</small></div>',
+    '<small>Физические эксперименты</small></div>',
     '<button type="button" class="hx-close" aria-label="Закрыть">×</button></div>',
     '<div class="hx-list" role="list"></div><div class="hx-sheet-foot">',
     '<button type="button" class="hx-refresh">↻ &nbsp; Обновить библиотеку</button>',
