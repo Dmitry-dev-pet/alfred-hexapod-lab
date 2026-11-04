@@ -1,0 +1,2743 @@
+{
+  "schema": "fnk0052_CAD30_stance_wrench_linear_feasibility/1",
+  "model": "CAD30 nominal, 30 source meshes, 2 visual proxies, static freeze after 1-s torque-bounded stand",
+  "physics": "MuJoCo 3.14.0",
+  "robot_mass_kg": 1.8048682,
+  "g_ms2": 9.81,
+  "center_of_mass_xyz_m": [
+    0.00011881,
+    0.00803478,
+    0.1126754
+  ],
+  "contact_point_world_xyz_m": {
+    "ml": [
+      -0.2337329,
+      1.95e-05,
+      -1.05e-06
+    ],
+    "bl": [
+      -0.14220195,
+      -0.19646718,
+      -1.06e-06
+    ],
+    "br": [
+      0.14220193,
+      -0.19646751,
+      -1.06e-06
+    ],
+    "mr": [
+      0.23373261,
+      1.95e-05,
+      -1.05e-06
+    ],
+    "fr": [
+      0.14217122,
+      0.19649765,
+      -1.16e-06
+    ],
+    "fl": [
+      -0.14217152,
+      0.19649775,
+      -1.16e-06
+    ]
+  },
+  "measured_intact_reaction_force_world_N": {
+    "ml": [
+      1.548953,
+      0.064379,
+      2.943078
+    ],
+    "bl": [
+      0.847276,
+      1.228902,
+      2.77153
+    ],
+    "br": [
+      -0.846507,
+      1.230496,
+      2.774704
+    ],
+    "mr": [
+      -1.550173,
+      0.064391,
+      2.947906
+    ],
+    "fr": [
+      -0.986035,
+      -1.295081,
+      3.13623
+    ],
+    "fl": [
+      0.986486,
+      -1.293027,
+      3.132533
+    ]
+  },
+  "initial_PD_torque_vs_inverse_dynamics_max_abs_error_Nm": 0.003892,
+  "mu_values": [
+    1.1,
+    0.6,
+    0.3
+  ],
+  "scenario_count": 66,
+  "assumptions": [
+    "STATIC force/wrench balance only in ONE fixed flat-ground stance; not walking stability",
+    "Each tibia two MuJoCo contact points condensed into one force-weighted representative point",
+    "Friction approximation uses 32-facet INSCRIBED polygon: (u_j dot F_t) <= mu cos(pi/32) Fz; guaranteed within Coulomb cone",
+    "All masses retained even when specified foot cannot push on ground (loss of support, not amputation)",
+    "Forces chosen by centralized quadratic minimization; local six-leg controller NOT implemented",
+    "Joint moments τ = mj_rne_gravity - sum(J_tip^T F_tip), with model actuator cap ±0.7 Nm leg/±0.2 Nm head",
+    "No motor speed, thermal, PWM, compliance, slip under motion, IMU delay or contact sensor uncertainty",
+    "Feasible is necessary for quasi-static support (under this contact model), not sufficient for safe lift",
+    "LP infeasible with inner 32-face polygon may be a false negative for exact Coulomb cone; outer32 infeasibility certifies under stated assumptions",
+    "Exact-cone SLSQP witness, if found, is numerical evidence of feasibility at a possibly zero-margin boundary"
+  ],
+  "source": {
+    "base_repo": "Dmitry-dev-pet/alfred-hexapod-lab",
+    "branch": "research/v04-physical-reconstruction",
+    "original_CAD30_upstream_commit": "5c9a84c16335b30036e451c691d2c544abf4bc72"
+  },
+  "scenarios": [
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [],
+      "support_margin_mm": 188.463,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.548953,
+          0.064369,
+          2.943041
+        ],
+        "bl": [
+          0.847276,
+          1.228892,
+          2.771488
+        ],
+        "br": [
+          -0.846507,
+          1.230486,
+          2.774662
+        ],
+        "mr": [
+          -1.550173,
+          0.064381,
+          2.947869
+        ],
+        "fr": [
+          -0.986035,
+          -1.295091,
+          3.136198
+        ],
+        "fl": [
+          0.986486,
+          -1.293037,
+          3.1325
+        ]
+      },
+      "motor_min_required_fraction": 0.1650151,
+      "minimizer_max_motor_fraction": 0.19659,
+      "max_friction_utilization": 0.489618
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "ml"
+      ],
+      "support_margin_mm": 142.305,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          1.144348,
+          1.253997,
+          4.612113
+        ],
+        "br": [
+          -0.549435,
+          1.237181,
+          2.730732
+        ],
+        "mr": [
+          -1.240382,
+          0.065151,
+          2.297443
+        ],
+        "fr": [
+          -0.663527,
+          -1.288394,
+          3.092508
+        ],
+        "fl": [
+          1.308995,
+          -1.267934,
+          4.972961
+        ]
+      },
+      "motor_min_required_fraction": 0.2636198,
+      "minimizer_max_motor_fraction": 0.476281,
+      "max_friction_utilization": 0.491492
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "bl"
+      ],
+      "support_margin_mm": 115.426,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.716984,
+          0.31965,
+          4.927209
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.685598,
+          1.472141,
+          4.577764
+        ],
+        "mr": [
+          -1.382142,
+          0.302719,
+          2.900511
+        ],
+        "fr": [
+          -0.810883,
+          -1.053434,
+          2.034134
+        ],
+        "fl": [
+          1.161639,
+          -1.041075,
+          3.266139
+        ]
+      },
+      "motor_min_required_fraction": 0.2537466,
+      "minimizer_max_motor_fraction": 0.478943,
+      "max_friction_utilization": 0.594124
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "br"
+      ],
+      "support_margin_mm": 115.315,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.381141,
+          0.302685,
+          2.89563
+        ],
+        "bl": [
+          0.686911,
+          1.470678,
+          4.576658
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.717985,
+          0.320415,
+          4.93431
+        ],
+        "fr": [
+          -1.161294,
+          -1.042528,
+          3.269989
+        ],
+        "fl": [
+          0.811228,
+          -1.05125,
+          2.02917
+        ]
+      },
+      "motor_min_required_fraction": 0.254062,
+      "minimizer_max_motor_fraction": 0.48,
+      "max_friction_utilization": 0.594897
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "mr"
+      ],
+      "support_margin_mm": 142.067,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.238918,
+          0.065139,
+          2.291549
+        ],
+        "bl": [
+          0.549962,
+          1.235588,
+          2.727485
+        ],
+        "br": [
+          -1.143821,
+          1.255595,
+          4.618305
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.308791,
+          -1.269983,
+          4.979678
+        ],
+        "fl": [
+          0.663731,
+          -1.286339,
+          3.088741
+        ]
+      },
+      "motor_min_required_fraction": 0.2639359,
+      "minimizer_max_motor_fraction": 0.477192,
+      "max_friction_utilization": 0.492176
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.350092,
+          -0.203293,
+          2.889753
+        ],
+        "bl": [
+          0.656687,
+          0.965083,
+          1.524537
+        ],
+        "br": [
+          -1.037096,
+          0.978652,
+          2.92587
+        ],
+        "mr": [
+          -1.749035,
+          -0.183599,
+          5.192692
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.779353,
+          -1.556843,
+          5.172906
+        ]
+      },
+      "motor_min_required_fraction": 0.2791208,
+      "minimizer_max_motor_fraction": 0.521339,
+      "max_friction_utilization": 0.696077
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.747971,
+          -0.182764,
+          5.185216
+        ],
+        "bl": [
+          1.037693,
+          0.977753,
+          2.922518
+        ],
+        "br": [
+          -0.65609,
+          0.966899,
+          1.52918
+        ],
+        "mr": [
+          -1.351156,
+          -0.203212,
+          2.894645
+        ],
+        "fr": [
+          -0.778418,
+          -1.558676,
+          5.174197
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.2788088,
+      "minimizer_max_motor_fraction": 0.521445,
+      "max_friction_utilization": 0.694657
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "ml",
+        "bl"
+      ],
+      "support_margin_mm": 4.786,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -1.351857,
+          1.983268,
+          8.267793
+        ],
+        "mr": [
+          -0.465545,
+          0.156193,
+          0.4475
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          1.817402,
+          -2.139461,
+          8.990464
+        ]
+      },
+      "motor_min_required_fraction": 0.5654153,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 0.997558
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "ml",
+        "br"
+      ],
+      "support_margin_mm": 115.315,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          1.021183,
+          1.553752,
+          6.359966
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.374903,
+          0.386631,
+          4.263248
+        ],
+        "fr": [
+          -0.809401,
+          -0.972205,
+          3.224908
+        ],
+        "fl": [
+          1.163121,
+          -0.968178,
+          3.857636
+        ]
+      },
+      "motor_min_required_fraction": 0.3441153,
+      "minimizer_max_motor_fraction": 0.695423,
+      "max_friction_utilization": 0.356635
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "ml",
+        "mr"
+      ],
+      "support_margin_mm": 142.067,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.846972,
+          1.261076,
+          4.242199
+        ],
+        "br": [
+          -0.846809,
+          1.262673,
+          4.249341
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -0.986341,
+          -1.2629,
+          4.61094
+        ],
+        "fl": [
+          0.986178,
+          -1.26085,
+          4.603277
+        ]
+      },
+      "motor_min_required_fraction": 0.2714917,
+      "minimizer_max_motor_fraction": 0.444088,
+      "max_friction_utilization": 0.325539
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "ml",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.984701,
+          0.92491,
+          3.349351
+        ],
+        "br": [
+          -0.709079,
+          0.920129,
+          2.880655
+        ],
+        "mr": [
+          -1.40834,
+          -0.248025,
+          4.523169
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          1.132718,
+          -1.597014,
+          6.952582
+        ]
+      },
+      "motor_min_required_fraction": 0.3778803,
+      "minimizer_max_motor_fraction": 0.781475,
+      "max_friction_utilization": 0.366682
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "ml",
+        "fl"
+      ],
+      "support_margin_mm": -4.593,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "bl",
+        "br"
+      ],
+      "support_margin_mm": 8.015,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          2.19903,
+          0.294309,
+          8.488813
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -2.205966,
+          0.309286,
+          8.494641
+        ],
+        "fr": [
+          -0.253849,
+          -0.309316,
+          0.363768
+        ],
+        "fl": [
+          0.260785,
+          -0.294279,
+          0.358535
+        ]
+      },
+      "motor_min_required_fraction": 0.5404136,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "bl",
+        "mr"
+      ],
+      "support_margin_mm": 115.426,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.373642,
+          0.385914,
+          4.255015
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -1.020166,
+          1.555193,
+          6.364077
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.162999,
+          -0.970384,
+          3.865682
+        ],
+        "fl": [
+          0.809523,
+          -0.970722,
+          3.220984
+        ]
+      },
+      "motor_min_required_fraction": 0.344116,
+      "minimizer_max_motor_fraction": 0.696043,
+      "max_friction_utilization": 0.356744
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "bl",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.514262,
+          0.04644,
+          4.198403
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.880037,
+          1.214773,
+          4.069264
+        ],
+        "mr": [
+          -1.584861,
+          0.04921,
+          4.646341
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.950637,
+          -1.310423,
+          4.791749
+        ]
+      },
+      "motor_min_required_fraction": 0.2791208,
+      "minimizer_max_motor_fraction": 0.47163,
+      "max_friction_utilization": 0.335117
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "bl",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          2.007394,
+          0.068547,
+          7.38349
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.401096,
+          1.209734,
+          3.37881
+        ],
+        "mr": [
+          -1.091732,
+          0.03756,
+          2.842192
+        ],
+        "fr": [
+          -0.514566,
+          -1.315841,
+          4.101266
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.4156943,
+      "minimizer_max_motor_fraction": 0.844659,
+      "max_friction_utilization": 0.349403
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "br",
+        "mr"
+      ],
+      "support_margin_mm": 4.593,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.444383,
+          0.155734,
+          0.42948
+        ],
+        "bl": [
+          1.372415,
+          1.997662,
+          8.276807
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.816799,
+          -2.153396,
+          8.99947
+        ],
+        "fl": [
+          -0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.5664516,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 0.996726
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "br",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.090817,
+          0.03746,
+          2.83724
+        ],
+        "bl": [
+          0.402136,
+          1.208038,
+          3.376291
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -2.008309,
+          0.068391,
+          7.393487
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.515356,
+          -1.31389,
+          4.098739
+        ]
+      },
+      "motor_min_required_fraction": 0.416479,
+      "minimizer_max_motor_fraction": 0.846219,
+      "max_friction_utilization": 0.349719
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "br",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.583946,
+          0.050112,
+          4.6372
+        ],
+        "bl": [
+          0.881108,
+          1.214093,
+          4.069397
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.515176,
+          0.047362,
+          4.207283
+        ],
+        "fr": [
+          -0.949878,
+          -1.311567,
+          4.791877
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.2788088,
+      "minimizer_max_motor_fraction": 0.471602,
+      "max_friction_utilization": 0.335123
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "mr",
+        "fr"
+      ],
+      "support_margin_mm": -4.786,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "mr",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.406993,
+          -0.247239,
+          4.514561
+        ],
+        "bl": [
+          0.709459,
+          0.919211,
+          2.877227
+        ],
+        "br": [
+          -0.984321,
+          0.9268,
+          3.357081
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.132132,
+          -1.598771,
+          6.956888
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.3778826,
+      "minimizer_max_motor_fraction": 0.782061,
+      "max_friction_utilization": 0.366879
+    },
+    {
+      "mu": 1.1,
+      "removed_CAD_legs": [
+        "fr",
+        "fl"
+      ],
+      "support_margin_mm": -8.015,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [],
+      "support_margin_mm": 188.463,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.548954,
+          0.064369,
+          2.943041
+        ],
+        "bl": [
+          0.847277,
+          1.228893,
+          2.771488
+        ],
+        "br": [
+          -0.846508,
+          1.230486,
+          2.774662
+        ],
+        "mr": [
+          -1.550174,
+          0.064381,
+          2.947868
+        ],
+        "fr": [
+          -0.986036,
+          -1.295091,
+          3.136198
+        ],
+        "fl": [
+          0.986487,
+          -1.293038,
+          3.1325
+        ]
+      },
+      "motor_min_required_fraction": 0.165026,
+      "minimizer_max_motor_fraction": 0.19659,
+      "max_friction_utilization": 0.897633
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "ml"
+      ],
+      "support_margin_mm": 142.305,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          1.144348,
+          1.253997,
+          4.612113
+        ],
+        "br": [
+          -0.549435,
+          1.237181,
+          2.730732
+        ],
+        "mr": [
+          -1.240382,
+          0.065151,
+          2.297443
+        ],
+        "fr": [
+          -0.663526,
+          -1.288394,
+          3.092508
+        ],
+        "fl": [
+          1.308995,
+          -1.267935,
+          4.972961
+        ]
+      },
+      "motor_min_required_fraction": 0.2714591,
+      "minimizer_max_motor_fraction": 0.476281,
+      "max_friction_utilization": 0.901068
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "bl"
+      ],
+      "support_margin_mm": 115.426,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.705441,
+          0.303246,
+          4.944895
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.697676,
+          1.454716,
+          4.590105
+        ],
+        "mr": [
+          -1.393685,
+          0.285045,
+          2.858143
+        ],
+        "fr": [
+          -0.764709,
+          -0.985279,
+          2.083498
+        ],
+        "fl": [
+          1.15063,
+          -1.057727,
+          3.229116
+        ]
+      },
+      "motor_min_required_fraction": 0.2601704,
+      "minimizer_max_motor_fraction": 0.483521,
+      "max_friction_utilization": 0.997696
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "br"
+      ],
+      "support_margin_mm": 115.315,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.392822,
+          0.284799,
+          2.852754
+        ],
+        "bl": [
+          0.699133,
+          1.453044,
+          4.589146
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.706304,
+          0.303815,
+          4.952209
+        ],
+        "fr": [
+          -1.150153,
+          -1.059379,
+          3.232522
+        ],
+        "fl": [
+          0.764501,
+          -0.982279,
+          2.079126
+        ]
+      },
+      "motor_min_required_fraction": 0.2605523,
+      "minimizer_max_motor_fraction": 0.484633,
+      "max_friction_utilization": 0.997793
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "mr"
+      ],
+      "support_margin_mm": 142.067,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.238918,
+          0.065139,
+          2.291549
+        ],
+        "bl": [
+          0.549962,
+          1.235588,
+          2.727485
+        ],
+        "br": [
+          -1.143821,
+          1.255595,
+          4.618305
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.308791,
+          -1.269983,
+          4.979678
+        ],
+        "fl": [
+          0.663731,
+          -1.286339,
+          3.088741
+        ]
+      },
+      "motor_min_required_fraction": 0.2718399,
+      "minimizer_max_motor_fraction": 0.477192,
+      "max_friction_utilization": 0.902322
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.376625,
+          -0.162665,
+          2.792367
+        ],
+        "bl": [
+          0.550554,
+          0.808434,
+          1.637988
+        ],
+        "br": [
+          -1.011796,
+          1.016922,
+          2.840782
+        ],
+        "mr": [
+          -1.722502,
+          -0.145903,
+          5.23335
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.807119,
+          -1.516789,
+          5.20127
+        ]
+      },
+      "motor_min_required_fraction": 0.2898836,
+      "minimizer_max_motor_fraction": 0.529715,
+      "max_friction_utilization": 0.995223
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.721602,
+          -0.145302,
+          5.225621
+        ],
+        "bl": [
+          1.01255,
+          1.015787,
+          2.837959
+        ],
+        "br": [
+          -0.550616,
+          0.811221,
+          1.641926
+        ],
+        "mr": [
+          -1.377524,
+          -0.162836,
+          2.797864
+        ],
+        "fr": [
+          -0.806012,
+          -1.51887,
+          5.202386
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.2895112,
+      "minimizer_max_motor_fraction": 0.528536,
+      "max_friction_utilization": 0.995211
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "ml",
+        "bl"
+      ],
+      "support_margin_mm": 4.786,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -1.494324,
+          2.087769,
+          8.27457
+        ],
+        "mr": [
+          -0.235926,
+          0.10752,
+          0.433945
+        ],
+        "fr": [
+          -0.006397,
+          -0.001941,
+          0.011142
+        ],
+        "fl": [
+          1.736647,
+          -2.193349,
+          8.9861
+        ]
+      },
+      "motor_min_required_fraction": 0.6265431,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "ml",
+        "br"
+      ],
+      "support_margin_mm": 115.315,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          1.021183,
+          1.553752,
+          6.359966
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.374902,
+          0.386631,
+          4.263248
+        ],
+        "fr": [
+          -0.809401,
+          -0.972205,
+          3.224908
+        ],
+        "fl": [
+          1.163121,
+          -0.968178,
+          3.857636
+        ]
+      },
+      "motor_min_required_fraction": 0.3656708,
+      "minimizer_max_motor_fraction": 0.695423,
+      "max_friction_utilization": 0.653832
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "ml",
+        "mr"
+      ],
+      "support_margin_mm": 142.067,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.846973,
+          1.261078,
+          4.242199
+        ],
+        "br": [
+          -0.84681,
+          1.262675,
+          4.249341
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -0.986343,
+          -1.262901,
+          4.61094
+        ],
+        "fl": [
+          0.986179,
+          -1.260851,
+          4.603277
+        ]
+      },
+      "motor_min_required_fraction": 0.2807214,
+      "minimizer_max_motor_fraction": 0.444087,
+      "max_friction_utilization": 0.596823
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "ml",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.984705,
+          0.924914,
+          3.349351
+        ],
+        "br": [
+          -0.709083,
+          0.920133,
+          2.880656
+        ],
+        "mr": [
+          -1.408345,
+          -0.248026,
+          4.523168
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          1.132722,
+          -1.597021,
+          6.952582
+        ]
+      },
+      "motor_min_required_fraction": 0.4055575,
+      "minimizer_max_motor_fraction": 0.781474,
+      "max_friction_utilization": 0.672253
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "ml",
+        "fl"
+      ],
+      "support_margin_mm": -4.593,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "bl",
+        "br"
+      ],
+      "support_margin_mm": 8.015,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          2.210574,
+          0.16812,
+          8.497126
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -2.198178,
+          0.166888,
+          8.486329
+        ],
+        "fr": [
+          -0.143665,
+          -0.175056,
+          0.377434
+        ],
+        "fl": [
+          0.131269,
+          -0.159952,
+          0.344869
+        ]
+      },
+      "motor_min_required_fraction": 0.5971618,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "bl",
+        "mr"
+      ],
+      "support_margin_mm": 115.426,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.373642,
+          0.385914,
+          4.255014
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -1.020166,
+          1.555193,
+          6.364077
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.162999,
+          -0.970384,
+          3.865682
+        ],
+        "fl": [
+          0.809523,
+          -0.970722,
+          3.220984
+        ]
+      },
+      "motor_min_required_fraction": 0.3656878,
+      "minimizer_max_motor_fraction": 0.696043,
+      "max_friction_utilization": 0.654031
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "bl",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.514263,
+          0.046441,
+          4.198403
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.880038,
+          1.214775,
+          4.069264
+        ],
+        "mr": [
+          -1.584863,
+          0.04921,
+          4.646341
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.950638,
+          -1.310425,
+          4.791749
+        ]
+      },
+      "motor_min_required_fraction": 0.2898836,
+      "minimizer_max_motor_fraction": 0.471629,
+      "max_friction_utilization": 0.614381
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "bl",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          2.007394,
+          0.068547,
+          7.38349
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.401094,
+          1.209734,
+          3.37881
+        ],
+        "mr": [
+          -1.091736,
+          0.03756,
+          2.842192
+        ],
+        "fr": [
+          -0.514565,
+          -1.315842,
+          4.101265
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.450239,
+      "minimizer_max_motor_fraction": 0.844659,
+      "max_friction_utilization": 0.640575
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "br",
+        "mr"
+      ],
+      "support_margin_mm": 4.593,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.22725,
+          0.110325,
+          0.422319
+        ],
+        "bl": [
+          1.509427,
+          2.098023,
+          8.280387
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.740057,
+          -2.207323,
+          8.997164
+        ],
+        "fl": [
+          0.00338,
+          -0.001025,
+          0.005887
+        ]
+      },
+      "motor_min_required_fraction": 0.6293832,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "br",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.090821,
+          0.037461,
+          2.83724
+        ],
+        "bl": [
+          0.402134,
+          1.208038,
+          3.376291
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -2.008309,
+          0.068392,
+          7.393487
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.515355,
+          -1.313891,
+          4.098739
+        ]
+      },
+      "motor_min_required_fraction": 0.4511935,
+      "minimizer_max_motor_fraction": 0.846219,
+      "max_friction_utilization": 0.641154
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "br",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.583948,
+          0.050112,
+          4.6372
+        ],
+        "bl": [
+          0.881109,
+          1.214094,
+          4.069397
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.515178,
+          0.047362,
+          4.207283
+        ],
+        "fr": [
+          -0.949879,
+          -1.311569,
+          4.791877
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.2895112,
+      "minimizer_max_motor_fraction": 0.471602,
+      "max_friction_utilization": 0.614393
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "mr",
+        "fr"
+      ],
+      "support_margin_mm": -4.786,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "mr",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.406998,
+          -0.247241,
+          4.514561
+        ],
+        "bl": [
+          0.709463,
+          0.919215,
+          2.877228
+        ],
+        "br": [
+          -0.984326,
+          0.926804,
+          3.35708
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.132136,
+          -1.598778,
+          6.956888
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.4055606,
+      "minimizer_max_motor_fraction": 0.78206,
+      "max_friction_utilization": 0.672615
+    },
+    {
+      "mu": 0.6,
+      "removed_CAD_legs": [
+        "fr",
+        "fl"
+      ],
+      "support_margin_mm": -8.015,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [],
+      "support_margin_mm": 188.463,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.878008,
+          0.054679,
+          2.940854
+        ],
+        "bl": [
+          0.483373,
+          0.672564,
+          2.772563
+        ],
+        "br": [
+          -0.481766,
+          0.674801,
+          2.775805
+        ],
+        "mr": [
+          -0.879431,
+          0.052552,
+          2.94562
+        ],
+        "fr": [
+          -0.596563,
+          -0.727907,
+          3.137323
+        ],
+        "fl": [
+          0.596379,
+          -0.72669,
+          3.133591
+        ]
+      },
+      "motor_min_required_fraction": 0.2851024,
+      "minimizer_max_motor_fraction": 0.293273,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "ml"
+      ],
+      "support_margin_mm": 142.305,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.775778,
+          1.13771,
+          4.61211
+        ],
+        "br": [
+          -0.459948,
+          0.673597,
+          2.731853
+        ],
+        "mr": [
+          -0.685247,
+          0.06739,
+          2.295207
+        ],
+        "fr": [
+          -0.57689,
+          -0.725619,
+          3.094343
+        ],
+        "fl": [
+          0.946307,
+          -1.153079,
+          4.972244
+        ]
+      },
+      "motor_min_required_fraction": 0.4604716,
+      "minimizer_max_motor_fraction": 0.51954,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "bl"
+      ],
+      "support_margin_mm": 115.426,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.470718,
+          0.073854,
+          4.926114
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.811165,
+          1.102427,
+          4.579698
+        ],
+        "mr": [
+          -0.865136,
+          0.072516,
+          2.897739
+        ],
+        "fr": [
+          -0.387395,
+          -0.472042,
+          2.035513
+        ],
+        "fl": [
+          0.592978,
+          -0.776755,
+          3.266693
+        ]
+      },
+      "motor_min_required_fraction": 0.4431,
+      "minimizer_max_motor_fraction": 0.51385,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "br"
+      ],
+      "support_margin_mm": 115.315,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.863698,
+          0.074353,
+          2.892925
+        ],
+        "bl": [
+          0.81364,
+          1.100382,
+          4.578608
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.472808,
+          0.075669,
+          4.933114
+        ],
+        "fr": [
+          -0.590954,
+          -0.779546,
+          3.270699
+        ],
+        "fl": [
+          0.386424,
+          -0.470859,
+          2.03041
+        ]
+      },
+      "motor_min_required_fraction": 0.4436673,
+      "minimizer_max_motor_fraction": 0.514735,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "mr"
+      ],
+      "support_margin_mm": 142.067,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.683526,
+          0.067321,
+          2.289444
+        ],
+        "bl": [
+          0.460698,
+          0.671936,
+          2.728621
+        ],
+        "br": [
+          -0.775567,
+          1.140045,
+          4.618221
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -0.946249,
+          -1.155574,
+          4.979083
+        ],
+        "fl": [
+          0.577593,
+          -0.723729,
+          3.090388
+        ]
+      },
+      "motor_min_required_fraction": 0.4610376,
+      "minimizer_max_motor_fraction": 0.520411,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.862018,
+          0.065513,
+          2.887295
+        ],
+        "bl": [
+          0.262023,
+          0.372658,
+          1.525433
+        ],
+        "br": [
+          -0.501579,
+          0.715811,
+          2.926886
+        ],
+        "mr": [
+          -1.549898,
+          0.084444,
+          5.191325
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.927436,
+          -1.238426,
+          5.174818
+        ]
+      },
+      "motor_min_required_fraction": 0.4882603,
+      "minimizer_max_motor_fraction": 0.546569,
+      "max_friction_utilization": 0.998055
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.547657,
+          0.085555,
+          5.183818
+        ],
+        "bl": [
+          0.502275,
+          0.714144,
+          2.923538
+        ],
+        "br": [
+          -0.261033,
+          0.375012,
+          1.530147
+        ],
+        "mr": [
+          -0.863443,
+          0.065529,
+          2.89207
+        ],
+        "fr": [
+          -0.925455,
+          -1.240241,
+          5.176184
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.4877,
+      "minimizer_max_motor_fraction": 0.545615,
+      "max_friction_utilization": 0.998047
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "ml",
+        "bl"
+      ],
+      "support_margin_mm": 4.786,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -1.507428,
+          2.041821,
+          8.491538
+        ],
+        "mr": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "fr": [
+          -0.101783,
+          0.041243,
+          0.367831
+        ],
+        "fl": [
+          1.609211,
+          -2.083064,
+          8.846389
+        ]
+      },
+      "motor_min_required_fraction": 0.9979845,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 0.996281
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "ml",
+        "br"
+      ],
+      "support_margin_mm": 115.315,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          1.00842,
+          1.388612,
+          6.364835
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.256708,
+          0.191438,
+          4.25351
+        ],
+        "fr": [
+          -0.575266,
+          -0.778209,
+          3.237782
+        ],
+        "fl": [
+          0.823554,
+          -0.801842,
+          3.849631
+        ]
+      },
+      "motor_min_required_fraction": 0.6036473,
+      "minimizer_max_motor_fraction": 0.716286,
+      "max_friction_utilization": 0.996309
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "ml",
+        "mr"
+      ],
+      "support_margin_mm": 142.067,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.681927,
+          1.067535,
+          4.242029
+        ],
+        "br": [
+          -0.681941,
+          1.070212,
+          4.249511
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -0.876105,
+          -1.070193,
+          4.61077
+        ],
+        "fl": [
+          0.876119,
+          -1.067554,
+          4.603447
+        ]
+      },
+      "motor_min_required_fraction": 0.474519,
+      "minimizer_max_motor_fraction": 0.47499,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "ml",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          0.655528,
+          0.752073,
+          3.333801
+        ],
+        "br": [
+          -0.453382,
+          0.740396,
+          2.905667
+        ],
+        "mr": [
+          -1.344767,
+          -0.068487,
+          4.504246
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          1.142621,
+          -1.423982,
+          6.962043
+        ]
+      },
+      "motor_min_required_fraction": 0.6638409,
+      "minimizer_max_motor_fraction": 0.801669,
+      "max_friction_utilization": 0.997523
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "ml",
+        "fl"
+      ],
+      "support_margin_mm": -4.593,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "bl",
+        "br"
+      ],
+      "support_margin_mm": 8.015,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          2.207521,
+          0.083948,
+          8.49353
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -2.203574,
+          0.083556,
+          8.489924
+        ],
+        "fr": [
+          -0.070707,
+          -0.086157,
+          0.371522
+        ],
+        "fl": [
+          0.06676,
+          -0.081347,
+          0.35078
+        ]
+      },
+      "motor_min_required_fraction": 0.9536232,
+      "minimizer_max_motor_fraction": 1.0,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "bl",
+        "mr"
+      ],
+      "support_margin_mm": 115.426,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.254365,
+          0.190679,
+          4.245319
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -1.006545,
+          1.390458,
+          6.368925
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -0.823903,
+          -0.804904,
+          3.857711
+        ],
+        "fl": [
+          0.576083,
+          -0.776233,
+          3.233802
+        ]
+      },
+      "motor_min_required_fraction": 0.6036534,
+      "minimizer_max_motor_fraction": 0.716924,
+      "max_friction_utilization": 0.996401
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "bl",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.252962,
+          0.079253,
+          4.19675
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.714066,
+          0.984619,
+          4.070918
+        ],
+        "mr": [
+          -1.386697,
+          0.090811,
+          4.644688
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.8478,
+          -1.154682,
+          4.793402
+        ]
+      },
+      "motor_min_required_fraction": 0.4882603,
+      "minimizer_max_motor_fraction": 0.498056,
+      "max_friction_utilization": 0.997316
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "bl",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.852221,
+          0.09931,
+          7.386465
+        ],
+        "bl": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "br": [
+          -0.421098,
+          0.914996,
+          3.371212
+        ],
+        "mr": [
+          -0.8522,
+          0.068781,
+          2.854412
+        ],
+        "fr": [
+          -0.578922,
+          -1.083088,
+          4.093668
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.7313498,
+      "minimizer_max_motor_fraction": 0.866896,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "br",
+        "mr"
+      ],
+      "support_margin_mm": 4.593,
+      "classification": "numerical_circular_cone_boundary",
+      "exact_nonlinear_motor_max_fraction": 1.0,
+      "force_distribution_xyz_N": {
+        "ml": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "bl": [
+          1.53989017,
+          2.02936068,
+          8.49154253
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.57862625,
+          -2.12792814,
+          8.86119533
+        ],
+        "fl": [
+          0.03873609,
+          0.09856746,
+          0.35301918
+        ]
+      },
+      "motor_min_required_fraction": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "br",
+        "fr"
+      ],
+      "support_margin_mm": 101.112,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          0.850867,
+          0.070062,
+          2.849947
+        ],
+        "bl": [
+          0.422401,
+          0.913545,
+          3.368391
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.85179,
+          0.098732,
+          7.396581
+        ],
+        "fr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fl": [
+          0.578522,
+          -1.082339,
+          4.090838
+        ]
+      },
+      "motor_min_required_fraction": 0.7327644,
+      "minimizer_max_motor_fraction": 0.868664,
+      "max_friction_utilization": 1.0
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "br",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.383952,
+          0.092602,
+          4.635496
+        ],
+        "bl": [
+          0.716784,
+          0.982869,
+          4.071102
+        ],
+        "br": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mr": [
+          -1.255598,
+          0.081055,
+          4.205578
+        ],
+        "fr": [
+          -0.845138,
+          -1.156526,
+          4.793581
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.4877,
+      "minimizer_max_motor_fraction": 0.498117,
+      "max_friction_utilization": 0.99741
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "mr",
+        "fr"
+      ],
+      "support_margin_mm": -4.786,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "mr",
+        "fl"
+      ],
+      "support_margin_mm": 101.222,
+      "classification": "conservative_polygon_feasible",
+      "force_distribution_xyz_N": {
+        "ml": [
+          1.34217,
+          -0.06774,
+          4.495547
+        ],
+        "bl": [
+          0.454255,
+          0.738626,
+          2.90236
+        ],
+        "br": [
+          -0.655668,
+          0.755165,
+          3.341455
+        ],
+        "mr": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fr": [
+          -1.140756,
+          -1.426051,
+          6.966395
+        ],
+        "fl": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "motor_min_required_fraction": 0.6638435,
+      "minimizer_max_motor_fraction": 0.802333,
+      "max_friction_utilization": 0.997656
+    },
+    {
+      "mu": 0.3,
+      "removed_CAD_legs": [
+        "fr",
+        "fl"
+      ],
+      "support_margin_mm": -8.015,
+      "classification": "outer_cone_proven_infeasible",
+      "proof_type": "infeasible_even_with_outer_friction_cone"
+    }
+  ],
+  "overview": {
+    "1.1": {
+      "intact": {
+        "cases": 1,
+        "feasible_inner_polygon": 1,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 0,
+        "undetermined": 0
+      },
+      "one_leg": {
+        "cases": 6,
+        "feasible_inner_polygon": 6,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 0,
+        "undetermined": 0
+      },
+      "two_legs": {
+        "cases": 15,
+        "feasible_inner_polygon": 12,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 3,
+        "undetermined": 0
+      }
+    },
+    "0.6": {
+      "intact": {
+        "cases": 1,
+        "feasible_inner_polygon": 1,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 0,
+        "undetermined": 0
+      },
+      "one_leg": {
+        "cases": 6,
+        "feasible_inner_polygon": 6,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 0,
+        "undetermined": 0
+      },
+      "two_legs": {
+        "cases": 15,
+        "feasible_inner_polygon": 12,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 3,
+        "undetermined": 0
+      }
+    },
+    "0.3": {
+      "intact": {
+        "cases": 1,
+        "feasible_inner_polygon": 1,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 0,
+        "undetermined": 0
+      },
+      "one_leg": {
+        "cases": 6,
+        "feasible_inner_polygon": 6,
+        "feasible_exact_boundary": 0,
+        "proven_infeasible": 0,
+        "undetermined": 0
+      },
+      "two_legs": {
+        "cases": 15,
+        "feasible_inner_polygon": 11,
+        "feasible_exact_boundary": 1,
+        "proven_infeasible": 3,
+        "undetermined": 0
+      }
+    }
+  }
+}
