@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 1,
+  "revision": 2,
   "entries": [
     {
       "id": "tripod-60",
@@ -25,6 +25,36 @@
       "duration_s": 7,
       "href": "/hexapod/six-to-four/",
       "files": []
+    },
+    {
+      "id": "power-loss-collapse",
+      "title": "Отказ приводов · падение",
+      "detail": "Реальное оседание и контакт корпуса с полом · 11,75 с",
+      "duration_s": 11.75,
+      "href": "/hexapod/power-loss-collapse/",
+      "status": "fall",
+      "files": [
+        {
+          "path": "hexapod/power-loss-collapse/index.html",
+          "sha256": "5322f56a642be29350e1a8dbceb9026332e5705cc213310046a9f21cd55a2643",
+          "size": 5336
+        },
+        {
+          "path": "hexapod/power-loss-collapse/app.js",
+          "sha256": "263c7fdce12d35f314cb535775cab623a8a7832fd2ff1e151d6f40e6ffe27757",
+          "size": 17290
+        },
+        {
+          "path": "hexapod/data/power-loss-collapse-12s.json",
+          "sha256": "3b5e505cc7ac36171a284982c49c319eaf00c3289c1d44f9c6599718280064ad",
+          "size": 155648
+        },
+        {
+          "path": "hexapod/data/cad-rig-power-loss-collapse-12s.json",
+          "sha256": "49483965de4bf814199eb572b5afa4277fdbf8d0842df44ffba9cbce733913f4",
+          "size": 523443
+        }
+      ]
     }
   ]
 }
