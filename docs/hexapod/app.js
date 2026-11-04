@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
 const viewer = document.getElementById('viewer');
 const seek = document.getElementById('seek');
@@ -12,6 +13,8 @@ const clock = document.getElementById('clock');
 const feetLabel = document.getElementById('feet');
 const distanceLabel = document.getElementById('distance');
 const errorLabel = document.getElementById('error');
+const cadStatus = document.getElementById('cad-status');
+const cadToggle = document.getElementById('show-cad');
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#111c2a');
@@ -48,8 +51,13 @@ scene.add(grid);
 const physicsWorld = new THREE.Group();
 physicsWorld.rotation.x = -Math.PI / 2;
 scene.add(physicsWorld);
+const schematicGroup = new THREE.Group();
+physicsWorld.add(schematicGroup);
+const cadRoot = new THREE.Group();
+physicsWorld.add(cadRoot);
+cadRoot.visible = false;
 const torso = new THREE.Group();
-physicsWorld.add(torso);
+schematicGroup.add(torso);
 const mat = (color, metalness=.25, roughness=.46) => new THREE.MeshStandardMaterial({ color, metalness, roughness });
 const carbon = mat(0x243647, .48, .52);
 const graphite = mat(0x101e2c, .48, .45);
@@ -82,10 +90,10 @@ const jointGeo = new THREE.SphereGeometry(.014,12,9);
 const toeGeo = new THREE.SphereGeometry(.012,12,9);
 const legs = [];
 for (let i=0;i<6;i++) {
-  const rods = legGeometry.map((geom,j) => addPart(physicsWorld,geom,rodMaterials[j],null));
-  const joints = [0,1,2].map(() => addPart(physicsWorld,jointGeo,jointMaterial,null));
-  const toe = addPart(physicsWorld,toeGeo,downMaterial,null);
-  const ring = addPart(physicsWorld,new THREE.TorusGeometry(.021,.0025,6,20),downMaterial,null);
+  const rods = legGeometry.map((geom,j) => addPart(schematicGroup,geom,rodMaterials[j],null));
+  const joints = [0,1,2].map(() => addPart(schematicGroup,jointGeo,jointMaterial,null));
+  const toe = addPart(schematicGroup,toeGeo,downMaterial,null);
+  const ring = addPart(schematicGroup,new THREE.TorusGeometry(.021,.0025,6,20),downMaterial,null);
   legs.push({rods,joints,toe,ring});
 }
 const axisY = new THREE.Vector3(0,1,0);
@@ -107,6 +115,10 @@ let t = 0;
 let running = true;
 let prevTime = null;
 let pathLine;
+let cadRig=null;
+let cadGroups=[];
+let cadLoaded=0;
+let cadRigReady=false;
 
 function readPoint(frame,offset) { return [frame[offset],frame[offset+1],frame[offset+2]]; }
 function lerpPoint(a,b,offset,alpha) { return [0,1,2].map(k=>a[offset+k]*(1-alpha)+b[offset+k]*alpha); }
@@ -160,10 +172,124 @@ function applyFrame(time) {
     orbit.target.add(shift);
   }
   lastBodyWorld.copy(nowWorld);
-  clock.textContent = `00:${String(Math.floor(time)).padStart(2,'0')}`;
+  clock.textContent = `${String(Math.floor(time/60)).padStart(2,'0')}:${String(Math.floor(time%60)).padStart(2,'0')}`;
   seek.value = String(time);
   seek.style.setProperty('--pct',`${time/trajectory.duration_s*100}%`);
+  updateCAD(time);
 }
+// Browser uses the *original* 30 Freenove STL shapes directly from the
+// pinned public GitHub upstream, but this site never redistributes CAD binaries.
+// World body poses come from mj_forward on the original 60 s qpos recording.
+function wxyz(q) { return new THREE.Quaternion(q[1],q[2],q[3],q[0]); }
+function refreshCADVisibility() {
+  const active = cadRigReady && cadToggle.checked && cadLoaded >= 18;
+  cadRoot.visible = active;
+  schematicGroup.visible = !active;
+}
+function updateCAD(time) {
+  if (!cadRigReady || !cadRig) return;
+  const f = cadRig.frames;
+  const at = Math.max(0,Math.min(f.length-1,time/cadRig.sample_interval_s));
+  const ia = Math.floor(at), ib = Math.min(ia+1,f.length-1), alpha = at-ia;
+  const a = f[ia], b = f[ib];
+  for (let i=0; i<cadGroups.length; i++) {
+    const o=i*7, mesh=cadGroups[i];
+    mesh.position.set(
+      a[o]*(1-alpha)+b[o]*alpha,
+      a[o+1]*(1-alpha)+b[o+1]*alpha,
+      a[o+2]*(1-alpha)+b[o+2]*alpha
+    );
+    tmpQuatA.set(a[o+4],a[o+5],a[o+6],a[o+3]);
+    tmpQuatB.set(b[o+4],b[o+5],b[o+6],b[o+3]);
+    mesh.quaternion.copy(tmpQuatA).slerp(tmpQuatB,alpha);
+  }
+}
+function cadMaterial(rgba) {
+  const a=rgba[3];
+  return new THREE.MeshStandardMaterial({
+    color:new THREE.Color(rgba[0],rgba[1],rgba[2]),
+    metalness:.22, roughness:.58,
+    side:THREE.DoubleSide,
+    transparent:a < .995, opacity:a, depthWrite:a >= .995
+  });
+}
+function cadFallbackGeometry(g) {
+  if(g.kind==='cylinder') {
+    const geometry=new THREE.CylinderGeometry(g.size[0],g.size[0],g.size[1]*2,16);
+    geometry.rotateX(Math.PI/2); // Three.js cylinder is Y-up, MuJoCo is Z-up.
+    return geometry;
+  }
+  return new THREE.BoxGeometry(g.size[0]*2,g.size[1]*2,g.size[2]*2);
+}
+async function loadCAD() {
+  try {
+    cadStatus.textContent='Загрузка оригинального CAD…';
+    const r=await fetch('./data/cad-rig-60s.json');
+    if(!r.ok) throw new Error(`CAD manifest HTTP ${r.status}`);
+    const rig=await r.json();
+    if(rig.format!=='fnk0052-mujoco-cad-visual-replay-v1'||rig.meshes.length!==30||rig.bodies.length!==27||rig.frames.length!==1501||rig.frame_stride!==189)
+      throw new Error('Некорректный формат модели CAD30');
+    cadRig=rig;
+    cadGroups=rig.bodies.map(b=>{
+      const node=new THREE.Group(); node.name=b.name;cadRoot.add(node);return node;
+    });
+    const byBody=new Map(rig.bodies.map((b,i)=>[b.id,cadGroups[i]]));
+    const loader=new STLLoader();
+    const geometries=new Map();
+    const errors=[];
+    // A modest number of simultaneous requests avoids saturating tablet RAM.
+    let next=0;
+    async function worker() {
+      while(next<rig.meshes.length) {
+        const mesh=rig.meshes[next++];
+        try {
+          const geometry=await loader.loadAsync(mesh.url);
+          // MuJoCo uses centered/oriented mesh vertices. Undo its mesh frame
+          // from the upstream STL, preserving the true original shape.
+          geometry.translate(-mesh.mesh_pos[0],-mesh.mesh_pos[1],-mesh.mesh_pos[2]);
+          geometry.applyQuaternion(wxyz(mesh.mesh_quat_wxyz).invert());
+          geometry.computeBoundingSphere();
+          geometries.set(mesh.id,geometry);
+          cadLoaded++;
+          cadStatus.textContent=`CAD: ${cadLoaded} / ${rig.mesh_count} STL`;
+        } catch(e) {
+          errors.push(`${mesh.filename}: ${e.message}`);
+        }
+      }
+    }
+    await Promise.all(Array.from({length:5},()=>worker()));
+    const materialCache=new Map();
+    for (const g of rig.geoms) {
+      const parent=byBody.get(g.body);
+      if(!parent)throw new Error(`CAD body ${g.body} missing`);
+      const local=new THREE.Group();
+      local.position.set(...g.pos);
+      local.quaternion.copy(wxyz(g.quat_wxyz));
+      const mk=g.rgba.join(',');
+      if(!materialCache.has(mk)) materialCache.set(mk,cadMaterial(g.rgba));
+      const material=materialCache.get(mk);
+      const geom=g.kind==='mesh' ? geometries.get(g.mesh) : cadFallbackGeometry(g);
+      if(!geom)continue;
+      const part=new THREE.Mesh(geom,material);
+      part.name=g.name;
+      local.add(part);parent.add(local);
+    }
+    cadRigReady=true;
+    refreshCADVisibility();
+    if(trajectory)updateCAD(t);
+    cadStatus.textContent=cadLoaded===rig.mesh_count
+      ? `Оригинальный CAD: ${cadLoaded}/30 STL · 2 заменены`
+      : `CAD: ${cadLoaded}/30 STL · ${errors.length} недоступно`;
+    if(errors.length) console.warn('CAD STL failed to load from original upstream',errors);
+  } catch(e) {
+    cadStatus.textContent=`CAD недоступен: ${e.message}`;
+    cadRigReady=false;
+    refreshCADVisibility();
+    console.warn('CAD rig load failed',e);
+  }
+}
+cadToggle.addEventListener('change',refreshCADVisibility);
+
 function togglePlay(yes) {
   running=yes;
   playButton.textContent=running?'Ⅱ':'▶';
@@ -217,3 +343,4 @@ function animate(timestamp) {
 }
 requestAnimationFrame(animate);
 load();
+loadCAD();
