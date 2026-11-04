@@ -1,0 +1,61 @@
+{
+  "schema": "cad30-micro-wbc-physics-v1",
+  "timestamp": "2026-11-04",
+  "status": "DYNAMIC_FOUR_STANCE_MICRO_SUCCESS_ONLY_FOR_NOMINAL",
+  "input_source": {
+    "model_archive_drive_file_id": "1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44",
+    "source_zip_sha256": "f2986c6256a19df59769db2ce0bdd9ea4cfee1ca36c27fb2d221da8c2a0afd53",
+    "replay_archive_drive_file_id": "15mcLT9KHRrxAnjSG7KTTCc02K6aBDJb1",
+    "replay_zip_sha256": "dbc782200d58a78b811840c0af67fef52d8e7666d727f14d9ecc6d0d1727ca6e",
+    "model_scene_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+    "pose_b": "semi_tucked @9.3s"
+  },
+  "full_traces_in_archive": [
+    "nominal_3_micro.json",
+    "nominal_hold_control.json",
+    "low_friction_mu_0p6.json",
+    "very_low_friction_mu_0p3.json"
+  ],
+  "nominal": {
+    "rebalanced_joint_max_abs_rad": 1.6634138969602488,
+    "margin_after_rebalance_mm": 16.61676167030137,
+    "micro_requested": 3,
+    "micro_completed": 3,
+    "min_loaded_contacts_all_2525_timesteps": 4,
+    "minimum_support_margin_mm_all_2525_timesteps": 15.356407785177117,
+    "minimum_normal_force_N_all_2525_timesteps": 0.6773308121454921,
+    "max_abs_joint_after_rebalance_rad": 1.6634112547892772,
+    "maximum_actuator_torque_Nm": 0.5433952901131935,
+    "actuator_saturated_steps": 0,
+    "preflight_LP_all_three_feasible": true,
+    "micro_phase_COM_progress_mm": 1.3200390469400216,
+    "matched_no_micro_COM_progress_mm": 0.4832231652463284,
+    "incremental_progress_vs_hold_mm": 0.8368158816936933,
+    "contact_centroid_drift_proxy_mm_micro": 1.1454317979891122,
+    "contact_centroid_drift_proxy_mm_hold": 1.1489930226916947
+  },
+  "low_friction": {
+    "mu_0p6": {
+      "mu": 0.6,
+      "micro_completed": 0,
+      "minimum_loaded_contacts_all_physics_steps": 0,
+      "bad_physics_steps": 401,
+      "lp_feasible": false
+    },
+    "mu_0p3": {
+      "mu": 0.3,
+      "micro_completed": 0,
+      "minimum_loaded_contacts_all_physics_steps": 0,
+      "bad_physics_steps": 402,
+      "lp_feasible": true
+    }
+  },
+  "limits": [
+    "Not walking, not MPC and not motor-validated robot",
+    "Initial B state briefly violates chosen research IK +/-1.7 radians; only corrected phase is within it",
+    "One nominal mass, nominal friction and approximate servos; original 6-to-4 transition not retested under research joint bound",
+    "Quasistatic LP is preflight only, does not guarantee dynamics",
+    "Contact-centroid motion is not a validated foot-slip sensor",
+    "See full traces for measured phase-by-phase force and COM history"
+  ]
+}
