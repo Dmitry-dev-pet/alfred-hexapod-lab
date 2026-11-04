@@ -1,0 +1,102 @@
+{
+  "schema": "cad30-pose-b-jacobian-v1",
+  "status": "KINEMATIC_ONLY_PASS",
+  "executed": "2026-11-04",
+  "environment": {
+    "mujoco": "3.14.0",
+    "model": "FNK0052 CAD30 nominal, locally restored from Drive; hardware parameters not calibrated",
+    "nq": 27,
+    "nv": 26,
+    "nact": 20,
+    "nmesh": 30
+  },
+  "provenance": {
+    "cad30_archive": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view",
+    "cad30_archive_sha256": "f2986c6256a19df59769db2ce0bdd9ea4cfee1ca36c27fb2d221da8c2a0afd53",
+    "replay_archive": "https://drive.google.com/file/d/15mcLT9KHRrxAnjSG7KTTCc02K6aBDJb1/view",
+    "replay_archive_sha256": "dbc782200d58a78b811840c0af67fef52d8e7666d727f14d9ecc6d0d1727ca6e",
+    "offline_runtime_archive_sha256": "6d14d0c17294bac5436e1167ca4a97c30061da8efaa0a2b904c171bcac4a7b13",
+    "source_replay_internal_path": "results/claw_tuck_compare_2026-11-04.json",
+    "sample": "semi_tucked, 9.3 seconds, 27 qpos"
+  },
+  "state": {
+    "pose": "semi_tucked B",
+    "time_s": 9.3,
+    "four_stance_legs": [
+      "ml",
+      "mr",
+      "bl",
+      "br"
+    ],
+    "contacts_per_leg": 2,
+    "joints_outside_research_IK_1p7_rad": [
+      {
+        "name": "motor31",
+        "q_rad": 1.7084106
+      },
+      {
+        "name": "motor27",
+        "q_rad": -1.7084526
+      }
+    ]
+  },
+  "finite_differences": {
+    "h_m_or_rad": 0.000001,
+    "tested_generalized_dofs": 24,
+    "max_jacobian_error": 9.3352125e-11,
+    "rmse_jacobian": 1.1252749e-11
+  },
+  "micro_correction": {
+    "requested_body_twist_6": [
+      0,
+      0.00035,
+      -0.0001,
+      0.0003,
+      -0.0002,
+      0.00015
+    ],
+    "approved_kinematic": true,
+    "joint_max_abs_delta_rad": 0.0027669522,
+    "predicted_max_contact_linear_residual_m": 5e-10,
+    "base_only_foot_drift_mm": [
+      0.455025,
+      0.349353,
+      0.452146,
+      0.384113
+    ],
+    "wbc_compensated_foot_drift_mm": [
+      0.00065,
+      0.00053,
+      0.000865,
+      0.000769
+    ],
+    "max_compensated_drift_mm": 0.000865,
+    "joint_deltas_rad": [
+      0.002766952,
+      0.001436645,
+      0.001998792,
+      -0.002097857,
+      -0.000785495,
+      -0.001725966,
+      0.002559569,
+      0.001724446,
+      -0.000985155,
+      -0.002099533,
+      -0.001239136,
+      0.001203853,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "local_regression_tests": "5/5 PASS",
+  "caveats": [
+    "Only jacobian finite differences and corrected kinematic pose evaluated through mj_forward; no dynamic mj_step test.",
+    "Ground-contact geometry tracked as tibia-local landmarks at initial contacts; future contact load/slip not validated.",
+    "Actual servo limits not calibrated; model joint ranges ±pi are broader than research IK ±1.7 rad; pose B has two joints slightly over ±1.7.",
+    "One small correction of one recorded pose; not an MPC controller, dynamic WBC, or established walking gait."
+  ]
+}
