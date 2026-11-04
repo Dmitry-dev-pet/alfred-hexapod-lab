@@ -1,0 +1,97 @@
+{
+  "schema": "cad30_ite_small_6_design_repertoire_exploration/1",
+  "date_utc": "2026-11-04",
+  "run_status": "COMPLETED_LOCALLY_MUJOCO_3_14_0",
+  "independent_of_upstream_algorithms": true,
+  "published_neuro_walknet_port": false,
+  "published_ite_or_map_elites_port": false,
+  "archive_seed_intact": 97,
+  "archive_design_count": 6,
+  "damaged_trials_per_seed": 4,
+  "failed_leg": "fl",
+  "failure_at_s": 3.0,
+  "mass_kg_estimated": 1.804868,
+  "mu_assumed": 1.1,
+  "nominal_torque_cap_Nm": 0.7,
+  "source_branch": "research/leg-loss-cad30-20261104",
+  "cases": [
+    {
+      "test_seed": 23,
+      "fixed_reference_score": 1.4282,
+      "fixed_reference_progress_cm": 1.97,
+      "best_of_four_score": 0.7579,
+      "best_of_four_progress_cm": 1.491,
+      "best_controller": "long_slow",
+      "best_trial": 2,
+      "all_four_scores": [
+        -0.6048,
+        0.7579,
+        -0.5998,
+        -0.0145
+      ],
+      "any_zero_contacts": true,
+      "min_contact_best": 1
+    },
+    {
+      "test_seed": 211,
+      "fixed_reference_score": 1.903,
+      "fixed_reference_progress_cm": 1.903,
+      "best_of_four_score": 5.0806,
+      "best_of_four_progress_cm": 6.483,
+      "best_controller": "long_slow",
+      "best_trial": 2,
+      "all_four_scores": [
+        3.9592,
+        5.0806,
+        1.903,
+        2.0068
+      ],
+      "any_zero_contacts": false,
+      "min_contact_best": 2
+    },
+    {
+      "test_seed": 307,
+      "fixed_reference_score": 3.273,
+      "fixed_reference_progress_cm": 4.261,
+      "best_of_four_score": 3.273,
+      "best_of_four_progress_cm": 4.261,
+      "best_controller": "existing_baseline",
+      "best_trial": 3,
+      "all_four_scores": [
+        1.7077,
+        2.8506,
+        3.273,
+        1.5952
+      ],
+      "any_zero_contacts": true,
+      "min_contact_best": 1
+    },
+    {
+      "test_seed": 409,
+      "fixed_reference_score": 4.9336,
+      "fixed_reference_progress_cm": 6.591,
+      "best_of_four_score": 5.5111,
+      "best_of_four_progress_cm": 7.296,
+      "best_controller": "long_slow",
+      "best_trial": 2,
+      "all_four_scores": [
+        5.1345,
+        5.5111,
+        4.9336,
+        3.0892
+      ],
+      "any_zero_contacts": false,
+      "min_contact_best": 1
+    }
+  ],
+  "mean_fixed_reference_score": 2.88445,
+  "mean_best_of_four_score": 3.65565,
+  "notes": [
+    "Winner uses four evaluations vs one baseline: NOT fair budget-matched efficacy comparison",
+    "Some trials have zero or one contact, hence are not proven stable",
+    "Intact archive was produced from one seed only, as a six-design handpicked set not MAP-Elites",
+    "The test seed 23 is a previously analyzed failure seed, while seeds 211/307/409 were added after code parameters fixed",
+    "Published neuroWalknet code requires Hector/ODE; no claim of neural controller implemented",
+    "The score is progress_cm - 8*fraction_below3_contacts - 20*fraction_zero_contacts - 50*fall"
+  ]
+}
