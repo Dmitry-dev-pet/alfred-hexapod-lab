@@ -1,0 +1,764 @@
+{
+  "schema": "fnk0052_CAD30_optimized_four_leg_posture/1",
+  "date": "2026-11-04",
+  "method": "fixed-foot IK grid -> free-base physics trial -> support-three feasibility and dynamic middle-foot attempt",
+  "hardware_measured": false,
+  "source_CAD": "community MJCF with 30 pinned Freenove STL; private asset cache required; 2 visual proxies",
+  "baseline_qpos_provenance": "7a6e73dc2aeedc76cb1d7e462a25fbbb1bbb83bdae2c1b2eaacb6e1f45674399",
+  "models": "MuJoCo 3.14.0; nominal mass 1.804868 kg; 18 standard joint actuators plus head; PD Kp7 Kd0.32; approximate torque cap ±0.7 Nm",
+  "kinematics": {
+    "grid_poses": 1400,
+    "four_foot_IK_with_error_lt4mm": 131,
+    "three_support_grid_poses": 1440,
+    "three_support_IK_feasible": 222,
+    "three_support_positive_margin": 59
+  },
+  "physics_screen": {
+    "coarse_test_count": 18,
+    "focused_test_count": 10,
+    "nominal_friction": 1.1,
+    "valid_4_contact_count": 24,
+    "screen_best_geometric_of_valid": {
+      "requested_body_delta_m": [
+        0,
+        -0.095,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00058,
+        "bl": 0.0043,
+        "br": 0.0043,
+        "mr": 0.00058
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        -0.00021,
+        -0.09697,
+        0.11881
+      ],
+      "COM_delta_m": [
+        -0.00032,
+        -0.07387,
+        0.00514
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -0.00032,
+        -0.12061,
+        0.14824
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.025589822930671774,
+        "bl": 0.025606788411888296,
+        "br": 0.025593134577541633,
+        "mr": -0.02560347372563946
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.10799255575270295,
+        "fl": 0.10799586020390761
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 5.806,
+      "peak_tau_nm": 0.6455,
+      "saturation_step_fraction": 0.0,
+      "valid_four_contact_unsaturated": true,
+      "fail": null,
+      "steps_run": 2000,
+      "mean_middle_margin_m": -0.025596648328155617
+    },
+    "screen_best_with_tau_le_0p55_nm": {
+      "requested_body_delta_m": [
+        0,
+        -0.09,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00029,
+        "bl": 0.0044,
+        "br": 0.0044,
+        "mr": 0.00029
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        0.00018,
+        -0.09464,
+        0.12126
+      ],
+      "COM_delta_m": [
+        7e-05,
+        -0.07154,
+        0.00759
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        5e-05,
+        -0.11834,
+        0.14986
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.02717391386037482,
+        "bl": 0.027261752308448396,
+        "br": 0.02718753541919137,
+        "mr": -0.027248115926165908
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.11455739280705307,
+        "fl": 0.11456621438743471
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 4.644,
+      "peak_tau_nm": 0.5371,
+      "saturation_step_fraction": 0.0,
+      "valid_four_contact_unsaturated": true,
+      "fail": null,
+      "steps_run": 2000,
+      "mean_middle_margin_m": -0.027211014893270366
+    }
+  },
+  "actual_reference_physics": {
+    "baseline": {
+      "requested_body_delta_m": [
+        0,
+        0,
+        0
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.0,
+        "bl": 0.00078,
+        "br": 0.00078,
+        "mr": 0.0
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        0.00011,
+        -0.01965,
+        0.10755
+      ],
+      "COM_delta_m": [
+        -0.0,
+        0.00345,
+        -0.00612
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -1e-05,
+        -0.03021,
+        0.12909
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.09168053380835653,
+        "bl": 0.020261392327720083,
+        "br": 0.020261392327720083,
+        "mr": -0.09177870050002407
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.10331150282118129,
+        "fl": 0.10332183447246308
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 2.416,
+      "peak_tau_nm": 0.4945,
+      "saturation_step_fraction": 0.0,
+      "valid_four_contact_unsaturated": true,
+      "fail": null,
+      "steps_run": 2000
+    },
+    "more_rearward_bounded_4_contact": {
+      "requested_body_delta_m": [
+        0,
+        -0.09,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00029,
+        "bl": 0.0044,
+        "br": 0.0044,
+        "mr": 0.00029
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        0.00018,
+        -0.09464,
+        0.12126
+      ],
+      "COM_delta_m": [
+        7e-05,
+        -0.07154,
+        0.00759
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        5e-05,
+        -0.11834,
+        0.14986
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.02717391386037482,
+        "bl": 0.027261752308448396,
+        "br": 0.02718753541919137,
+        "mr": -0.027248115926165908
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.11455739280705307,
+        "fl": 0.11456621438743471
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 4.644,
+      "peak_tau_nm": 0.5371,
+      "saturation_step_fraction": 0.0,
+      "valid_four_contact_unsaturated": true,
+      "fail": null,
+      "steps_run": 2000
+    },
+    "more_rearward_near_cap_4_contact": {
+      "requested_body_delta_m": [
+        0,
+        -0.095,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00058,
+        "bl": 0.0043,
+        "br": 0.0043,
+        "mr": 0.00058
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        -0.00021,
+        -0.09697,
+        0.11881
+      ],
+      "COM_delta_m": [
+        -0.00032,
+        -0.07387,
+        0.00514
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -0.00032,
+        -0.12061,
+        0.14824
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.025589822930671774,
+        "bl": 0.025606788411888296,
+        "br": 0.025593134577541633,
+        "mr": -0.02560347372563946
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.10799255575270295,
+        "fl": 0.10799586020390761
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 5.806,
+      "peak_tau_nm": 0.6455,
+      "saturation_step_fraction": 0.0,
+      "valid_four_contact_unsaturated": true,
+      "fail": null,
+      "steps_run": 2000
+    }
+  },
+  "friction_stress": [
+    {
+      "requested_body_delta_m": [
+        0,
+        -0.08,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00015,
+        "bl": 0.00423,
+        "br": 0.00423,
+        "mr": 0.00015
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        -4e-05,
+        -0.0878,
+        0.12398
+      ],
+      "COM_delta_m": [
+        -0.00015,
+        -0.0647,
+        0.01031
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -0.00015,
+        -0.11075,
+        0.15154
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.032417801550122756,
+        "bl": 0.032591498604184914,
+        "br": 0.03242922252635686,
+        "mr": -0.032580085257315296
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.12185118014130684,
+        "fl": 0.12187022166258712
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 3.33,
+      "peak_tau_nm": 0.4601,
+      "saturation_step_fraction": 0.0,
+      "valid_four_contact_unsaturated": true,
+      "fail": null,
+      "steps_run": 2000,
+      "mu": 1.1
+    },
+    {
+      "requested_body_delta_m": [
+        0,
+        -0.09,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00029,
+        "bl": 0.0044,
+        "br": 0.0044,
+        "mr": 0.00029
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        0.00018,
+        -0.09464,
+        0.12126
+      ],
+      "COM_delta_m": [
+        7e-05,
+        -0.07154,
+        0.00759
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        5e-05,
+        -0.11834,
+        0.14986
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.02717391386037482,
+        "bl": 0.027261752308448396,
+        "br": 0.02718753541919137,
+        "mr": -0.027248115926165908
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.11455739280705307,
+        "fl": 0.11456621438743471
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 4.644,
+      "peak_tau_nm": 0.5371,
+      "saturation_step_fraction": 0.0,
+      "valid_four_contact_unsaturated": true,
+      "fail": null,
+      "steps_run": 2000,
+      "mu": 1.1
+    },
+    {
+      "requested_body_delta_m": [
+        0,
+        -0.08,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00015,
+        "bl": 0.00423,
+        "br": 0.00423,
+        "mr": 0.00015
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        7e-05,
+        -0.07213,
+        0.11861
+      ],
+      "COM_delta_m": [
+        -4e-05,
+        -0.04903,
+        0.00494
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -6e-05,
+        -0.09353,
+        0.14679
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.03846341455450963,
+        "bl": 0.03854449220457921,
+        "br": 0.038463414554509634,
+        "mr": -0.03854449220457922
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.1055970562640538,
+        "fl": 0.10560488984265212
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 6.028,
+      "peak_tau_nm": 0.7,
+      "saturation_step_fraction": 0.438,
+      "valid_four_contact_unsaturated": false,
+      "fail": null,
+      "steps_run": 2000,
+      "mu": 0.6
+    },
+    {
+      "requested_body_delta_m": [
+        0,
+        -0.09,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00029,
+        "bl": 0.0044,
+        "br": 0.0044,
+        "mr": 0.00029
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        7e-05,
+        -0.07628,
+        0.11516
+      ],
+      "COM_delta_m": [
+        -4e-05,
+        -0.05318,
+        0.00149
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -4e-05,
+        -0.0982,
+        0.14459
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.03383799026055059,
+        "bl": 0.03391861639932612,
+        "br": 0.03384087887531068,
+        "mr": -0.03391572857047239
+      },
+      "front_min_clearance_last_m": {
+        "fr": 0.09497582468130014,
+        "fl": 0.09498238484360905
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": false,
+        "fl": false
+      },
+      "final_tilt_deg": 8.019,
+      "peak_tau_nm": 0.7,
+      "saturation_step_fraction": 0.537,
+      "valid_four_contact_unsaturated": false,
+      "fail": null,
+      "steps_run": 2000,
+      "mu": 0.6
+    },
+    {
+      "requested_body_delta_m": [
+        0,
+        -0.08,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00015,
+        "bl": 0.00423,
+        "br": 0.00423,
+        "mr": 0.00015
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        -0.0002,
+        -0.04777,
+        0.07979
+      ],
+      "COM_delta_m": [
+        -0.00031,
+        -0.02467,
+        -0.03388
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -0.00035,
+        -0.06033,
+        0.11026
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.06391587435474311,
+        "bl": 0.06402848865291057,
+        "br": 0.06391587435474311,
+        "mr": -0.06402848865291057
+      },
+      "front_min_clearance_last_m": {
+        "fr": -2.1431258129256392e-08,
+        "fl": -2.5089565106051204e-08
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": true,
+        "fl": true
+      },
+      "final_tilt_deg": 23.754,
+      "peak_tau_nm": 0.7,
+      "saturation_step_fraction": 0.9855,
+      "valid_four_contact_unsaturated": false,
+      "fail": null,
+      "steps_run": 2000,
+      "mu": 0.3
+    },
+    {
+      "requested_body_delta_m": [
+        0,
+        -0.09,
+        0.02
+      ],
+      "requested_pitch_deg": 0,
+      "kinematic_IK_errors_m": {
+        "ml": 0.00029,
+        "bl": 0.0044,
+        "br": 0.0044,
+        "mr": 0.00029
+      },
+      "initial_COM_m": [
+        0.00011,
+        -0.0231,
+        0.11367
+      ],
+      "final_COM_m": [
+        -0.00018,
+        -0.05243,
+        0.08096
+      ],
+      "COM_delta_m": [
+        -0.00029,
+        -0.02933,
+        -0.03271
+      ],
+      "initial_body_pos_m": [
+        -0.0,
+        -0.03441,
+        0.13514
+      ],
+      "final_body_pos_m": [
+        -0.00033,
+        -0.06602,
+        0.1128
+      ],
+      "final_leave_one_foot_margins_m": {
+        "ml": -0.05632344731319159,
+        "bl": 0.056439124438731565,
+        "br": 0.05632344731319161,
+        "mr": -0.056439124438731544
+      },
+      "front_min_clearance_last_m": {
+        "fr": -2.0835385437789622e-08,
+        "fl": -1.9475662298151786e-08
+      },
+      "last_contacts": {
+        "ml": true,
+        "bl": true,
+        "br": true,
+        "mr": true,
+        "fr": true,
+        "fl": true
+      },
+      "final_tilt_deg": 24.355,
+      "peak_tau_nm": 0.7,
+      "saturation_step_fraction": 0.9855,
+      "valid_four_contact_unsaturated": false,
+      "fail": null,
+      "steps_run": 2000,
+      "mu": 0.3
+    }
+  ],
+  "middle_lift_diagnostic": {
+    "params": {
+      "dx": 0.07,
+      "dy": -0.12,
+      "dz": 0.045,
+      "pitch_deg": 8,
+      "lift_m": 0.035,
+      "mu": 1.1
+    },
+    "IK_max_m": 0.07125473316002924,
+    "completed": true,
+    "failure": null,
+    "true_middle_lift_safe": false,
+    "hold_max_middle_mesh_min_z": 0.03164328029864773,
+    "hold_last_middle_mesh_min_z": 0.031507237845627596,
+    "hold_middle_contact_free_fraction": 1.0,
+    "hold_last_com_margin_m": 0.027538570150159182,
+    "hold_last_COM": [
+      0.0629,
+      -0.1258,
+      0.1437
+    ],
+    "hold_last_tilt_deg": 4.17039139529483,
+    "min_other_support_contact_count": 3,
+    "front_contact_fraction_hold": 0.0,
+    "torque_peak_nm": 0.7,
+    "saturation_fraction": 0.19633333333333333
+  },
+  "conclusion": "Support body pose reduces center-to-triangle deficit, but cannot satisfy all leave-one-foot triangles with a single static COM point; a 3-leg phase was obtained with torque saturation and cannot count as an accepted full gait",
+  "gate": "no complete 4-legged gait; middle-foot step has not safely landed and repeated; no actual hardware",
+  "limitations": [
+    "sampled grids not global optimum",
+    "reference high-guard snapshot with qvel zero, rather than complete walking trial",
+    "rigid body approximate CAD mass friction and noncalibrated RC motors",
+    "margin from MuJoCo solved contacts, not guaranteed static robustness under dynamic acceleration",
+    "torsion/temperature/current/PWM and mesh self-collision verification missing"
+  ]
+}
