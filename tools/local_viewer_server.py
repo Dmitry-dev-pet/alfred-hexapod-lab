@@ -158,6 +158,29 @@ def refresh_library():
                 payload = remote_bytes(url, expected_size)
                 if len(payload) != expected_size or hashlib.sha256(payload).hexdigest() != wanted_sha:
                     raise ValueError("Remote asset integrity mismatch: " + file["path"])
+                # New MuJoCo CAD recordings originally reference upstream STL.
+                # Repoint them to the 30 verified local meshes for true offline replay.
+                if destination.name.startswith("cad-rig-") and destination.suffix == ".json":
+                    rig = json.loads(payload)
+                    if rig.get("format") != "fnk0052-mujoco-cad-visual-replay-v1":
+                        raise ValueError("Unsupported CAD replay format")
+                    meshes = rig.get("meshes", [])
+                    if len(meshes) != 30:
+                        raise ValueError("New replay needs the complete CAD30 mesh set")
+                    originals = json.loads((ROOT / "OFFLINE_MANIFEST.json").read_text())
+                    digests = originals.get("files_sha256", {})
+                    for mesh in meshes:
+                        filename = mesh.get("filename", "")
+                        if not re.fullmatch(r"[a-z0-9_-]+\.stl", filename):
+                            raise ValueError("Invalid CAD mesh filename")
+                        local_mesh = ROOT / "assets" / "stl" / filename
+                        expected = digests.get("assets/stl/" + filename)
+                        if not expected or not local_mesh.is_file():
+                            raise ValueError("Missing verified local CAD mesh")
+                        if hashlib.sha256(local_mesh.read_bytes()).hexdigest() != expected:
+                            raise ValueError("Local CAD mesh integrity mismatch")
+                        mesh["url"] = "/assets/stl/" + filename
+                    payload = json.dumps(rig, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
                 # Existing Three.js import maps in new pages are switched to the
                 # same vetted local copies that the offline installer provides.
                 if destination.suffix == ".html":
