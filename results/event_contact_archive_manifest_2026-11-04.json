@@ -1,0 +1,26 @@
+{
+  "schema": "FNK0052_event_contact_archive/1",
+  "date_utc": "2026-11-04",
+  "file_name": "FNK0052_event_contact_no_MPC_2026-11-04_no_CAD.zip",
+  "drive_url": "https://drive.google.com/file/d/1xGrIfCNjcB-RYTh4rHrq_AOsUgODLesR/view?usp=drivesdk",
+  "size_bytes": 2457020,
+  "sha256": "064c64972acf4155d427a2a0399eab38c17851eebcc6babdb6027d4826152e00",
+  "contains_original_CAD_STL": false,
+  "model_source": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk",
+  "base_PR": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/pull/18",
+  "new_test_count": 10,
+  "existing_test_count": 6,
+  "heldout_paired_seed_count": 3,
+  "heldout_mu": 1.1,
+  "archive_files": 21,
+  "contents": [
+    "source scripts and tests",
+    "6 paired 8-second 2ms-physics traces for mu1.1",
+    "2 8-second qpos demonstration traces",
+    "one unpaired mu0.6 baseline control (not analyzed as treatment result)",
+    "three outcome plots",
+    "side-by-side MP4/GIF actual MuJoCo replay",
+    "MANIFEST_SHA256.json"
+  ],
+  "data_quality": "exploratory; low-friction A/B incomplete; dynamic support margins can be negative, no physical hardware"
+}
