@@ -1,6 +1,6 @@
 # External reference baseline: Toyota Research Institute IDTO / Mini Cheetah
 
-**Status on 2026-11-04: `not_run`**. This folder provides a reproducible entry point and an evidence protocol; it does **not** claim the Mini Cheetah simulation was executed. Tracked by [#31](https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/issues/31). This is independent of the CAD30/MuJoCo four-support work (#26–#30).
+**Status, verified 2026-11-04:** Drake 1.30.0 native C++ IDTO compiled and original Mini Cheetah **10-second closed-loop MPC actually executed**. Separate instrumentation measured body state and foot contact forces for baseline and two known inertial COM shifts. Full evidence, limitations and SHA-256 are in [REPORT_MPC_2026-11-04_RU.md](REPORT_MPC_2026-11-04_RU.md). Tracked by [#31](https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/issues/31). **This is not a CAD30 four-support gait.**
 
 ## What is being reproduced
 
@@ -30,7 +30,7 @@ bash experiments/idto/run_native.sh run
 
 The script does **not** use Docker, does not install system packages or Drake automatically, and does not modify upstream physics or YAML. It checks for the Drake CMake package, pins the IDTO source commit, builds the `mini_cheetah` C++ executable, and writes a separate native run log and metadata. Set `IDTO_LAB_WORKDIR` to change the local workspace and `IDTO_BUILD_JOBS` to control build parallelism.
 
-**Environment check (2026-11-04):** the available assistant container is Debian 13 x86_64 with CMake, C++ and Git, but **no Drake** and no working direct access to GitHub from the container. Therefore we cannot honestly mark the native build or the MPC run as executed here. The official pinned Drake binary is for Ubuntu 22.04; do not treat this Debian 13 environment as validated for it.
+**Execution update (2026-11-04):** the assistant container is Debian 13 x86_64 and lacks direct internet, but the **download problem was solved** via self-hosted Mac M4 GitHub Actions transport → temporary Actions artifact → persistent Google Drive → local materialization. Drake 1.30.0, Python 3.10 and 17 Ubuntu Jammy dependency packages were extracted to an isolated prefix. CMake configured, GCC 14.2 compiled and linked the original C++ executable, `--test` (MPC disabled) passed, and the original **10-second MPC** exited 0. State and actual contact results were then measured in separately instrumented runs; see [full report](REPORT_MPC_2026-11-04_RU.md) and [Drive evidence](https://drive.google.com/file/d/1W8ODUcZCnoywwzPRVmAAV1QbFowj4vhH/view). This proves this specific environment worked, not generic Ubuntu-binary compatibility with every Debian system.
 
 ## Alternative: Docker-based build on a machine with Git, Docker and internet access
 
@@ -59,4 +59,4 @@ On Apple silicon, Docker's linux/amd64 emulation may be slow or unsupported for 
 
 ## Storage / project rules
 
-Small source, YAML/JSON receipts and summaries belong in GitHub. Large simulation traces, videos and CAD archives belong in Google Drive with checksums. Do not commit third-party Drake/IDTO binaries or Freenove CAD. Do not run physics on GitHub Actions, do not merge into `main` without review, and never relabel `not_run` as `reproduced`.
+Small source, YAML/JSON receipts and summaries belong in GitHub. Large simulation traces, videos and CAD archives belong in Google Drive with checksums. Do not commit third-party Drake/IDTO binaries or Freenove CAD. Do not run physics on GitHub Actions, do not merge into `main` without review, and never claim working CAD30 gait or no slipping based only on an IDTO Mini Cheetah demonstration; keep source and measurement provenance separated.
