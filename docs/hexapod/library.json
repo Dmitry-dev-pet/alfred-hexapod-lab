@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 4,
+  "revision": 5,
   "entries": [
     {
       "id": "tripod-60",
@@ -307,6 +307,66 @@
           "path": "hexapod/data/cheetah-idto-10s.json",
           "sha256": "3e594d05e6846b2eaac5bbba108bc2bde5910a295b0c785b0b3e3aa5ffd411ef",
           "size": 110025
+        }
+      ]
+    },
+    {
+      "id": "support-qp-nominal",
+      "title": "2 опоры · QP + возвращение",
+      "detail": "Две средние опоры, задние реально оторваны, затем 4 опоры восстановлены · μ=1,1",
+      "duration_s": 3.8,
+      "href": "/hexapod/support-qp-nominal/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/support-qp-nominal/index.html",
+          "sha256": "0593072ab6a839ca1435ac5a82b4e43c332a7ad413ac9e97281fa4da849965d8",
+          "size": 3982
+        },
+        {
+          "path": "hexapod/support-qp-nominal/app.js",
+          "sha256": "070daa96c20ac08472354059e3097f99ac41aeefe735481d0c7518a8673ed47c",
+          "size": 10847
+        },
+        {
+          "path": "hexapod/data/dynamic-nominal-points.json",
+          "sha256": "4439bd1eb3fa6602ac90c2142502e8d16089011ba29c2cde24179dbb0dd52d34",
+          "size": 201452
+        },
+        {
+          "path": "hexapod/data/cad-rig-dynamic-nominal.json",
+          "sha256": "78b5536eaa5e4eeb5a839abcb212d46b42c81f2b4144f43897a544f0d59c7079",
+          "size": 413831
+        }
+      ]
+    },
+    {
+      "id": "support-qp-slippery",
+      "title": "2 опоры · скользкий пол",
+      "detail": "Отрицательная динамическая проверка QP: μ=0,6, контакты теряются",
+      "duration_s": 3.68,
+      "href": "/hexapod/support-qp-slippery/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/support-qp-slippery/index.html",
+          "sha256": "1664eba1ce6341f5d509b7396ea14268f3e0acc92e887a4a90ec402e42b84a11",
+          "size": 3981
+        },
+        {
+          "path": "hexapod/support-qp-slippery/app.js",
+          "sha256": "070daa96c20ac08472354059e3097f99ac41aeefe735481d0c7518a8673ed47c",
+          "size": 10847
+        },
+        {
+          "path": "hexapod/data/dynamic-slippery-points.json",
+          "sha256": "25146947118e3ab0fe5eaff97fc28a2f0ade535934a03d73bdcc75e6cd20861e",
+          "size": 194371
+        },
+        {
+          "path": "hexapod/data/cad-rig-dynamic-slippery.json",
+          "sha256": "50b6ba714cb466accd46eb7458418f1aa059e85412fe129586b0d157e38be2f0",
+          "size": 399993
         }
       ]
     }
