@@ -1,0 +1,21 @@
+{
+  "schema": "fnk0052_leg_loss_archive/1",
+  "date_utc": "2026-11-04",
+  "file_name": "FNK0052_one_leg_failure_2026-11-04_no_CAD.zip",
+  "drive_url": "https://drive.google.com/file/d/1dwzdDpPt1l7xjAfN1Cvil65U1lGh89Yr/view?usp=drivesdk",
+  "size_bytes": 2448999,
+  "sha256": "8377936cdf2351ce616485f42a0d53875797a21017bb9516701aef0f763bc713",
+  "contains_original_CAD_mesh_files": false,
+  "includes": [
+    "9 full MuJoCo 50Hz physical traces",
+    "3 source scripts",
+    "protocol",
+    "compact results",
+    "side-by-side actual qpos MP4/GIF",
+    "2 numerical charts",
+    "internal SHA256 file manifest"
+  ],
+  "original_CAD30_model": "https://drive.google.com/file/d/1qN8KAgekhXm5RasMXSHNxHAsMxivpZ44/view?usp=drivesdk",
+  "data_handling": "Keep original CAD source ZIP private in Drive; do not commit copyrighted STL to GitHub",
+  "confidence": "un-calibrated simulation; no robot hardware validation"
+}
