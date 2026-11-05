@@ -1,0 +1,59 @@
+{
+  "schema": "hexapod-contact-opt-sha256-v1",
+  "files": [
+    {
+      "path": "contact_aware_shooting.py",
+      "sha256": "dfdbb44c227eb0529c1e256799b2bc4d28b52eea6bb974b063669d655be48fab",
+      "size_bytes": 20806,
+      "github": true
+    },
+    {
+      "path": "replay_six_to_ml.py",
+      "sha256": "ea03fa77a5f40bc4d28c570f6762dba64c3a23432cce003b7257442c31d577ec",
+      "size_bytes": 6676,
+      "github": true
+    },
+    {
+      "path": "test_contact_aware_shooting.py",
+      "sha256": "f41bb38c9bb957deee49cc5a6520b236a782735c09e0578bdf347f915666427b",
+      "size_bytes": 3989,
+      "github": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "edca337b523cd338804f334ce27903f05df915af937b5593ae43825de7155a8c",
+      "size_bytes": 14935,
+      "github": true
+    },
+    {
+      "path": "contact_optimized_ml_compact_20261105.json",
+      "sha256": "0526b992643a76fa52ed9344333d990cca1cd1e787aa243a5ca6ade948ac5131",
+      "size_bytes": 5971,
+      "github": true
+    },
+    {
+      "path": "optimized_local_ml_20261105.json",
+      "sha256": "2883845b485464da5819ff96a282b7b76124ce08adc5554e16fd3ebbf83c498a",
+      "size_bytes": 70073,
+      "github": false
+    },
+    {
+      "path": "six_to_ml_full_20261105.json",
+      "sha256": "1d876753a6e7385cae35888328081b6019be57636c7d2c0505ec139f709b40a7",
+      "size_bytes": 5478,
+      "github": false
+    },
+    {
+      "path": "optimized_local_ml_20261105_2ms.json.gz",
+      "sha256": "806570eb4aa95ab22ea3053d9e1a38044b5ec47839d67118dda0742147493102",
+      "size_bytes": 963510,
+      "github": false
+    },
+    {
+      "path": "six_to_ml_full_20261105_complete_2ms.json.gz",
+      "sha256": "b5e6e61851c1981a8ce9b42940ec1097b628a4d2afad835a1e1544a6cf377d0e",
+      "size_bytes": 10923064,
+      "github": false
+    }
+  ]
+}

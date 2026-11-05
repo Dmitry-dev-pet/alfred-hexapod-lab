@@ -1,0 +1,167 @@
+{
+  "schema": "cad30-contact-optimized-ml-compact/1",
+  "date_utc": "2026-11-05",
+  "experiment": "Single physical middle-left leg lift,swing,touchdown with 3 true supports",
+  "status": "ONE_MIDDLE_SWING_FROM_SAVED_SIX_PASS_NOT_FULL_GAIT",
+  "no_four_foot_gait": true,
+  "hardware_approved": false,
+  "method": "SciPy DE physics-in-loop shooting, COM target SLSQP, CAD30 IK, PD motor position and independent continuous mj_step(0.002s)",
+  "optimizer": {
+    "candidate_trials": 24,
+    "feasible_candidates": 2,
+    "best_command": {
+      "com_margin_mm": 26.0,
+      "step_command_mm": 28.211554388708002,
+      "swing_height_command_mm": 16.419039367295706
+    },
+    "objective": 26.587363709503578
+  },
+  "continuous_six_to_ml": {
+    "prelude_node_last": 117,
+    "prelude_steps": 17675,
+    "min_actual_loaded_legs": 3,
+    "prelude_root_Y_from_saved_six_mm": -73.81949571451929,
+    "optimized_result": {
+      "status": "LOCAL_ML_LIFT_SWING_TOUCHDOWN_PASS",
+      "command": {
+        "com_margin_mm": 26.0,
+        "step_command_mm": 28.211554388708002,
+        "swing_height_command_mm": 16.419039367295706
+      },
+      "mu": 1.1,
+      "physics_dt_s": 0.002,
+      "checkpoint_node": 117,
+      "initial_fz_N": {
+        "ml": 3.166729945221758,
+        "mr": 4.350018384506144,
+        "bl": 5.2485552702581915,
+        "br": 4.942610827965716,
+        "fl": 0.0,
+        "fr": 0.0
+      },
+      "initial_tripod_margin_mm": 5.429991900489845,
+      "virtual_com_shift_target_xy_mm": [
+        6.515937871823417,
+        -19.51070954421554
+      ],
+      "max_ik_toe_error_mm": 0.5232089126057679,
+      "max_stance_toe_marker_xy_drift_mm": 0.6129202387847681,
+      "real_com_prebalance_xy_mm": [
+        6.1489778697676725,
+        -23.129100420778524
+      ],
+      "prebalance_actual_tripod_margin_mm": 28.766482613062667,
+      "prebalance_Fz_N": {
+        "ml": 1.782458309845008,
+        "mr": 2.6314306997804273,
+        "bl": 6.3252764541775495,
+        "br": 6.967067471213143,
+        "fl": 0.0,
+        "fr": 0.0
+      },
+      "swing_min_tripod_Fz_N": 1.1826030270918668,
+      "swing_min_tripod_margin_mm": 27.133315015091934,
+      "minimum_tripod_margin_whole_test_mm": 5.429991900489845,
+      "ml_zero_contact_pairs_total_s": 1.5940000000000012,
+      "ml_toe_height_over_2mm_no_contact_s": 1.0620000000000007,
+      "ml_mesh_height_over_2mm_no_contact_s_sampled": 0.9600000000000005,
+      "ml_mesh_peak_height_mm_sampled": 6.561986286733629,
+      "ml_toe_peak_height_mm": 7.311132818221849,
+      "ml_in_air_forward_mm": 14.653267340710215,
+      "actual_ml_world_forward_mm": 21.28611016291722,
+      "final_tripod_margin_mm": 26.693153169026417,
+      "final_four_loaded_last_hold_fraction": 1.0,
+      "max_leg_tau_Nm": 0.5995181971964323,
+      "max_raw_leg_tau_Nm": 0.5995181971964323,
+      "max_leg_joint_abs_rad": 1.6768943018748508,
+      "min_four_legs_loaded_count": 3,
+      "first_guard_violation": null,
+      "root_world_y_delta_mm": -29.307815236126537,
+      "COM_world_y_delta_mm": -26.503426097959775,
+      "source_has_hardware_calibrated_limits": false,
+      "accepted": true
+    },
+    "final_Fz_N": {
+      "ml": 1.9518998346765468,
+      "mr": 1.6468867604476958,
+      "bl": 6.019554491720142,
+      "br": 8.087606168323376,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "net_root_Y_from_saved_six_mm": -103.12731095064584,
+    "one_middle_leg_completed": true,
+    "completed_four_leg_cycles": 0
+  },
+  "local_mu_sensitivity": [
+    {
+      "mu": 1.1,
+      "status": "LOCAL_ML_LIFT_SWING_TOUCHDOWN_PASS",
+      "accepted": true,
+      "actual_ml_forward_mm": 21.286108115776116,
+      "min_tripod_fz_N": 1.182603604366378,
+      "max_raw_tau_Nm": 0.5995180606799027,
+      "first_violation": null
+    },
+    {
+      "mu": 0.8,
+      "status": "LOCAL_ML_LIFT_SWING_TOUCHDOWN_PASS",
+      "accepted": true,
+      "actual_ml_forward_mm": 21.71144033993091,
+      "min_tripod_fz_N": 1.7242594703127372,
+      "max_raw_tau_Nm": 0.6031914421299095,
+      "first_violation": null
+    },
+    {
+      "mu": 0.6,
+      "status": "FAIL",
+      "accepted": false,
+      "actual_ml_forward_mm": 21.87631293503284,
+      "min_tripod_fz_N": 0.0,
+      "max_raw_tau_Nm": 0.6230855537626884,
+      "first_violation": {
+        "phase": "swing_ml",
+        "physics_t_s": 1.5100000000000011,
+        "reason": "loss_of_required_support_or_margin",
+        "tripod_fz": {
+          "mr": 5.670220500252753,
+          "bl": 8.494546044498737,
+          "br": 0.0
+        },
+        "triangle_margin_mm": -Infinity
+      }
+    },
+    {
+      "mu": 0.3,
+      "status": "FAIL",
+      "accepted": false,
+      "actual_ml_forward_mm": 13.07699122007433,
+      "min_tripod_fz_N": 0.0,
+      "max_raw_tau_Nm": 0.9497690876030597,
+      "first_violation": {
+        "phase": "physical_prebalance",
+        "physics_t_s": 0.006,
+        "reason": "loss_of_required_support_or_margin",
+        "tripod_fz": {
+          "mr": 5.980927117539853,
+          "bl": 0.0,
+          "br": 0.0
+        },
+        "triangle_margin_mm": -Infinity
+      }
+    }
+  ],
+  "provenance": {
+    "math_sha256": "27178dc148420531552f3dae9eb712c4b7e63fd937ce59b65c66e9f5378ce4d3",
+    "old_2ms_negative_sha256": "599033295be5734f73a4abd9547e9e0baaccf83b21904464259a7a4255bb8d1e",
+    "saved_six_state_sha256": "bfcaf5a8332844b1294162ea90fe9b326c1c8cd4e38a5d2576c77ac52d18d231",
+    "continuous_raw_trace_sha256": "b5e6e61851c1981a8ce9b42940ec1097b628a4d2afad835a1e1544a6cf377d0e",
+    "optimized_local_raw_sha256": "806570eb4aa95ab22ea3053d9e1a38044b5ec47839d67118dda0742147493102"
+  },
+  "comments": [
+    "Toe point is an unverified distal mesh landmark, not a physical calibrated rubber foot.",
+    "Contact existence and Fz are actual MuJoCo floor/tibia pairs, not mathematical LP values.",
+    "Mesh clearance sampled every 20ms, normal Fz/contact states every 2ms.",
+    "Research torque limit and friction coefficient not hardware calibrated."
+  ]
+}
