@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 6,
+  "revision": 7,
   "entries": [
     {
       "id": "tripod-60",
@@ -517,6 +517,36 @@
           "path": "hexapod/data/cad-rig-issue41-mu03.json",
           "sha256": "f897c0d6d8dc87fd57a7e6d55af30e63cd0a10ba53de4a46079ef2d5c24b764a",
           "size": 386156
+        }
+      ]
+    },
+    {
+      "id": "wave-60-nominal",
+      "title": "Wave · 6 ног",
+      "detail": "Медленная wave · 60 с · +0,379 м · фактически ≥5 опор 99,83% времени · диагностика",
+      "duration_s": 60,
+      "href": "/hexapod/wave-60/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/wave-60/index.html",
+          "sha256": "cd8420d2bd0e1553b5958298cc2e75af808cf5be4a75f224beb22458f97c6f87",
+          "size": 5405
+        },
+        {
+          "path": "hexapod/wave-60/app.js",
+          "sha256": "bf7285d7cd95ee287fa45f7d713d9dfc3a0b265bfe5dae296b87341e58ce41a5",
+          "size": 15443
+        },
+        {
+          "path": "hexapod/data/wave-60s-points.json",
+          "sha256": "d4196f27690e73a7f0c4fcc2729a892191b3ec358f179136cb53e4e4f2d73da5",
+          "size": 970015
+        },
+        {
+          "path": "hexapod/data/cad-rig-wave-60s.json",
+          "sha256": "fd64c5201028b19a5584ce2fcbd1fcd12486f74f87d14b0e179de66c2773173f",
+          "size": 3111044
         }
       ]
     }
