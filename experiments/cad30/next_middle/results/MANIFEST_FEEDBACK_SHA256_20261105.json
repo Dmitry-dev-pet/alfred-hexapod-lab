@@ -1,0 +1,57 @@
+{
+  "schema": "cad30-contact-feedback-manifest/1",
+  "inputs": {
+    "six_state": {
+      "sha256": "bfcaf5a8332844b1294162ea90fe9b326c1c8cd4e38a5d2576c77ac52d18d231",
+      "bytes": 34728,
+      "basename": "pupper_stance_prebalance_35mm.json"
+    },
+    "math_218_trace": {
+      "sha256": "27178dc148420531552f3dae9eb712c4b7e63fd937ce59b65c66e9f5378ce4d3",
+      "bytes": 307951,
+      "basename": "math_first_four_crawl_trace.json"
+    },
+    "physical_preML_trace": {
+      "sha256": "599033295be5734f73a4abd9547e9e0baaccf83b21904464259a7a4255bb8d1e",
+      "bytes": 3567079,
+      "basename": "dynamic_min3_03_trace_2ms.json.gz"
+    },
+    "optimizedML_command": {
+      "sha256": "2883845b485464da5819ff96a282b7b76124ce08adc5554e16fd3ebbf83c498a",
+      "bytes": 70073,
+      "basename": "optimized_local_ml_20261105.json"
+    }
+  },
+  "raw_traces": {
+    "minimal_baseline_continuous_MR_2ms.json.gz": {
+      "sha256": "c38175c892bb0bac115565a3d423a1254f5ce3fc079c06626ad526dd0c8e53f5",
+      "bytes": 1754208
+    },
+    "minimal_continuous_MR_2ms.json.gz": {
+      "sha256": "c48e94e34f8d31e0444989bc2637021f4453bc462a7b32511c780de36343fce9",
+      "bytes": 1754411
+    }
+  },
+  "github_files": {
+    "mr_contact_continuation.py": {
+      "sha256": "6ce925f0da7d9ff1fe18a1bbe4c4c147da0ee2a841b0375783377ba5e48d6055",
+      "bytes": 19406
+    },
+    "replay_six_ml_mr.py": {
+      "sha256": "85a4a48522d732856859e90a6ecb7503362a0dc20abb0bba0d0172ca924c8af7",
+      "bytes": 4706
+    },
+    "test_mr_force_feedback.py": {
+      "sha256": "aa95f6b17259fdba66121f05ed16d030c4637b6f8214315dbf471fac6aac75f6",
+      "bytes": 2597
+    },
+    "README_FORCE_FEEDBACK_20261105.md": {
+      "sha256": "b469c3f35dab3fceed0796fc052c6f8438a8751ea3af56e5cefcb79aab7b2f1a",
+      "bytes": 6843
+    },
+    "force_feedback_mr_20261105.json": {
+      "sha256": "60cf302ad62b0859d9a31e01d05fa69065cb3b796e1b774cef0fa0a4f15216e8",
+      "bytes": 3573
+    }
+  }
+}
