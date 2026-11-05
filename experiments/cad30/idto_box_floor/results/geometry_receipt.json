@@ -1,0 +1,20 @@
+{
+  "schema": "cad30-drake-only-box-floor-v1",
+  "original_scene_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+  "drake_scene_sha256": "240fbd57fbc04e160c21a67fe590698e207ffb16562309d3db284f757fca66b9",
+  "changed_model_files": [
+    "mjcf/scene_local30_nominal.xml"
+  ],
+  "floor_original_z_m": 0.0,
+  "floor_box_top_z_m": 0.0,
+  "floor_box_half_extents_m": [
+    2.0,
+    2.0,
+    0.05
+  ],
+  "caveats": [
+    "This is a Drake-only contact geometry substitute, not a physical equivalence proof.",
+    "No original CAD STL or converted private OBJ should be committed to a public repository.",
+    "Drake model imports motor limits and rotor armature differently from MuJoCo 3.14."
+  ]
+}

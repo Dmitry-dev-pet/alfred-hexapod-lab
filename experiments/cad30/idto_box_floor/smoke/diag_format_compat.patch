@@ -1,0 +1,77 @@
+--- a/examples/example_base.cc
++++ b/examples/example_base.cc
+@@ -2,12 +2,14 @@
+ 
+ #include <chrono>
+ #include <iostream>
++#include <iomanip>
++#include <sstream>
+ #include <thread>
+ #include <utility>
+ 
+ #include "examples/mpc_controller.h"
+ #include "examples/pd_plus_controller.h"
+-#include <drake/common/fmt_eigen.h>
++// Avoid ABI-sensitive fmt_eigen instantiation in external Eigen headers.
+ #include <drake/systems/primitives/discrete_time_delay.h>
+ #include <drake/visualization/visualization_config_functions.h>
+ 
+@@ -25,6 +27,23 @@
+ using pd_plus::PdPlusController;
+ using utils::FindIdtoResource;
+ 
++// Diagnostic printing only: avoids Eigen ABI differences between Drake binaries
++// and host Eigen headers. No optimizer code or state calculations change.
++template <typename Derived>
++std::string FormatMatrixDiagnostic(const Eigen::MatrixBase<Derived>& m) {
++  std::ostringstream ss;
++  ss << std::setprecision(12) << "[";
++  for (int i = 0; i < m.rows(); ++i) {
++    if (i) ss << "; ";
++    for (int j = 0; j < m.cols(); ++j) {
++      if (j) ss << ", ";
++      ss << m(i, j);
++    }
++  }
++  ss << "]";
++  return ss.str();
++}
++
+ void TrajOptExample::RunExample(const std::string options_file,
+                                 const bool test) const {
+   // Load parameters from file
+@@ -271,7 +290,7 @@
+   }
+   std::cout << std::endl;
+   std::cout << fmt::format("Max torques: {}",
+-                           drake::fmt_eigen(tau_max.transpose()))
++                           FormatMatrixDiagnostic(tau_max.transpose()))
+             << std::endl;
+ 
+   // Report maximum actuated and unactuated torques
+@@ -299,21 +318,21 @@
+   // Report desired and final state
+   std::cout << std::endl;
+   std::cout << fmt::format("q_nom[T] : {}",
+-                           drake::fmt_eigen(
++                           FormatMatrixDiagnostic(
+                                opt_prob.q_nom[options.num_steps].transpose()))
+             << std::endl;
+   std::cout << fmt::format(
+                    "q[T]     : {}",
+-                   drake::fmt_eigen(solution.q[options.num_steps].transpose()))
++                   FormatMatrixDiagnostic(solution.q[options.num_steps].transpose()))
+             << std::endl;
+   std::cout << std::endl;
+   std::cout << fmt::format("v_nom[T] : {}",
+-                           drake::fmt_eigen(
++                           FormatMatrixDiagnostic(
+                                opt_prob.v_nom[options.num_steps].transpose()))
+             << std::endl;
+   std::cout << fmt::format(
+                    "v[T]     : {}",
+-                   drake::fmt_eigen(solution.v[options.num_steps].transpose()))
++                   FormatMatrixDiagnostic(solution.v[options.num_steps].transpose()))
+             << std::endl;
+ 
+   // Print speed profiling info
