@@ -1,0 +1,36 @@
+{
+  "schema": "cad30-mr-continuation-20261105-sha256/1",
+  "based_on": "draft PR #45, real ML from same dynamic MjData",
+  "model": "original CAD30 30 STL from private Drive (not included)",
+  "physically_validated_full_gait": false,
+  "artifacts": {
+    "README.md": {
+      "bytes": 8121,
+      "sha256": "3828fcaaaa6330b026a936c4ccad0fd12205217a24798d361c51518f40d6cd53"
+    },
+    "mr_contact_continuation.py": {
+      "bytes": 16637,
+      "sha256": "c9ba956c0b89849d7fd09952f0fabad5e76895c48f5e6815cddf82bc50c6f33f"
+    },
+    "replay_six_ml_mr.py": {
+      "bytes": 4480,
+      "sha256": "31c0690f3791441394a848071124be83bb34dcf0fba52a8b2049c9216beb2d8b"
+    },
+    "results/after_ml_physical_checkpoint_20261105.json": {
+      "bytes": 2490,
+      "sha256": "0e73f9b7aa699bc39da373ad59f5807d92a2863e8400da8b260f4553c9e6d05e"
+    },
+    "results/continuous_six_ml_mr_20261105.json": {
+      "bytes": 5910,
+      "sha256": "da8f4b21f4072d698bf15727b36dc551a12b7b48ba55a47b37276cb24e016879"
+    },
+    "test_mr_contact_continuation.py": {
+      "bytes": 2636,
+      "sha256": "79fdb803136d5ed0b5d1fbf440a309b68e62fedb2e4895fb298c20cde3b8640d"
+    },
+    "raw/MR_continuous_2ms.json.gz": {
+      "bytes": 1754168,
+      "sha256": "84b7036a909879d472e4c8c4d9b694d06b1619e3f84e7c193d5f726ebaef18cf"
+    }
+  }
+}

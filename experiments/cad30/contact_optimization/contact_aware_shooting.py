@@ -256,6 +256,8 @@ class PhysicalTrial:
         results['status']='LOCAL_ML_LIFT_SWING_TOUCHDOWN_PASS' if results['accepted'] else 'FAIL'
         if self.full_log:
             results['_raw_log']=frames
+        self.last_model_data=(m,d)
+        self.last_motor_goals=target_cmd.copy()
         return results
 
 
