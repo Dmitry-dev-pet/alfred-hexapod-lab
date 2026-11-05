@@ -1,0 +1,215 @@
+{
+  "schema": "cad30-M0-initial-stance-audit-v1",
+  "issue": 50,
+  "model": "original private Freenove CAD30 (no CAD assets included)",
+  "saved_six": "physical saved six-support state AFTER earlier Pupper prebalance",
+  "physics_timestep_s": 0.002,
+  "node_seconds": 0.3,
+  "limits_are_unverified_model_assumptions": true,
+  "goal": "full continuous 4-foot cycle and positive net motion including preparation",
+  "cases": [
+    {
+      "variant": {
+        "name": "pr43_baseline",
+        "middle_inward_mm": 50,
+        "rear_forward_mm": 80,
+        "rear_out_mm": 20,
+        "final_prep_back_mm": 30
+      },
+      "math": {
+        "status": "SAMPLED_GEOMETRIC_STATIC_CANDIDATE",
+        "sampled_errors": 0,
+        "sampled_nodes": 218,
+        "min_sampled_support_margin_mm": 7.828338604900183,
+        "max_sampled_joint_abs_rad": 1.670247900549142,
+        "min_required_peak_static_tau_Nm": 0.41173714703660047,
+        "nominal_net_root_Y_from_saved_six_mm": -10.000000000000002,
+        "minimum_planned_root_Y_relative_to_saved_six_mm": -65.00000000000003,
+        "is_physical_gait": false
+      },
+      "private_math_trace_sha256": "2cbe416aacb2335505d41c3379169f2685c385d28b81e5bd88ee8e3dfd6a942e",
+      "physics": {
+        "status": "FAIL",
+        "nodes_attempted": 122,
+        "physics_steps": 18234,
+        "min_loaded_leg_count": 3,
+        "failure_phase": "swing_ml",
+        "failure_reason": "COM_outside_actual_support_polygon_-3.752_mm",
+        "failure_margin_mm": -3.7520433073149064,
+        "net_COM_Y_mm": -53.24084928469489,
+        "net_root_Y_mm": -71.83755696240377,
+        "full_cycle_accepted": false
+      },
+      "physics_trace_sha256": "095ee11fb1d2df3337e7827e330de4eb529c09832d7085f19960a9aa52368c7b",
+      "physical_trace_archive_filename": "M0_back30mm_dyn03_trace_2ms.json.gz"
+    },
+    {
+      "variant": {
+        "name": "no_final_back",
+        "middle_inward_mm": 50,
+        "rear_forward_mm": 80,
+        "rear_out_mm": 20,
+        "final_prep_back_mm": 0
+      },
+      "math": {
+        "status": "SAMPLED_GEOMETRIC_STATIC_CANDIDATE",
+        "sampled_errors": 0,
+        "sampled_nodes": 218,
+        "min_sampled_support_margin_mm": 7.828338599282205,
+        "max_sampled_joint_abs_rad": 1.670247900549142,
+        "min_required_peak_static_tau_Nm": 0.41173714703660036,
+        "nominal_net_root_Y_from_saved_six_mm": 20.0,
+        "minimum_planned_root_Y_relative_to_saved_six_mm": -65.00000000000003,
+        "is_physical_gait": false
+      },
+      "private_math_trace_sha256": "5f5d530f7dacfedbb3d8685f2d456bab8ecc5d45d6e172077d6ac459dd97cce5",
+      "physics": {
+        "status": "FAIL",
+        "nodes_attempted": 122,
+        "physics_steps": 18158,
+        "min_loaded_leg_count": 3,
+        "failure_phase": "swing_ml",
+        "failure_reason": "COM_outside_actual_support_polygon_-3.656_mm",
+        "failure_margin_mm": -3.656343193080197,
+        "net_COM_Y_mm": -53.196934497358434,
+        "net_root_Y_mm": -71.82211367734378,
+        "full_cycle_accepted": false
+      },
+      "physics_trace_sha256": "5a97863541e33b574db97c81e2dfe66e67e0ef2005ebce783e33169032f45851",
+      "physical_trace_archive_filename": "M0_back0mm_dyn03_trace_2ms.json.gz"
+    },
+    {
+      "variant": {
+        "name": "middle_40",
+        "middle_inward_mm": 40,
+        "rear_forward_mm": 80,
+        "rear_out_mm": 20,
+        "final_prep_back_mm": 0
+      },
+      "math": {
+        "status": "SAMPLED_GEOMETRIC_STATIC_CANDIDATE",
+        "sampled_errors": 0,
+        "sampled_nodes": 218,
+        "min_sampled_support_margin_mm": 6.599367534283841,
+        "max_sampled_joint_abs_rad": 1.670247900549142,
+        "min_required_peak_static_tau_Nm": 0.4191273990233696,
+        "nominal_net_root_Y_from_saved_six_mm": 20.0,
+        "minimum_planned_root_Y_relative_to_saved_six_mm": -65.00000000000003,
+        "is_physical_gait": false
+      },
+      "private_math_trace_sha256": "b05aad0a64c2ed690c44dbfdf7fb79fdb0cea4707d07b0235ecdf92c6003bce6",
+      "physics": {
+        "status": "FAIL",
+        "nodes_attempted": 122,
+        "physics_steps": 18190,
+        "min_loaded_leg_count": 3,
+        "failure_phase": "swing_ml",
+        "failure_reason": "COM_outside_actual_support_polygon_-2.244_mm",
+        "failure_margin_mm": -2.243698939531788,
+        "net_COM_Y_mm": -53.22075505018658,
+        "net_root_Y_mm": -71.49167870505413,
+        "full_cycle_accepted": false
+      },
+      "physics_trace_sha256": "270bdb9552311f21dfd798dabd210714188291bca965cdf1607b7a3185377850",
+      "physical_trace_archive_filename": "foot_mid40_rear80_lat20_dyn03_trace_2ms.json.gz"
+    },
+    {
+      "variant": {
+        "name": "middle_30",
+        "middle_inward_mm": 30,
+        "rear_forward_mm": 80,
+        "rear_out_mm": 20,
+        "final_prep_back_mm": 0
+      },
+      "math": {
+        "status": "SAMPLED_GEOMETRIC_STATIC_CANDIDATE",
+        "sampled_errors": 0,
+        "sampled_nodes": 218,
+        "min_sampled_support_margin_mm": 5.444119376496776,
+        "max_sampled_joint_abs_rad": 1.670247900549142,
+        "min_required_peak_static_tau_Nm": 0.4278325221639758,
+        "nominal_net_root_Y_from_saved_six_mm": 20.0,
+        "minimum_planned_root_Y_relative_to_saved_six_mm": -65.00000000000003,
+        "is_physical_gait": false
+      },
+      "private_math_trace_sha256": "c32b887f9d14d8598cbd93dedceb07b795a138646aef0462122aa18a31bd88bb",
+      "physics": {
+        "status": "FAIL",
+        "nodes_attempted": 130,
+        "physics_steps": 19425,
+        "min_loaded_leg_count": 3,
+        "failure_phase": "swing_ml",
+        "failure_reason": "COM_outside_actual_support_polygon_-2.040_mm",
+        "failure_margin_mm": -2.0398515097965477,
+        "net_COM_Y_mm": -61.45115147937924,
+        "net_root_Y_mm": -80.66353220054503,
+        "full_cycle_accepted": false
+      },
+      "physics_trace_sha256": "62348b5485595f3cc08d125d341c9da9b036a6f207326b9c6e06eab2d7feaa34",
+      "physical_trace_archive_filename": "foot_mid30_rear80_lat20_dyn03_trace_2ms.json.gz"
+    },
+    {
+      "variant": {
+        "name": "outward_10",
+        "middle_inward_mm": 50,
+        "rear_forward_mm": 80,
+        "rear_out_mm": 10,
+        "final_prep_back_mm": 0
+      },
+      "math": {
+        "status": "SAMPLED_GEOMETRIC_STATIC_CANDIDATE",
+        "sampled_errors": 0,
+        "sampled_nodes": 218,
+        "min_sampled_support_margin_mm": 5.79226845468496,
+        "max_sampled_joint_abs_rad": 1.6999999999999997,
+        "min_required_peak_static_tau_Nm": 0.4271455526720754,
+        "nominal_net_root_Y_from_saved_six_mm": 20.0,
+        "minimum_planned_root_Y_relative_to_saved_six_mm": -65.00000000000003,
+        "is_physical_gait": false
+      },
+      "private_math_trace_sha256": "ac3dca9801afb8c3671874e6015aa89596b1bd0ef32c329e4d279a5e90ea4837",
+      "physics": {
+        "status": "FAIL",
+        "nodes_attempted": 130,
+        "physics_steps": 19421,
+        "min_loaded_leg_count": 3,
+        "failure_phase": "swing_ml",
+        "failure_reason": "COM_outside_actual_support_polygon_-2.075_mm",
+        "failure_margin_mm": -2.074844428567188,
+        "net_COM_Y_mm": -60.943773621738124,
+        "net_root_Y_mm": -81.20424165693544,
+        "full_cycle_accepted": false
+      },
+      "physics_trace_sha256": "c00444294171df535d9493d820e7fabe348992d2275ebe1ab652357718a17137",
+      "physical_trace_archive_filename": "foot_mid50_rear80_lat10_dyn03_trace_2ms.json.gz"
+    }
+  ],
+  "full_gait_proven": false,
+  "physics_replay_parameters": {
+    "dt_s": 0.002,
+    "seconds_per_node": 0.3,
+    "mu": 1.1,
+    "support_policy": "three",
+    "PD": [
+      7,
+      0.32
+    ],
+    "limits_are_research_only": {
+      "joint_abs_rad": 1.7,
+      "torque_abs_Nm": 0.7
+    }
+  },
+  "baseline_provenance": {
+    "pr43": "sampled_static_math_only",
+    "pr44": "10 dynamic negative trials",
+    "pr49": "two local motor-feedback steps PASS independently",
+    "thirdstep_archived_20261105": "additional ML back+BL forward, no BR, negative net COM"
+  },
+  "input_sha256": {
+    "FNK0052_CAD30_local_MuJoCo_experiments_2026-11-03.zip": "f2986c6256a19df59769db2ce0bdd9ea4cfee1ca36c27fb2d221da8c2a0afd53",
+    "Hexapod_Pupper_Physical_Baseline_2026-11-04_no_STL.zip": "df7766b41aa8fd7c78a0f16d5627236eaaf1bc71327d46a9caf9f439ac403650",
+    "Hexapod_MathFirst_4Foot_Crawl_Candidate_20261105_no_CAD.zip": "bed03b9b58d1caab8734f17cf0362e0175c782b674a7ce205ee080c968cac130",
+    "hexapod_rear_third_step_20261105_no_STL.zip": "3e8fb93e120a80e0f24df95f12bfd161a7fbe27fc9886cf28249c07b31d7b7cc"
+  },
+  "interpretation": "All five sampled plans pass static checks but all five physical replays FAIL at or before first middle swing. No completed four-legged cycle or net forward motion. All changes to planned body-back do not change minimum pre-ML target -65mm from saved six. Modified footprint marginally delays failure, not proof of reachability."
+}
