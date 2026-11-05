@@ -187,7 +187,8 @@ def run(cad_root, trace, checkpoint, substeps, mu, out):
                                'min_stance_Fz_N': min(fz[leg] for leg in STANCE)})
     baseline_reproduced = substeps != 1 or (error_max < 1e-4 and fz_error_max < 0.25)
     result = {
-        'status': 'REPLAY_PASS' if baseline_reproduced else 'BASELINE_REPRODUCTION_FAILED',
+        'status': ('BASELINE_REPRODUCED' if baseline_reproduced else 'BASELINE_REPRODUCTION_FAILED')
+                  if substeps == 1 else 'PHYSICS_RUN_REQUIRES_BASELINE_FIDELITY_CHECK',
         'claim': 'locked 500Hz command physical replay; NOT actual 0.5ms online feedback',
         'input_trace_sha256': sha256(trace), 'checkpoint_sha256': sha256(checkpoint),
         'model': 'original private CAD30 source/mjcf/scene_local30_nominal.xml',
