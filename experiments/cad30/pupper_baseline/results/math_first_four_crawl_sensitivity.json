@@ -119,4 +119,3 @@
   "unexpected_nontibia_floor_contact_count": 0,
   "limitations": "Collision checks are mj_forward at sampled virtual qpos, not mj_step dynamics. Model contact at toes can differ from real contact."
 }
-
