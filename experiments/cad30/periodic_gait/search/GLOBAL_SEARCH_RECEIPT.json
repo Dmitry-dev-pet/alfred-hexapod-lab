@@ -1,0 +1,89 @@
+{
+  "schema": "cad30-global-period-math-bounded-report/1",
+  "date_utc": "2026-11-05",
+  "status": "NOT_FOUND_WITHIN_BOUNDS_NOT_IMPOSSIBILITY",
+  "source_refs": {
+    "cad30_xml": {
+      "sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+      "bytes": 927
+    },
+    "six_baseline": {
+      "sha256": "bfcaf5a8332844b1294162ea90fe9b326c1c8cd4e38a5d2576c77ac52d18d231",
+      "bytes": 34728
+    },
+    "front_raised_baseline": {
+      "sha256": "52632a8fc3612ad8252fad75d17cb4fa42c2abdfef2eb2d1684117b70b655951",
+      "bytes": 25755
+    }
+  },
+  "source_data": "Freenove FNK0052 original CAD30 nominal mesh model; mesh data/actual hardware excluded from this public report",
+  "model_mass_kg": 1.8048682,
+  "baseline_original_six_COM_Y_m": 0.008034753922833265,
+  "scope": {
+    "middle_inward_mm": [
+      0,
+      20,
+      40,
+      60
+    ],
+    "middle_forward_mm": [
+      -20,
+      0,
+      20
+    ],
+    "rear_outward_mm": [
+      0,
+      20
+    ],
+    "rear_forward_mm": [
+      30,
+      60,
+      90
+    ],
+    "foot_lift_orders": 24,
+    "delta_period_mm": 20,
+    "periods_target": 3,
+    "initial_cycle_COM_Y_min_m": -0.032,
+    "planned_2D_tripod_margin_mm": 10,
+    "3D_measured_static_margin_gate_mm": 9.5,
+    "3D_IK_toe_gate_mm": 0.8,
+    "joint_abs_gate_rad": 1.7,
+    "static_peak_tau_gate_Nm": 0.7
+  },
+  "counts": {
+    "2D_scored_trajectories": 1728,
+    "2D_feasible_trajectories": 1728,
+    "distinct_start_footholds_3D_tested": 72,
+    "static_4foot_start_pass": 48,
+    "complete_period_candidates_screened_3D": 96,
+    "complete_period_candidates_3D_pass": 0
+  },
+  "first_3D_failure_reason_counts": {
+    "TOE_IK_OVER_0P8MM": 96
+  },
+  "first_3D_failure_stage_counts": {
+    "swing_mr": 1,
+    "swing_bl": 11,
+    "prepare_br": 44,
+    "prepare_bl": 38,
+    "prepare_mr": 2
+  },
+  "sensitivity_2mm_partial": {
+    "checked": 72,
+    "passing": 0,
+    "complete": false,
+    "first_failure_counts": {
+      "TOE_IK_OVER_TOLERANCE": 70,
+      "ACTUAL_COM_DIFFERS_OVER_8MM": 1,
+      "STATIC_COM_MARGIN_BELOW_9P5MM": 1
+    }
+  },
+  "uncertainties": [
+    "2D footprints and COM targets are virtual and do not establish achievable 6-to-4 preparation",
+    "3D screen uses a bounded local numerical IK solver with fixed body orientation/height and a prescribed interpolation, not full nonlinear contact-implicit optimization",
+    "Failures within the tested solver settings are not mathematical certificates of infeasibility; alternative paths/orientations/heights/order/footprints may exist",
+    "Static LP tests nominated contact forces and is not a dynamic gait proof",
+    "No complete G1 accepted candidate. G2 dynamic MuJoCo period rollout intentionally NOT RUN"
+  ],
+  "decision": "No local foot-by-foot controller search; perform a jointly constrained periodic trajectory optimization or report bounded search, keeping G1 separate from G2"
+}
