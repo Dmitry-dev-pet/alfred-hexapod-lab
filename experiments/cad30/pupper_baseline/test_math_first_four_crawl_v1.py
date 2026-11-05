@@ -37,4 +37,3 @@ class MathTraceVerificationTests(unittest.TestCase):
    if n['phase'].startswith('swing_') and n.get('swing'):
     self.assertEqual(len(n['grounded']),3)
 if __name__=='__main__':unittest.main()
-
