@@ -1,0 +1,121 @@
+{
+  "schema": "cad30-math-only-sensitivity-v1",
+  "cases": [
+    {
+      "mu": 1.1,
+      "torque_cap_Nm": 0.7,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.41173714703660025,
+      "first_failures": []
+    },
+    {
+      "mu": 1.1,
+      "torque_cap_Nm": 0.63,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.41173714703660025,
+      "first_failures": []
+    },
+    {
+      "mu": 1.1,
+      "torque_cap_Nm": 0.5,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.41173714703660025,
+      "first_failures": []
+    },
+    {
+      "mu": 1.1,
+      "torque_cap_Nm": 0.45,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.41173714703660025,
+      "first_failures": []
+    },
+    {
+      "mu": 0.8,
+      "torque_cap_Nm": 0.7,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.42461414641104844,
+      "first_failures": []
+    },
+    {
+      "mu": 0.6,
+      "torque_cap_Nm": 0.7,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.4508695513397999,
+      "first_failures": []
+    },
+    {
+      "mu": 0.3,
+      "torque_cap_Nm": 0.7,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.6545097324518657,
+      "first_failures": []
+    },
+    {
+      "mu": 0.8,
+      "torque_cap_Nm": 0.5,
+      "passing_nodes": 218,
+      "failing_nodes": 0,
+      "max_required_tau_among_passing_Nm": 0.42461414641104844,
+      "first_failures": []
+    },
+    {
+      "mu": 0.3,
+      "torque_cap_Nm": 0.63,
+      "passing_nodes": 205,
+      "failing_nodes": 13,
+      "max_required_tau_among_passing_Nm": 0.6209728724006256,
+      "first_failures": [
+        {
+          "index": 168,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 169,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 170,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 171,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 172,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 173,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 174,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 175,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 176,
+          "phase": "swing_bl"
+        },
+        {
+          "index": 177,
+          "phase": "swing_bl"
+        }
+      ]
+    }
+  ],
+  "unexpected_nonfloor_contact_count": 0,
+  "unexpected_nontibia_floor_contact_count": 0,
+  "limitations": "Collision checks are mj_forward at sampled virtual qpos, not mj_step dynamics. Model contact at toes can differ from real contact."
+}
