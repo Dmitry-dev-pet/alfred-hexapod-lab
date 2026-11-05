@@ -13,7 +13,7 @@ LEGS=('ml','mr','bl','br')
 def dynamic_qp(m,d,site_ids,active=('ml','mr'),*,mu=1.1,min_fz=.2,
                swing_accel=.5, joint_accel_cap=35., angular_accel_cap=10.,
                linear_accel_cap=1.5, torque_util=.9, angular_target=None,
-               prev_tau=None):
+               prev_tau=None, forward_accel=0., forward_weight=0.):
     active=tuple(active);ns=len(active);nv=m.nv;nu=m.nu
     if ns<2 or ns>4: raise ValueError('2..4 supports only')
     n=nv+nu+3*ns;si=nv;fi=nv+nu
@@ -66,10 +66,23 @@ def dynamic_qp(m,d,site_ids,active=('ml','mr'),*,mu=1.1,min_fz=.2,
         q[3:6]-=2.*(12./(angular_accel_cap**2))*np.asarray(angular_target)
     if prev_tau is not None:
         P[si:fi]+=2.*(.1/(caps**2));q[si:fi]-=2.*(.1/(caps**2))*np.asarray(prev_tau)
-    x=solve_qp(np.diag(P),q,G=np.asarray(G),h=np.asarray(h),A=A,b=b,lb=lb,ub=ub,solver='daqp')
+    Q=np.diag(P)
+    if forward_accel and forward_weight:
+        if not (0. < forward_accel <= 8. and 0. <= forward_weight <= 500.):
+            raise ValueError('Forward swing objective exceeds research bounds')
+        # QP soft objective for rear-foot world Y acceleration.
+        # It must not silently be counted as a physical foothold placement.
+        for leg in ('bl','br'):
+            if leg in active:continue
+            jy=J[leg][1]
+            target=float(forward_accel-Jdotv[leg][1])
+            Q[:nv,:nv]+=2.*forward_weight*np.outer(jy,jy)
+            q[:nv]-=2.*forward_weight*target*jy
+    x=solve_qp(Q,q,G=np.asarray(G),h=np.asarray(h),A=A,b=b,lb=lb,ub=ub,solver='daqp')
     if x is None:return None
     dd=x[:nv];tau=x[si:fi];forces=x[fi:].reshape(-1,3)
     return {'qdd':dd,'tau':tau,'forces':forces,
             'eq_res':float(np.max(abs(A@x-b))),'ineq_res':float(max(0.,np.max(np.asarray(G)@x-np.asarray(h)))),
             'max_motor_frac':float(np.max(abs(tau)/caps)),
-            'swing_z_accel':{k:float(J[k][2]@dd+Jdotv[k][2]) for k in LEGS if k not in active}}
+            'swing_z_accel':{k:float(J[k][2]@dd+Jdotv[k][2]) for k in LEGS if k not in active},
+            'swing_y_accel':{k:float(J[k][1]@dd+Jdotv[k][1]) for k in LEGS if k not in active}}

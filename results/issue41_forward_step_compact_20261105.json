@@ -1,0 +1,174 @@
+{
+  "schema": "alfred-hexapod-issue41-forward-rear-pair-v1",
+  "source_model": "Freenove FNK0052 CAD30 nominal, 30 original private CAD meshes",
+  "source_model_xml_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+  "safe_state_sha256": "fdf2ab92241e074b848e68090d155b173150398534543a83faf8c84885a02884",
+  "runtime": {
+    "mujoco": "3.14.0",
+    "mink": "1.4.0",
+    "qpsolvers": "4.13.0",
+    "daqp": "0.11.0",
+    "numpy": "2.2.4",
+    "scipy": "1.18.1"
+  },
+  "python": "3.13.5",
+  "disclaimer": "Single nominal model; repeated deterministic exploration (not out-of-sample robustness). The 20-mm forward COM target has not passed.",
+  "goals": {
+    "actual_rear_pair_flight_then_land": true,
+    "final_four_load_min_N": 0.2,
+    "COM_forward_goal_mm": 20.0,
+    "model_max_joint_rad": 1.7,
+    "model_max_tau_Nm": 0.7,
+    "minimum_two_loaded_supports": 2
+  },
+  "selected_parameters": {
+    "rear_advance_mm": 10,
+    "landing_body_shift_mm": 6,
+    "forward_accel": 4.5,
+    "forward_weight": 20.0,
+    "qp_duration_s": 0.02,
+    "return_ramp_s": 0.24,
+    "final_hold_s": 0.7,
+    "soft_joint_gain": 5.0,
+    "soft_joint_threshold": 1.63
+  },
+  "runs": {
+    "baseline_4to2to4_mu1p1": {
+      "source_file": "baseline_4to2to4_mu1p1.json",
+      "sha256": "f6392a207c68f2b66bfa7e9d965feb8263ad527f21d97403a5e1ed52a19016f8",
+      "bytes": 1034379,
+      "status": "TRANSIENT_TWO_SUPPORT_AND_FOUR_SUPPORT_RECOVERED",
+      "actual_two_support_s": 0.238,
+      "actual_forward_airborne_s": 0.0,
+      "forward_COM_mm": 0.013890111370323463,
+      "rear_final_forward_mm": {
+        "bl": -5.737850368411179,
+        "br": -6.585998523616632
+      },
+      "two_support_lost_steps": 0,
+      "last_100_four_loaded_steps": 100,
+      "max_joint_abs_rad": 1.666504,
+      "max_torque_Nm": 0.643493,
+      "qp_solver_failed": false,
+      "recorded_2ms_steps": 1910,
+      "recorded_qpos_20ms": 191
+    },
+    "rear_5mm_mu1p1": {
+      "source_file": "rear_5mm_mu1p1.json",
+      "sha256": "1a471fb2386533c52246faded08e1dca6ccda5ad77663bd8bc090a97a3f51b4a",
+      "bytes": 962917,
+      "status": "RESEARCH_GATE_FAILED",
+      "actual_two_support_s": 0.198,
+      "actual_forward_airborne_s": 0.194,
+      "forward_COM_mm": 10.377778827787301,
+      "rear_final_forward_mm": {
+        "bl": 4.604223913261069,
+        "br": 4.646568435319271
+      },
+      "two_support_lost_steps": 0,
+      "last_100_four_loaded_steps": 100,
+      "max_joint_abs_rad": 1.666504,
+      "max_torque_Nm": 0.63,
+      "qp_solver_failed": false,
+      "recorded_2ms_steps": 1780,
+      "recorded_qpos_20ms": 178
+    },
+    "rear_10mm_mu1p1": {
+      "source_file": "rear_10mm_mu1p1.json",
+      "sha256": "2cfc8b02b9b166259697fe63a00f765020e732e08e9a70234b978e4f5128744a",
+      "bytes": 963519,
+      "status": "PARTIAL_REAR_PAIR_FORWARD_STEP_LT20MM",
+      "actual_two_support_s": 0.196,
+      "actual_forward_airborne_s": 0.192,
+      "forward_COM_mm": 10.32886552562593,
+      "rear_final_forward_mm": {
+        "bl": 7.847260509847298,
+        "br": 7.804910048399449
+      },
+      "two_support_lost_steps": 0,
+      "last_100_four_loaded_steps": 100,
+      "max_joint_abs_rad": 1.666504,
+      "max_torque_Nm": 0.63,
+      "qp_solver_failed": false,
+      "recorded_2ms_steps": 1780,
+      "recorded_qpos_20ms": 178
+    },
+    "rear_10mm_mu0p8": {
+      "source_file": "rear_10mm_mu0p8.json",
+      "sha256": "89ab3a7b3dec29fabf482c5d7ecf3e81f5017a119425e73804a09f2d8bbbdaaa",
+      "bytes": 953362,
+      "status": "RESEARCH_GATE_FAILED",
+      "actual_two_support_s": 0.18,
+      "actual_forward_airborne_s": 0.18,
+      "forward_COM_mm": 11.946407840739758,
+      "rear_final_forward_mm": {
+        "bl": 9.025693329041129,
+        "br": 9.058554497372528
+      },
+      "two_support_lost_steps": 6,
+      "last_100_four_loaded_steps": 100,
+      "max_joint_abs_rad": 1.667041,
+      "max_torque_Nm": 0.649551,
+      "qp_solver_failed": false,
+      "recorded_2ms_steps": 1771,
+      "recorded_qpos_20ms": 177
+    },
+    "rear_10mm_mu0p6": {
+      "source_file": "rear_10mm_mu0p6.json",
+      "sha256": "422da0fe19c5640eef65f40a6dbfe6997a37608698562add11c4ef0a5ad310ca",
+      "bytes": 944685,
+      "status": "RESEARCH_GATE_FAILED",
+      "actual_two_support_s": 0.0,
+      "actual_forward_airborne_s": 0.0,
+      "forward_COM_mm": 29.80381071612441,
+      "rear_final_forward_mm": {
+        "bl": 10.247738711349985,
+        "br": 10.270555791670855
+      },
+      "two_support_lost_steps": 69,
+      "last_100_four_loaded_steps": 100,
+      "max_joint_abs_rad": 1.666575,
+      "max_torque_Nm": 0.7,
+      "qp_solver_failed": true,
+      "recorded_2ms_steps": 1770,
+      "recorded_qpos_20ms": 177
+    },
+    "rear_10mm_mu0p3": {
+      "source_file": "rear_10mm_mu0p3.json",
+      "sha256": "12fe9ed98e03eb17b3379dc61c14a5d9d571d39789cdf50c3956e83daa6d4640",
+      "bytes": 952396,
+      "status": "RESEARCH_GATE_FAILED",
+      "actual_two_support_s": 0.0,
+      "actual_forward_airborne_s": 0.0,
+      "forward_COM_mm": 12.456240138518531,
+      "rear_final_forward_mm": {
+        "bl": -6.944316074659923,
+        "br": -6.772185800039631
+      },
+      "two_support_lost_steps": 40,
+      "last_100_four_loaded_steps": 100,
+      "max_joint_abs_rad": 1.665697,
+      "max_torque_Nm": 0.7,
+      "qp_solver_failed": true,
+      "recorded_2ms_steps": 1770,
+      "recorded_qpos_20ms": 177
+    },
+    "rear_20mm_preflight": {
+      "source_file": "rear_20mm_preflight.json",
+      "sha256": "0881f30914be46cedcc7058bab6da4156ed0a89c48dcadecbc9cbba9c40903c2",
+      "bytes": 424,
+      "status": "TERMINAL_PREFLIGHT_BLOCKED",
+      "actual_two_support_s": null,
+      "actual_forward_airborne_s": null,
+      "forward_COM_mm": null,
+      "rear_final_forward_mm": {},
+      "two_support_lost_steps": null,
+      "last_100_four_loaded_steps": null,
+      "max_joint_abs_rad": null,
+      "max_torque_Nm": null,
+      "qp_solver_failed": null,
+      "recorded_2ms_steps": 0,
+      "recorded_qpos_20ms": 0
+    }
+  }
+}
