@@ -12,7 +12,7 @@ HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE))
 from mr_contact_continuation import Trial
 
-def run(cad,repo,six,math,physics,optimized,out,raw=False):
+def run(cad,repo,six,math,physics,optimized,out,raw=False,touchdown_feedback=False):
     sys.path.insert(0,str(repo/'experiments/cad30/contact_optimization'))
     from contact_aware_shooting import PhysicalTrial,Command
     from replay_six_to_ml import replay_six_to_contact
@@ -27,11 +27,12 @@ def run(cad,repo,six,math,physics,optimized,out,raw=False):
     nexttrial=Trial(cad,repo,HERE/'results/after_ml_physical_checkpoint_20261105.json',mu=1.1,leg='mr')
     next_result,frames=nexttrial.run(step_mm=33,clearance_mm=18,swing_node_s=.35,
             pre_shift_xy_mm=(0.,20.),ml_servo_bias_rad=(0.,-.075,.055),hold_s=.6,
-            live_model_data=(m,d,outer.last_motor_goals),save_raw=raw)
+            live_model_data=(m,d,outer.last_motor_goals),save_raw=raw,
+            touchdown_feedback=touchdown_feedback)
     result={'schema':'cad30-real-six-to-ml-and-mr-contiguous-v1','model_dt_s':.002,
       'prelude_status':prelude['status'],'prelude_physics_steps':prelude['physics_steps'],
       'ml_status':ml['status'],'ml_actual_world_forward_mm':ml['actual_ml_world_forward_mm'],
-      'mr_status':next_result['status'],'mr_accepted_strict':next_result['accepted'],
+      'mr_status':next_result['status'],'mr_touchdown_feedback_enabled':touchdown_feedback,'mr_accepted_strict':next_result['accepted'],
       'mr_physically_air_s':next_result['zero_contact_tibia_total_s'],
       'mr_mesh_air_s':next_result['mesh_above_2mm_no_contact_sampled_s'],
       'mr_actual_toe_world_forward_mm':next_result['physical_toe_forward_mm'],
@@ -63,8 +64,8 @@ def main():
  p.add_argument('--cad-root',type=Path,required=True);p.add_argument('--repo-root',type=Path,required=True)
  p.add_argument('--six-state',type=Path,required=True);p.add_argument('--math-trace',type=Path,required=True)
  p.add_argument('--physical-trace',type=Path,required=True);p.add_argument('--optimized-ml',type=Path,required=True)
- p.add_argument('--out',type=Path,required=True);p.add_argument('--raw',action='store_true')
+ p.add_argument('--out',type=Path,required=True);p.add_argument('--raw',action='store_true');p.add_argument('--touchdown-feedback',action='store_true')
  a=p.parse_args()
- res=run(a.cad_root,a.repo_root,a.six_state,a.math_trace,a.physical_trace,a.optimized_ml,a.out,raw=a.raw)
+ res=run(a.cad_root,a.repo_root,a.six_state,a.math_trace,a.physical_trace,a.optimized_ml,a.out,raw=a.raw,touchdown_feedback=a.touchdown_feedback)
  print(json.dumps({k:v for k,v in res.items() if k!='mr_details'},indent=2))
 if __name__=='__main__':main()
