@@ -1,0 +1,205 @@
+{
+  "schema": "cad30-contact-chatter-audit-v1",
+  "source_sha256": "84b7036a909879d472e4c8c4d9b694d06b1619e3f84e7c193d5f726ebaef18cf",
+  "analysis": "post-hoc only; NO simulation and NO control-loop test",
+  "dt_s": 0.002,
+  "recorded_frames": 3000,
+  "swing": {
+    "phase": "swing_mr",
+    "required_support": [
+      "ml",
+      "bl",
+      "br"
+    ],
+    "threshold_N": 0.2,
+    "frames": 1575,
+    "failed_frames": 8,
+    "failure_duration_s": 0.016,
+    "max_consecutive_failed_frames": 1,
+    "failure_events": [
+      {
+        "trace_index": 2619,
+        "time_s": 44.17,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 5.359849,
+          "br": 6.992204
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.5312578362609903
+        },
+        "next_fz_for_missing_N": {
+          "ml": 7.659898386724985
+        }
+      },
+      {
+        "trace_index": 2631,
+        "time_s": 44.194,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 6.251497,
+          "br": 4.991331
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.445962405852468
+        },
+        "next_fz_for_missing_N": {
+          "ml": 5.78079966107207
+        }
+      },
+      {
+        "trace_index": 2642,
+        "time_s": 44.216,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 6.573449,
+          "br": 4.438692
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.3873737296685973
+        },
+        "next_fz_for_missing_N": {
+          "ml": 4.971595485570288
+        }
+      },
+      {
+        "trace_index": 2652,
+        "time_s": 44.236,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 5.510306,
+          "br": 7.103662
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.4175870713516487
+        },
+        "next_fz_for_missing_N": {
+          "ml": 4.291234109055873
+        }
+      },
+      {
+        "trace_index": 2662,
+        "time_s": 44.256,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 6.664452,
+          "br": 4.632107
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.3036791939978825
+        },
+        "next_fz_for_missing_N": {
+          "ml": 4.103256093739571
+        }
+      },
+      {
+        "trace_index": 2672,
+        "time_s": 44.276,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 6.330061,
+          "br": 5.344589
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.266828422449694
+        },
+        "next_fz_for_missing_N": {
+          "ml": 3.930027765145458
+        }
+      },
+      {
+        "trace_index": 2682,
+        "time_s": 44.296,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 6.381646,
+          "br": 5.370097
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.2250365408435444
+        },
+        "next_fz_for_missing_N": {
+          "ml": 4.014407956284684
+        }
+      },
+      {
+        "trace_index": 2692,
+        "time_s": 44.316,
+        "missing_support": [
+          "ml"
+        ],
+        "observed_fz_N": {
+          "ml": 0.0,
+          "bl": 5.623331,
+          "br": 7.48401
+        },
+        "prev_fz_for_missing_N": {
+          "ml": 2.2449755659466377
+        },
+        "next_fz_for_missing_N": {
+          "ml": 4.048607316876291
+        }
+      }
+    ],
+    "gap_between_failures_s": [
+      0.024,
+      0.022,
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "mean_gap_s": 0.020857,
+    "std_gap_s": 0.001457,
+    "missing_by_leg": {
+      "ml": 8,
+      "bl": 0,
+      "br": 0
+    },
+    "strict_pass": false
+  },
+  "final_hold": {
+    "phase": "final_hold",
+    "required_support": [
+      "ml",
+      "mr",
+      "bl",
+      "br"
+    ],
+    "frames": 300,
+    "failed_frames": 14,
+    "fraction_four_loaded": 0.953333333,
+    "last_failed_time_s": 44.43,
+    "continuous_good_tail_s": 0.5,
+    "strict_pass": false
+  },
+  "overall_strict_contact_pass": false,
+  "interpretation_guardrails": [
+    "Fz=0 is an observed MuJoCo force sample; the trace has no per-contact geom pair list or mesh Z at this frame.",
+    "Quasi-periodic isolated force losses are not proven to be numerical artifacts.",
+    "Do not replace an instantaneous >=0.2N gate with smoothing/averaging without an explicit new protocol.",
+    "This trace alone cannot test dt, solver, solref, friction or true robot hardware."
+  ]
+}
