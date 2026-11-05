@@ -1,0 +1,55 @@
+{
+  "schema": "cad30-six-wave-60s-diag/v1",
+  "date_utc": "2026-11-05",
+  "status": "FULL_DURATION_MOTION_PASS__STRICT_FIVE_FORCE_SUPPORT_FAIL",
+  "model": "Freenove FNK0052 CAD30 nominal with 30/32 pinned Freenove STL, missing visual only",
+  "source_mujoco_xml_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+  "source_report_sha256": "f1b97e640fdef466305e02cff31519f5096ada7e2be87853cb2f3d94901ee023",
+  "source_force_analysis_sha256": "3ae8cdd568a2c93fbafc4df06cc2fc08a3f2b79d88be37ac2b307004823f75c4",
+  "mujoco": "3.14.0",
+  "simulation_s": 60.0,
+  "dt_s": 0.002,
+  "physical_steps": 30000,
+  "control": {
+    "gait": "wave",
+    "one_swing_leg_at_a_time_scheduled": true,
+    "step_length_mm": 20.0,
+    "lift_height_mm": 12.0,
+    "period_s": 3.0,
+    "pd_Kp": 7.0,
+    "pd_Kd": 0.32,
+    "conditional_torque_limit_Nm": 0.7,
+    "mu_nominal": 1.1
+  },
+  "results": {
+    "advance_m": 0.378953,
+    "max_tilt_deg": 0.533,
+    "max_command_torque_Nm": 0.37102,
+    "saturation_fraction": 0.0,
+    "IK_max_joint_abs_rad": 1.58961,
+    "max_IK_error_mm": 0.013,
+    "mass_kg": 1.804868,
+    "minimum_geom_ground_contact_count_2ms": 3,
+    "minimum_force_loaded_leg_count_2ms": 2,
+    "force_threshold_N": 0.2,
+    "force_loaded_leg_histogram": {
+      "6": 3092,
+      "5": 26858,
+      "4": 47,
+      "3": 2,
+      "2": 1
+    },
+    "fraction_of_2ms_ticks_at_least_5_loaded": 0.9983333333333333,
+    "maximum_contiguous_below_5_s": 0.004,
+    "trajectory_frames_25Hz": 1501,
+    "force_samples_50Hz": 3000,
+    "stopped_or_fell": false
+  },
+  "limitations": [
+    "Not a robust strictly five-leg contact gait: 50 of 30000 2ms frames have Fz<.2N on at least 2 legs; one timestep only two legs above threshold",
+    "Actual Freenove hardware torque, servo calibration and ground friction unknown",
+    "Viewer masks sampled at 25Hz may miss 2ms dropouts; full per-step count audit is aggregated in report",
+    "Fz samples archived at 50Hz; no full 2ms Fz time series saved for this run",
+    "No root teleport or foot pinning; root motion comes from MuJoCo dynamics."
+  ]
+}
