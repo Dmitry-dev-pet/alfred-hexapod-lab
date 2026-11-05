@@ -1,0 +1,828 @@
+{
+  "schema": "alfred-cad30-idto-full-4-swing-bounded-g1-v1",
+  "date_utc": "2026-11-05",
+  "status": "G1_FULL_PERIOD_NOT_FOUND",
+  "preparation_from_original_six": "NOT_RUN",
+  "source": "private original CAD30, full collision meshes in Drake and MuJoCo, no binary CAD in this receipt",
+  "upstream_idto_commit": "de0629c7811aa9b330e56c4385629005b09495f0",
+  "drake_version": "1.30.0",
+  "mujoco_version": "3.14.0",
+  "known_initialization": "29 preplanned nodes from PR #43, first node 106 = mathematically prescribed post-prep four support; not physically reached in these trials",
+  "numeric_runs": [
+    {
+      "label": "baseline_fast_80",
+      "time_step_s": 0.1,
+      "period_duration_s": 2.8000000000000003,
+      "idto_iterations": 80,
+      "max_iters_configured": 80,
+      "contact_stiffness_N_m": 2000.0,
+      "contact_smoothing_factor_m": 0.01,
+      "unactuated_equality_constraints_requested": false,
+      "status": "MAX_ITERATIONS_REACHED",
+      "final_printed_cost_approx": 359000.0,
+      "stdout_sha256": "ef25d2264e3452e202791545a9e0d3173cd1591a96d07841dd6c306a41bfddbe",
+      "optimized_q_sha256": "3e63e71d603030e6d0582be8b1f2438a0f7621bb22cb219b7b5e9cca895ed542",
+      "optimized_v_sha256": "78343044905e0d37000585ef03cd4543ffa49d4331885c17da5feef9403ba78a",
+      "optimized_tau_sha256": "747d74b7f3c2ba07b30ec3ee6bbc3249e48a14909692e703ca616b71dedb56ba",
+      "kinematic_audit": {
+        "n_nodes": 29,
+        "root_world_y_translation_mm": 19.754671736043644,
+        "root_y_target_mm": 20.000000000000004,
+        "terminal_leg_joint_closure_max_rad": 0.001222133972592715,
+        "terminal_velocity_closure_max_rad_per_s": 0.8860973752774415,
+        "max_abs_leg_joint_rad": 1.611092404651719,
+        "max_abs_leg_tau_Nm": 3.258980477297291,
+        "max_abs_head_tau_Nm": 0.008418750539149904,
+        "max_abs_floating_generalized_force": 49.60337159572961,
+        "toe_end_gap_mm": {
+          "ml": 0.3292,
+          "mr": 0.3205,
+          "bl": 0.4225,
+          "br": 0.3798,
+          "fl": 78.8433,
+          "fr": 78.8286
+        },
+        "toe_gap_max_mm": {
+          "ml": 10.04,
+          "mr": 11.3465,
+          "bl": 11.6233,
+          "br": 10.4365,
+          "fl": 79.0284,
+          "fr": 78.9612
+        },
+        "toe_gap_min_mm": {
+          "ml": -0.3022,
+          "mr": -0.0503,
+          "bl": -0.0021,
+          "br": -0.0021,
+          "fl": 78.5344,
+          "fr": 78.5353
+        },
+        "root_prep_not_included": true,
+        "swing_kinematic_screen": {
+          "ml": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.04,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "mr": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.3465,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "bl": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.6233,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "br": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.4365,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          }
+        },
+        "kinematic_four_swing_reference_retained": true,
+        "within_research_tau_cap": false,
+        "periodic_joint_screen_pass": true,
+        "periodic_velocity_screen_pass": false,
+        "physical_gait_verified": false,
+        "notes": [
+          "MuJoCo mj_forward only: NO MuJoCo dynamics, NO actual Fz, NO hard contact/drive constraints.",
+          "IDTO soft-contact force and theta-optimal generalized torques are not hardware PD commands."
+        ]
+      },
+      "preliminary_gates": {
+        "status": "REJECT",
+        "reasons": [
+          "LESS_THAN_20MM_ROOT_ADVANCE",
+          "VELOCITIES_NOT_PERIODIC",
+          "LEG_TORQUE_MODEL_CAP",
+          "FOOT_NOT_PERIODIC_ML",
+          "FOOT_NOT_PERIODIC_MR",
+          "FOOT_NOT_PERIODIC_BL",
+          "FOOT_NOT_PERIODIC_BR"
+        ],
+        "physical_gait_proven": false,
+        "unactuated_force_residual_not_hard_certified": true,
+        "six_to_four_preparation_physically_verified": false
+      }
+    },
+    {
+      "label": "slow_default_70",
+      "time_step_s": 0.3,
+      "period_duration_s": 8.4,
+      "idto_iterations": 70,
+      "max_iters_configured": 70,
+      "contact_stiffness_N_m": 2000.0,
+      "contact_smoothing_factor_m": 0.01,
+      "unactuated_equality_constraints_requested": false,
+      "status": "MAX_ITERATIONS_REACHED",
+      "final_printed_cost_approx": 1030000.0,
+      "stdout_sha256": "42db68985b04a9dcb27db1357bb798b22a53997cdbe4383ca64bb1f70cb9d34d",
+      "optimized_q_sha256": "3b3a21fc2b18107d3241e97b964e699238d95f40b04b8ab171f824863d8f0dd1",
+      "optimized_v_sha256": "1c0ec53a1c8fd632e89d0806c807451fa23961cf289b5f9bcd677e47a8e4c492",
+      "optimized_tau_sha256": "b75e2cc52156cf94b950f363108331dde7348e8b078ace95c6432101786a11f8",
+      "kinematic_audit": {
+        "n_nodes": 29,
+        "root_world_y_translation_mm": 19.86399316805298,
+        "root_y_target_mm": 20.000000000000004,
+        "terminal_leg_joint_closure_max_rad": 0.001475281805547013,
+        "terminal_velocity_closure_max_rad_per_s": 0.2968266986972345,
+        "max_abs_leg_joint_rad": 1.612796452663098,
+        "max_abs_leg_tau_Nm": 2.291268411125337,
+        "max_abs_head_tau_Nm": 0.008305087984897623,
+        "max_abs_floating_generalized_force": 41.36154749956074,
+        "toe_end_gap_mm": {
+          "ml": 0.3252,
+          "mr": 0.3241,
+          "bl": 0.3489,
+          "br": 0.3375,
+          "fl": 78.8524,
+          "fr": 78.8388
+        },
+        "toe_gap_max_mm": {
+          "ml": 10.2224,
+          "mr": 11.5601,
+          "bl": 11.6878,
+          "br": 10.4961,
+          "fl": 79.0206,
+          "fr": 78.9689
+        },
+        "toe_gap_min_mm": {
+          "ml": -0.158,
+          "mr": 0.0,
+          "bl": -0.0021,
+          "br": -0.0021,
+          "fl": 78.5344,
+          "fr": 78.5353
+        },
+        "root_prep_not_included": true,
+        "swing_kinematic_screen": {
+          "ml": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.2224,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "mr": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.5601,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "bl": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.6878,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "br": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.4961,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          }
+        },
+        "kinematic_four_swing_reference_retained": true,
+        "within_research_tau_cap": false,
+        "periodic_joint_screen_pass": true,
+        "periodic_velocity_screen_pass": false,
+        "physical_gait_verified": false,
+        "notes": [
+          "MuJoCo mj_forward only: NO MuJoCo dynamics, NO actual Fz, NO hard contact/drive constraints.",
+          "IDTO soft-contact force and theta-optimal generalized torques are not hardware PD commands."
+        ]
+      },
+      "preliminary_gates": {
+        "status": "REJECT",
+        "reasons": [
+          "LESS_THAN_20MM_ROOT_ADVANCE",
+          "VELOCITIES_NOT_PERIODIC",
+          "LEG_TORQUE_MODEL_CAP",
+          "FOOT_NOT_PERIODIC_ML",
+          "FOOT_NOT_PERIODIC_MR",
+          "FOOT_NOT_PERIODIC_BL",
+          "FOOT_NOT_PERIODIC_BR"
+        ],
+        "physical_gait_proven": false,
+        "unactuated_force_residual_not_hard_certified": true,
+        "six_to_four_preparation_physically_verified": false
+      }
+    },
+    {
+      "label": "slow_sharper_contact_70",
+      "time_step_s": 0.3,
+      "period_duration_s": 8.4,
+      "idto_iterations": 70,
+      "max_iters_configured": 70,
+      "contact_stiffness_N_m": 3000.0,
+      "contact_smoothing_factor_m": 0.002,
+      "unactuated_equality_constraints_requested": false,
+      "status": "MAX_ITERATIONS_REACHED",
+      "final_printed_cost_approx": 6630.0,
+      "stdout_sha256": "ddb084a4b490213a22c5abf681a48bca27e31ee79697728ac123b806a05217a2",
+      "optimized_q_sha256": "c3dc24c6a9deff492d56f499997504b9942781728d679998b865b62e1804971f",
+      "optimized_v_sha256": "60d46907784bc6cfdaa6ecae4356d2e4db1bfb02e6947a6f8db1f736ad9e3d06",
+      "optimized_tau_sha256": "dbc011aaefe2d2ff08c232b49c5df3fb1b3a6695c328012a4e20a346b33ca6d6",
+      "kinematic_audit": {
+        "n_nodes": 29,
+        "root_world_y_translation_mm": 19.977118063623532,
+        "root_y_target_mm": 20.000000000000004,
+        "terminal_leg_joint_closure_max_rad": 0.00046989553549803276,
+        "terminal_velocity_closure_max_rad_per_s": 0.2991547081078154,
+        "max_abs_leg_joint_rad": 1.612285015094737,
+        "max_abs_leg_tau_Nm": 0.7693300185805684,
+        "max_abs_head_tau_Nm": 0.008303144943957536,
+        "max_abs_floating_generalized_force": 5.050650221962439,
+        "toe_end_gap_mm": {
+          "ml": -0.0128,
+          "mr": -0.0108,
+          "bl": -0.0031,
+          "br": -0.004,
+          "fl": 78.5259,
+          "fr": 78.5282
+        },
+        "toe_landmark_world_y_delta_mm": {
+          "ml": 19.957,
+          "mr": 19.965,
+          "bl": 20.015,
+          "br": 19.993,
+          "fl": 19.97,
+          "fr": 19.973
+        },
+        "toe_gap_max_mm": {
+          "ml": 10.066,
+          "mr": 11.4042,
+          "bl": 11.5281,
+          "br": 10.3369,
+          "fl": 78.5753,
+          "fr": 78.5663
+        },
+        "toe_gap_min_mm": {
+          "ml": -0.4786,
+          "mr": -0.1983,
+          "bl": -0.0517,
+          "br": -0.0414,
+          "fl": 78.4988,
+          "fr": 78.5074
+        },
+        "root_prep_not_included": true,
+        "swing_kinematic_screen": {
+          "ml": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.066,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "mr": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.4042,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "bl": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.5281,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "br": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.3369,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          }
+        },
+        "kinematic_four_swing_reference_retained": true,
+        "within_research_tau_cap": false,
+        "periodic_joint_screen_pass": true,
+        "periodic_velocity_screen_pass": false,
+        "physical_gait_verified": false,
+        "notes": [
+          "MuJoCo mj_forward only: NO MuJoCo dynamics, NO actual Fz, NO hard contact/drive constraints.",
+          "IDTO soft-contact force and theta-optimal generalized torques are not hardware PD commands."
+        ]
+      },
+      "preliminary_gates": {
+        "status": "REJECT",
+        "reasons": [
+          "LESS_THAN_20MM_ROOT_ADVANCE",
+          "VELOCITIES_NOT_PERIODIC",
+          "LEG_TORQUE_MODEL_CAP"
+        ],
+        "physical_gait_proven": false,
+        "unactuated_force_residual_not_hard_certified": true,
+        "six_to_four_preparation_physically_verified": false
+      }
+    },
+    {
+      "label": "intermediate_sharper_contact_70",
+      "time_step_s": 0.5,
+      "period_duration_s": 14.0,
+      "idto_iterations": 70,
+      "max_iters_configured": 70,
+      "contact_stiffness_N_m": 3000.0,
+      "contact_smoothing_factor_m": 0.002,
+      "unactuated_equality_constraints_requested": false,
+      "status": "MAX_ITERATIONS_REACHED",
+      "final_printed_cost_approx": 7990.0,
+      "stdout_sha256": "9b41cec82e3871110a0f0cda03dacf9e4047a6b2a96b872bf0322b12827e8456",
+      "optimized_q_sha256": "ff84c8f9045cf65872011dd8d278da3d570646772ae699807a628bb2ea7485e4",
+      "optimized_v_sha256": "e08b8f7bf5ddc8d163710623064938617b77d8e5343f92bd015d51c668e37422",
+      "optimized_tau_sha256": "b01c432162b1e2ce8470d9c76991d2a7e28d2e449dc2b4e512d265d59a29365a",
+      "kinematic_audit": {
+        "n_nodes": 29,
+        "root_world_y_translation_mm": 19.950363948061447,
+        "root_y_target_mm": 20.000000000000004,
+        "terminal_leg_joint_closure_max_rad": 0.0008110358911659343,
+        "terminal_velocity_closure_max_rad_per_s": 0.1787043568175561,
+        "max_abs_leg_joint_rad": 1.612375400932707,
+        "max_abs_leg_tau_Nm": 0.6774715932162573,
+        "max_abs_head_tau_Nm": 0.008294791436377139,
+        "max_abs_floating_generalized_force": 4.34555608980309,
+        "toe_end_gap_mm": {
+          "ml": -0.0556,
+          "mr": -0.0518,
+          "bl": -0.0252,
+          "br": -0.0254,
+          "fl": 78.4849,
+          "fr": 78.4886
+        },
+        "toe_landmark_world_y_delta_mm": {
+          "ml": 19.897,
+          "mr": 19.897,
+          "bl": 19.984,
+          "br": 19.963,
+          "fl": 19.928,
+          "fr": 19.938
+        },
+        "toe_gap_max_mm": {
+          "ml": 9.8942,
+          "mr": 11.2527,
+          "bl": 11.4018,
+          "br": 10.2262,
+          "fl": 78.6396,
+          "fr": 78.6143
+        },
+        "toe_gap_min_mm": {
+          "ml": -0.6879,
+          "mr": -0.2946,
+          "bl": -0.2104,
+          "br": -0.1955,
+          "fl": 78.2746,
+          "fr": 78.288
+        },
+        "root_prep_not_included": true,
+        "swing_kinematic_screen": {
+          "ml": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 9.8942,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "mr": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.2527,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "bl": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.4018,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "br": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.2262,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          }
+        },
+        "kinematic_four_swing_reference_retained": true,
+        "within_research_tau_cap": true,
+        "periodic_joint_screen_pass": true,
+        "periodic_velocity_screen_pass": false,
+        "physical_gait_verified": false,
+        "notes": [
+          "MuJoCo mj_forward only: NO MuJoCo dynamics, NO actual Fz, NO hard contact/drive constraints.",
+          "IDTO soft-contact force and theta-optimal generalized torques are not hardware PD commands."
+        ]
+      },
+      "preliminary_gates": {
+        "status": "REJECT",
+        "reasons": [
+          "LESS_THAN_20MM_ROOT_ADVANCE",
+          "VELOCITIES_NOT_PERIODIC"
+        ],
+        "physical_gait_proven": false,
+        "unactuated_force_residual_not_hard_certified": true,
+        "six_to_four_preparation_physically_verified": false
+      }
+    },
+    {
+      "label": "very_slow_sharper_contact_60",
+      "time_step_s": 0.9,
+      "period_duration_s": 25.2,
+      "idto_iterations": 60,
+      "max_iters_configured": 60,
+      "contact_stiffness_N_m": 3000.0,
+      "contact_smoothing_factor_m": 0.002,
+      "unactuated_equality_constraints_requested": false,
+      "status": "MAX_ITERATIONS_REACHED",
+      "final_printed_cost_approx": 9010.0,
+      "stdout_sha256": "f4fb84908780e2e0d250e595e3c36ea1f57a61127eef76a3fc3ec09c9e44521c",
+      "optimized_q_sha256": "27351b7547e66fd2f3720d27bad3e2a87040399491c5a44273bb799bfda4c09a",
+      "optimized_v_sha256": "8bd09e6e26196b3e199f52d063b745aa2764812f7e26d991f9f7ec99004829b1",
+      "optimized_tau_sha256": "b31326dda987941affbef6aa0313cf90637f8c5cfe9caf652a503ed267d2d958",
+      "kinematic_audit": {
+        "n_nodes": 29,
+        "root_world_y_translation_mm": 19.882616215996393,
+        "root_y_target_mm": 20.000000000000004,
+        "terminal_leg_joint_closure_max_rad": 0.0028292161991758658,
+        "terminal_velocity_closure_max_rad_per_s": 0.09831317090712893,
+        "max_abs_leg_joint_rad": 1.612941338539732,
+        "max_abs_leg_tau_Nm": 0.6724665978214481,
+        "max_abs_head_tau_Nm": 0.008291608227084161,
+        "max_abs_floating_generalized_force": 3.3582856475762,
+        "toe_end_gap_mm": {
+          "ml": -0.1104,
+          "mr": -0.1042,
+          "bl": -0.0357,
+          "br": -0.0342,
+          "fl": 78.4705,
+          "fr": 78.4815
+        },
+        "toe_landmark_world_y_delta_mm": {
+          "ml": 19.756,
+          "mr": 19.715,
+          "bl": 19.971,
+          "br": 19.932,
+          "fl": 19.832,
+          "fr": 19.861
+        },
+        "toe_gap_max_mm": {
+          "ml": 9.5595,
+          "mr": 10.895,
+          "bl": 11.133,
+          "br": 10.0165,
+          "fl": 78.7403,
+          "fr": 78.6946
+        },
+        "toe_gap_min_mm": {
+          "ml": -0.9089,
+          "mr": -0.5537,
+          "bl": -0.3842,
+          "br": -0.3821,
+          "fl": 78.1011,
+          "fr": 78.1422
+        },
+        "root_prep_not_included": true,
+        "swing_kinematic_screen": {
+          "ml": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 9.5595,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "mr": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 10.895,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "bl": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 11.133,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "br": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 10.0165,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          }
+        },
+        "kinematic_four_swing_reference_retained": true,
+        "within_research_tau_cap": true,
+        "periodic_joint_screen_pass": true,
+        "periodic_velocity_screen_pass": true,
+        "physical_gait_verified": false,
+        "notes": [
+          "MuJoCo mj_forward only: NO MuJoCo dynamics, NO actual Fz, NO hard contact/drive constraints.",
+          "IDTO soft-contact force and theta-optimal generalized torques are not hardware PD commands."
+        ]
+      },
+      "preliminary_gates": {
+        "status": "REJECT",
+        "reasons": [
+          "LESS_THAN_20MM_ROOT_ADVANCE"
+        ],
+        "physical_gait_proven": false,
+        "unactuated_force_residual_not_hard_certified": true,
+        "six_to_four_preparation_physically_verified": false
+      }
+    },
+    {
+      "label": "equality_constraints_trial_35",
+      "time_step_s": 0.9,
+      "period_duration_s": 25.2,
+      "idto_iterations": 35,
+      "max_iters_configured": 35,
+      "contact_stiffness_N_m": 3000.0,
+      "contact_smoothing_factor_m": 0.002,
+      "unactuated_equality_constraints_requested": true,
+      "status": "MAX_ITERATIONS_REACHED",
+      "final_printed_cost_approx": 3360.0,
+      "stdout_sha256": "d0e9adacd30b5e4dbef9024b3572996294a5e58bc62c9492f91ba081af7bdb39",
+      "optimized_q_sha256": "e98bace39566313a7b7ba7bab56ef7671baf60015df942e8d9165d89d2cf4e15",
+      "optimized_v_sha256": "831e017806461371734af168f806c3b97a5c1dee779d85aa8f29c6b79a949ef1",
+      "optimized_tau_sha256": "bb9a3b30f83539ba5b3987b24769b6c26269bc3e5c96baf3d4d3b144a7d951a1",
+      "kinematic_audit": {
+        "n_nodes": 29,
+        "root_world_y_translation_mm": 19.7737213786216,
+        "root_y_target_mm": 20.000000000000004,
+        "terminal_leg_joint_closure_max_rad": 0.005139530696465888,
+        "terminal_velocity_closure_max_rad_per_s": 0.09687042060810366,
+        "max_abs_leg_joint_rad": 1.613294576821344,
+        "max_abs_leg_tau_Nm": 0.7523336549482693,
+        "max_abs_head_tau_Nm": 0.008292100246537645,
+        "max_abs_floating_generalized_force": 1.8520697405326,
+        "toe_end_gap_mm": {
+          "ml": -0.1948,
+          "mr": -0.1844,
+          "bl": -0.0576,
+          "br": -0.0551,
+          "fl": 78.4238,
+          "fr": 78.4445
+        },
+        "toe_landmark_world_y_delta_mm": {
+          "ml": 19.543,
+          "mr": 19.46,
+          "bl": 19.923,
+          "br": 19.842,
+          "fl": 19.681,
+          "fr": 19.732
+        },
+        "toe_gap_max_mm": {
+          "ml": 9.1411,
+          "mr": 10.4458,
+          "bl": 10.7786,
+          "br": 9.7125,
+          "fl": 78.9019,
+          "fr": 78.8153
+        },
+        "toe_gap_min_mm": {
+          "ml": -1.244,
+          "mr": -0.9619,
+          "bl": -0.6569,
+          "br": -0.6573,
+          "fl": 77.7773,
+          "fr": 77.8643
+        },
+        "root_prep_not_included": true,
+        "swing_kinematic_screen": {
+          "ml": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 9.1411,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "mr": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 10.4458,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "bl": {
+            "sampled_nodes": 3,
+            "max_nominal_phase_airborne_gap_mm": 10.7786,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          },
+          "br": {
+            "sampled_nodes": 4,
+            "max_nominal_phase_airborne_gap_mm": 9.7125,
+            "all_other_working_feet_within_2mm_on_sampled_swing_nodes": true,
+            "passes_clearance_2mm": true
+          }
+        },
+        "kinematic_four_swing_reference_retained": true,
+        "within_research_tau_cap": false,
+        "periodic_joint_screen_pass": true,
+        "periodic_velocity_screen_pass": true,
+        "physical_gait_verified": false,
+        "notes": [
+          "MuJoCo mj_forward only: NO MuJoCo dynamics, NO actual Fz, NO hard contact/drive constraints.",
+          "IDTO soft-contact force and theta-optimal generalized torques are not hardware PD commands."
+        ]
+      },
+      "preliminary_gates": {
+        "status": "REJECT",
+        "reasons": [
+          "LESS_THAN_20MM_ROOT_ADVANCE",
+          "LEG_TORQUE_MODEL_CAP"
+        ],
+        "physical_gait_proven": false,
+        "unactuated_force_residual_not_hard_certified": true,
+        "six_to_four_preparation_physically_verified": false
+      }
+    }
+  ],
+  "independent_mujoco_physical_diagnostics": [
+    {
+      "label": "pd_joint_targets_only",
+      "summary": {
+        "schema": "cad30-idto-g1-independent-physical-diagnostic-v1",
+        "starting_state": "virtual post-preparation four-foot geometric qpos from archived PR43 trace, NOT physically reachable 6->4 proof",
+        "motion": "continuous free-base MuJoCo mj_step (500Hz) from one initial qpos; PD applied to 18 leg joint motors; real contacts",
+        "period_s": 25.2,
+        "physics_steps": 12600,
+        "real_root_y_delta_mm": -1.8247641618479165,
+        "starting_root_y_m": -0.0664802566438,
+        "ending_root_y_m": -0.06830502080564792,
+        "min_loaded_legs_any_step": 2,
+        "min_loaded_three_required_leg_trio_during_swing": 1,
+        "first_total_support_loss_below_three": {
+          "t_s": 0.002,
+          "active_legs": [
+            "bl",
+            "br"
+          ],
+          "all_Fz": {
+            "ml": 0.0,
+            "mr": 0.0,
+            "bl": 3.2974510902399734,
+            "br": 3.2981250423584525,
+            "fl": 0.0,
+            "fr": 0.0
+          }
+        },
+        "first_required_trio_failure": {
+          "t_s": 4.862,
+          "swing": "ml",
+          "Fz": {
+            "ml": 5.567892922363775,
+            "mr": 2.7568137278060307,
+            "bl": 0.0,
+            "br": 6.348167057009462,
+            "fl": 0.0,
+            "fr": 0.0
+          }
+        },
+        "per_swing_leg": {
+          "ml": {
+            "frames": 1800,
+            "good_trio": 1748,
+            "actual_airborne_s": 0.088,
+            "max_sampled_gap_mm": 0.003615753830177315,
+            "first_bad_t": 4.862,
+            "min_all_expected_trio_loaded": 1
+          },
+          "mr": {
+            "frames": 1350,
+            "good_trio": 1294,
+            "actual_airborne_s": 1.078,
+            "max_sampled_gap_mm": 1.1860138662292963,
+            "first_bad_t": 9.008,
+            "min_all_expected_trio_loaded": 1
+          },
+          "bl": {
+            "frames": 1350,
+            "good_trio": 1297,
+            "actual_airborne_s": 0.018,
+            "max_sampled_gap_mm": 0.0037126381957630628,
+            "first_bad_t": 16.636,
+            "min_all_expected_trio_loaded": 1
+          },
+          "br": {
+            "frames": 1800,
+            "good_trio": 1768,
+            "actual_airborne_s": 1.202,
+            "max_sampled_gap_mm": 0.05056403704192802,
+            "first_bad_t": 20.298,
+            "min_all_expected_trio_loaded": 1
+          }
+        },
+        "max_abs_leg_joint_rad": 1.665247498776774,
+        "max_raw_pd_torque_Nm": 0.5499031365417434,
+        "max_applied_leg_torque_Nm": 0.5499031365417434,
+        "pd_saturated_steps": 0,
+        "body_root_z_range_m": [
+          0.15991644277191605,
+          0.16680644738775768
+        ],
+        "last_0p4s_four_support_fraction": 1.0,
+        "terminal_leg_joint_max_diff_from_initial_rad": 0.06449510690164341,
+        "kinematic_idto_source": "drake optimized q[t] converted into *targets* for PD, not direct torque replay",
+        "full_gait_accepted": false,
+        "reason": "No physically reached 6->4 start; requires 3 continuous cycles and net positive full-chain travel even if diagnostic local period passes"
+      },
+      "trace_sha256": "06a74db341baed8abb974b50f744b8b59b1b33054895ee8c375de69c190ea61e"
+    },
+    {
+      "label": "pd_plus_idto_feedforward",
+      "summary": {
+        "schema": "cad30-idto-g1-independent-physical-diagnostic-v1",
+        "starting_state": "virtual post-preparation four-foot geometric qpos from archived PR43 trace, NOT physically reachable 6->4 proof",
+        "motion": "continuous free-base MuJoCo mj_step (500Hz) from one initial qpos; PD applied to 18 leg joint motors; real contacts",
+        "period_s": 25.2,
+        "physics_steps": 12600,
+        "real_root_y_delta_mm": 7.2107026709386375,
+        "starting_root_y_m": -0.0664802566438,
+        "ending_root_y_m": -0.059269553972861364,
+        "min_loaded_legs_any_step": 2,
+        "min_loaded_three_required_leg_trio_during_swing": 2,
+        "first_total_support_loss_below_three": {
+          "t_s": 0.002,
+          "active_legs": [
+            "bl",
+            "br"
+          ],
+          "all_Fz": {
+            "ml": 0.0,
+            "mr": 0.0,
+            "bl": 4.7134546580189705,
+            "br": 4.830349496995667,
+            "fl": 0.0,
+            "fr": 0.0
+          }
+        },
+        "first_required_trio_failure": {
+          "t_s": 3.598,
+          "swing": "ml",
+          "Fz": {
+            "ml": 0.0,
+            "mr": 8.24187022557781,
+            "bl": 8.768193710926232,
+            "br": 0.0,
+            "fl": 0.0,
+            "fr": 0.0
+          }
+        },
+        "per_swing_leg": {
+          "ml": {
+            "frames": 1800,
+            "good_trio": 1751,
+            "actual_airborne_s": 1.046,
+            "max_sampled_gap_mm": 0.4515728158644011,
+            "first_bad_t": 3.598,
+            "min_all_expected_trio_loaded": 2
+          },
+          "mr": {
+            "frames": 1350,
+            "good_trio": 1287,
+            "actual_airborne_s": 1.256,
+            "max_sampled_gap_mm": 5.665333819054777,
+            "first_bad_t": 9.014,
+            "min_all_expected_trio_loaded": 2
+          },
+          "bl": {
+            "frames": 1350,
+            "good_trio": 1226,
+            "actual_airborne_s": 1.292,
+            "max_sampled_gap_mm": 2.5150314339681263,
+            "first_bad_t": 14.75,
+            "min_all_expected_trio_loaded": 2
+          },
+          "br": {
+            "frames": 1800,
+            "good_trio": 1789,
+            "actual_airborne_s": 1.976,
+            "max_sampled_gap_mm": 7.817385272885572,
+            "first_bad_t": 19.898,
+            "min_all_expected_trio_loaded": 2
+          }
+        },
+        "max_abs_leg_joint_rad": 1.6447019075972489,
+        "max_raw_pd_torque_Nm": 0.7221109530625553,
+        "max_applied_leg_torque_Nm": 0.7,
+        "pd_saturated_steps": 500,
+        "body_root_z_range_m": [
+          0.16372552996304818,
+          0.16841923811999648
+        ],
+        "last_0p4s_four_support_fraction": 1.0,
+        "terminal_leg_joint_max_diff_from_initial_rad": 0.041150868090118475,
+        "kinematic_idto_source": "Drake optimized q[t] converted into PD targets, no root rewriting",
+        "feedforward_idto_generalized_actuated_torques_enabled": true,
+        "full_gait_accepted": false,
+        "reason": "No physically reached 6->4 start; requires 3 continuous cycles and net positive full-chain travel even if diagnostic local period passes"
+      },
+      "trace_sha256": "8a6c6cffad0b9c190e624f1dcb1ad53f4b09ac178fe2d7e1c56fa215f1631302"
+    }
+  ],
+  "limitations": [
+    "IDTO internal contact model is smooth; no hard 3-support Fz/phase constraints are present.",
+    "Unactuated equality=true run did not achieve zero unactuated residual before max iterations.",
+    "Solver tau was not a hard constraint; reference mass, inertia and motor bounds are provisional.",
+    "MuJoCo replay begins from virtual 4-support post-prep qpos; no physically executed 6->4 preparation.",
+    "Real model front legs raised; 4 distinct toe transfers in sampled FK alone do not prove contact or periodic gait.",
+    "No complete physical 4-swing gait and no three-cycle accepted result."
+  ]
+}
