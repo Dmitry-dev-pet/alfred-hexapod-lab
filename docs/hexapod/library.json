@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 9,
+  "revision": 10,
   "entries": [
     {
       "id": "tripod-60",
@@ -612,6 +612,41 @@
           "path": "hexapod/data/cad-rig-live-v1-slow.json",
           "sha256": "f0bb95c76d276629cf2e2d226e78170981e411e81a84803112c3ab64b5d56abe",
           "size": 287267
+        }
+      ]
+    },
+    {
+      "id": "live-v2-offline",
+      "title": "Джойстик · 6 ног",
+      "detail": "Управление прямо на 3D-экране · офлайн-кинематика, без физики и отдельного сервера",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v2-offline/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v2-offline/index.html",
+          "sha256": "983d4475306666429aed913fc54247694a005bc272c1076ffa4203b39b5b1c79",
+          "size": 3449
+        },
+        {
+          "path": "hexapod/live-v2-offline/app.js",
+          "sha256": "55f36ab4b2b30d394a7fdf06978a339f72b65724d9bfd4413182126524c783ef",
+          "size": 10866
+        },
+        {
+          "path": "hexapod/live-v2-offline/pilot.css",
+          "sha256": "bf0694cfac0ea37af14021e2e0e86004103149572d79fbe358f5e7b4df7fb5a2",
+          "size": 3968
+        },
+        {
+          "path": "hexapod/live-v2-offline/kinematic-controller.js",
+          "sha256": "7cdc2f6f878ddb3a0bfdef8374fcbfd3c8e4f87b91e1b9d166eacb6120bf8572",
+          "size": 3772
+        },
+        {
+          "path": "hexapod/data/live-v2-offline-kit.json",
+          "sha256": "eb85d1804f4d53ebee9250884f846ebb01a0d34bb6ee899cc7b32eedafbc7d2b",
+          "size": 71880
         }
       ]
     }
