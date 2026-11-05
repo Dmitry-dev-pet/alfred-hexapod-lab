@@ -1,0 +1,21 @@
+{
+  "schema": "CAD30_third_BL_research_manifest_v1",
+  "created_at_utc": "2026-11-05",
+  "provenance": "nominal original Freenove CAD30 geometry, 30 original STL remain owner Google Drive only; no original binaries in this archive",
+  "sha256_files": {
+    "README.md": "2614f025276f8442fe42d94e68465508b36d7b398934504a10a5b2f363ad19ca",
+    "continuous_third_bl.py": "34db234a5bcc53d052bdbab11389833129318750e273339e043992d4b22cbaa8",
+    "lateral_foot_trial.py": "b0da5e4f678037ac8ea9830506cb11fc394c81ed4f04deb161754d0fb9bd9985",
+    "results/after_bl_physical_state.json": "50d8d874e155aa306e30a074c46ab0afed91c34ba9e41975785684c9f1d59249",
+    "results/bl_foothold_trials_20261105.json": "7af89a857c8aff4b662bec608f937744b5cee6c6d651b62c9ef0cf7a07d5a106",
+    "results/br_post_bl_failures_20261105.json": "b1deac73c8afe645ac6269c7b5f9b3de999bb7d02723f34b5e3f7e038bc52595",
+    "results/br_pre_bl_failures_20261105.json": "929cebaf9b696e9a935ad24e9a86431324132d9a8dabcf3e47c26166c93f9fb0",
+    "results/continuous_bl_2ms.json.gz": "62a3d348bcd7f0bc7f493561ee2748cd9f43b5ce4b149160c4bdf212d513852e",
+    "results/continuous_ml_preparation_2ms.json.gz": "13a611b8cb706df545caecee627ffcefef42b4c0b13f65d63c95dd889c607542",
+    "results/continuous_mr_2ms.json.gz": "a2ae8ce13abf9584afc25b7963abc8c9a20a644f9bfe5ce251be4e038ba081d3",
+    "results/continuous_third_bl_summary.json": "149a4f4453551d8cb6f690f89393599c17fcca5a5acf545af97228be54bb687c",
+    "results/ml_reconfiguration_trials_20261105.json": "2c3d3d6d9f1432b55ab0f9ad4fa40cc16a0edf02e6395a6a5121c141221f882d",
+    "test_third_bl.py": "4c1f59311700310da8408a450c68a64cf19c565fad92adcc307a951e7edc49f0"
+  },
+  "important": "ML prep backward; net COM from saved six -67.511mm, not walking."
+}
