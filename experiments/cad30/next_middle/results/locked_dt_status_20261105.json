@@ -1,0 +1,46 @@
+{
+  "schema": "cad30-locked-command-dt-ablation-status/1",
+  "date_utc": "2026-11-05",
+  "source_pr49": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/pull/49",
+  "scope": "identical archived 500Hz motor goals with 1,2,4 MuJoCo integration substeps",
+  "base_model": "Original Freenove FNK0052 CAD30; original 30 STL private on Drive",
+  "code_validation": {
+    "python_compile": "PASS",
+    "pure_unit_tests_passed": 5,
+    "pure_unit_tests_failed": 0,
+    "real_mujoco_in_this_environment": "NOT_RUN",
+    "reason": "MuJoCo not available in current sandbox; pip install blocked by DNS"
+  },
+  "historic_live_feedback_results_not_from_this_ablation": {
+    "mu_1p1_dt_2ms": {
+      "stance_dropout_steps": 0,
+      "mr_toe_world_mm": 29.839445109949466,
+      "minimum_margin_mm": 12.8154397290747,
+      "strict_local_step": "PASS"
+    },
+    "mu_1p1_dt_1ms": {
+      "stance_dropout_steps": 0,
+      "mr_toe_world_mm": 28.947097185134357,
+      "minimum_margin_mm": 12.685899078077954,
+      "strict_local_step": "PASS"
+    },
+    "mu_1p1_dt_0p5ms": "NOT_RUN"
+  },
+  "locked_command_ablation": {
+    "base_PD_2ms": "NOT_RUN",
+    "base_PD_1ms": "NOT_RUN",
+    "base_PD_0p5ms": "NOT_RUN",
+    "feedback_command_2ms": "NOT_RUN",
+    "feedback_command_1ms": "NOT_RUN",
+    "feedback_command_0p5ms": "NOT_RUN"
+  },
+  "source_shas": {
+    "baseline_trace": "c38175c892bb0bac115565a3d423a1254f5ce3fc079c06626ad526dd0c8e53f5",
+    "feedback_trace": "c48e94e34f8d31e0444989bc2637021f4453bc462a7b32511c780de36343fce9",
+    "post_ml_checkpoint": "0e73f9b7aa699bc39da373ad59f5807d92a2863e8400da8b260f4553c9e6d05e"
+  },
+  "required_before_claim": "Run substeps=1 baseline and demand qpos+Fz reproduction before comparing faster substeps; preserve strict substep-level Fz>=0.2 N, margin>=10mm",
+  "full_four_step_gait": false,
+  "net_positive_from_six_support": false,
+  "hardware_validated": false
+}
