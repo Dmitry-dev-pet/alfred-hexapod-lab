@@ -205,4 +205,3 @@ if __name__=='__main__':
  Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
  if a.trace_out:Path(a.trace_out).write_text(json.dumps({'summary':out,'nodes':nodes},ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({k:v for k,v in out.items() if k!='caveats'},ensure_ascii=False,indent=2))
-
