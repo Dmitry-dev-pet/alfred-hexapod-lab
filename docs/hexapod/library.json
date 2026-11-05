@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 8,
+  "revision": 9,
   "entries": [
     {
       "id": "tripod-60",
@@ -582,6 +582,36 @@
           "path": "hexapod/data/wave-gated-60s-events.json",
           "sha256": "7ab442a71103b29474da35e1c97e6d7f5380dec13237b32c28b7480b48c85f70",
           "size": 7562
+        }
+      ]
+    },
+    {
+      "id": "live-v1-slow",
+      "title": "Live V1 · меняем направление",
+      "detail": "Записанная физическая симуляция · вперёд → вбок → поворот → стоп · 12,4 с · PASS в условиях модели, НЕ джойстик",
+      "duration_s": 12.4,
+      "href": "/hexapod/live-v1-slow/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v1-slow/index.html",
+          "sha256": "6b3743b606896702c5f3a6341ce158a95e16876d89d6f30df643f148d86d0ad5",
+          "size": 4786
+        },
+        {
+          "path": "hexapod/live-v1-slow/app.js",
+          "sha256": "14d8f8b33fe6351256f332d18d90cde5f266c614dad87cc46873b8d56a43d8b3",
+          "size": 10747
+        },
+        {
+          "path": "hexapod/data/live-v1-slow-points.json",
+          "sha256": "db9c7a5ef818d216aaa5de6c175fd0ca446f7f47f54225e66478eef04cb919ca",
+          "size": 133968
+        },
+        {
+          "path": "hexapod/data/cad-rig-live-v1-slow.json",
+          "sha256": "f0bb95c76d276629cf2e2d226e78170981e411e81a84803112c3ab64b5d56abe",
+          "size": 287267
         }
       ]
     }
