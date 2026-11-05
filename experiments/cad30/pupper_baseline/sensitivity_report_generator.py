@@ -25,4 +25,3 @@ for i,n in enumerate(trace):
 report={'schema':'cad30-math-only-sensitivity-v1','cases':cases,'unexpected_nonfloor_contact_count':len(nonfloor),'unexpected_nontibia_floor_contact_count':len(unwanted_floor),'limitations':'Collision checks are mj_forward at sampled virtual qpos, not mj_step dynamics. Model contact at toes can differ from real contact.'}
 (here/'math_first_four_crawl_sensitivity.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
 print(json.dumps(report,indent=2,ensure_ascii=False))
-
