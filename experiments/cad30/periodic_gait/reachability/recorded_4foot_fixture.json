@@ -1,0 +1,34 @@
+{
+  "schema": "cad30-observed-four-toe-planar-input/1",
+  "source": "Freenove FNK0052 CAD30 MuJoCo PR#40 one BL swing, real qpos, nominal mu=1.1",
+  "source_zip": "Hexapod_Pupper_Physical_Baseline_2026-11-04_no_STL.zip",
+  "source_json": "pupper_four_bl20_simple.json",
+  "source_json_sha256": "4e10b5165ea1618a16e8d729595a204f0321b96e6333d8907c4adc65d0dc0989",
+  "COM_xyz_m": [
+    -3.821016992112159e-05,
+    -0.02105029417107764,
+    0.13457946115082556
+  ],
+  "feet_world_xyz_m": {
+    "ml": [
+      -0.2395168570915185,
+      0.0004947263560997131,
+      0.00031358053091117
+    ],
+    "mr": [
+      0.2395000030615357,
+      0.0004903696407433517,
+      0.0003058204816529936
+    ],
+    "bl": [
+      -0.14288382633560084,
+      -0.17859799778113827,
+      1.6925543806778354e-06
+    ],
+    "br": [
+      0.1439877420068199,
+      -0.19913387087911055,
+      -1.5480641443743615e-06
+    ]
+  }
+}

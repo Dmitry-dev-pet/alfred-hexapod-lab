@@ -1,0 +1,412 @@
+{
+  "status": "PLANAR_GEOMETRY_CERTIFIED_ONLY",
+  "n_orders_checked": 24,
+  "n_geometrically_accepted": 24,
+  "best": {
+    "status": "PLANAR_GEOMETRY_CERTIFIED_ONLY",
+    "important": "Proves ONLY planar COM/support-polygon existence; NOT robot IK/torques/forces/continuous 3D dynamics.",
+    "order": [
+      "bl",
+      "br",
+      "ml",
+      "mr"
+    ],
+    "forward_world_y_mm": 20.0,
+    "requested_margin_mm": 10.0,
+    "initial_COM_mm": [
+      -0.0382,
+      -21.0503
+    ],
+    "final_COM_mm": [
+      -0.0382,
+      -1.0503
+    ],
+    "initial_four_support_margin_mm": 21.5428,
+    "minimum_swing_tripod_margin_mm": 10.0,
+    "min_four_support_segment_bound_mm": 16.5428,
+    "total_planar_COM_travel_mm": 273.2123,
+    "max_single_COM_shift_mm": 101.4894,
+    "phases": [
+      {
+        "swing_leg": "bl",
+        "stance_legs": [
+          "br",
+          "ml",
+          "mr"
+        ],
+        "COM_hold_mm": [
+          -0.0382,
+          -21.0503
+        ],
+        "minimum_margin_mm": 21.5428,
+        "new_foot_world_mm": [
+          -142.8838,
+          -158.598
+        ],
+        "preceding_COM_shift_mm": 0.0
+      },
+      {
+        "swing_leg": "br",
+        "stance_legs": [
+          "bl",
+          "ml",
+          "mr"
+        ],
+        "COM_hold_mm": [
+          -0.0382,
+          -16.0503
+        ],
+        "minimum_margin_mm": 16.5428,
+        "new_foot_world_mm": [
+          143.9877,
+          -179.1339
+        ],
+        "preceding_COM_shift_mm": 5.0
+      },
+      {
+        "swing_leg": "ml",
+        "stance_legs": [
+          "bl",
+          "br",
+          "mr"
+        ],
+        "COM_hold_mm": [
+          35.0545,
+          -95.3988
+        ],
+        "minimum_margin_mm": 10.0,
+        "new_foot_world_mm": [
+          -239.5169,
+          20.4947
+        ],
+        "preceding_COM_shift_mm": 86.7622
+      },
+      {
+        "swing_leg": "mr",
+        "stance_legs": [
+          "bl",
+          "br",
+          "ml"
+        ],
+        "COM_hold_mm": [
+          -44.8388,
+          -92.1162
+        ],
+        "minimum_margin_mm": 10.0,
+        "new_foot_world_mm": [
+          239.5,
+          20.4904
+        ],
+        "preceding_COM_shift_mm": 79.9607
+      }
+    ],
+    "segments": [
+      {
+        "kind": "four_stance_com_shift",
+        "before_leg": "bl",
+        "from_mm": [
+          -0.0382,
+          -21.0503
+        ],
+        "to_mm": [
+          -0.0382,
+          -21.0503
+        ],
+        "guaranteed_margin_mm": 21.5428
+      },
+      {
+        "kind": "four_stance_com_shift",
+        "before_leg": "br",
+        "from_mm": [
+          -0.0382,
+          -21.0503
+        ],
+        "to_mm": [
+          -0.0382,
+          -16.0503
+        ],
+        "guaranteed_margin_mm": 16.5428
+      },
+      {
+        "kind": "four_stance_com_shift",
+        "before_leg": "ml",
+        "from_mm": [
+          -0.0382,
+          -16.0503
+        ],
+        "to_mm": [
+          35.0545,
+          -95.3988
+        ],
+        "guaranteed_margin_mm": 16.5428
+      },
+      {
+        "kind": "four_stance_com_shift",
+        "before_leg": "mr",
+        "from_mm": [
+          35.0545,
+          -95.3988
+        ],
+        "to_mm": [
+          -44.8388,
+          -92.1162
+        ],
+        "guaranteed_margin_mm": 73.3128
+      },
+      {
+        "kind": "terminal_four_stance_com_shift",
+        "from_mm": [
+          -44.8388,
+          -92.1162
+        ],
+        "to_mm": [
+          -0.0382,
+          -1.0503
+        ],
+        "guaranteed_margin_mm": 21.5428
+      }
+    ]
+  },
+  "order_summaries": [
+    {
+      "order": [
+        "bl",
+        "br",
+        "ml",
+        "mr"
+      ],
+      "total_COM_travel_mm": 273.2123,
+      "max_shift_mm": 101.4894
+    },
+    {
+      "order": [
+        "br",
+        "bl",
+        "ml",
+        "mr"
+      ],
+      "total_COM_travel_mm": 273.2123,
+      "max_shift_mm": 101.4894
+    },
+    {
+      "order": [
+        "bl",
+        "br",
+        "mr",
+        "ml"
+      ],
+      "total_COM_travel_mm": 275.6074,
+      "max_shift_mm": 96.6187
+    },
+    {
+      "order": [
+        "br",
+        "bl",
+        "mr",
+        "ml"
+      ],
+      "total_COM_travel_mm": 275.6074,
+      "max_shift_mm": 96.6187
+    },
+    {
+      "order": [
+        "bl",
+        "ml",
+        "mr",
+        "br"
+      ],
+      "total_COM_travel_mm": 277.0406,
+      "max_shift_mm": 106.0061
+    },
+    {
+      "order": [
+        "br",
+        "ml",
+        "mr",
+        "bl"
+      ],
+      "total_COM_travel_mm": 278.5397,
+      "max_shift_mm": 97.0555
+    },
+    {
+      "order": [
+        "br",
+        "mr",
+        "ml",
+        "bl"
+      ],
+      "total_COM_travel_mm": 278.586,
+      "max_shift_mm": 97.1068
+    },
+    {
+      "order": [
+        "bl",
+        "mr",
+        "ml",
+        "br"
+      ],
+      "total_COM_travel_mm": 281.4756,
+      "max_shift_mm": 101.4894
+    },
+    {
+      "order": [
+        "ml",
+        "mr",
+        "bl",
+        "br"
+      ],
+      "total_COM_travel_mm": 291.2599,
+      "max_shift_mm": 101.6685
+    },
+    {
+      "order": [
+        "ml",
+        "mr",
+        "br",
+        "bl"
+      ],
+      "total_COM_travel_mm": 291.2599,
+      "max_shift_mm": 101.6685
+    },
+    {
+      "order": [
+        "mr",
+        "ml",
+        "bl",
+        "br"
+      ],
+      "total_COM_travel_mm": 293.3096,
+      "max_shift_mm": 101.4631
+    },
+    {
+      "order": [
+        "mr",
+        "ml",
+        "br",
+        "bl"
+      ],
+      "total_COM_travel_mm": 293.3096,
+      "max_shift_mm": 101.4631
+    },
+    {
+      "order": [
+        "bl",
+        "ml",
+        "br",
+        "mr"
+      ],
+      "total_COM_travel_mm": 367.6357,
+      "max_shift_mm": 101.4894
+    },
+    {
+      "order": [
+        "br",
+        "mr",
+        "bl",
+        "ml"
+      ],
+      "total_COM_travel_mm": 368.4115,
+      "max_shift_mm": 101.1456
+    },
+    {
+      "order": [
+        "mr",
+        "bl",
+        "ml",
+        "br"
+      ],
+      "total_COM_travel_mm": 378.5074,
+      "max_shift_mm": 105.9234
+    },
+    {
+      "order": [
+        "ml",
+        "br",
+        "mr",
+        "bl"
+      ],
+      "total_COM_travel_mm": 378.9733,
+      "max_shift_mm": 97.0555
+    },
+    {
+      "order": [
+        "bl",
+        "mr",
+        "br",
+        "ml"
+      ],
+      "total_COM_travel_mm": 387.0209,
+      "max_shift_mm": 110.3575
+    },
+    {
+      "order": [
+        "br",
+        "ml",
+        "bl",
+        "mr"
+      ],
+      "total_COM_travel_mm": 387.3923,
+      "max_shift_mm": 101.4894
+    },
+    {
+      "order": [
+        "mr",
+        "bl",
+        "br",
+        "ml"
+      ],
+      "total_COM_travel_mm": 387.5606,
+      "max_shift_mm": 105.9234
+    },
+    {
+      "order": [
+        "mr",
+        "br",
+        "bl",
+        "ml"
+      ],
+      "total_COM_travel_mm": 387.5606,
+      "max_shift_mm": 105.9234
+    },
+    {
+      "order": [
+        "ml",
+        "bl",
+        "br",
+        "mr"
+      ],
+      "total_COM_travel_mm": 387.8409,
+      "max_shift_mm": 101.4894
+    },
+    {
+      "order": [
+        "ml",
+        "br",
+        "bl",
+        "mr"
+      ],
+      "total_COM_travel_mm": 387.8409,
+      "max_shift_mm": 101.4894
+    },
+    {
+      "order": [
+        "ml",
+        "bl",
+        "mr",
+        "br"
+      ],
+      "total_COM_travel_mm": 397.0668,
+      "max_shift_mm": 106.0061
+    },
+    {
+      "order": [
+        "mr",
+        "br",
+        "ml",
+        "bl"
+      ],
+      "total_COM_travel_mm": 397.7331,
+      "max_shift_mm": 105.9234
+    }
+  ]
+}

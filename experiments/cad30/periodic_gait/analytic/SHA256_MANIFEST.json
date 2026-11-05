@@ -1,0 +1,25 @@
+{
+  "schema": "cad30-planar-sufficiency-provenance-v1",
+  "files": {
+    "README_SUFFICIENT_CONDITIONS_RU.md": {
+      "sha256": "f5dc7d9ef68163335d500bd8a5bf70fe741e6a3f57629daa8dac2717585a3d19",
+      "bytes": 13789
+    },
+    "planar_certificate.py": {
+      "sha256": "2e117f166d3614239a4398ecaeb2b3d0c34c5daffd10dc79da53b9293228f027",
+      "bytes": 9846
+    },
+    "recorded_4foot_certificate.json": {
+      "sha256": "b0d5095709baf28f29d7111387dec3ecd0f1600c5e535419b3f97169da2bd7e3",
+      "bytes": 7512
+    },
+    "recorded_4foot_fixture.json": {
+      "sha256": "37b7e5a68cc6d49b566b935108d5d1a0d41137f34cb7ab5c38635d8f6d6daa15",
+      "bytes": 901
+    },
+    "test_planar_certificate.py": {
+      "sha256": "166f7a7837308a5dcdb5bda166b18de745743c25b048dced9cd0a721c3268e1f",
+      "bytes": 4396
+    }
+  }
+}
