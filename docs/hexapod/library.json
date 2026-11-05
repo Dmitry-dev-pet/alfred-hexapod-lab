@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 10,
+  "revision": 11,
   "entries": [
     {
       "id": "tripod-60",
@@ -647,6 +647,31 @@
           "path": "hexapod/data/live-v2-offline-kit.json",
           "sha256": "eb85d1804f4d53ebee9250884f846ebb01a0d34bb6ee899cc7b32eedafbc7d2b",
           "size": 71880
+        }
+      ]
+    },
+    {
+      "id": "live-v3-fast",
+      "title": "Джойстик · быстрый",
+      "detail": "Темп ×0,5–8, по умолчанию ×4 · управление в 3D без физики · ускоренная кинематика",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v3-fast/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v3-fast/index.html",
+          "sha256": "6e1e77a3e770e1bacbbbc53a8f25a51f8e61061caba0b1ac6b4feba21e632da6",
+          "size": 3740
+        },
+        {
+          "path": "hexapod/live-v3-fast/app.js",
+          "sha256": "fb759247060701f4c3d4c6c012d121fb0e60cd4f06483b77529bfd685c99f2ec",
+          "size": 11205
+        },
+        {
+          "path": "hexapod/live-v3-fast/kinematic-controller.js",
+          "sha256": "0529164fa0a0a52d084618227eb721ac1e7e56dff6e3dd3c9b07d02c030cd141",
+          "size": 4284
         }
       ]
     }
