@@ -67,3 +67,9 @@ python test_wave_gate_receipt.py
 ## Программа после этого опыта
 
 Не переносить только число опор в положительный статус. Для устранения 165 поимённых провалов при необходимости исследовать геометрию/приземление именно `bl`, и перенастраивать контроллер, не ослабляя критерии. Пока четырёхногая ветка на паузе.
+
+## Заархивированные первичные данные
+
+Полный архив (30 000 кадров на 2 мс с `qpos/qvel/Fz/ctrl`, 1 501 кадр 25 Гц, код, тесты, манивест, файлы viewer; **без сторонних STL**): [CAD30 Wave gated diagnostic v2 на Google Drive](https://drive.google.com/file/d/1ixAMc1jNPZE7xU-FPaUcyP2GQG7STyv3/view?usp=drivesdk). ZIP 11 901 054 байта, SHA-256 `16c3ce32b4af800e1d24357d227b43f218fdf7abb20801bc02bd774d08b8420e`.
+
+**Viewer:** каталог `docs/hexapod/library.json` revision 8 / 23 entries; `wave-60-gated-diagnostic` status `diagnostic`. Старый `wave-60-nominal` сохранён. При нажатии «Обновить библиотеку» локальный сервер Termux читает ветку `feature/android-local-offline-viewer-20261104`, скачивает 5 новых asset-файлов с проверкой SHA-256/размеров. Проверка в пользовательском браузере Android остаётся отдельной задачей.
