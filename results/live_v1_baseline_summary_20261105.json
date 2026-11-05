@@ -1,0 +1,77 @@
+{
+  "status": "PHYSICAL_FAIL",
+  "note": "Uncalibrated servo/mass/friction model; simulation is not hardware verification",
+  "source": "Owner-only CAD30 / source/mjcf/scene_local30_nominal.xml",
+  "physics": "3.14.0",
+  "gait": "wave",
+  "scenario": "nominal",
+  "physics_dt_s": 0.002,
+  "controller_dt_s": 0.04,
+  "elapsed_wall_s": 10.73,
+  "duration_s": 12.4,
+  "physics_steps": 6200,
+  "max_ik_error_m": 1.4e-05,
+  "ik_rejections": 0,
+  "min_real_loaded_legs": 2,
+  "max_tilt_deg": 0.785,
+  "min_height_m": 0.13565,
+  "max_abs_motor_torque_Nm": 0.7,
+  "motor_saturation_steps": 593,
+  "gates": {
+    "forward_gt_5mm": true,
+    "left_gt_3mm": true,
+    "yaw_ccw_gt_0p03rad": true,
+    "no_fall_height_gt_8cm": true,
+    "tilt_lt_18deg": true,
+    "at_least_3_real_loaded_legs": false,
+    "no_ik_rejections": true,
+    "torque_saturation_lt_1pct": false,
+    "full_duration_completed": true
+  },
+  "stages": {
+    "0": {
+      "command": {
+        "vx": 0.012,
+        "vy": 0.0,
+        "wz": 0.0
+      },
+      "observed_forward_m": 0.023395,
+      "observed_left_m": 0.002827,
+      "observed_yaw_rad": -0.00891,
+      "min_loaded_legs": 3
+    },
+    "1": {
+      "command": {
+        "vx": 0.0,
+        "vy": 0.01,
+        "wz": 0.0
+      },
+      "observed_forward_m": -0.002374,
+      "observed_left_m": 0.017783,
+      "observed_yaw_rad": -0.02487,
+      "min_loaded_legs": 2
+    },
+    "2": {
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "wz": 0.15
+      },
+      "observed_forward_m": 0.000518,
+      "observed_left_m": -0.009341,
+      "observed_yaw_rad": 0.1302,
+      "min_loaded_legs": 3
+    },
+    "3": {
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "wz": 0.0
+      },
+      "observed_forward_m": 0.006868,
+      "observed_left_m": -0.000447,
+      "observed_yaw_rad": 0.00411,
+      "min_loaded_legs": 3
+    }
+  }
+}
