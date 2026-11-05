@@ -1,0 +1,135 @@
+{
+  "schema": "cad30-G0b-drake-vs-mujoco-20261105",
+  "method": "same state, rotor-inertia-corrected Drake discrete 2ms step vs MuJoCo 2ms step with identical PD goals; geometry signed-distance query before step",
+  "mujoco_version": "3.14.0",
+  "drake_version": "1.30.0",
+  "source_checksums_sha256": {
+    "private_mu_plane_xml": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+    "private_drake_box_xml": "240fbd57fbc04e160c21a67fe590698e207ffb16562309d3db284f757fca66b9",
+    "private_six_state": "bfcaf5a8332844b1294162ea90fe9b326c1c8cd4e38a5d2576c77ac52d18d231",
+    "private_four_state": "4e10b5165ea1618a16e8d729595a204f0321b96e6333d8907c4adc65d0dc0989"
+  },
+  "config": {
+    "dt_s": 0.002,
+    "pd_Kp": 7.0,
+    "pd_Kd": 0.32,
+    "model_joint_torque_limit_Nm": 0.7,
+    "drake_discrete_contact": "point-pair default, no explicit MuJoCo solref/solimp mapping",
+    "mu_plane_vs_box_test": true
+  },
+  "snapshots": {
+    "six": {
+      "source_state": "six_private_CAD30_PhysicalSnapshot",
+      "mu_floor_plane": {
+        "n_contact_pairs": 12,
+        "per_leg_Fz_N": {
+          "ml": 2.972811636738021,
+          "mr": 2.977490454843501,
+          "bl": 3.4432463715956767,
+          "br": 3.447361800548677,
+          "fl": 2.4311408274484014,
+          "fr": 2.4337626863732984
+        },
+        "sum_Fz_N": 17.705813777547576
+      },
+      "mu_floor_box": {
+        "n_contact_pairs": 10,
+        "per_leg_Fz_N": {
+          "ml": 2.5169072252055957,
+          "mr": 2.52154167546394,
+          "bl": 3.6558980251018633,
+          "br": 3.6598268286776356,
+          "fl": 2.6013979076884777,
+          "fr": 2.6043299329091063
+        },
+        "sum_Fz_N": 17.559901595046618
+      },
+      "drake_box": {
+        "n_contact_points": 6,
+        "per_leg_Fz_N": {
+          "ml": 0.450669169667234,
+          "mr": 0.450988993714186,
+          "bl": 0.562930887399949,
+          "br": 0.563220081114707,
+          "fl": 0.36337951319162,
+          "fr": 0.363521007614687
+        },
+        "sum_Fz_N": 2.754709652702383
+      },
+      "max_contact_gap_abs_delta_m": 1.480630377438245e-08,
+      "compared_leg_count": 6,
+      "max_mass_diag_delta_before_correction": 0.002000000000000002,
+      "max_mass_diag_delta_after_correction": 2.220446049250313e-16,
+      "drake_original_finite_actuators": 2,
+      "drake_corrected_finite_actuators": 20,
+      "drake_repaired_actuator_metadata_pass": true,
+      "max_per_leg_Fz_abs_delta_mu_box_vs_drake_N": 3.0966067475629284,
+      "force_parity_at_same_step": false
+    },
+    "four": {
+      "source_state": "four_private_CAD30_PhysicalSnapshot",
+      "mu_floor_plane": {
+        "n_contact_pairs": 8,
+        "per_leg_Fz_N": {
+          "ml": 8.148688081584144,
+          "mr": 7.619848378556485,
+          "bl": 0.5352982812834388,
+          "br": 1.4017426908312058,
+          "fl": 0.0,
+          "fr": 0.0
+        },
+        "sum_Fz_N": 17.705577432255275
+      },
+      "mu_floor_box": {
+        "n_contact_pairs": 7,
+        "per_leg_Fz_N": {
+          "ml": 7.905287720117617,
+          "mr": 7.39484278422512,
+          "bl": 0.5814818824015991,
+          "br": 1.3927212841886871,
+          "fl": 0.0,
+          "fr": 0.0
+        },
+        "sum_Fz_N": 17.27433367093302
+      },
+      "drake_box": {
+        "n_contact_points": 4,
+        "per_leg_Fz_N": {
+          "ml": 0.931582851508452,
+          "mr": 0.864860455070567,
+          "bl": 0.308927170709989,
+          "br": 0.390993941305795,
+          "fl": 0.0,
+          "fr": 0.0
+        },
+        "sum_Fz_N": 2.496364418594803
+      },
+      "max_contact_gap_abs_delta_m": 3.333962050877765e-09,
+      "compared_leg_count": 4,
+      "max_mass_diag_delta_before_correction": 0.002000000000000006,
+      "max_mass_diag_delta_after_correction": 2.220446049250313e-16,
+      "drake_original_finite_actuators": 2,
+      "drake_corrected_finite_actuators": 20,
+      "drake_repaired_actuator_metadata_pass": true,
+      "max_per_leg_Fz_abs_delta_mu_box_vs_drake_N": 6.973704868609165,
+      "force_parity_at_same_step": false
+    }
+  },
+  "verdict": {
+    "contact_geometry_signed_distance_parity": true,
+    "inertial_diagonal_and_actuator_metadata_parity_after_repair": true,
+    "contact_force_parity": "FAIL",
+    "drake_model_with_corrected_actuators_ran_one_2ms_step": true,
+    "solver_optimizer_with_corrected_actuators": "NOT_RUN",
+    "full_actuation_contact_parity": "FAIL",
+    "periodic_gait": "NOT_FOUND"
+  },
+  "limitations": [
+    "MuJoCo solref/solimp/contact cone and Drake default compliant point contact are not equivalent; different stiffness/contact resolution algorithms",
+    "MuJoCo mj_step contact reaction corresponds to start of a 2ms integration and Drake last-step reported contact reaction; direct force equality is not expected without contact calibration",
+    "Joint effort_limit metadata in Drake MultibodyPlant does not saturate inputs by itself; optimizer and controller must explicitly enforce bounds",
+    "MuJoCo frictionloss 0.015 Nm joint dry friction is not reproduced by the Drake Parser; no forced equivalence claimed",
+    "No original CAD/STL/OBJ/joint-state vectors or full traces embedded; model and snapshots only owner Drive",
+    "Two static checkpoints, not a dynamic walking validation; no hard-contact gait optimized"
+  ]
+}

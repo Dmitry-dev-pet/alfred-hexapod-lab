@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(cad30_drake_g0b LANGUAGES CXX)
+find_package(drake CONFIG REQUIRED)
+add_executable(drake_contacts_probe drake_contacts_probe.cc)
+target_compile_features(drake_contacts_probe PRIVATE cxx_std_20)
+target_link_libraries(drake_contacts_probe PRIVATE drake::drake)
