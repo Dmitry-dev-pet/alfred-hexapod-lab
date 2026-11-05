@@ -1,0 +1,191 @@
+{
+  "schema": "cad30-g0c-contact-and-torque-audit-v1",
+  "date": "2026-11-05",
+  "input_sha256": {
+    "original_G0b_receipt": "e37e3fd0a5cc3f2997c51fdc581f8faec68f9f96bb81a256ab32754ce5202f75",
+    "refined_real_drake_timelines": "54645f7f79b7cd4a664724c513e1315e020762b4fc0ff3b50eee79eeb41d23ee",
+    "mu_temporal_replay": "6130401da3f28ba122ae110e2039290396a26aa53d87abe747f76abb47e9545f",
+    "original_IDTO_smoke_stdout": "2660cca0a04a9fae11f354e14089d489d225c14ab2cc8e230629426f2fc35787"
+  },
+  "physics": {
+    "Drake": "1.30.0",
+    "MuJoCo": "3.14.0",
+    "dt_s": 0.002,
+    "input_states": "same archived PR #40 six/four physical checkpoints",
+    "controls": "identical fixed initial PD torque for each separate hold; no qpos resets between its 20 ticks"
+  },
+  "contact_sweep": {
+    "0.000040": {
+      "six": {
+        "reference_MuJoCo_Fz_2ms_N": 17.559902,
+        "Drake_Fz_2ms_N": 18.483639,
+        "first_step_per_leg_rmse_N": 0.337492,
+        "min_loaded_foot_count_during_40ms": 6,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.700774,
+        "max_Drake_Fz_in_40ms_N": 20.210963,
+        "root_vertical_sag_40ms_mm": 0.051486,
+        "contact_time_ticks": 20
+      },
+      "four": {
+        "reference_MuJoCo_Fz_2ms_N": 17.274334,
+        "Drake_Fz_2ms_N": 18.17061,
+        "first_step_per_leg_rmse_N": 0.217047,
+        "min_loaded_foot_count_during_40ms": 4,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.706887,
+        "max_Drake_Fz_in_40ms_N": 20.025297,
+        "root_vertical_sag_40ms_mm": 0.071322,
+        "contact_time_ticks": 20
+      }
+    },
+    "0.000045": {
+      "six": {
+        "reference_MuJoCo_Fz_2ms_N": 17.559902,
+        "Drake_Fz_2ms_N": 18.253426,
+        "first_step_per_leg_rmse_N": 0.320632,
+        "min_loaded_foot_count_during_40ms": 6,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.701077,
+        "max_Drake_Fz_in_40ms_N": 20.339913,
+        "root_vertical_sag_40ms_mm": 0.056872,
+        "contact_time_ticks": 20
+      },
+      "four": {
+        "reference_MuJoCo_Fz_2ms_N": 17.274334,
+        "Drake_Fz_2ms_N": 17.909989,
+        "first_step_per_leg_rmse_N": 0.230094,
+        "min_loaded_foot_count_during_40ms": 4,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.708988,
+        "max_Drake_Fz_in_40ms_N": 20.131112,
+        "root_vertical_sag_40ms_mm": 0.079338,
+        "contact_time_ticks": 20
+      }
+    },
+    "0.000050": {
+      "six": {
+        "reference_MuJoCo_Fz_2ms_N": 17.559902,
+        "Drake_Fz_2ms_N": 18.004478,
+        "first_step_per_leg_rmse_N": 0.306918,
+        "min_loaded_foot_count_during_40ms": 6,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.701438,
+        "max_Drake_Fz_in_40ms_N": 20.435379,
+        "root_vertical_sag_40ms_mm": 0.062257,
+        "contact_time_ticks": 20
+      },
+      "four": {
+        "reference_MuJoCo_Fz_2ms_N": 17.274334,
+        "Drake_Fz_2ms_N": 17.632966,
+        "first_step_per_leg_rmse_N": 0.272713,
+        "min_loaded_foot_count_during_40ms": 4,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.710852,
+        "max_Drake_Fz_in_40ms_N": 20.203906,
+        "root_vertical_sag_40ms_mm": 0.087335,
+        "contact_time_ticks": 20
+      }
+    },
+    "0.000055": {
+      "six": {
+        "reference_MuJoCo_Fz_2ms_N": 17.559902,
+        "Drake_Fz_2ms_N": 17.742348,
+        "first_step_per_leg_rmse_N": 0.298195,
+        "min_loaded_foot_count_during_40ms": 6,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.701868,
+        "max_Drake_Fz_in_40ms_N": 20.501025,
+        "root_vertical_sag_40ms_mm": 0.06764,
+        "contact_time_ticks": 20
+      },
+      "four": {
+        "reference_MuJoCo_Fz_2ms_N": 17.274334,
+        "Drake_Fz_2ms_N": 17.344975,
+        "first_step_per_leg_rmse_N": 0.334385,
+        "min_loaded_foot_count_during_40ms": 4,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.712193,
+        "max_Drake_Fz_in_40ms_N": 20.247286,
+        "root_vertical_sag_40ms_mm": 0.095312,
+        "contact_time_ticks": 20
+      }
+    },
+    "0.000060": {
+      "six": {
+        "reference_MuJoCo_Fz_2ms_N": 17.559902,
+        "Drake_Fz_2ms_N": 17.471274,
+        "first_step_per_leg_rmse_N": 0.29586,
+        "min_loaded_foot_count_during_40ms": 6,
+        "all_needed_supports_each_2ms": true,
+        "final_Drake_Fz_40ms_N": 17.702373,
+        "max_Drake_Fz_in_40ms_N": 20.540112,
+        "root_vertical_sag_40ms_mm": 0.073022,
+        "contact_time_ticks": 20
+      },
+      "four": {
+        "reference_MuJoCo_Fz_2ms_N": 17.274334,
+        "Drake_Fz_2ms_N": 17.050136,
+        "first_step_per_leg_rmse_N": 0.40629,
+        "min_loaded_foot_count_during_40ms": 3,
+        "all_needed_supports_each_2ms": false,
+        "final_Drake_Fz_40ms_N": 17.712829,
+        "max_Drake_Fz_in_40ms_N": 20.264509,
+        "root_vertical_sag_40ms_mm": 0.103269,
+        "contact_time_ticks": 20
+      }
+    },
+    "mu_temporal": {
+      "six": {
+        "after_one_2ms_step_Fz_N": 17.559902,
+        "after_2ms_end_contact_recompute_N": 17.592886,
+        "last_mujoco_fixed_torque_40ms_Fz_N": 17.57552,
+        "loaded_40ms": 6
+      },
+      "four": {
+        "after_one_2ms_step_Fz_N": 17.274334,
+        "after_2ms_end_contact_recompute_N": 17.303969,
+        "last_mujoco_fixed_torque_40ms_Fz_N": 17.314198,
+        "loaded_40ms": 4
+      }
+    }
+  },
+  "promising_delta_m": 5.5e-05,
+  "IDTO_smooth_contact_at_zero_normal_speed": {
+    "stiffness_N_per_m": 2000,
+    "smoothing_m": 0.01,
+    "force_at_gap_0mm_N": 13.862943611198906,
+    "force_at_gap_2mm_N": 11.962777387631835,
+    "force_at_gap_20mm_N": 2.5385602208594498,
+    "note": "IDTO internal differentiable contact is distinct from Drake MultibodyPlant penetration_allowance."
+  },
+  "idto_original_smoke_torque_audit": {
+    "generalized_force_dim": 26,
+    "leg_actuator_count": 18,
+    "head_actuator_count": 2,
+    "max_model_leg_torque_Nm": 0.363947518144,
+    "leg_cap_Nm": 0.7,
+    "max_model_head_torque_Nm": 0.00950767559786,
+    "head_cap_Nm": 0.2,
+    "ex_post_cap_check": "PASS",
+    "run_convergence": "MAX_ITERATIONS_REACHED",
+    "hard_constraint_inside_idto": "NOT_PRESENT_IN_PINNED_PROBLEM_DEFINITION",
+    "certified_torque_feasible": false,
+    "note": "Ex-post maxima only; no IDTO hard box inequalities, real PD torque realization, or contact support certification."
+  },
+  "verdict": {
+    "Drake_discrete_contact_parity_40ms": "PARTIAL_TWO_CHECKPOINTS_ONLY",
+    "selected_configuration_four_supports_all_20_steps": true,
+    "hard_IDTO_actuator_limits": "NOT_IMPLEMENTED",
+    "full_gait": "NOT_FOUND",
+    "cross_engine_contact_equivalence": "NOT_CERTIFIED"
+  },
+  "limitations": [
+    "20-tick hold of two archived checkpoints only; not dynamic swinging gait, friction sweep or repeated period",
+    "IDTO uses a separate smoothed contact model whose force at a positive gap is nonzero",
+    "Output max torque check does not enforce inequality constraints inside IDTO",
+    "Drake and MuJoCo use different contact manifolds and timestepping conventions",
+    "Values of torque caps and friction are provisional research limits, not measured hardware specs",
+    "This report contains no CAD/STL, no full qpos/qvel, and no proprietary assets."
+  ]
+}
