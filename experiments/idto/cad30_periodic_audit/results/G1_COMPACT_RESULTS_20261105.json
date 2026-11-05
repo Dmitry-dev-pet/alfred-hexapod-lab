@@ -1,0 +1,143 @@
+{
+  "schema": "cad30-G1-allfour-period-idto-adapter-and-sampled-dynamics-audit-v1",
+  "source_prs": [
+    43,
+    44,
+    53,
+    55,
+    56
+  ],
+  "observed_date": "2026-11-05",
+  "preplanned_trace_nodes": 218,
+  "periodic_reference_nodes": 29,
+  "period_reference_source_range": [
+    106,
+    217
+  ],
+  "periodic_nominal_root_delta_y_mm": 20,
+  "full_cad30_mpc_or_idto_multiphase_completed": false,
+  "idto_compilation_status": "TIMEOUT_TWICE_at_examples/example_base.cc.o",
+  "idto_original_source_restored": true,
+  "solver_optimizations_per_node": "HiGHS linprog, friction diamond, 3D point feet, full generalized M(q)qdd+bias-passive, bounded actuator torques and positive Fz",
+  "whole_period_geometry_hard_constraints": false,
+  "whole_period_dynamic_contact_constraints": false,
+  "time_rescaling_is_uniform_not_globally_optimized": true,
+  "successful_values_only_tested_on_finite_grid": true,
+  "possible_full_periodic_gait": "NOT_ESTABLISHED",
+  "forward_mujoco_simulation": "NOT_RUN",
+  "hardware_test": "NOT_RUN",
+  "model_research_assumptions": {
+    "mu": 1.1,
+    "torque_limit_Nm": 0.7,
+    "positive_contact_Fz_N": 0.2
+  },
+  "smallest_gridded_dt_with_all_samples_accepted_s": 0.045,
+  "timing_sweep": [
+    {
+      "dt_per_virtual_node_s": 0.03,
+      "accepted_lp_nodes": 215,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 3,
+      "first_nonaccepted": {
+        "index": 90,
+        "phase": "four_stance_rebalance",
+        "reason": "The HiGHS status code was not recognized. (HiGHS Status 15: model_status is Unknown; primal_status is Infeasible)"
+      },
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.452348898166278,
+      "max_stance_toe_speed_mps": 0.0015822953495121443,
+      "raw_trace_sha256": "ef29ea01a3251653dc90088845afbb6723fb6609b1e184a322986bccfab5bab2"
+    },
+    {
+      "dt_per_virtual_node_s": 0.04,
+      "accepted_lp_nodes": 217,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 1,
+      "first_nonaccepted": {
+        "index": 90,
+        "phase": "four_stance_rebalance",
+        "reason": "The HiGHS status code was not recognized. (HiGHS Status 15: model_status is Unknown; primal_status is Infeasible)"
+      },
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.42849808753048346,
+      "max_stance_toe_speed_mps": 0.0011867215121341096,
+      "raw_trace_sha256": "b9aa4b0dfd249426d0ce5f1a82bbd5cdf602fc0e7b0a8f813113c73b02836286"
+    },
+    {
+      "dt_per_virtual_node_s": 0.045,
+      "accepted_lp_nodes": 218,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 0,
+      "first_nonaccepted": null,
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.42498035927868116,
+      "max_stance_toe_speed_mps": 0.0010548635663414272,
+      "raw_trace_sha256": "a53ce757136cac3507a1927a357a8cc9f3cd46cc41e092d5db2fa0ecd6a072d7"
+    },
+    {
+      "dt_per_virtual_node_s": 0.05,
+      "accepted_lp_nodes": 218,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 0,
+      "first_nonaccepted": null,
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.4224641489526856,
+      "max_stance_toe_speed_mps": 0.0009493772097072848,
+      "raw_trace_sha256": "c0983e3fcdb640abed62e6da0d4393fbcd6ac26a463c6df53f37b12dc48b1e17"
+    },
+    {
+      "dt_per_virtual_node_s": 0.055,
+      "accepted_lp_nodes": 218,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 0,
+      "first_nonaccepted": null,
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.4206024378763401,
+      "max_stance_toe_speed_mps": 0.0008630701906429884,
+      "raw_trace_sha256": "7a173cc5ebe70562d9a9726b276290fdbe585ab3eeb0c12f6a7eafd6ad5c5776"
+    },
+    {
+      "dt_per_virtual_node_s": 0.06,
+      "accepted_lp_nodes": 218,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 0,
+      "first_nonaccepted": null,
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.41918645392277043,
+      "max_stance_toe_speed_mps": 0.0007911476747560722,
+      "raw_trace_sha256": "48abe32646ba3b6a365822291b97822c93c40dacded3cb8099d51423d6681164"
+    },
+    {
+      "dt_per_virtual_node_s": 0.1,
+      "accepted_lp_nodes": 218,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 0,
+      "first_nonaccepted": null,
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.41441889751562166,
+      "max_stance_toe_speed_mps": 0.0004746886048536424,
+      "raw_trace_sha256": "0e0f444b0796142e6cb9476a5d7a8253a3d1a329b9d9111ce46be4e2d9346950"
+    },
+    {
+      "dt_per_virtual_node_s": 0.15,
+      "accepted_lp_nodes": 218,
+      "total_nodes": 218,
+      "nonaccepted_or_unresolved": 0,
+      "first_nonaccepted": null,
+      "minimum_required_max_actuator_torque_over_accepted_nodes_Nm": 0.4129290361383873,
+      "max_stance_toe_speed_mps": 0.0003164590699024291,
+      "raw_trace_sha256": "0cbf18dea2a84277acf8028323cb3a3e506aa60d99341bb7431115540a6e74d3"
+    }
+  ],
+  "source_sha256": {
+    "generate_reference.py": "8ced9dba381a3b7f0b72e50b625b8c7c298a1eeb66b891bb7052f5d42850054e",
+    "inverse_dynamics_gate.py": "cd421a25a30f36b83cab46310d7d6becdb98a4a37f290f0e61d0c82d774eee0c",
+    "patch_local_idto.py": "3f8a31e2cdc44438518247929a67994ee3d662b52e14d2ff190529bd562641eb",
+    "test_g1_reference.py": "1dfbe824dbf54ddaa3eee4c8f43e1bf2bc00282f5a512225c60de2d8f8abbf75"
+  },
+  "input_sha256": {
+    "math_trace_zip": "bed03b9b58d1caab8734f17cf0362e0175c782b674a7ce205ee080c968cac130",
+    "original_mujoco_scene_xml": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3"
+  },
+  "caveats": [
+    "No globally optimized trajectory, only a prescribed trace evaluated under a uniform timing grid.",
+    "Inverse point-contact LP uses hypothesized support contact locations, not actual load-bearing contact pairs in a forward dynamic run.",
+    "Earlier MuJoCo PD controller replay PR44 failed for this proposed trace, despite static and sampled inverse-dynamics LP feasibility.",
+    "Rapid phase changes and nondifferentiable contact impulses are not certified by finite-difference path dynamics.",
+    "UNRECOGNIZED HiGHS status 15 counted as numerically unresolved, not proof of infeasibility.",
+    "Local C++ IDTO full-cycle adapter source generated but not compiled or executed."
+  ]
+}
