@@ -1,0 +1,74 @@
+{
+  "schema": "cad30-drake-mujoco-G0-parity-v1",
+  "source_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+  "mujoco_version": "3.14.0",
+  "drake_version": "1.30.0",
+  "counts": {
+    "mu_nq": 27,
+    "drake_nq": 27,
+    "mu_nv": 26,
+    "drake_nv": 26,
+    "mu_bodies": 48,
+    "drake_bodies": 48,
+    "mu_actuators": 20,
+    "drake_actuators": 20,
+    "drake_geometry_total_and_proximity": [
+      161,
+      8
+    ]
+  },
+  "mass_kg": {
+    "mujoco": 1.8048682,
+    "drake": 1.804868200000001
+  },
+  "max_default_q_delta": 1.1102230246251565e-16,
+  "max_default_com_delta_m": 1.1102230246251565e-16,
+  "joint_names_and_order_match": true,
+  "actuator_names_and_order_match": true,
+  "max_6_tibia_body_origin_delta_m": 5.551115123125783e-17,
+  "tibia_errors_m": {
+    "tibiaml": 5.551115123125783e-17,
+    "tibiamr": 2.7755575615628914e-17,
+    "tibiabl": 2.7755575615628914e-17,
+    "tibiabr": 0.0,
+    "tibiafl": 2.7755575615628914e-17,
+    "tibiafr": 2.7755575615628914e-17
+  },
+  "max_gravity_generalized_force_delta_N_or_Nm": 1.942890293094024e-16,
+  "max_inertial_matrix_delta_after_removing_mu_armature": 2.220446049250313e-16,
+  "max_raw_inertial_matrix_delta": 0.0020000000000000018,
+  "mu_joint_armature": 0.002,
+  "armature_joint_count": 20,
+  "drake_uncapped_actuator_names": [
+    "motor12_ctrl",
+    "motor11_ctrl",
+    "motor10_ctrl",
+    "motor9_ctrl",
+    "motor8_ctrl",
+    "motor31_ctrl",
+    "motor22_ctrl",
+    "motor23_ctrl",
+    "motor27_ctrl",
+    "motor19_ctrl",
+    "motor20_ctrl",
+    "motor21_ctrl",
+    "motor16_ctrl",
+    "motor17_ctrl",
+    "motor18_ctrl",
+    "motor15_ctrl",
+    "motor14_ctrl",
+    "motor13_ctrl"
+  ],
+  "mu_contact_geom_count": 8,
+  "caveats": [
+    "Kinematic/inertial parity, not contact dynamics or gait",
+    "MuJoCo joint armature 0.002 kg m^2 ignored by Drake 1.30 MJCF Parser",
+    "Drake parsed actuator effort limits as inf for limb motors; 0.7 Nm must be explicitly enforced",
+    "Drake MJCF Parser ignores joint frictionloss, joint armature and some contact solver settings",
+    "OBJ mesh format is needed for Drake 1.30; private meshes are never included in reports",
+    "Servo PD gains/saturations and contact normal/friction dynamics not yet cross-validated"
+  ],
+  "kinematic_inertial_parity_pass": true,
+  "G0_full_contact_actuator_parity": "NOT_VERIFIED",
+  "IDTO_CAD30_solver_status": "NOT_RUN"
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "cad30-idto-native-smoke-actual-run-v2",
+  "date": "2026-11-05",
+  "original_idto_upstream_git_sha": "de0629c7811aa9b330e56c4385629005b09495f0",
+  "drake_version": "1.30.0",
+  "mujoco_version": "3.14.0",
+  "build": {
+    "clang_link_build_exit": 0,
+    "binary_executed": true,
+    "fmt_eigen_abi_diagnostic_patch_applied": true,
+    "gflags_library_path_fixed": true
+  },
+  "full_cad_mjcf_direct_solver_run": {
+    "exit_code": 134,
+    "error": "Convex vs Halfspace unsupported signed distance query in Drake 1.30; direct contact model cannot solve"
+  },
+  "proxy_model": {
+    "radius_m": 0.004,
+    "tibia_contact_spheres": [
+      "bl",
+      "br",
+      "fl",
+      "fr",
+      "ml",
+      "mr"
+    ],
+    "removed_visual_and_auxiliary_geometries": 147,
+    "private_proxy_xml_sha256": "9f756f25f02f4d5311f0db285bab59532562941a927ab1a6f56120869750c222",
+    "source_mjcf_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+    "method": "Farthest tibia CAD mesh vertex from knee, in local body frame",
+    "contact_model_parity": "NOT_VERIFIED; simplified sphere-plane only"
+  },
+  "proxy_drake_parity": {
+    "nq": 27,
+    "nv": 26,
+    "bodies": 48,
+    "actuators": 20,
+    "total_mass_kg": 1.8048682,
+    "underlying_original_cad_inertial_parity_previously_verified": true,
+    "contact_collision_parity_verified": false
+  },
+  "optimizer_configuration": {
+    "is_full_periodic_gait": false,
+    "mpc": false,
+    "num_steps": 10,
+    "time_step_s": 0.05,
+    "horizon_s": 0.5,
+    "friction_coefficient": 1.1,
+    "contact_stiffness_N_per_m": 2000,
+    "q_init_source": "PR #40 physically saved six-contact root+legs snapshot; velocity set zero for smoke",
+    "theta_motor_limits_enforced_in_drake": false,
+    "contact_support_count_verified": false
+  },
+  "runs": {
+    "20mm_goal_10_iterations": {
+      "requested_world_Y_delta_mm": 20,
+      "q0_root_world_y_m": -0.03648025664,
+      "terminal_q_root_world_y_m": -0.0324186022161,
+      "planned_body_root_forward_mm": 4.061654423900003,
+      "max_computed_actuated_torque_Nm": 0.369353,
+      "reported_solver_status": "MAX_ITERATIONS_REACHED",
+      "solver_time_s": 1.45812,
+      "final_reported_cost_approx": 0.32,
+      "stdout_sha256": "acb9bba1eaf360a09b4be120f6cfdff982ab773f41f0aabdfe65a5be71fa5502",
+      "stdout_file": "idto_cad30_spheres_only_stdout.log"
+    },
+    "20mm_goal_60_iterations": {
+      "requested_world_Y_delta_mm": 20,
+      "q0_root_world_y_m": -0.03648025664,
+      "terminal_q_root_world_y_m": -0.0324088582742,
+      "planned_body_root_forward_mm": 4.071398365799999,
+      "max_computed_actuated_torque_Nm": 0.370936,
+      "reported_solver_status": "MAX_ITERATIONS_REACHED",
+      "solver_time_s": 7.72643,
+      "final_reported_cost_approx": 0.0191,
+      "stdout_sha256": "10b6e0fd80a459c6d94aee4c3067245ec4591212042cf0a70c3995a9ed86197d",
+      "stdout_file": "idto_cad30_spheres60_stdout.log"
+    },
+    "0mm_control_60_iterations": {
+      "requested_world_Y_delta_mm": 0,
+      "q0_root_world_y_m": -0.03648025664,
+      "terminal_q_root_world_y_m": -0.0369121746534,
+      "planned_body_root_forward_mm": -0.43191801339999975,
+      "max_computed_actuated_torque_Nm": 0.335574,
+      "reported_solver_status": "MAX_ITERATIONS_REACHED",
+      "solver_time_s": 8.59442,
+      "final_reported_cost_approx": 0.012,
+      "stdout_sha256": "2d707e6cd841523135e0114634038f372e024c3984b4f7c64af83a201302359f",
+      "stdout_file": "idto_cad30_zero_goal_stdout.log"
+    }
+  },
+  "differential_forward_mm": 4.503316379199998,
+  "checks": {
+    "solver_executed_native": true,
+    "physical_MuJoCo_replay": false,
+    "periodicity_verified": false,
+    "all_four_swing_landing_verified": false,
+    "hard_min_three_contact_verified": false,
+    "actuator_limits_verified": false,
+    "hardware_ready": false
+  },
+  "result_code": "IDTO_NATIVE_CAD30_OPTIMIZER_RUN_PASS_NOT_GAIT",
+  "next_step": "Implement phase/contact/periodic constraints and actuator realizability, then independent MuJoCo replay; original CAD collision mesh remains incompatible with IDTO 1.30 signed-distance query."
+}
