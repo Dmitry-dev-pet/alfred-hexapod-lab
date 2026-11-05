@@ -1,0 +1,96 @@
+{
+  "schema": "cad30-mr-force-feedback-real-dynamics-v1",
+  "date_utc": "2026-11-05",
+  "geometry": "Original private Freenove FNK0052 CAD30, 30 CAD meshes (not distributed)",
+  "mu_nominal": 1.1,
+  "dt_nominal_s": 0.002,
+  "feedback": {
+    "mode": "actual measured MR Fz + MR toe vertical velocity; motor position-target correction only",
+    "gain": 4.0,
+    "damping": 20.0,
+    "force_target_N": 0.8,
+    "max_joint_target_adjustment_rad": 0.06
+  },
+  "baseline": {
+    "prelude_status": "PASS_TO_PRE_ML",
+    "prelude_physics_steps": 17675,
+    "ml_status": "LOCAL_ML_LIFT_SWING_TOUCHDOWN_PASS",
+    "mr_status": "FAIL",
+    "mr_accepted_strict": false,
+    "mr_force_loss_frames": 8,
+    "mr_actual_toe_world_forward_mm": 25.49445229322574,
+    "mr_peak_raw_leg_torque_Nm": 0.6636813183088967,
+    "mr_end_four_loaded_fraction": 0.9533333333333334,
+    "COM_Y_mm_after_mr_from_six": -70.17184555507231
+  },
+  "closed_loop": {
+    "prelude_status": "PASS_TO_PRE_ML",
+    "prelude_physics_steps": 17675,
+    "ml_status": "LOCAL_ML_LIFT_SWING_TOUCHDOWN_PASS",
+    "mr_status": "LOCAL_NEXT_STEP_PASS_NOT_GAIT",
+    "mr_accepted_strict": true,
+    "mr_force_loss_frames": 0,
+    "mr_actual_toe_world_forward_mm": 29.839445109949466,
+    "mr_peak_raw_leg_torque_Nm": 0.6636813183088967,
+    "mr_end_four_loaded_fraction": 1.0,
+    "COM_Y_mm_after_mr_from_six": -66.13989139310029,
+    "no_root_set_or_reset_between_stages": true
+  },
+  "closed_loop_mr_local": {
+    "min_fz_trio_N": 1.880040213006274,
+    "min_margin_trio_mm": 12.8154397290747,
+    "trio_max_contiguous_bad_frames": 0,
+    "physical_toe_forward_mm": 29.839445109949466,
+    "zero_contact_tibia_total_s": 2.5419999999999416,
+    "mesh_above_2mm_no_contact_sampled_s": 2.0800000000000014,
+    "max_leg_joint_rad": 1.6731031885744685,
+    "max_stance_marker_drift_mm": 1.367854284263132,
+    "max_ik_error_mm": 4.281031962699442e-06,
+    "last_hold_fraction_four_loaded": 1.0,
+    "max_raw_tau_Nm": 0.6636813183088967,
+    "touchdown_feedback": {
+      "enabled": true,
+      "gain": 4.0,
+      "velocity_damping": 20.0,
+      "force_target_N": 0.8,
+      "max_target_adjustment_rad": 0.06,
+      "ever_contacted": true,
+      "updates": 175,
+      "peak_actual_goal_adjustment_rad": 0.06
+    }
+  },
+  "sensitivity_from_nominal_ml_checkpoint": {
+    "mu_0p8_dt2ms": {
+      "accepted": true,
+      "trio_bad_force_frames": 0,
+      "min_fz_trio_N": 1.9915930575865066,
+      "min_margin_trio_mm": 13.529309958189858,
+      "physical_toe_forward_mm": 29.844979481428272,
+      "max_raw_tau_Nm": 0.6386959604585427,
+      "last_hold_fraction_four_loaded": 1.0
+    },
+    "mu_0p6_dt2ms": {
+      "accepted": false,
+      "trio_bad_force_frames": 34,
+      "physical_toe_forward_mm": 30.279181961921836,
+      "max_raw_tau_Nm": 0.6163541866338609
+    },
+    "mu_1p1_dt1ms": {
+      "accepted": true,
+      "trio_bad_force_frames": 0,
+      "min_fz_trio_N": 1.848625271053514,
+      "min_margin_trio_mm": 12.685899078077954,
+      "physical_toe_forward_mm": 28.947097185134357,
+      "max_raw_tau_Nm": 0.667897475294528,
+      "last_hold_fraction_four_loaded": 0.9925
+    }
+  },
+  "limitations": [
+    "No proof of full 4-step cycle or net forward movement",
+    "Other 2 legs BL/BR not swung",
+    "Feedback observes ideal simulated Fz; stock physical Freenove does not measure it",
+    "Torque, friction, joint limits provisional; no hardware validation",
+    "No cross-simulation robustness across full physical chain at lower friction",
+    "No numerical safety certificate beyond tested trajectories"
+  ]
+}
