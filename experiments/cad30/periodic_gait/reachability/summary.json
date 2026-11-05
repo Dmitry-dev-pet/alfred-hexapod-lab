@@ -1,0 +1,135 @@
+{
+  "schema": "CAD30-reachable-COM-screen-20261105/1",
+  "status": "BOUNDED_SCREEN_ONLY_NOT_CERTIFIED_REGION",
+  "model": "original FNK0052 CAD30 (mass ~1.805 kg), saved qpos after PR40 BL swing",
+  "limitations": {
+    "angle_abs_max_rad": 1.7,
+    "static_torque_nm": 0.7,
+    "nominal_mu": 1.1,
+    "foot_toe_ik_tolerance_mm": 0.8,
+    "support_margin_mm": 10,
+    "original_free_leg_joint_angles_kept": "no confirmed swing clearance",
+    "contact_model": "point landmark toes; static 3D wrench LP, no mj_step or real Fz"
+  },
+  "provenance": {
+    "cad_xml_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+    "physical_qpos_source_sha256": "4e10b5165ea1618a16e8d729595a204f0321b96e6333d8907c4adc65d0dc0989"
+  },
+  "results": {
+    "fixed_torso": {
+      "test_per_case": 169,
+      "four_anchor_feasible": 16,
+      "three_anchor_ml_feasible": 3,
+      "three_anchor_mr_feasible": 2,
+      "four_and_three_overlap_ml": 0,
+      "four_and_three_overlap_mr": 0
+    },
+    "height": {
+      "tested_total": 504,
+      "three_anchor_ml_feasible": 19,
+      "three_anchor_mr_feasible": 11,
+      "body_z_delta_mm": [
+        -30,
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30
+      ]
+    },
+    "tilt": {
+      "tested_total": 750,
+      "three_anchor_ml_feasible": 26,
+      "three_anchor_mr_feasible": 9,
+      "body_world_roll_pitch_deg": [
+        [
+          -8,
+          0
+        ],
+        [
+          0,
+          -8
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "z_mm": [
+        0,
+        15,
+        30
+      ]
+    },
+    "three_vs_four_tilt": {
+      "three_anchor_feasible_points": 35,
+      "same_4_anchor_ik_feasible": 0,
+      "fourth_leg_exceeds_rigid_max_length": 35,
+      "max_rigid_link_mm": 256.635,
+      "min_excess_ml_mm": 19.59,
+      "min_excess_mr_mm": 44.912
+    }
+  },
+  "observed_candidates": {
+    "ml": {
+      "leg": "ml",
+      "roll_deg": 0,
+      "pitch_deg": -8,
+      "delta_mm": [
+        30,
+        -105,
+        0
+      ],
+      "com_xy_mm": [
+        29.43,
+        -111.15
+      ],
+      "margin_mm": 11.899,
+      "toe_err_mm": 0.782,
+      "jointmax_rad": 1.6533,
+      "static_tau_nm": 0.4061,
+      "screen_pass": true,
+      "four_toe_error_mm": 27.603,
+      "four_jointmax_rad": 1.6533,
+      "four_pass": false,
+      "lifted_leg_hip_to_original_toe_mm": 276.225,
+      "link_length_upper_bound_mm": 256.635,
+      "rigid_link_bound_violated": true
+    },
+    "mr": {
+      "leg": "mr",
+      "roll_deg": 0,
+      "pitch_deg": 8,
+      "delta_mm": [
+        -75,
+        -90,
+        0
+      ],
+      "com_xy_mm": [
+        -70.92,
+        -103.07
+      ],
+      "margin_mm": 14.023,
+      "toe_err_mm": 0.0,
+      "jointmax_rad": 1.565,
+      "static_tau_nm": 0.3383,
+      "screen_pass": true,
+      "four_toe_error_mm": 54.308,
+      "four_jointmax_rad": 1.565,
+      "four_pass": false,
+      "lifted_leg_hip_to_original_toe_mm": 301.547,
+      "link_length_upper_bound_mm": 256.635,
+      "rigid_link_bound_violated": true
+    }
+  },
+  "interpretation": "3-stance endpoint poses exist in bounded numerical screen but cannot retain original fourth toe at same pose by rigid-link reach; no proof those endpoints are continuously reachable from starting 4-contact pose; no global impossibility claim."
+}
