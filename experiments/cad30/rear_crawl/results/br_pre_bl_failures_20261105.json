@@ -1,0 +1,197 @@
+[
+  {
+    "prep": -75,
+    "sx": -10,
+    "sy": 30,
+    "q": 1.728,
+    "tau": 0.694,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 107,
+    "toe": 21.54,
+    "hold": 0.984,
+    "accepted": false,
+    "fail": [
+      "intended_tripod_loss",
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -75,
+    "sx": -15,
+    "sy": 35,
+    "q": 1.718,
+    "tau": 0.637,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 34,
+    "toe": 31.32,
+    "hold": 1.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -75,
+    "sx": -20,
+    "sy": 40,
+    "q": 1.746,
+    "tau": 0.589,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 16,
+    "toe": 32.56,
+    "hold": 1.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -75,
+    "sx": -30,
+    "sy": 45,
+    "q": 1.776,
+    "tau": 0.621,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 134,
+    "toe": 31.05,
+    "hold": 0.028,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -10,
+    "sy": 30,
+    "q": 1.728,
+    "tau": 0.691,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 98,
+    "toe": 22.21,
+    "hold": 0.992,
+    "accepted": false,
+    "fail": [
+      "intended_tripod_loss",
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -15,
+    "sy": 35,
+    "q": 1.722,
+    "tau": 0.624,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 17,
+    "toe": 31.87,
+    "hold": 1.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -20,
+    "sy": 40,
+    "q": 1.752,
+    "tau": 0.595,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 6,
+    "toe": 32.77,
+    "hold": 1.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -30,
+    "sy": 45,
+    "q": 1.78,
+    "tau": 0.648,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 238,
+    "toe": 30.29,
+    "hold": 0.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -10,
+    "sy": 30,
+    "q": 1.729,
+    "tau": 0.699,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 79,
+    "toe": 23.85,
+    "hold": 0.996,
+    "accepted": false,
+    "fail": [
+      "intended_tripod_loss",
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -15,
+    "sy": 35,
+    "q": 1.733,
+    "tau": 0.632,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 6,
+    "toe": 33.7,
+    "hold": 1.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -20,
+    "sy": 40,
+    "q": 1.756,
+    "tau": 0.598,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 8,
+    "toe": 34.56,
+    "hold": 1.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -30,
+    "sy": 45,
+    "q": 1.789,
+    "tau": 0.637,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 332,
+    "toe": 33.46,
+    "hold": 0.0,
+    "accepted": false,
+    "fail": [
+      "model_joint_limit"
+    ]
+  }
+]

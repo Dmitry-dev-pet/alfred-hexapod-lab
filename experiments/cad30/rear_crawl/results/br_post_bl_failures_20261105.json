@@ -1,0 +1,273 @@
+[
+  {
+    "prep": -85,
+    "sx": -20,
+    "sy": 35,
+    "q": 1.811,
+    "tau": 1.034,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 643,
+    "toe": 7.88,
+    "hold": 0.04,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -30,
+    "sy": 40,
+    "q": 1.779,
+    "tau": 0.89,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1105,
+    "toe": 2.83,
+    "hold": 0.148,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -40,
+    "sy": 40,
+    "q": 1.792,
+    "tau": 0.897,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1315,
+    "toe": 10.69,
+    "hold": 0.56,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -50,
+    "sy": 40,
+    "q": 1.811,
+    "tau": 0.891,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1334,
+    "toe": 9.06,
+    "hold": 0.38,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -50,
+    "sy": 50,
+    "q": 1.82,
+    "tau": 0.842,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1286,
+    "toe": -27.17,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -60,
+    "sy": 50,
+    "q": 1.995,
+    "tau": 2.177,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 191,
+    "toe": 3.4,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -60,
+    "sy": 60,
+    "q": 1.954,
+    "tau": 1.963,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1350,
+    "toe": 29.73,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -85,
+    "sx": -40,
+    "sy": 55,
+    "q": 1.795,
+    "tau": 0.698,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1350,
+    "toe": 20.65,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -20,
+    "sy": 35,
+    "q": 1.812,
+    "tau": 0.925,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 574,
+    "toe": 1.76,
+    "hold": 0.668,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -30,
+    "sy": 40,
+    "q": 1.814,
+    "tau": 0.987,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1217,
+    "toe": -113.61,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -40,
+    "sy": 40,
+    "q": 1.796,
+    "tau": 0.752,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1342,
+    "toe": 2.81,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -50,
+    "sy": 40,
+    "q": 1.835,
+    "tau": 1.168,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1350,
+    "toe": 17.97,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -50,
+    "sy": 50,
+    "q": 1.93,
+    "tau": 1.694,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1350,
+    "toe": 20.21,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -60,
+    "sy": 50,
+    "q": 1.939,
+    "tau": 1.773,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1350,
+    "toe": 29.85,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -60,
+    "sy": 60,
+    "q": 1.868,
+    "tau": 1.239,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1350,
+    "toe": 29.48,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  },
+  {
+    "prep": -100,
+    "sx": -40,
+    "sy": 55,
+    "q": 1.819,
+    "tau": 0.838,
+    "margin": null,
+    "minFz": 0.0,
+    "bad": 1350,
+    "toe": 22.92,
+    "hold": 0.0,
+    "accepted": false,
+    "fails": [
+      "model_joint_limit",
+      "model_tau_limit"
+    ]
+  }
+]

@@ -1,0 +1,385 @@
+{
+  "schema": "CAD30_contiguous_6_ML_MR_MLprep_BL_v1",
+  "model": "Freenove FNK0052 original CAD30, MuJoCo 3.14",
+  "mu": 1.1,
+  "time_step_s": 0.002,
+  "nominal_tau_cap_Nm": 0.7,
+  "nominal_joint_bound_rad": 1.7,
+  "input_six": "saved Pupper six-contact state AFTER prebalance (not original raw start)",
+  "prelude": {
+    "status": "PASS_TO_PRE_ML",
+    "physics_steps": 17675
+  },
+  "first_ml": {
+    "status": "LOCAL_ML_LIFT_SWING_TOUCHDOWN_PASS",
+    "input": "measured physical checkpoint PR#44 node 117, no artificial root motion",
+    "command": {
+      "com_margin_mm": 26.0,
+      "step_command_mm": 28.211554388708002,
+      "swing_height_command_mm": 16.419039367295706
+    },
+    "mu": 1.1,
+    "physics_dt_s": 0.002,
+    "checkpoint_node": 117,
+    "initial_fz_N": {
+      "ml": 3.166729945221758,
+      "mr": 4.350018384506144,
+      "bl": 5.2485552702581915,
+      "br": 4.942610827965716,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "initial_tripod_margin_mm": 5.429991900489845,
+    "virtual_com_shift_target_xy_mm": [
+      6.515937871823417,
+      -19.51070954421554
+    ],
+    "max_ik_toe_error_mm": 0.5232089126057679,
+    "max_stance_toe_marker_xy_drift_mm": 0.6129202387847681,
+    "real_com_prebalance_xy_mm": [
+      6.1489778697676725,
+      -23.129100420778524
+    ],
+    "prebalance_actual_tripod_margin_mm": 28.766482613062667,
+    "prebalance_Fz_N": {
+      "ml": 1.782458309845008,
+      "mr": 2.6314306997804273,
+      "bl": 6.3252764541775495,
+      "br": 6.967067471213143,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "swing_min_tripod_Fz_N": 1.1826030270918668,
+    "swing_min_tripod_margin_mm": 27.133315015091934,
+    "minimum_tripod_margin_whole_test_mm": 5.429991900489845,
+    "ml_zero_contact_pairs_total_s": 1.5940000000000012,
+    "ml_toe_height_over_2mm_no_contact_s": 1.0620000000000007,
+    "ml_mesh_height_over_2mm_no_contact_s_sampled": 0.9600000000000005,
+    "ml_mesh_peak_height_mm_sampled": 6.561986286733629,
+    "ml_toe_peak_height_mm": 7.311132818221849,
+    "ml_in_air_forward_mm": 14.653267340710215,
+    "actual_ml_world_forward_mm": 21.28611016291722,
+    "final_Fz_N": {
+      "ml": 1.9518998346765468,
+      "mr": 1.6468867604476958,
+      "bl": 6.019554491720142,
+      "br": 8.087606168323376,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "final_tripod_margin_mm": 26.693153169026417,
+    "final_four_loaded_last_hold_fraction": 1.0,
+    "max_leg_tau_Nm": 0.5995181971964323,
+    "max_raw_leg_tau_Nm": 0.5995181971964323,
+    "max_leg_joint_abs_rad": 1.6768943018748508,
+    "min_four_legs_loaded_count": 3,
+    "first_guard_violation": null,
+    "root_world_y_delta_mm": -29.307815236126537,
+    "COM_world_y_delta_mm": -26.503426097959775,
+    "source_has_hardware_calibrated_limits": false,
+    "warning": "One middle-leg step from checkpoint only; not a complete gait; contact parameters provisional.",
+    "accepted": true
+  },
+  "second_mr": {
+    "model": "FNK0052 CAD30 MuJoCo original geometry nominal m≈1.805kg",
+    "swing_leg": "mr",
+    "other_legs": [
+      "ml",
+      "bl",
+      "br"
+    ],
+    "mu": 1.1,
+    "controller_PD_Kp_Kd": [
+      7.0,
+      0.32
+    ],
+    "step_command_mm": 33,
+    "clearance_command_mm": 18,
+    "swing_node_s": 0.35,
+    "pre_shift_xy_mm": [
+      0.0,
+      20.0
+    ],
+    "initial_hold_s": 0.2,
+    "stance_press_mm": 0.0,
+    "stance_bias_z_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ml_servo_bias_rad": [
+      0.0,
+      -0.075,
+      0.055
+    ],
+    "initial_Fz_N": {
+      "ml": 1.9518605460288883,
+      "mr": 1.6469785840822175,
+      "bl": 6.019583244435192,
+      "br": 8.08750056308281,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "initial_tripod_margin_mm": 26.693157590940388,
+    "start_swing_Fz_N": {
+      "ml": 2.7750322682231263,
+      "mr": 2.938383175891942,
+      "bl": 5.259544431185176,
+      "br": 6.731877417999538,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "COM_y_move_during_next_step_mm": 15.150511640193473,
+    "root_y_move_during_next_step_mm": 15.719699845115578,
+    "physical_toe_forward_mm": 29.839445109949466,
+    "in_air_toe_forward_mm": 18.714224116717272,
+    "zero_contact_tibia_total_s": 2.5419999999999416,
+    "mesh_above_2mm_no_contact_sampled_s": 2.0800000000000014,
+    "max_mesh_height_mm_sampled": 9.83887830672324,
+    "min_fz_trio_N": 1.880040213006274,
+    "min_margin_trio_mm": 12.8154397290747,
+    "trio_bad_force_frames": 0,
+    "trio_max_contiguous_bad_frames": 0,
+    "max_stance_marker_drift_mm": 1.367854284263132,
+    "max_ik_error_mm": 4.281031962699442e-06,
+    "max_leg_tau_Nm": 0.6636813183088967,
+    "max_raw_tau_Nm": 0.6636813183088967,
+    "max_leg_joint_rad": 1.6731031885744685,
+    "last_hold_fraction_four_loaded": 1.0,
+    "final_Fz_N": {
+      "ml": 3.1166045419641106,
+      "mr": 2.0104701048585047,
+      "bl": 4.838577556957665,
+      "br": 7.739822791476357,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "failures": [],
+    "physics_steps": 3000,
+    "touchdown_feedback": {
+      "enabled": true,
+      "gain": 4.0,
+      "velocity_damping": 20.0,
+      "force_target_N": 0.8,
+      "max_target_adjustment_rad": 0.06,
+      "ever_contacted": true,
+      "updates": 175,
+      "peak_actual_goal_adjustment_rad": 0.06
+    },
+    "dt_s": 0.002,
+    "no_root_teleport": true,
+    "warning": "local single-step only; not full gait, hardware limits not validated",
+    "accepted": true,
+    "status": "LOCAL_NEXT_STEP_PASS_NOT_GAIT"
+  },
+  "additional_ml_backward_prep": {
+    "model": "FNK0052 CAD30 MuJoCo original geometry nominal m≈1.805kg",
+    "swing_leg": "ml",
+    "other_legs": [
+      "mr",
+      "bl",
+      "br"
+    ],
+    "mu": 1.1,
+    "controller_PD_Kp_Kd": [
+      7.0,
+      0.32
+    ],
+    "step_command_mm": -85.0,
+    "lateral_step_command_mm": 0,
+    "physical_toe_lateral_mm": 0.1988672010831416,
+    "clearance_command_mm": 18,
+    "swing_node_s": 0.24,
+    "pre_shift_xy_mm": [
+      0.0,
+      0.0
+    ],
+    "initial_hold_s": 0.2,
+    "stance_press_mm": 0.0,
+    "stance_bias_z_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ml_servo_bias_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "initial_Fz_N": {
+      "ml": 3.116708760920241,
+      "mr": 2.010437738262376,
+      "bl": 4.838471501033279,
+      "br": 7.739899845487425,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "initial_tripod_margin_mm": 30.557559412084316,
+    "start_swing_Fz_N": {
+      "ml": 3.1475293819680297,
+      "mr": 1.9775607430067197,
+      "bl": 4.801071152883473,
+      "br": 7.779421938886915,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "COM_y_move_during_next_step_mm": -0.557216641639921,
+    "root_y_move_during_next_step_mm": 1.9155607797305685,
+    "physical_toe_forward_mm": -84.96603758770875,
+    "in_air_toe_forward_mm": 38.023616410427415,
+    "zero_contact_tibia_total_s": 1.7160000000000013,
+    "mesh_above_2mm_no_contact_sampled_s": 0.9800000000000005,
+    "max_mesh_height_mm_sampled": 5.9763365727831115,
+    "min_fz_trio_N": 1.8476472643923536,
+    "min_margin_trio_mm": 29.818832115036496,
+    "trio_bad_force_frames": 0,
+    "trio_max_contiguous_bad_frames": 0,
+    "max_stance_marker_drift_mm": 0.7678862418863286,
+    "max_ik_error_mm": 4.316624209697926e-06,
+    "max_leg_tau_Nm": 0.6129985919102414,
+    "max_raw_tau_Nm": 0.6129985919102414,
+    "max_leg_joint_rad": 1.6244905350218501,
+    "last_hold_fraction_four_loaded": 1.0,
+    "final_Fz_N": {
+      "ml": 2.9528781021556054,
+      "mr": 3.75652958886407,
+      "bl": 5.257647365719221,
+      "br": 5.738506119377698,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "failures": [],
+    "physics_steps": 1580,
+    "touchdown_feedback": {
+      "enabled": true,
+      "gain": 4.0,
+      "velocity_damping": 20.0,
+      "force_target_N": 0.8,
+      "max_target_adjustment_rad": 0.06,
+      "ever_contacted": true,
+      "updates": 120,
+      "peak_actual_goal_adjustment_rad": 0.06
+    },
+    "dt_s": 0.002,
+    "no_root_teleport": true,
+    "warning": "local single-step only; not full gait, hardware limits not validated",
+    "accepted": false,
+    "status": "FAIL"
+  },
+  "ml_prep_accepted": true,
+  "third_bl": {
+    "model": "FNK0052 CAD30 MuJoCo original geometry nominal m≈1.805kg",
+    "swing_leg": "bl",
+    "other_legs": [
+      "ml",
+      "mr",
+      "br"
+    ],
+    "mu": 1.1,
+    "controller_PD_Kp_Kd": [
+      7.0,
+      0.32
+    ],
+    "step_command_mm": 30,
+    "clearance_command_mm": 15,
+    "swing_node_s": 0.28,
+    "pre_shift_xy_mm": [
+      0.0,
+      0.0
+    ],
+    "initial_hold_s": 0.2,
+    "stance_press_mm": 0.0,
+    "stance_bias_z_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ml_servo_bias_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "initial_Fz_N": {
+      "ml": 2.9529356230744686,
+      "mr": 3.7565396543984027,
+      "bl": 5.257599313117542,
+      "br": 5.738519297846409,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "initial_tripod_margin_mm": 17.56941568521145,
+    "start_swing_Fz_N": {
+      "ml": 2.974204446991496,
+      "mr": 3.751812146785146,
+      "bl": 5.234276663932761,
+      "br": 5.74534433688857,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "COM_y_move_during_next_step_mm": -0.813693999413681,
+    "root_y_move_during_next_step_mm": -1.900779083526774,
+    "physical_toe_forward_mm": 32.107452194321496,
+    "in_air_toe_forward_mm": 21.726595997839688,
+    "zero_contact_tibia_total_s": 2.2439999999999745,
+    "mesh_above_2mm_no_contact_sampled_s": 1.720000000000001,
+    "max_mesh_height_mm_sampled": 9.905041613391896,
+    "min_fz_trio_N": 1.6574471586165893,
+    "min_margin_trio_mm": 16.03552458359661,
+    "trio_bad_force_frames": 0,
+    "trio_max_contiguous_bad_frames": 0,
+    "max_stance_marker_drift_mm": 0.8054102180904338,
+    "max_ik_error_mm": 6.549932162732551e-06,
+    "max_leg_tau_Nm": 0.4673070787987495,
+    "max_raw_tau_Nm": 0.4673070787987495,
+    "max_leg_joint_rad": 1.6356557772485922,
+    "last_hold_fraction_four_loaded": 1.0,
+    "final_Fz_N": {
+      "ml": 5.298177215173315,
+      "mr": 2.267876521833503,
+      "bl": 2.530608373475382,
+      "br": 7.608884494705755,
+      "fl": 0.0,
+      "fr": 0.0
+    },
+    "failures": [],
+    "physics_steps": 1760,
+    "touchdown_feedback": {
+      "enabled": true,
+      "gain": 4.0,
+      "velocity_damping": 20.0,
+      "force_target_N": 0.8,
+      "max_target_adjustment_rad": 0.06,
+      "ever_contacted": true,
+      "updates": 103,
+      "peak_actual_goal_adjustment_rad": 0.06
+    },
+    "dt_s": 0.002,
+    "no_root_teleport": true,
+    "warning": "local single-step only; not full gait, hardware limits not validated",
+    "accepted": true,
+    "status": "LOCAL_NEXT_STEP_PASS_NOT_GAIT"
+  },
+  "third_bl_accepted": true,
+  "br_after_bl_geometry": {
+    "geometry_pass": true,
+    "initial_signed_margin_mm": -48.327161167546784,
+    "target_signed_margin_mm": 10.0,
+    "required_COM_dx_dy_mm": [
+      -53.59322769267167,
+      43.82995876962158
+    ],
+    "required_COM_displacement_mm": 69.23365756816027
+  },
+  "net_COM_Y_mm_from_saved_six": -67.51093988929505,
+  "net_root_Y_mm_from_saved_six": -87.39282940932645,
+  "all_phases_same_MjData": true,
+  "root_qpos_not_overwritten_during_simulation": true,
+  "all_four_legs_swing_forward": false,
+  "repeatable_positive_net_gait": false,
+  "private_CAD_meshes_in_artifact": false,
+  "trace_sha256": {
+    "mr": "a2ae8ce13abf9584afc25b7963abc8c9a20a644f9bfe5ce251be4e038ba081d3",
+    "ml_preparation": "13a611b8cb706df545caecee627ffcefef42b4c0b13f65d63c95dd889c607542",
+    "bl": "62a3d348bcd7f0bc7f493561ee2748cd9f43b5ce4b149160c4bdf212d513852e"
+  }
+}
