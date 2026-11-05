@@ -1,0 +1,31 @@
+{
+  "math_first_four_crawl_v1.py": {
+    "sha256": "c910521f8116a62b5b0d054f62d7b86b1d42e64ba9f2bf9727fc16aac598c818",
+    "size": 12160
+  },
+  "test_math_first_four_crawl_v1.py": {
+    "sha256": "b9529c5039b86e6b0fe9143e0f9178209f39d149933b102b66fc95b54d690494",
+    "size": 2073
+  },
+  "sensitivity_report_generator.py": {
+    "sha256": "3864da8829afedc113261a004f9522c262b0b50a95f22fa406387d55ce91c34f",
+    "size": 1897
+  },
+  "README_MATH_FIRST_FOUR_CRAWL_20261105.md": {
+    "sha256": "667ae88351f1e3f5f1e56b79033a28c807e000c1bb3c8e3c83f4b7aad49c89e5",
+    "size": 8887
+  },
+  "math_first_four_crawl_result.json": {
+    "sha256": "b189fb9b575d78fd316fe1bace74e884efaeacbac866a6739404ae62a92c46b3",
+    "size": 2034
+  },
+  "math_first_four_crawl_trace.json": {
+    "sha256": "27178dc148420531552f3dae9eb712c4b7e63fd937ce59b65c66e9f5378ce4d3",
+    "size": 307951
+  },
+  "math_first_four_crawl_sensitivity.json": {
+    "sha256": "368142791dff34b1b2c966c8e9c366a81d3b516cca362cc6195a73b9d8dd2f1b",
+    "size": 2891
+  }
+}
+
