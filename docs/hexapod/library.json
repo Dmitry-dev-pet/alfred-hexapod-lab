@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 11,
+  "revision": 12,
   "entries": [
     {
       "id": "tripod-60",
@@ -672,6 +672,36 @@
           "path": "hexapod/live-v3-fast/kinematic-controller.js",
           "sha256": "0529164fa0a0a52d084618227eb721ac1e7e56dff6e3dd3c9b07d02c030cd141",
           "size": 4284
+        }
+      ]
+    },
+    {
+      "id": "live-v4-gaits",
+      "title": "Джойстик · 3 походки",
+      "detail": "Wave / Ripple / Tripod · шаг 15–35 мм · офлайн-кинематика, без физики в реальном времени",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v4-gaits/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v4-gaits/index.html",
+          "sha256": "2f26064d13b65a4444cff740257d49ce492f9100ee57f7f7b7944960865b034a",
+          "size": 5217
+        },
+        {
+          "path": "hexapod/live-v4-gaits/app.js",
+          "sha256": "06165cc019618788cc770dbc0e850499f3b851c17e7a8266172d39056b543d70",
+          "size": 12060
+        },
+        {
+          "path": "hexapod/live-v4-gaits/kinematic-controller.js",
+          "sha256": "4c99f879efa33dac87b408e8c28fdda82269a26fbfbf3675828a2f42c6037a78",
+          "size": 7206
+        },
+        {
+          "path": "hexapod/data/live-v4-gaits-kit.json",
+          "sha256": "23a35f4049d58761338e4afeac4bb4075833b66077349768da87c3675d6f8581",
+          "size": 592924
         }
       ]
     }
