@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 5,
+  "revision": 6,
   "entries": [
     {
       "id": "tripod-60",
@@ -367,6 +367,156 @@
           "path": "hexapod/data/cad-rig-dynamic-slippery.json",
           "sha256": "50b6ba714cb466accd46eb7458418f1aa059e85412fe129586b0d157e38be2f0",
           "size": 399993
+        }
+      ]
+    },
+    {
+      "id": "issue41-rear10",
+      "title": "Задние вперёд · 7,8 мм",
+      "detail": "Номинальная физика μ=1,1; задние стопы переместились в воздухе на 7,1 мм и приземлились примерно на 7,8 мм впереди исходных. Корпус +10,3 мм, целевые +20 мм не дости",
+      "duration_s": 3.54,
+      "href": "/hexapod/issue41-rear10/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/issue41-rear10/index.html",
+          "sha256": "52fb3fe8b965fd64fa1822dd061e8904508ac073469ad3b78b4778679f1b9d49",
+          "size": 4414
+        },
+        {
+          "path": "hexapod/issue41-rear10/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-rear10-points.json",
+          "sha256": "1ba057310c8eb249d15df9fcf4c2078381c4af7cea55bfb4b20d73fd1c99791e",
+          "size": 197565
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-rear10.json",
+          "sha256": "9438b871dbd46937d3709aa1f425ed68148b1792ae3ae9f89f3f1d4dfcb4ea02",
+          "size": 387947
+        }
+      ]
+    },
+    {
+      "id": "issue41-rear5",
+      "title": "Задние вперёд · 4,6 мм",
+      "detail": "При целевых 5 мм реально переместились примерно на 4,6 мм. Физический перенос есть, но исследовательский критерий посадки ≥5 мм не выполнен.",
+      "duration_s": 3.54,
+      "href": "/hexapod/issue41-rear5/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-rear5/index.html",
+          "sha256": "cd5a62e5e9e58009c2432b57399f6993b2a075f16261873c0194d5d0ee6d5996",
+          "size": 4280
+        },
+        {
+          "path": "hexapod/issue41-rear5/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-rear5-points.json",
+          "sha256": "6a5bb8fdc02bec380611639becbf708b45c38c8f139122320fe7bec4b06e0c0e",
+          "size": 197544
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-rear5.json",
+          "sha256": "59940dda227c21aa840c65cf07688e6983f865db825c6e8109465b27c4919a9d",
+          "size": 387934
+        }
+      ]
+    },
+    {
+      "id": "issue41-mu08",
+      "title": "Скольжение · μ=0,8",
+      "detail": "После переноса корпус временно потерял две опоры. Условия устойчивости не прошли; успешной ходьбы нет.",
+      "duration_s": 3.52,
+      "href": "/hexapod/issue41-mu08/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-mu08/index.html",
+          "sha256": "51ca9e693075cf9c0e113c62c9bdcf94946bbc665c93795751c394f40eaf6e15",
+          "size": 4232
+        },
+        {
+          "path": "hexapod/issue41-mu08/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-mu08-points.json",
+          "sha256": "c4bddbf3e9067a09289ccfe472121b5c70bba820a47e04acd6fc463348b5c726",
+          "size": 195861
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-mu08.json",
+          "sha256": "65206037b0c70d86d7d43c42f54d6868c3abc3be4df347cb575eea25faf95cd3",
+          "size": 385571
+        }
+      ]
+    },
+    {
+      "id": "issue41-mu06",
+      "title": "Скольжение · μ=0,6",
+      "detail": "В той же программе при меньшем трении оптимизация теряла допустимое решение, часть контактов сорвалась. Опасно переносить на железо.",
+      "duration_s": 3.52,
+      "href": "/hexapod/issue41-mu06/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-mu06/index.html",
+          "sha256": "ddd97e01b95c2326862ba9377824926bb46f3a296e36051c9aecf58a93ce855c",
+          "size": 4284
+        },
+        {
+          "path": "hexapod/issue41-mu06/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-mu06-points.json",
+          "sha256": "60a361114b1da796c7a9c22e28ba008ba1ac825b56c0eec69a47276a92cb72ce",
+          "size": 196005
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-mu06.json",
+          "sha256": "b566441022c726ea273300753cb7065a35dd08946c74ed8ed1b7126dbc1d4b96",
+          "size": 384589
+        }
+      ]
+    },
+    {
+      "id": "issue41-mu03",
+      "title": "Скольжение · μ=0,3",
+      "detail": "Сильно скользкая поверхность: контакты и моментные ограничения не соблюдаются. Нет подтверждённого двухопорного шага.",
+      "duration_s": 3.52,
+      "href": "/hexapod/issue41-mu03/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-mu03/index.html",
+          "sha256": "ddc6ddc3bc1e29d45e2df31e6d865af133b307b32e6eaa9674aca1ed1bc6fdc9",
+          "size": 4259
+        },
+        {
+          "path": "hexapod/issue41-mu03/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-mu03-points.json",
+          "sha256": "b87c5255a6b125b9b5f3f7d49749f7d3f5f381f158ee0f0637360ab0dae75b0e",
+          "size": 197363
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-mu03.json",
+          "sha256": "f897c0d6d8dc87fd57a7e6d55af30e63cd0a10ba53de4a46079ef2d5c24b764a",
+          "size": 386156
         }
       ]
     }
