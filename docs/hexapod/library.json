@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 12,
+  "revision": 13,
   "entries": [
     {
       "id": "tripod-60",
@@ -702,6 +702,36 @@
           "path": "hexapod/data/live-v4-gaits-kit.json",
           "sha256": "23a35f4049d58761338e4afeac4bb4075833b66077349768da87c3675d6f8581",
           "size": 592924
+        }
+      ]
+    },
+    {
+      "id": "live-v5-motions",
+      "title": "Джойстик · движения V5",
+      "detail": "4 режима: ходьба, корпус, отдельная нога, голова · заранее рассчитанная кинематика, не физика",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v5-motions/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v5-motions/index.html",
+          "sha256": "807d36ab548bb099110283c2f834f59e126e71012845fbdb27c747161fc7c634",
+          "size": 9548
+        },
+        {
+          "path": "hexapod/live-v5-motions/app.js",
+          "sha256": "cf93cb18335268ebb595c4e5971e476df321b52943d8c7902acab663e6d4901c",
+          "size": 15748
+        },
+        {
+          "path": "hexapod/live-v5-motions/motion-controller.js",
+          "sha256": "1356c4d5811a6eaa06d7c61e654f46954296435831d485970fc12a181fdb3f24",
+          "size": 7410
+        },
+        {
+          "path": "hexapod/data/live-v5-motion-kit.json",
+          "sha256": "644bce6f5f491d77e30125be2542ef5ac1ddbe10f570ab41b89a58d77368ce3b",
+          "size": 5869
         }
       ]
     }
