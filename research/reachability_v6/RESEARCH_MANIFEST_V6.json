@@ -1,0 +1,130 @@
+{
+  "schema": "cad30-reachability-evidence-manifest-v6",
+  "status": "GEOMETRY_ONLY_NOT_PHYSICAL",
+  "date": "2026-11-06",
+  "model_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+  "reference_kit_sha256": "23a35f4049d58761338e4afeac4bb4075833b66077349768da87c3675d6f8581",
+  "source_sha256": {
+    "reachability_sweep_v6.py": "6088db0d2db628f8d145a8acf2a5c568b9d20e5ee1b4aa8bf4c92d6f2a96079b",
+    "gait_support_proxy_v6.py": "768939076b83488e6e991396b6cfbd8eeb5ed035a46fce02bc0e37454bea487c"
+  },
+  "source_model_not_included": true,
+  "grid_runs": [
+    {
+      "scenario": "base16",
+      "cases": 60,
+      "sha256": "bdd94d6e5022d73baaab2bf8850de5770936256181324d91ddadef4360405cef",
+      "heights_mm": [
+        0
+      ],
+      "lifts_mm": [
+        16
+      ],
+      "strides_mm": [
+        15,
+        25,
+        35,
+        45,
+        55,
+        70
+      ],
+      "directions": [
+        "fwd",
+        "back",
+        "left",
+        "right",
+        "fwd_left",
+        "fwd_right",
+        "back_left",
+        "back_right",
+        "ccw",
+        "cw"
+      ]
+    },
+    {
+      "scenario": "base40",
+      "cases": 60,
+      "sha256": "12c2d401855599003a85c5fe793ea1949dc450bcc195d76e34c8f78b5f755860",
+      "heights_mm": [
+        0
+      ],
+      "lifts_mm": [
+        40
+      ],
+      "strides_mm": [
+        15,
+        25,
+        35,
+        45,
+        55,
+        70
+      ],
+      "directions": [
+        "fwd",
+        "back",
+        "left",
+        "right",
+        "fwd_left",
+        "fwd_right",
+        "back_left",
+        "back_right",
+        "ccw",
+        "cw"
+      ]
+    },
+    {
+      "scenario": "height40",
+      "cases": 28,
+      "sha256": "e51ddc0556f9250ce206253260aa9e127cfaff62c29820d0d54402262acee61f",
+      "heights_mm": [
+        -35,
+        -25,
+        -15,
+        0,
+        15,
+        25,
+        35
+      ],
+      "lifts_mm": [
+        40
+      ],
+      "strides_mm": [
+        15,
+        35
+      ],
+      "directions": [
+        "fwd",
+        "left"
+      ]
+    },
+    {
+      "scenario": "height25",
+      "cases": 56,
+      "sha256": "87739c22027d2b81103f5e8a522dadfdaa5f53134674cdca5b5794b15ff71afb",
+      "heights_mm": [
+        25
+      ],
+      "lifts_mm": [
+        16,
+        40
+      ],
+      "strides_mm": [
+        15,
+        25,
+        35,
+        45,
+        55,
+        70,
+        90
+      ],
+      "directions": [
+        "fwd",
+        "left",
+        "fwd_left",
+        "ccw"
+      ]
+    }
+  ],
+  "total_ik_test_cases": 204,
+  "support_schedule_cases": 210
+}
