@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 19,
+  "revision": 20,
   "entries": [
     {
       "id": "tripod-60",
@@ -912,6 +912,56 @@
           "path": "hexapod/freenove-grounded-v11/planted-body-yaw-kit.json",
           "sha256": "060372d1e728ff34edb7116bd215ba98d76c989d959113e7652a68ee01bb88e5",
           "size": 8601
+        }
+      ]
+    },
+    {
+      "id": "physics-replay-v13",
+      "title": "MuJoCo V12 · физика (53 опыта)",
+      "detail": "Настоящие состояния после 53 прогонов mj_step · 3D, опоры и силы Fz, перемотка · без физики на планшете",
+      "duration_s": 3600,
+      "href": "/hexapod/physics-replay-v13/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/physics-replay-v13/index.html",
+          "sha256": "4e82c41c3c8d1e4fe5f4a28ab755af9023ff08bd0169afe0e6f0f7316cc8d80f",
+          "size": 3731
+        },
+        {
+          "path": "hexapod/physics-replay-v13/app.js",
+          "sha256": "9a7b600dc7ac777fb465ee1517b352f9255ab2b4e4ec06517fc57a987d6174b8",
+          "size": 10957
+        },
+        {
+          "path": "hexapod/physics-replay-v13/replay-controller.js",
+          "sha256": "d705f000cda909f1b1193e8b18ec420f9b55a60c6003fbba6ace6745a487640f",
+          "size": 4108
+        },
+        {
+          "path": "hexapod/physics-replay-v13/replay.css",
+          "sha256": "9005fc5de82db9ad9021cc00f858f60bf90df41477e70b8ac12df7f763307376",
+          "size": 3316
+        },
+        {
+          "path": "hexapod/data/physics-v12-nominal_full.json",
+          "sha256": "5b5fb834ba994a59fdb7af6c2b217a370403c10a3f1ba75d67660fc2dd0aba46",
+          "size": 1983868
+        },
+        {
+          "path": "hexapod/data/physics-v12-upper_mass_full.json",
+          "sha256": "846c13f659f9ae1b504e9e01b50a59ea6a5cfc93870daaa783ba5c866ce14e91",
+          "size": 680260
+        },
+        {
+          "path": "hexapod/data/physics-v12-friction_035_full.json",
+          "sha256": "ecadbfc49f8d3569d4725bdd652b5453d620e18cd266ef6ec0dd17fa408620b2",
+          "size": 478210
+        },
+        {
+          "path": "hexapod/data/physics-v12-torque_035_full.json",
+          "sha256": "89913ddff9d6d6bb040043ebe7c722da65bab8d945f2377acc54b043f5b3c35b",
+          "size": 477042
         }
       ]
     }
