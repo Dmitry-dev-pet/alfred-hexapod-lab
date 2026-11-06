@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 20,
+  "revision": 21,
   "entries": [
     {
       "id": "tripod-60",
@@ -962,6 +962,51 @@
           "path": "hexapod/data/physics-v12-torque_035_full.json",
           "sha256": "89913ddff9d6d6bb040043ebe7c722da65bab8d945f2377acc54b043f5b3c35b",
           "size": 477042
+        }
+      ]
+    },
+    {
+      "id": "lite3-original-stl-onnx-v1",
+      "title": "XGO-Lite3 · оригинальные STL",
+      "detail": "4 физические записи · ONNX/контроль · 8/9,5 с · 17 оригинальных STL локально · НЕ native MJLab",
+      "status": "research",
+      "duration_s": 9.5,
+      "href": "/hexapod/lite3-original-v1/",
+      "files": [
+        {
+          "path": "hexapod/lite3-original-v1/index.html",
+          "sha256": "3af8092caf544ffe5bcbe28b099ebab1b8b45c2ba8402459d17d160f991fce0c",
+          "size": 5389
+        },
+        {
+          "path": "hexapod/lite3-original-v1/app.js",
+          "sha256": "649847d8b623776368a2c2d154e296cfa7b210da821b00219a29d9f063a41dbc",
+          "size": 13701
+        },
+        {
+          "path": "hexapod/lite3-original-v1/asset-manifest.json",
+          "sha256": "09b6a9b3fba4fbee18a9211e7e1bccdfc1f11508e1ebc189eaf29598d3d29fea",
+          "size": 4847
+        },
+        {
+          "path": "hexapod/data/lite3-standard-onnx-seed20261106-original-v1.json",
+          "sha256": "2b5b4ddeadc0fe2efae13be5643fe0f02ca2fdcfafb60739963765e43b1fb94b",
+          "size": 158030
+        },
+        {
+          "path": "hexapod/data/lite3-standard-zero-seed20261106-original-v1.json",
+          "sha256": "8267db12a16e766995c6570bae856711404531a086b26058ae09ee88a96aff63",
+          "size": 159039
+        },
+        {
+          "path": "hexapod/data/lite3-midstride-onnx-seed20261106-original-v1.json",
+          "sha256": "efbb161027b911dfde4c4fc5fd750079bebcfb31374b8a27d638f049bfe6c7f9",
+          "size": 186213
+        },
+        {
+          "path": "hexapod/data/lite3-midstride-zero-seed20261106-original-v1.json",
+          "sha256": "963a0b9b7a4d9a48bd5177cb8d068402bac6422283f87ed0fe45d558b17a54b5",
+          "size": 188161
         }
       ]
     }
