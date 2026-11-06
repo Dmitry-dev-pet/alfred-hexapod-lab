@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 13,
+  "revision": 14,
   "entries": [
     {
       "id": "tripod-60",
@@ -732,6 +732,36 @@
           "path": "hexapod/data/live-v5-motion-kit.json",
           "sha256": "644bce6f5f491d77e30125be2542ef5ac1ddbe10f570ab41b89a58d77368ce3b",
           "size": 5869
+        }
+      ]
+    },
+    {
+      "id": "freenove-original-v7",
+      "title": "Freenove Original · заводская ходьба",
+      "detail": "Штатные Tripod/Wave · подъём 40 мм · корпус ±40 мм и ±15° · калибровка CAD, офлайн-кинематика",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-original-v7/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-original-v7/index.html",
+          "sha256": "608dbd364c85b60202cc266be97ec57e0ca8c022a48a51fe430b19111c796085",
+          "size": 7667
+        },
+        {
+          "path": "hexapod/freenove-original-v7/app.js",
+          "sha256": "fa274354ffa095b9790a5613c43b16db63ee3d59c80e780bfa8c4de264dc4a26",
+          "size": 12657
+        },
+        {
+          "path": "hexapod/freenove-original-v7/factory-controller.js",
+          "sha256": "336e7fe8e7a82904075c969498b62a27714986fba0e3ed303635bb98bddb9b0d",
+          "size": 7142
+        },
+        {
+          "path": "hexapod/data/freenove-original-v7-kit.json",
+          "sha256": "5f88588f17e1a1fcef73e20e0787413bc402fd2c676fff3a9c5463315a7b7d8c",
+          "size": 242700
         }
       ]
     }
