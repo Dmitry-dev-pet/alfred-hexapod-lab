@@ -1,0 +1,79 @@
+{
+  "schema": "alfred-hexapod-v9-dual-controls",
+  "date": "2026-11-06",
+  "status": "OFFLINE_KINEMATIC_PREVIEW_ONLY",
+  "physical_pass": false,
+  "developer_note": "No real-time physics. No real servo calibration.",
+  "left": {
+    "y": "forward/back OEM",
+    "x_default": "turn",
+    "x_alternative": "strafe"
+  },
+  "right": {
+    "tilt": "body roll/pitch V7",
+    "shift": "body planar translation V7",
+    "head": "yaw/pitch from V5 experimental head limits"
+  },
+  "source_dependencies": [
+    "/hexapod/freenove-original-v7/factory-controller.js",
+    "/hexapod/data/freenove-original-v7-kit.json",
+    "/hexapod/freenove-dual-v8/dual-stick-input.js",
+    "/hexapod/freenove-dual-v8/dual-stick.css",
+    "/hexapod/data/live-v5-motion-kit.json",
+    "/hexapod/data/live-v4-gaits-kit.json",
+    "/hexapod/data/cad-rig-live-v1-slow.json"
+  ],
+  "files": [
+    {
+      "path": "docs/hexapod/freenove-combined-v9/index.html",
+      "size": 7930,
+      "sha256": "7f805611e71bd132d2df35095f2c7c9fa5040c0b71a16b2685efc699715b5506",
+      "git_blob_sha": "9e77e1ca6e721f0c0d225b6752509de01aabb539"
+    },
+    {
+      "path": "docs/hexapod/freenove-combined-v9/app.js",
+      "size": 13709,
+      "sha256": "b31e2e18d4c058b2d18521ca509c0533ebd8e2fb586df3ce84030615db5a9972",
+      "git_blob_sha": "6bdc1a80a4a0e5cbc9fd6dc02ffe2077334afd38"
+    },
+    {
+      "path": "docs/hexapod/freenove-combined-v9/combo-controller.js",
+      "size": 4879,
+      "sha256": "084458bc08d77f72f8be53781b8b9cd58cefe7e4be693c51ecd5e604bc2d7d1b",
+      "git_blob_sha": "f5338e834ce5b9047542674c0b7818ea46d7ae67"
+    },
+    {
+      "path": "docs/hexapod/freenove-combined-v9/overlay.css",
+      "size": 1273,
+      "sha256": "d51e9135c66dd9593c439e3ac13c20990a2c7eefa2d6bb848228498d27e68c21",
+      "git_blob_sha": "7cbeda042fbb46503d0f66d6538c1c5101599782"
+    },
+    {
+      "path": "tests/test_combo_v9.mjs",
+      "size": 3415,
+      "sha256": "fa934ef16143350e2b35ea86c5cd13659a9cd0daac868f8be632bf4ce4b420e5",
+      "git_blob_sha": "36805e64306f6f12725a371fc837f5052f3cb9cf"
+    },
+    {
+      "path": "tests/test_combo_static_v9.py",
+      "size": 2690,
+      "sha256": "c3019b76a1fb9c0f6b50ba528624fe9cf37232858fa5a2ca014f0f522edbb897",
+      "git_blob_sha": "c92140892b31e5044ae5d603bb7ce2210351821a"
+    },
+    {
+      "path": "README_V9.md",
+      "size": 5079,
+      "sha256": "ec18f78091403a5b2c36248aecbd22ba1443b5ec870bf732201d37dbca4da158",
+      "git_blob_sha": "47854b814731ec1280411a9f71b00f7245188308"
+    }
+  ],
+  "checks": [
+    "V8 input 32 Node assertions PASS",
+    "V9 composite 25 Node assertions PASS",
+    "V9 static 4 Python tests PASS",
+    "new JS syntax checks PASS"
+  ],
+  "stl_included": false,
+  "main_changed": false,
+  "device_multitouch_verified": false
+}
