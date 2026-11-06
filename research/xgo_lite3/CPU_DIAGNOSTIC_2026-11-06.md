@@ -1,3 +1,5 @@
+> **SUPERSEDED / INVALID POLICY EVALUATION (2026-11-06).** The original exploratory 8s trial wired all 14 raw actions in MJCF *actuator* order instead of the ONNX metadata **natural joint order** used by `mjlab v1.2.0`. The resulting +47.8mm movement is a real simulation of **miswired** commands, *not* an evaluation of a correctly deployed trained policy. Preserve the original trace below only as a negative diagnostic. For corrected ONNX CPU results and 40 actual matched rollouts see [ONNX_CPU_CORRECTED_2026-11-06.md](./ONNX_CPU_CORRECTED_2026-11-06.md) and [aggregate JSON](./LITE3_ONNX_CORRECTED_AGGREGATE.json). Do not merge or use the old claims as a valid gait benchmark.
+
 # XGO-Lite3 — first CPU physics and pretrained actor diagnostic (2026-11-06)
 
 **Status: exploratory success in execution, NOT native MJLab validation.**
