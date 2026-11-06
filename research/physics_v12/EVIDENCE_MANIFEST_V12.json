@@ -1,0 +1,369 @@
+{
+  "schema": "hexapod-offline-physics-v12-evidence",
+  "date": "2026-11-06",
+  "status": "MODEL_PHYSICS_DONE_NOT_HARDWARE_VALIDATED",
+  "scene_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+  "contains_original_cad_or_stl": false,
+  "contains_full_53_mj_step_run_records": true,
+  "contains_29_exact_JS_target_profiles": true,
+  "source_model_available_separately_only": true,
+  "files": [
+    {
+      "path": "README.md",
+      "size": 169,
+      "sha256": "ddf23b8768b613d003da4f79b75f1249360266f42d8dfb0edbf0ceb4329fe662"
+    },
+    {
+      "path": "debug_stand.py",
+      "size": 2006,
+      "sha256": "33913b09829b248887ef232f62f979d871e2ba5bd93b326cef10b32dbb1e4970"
+    },
+    {
+      "path": "friction_035.log",
+      "size": 4021,
+      "sha256": "93472c7d30b819d19ff3c60e19b6b3a561a34023e7ca58ab0300db8331b0c6c9"
+    },
+    {
+      "path": "nominal_full.log",
+      "size": 16635,
+      "sha256": "f3a39762967d55a350746e19e55615b22ba5f42576dc84bc88b003f30b74a8e6"
+    },
+    {
+      "path": "research/physics_v12/README_REPRO_V12.md",
+      "size": 2841,
+      "sha256": "f7df1591600511c3cb3b1077c31042014deb202d50334fcbe0f0089693474744"
+    },
+    {
+      "path": "research/physics_v12/REPORT_V12.md",
+      "size": 11364,
+      "sha256": "0ea1806659f84b7d77be3899ced9ccfaf60d080b3203d039044d3a96c10f27f8"
+    },
+    {
+      "path": "research/physics_v12/SUMMARY_V12.json",
+      "size": 43032,
+      "sha256": "796f9ac4fe969d6fb8f8ed816b2d046cefadffd70d3fa44753b5e01f67f20a45"
+    },
+    {
+      "path": "research/physics_v12/data/targets_v11.json",
+      "size": 2553594,
+      "sha256": "ccf04902209e0f5ddb135b8813b699bfded2f44215da0e58fbdc7c8d3beb022c"
+    },
+    {
+      "path": "research/physics_v12/generate_targets_v11.mjs",
+      "size": 5019,
+      "sha256": "95f76a4aab0f2037774a490601a5ba465e4c2350341af2017a61e3842e101c11"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/stand_roll15.json",
+      "size": 133958,
+      "sha256": "d90b4eadb46f5208387a602a9387530dc3600583d166ba4a7f5a77049a56a2ca"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/stand_yaw_plus15.json",
+      "size": 142153,
+      "sha256": "ff83ae8f3ed88be25d59ff7e13fcef1dfe016704b48b589baa02f8470d7dc3ac"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/summary.json",
+      "size": 5003,
+      "sha256": "d523ea30bfc5af03e13cb35738e836c6077bd2a1414c0f5252a41e2054145a7e"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/tripod_forward.json",
+      "size": 158506,
+      "sha256": "767c806cc99672e4c67ac5b837dbaaf2ab4ad268a84f96ecc280de8edf7100f4"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/tripod_forward_turn.json",
+      "size": 158423,
+      "sha256": "5960159aa4eed359556e1a0c41a77e3680bed25133a9851cb56f3c6b39c428b6"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/tripod_turn.json",
+      "size": 158195,
+      "sha256": "8d2d2b0d0612647c2bbb6836e191028e84427641bf5b3c81e45597266886285a"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/wave_forward.json",
+      "size": 171993,
+      "sha256": "98648e35dfabf366d8f12cdddf1b0f558ccf9af708d5fded7468ceef2b3920d3"
+    },
+    {
+      "path": "research/physics_v12/results/friction_035_full/wave_turn.json",
+      "size": 172235,
+      "sha256": "e642d4b1e46db639df49d2097ba73c09f645c6299bfbe58f91e02d77a0a229bd"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_height_minus20.json",
+      "size": 133239,
+      "sha256": "7b198f61c03760124c544bc5829f357f39462ae2be5dd899c18eb0e6c0923c9e"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_height_plus20.json",
+      "size": 133212,
+      "sha256": "2b21b7332d058960bc592a6e145de63a92a67857ca55d9a2619dcb32d5a34174"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_neutral.json",
+      "size": 43821,
+      "sha256": "fba50b33c3c7958eef7db663ac62c79674d7ea3b673d65ed9a13c93729fc90ac"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_pitch15.json",
+      "size": 133349,
+      "sha256": "f5303500e391d59d81a68c98c15d33e8f670316d18a5453a07c6932a377a12e6"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_roll15.json",
+      "size": 133814,
+      "sha256": "41cbf4a7017278a612034873bb1abe27f2ddb37764903c830a6dc2b067dc2e5f"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_roll_pitch10.json",
+      "size": 129714,
+      "sha256": "f0d2f8e1f3f26d501b27b9e8a741d5f6325bc3ce10fea41c576adb0e3b1c7c16"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_shift_forward40.json",
+      "size": 133339,
+      "sha256": "73d9acc69c2cad7fa1088fa319f835acf41612e077d7c1582538b131d1b10407"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_shift_left40.json",
+      "size": 134103,
+      "sha256": "663f160606a5a6899a4232807511838541dbc70a3f477cd90a2346a3a6a3f3c3"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_yaw_minus15.json",
+      "size": 142073,
+      "sha256": "657c1f3a8d727c0f865b1d34d3a06e5554cf8e1adb55386dd81706a5d1198434"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_yaw_plus15.json",
+      "size": 142041,
+      "sha256": "cda696bba827d57d5fdf9d1de04d33abea222f14ef17a06fbbb3fe7ba409ea6a"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/stand_yaw_roll.json",
+      "size": 142162,
+      "sha256": "3528afb896f75651b6e9385004d7fd1027a09b4deedf7207ead9abd1cf163c8f"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/summary.json",
+      "size": 19730,
+      "sha256": "64dd4077a40a52bb4bfaa5431113f8f6ffc04c3400631f093cbaa8b981036baa"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_backward.json",
+      "size": 158868,
+      "sha256": "3bc1b1599e670abbda5a6907dbee06d5ea539e7f13afa6dfc167352ad4e27b95"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_forward.json",
+      "size": 158564,
+      "sha256": "75a9694563a2df088e892df57adaf5fd5b2b3e195fa5ca1c47620bac7d2c988c"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_forward_fast.json",
+      "size": 156434,
+      "sha256": "2fe187b38d06e3167bba98fdbab7fb6025086d9180af01251b7b78a00659c6d1"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_forward_head.json",
+      "size": 159125,
+      "sha256": "56cfb0f7b162f4faa1648079bcbbe94cc8129acb8b6547c5e6d582bd6022a0bf"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_forward_height10.json",
+      "size": 159158,
+      "sha256": "890d011074eadac07a6ca2ed30a0f3ad539700ba9eb471008f99498aa079fed1"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_forward_roll.json",
+      "size": 158860,
+      "sha256": "0b13e4cbea7618fae7e095521c5cedaf112269f7126b0a5b9c7d6385d90d135b"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_forward_slow.json",
+      "size": 216805,
+      "sha256": "903c4638b7f939df232d8cc6037cddbddcf3fbb5e6723e3f4a59d9ebef20da79"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_forward_turn.json",
+      "size": 159208,
+      "sha256": "e99e7e572e817ad78c70f48358f1cba37bdaa628255a3f734388ea66fad66b65"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_strafe.json",
+      "size": 158952,
+      "sha256": "a17af16a91d1810b74420a02f01841253daa4493d2138116f58d2342f1ff14ac"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_turn.json",
+      "size": 158787,
+      "sha256": "dd24a7784a82702c2f0f2583fff8e0f0fe47d470c3f1021bacc9addf51012cda"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/tripod_turn_slow.json",
+      "size": 217046,
+      "sha256": "7abb1cab706a8e99ba4b3e5b933393316aac4fb592efdfb0f2443258cf00dc4c"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/wave_forward.json",
+      "size": 171929,
+      "sha256": "da736c01065e885c9de60dac778593783ad3c3bb21a6b180f45abbf3a85c66c0"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/wave_forward_head.json",
+      "size": 172992,
+      "sha256": "d12975931d9aa5d1a8247f7b21f28a07a7c4d747d311dd4fea07307549df00a3"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/wave_forward_roll.json",
+      "size": 172682,
+      "sha256": "c98e236df3de4dd39fd3074703dcbb46f588278113b1b3d98707e71c03c715ea"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/wave_forward_slow.json",
+      "size": 222561,
+      "sha256": "4f78c41486e1b317adeb7f5177f6ea8a42a29d0efa5b0d0d2efd649c6c6d4f4f"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/wave_strafe.json",
+      "size": 170333,
+      "sha256": "4439180095331d8ad9bf1f8ccb921468829b4dc24904515b46f3e4bea750f9ea"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/wave_turn.json",
+      "size": 172416,
+      "sha256": "76f63308ed3b9e6918fd99915aa7f5f295ede31c13912bf98df3394e9c3bdbe4"
+    },
+    {
+      "path": "research/physics_v12/results/nominal_full/wave_turn_slow.json",
+      "size": 223126,
+      "sha256": "6ecd08c53195c179f4e7398063d5110b2435a5a64b06b2a489f3195b6323016d"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/stand_roll15.json",
+      "size": 133815,
+      "sha256": "bc5b26640e43546ca9c461c84234c4277412300d54def9e39d3ecec06c7d2078"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/stand_yaw_plus15.json",
+      "size": 142042,
+      "sha256": "601cd62a26a63c82f180d039a58bfb88bffc1b7e1701d9431ff1d59a95beb3c7"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/summary.json",
+      "size": 4992,
+      "sha256": "d575fa51736ea7237aabcb5ca65fcef7b79616f48e19f939621daeb9368065a5"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/tripod_forward.json",
+      "size": 158846,
+      "sha256": "f172460ecef465ae09f45f76de689773bd4eee4b55c23fab1e8ccd161e03bb7f"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/tripod_forward_turn.json",
+      "size": 159011,
+      "sha256": "112b4c2caac1e5318c518b1345722ce4d60be47641fe9214c4462951d21f8c52"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/tripod_turn.json",
+      "size": 158486,
+      "sha256": "5f6905449a9d9e13bced89fc8d2a21f45ca8407dce12df82702cb4674a4b3751"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/wave_forward.json",
+      "size": 171779,
+      "sha256": "e72e5d9099597f834597cf02042fe4fa8a9352b9b1777fc560a030f63a72feb1"
+    },
+    {
+      "path": "research/physics_v12/results/torque_035_full/wave_turn.json",
+      "size": 172665,
+      "sha256": "3de3a25e61d7a4868b6dde03ea2b420c1af237406c43e6d60f7f83ff4dae553b"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/stand_roll15.json",
+      "size": 133838,
+      "sha256": "e078e061dd96e18c88ecf8f66b149c9dee3fad24b3b40ffe2d1c548236563503"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/stand_roll_pitch10.json",
+      "size": 130918,
+      "sha256": "c97afdd448a16977fd1e2979ce64d900b1689068e48dc6d0c6f9d417adec8879"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/stand_yaw_plus15.json",
+      "size": 141898,
+      "sha256": "5a8fd82d74176d3c46b1003c9d2848ed9e73861c1ae8825f9bfb502f4cf6080b"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/summary.json",
+      "size": 7015,
+      "sha256": "8eb1a9d450a0dc1f3a02dce984c95bf6d15b48151a33d8096934e181adbb7f2d"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/tripod_forward.json",
+      "size": 158902,
+      "sha256": "c57a5d0418ce10c604bd032e2631ca2c33fe71e13fc679419aad548893abefcf"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/tripod_forward_roll.json",
+      "size": 159070,
+      "sha256": "da70fc918d15eaffba847b7007931f4355762848df3c1d18ad3de37ebf4bfd50"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/tripod_forward_turn.json",
+      "size": 159154,
+      "sha256": "3f9ad1b76b8ed955c1132132203af3df8332e84ce8d61c20b76c0552ac4f7689"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/tripod_turn.json",
+      "size": 158738,
+      "sha256": "92bf56b81acb4aaa3e161bca91c449ec31cfd69308a61f5333744b8a9539a502"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/wave_forward.json",
+      "size": 172105,
+      "sha256": "02e2502772120236b917deec6486ca5ca2e7fa3cf76af1051954529059b2f082"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/wave_forward_roll.json",
+      "size": 172979,
+      "sha256": "9c449b42e637fa5b3fdd6b293605a50158aa937fd58d1aac18afa8faac370b5a"
+    },
+    {
+      "path": "research/physics_v12/results/upper_mass_full/wave_turn.json",
+      "size": 172931,
+      "sha256": "77896b93e8f45ff4a80b6b2b1ce87bef4f87aa9f315a3eccdd842016bb46b2eb"
+    },
+    {
+      "path": "research/physics_v12/run_physics_v11.py",
+      "size": 13672,
+      "sha256": "9ef0683150a3fd247cd189e59a8627b3769d7079d1a7c77f30f033d62a091067"
+    },
+    {
+      "path": "research/physics_v12/summarize_evidence.py",
+      "size": 18652,
+      "sha256": "4ee4fbbbe18845c9a6cf2fe60565c02e8526f9144e8e2858db12505f583161e5"
+    },
+    {
+      "path": "research/physics_v12/test_physics_v12.py",
+      "size": 3725,
+      "sha256": "70f1e2a2ed749667894617e72263299492c521b96be164df09603f73df13f64c"
+    },
+    {
+      "path": "torque_035.log",
+      "size": 4010,
+      "sha256": "05036152721f056d2fd7ed2d18ee2efdaca2c6bf7722ae505a0f5417f9247223"
+    },
+    {
+      "path": "upper_mass.log",
+      "size": 5747,
+      "sha256": "a2d3c975b386c33b9b684bda90bb7d86cb07e726d7e5643ac5166ec9e2f89040"
+    }
+  ],
+  "files_count": 71,
+  "total_file_bytes": 11042580
+}
