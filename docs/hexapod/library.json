@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 22,
+  "revision": 23,
   "entries": [
     {
       "id": "tripod-60",
@@ -1032,6 +1032,56 @@
           "path": "hexapod/lite3-finish-v2/visual-finish.json",
           "size": 2908,
           "sha256": "c58b58c7430e49c6d1eadcc951237d1e28996e95d22a7d372f371e992cadb6b4"
+        }
+      ]
+    },
+    {
+      "id": "lite3-s2-robustness-v1",
+      "title": "XGO-Lite3 · устойчивость S2",
+      "detail": "6 физических повторов из 60 · трение, масса и приводы · по 9,5 с",
+      "duration_s": 9.5,
+      "href": "/hexapod/lite3-s2-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/lite3-s2-v1/index.html",
+          "sha256": "cb6bbb8ef03674a20c6d6fd3eafff1ef99c0bc336160ab5db709dcbbfbea3d3f",
+          "size": 6221
+        },
+        {
+          "path": "hexapod/lite3-s2-v1/app.js",
+          "sha256": "82427bc034270c8427d0b311cc3f500368ed96a379108bd26a144e6b08b4ba45",
+          "size": 19898
+        },
+        {
+          "path": "hexapod/data/lite3-s2-original_baseline-seed20261106-v1.json",
+          "sha256": "220f7f7fea3229cfa3bcce8032ccddcd7854df048d794c83e818ec33971ca913",
+          "size": 186229
+        },
+        {
+          "path": "hexapod/data/lite3-s2-friction_035-seed20261106-v1.json",
+          "sha256": "ca4db7bee8e750a6e413e67293bdcc2739e8a811c551a07706f9dd6273cd6229",
+          "size": 186223
+        },
+        {
+          "path": "hexapod/data/lite3-s2-friction_020-seed20261106-v1.json",
+          "sha256": "d3d491b160d4cde53d6ee4d88b9a5048af2fe362df4b209da2e52c092ea0bb82",
+          "size": 186292
+        },
+        {
+          "path": "hexapod/data/lite3-s2-uniform_mass_0610-seed20261106-v1.json",
+          "sha256": "5003cea6959fedd19f3ac129cb3bc17c88ea78a36984a9b784fcc079475ac567",
+          "size": 186512
+        },
+        {
+          "path": "hexapod/data/lite3-s2-actuator_cap_02256-seed20261106-v1.json",
+          "sha256": "8cd7ddac1997625719cb3d781229d317be002ecb72315b0fc1a4ef6bee941805",
+          "size": 186386
+        },
+        {
+          "path": "hexapod/data/lite3-s2-combined_stress-seed20261106-v1.json",
+          "sha256": "5dfaf2726f487891caaba718d1fed00accc2ef8ddd4fe56f59afdbe71c592565",
+          "size": 186426
         }
       ]
     }
