@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 18,
+  "revision": 19,
   "entries": [
     {
       "id": "tripod-60",
@@ -827,8 +827,8 @@
     },
     {
       "id": "freenove-combined-v10",
-      "title": "Freenove · ходьба + корпус / голова (исправлено)",
-      "detail": "Исправлен запуск V9 · левый движение и повороты, правый корпус или голова · 2 джойстика",
+      "title": "Freenove V10 · опоры скользят при повороте",
+      "detail": "Запускается, но разворот корпуса/ходьбы не учитывает фиксацию опор. Для проверки поворота используй V11.",
       "duration_s": 3600,
       "href": "/hexapod/freenove-combined-v10/",
       "status": "research",
@@ -877,6 +877,41 @@
           "path": "hexapod/data/rider2-rl-drive-12s.json",
           "sha256": "3f94fa4a920daada64869b0c016daaf9a256cca0a6b94d0d1169ce3df2efe7e2",
           "size": 78168
+        }
+      ]
+    },
+    {
+      "id": "freenove-grounded-v11",
+      "title": "Freenove · поворот с опорой V11",
+      "detail": "Корпус разворачивается на неподвижных стопах · ходьба с геометрической фиксацией опор · оба джойстика",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-grounded-v11/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-grounded-v11/index.html",
+          "sha256": "cd1da080d13a9587df0ffed04cc091cdfe39ee276c09058cc2205b6695be3fed",
+          "size": 8744
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/app.js",
+          "sha256": "4ed746b7696c0dd1df8d82208237f5a09196c77809d47e2215edc705a106bec3",
+          "size": 14785
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/planted-controller.js",
+          "sha256": "fb7186299f706d9c56677255f3e2b0c41b64174e1defc55b6bf03c7349fefe62",
+          "size": 2270
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/ground-lock.js",
+          "sha256": "6d0a9a890016456f8f503bd2b09cd9e192838fce92847a0c4b94a0780e8c8098",
+          "size": 2745
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/planted-body-yaw-kit.json",
+          "sha256": "060372d1e728ff34edb7116bd215ba98d76c989d959113e7652a68ee01bb88e5",
+          "size": 8601
         }
       ]
     }
