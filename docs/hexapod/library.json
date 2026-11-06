@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 17,
+  "revision": 18,
   "entries": [
     {
       "id": "tripod-60",
@@ -842,6 +842,41 @@
           "path": "hexapod/freenove-combined-v10/app.js",
           "sha256": "51725f5914672211d0103744d1043ec1da726039ba01cd59b393487bfd94f457",
           "size": 13759
+        }
+      ]
+    },
+    {
+      "id": "xgorider2-rl-comparison",
+      "title": "XGO-Rider2 · RL против Linear",
+      "detail": "MuJoCo · оригинальная нейросеть · 12 с и экстремальное падение · другой робот",
+      "duration_s": 12,
+      "href": "/hexapod/xgorider2-rl-comparison/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/xgorider2-rl-comparison/index.html",
+          "sha256": "dd4b357b92f90e8885858c44fbd7d55236f361aeb62c426f084ed9b4cb34c526",
+          "size": 4953
+        },
+        {
+          "path": "hexapod/xgorider2-rl-comparison/app.js",
+          "sha256": "c06bea682d5e4e70d37a17b9b1e3dc4a69d5b3696b614788a70f67e1675a50e7",
+          "size": 10504
+        },
+        {
+          "path": "hexapod/data/rider2-linear-drive-12s.json",
+          "sha256": "be0521b6da742bd5501f6aa12141e0db405ac98d4f83a0bfb490a66cd21e124c",
+          "size": 78002
+        },
+        {
+          "path": "hexapod/data/rider2-rl-corner-fail.json",
+          "sha256": "87da9366dd4957283e6a4e91a785b9447d8fc65a7617bac964f1f6a52558ddd8",
+          "size": 4899
+        },
+        {
+          "path": "hexapod/data/rider2-rl-drive-12s.json",
+          "sha256": "3f94fa4a920daada64869b0c016daaf9a256cca0a6b94d0d1169ce3df2efe7e2",
+          "size": 78168
         }
       ]
     }
