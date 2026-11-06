@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 24,
+  "revision": 25,
   "entries": [
     {
       "id": "tripod-60",
@@ -1095,18 +1095,13 @@
       "files": [
         {
           "path": "hexapod/lite3-s2-compare-v2/index.html",
-          "size": 8892,
-          "sha256": "d5ac97689f29f7dbb5bef515096fe77836869b6cfc16619f59e6e7d91df3d15c"
+          "size": 8891,
+          "sha256": "69974795418edaef204d34260257568f575b3e242a48f71a0cf2ff3721067aff"
         },
         {
           "path": "hexapod/lite3-s2-compare-v2/app.js",
-          "size": 16030,
-          "sha256": "04df501f2d9b5141313446df337c4d3c2daaf4c54911993e89f3c53f261fe5a3"
-        },
-        {
-          "path": "hexapod/lite3-s2-compare-v2/README.md",
-          "size": 4122,
-          "sha256": "67669d0feb06eedc39655fbb25d5c9721e00ec894dd47202520e44cc4500858e"
+          "size": 16029,
+          "sha256": "9d2adbdb324e7892701f77c2628ce1b925b0807a9b8924360fd39920aed39f7f"
         },
         {
           "path": "hexapod/data/lite3-s2-original_baseline-seed20261106-v1.json",
