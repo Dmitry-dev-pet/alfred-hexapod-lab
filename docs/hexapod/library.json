@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 16,
+  "revision": 17,
   "entries": [
     {
       "id": "tripod-60",
@@ -797,8 +797,8 @@
     },
     {
       "id": "freenove-combined-v9",
-      "title": "Freenove · ходьба + корпус / голова",
-      "detail": "Левый: движение и повороты · правый: корпус или голова · OEM Tripod/Wave · офлайн-предпросмотр",
+      "title": "Freenove V9 · ошибка запуска (см. V10)",
+      "detail": "Ошибка импорта JavaScript — исправленная версия V10. Старые файлы сохранены для проверки.",
       "duration_s": 3600,
       "href": "/hexapod/freenove-combined-v9/",
       "status": "research",
@@ -822,6 +822,26 @@
           "path": "hexapod/freenove-combined-v9/overlay.css",
           "sha256": "d51e9135c66dd9593c439e3ac13c20990a2c7eefa2d6bb848228498d27e68c21",
           "size": 1273
+        }
+      ]
+    },
+    {
+      "id": "freenove-combined-v10",
+      "title": "Freenove · ходьба + корпус / голова (исправлено)",
+      "detail": "Исправлен запуск V9 · левый движение и повороты, правый корпус или голова · 2 джойстика",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-combined-v10/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-combined-v10/index.html",
+          "sha256": "fccbd06316dd6898c4c8f58baea3132e9a1467a90ee0f370627da1678244c22b",
+          "size": 8686
+        },
+        {
+          "path": "hexapod/freenove-combined-v10/app.js",
+          "sha256": "51725f5914672211d0103744d1043ec1da726039ba01cd59b393487bfd94f457",
+          "size": 13759
         }
       ]
     }
