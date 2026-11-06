@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 21,
+  "revision": 22,
   "entries": [
     {
       "id": "tripod-60",
@@ -1007,6 +1007,31 @@
           "path": "hexapod/data/lite3-midstride-zero-seed20261106-original-v1.json",
           "sha256": "963a0b9b7a4d9a48bd5177cb8d068402bac6422283f87ed0fe45d558b17a54b5",
           "size": 188161
+        }
+      ]
+    },
+    {
+      "id": "lite3-photo-finish-v2",
+      "title": "XGO-Lite3 · материалы V2",
+      "detail": "17 оригинальных STL · тёмный корпус, металл и экран по официальным фото · 4 физических replay",
+      "status": "research",
+      "duration_s": 9.5,
+      "href": "/hexapod/lite3-finish-v2/",
+      "files": [
+        {
+          "path": "hexapod/lite3-finish-v2/index.html",
+          "size": 5584,
+          "sha256": "84caeae68cc0e3f1d04c830cb4d097aede9627c32c21ca2f602da28772e2e3bf"
+        },
+        {
+          "path": "hexapod/lite3-finish-v2/app.js",
+          "size": 19660,
+          "sha256": "2e7255f43a712d45956f428b4d7dc317a74372694c3f59e1029ad24e9354752f"
+        },
+        {
+          "path": "hexapod/lite3-finish-v2/visual-finish.json",
+          "size": 2908,
+          "sha256": "c58b58c7430e49c6d1eadcc951237d1e28996e95d22a7d372f371e992cadb6b4"
         }
       ]
     }
