@@ -186,6 +186,9 @@ def ensure_environment(workdir: Path) -> Path:
         "import mujoco,onnxruntime,numpy,torch,scipy; "
         "assert mujoco.__version__=='3.14.0'; "
         "assert onnxruntime.__version__=='1.23.2'; "
+        "assert numpy.__version__=='2.3.5'; "
+        "assert scipy.__version__=='1.17.0'; "
+        "assert torch.__version__.split('+')[0]=='2.10.0'; "
         "assert 'CPUExecutionProvider' in onnxruntime.get_available_providers(); "
         "print('RUNTIME_OK',mujoco.__version__,onnxruntime.__version__)"
     )
