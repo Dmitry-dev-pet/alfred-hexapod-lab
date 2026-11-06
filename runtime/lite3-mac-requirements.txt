@@ -1,0 +1,6 @@
+# Comparable with verified ChatGPT S2 CPU; use native ARM64 wheels.
+mujoco==3.14.0
+onnxruntime==1.23.2
+numpy==2.3.5
+scipy==1.17.0
+torch==2.10.0
