@@ -1,0 +1,90 @@
+{
+  "schema": "hexapod-v11-grounded-geometry-evidence",
+  "date": "2026-11-06",
+  "physical_pass": false,
+  "updated_player": "/hexapod/freenove-grounded-v11/",
+  "cad_model_sha256": "fe9d7c292b199f19b11da220e74f826e05fb5433a43c5b46c1bc620eb34f6df3",
+  "max_stationary_yaw_foot_error_mm": 0.01261,
+  "max_half_degree_foot_error_mm": 0.0151,
+  "tripod_yaw_V10_max_toe_slip_mm": 56.7,
+  "tripod_yaw_V11_max_toe_slip_mm": 6.932,
+  "wave_yaw_V11_max_toe_slip_mm": 20.949,
+  "files": {
+    "docs/hexapod/freenove-grounded-v11/index.html": {
+      "bytes": 8744,
+      "sha256": "cd1da080d13a9587df0ffed04cc091cdfe39ee276c09058cc2205b6695be3fed"
+    },
+    "docs/hexapod/freenove-grounded-v11/app.js": {
+      "bytes": 14785,
+      "sha256": "4ed746b7696c0dd1df8d82208237f5a09196c77809d47e2215edc705a106bec3"
+    },
+    "docs/hexapod/freenove-grounded-v11/planted-controller.js": {
+      "bytes": 2270,
+      "sha256": "fb7186299f706d9c56677255f3e2b0c41b64174e1defc55b6bf03c7349fefe62"
+    },
+    "docs/hexapod/freenove-grounded-v11/ground-lock.js": {
+      "bytes": 2745,
+      "sha256": "6d0a9a890016456f8f503bd2b09cd9e192838fce92847a0c4b94a0780e8c8098"
+    },
+    "docs/hexapod/freenove-grounded-v11/planted-body-yaw-kit.json": {
+      "bytes": 8601,
+      "sha256": "060372d1e728ff34edb7116bd215ba98d76c989d959113e7652a68ee01bb88e5"
+    },
+    "scripts/build_planted_yaw_v11.py": {
+      "bytes": 3515,
+      "sha256": "962042c9c6fb8fca912559d9776b843a2473a7c18f6f8795cc435bf184b6e561"
+    },
+    "tests/test_planted_yaw_v11.py": {
+      "bytes": 2574,
+      "sha256": "87d012103b090691c55077adc7cf1b08af503f152d4e6427533893bc24b31482"
+    },
+    "tests/test_ground_lock_v11.mjs": {
+      "bytes": 2253,
+      "sha256": "cc7875a6bf2b7ea3278693381c6eb63dac9832c70a5891dd14e2dd689e4a0097"
+    },
+    "tests/test_anchor_trace_v11.mjs": {
+      "bytes": 1464,
+      "sha256": "3be40a9537c70ad13058f45d0d4a060eb7f137ddfc8dbc7f5fdf5ec8507f22dc"
+    },
+    "tests/fixture_toes_v11.json": {
+      "bytes": 67109,
+      "sha256": "3d8387e3acb9145daf507321939bfa139734e1d496dcd9f6ab54fc11f0607b1a"
+    },
+    "tests/test_static_v11.py": {
+      "bytes": 2319,
+      "sha256": "0bf8e92b10fe3c20a2835177c32574e3576fbf4154d6a4cbf420d84025002ff9"
+    },
+    "docs/FREENOVE_GROUNDED_V11.md": {
+      "bytes": 7978,
+      "sha256": "83bfea60bec9c5636efcd72bc1dff311826db87d1a69b6e39cb337aa9df68c7d"
+    },
+    "catalog-entry.json": {
+      "bytes": 1307,
+      "sha256": "c4c4bdae6128e9224d8a7163ea34ad8a6cd3682ba6e14f12489937913999a3ee"
+    },
+    "docs/hexapod/freenove-combined-v9/combo-controller.js": {
+      "bytes": 4879,
+      "sha256": "084458bc08d77f72f8be53781b8b9cd58cefe7e4be693c51ecd5e604bc2d7d1b"
+    },
+    "docs/hexapod/freenove-original-v7/factory-controller.js": {
+      "bytes": 7142,
+      "sha256": "336e7fe8e7a82904075c969498b62a27714986fba0e3ed303635bb98bddb9b0d"
+    },
+    "docs/hexapod/freenove-dual-v8/dual-stick-input.js": {
+      "bytes": 2139,
+      "sha256": "105decf0b68493b12ffac751e65298a8440d29045347177f0c8bb9718257885d"
+    },
+    "docs/hexapod/data/live-v4-gaits-kit.json": {
+      "bytes": 592924,
+      "sha256": "23a35f4049d58761338e4afeac4bb4075833b66077349768da87c3675d6f8581"
+    },
+    "docs/hexapod/data/live-v5-motion-kit.json": {
+      "bytes": 5869,
+      "sha256": "644bce6f5f491d77e30125be2542ef5ac1ddbe10f570ab41b89a58d77368ce3b"
+    },
+    "docs/hexapod/data/freenove-original-v7-kit.json": {
+      "bytes": 242700,
+      "sha256": "5f88588f17e1a1fcef73e20e0787413bc402fd2c676fff3a9c5463315a7b7d8c"
+    }
+  }
+}
