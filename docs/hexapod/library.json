@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 15,
+  "revision": 16,
   "entries": [
     {
       "id": "tripod-60",
@@ -792,6 +792,36 @@
           "path": "hexapod/freenove-dual-v8/dual-stick.css",
           "sha256": "22e1924f561ea96910b79d1aac6c6f00a7d55cc5857d368e5b19dbe4ba933106",
           "size": 3585
+        }
+      ]
+    },
+    {
+      "id": "freenove-combined-v9",
+      "title": "Freenove · ходьба + корпус / голова",
+      "detail": "Левый: движение и повороты · правый: корпус или голова · OEM Tripod/Wave · офлайн-предпросмотр",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-combined-v9/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-combined-v9/index.html",
+          "sha256": "7f805611e71bd132d2df35095f2c7c9fa5040c0b71a16b2685efc699715b5506",
+          "size": 7930
+        },
+        {
+          "path": "hexapod/freenove-combined-v9/app.js",
+          "sha256": "b31e2e18d4c058b2d18521ca509c0533ebd8e2fb586df3ce84030615db5a9972",
+          "size": 13709
+        },
+        {
+          "path": "hexapod/freenove-combined-v9/combo-controller.js",
+          "sha256": "084458bc08d77f72f8be53781b8b9cd58cefe7e4be693c51ecd5e604bc2d7d1b",
+          "size": 4879
+        },
+        {
+          "path": "hexapod/freenove-combined-v9/overlay.css",
+          "sha256": "d51e9135c66dd9593c439e3ac13c20990a2c7eefa2d6bb848228498d27e68c21",
+          "size": 1273
         }
       ]
     }
