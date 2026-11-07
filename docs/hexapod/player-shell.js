@@ -109,14 +109,50 @@
   }
   refresh.addEventListener('click',async()=>{
     refresh.disabled=true;message.textContent='Проверяем обновления…';
+    let finished=false, polling=false;
+    const started=Date.now(), controller=new AbortController();
+    // An unreachable GitHub host must not leave the button disabled forever.
+    // The local server may finish its guarded transaction after a client timeout.
+    const cutoff=setTimeout(()=>controller.abort(),240000);
+    const poll=setInterval(async()=>{
+      if(finished||polling)return;
+      polling=true;
+      const elapsed=Math.floor((Date.now()-started)/1000);
+      if(!finished)message.textContent='Проверяем обновления… '+elapsed+' с';
+      try{
+        const response=await fetch('/api/refresh-status',{cache:'no-store'});
+        if(!response.ok)return; // Older installed server: retain elapsed time.
+        const state=await response.json();
+        if(finished)return;
+        const count=state.total?state.checked+' / '+state.total:'';
+        const label={
+          github:'Проверяем GitHub',
+          files:'Проверяем файлы '+count,
+          download:'Скачиваем '+String(state.asset||'файл').split('/').pop()+' · '+count,
+          install:'Сохраняем проверенную библиотеку',
+          done:'Обновление завершено',
+          error:'Ошибка синхронизации'
+        }[state.phase]||'Проверяем обновления';
+        message.textContent=label+' · '+elapsed+' с';
+      }catch(err){ /* A temporarily unreachable status endpoint is not fatal. */ }
+      finally{polling=false;}
+    },1200);
     try{
-      const r=await fetch('/api/refresh',{method:'POST',headers:{'X-Hexapod-Action':'refresh'},body:''});
+      const r=await fetch('/api/refresh',{
+        method:'POST',headers:{'X-Hexapod-Action':'refresh'},body:'',
+        signal:controller.signal
+      });
       const result=await r.json().catch(()=>({error:'Обновления доступны только через локальный Termux-сервер'}));
       if(!r.ok)throw Error(result.error||'Ошибка обновления');
       await readLibrary();draw();
       message.textContent=result.added?'Новых симуляций: '+result.added:'Библиотека актуальна';
-    }catch(err){message.textContent=String(err.message||err)+'. Сохранённые записи доступны офлайн.';}
-    finally{refresh.disabled=false;}
+    }catch(err){
+      message.textContent=err.name==='AbortError'
+        ?'Нет ответа более 4 минут. Сервер может продолжать обновление: проверьте его состояние в Termux. Старые записи сохранены.'
+        :String(err.message||err)+'. Сохранённые записи доступны офлайн.';
+    }finally{
+      finished=true;clearTimeout(cutoff);clearInterval(poll);refresh.disabled=false;
+    }
   });
   play.addEventListener('click',()=>{nativePlay.click();show();});
   slider.addEventListener('input',()=>{
