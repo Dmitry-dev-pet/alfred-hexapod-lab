@@ -5,7 +5,7 @@ import json, os, runpy, shutil, signal, socket, subprocess, sys, tempfile, time
 import urllib.error, urllib.request
 
 REPO = "Dmitry-dev-pet/alfred-hexapod-lab"
-COMMIT = "356b1c8cf689100a6c1293a69825e59ebb35b676"  # viewer catalog v25
+COMMIT = "6e0cc65c0995e9a9c352e2b0500b924f2394413c"  # viewer navigation fix + catalog v25
 BASE = f"https://raw.githubusercontent.com/{REPO}/{COMMIT}/"
 DEST = Path.home() / "hexapod-viewer-local"
 LOCAL = "http://127.0.0.1:8808"
@@ -88,7 +88,7 @@ def main():
             target = root / rel
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(fetch(rel))
-        if b"hx-shell" not in (root / "docs/hexapod/player-shell.js").read_bytes():
+        if b"hx-library-link" not in (root / "docs/hexapod/player-shell.js").read_bytes():
             raise Blocked("Загружен неправильный дизайн, изменения отменены")
         server = (root / "tools/local_viewer_server.py").read_bytes()
         if b"/api/refresh" not in server or b"/api/library" not in server:
