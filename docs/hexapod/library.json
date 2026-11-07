@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 32,
+  "revision": 33,
   "entries": [
     {
       "id": "tripod-60",
@@ -1317,6 +1317,71 @@
           "path": "hexapod/data/wheelbot-self-righting-v1.json",
           "sha256": "8377acfe629eaf0f85f32c149a035e893771e21c8ac1dc0908154be60d4edf71",
           "size": 19660
+        }
+      ]
+    },
+    {
+      "id": "wheelbot-v2-passive-90",
+      "title": "Mini Wheelbot V2 · без управления",
+      "detail": "8 с · контроль без импульса · не встал",
+      "duration_s": 8,
+      "href": "/hexapod/wheelbot-v2-passive-90/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/wheelbot-v2-player.js",
+          "sha256": "a9138af4def7fd56299708e3b228c040345b7da2b3b892f6bd395ce7f2e57bc0",
+          "size": 10278
+        },
+        {
+          "path": "hexapod/wheelbot-v2-passive-90/index.html",
+          "sha256": "c57bb237b21793e0e86a8fb1ae73d6452e8083d49086934d247241a4cc6e18c5",
+          "size": 3388
+        },
+        {
+          "path": "hexapod/data/wheelbot-v2-passive-90.json",
+          "sha256": "59bddc43cfa9e292da527bf88ac4e41be4e59a8e2a0db18a45c6852cdddc0146",
+          "size": 1974
+        }
+      ]
+    },
+    {
+      "id": "wheelbot-v2-source-pulse-90",
+      "title": "Mini Wheelbot V2 · импульс вставания",
+      "detail": "8 с · исходная последовательность импульсов · не удержался",
+      "duration_s": 8,
+      "href": "/hexapod/wheelbot-v2-source-pulse-90/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/wheelbot-v2-source-pulse-90/index.html",
+          "sha256": "a15cc07ff708b0c49178dcd6300b58ab8b35023704ea405425c667c654d4ca04",
+          "size": 3462
+        },
+        {
+          "path": "hexapod/data/wheelbot-v2-source-pulse-90.json",
+          "sha256": "9197bac2d6a7a07f2d4fe1606652cb7acdbe2b4fb46a6d3ded0970d722e57819",
+          "size": 6510
+        }
+      ]
+    },
+    {
+      "id": "wheelbot-v2-feedback-trial-90",
+      "title": "Mini Wheelbot V2 · попытка баланса",
+      "detail": "8 с · пробный LQR · конечный наклон 49° · не встал",
+      "duration_s": 8,
+      "href": "/hexapod/wheelbot-v2-feedback-trial-90/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/wheelbot-v2-feedback-trial-90/index.html",
+          "sha256": "cbec67cdc0f6b317c7daa102346ff12b61ff7fa8769f3c6bcab563e4696e94c5",
+          "size": 3467
+        },
+        {
+          "path": "hexapod/data/wheelbot-v2-feedback-trial-90.json",
+          "sha256": "189b477de47a46c911461db4e7fb0ef19935d8133646484f7a01a9c6efeafe1d",
+          "size": 7350
         }
       ]
     }
