@@ -12,12 +12,10 @@
   ];
   const safeHref=(p)=>typeof p==='string'&&/^\/hexapod\/(?:[a-z0-9-]+\/)?$/.test(p);
   const path=location.pathname;
-  // ?library=1 is an explicit way out of any replay. Never auto-redirect it.
-  const libraryView=path==='/hexapod/'&&new URLSearchParams(location.search).get('library')==='1';
-  try {
-    const last=localStorage.getItem('hexapod:last');
-    if(path==='/hexapod/'&&!libraryView&&safeHref(last)&&last!==path){location.replace(last);return;}
-  }catch{}
+  // The root address ALWAYS opens the established bottom-sheet library.
+  // Never redirect the root back to a saved replay: standalone comparison pages
+  // use /hexapod/ as their library link. Previously that caused a redirect loop.
+  const libraryView=path==='/hexapod/';
   let entries=fallback,opened=false,visible=true,hideTimer,toastTimer;
   const sourceLabel=location.pathname.startsWith('/hexapod/cheetah-idto-')?'DRAKE · MPC · REPLAY':'MUJOCO · REPLAY';
   const shell=document.createElement('div');shell.id='hx-shell';
