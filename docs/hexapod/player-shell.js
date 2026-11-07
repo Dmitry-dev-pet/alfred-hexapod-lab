@@ -12,15 +12,17 @@
   ];
   const safeHref=(p)=>typeof p==='string'&&/^\/hexapod\/(?:[a-z0-9-]+\/)?$/.test(p);
   const path=location.pathname;
+  // ?library=1 is an explicit way out of any replay. Never auto-redirect it.
+  const libraryView=path==='/hexapod/'&&new URLSearchParams(location.search).get('library')==='1';
   try {
     const last=localStorage.getItem('hexapod:last');
-    if(path==='/hexapod/'&&safeHref(last)&&last!==path){location.replace(last);return;}
+    if(path==='/hexapod/'&&!libraryView&&safeHref(last)&&last!==path){location.replace(last);return;}
   }catch{}
   let entries=fallback,opened=false,visible=true,hideTimer,toastTimer;
   const sourceLabel=location.pathname.startsWith('/hexapod/cheetah-idto-')?'DRAKE · MPC · REPLAY':'MUJOCO · REPLAY';
   const shell=document.createElement('div');shell.id='hx-shell';
   shell.innerHTML=[
-    '<div class="hx-top"><button type="button" class="hx-select" aria-label="Выбрать симуляцию">',
+    '<div class="hx-top"><a class="hx-library-link" href="/hexapod/?library=1" aria-label="Выйти из просмотра к библиотеке симуляций">← <span>Библиотека</span></a><button type="button" class="hx-select" aria-label="Выбрать симуляцию">',
     '<small>СИМУЛЯЦИЯ</small><span class="hx-title">Tripod</span><b aria-hidden="true">⌄</b>',
     '</button><span class="hx-record">'+sourceLabel+'</span></div>',
     '<div class="hx-controls"><div class="hx-transport">',
@@ -68,7 +70,7 @@
   const selection=()=>entries.find(x=>x.href===path)||fallback.find(x=>x.href===path)||entries[0];
   function setTitle(){
     const item=selection();if(item)title.textContent=item.title;
-    try {if(safeHref(path))localStorage.setItem('hexapod:last',path);}catch{}
+    try {if(safeHref(path)&&!libraryView)localStorage.setItem('hexapod:last',path);}catch{}
   }
   function draw(){
     list.replaceChildren();
@@ -154,4 +156,5 @@
     if(checkbox?.checked){checkbox.checked=false;checkbox.dispatchEvent(new Event('change',{bubbles:true}));}
   }
   setTitle();readLibrary();requestAnimationFrame(sync);show();
+  if(libraryView)open();
 })();
