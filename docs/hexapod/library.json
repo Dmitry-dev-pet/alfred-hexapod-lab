@@ -1,0 +1,1264 @@
+{
+  "schema": "hexapod-library/v1",
+  "revision": 29,
+  "entries": [
+    {
+      "id": "tripod-60",
+      "title": "Tripod",
+      "detail": "Обычная походка · 60 с · 1,10 м",
+      "duration_s": 60,
+      "href": "/hexapod/",
+      "files": []
+    },
+    {
+      "id": "claws-10",
+      "title": "Клешни",
+      "detail": "Поднятые передние ноги · 10 с",
+      "duration_s": 10,
+      "href": "/hexapod/claws/",
+      "files": []
+    },
+    {
+      "id": "six-to-four",
+      "title": "Переход 6 → 4",
+      "detail": "Подготовка четырёхопорной стойки · 7 с",
+      "duration_s": 7,
+      "href": "/hexapod/six-to-four/",
+      "files": []
+    },
+    {
+      "id": "power-loss-collapse",
+      "title": "Отказ приводов · падение",
+      "detail": "Реальное оседание и контакт корпуса с полом · 11,75 с",
+      "duration_s": 11.75,
+      "href": "/hexapod/power-loss-collapse/",
+      "status": "fall",
+      "files": [
+        {
+          "path": "hexapod/power-loss-collapse/index.html",
+          "sha256": "5322f56a642be29350e1a8dbceb9026332e5705cc213310046a9f21cd55a2643",
+          "size": 5336
+        },
+        {
+          "path": "hexapod/power-loss-collapse/app.js",
+          "sha256": "263c7fdce12d35f314cb535775cab623a8a7832fd2ff1e151d6f40e6ffe27757",
+          "size": 17290
+        },
+        {
+          "path": "hexapod/data/power-loss-collapse-12s.json",
+          "sha256": "3b5e505cc7ac36171a284982c49c319eaf00c3289c1d44f9c6599718280064ad",
+          "size": 155648
+        },
+        {
+          "path": "hexapod/data/cad-rig-power-loss-collapse-12s.json",
+          "sha256": "49483965de4bf814199eb572b5afa4277fdbf8d0842df44ffba9cbce733913f4",
+          "size": 523443
+        }
+      ]
+    },
+    {
+      "id": "contact-four",
+      "title": "4 опоры · удержание",
+      "detail": "Контроль · стойка без перестановки · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-four/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/contact-four/index.html",
+          "sha256": "290115b1e6d961db62be300efa4fa11c8de503a2bf5930b3c8bc072830d98ffe",
+          "size": 3831
+        },
+        {
+          "path": "hexapod/data/contact-four-points.json",
+          "sha256": "3a0b1ea96b90a8bc737481d394e91986391eef3b572e3f7f178c7bdfedac88eb",
+          "size": 47816
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-four.json",
+          "sha256": "273e7e27471aaf238f958f932a622b48fcca7a6ec8b4b2b02b078637f26cd39d",
+          "size": 139004
+        },
+        {
+          "path": "hexapod/contact-diag-app.js",
+          "sha256": "c12085d1be7eb264815df664630090268522a78f511092aee4be651b19487612",
+          "size": 10564
+        }
+      ]
+    },
+    {
+      "id": "contact-three-rear-bl",
+      "title": "3 опоры · задняя левая",
+      "detail": "Подъём bl подтверждён · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-three-rear-bl/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/contact-three-rear-bl/index.html",
+          "sha256": "19860ea7ce79b98699788a68964daaa0e6c9813ca50e2d6e3774e3f16c7f64f2",
+          "size": 3823
+        },
+        {
+          "path": "hexapod/data/contact-three-rear-bl-points.json",
+          "sha256": "fd0b58fff7779f6876b6df876730f956d93647837482974b51bf802ccab0bec2",
+          "size": 47597
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-three-rear-bl.json",
+          "sha256": "f01aa726e457336db6cdcf80bc1320000f7fe5a541ce33b370283680b9350da9",
+          "size": 139295
+        }
+      ]
+    },
+    {
+      "id": "contact-three-middle-ml",
+      "title": "3 опоры · средняя левая",
+      "detail": "Команда ml не сработала: разгрузилась br · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-three-middle-ml/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-three-middle-ml/index.html",
+          "sha256": "042a7efa011aaf93f10617195f5ed1459c786526d8c5f8260643943f155e8f54",
+          "size": 3844
+        },
+        {
+          "path": "hexapod/data/contact-three-middle-ml-points.json",
+          "sha256": "25073080109b6471e47b3f9b2f4ba32dd33e379a3a74176e6c55e486b0ead7b1",
+          "size": 47715
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-three-middle-ml.json",
+          "sha256": "a0a7a2c88fb57c0e81cc46fecc31f0819ef1f9519aae9c3a8db71e598edeb748",
+          "size": 139604
+        }
+      ]
+    },
+    {
+      "id": "contact-two-middles-ml-mr",
+      "title": "2 опоры? · обе средние",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-middles-ml-mr/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-middles-ml-mr/index.html",
+          "sha256": "9957e84a2a48509e2e4939cdbc8f008c9262b6ff49e2a935e33dea841a73a893",
+          "size": 3870
+        },
+        {
+          "path": "hexapod/data/contact-two-middles-ml-mr-points.json",
+          "sha256": "7ab295b96242c37213f5b241c45b98d12e0a01e201fa0ebac3dc33d28bb2e867",
+          "size": 47825
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-middles-ml-mr.json",
+          "sha256": "f0d5cbcd5ea7ae87c6ffdf1bd2524c206951c2ec7a41406265c7f9e80e159819",
+          "size": 138985
+        }
+      ]
+    },
+    {
+      "id": "contact-two-rears-bl-br",
+      "title": "2 опоры? · обе задние",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-rears-bl-br/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-rears-bl-br/index.html",
+          "sha256": "dda3afafcbd08a0d906a6dc0406f152cf44cd96a0e7c55de255da2729818f575",
+          "size": 3868
+        },
+        {
+          "path": "hexapod/data/contact-two-rears-bl-br-points.json",
+          "sha256": "28c4b697bf99c7cb7a6455018fe4a5d6f364c3d329408638583496dc0a1acf07",
+          "size": 47798
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-rears-bl-br.json",
+          "sha256": "972faa1ba7ad553927d30bf78cb721a90ff91ced2ea79bc62d1ea68291d92143",
+          "size": 138930
+        }
+      ]
+    },
+    {
+      "id": "contact-two-left-ml-bl",
+      "title": "2 опоры? · левая пара",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-left-ml-bl/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-left-ml-bl/index.html",
+          "sha256": "5ec835ac7740064f4ed8d5bc371b632e7dc18d615eb72d18fc607b07ae5e143b",
+          "size": 3868
+        },
+        {
+          "path": "hexapod/data/contact-two-left-ml-bl-points.json",
+          "sha256": "d6bc63ad1993fcc954e7cf36429857d9d6f71c92aa858ced619d9f32c4ba7a95",
+          "size": 47741
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-left-ml-bl.json",
+          "sha256": "4dbe8f2fe5636bbff7033dbbbed8c06927cd1b61dbbd4ab81a83fd0373a556cc",
+          "size": 139537
+        }
+      ]
+    },
+    {
+      "id": "contact-two-right-mr-br",
+      "title": "2 опоры? · правая пара",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-right-mr-br/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-right-mr-br/index.html",
+          "sha256": "2589380c14eb508b86f44063453f6c9b35cc2d5da30446693758da1f6ee7944a",
+          "size": 3870
+        },
+        {
+          "path": "hexapod/data/contact-two-right-mr-br-points.json",
+          "sha256": "0dc9c9181fd5f64d561ae6b8d55e105a23f7ad2dd568d0f0846ef0bb9953f144",
+          "size": 47705
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-right-mr-br.json",
+          "sha256": "040b8205e690591c5acdb563d1f0888027bd9e2dac0fe508845473aa41d463e9",
+          "size": 139373
+        }
+      ]
+    },
+    {
+      "id": "contact-two-diag-ml-br",
+      "title": "2 опоры? · диагональ ml/br",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-diag-ml-br/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-diag-ml-br/index.html",
+          "sha256": "ad72a6626c3d81d4fec8d394f26a7dd90c44262e05f5ddeb2b0fa5f697b9eec3",
+          "size": 3873
+        },
+        {
+          "path": "hexapod/data/contact-two-diag-ml-br-points.json",
+          "sha256": "421c58c72844cd3ce6a6fb12b05554745217699d2e62917b33136bc645161817",
+          "size": 47754
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-diag-ml-br.json",
+          "sha256": "ef2a08194b71796bf553b9c7eccf43b7e9eb13b9e9c95d28f8e7d6bb14817f8d",
+          "size": 139686
+        }
+      ]
+    },
+    {
+      "id": "contact-two-diag-mr-bl",
+      "title": "2 опоры? · диагональ mr/bl",
+      "detail": "Отрицательный опыт: две опоры не получены · 2,4 с",
+      "duration_s": 2.4,
+      "href": "/hexapod/contact-two-diag-mr-bl/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/contact-two-diag-mr-bl/index.html",
+          "sha256": "2d5c6396143b7b349e37a4575c79f02f75287adaa02761896c2d15b63051b521",
+          "size": 3873
+        },
+        {
+          "path": "hexapod/data/contact-two-diag-mr-bl-points.json",
+          "sha256": "41b7b35f935f9698f3494781ee8f858ec7a77c31e893e5125e4777304bf6162b",
+          "size": 47663
+        },
+        {
+          "path": "hexapod/data/cad-rig-contact-two-diag-mr-bl.json",
+          "sha256": "569a9771c0f85f794c4517742fbe04b68b22f709b7ecf9dd40b6959ccd6eac4b",
+          "size": 139340
+        }
+      ]
+    },
+    {
+      "id": "cheetah-idto-10s",
+      "title": "Mini Cheetah · MPC",
+      "detail": "Drake · динамическая рысь · 10 с · 3,47 м · другой робот",
+      "duration_s": 10,
+      "href": "/hexapod/cheetah-idto-10s/",
+      "files": [
+        {
+          "path": "hexapod/cheetah-idto-10s/index.html",
+          "sha256": "bf53b5d986cc09551f9226061fd70a391de91ce7b53d60c98df7dd48fc9ec816",
+          "size": 4370
+        },
+        {
+          "path": "hexapod/cheetah-idto-10s/app.js",
+          "sha256": "39bdc796a6820e68485b29b9e1ba9a2b25acaa11ec41d3b22b581ac40807b8e0",
+          "size": 8006
+        },
+        {
+          "path": "hexapod/data/cheetah-idto-10s.json",
+          "sha256": "3e594d05e6846b2eaac5bbba108bc2bde5910a295b0c785b0b3e3aa5ffd411ef",
+          "size": 110025
+        }
+      ]
+    },
+    {
+      "id": "support-qp-nominal",
+      "title": "2 опоры · QP + возвращение",
+      "detail": "Две средние опоры, задние реально оторваны, затем 4 опоры восстановлены · μ=1,1",
+      "duration_s": 3.8,
+      "href": "/hexapod/support-qp-nominal/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/support-qp-nominal/index.html",
+          "sha256": "0593072ab6a839ca1435ac5a82b4e43c332a7ad413ac9e97281fa4da849965d8",
+          "size": 3982
+        },
+        {
+          "path": "hexapod/support-qp-nominal/app.js",
+          "sha256": "070daa96c20ac08472354059e3097f99ac41aeefe735481d0c7518a8673ed47c",
+          "size": 10847
+        },
+        {
+          "path": "hexapod/data/dynamic-nominal-points.json",
+          "sha256": "4439bd1eb3fa6602ac90c2142502e8d16089011ba29c2cde24179dbb0dd52d34",
+          "size": 201452
+        },
+        {
+          "path": "hexapod/data/cad-rig-dynamic-nominal.json",
+          "sha256": "78b5536eaa5e4eeb5a839abcb212d46b42c81f2b4144f43897a544f0d59c7079",
+          "size": 413831
+        }
+      ]
+    },
+    {
+      "id": "support-qp-slippery",
+      "title": "2 опоры · скользкий пол",
+      "detail": "Отрицательная динамическая проверка QP: μ=0,6, контакты теряются",
+      "duration_s": 3.68,
+      "href": "/hexapod/support-qp-slippery/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/support-qp-slippery/index.html",
+          "sha256": "1664eba1ce6341f5d509b7396ea14268f3e0acc92e887a4a90ec402e42b84a11",
+          "size": 3981
+        },
+        {
+          "path": "hexapod/support-qp-slippery/app.js",
+          "sha256": "070daa96c20ac08472354059e3097f99ac41aeefe735481d0c7518a8673ed47c",
+          "size": 10847
+        },
+        {
+          "path": "hexapod/data/dynamic-slippery-points.json",
+          "sha256": "25146947118e3ab0fe5eaff97fc28a2f0ade535934a03d73bdcc75e6cd20861e",
+          "size": 194371
+        },
+        {
+          "path": "hexapod/data/cad-rig-dynamic-slippery.json",
+          "sha256": "50b6ba714cb466accd46eb7458418f1aa059e85412fe129586b0d157e38be2f0",
+          "size": 399993
+        }
+      ]
+    },
+    {
+      "id": "issue41-rear10",
+      "title": "Задние вперёд · 7,8 мм",
+      "detail": "Номинальная физика μ=1,1; задние стопы переместились в воздухе на 7,1 мм и приземлились примерно на 7,8 мм впереди исходных. Корпус +10,3 мм, целевые +20 мм не дости",
+      "duration_s": 3.54,
+      "href": "/hexapod/issue41-rear10/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/issue41-rear10/index.html",
+          "sha256": "52fb3fe8b965fd64fa1822dd061e8904508ac073469ad3b78b4778679f1b9d49",
+          "size": 4414
+        },
+        {
+          "path": "hexapod/issue41-rear10/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-rear10-points.json",
+          "sha256": "1ba057310c8eb249d15df9fcf4c2078381c4af7cea55bfb4b20d73fd1c99791e",
+          "size": 197565
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-rear10.json",
+          "sha256": "9438b871dbd46937d3709aa1f425ed68148b1792ae3ae9f89f3f1d4dfcb4ea02",
+          "size": 387947
+        }
+      ]
+    },
+    {
+      "id": "issue41-rear5",
+      "title": "Задние вперёд · 4,6 мм",
+      "detail": "При целевых 5 мм реально переместились примерно на 4,6 мм. Физический перенос есть, но исследовательский критерий посадки ≥5 мм не выполнен.",
+      "duration_s": 3.54,
+      "href": "/hexapod/issue41-rear5/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-rear5/index.html",
+          "sha256": "cd5a62e5e9e58009c2432b57399f6993b2a075f16261873c0194d5d0ee6d5996",
+          "size": 4280
+        },
+        {
+          "path": "hexapod/issue41-rear5/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-rear5-points.json",
+          "sha256": "6a5bb8fdc02bec380611639becbf708b45c38c8f139122320fe7bec4b06e0c0e",
+          "size": 197544
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-rear5.json",
+          "sha256": "59940dda227c21aa840c65cf07688e6983f865db825c6e8109465b27c4919a9d",
+          "size": 387934
+        }
+      ]
+    },
+    {
+      "id": "issue41-mu08",
+      "title": "Скольжение · μ=0,8",
+      "detail": "После переноса корпус временно потерял две опоры. Условия устойчивости не прошли; успешной ходьбы нет.",
+      "duration_s": 3.52,
+      "href": "/hexapod/issue41-mu08/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-mu08/index.html",
+          "sha256": "51ca9e693075cf9c0e113c62c9bdcf94946bbc665c93795751c394f40eaf6e15",
+          "size": 4232
+        },
+        {
+          "path": "hexapod/issue41-mu08/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-mu08-points.json",
+          "sha256": "c4bddbf3e9067a09289ccfe472121b5c70bba820a47e04acd6fc463348b5c726",
+          "size": 195861
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-mu08.json",
+          "sha256": "65206037b0c70d86d7d43c42f54d6868c3abc3be4df347cb575eea25faf95cd3",
+          "size": 385571
+        }
+      ]
+    },
+    {
+      "id": "issue41-mu06",
+      "title": "Скольжение · μ=0,6",
+      "detail": "В той же программе при меньшем трении оптимизация теряла допустимое решение, часть контактов сорвалась. Опасно переносить на железо.",
+      "duration_s": 3.52,
+      "href": "/hexapod/issue41-mu06/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-mu06/index.html",
+          "sha256": "ddd97e01b95c2326862ba9377824926bb46f3a296e36051c9aecf58a93ce855c",
+          "size": 4284
+        },
+        {
+          "path": "hexapod/issue41-mu06/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-mu06-points.json",
+          "sha256": "60a361114b1da796c7a9c22e28ba008ba1ac825b56c0eec69a47276a92cb72ce",
+          "size": 196005
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-mu06.json",
+          "sha256": "b566441022c726ea273300753cb7065a35dd08946c74ed8ed1b7126dbc1d4b96",
+          "size": 384589
+        }
+      ]
+    },
+    {
+      "id": "issue41-mu03",
+      "title": "Скольжение · μ=0,3",
+      "detail": "Сильно скользкая поверхность: контакты и моментные ограничения не соблюдаются. Нет подтверждённого двухопорного шага.",
+      "duration_s": 3.52,
+      "href": "/hexapod/issue41-mu03/",
+      "status": "negative",
+      "files": [
+        {
+          "path": "hexapod/issue41-mu03/index.html",
+          "sha256": "ddc6ddc3bc1e29d45e2df31e6d865af133b307b32e6eaa9674aca1ed1bc6fdc9",
+          "size": 4259
+        },
+        {
+          "path": "hexapod/issue41-mu03/app.js",
+          "sha256": "7602ee8c41846c55ee7c3e6fd810af055b842641f8a20a9d80825a68e67bc6da",
+          "size": 11059
+        },
+        {
+          "path": "hexapod/data/issue41-mu03-points.json",
+          "sha256": "b87c5255a6b125b9b5f3f7d49749f7d3f5f381f158ee0f0637360ab0dae75b0e",
+          "size": 197363
+        },
+        {
+          "path": "hexapod/data/cad-rig-issue41-mu03.json",
+          "sha256": "f897c0d6d8dc87fd57a7e6d55af30e63cd0a10ba53de4a46079ef2d5c24b764a",
+          "size": 386156
+        }
+      ]
+    },
+    {
+      "id": "wave-60-nominal",
+      "title": "Wave · 6 ног",
+      "detail": "Медленная wave · 60 с · +0,379 м · фактически ≥5 опор 99,83% времени · диагностика",
+      "duration_s": 60,
+      "href": "/hexapod/wave-60/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/wave-60/index.html",
+          "sha256": "cd8420d2bd0e1553b5958298cc2e75af808cf5be4a75f224beb22458f97c6f87",
+          "size": 5405
+        },
+        {
+          "path": "hexapod/wave-60/app.js",
+          "sha256": "bf7285d7cd95ee287fa45f7d713d9dfc3a0b265bfe5dae296b87341e58ce41a5",
+          "size": 15443
+        },
+        {
+          "path": "hexapod/data/wave-60s-points.json",
+          "sha256": "d4196f27690e73a7f0c4fcc2729a892191b3ec358f179136cb53e4e4f2d73da5",
+          "size": 970015
+        },
+        {
+          "path": "hexapod/data/cad-rig-wave-60s.json",
+          "sha256": "fd64c5201028b19a5584ce2fcbd1fcd12486f74f87d14b0e179de66c2773173f",
+          "size": 3111044
+        }
+      ]
+    },
+    {
+      "id": "wave-60-gated-diagnostic",
+      "title": "Wave · контактный контроль",
+      "detail": "6 ног · 60 с · +0,320 м · 0 тактов ниже 5 опор, но 165 поимённых нарушений · диагностика",
+      "duration_s": 60,
+      "href": "/hexapod/wave-gated-60/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/wave-gated-60/index.html",
+          "sha256": "598a8d1f1e07afe9ddc712bd0447d9cc08c772ae8325b21e524219e086aa4ffd",
+          "size": 5854
+        },
+        {
+          "path": "hexapod/wave-gated-60/app.js",
+          "sha256": "8c10d2e3ba1936e590edd5b0b29cfed82a9ebb38d919f969ba4c1b6c9f5dcf15",
+          "size": 15455
+        },
+        {
+          "path": "hexapod/data/wave-gated-60s-points.json",
+          "sha256": "1e7f5ca044d734113ceb7cb178726488836c6d0b149cead31bd58362a89ce5e5",
+          "size": 971057
+        },
+        {
+          "path": "hexapod/data/cad-rig-wave-gated-60s.json",
+          "sha256": "a7781252af08936418c0289ad83cbf8c0c59636b1c96f950d390515ca75610f0",
+          "size": 3085700
+        },
+        {
+          "path": "hexapod/data/wave-gated-60s-events.json",
+          "sha256": "7ab442a71103b29474da35e1c97e6d7f5380dec13237b32c28b7480b48c85f70",
+          "size": 7562
+        }
+      ]
+    },
+    {
+      "id": "live-v1-slow",
+      "title": "Live V1 · меняем направление",
+      "detail": "Записанная физическая симуляция · вперёд → вбок → поворот → стоп · 12,4 с · PASS в условиях модели, НЕ джойстик",
+      "duration_s": 12.4,
+      "href": "/hexapod/live-v1-slow/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v1-slow/index.html",
+          "sha256": "6b3743b606896702c5f3a6341ce158a95e16876d89d6f30df643f148d86d0ad5",
+          "size": 4786
+        },
+        {
+          "path": "hexapod/live-v1-slow/app.js",
+          "sha256": "14d8f8b33fe6351256f332d18d90cde5f266c614dad87cc46873b8d56a43d8b3",
+          "size": 10747
+        },
+        {
+          "path": "hexapod/data/live-v1-slow-points.json",
+          "sha256": "db9c7a5ef818d216aaa5de6c175fd0ca446f7f47f54225e66478eef04cb919ca",
+          "size": 133968
+        },
+        {
+          "path": "hexapod/data/cad-rig-live-v1-slow.json",
+          "sha256": "f0bb95c76d276629cf2e2d226e78170981e411e81a84803112c3ab64b5d56abe",
+          "size": 287267
+        }
+      ]
+    },
+    {
+      "id": "live-v2-offline",
+      "title": "Джойстик · 6 ног",
+      "detail": "Управление прямо на 3D-экране · офлайн-кинематика, без физики и отдельного сервера",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v2-offline/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v2-offline/index.html",
+          "sha256": "983d4475306666429aed913fc54247694a005bc272c1076ffa4203b39b5b1c79",
+          "size": 3449
+        },
+        {
+          "path": "hexapod/live-v2-offline/app.js",
+          "sha256": "55f36ab4b2b30d394a7fdf06978a339f72b65724d9bfd4413182126524c783ef",
+          "size": 10866
+        },
+        {
+          "path": "hexapod/live-v2-offline/pilot.css",
+          "sha256": "bf0694cfac0ea37af14021e2e0e86004103149572d79fbe358f5e7b4df7fb5a2",
+          "size": 3968
+        },
+        {
+          "path": "hexapod/live-v2-offline/kinematic-controller.js",
+          "sha256": "7cdc2f6f878ddb3a0bfdef8374fcbfd3c8e4f87b91e1b9d166eacb6120bf8572",
+          "size": 3772
+        },
+        {
+          "path": "hexapod/data/live-v2-offline-kit.json",
+          "sha256": "eb85d1804f4d53ebee9250884f846ebb01a0d34bb6ee899cc7b32eedafbc7d2b",
+          "size": 71880
+        }
+      ]
+    },
+    {
+      "id": "live-v3-fast",
+      "title": "Джойстик · быстрый",
+      "detail": "Темп ×0,5–8, по умолчанию ×4 · управление в 3D без физики · ускоренная кинематика",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v3-fast/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v3-fast/index.html",
+          "sha256": "6e1e77a3e770e1bacbbbc53a8f25a51f8e61061caba0b1ac6b4feba21e632da6",
+          "size": 3740
+        },
+        {
+          "path": "hexapod/live-v3-fast/app.js",
+          "sha256": "fb759247060701f4c3d4c6c012d121fb0e60cd4f06483b77529bfd685c99f2ec",
+          "size": 11205
+        },
+        {
+          "path": "hexapod/live-v3-fast/kinematic-controller.js",
+          "sha256": "0529164fa0a0a52d084618227eb721ac1e7e56dff6e3dd3c9b07d02c030cd141",
+          "size": 4284
+        }
+      ]
+    },
+    {
+      "id": "live-v4-gaits",
+      "title": "Джойстик · 3 походки",
+      "detail": "Wave / Ripple / Tripod · шаг 15–35 мм · офлайн-кинематика, без физики в реальном времени",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v4-gaits/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v4-gaits/index.html",
+          "sha256": "2f26064d13b65a4444cff740257d49ce492f9100ee57f7f7b7944960865b034a",
+          "size": 5217
+        },
+        {
+          "path": "hexapod/live-v4-gaits/app.js",
+          "sha256": "06165cc019618788cc770dbc0e850499f3b851c17e7a8266172d39056b543d70",
+          "size": 12060
+        },
+        {
+          "path": "hexapod/live-v4-gaits/kinematic-controller.js",
+          "sha256": "4c99f879efa33dac87b408e8c28fdda82269a26fbfbf3675828a2f42c6037a78",
+          "size": 7206
+        },
+        {
+          "path": "hexapod/data/live-v4-gaits-kit.json",
+          "sha256": "23a35f4049d58761338e4afeac4bb4075833b66077349768da87c3675d6f8581",
+          "size": 592924
+        }
+      ]
+    },
+    {
+      "id": "live-v5-motions",
+      "title": "Джойстик · движения V5",
+      "detail": "4 режима: ходьба, корпус, отдельная нога, голова · заранее рассчитанная кинематика, не физика",
+      "duration_s": 3600,
+      "href": "/hexapod/live-v5-motions/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/live-v5-motions/index.html",
+          "sha256": "807d36ab548bb099110283c2f834f59e126e71012845fbdb27c747161fc7c634",
+          "size": 9548
+        },
+        {
+          "path": "hexapod/live-v5-motions/app.js",
+          "sha256": "cf93cb18335268ebb595c4e5971e476df321b52943d8c7902acab663e6d4901c",
+          "size": 15748
+        },
+        {
+          "path": "hexapod/live-v5-motions/motion-controller.js",
+          "sha256": "1356c4d5811a6eaa06d7c61e654f46954296435831d485970fc12a181fdb3f24",
+          "size": 7410
+        },
+        {
+          "path": "hexapod/data/live-v5-motion-kit.json",
+          "sha256": "644bce6f5f491d77e30125be2542ef5ac1ddbe10f570ab41b89a58d77368ce3b",
+          "size": 5869
+        }
+      ]
+    },
+    {
+      "id": "freenove-original-v7",
+      "title": "Freenove Original · заводская ходьба",
+      "detail": "Штатные Tripod/Wave · подъём 40 мм · корпус ±40 мм и ±15° · калибровка CAD, офлайн-кинематика",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-original-v7/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-original-v7/index.html",
+          "sha256": "608dbd364c85b60202cc266be97ec57e0ca8c022a48a51fe430b19111c796085",
+          "size": 7667
+        },
+        {
+          "path": "hexapod/freenove-original-v7/app.js",
+          "sha256": "fa274354ffa095b9790a5613c43b16db63ee3d59c80e780bfa8c4de264dc4a26",
+          "size": 12657
+        },
+        {
+          "path": "hexapod/freenove-original-v7/factory-controller.js",
+          "sha256": "336e7fe8e7a82904075c969498b62a27714986fba0e3ed303635bb98bddb9b0d",
+          "size": 7142
+        },
+        {
+          "path": "hexapod/data/freenove-original-v7-kit.json",
+          "sha256": "5f88588f17e1a1fcef73e20e0787413bc402fd2c676fff3a9c5463315a7b7d8c",
+          "size": 242700
+        }
+      ]
+    },
+    {
+      "id": "freenove-dual-v8",
+      "title": "Freenove Original · 2 джойстика",
+      "detail": "Двумя пальцами: ходьба + поворот · корпус X/Y + наклоны · OEM Tripod/Wave · офлайн-кинематика",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-dual-v8/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-dual-v8/index.html",
+          "sha256": "f2d79d9e1cf6db82eb9a79a70c6dd7e5e8662f86f6f27c51f8b92db4fee928cb",
+          "size": 7641
+        },
+        {
+          "path": "hexapod/freenove-dual-v8/app.js",
+          "sha256": "0f4161ab0382417defc1b5a245304559fec68da3b596c30434355b7263a2a650",
+          "size": 12996
+        },
+        {
+          "path": "hexapod/freenove-dual-v8/dual-stick-input.js",
+          "sha256": "105decf0b68493b12ffac751e65298a8440d29045347177f0c8bb9718257885d",
+          "size": 2139
+        },
+        {
+          "path": "hexapod/freenove-dual-v8/dual-stick.css",
+          "sha256": "22e1924f561ea96910b79d1aac6c6f00a7d55cc5857d368e5b19dbe4ba933106",
+          "size": 3585
+        }
+      ]
+    },
+    {
+      "id": "freenove-combined-v9",
+      "title": "Freenove V9 · ошибка запуска (см. V10)",
+      "detail": "Ошибка импорта JavaScript — исправленная версия V10. Старые файлы сохранены для проверки.",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-combined-v9/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-combined-v9/index.html",
+          "sha256": "7f805611e71bd132d2df35095f2c7c9fa5040c0b71a16b2685efc699715b5506",
+          "size": 7930
+        },
+        {
+          "path": "hexapod/freenove-combined-v9/app.js",
+          "sha256": "b31e2e18d4c058b2d18521ca509c0533ebd8e2fb586df3ce84030615db5a9972",
+          "size": 13709
+        },
+        {
+          "path": "hexapod/freenove-combined-v9/combo-controller.js",
+          "sha256": "084458bc08d77f72f8be53781b8b9cd58cefe7e4be693c51ecd5e604bc2d7d1b",
+          "size": 4879
+        },
+        {
+          "path": "hexapod/freenove-combined-v9/overlay.css",
+          "sha256": "d51e9135c66dd9593c439e3ac13c20990a2c7eefa2d6bb848228498d27e68c21",
+          "size": 1273
+        }
+      ]
+    },
+    {
+      "id": "freenove-combined-v10",
+      "title": "Freenove V10 · опоры скользят при повороте",
+      "detail": "Запускается, но разворот корпуса/ходьбы не учитывает фиксацию опор. Для проверки поворота используй V11.",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-combined-v10/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-combined-v10/index.html",
+          "sha256": "fccbd06316dd6898c4c8f58baea3132e9a1467a90ee0f370627da1678244c22b",
+          "size": 8686
+        },
+        {
+          "path": "hexapod/freenove-combined-v10/app.js",
+          "sha256": "51725f5914672211d0103744d1043ec1da726039ba01cd59b393487bfd94f457",
+          "size": 13759
+        }
+      ]
+    },
+    {
+      "id": "xgorider2-rl-comparison",
+      "title": "XGO-Rider2 · RL против Linear",
+      "detail": "MuJoCo · оригинальная нейросеть · 12 с и экстремальное падение · другой робот",
+      "duration_s": 12,
+      "href": "/hexapod/xgorider2-rl-comparison/",
+      "status": "diagnostic",
+      "files": [
+        {
+          "path": "hexapod/xgorider2-rl-comparison/index.html",
+          "sha256": "dd4b357b92f90e8885858c44fbd7d55236f361aeb62c426f084ed9b4cb34c526",
+          "size": 4953
+        },
+        {
+          "path": "hexapod/xgorider2-rl-comparison/app.js",
+          "sha256": "c06bea682d5e4e70d37a17b9b1e3dc4a69d5b3696b614788a70f67e1675a50e7",
+          "size": 10504
+        },
+        {
+          "path": "hexapod/data/rider2-linear-drive-12s.json",
+          "sha256": "be0521b6da742bd5501f6aa12141e0db405ac98d4f83a0bfb490a66cd21e124c",
+          "size": 78002
+        },
+        {
+          "path": "hexapod/data/rider2-rl-corner-fail.json",
+          "sha256": "87da9366dd4957283e6a4e91a785b9447d8fc65a7617bac964f1f6a52558ddd8",
+          "size": 4899
+        },
+        {
+          "path": "hexapod/data/rider2-rl-drive-12s.json",
+          "sha256": "3f94fa4a920daada64869b0c016daaf9a256cca0a6b94d0d1169ce3df2efe7e2",
+          "size": 78168
+        }
+      ]
+    },
+    {
+      "id": "freenove-grounded-v11",
+      "title": "Freenove · поворот с опорой V11",
+      "detail": "Корпус разворачивается на неподвижных стопах · ходьба с геометрической фиксацией опор · оба джойстика",
+      "duration_s": 3600,
+      "href": "/hexapod/freenove-grounded-v11/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/freenove-grounded-v11/index.html",
+          "sha256": "cd1da080d13a9587df0ffed04cc091cdfe39ee276c09058cc2205b6695be3fed",
+          "size": 8744
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/app.js",
+          "sha256": "4ed746b7696c0dd1df8d82208237f5a09196c77809d47e2215edc705a106bec3",
+          "size": 14785
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/planted-controller.js",
+          "sha256": "fb7186299f706d9c56677255f3e2b0c41b64174e1defc55b6bf03c7349fefe62",
+          "size": 2270
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/ground-lock.js",
+          "sha256": "6d0a9a890016456f8f503bd2b09cd9e192838fce92847a0c4b94a0780e8c8098",
+          "size": 2745
+        },
+        {
+          "path": "hexapod/freenove-grounded-v11/planted-body-yaw-kit.json",
+          "sha256": "060372d1e728ff34edb7116bd215ba98d76c989d959113e7652a68ee01bb88e5",
+          "size": 8601
+        }
+      ]
+    },
+    {
+      "id": "physics-replay-v13",
+      "title": "MuJoCo V12 · физика (53 опыта)",
+      "detail": "Настоящие состояния после 53 прогонов mj_step · 3D, опоры и силы Fz, перемотка · без физики на планшете",
+      "duration_s": 3600,
+      "href": "/hexapod/physics-replay-v13/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/physics-replay-v13/index.html",
+          "sha256": "4e82c41c3c8d1e4fe5f4a28ab755af9023ff08bd0169afe0e6f0f7316cc8d80f",
+          "size": 3731
+        },
+        {
+          "path": "hexapod/physics-replay-v13/app.js",
+          "sha256": "9a7b600dc7ac777fb465ee1517b352f9255ab2b4e4ec06517fc57a987d6174b8",
+          "size": 10957
+        },
+        {
+          "path": "hexapod/physics-replay-v13/replay-controller.js",
+          "sha256": "d705f000cda909f1b1193e8b18ec420f9b55a60c6003fbba6ace6745a487640f",
+          "size": 4108
+        },
+        {
+          "path": "hexapod/physics-replay-v13/replay.css",
+          "sha256": "9005fc5de82db9ad9021cc00f858f60bf90df41477e70b8ac12df7f763307376",
+          "size": 3316
+        },
+        {
+          "path": "hexapod/data/physics-v12-nominal_full.json",
+          "sha256": "5b5fb834ba994a59fdb7af6c2b217a370403c10a3f1ba75d67660fc2dd0aba46",
+          "size": 1983868
+        },
+        {
+          "path": "hexapod/data/physics-v12-upper_mass_full.json",
+          "sha256": "846c13f659f9ae1b504e9e01b50a59ea6a5cfc93870daaa783ba5c866ce14e91",
+          "size": 680260
+        },
+        {
+          "path": "hexapod/data/physics-v12-friction_035_full.json",
+          "sha256": "ecadbfc49f8d3569d4725bdd652b5453d620e18cd266ef6ec0dd17fa408620b2",
+          "size": 478210
+        },
+        {
+          "path": "hexapod/data/physics-v12-torque_035_full.json",
+          "sha256": "89913ddff9d6d6bb040043ebe7c722da65bab8d945f2377acc54b043f5b3c35b",
+          "size": 477042
+        }
+      ]
+    },
+    {
+      "id": "lite3-original-stl-onnx-v1",
+      "title": "XGO-Lite3 · оригинальные STL",
+      "detail": "4 физические записи · ONNX/контроль · 8/9,5 с · 17 оригинальных STL локально · НЕ native MJLab",
+      "status": "research",
+      "duration_s": 9.5,
+      "href": "/hexapod/lite3-original-v1/",
+      "files": [
+        {
+          "path": "hexapod/lite3-original-v1/index.html",
+          "sha256": "3af8092caf544ffe5bcbe28b099ebab1b8b45c2ba8402459d17d160f991fce0c",
+          "size": 5389
+        },
+        {
+          "path": "hexapod/lite3-original-v1/app.js",
+          "sha256": "649847d8b623776368a2c2d154e296cfa7b210da821b00219a29d9f063a41dbc",
+          "size": 13701
+        },
+        {
+          "path": "hexapod/lite3-original-v1/asset-manifest.json",
+          "sha256": "09b6a9b3fba4fbee18a9211e7e1bccdfc1f11508e1ebc189eaf29598d3d29fea",
+          "size": 4847
+        },
+        {
+          "path": "hexapod/data/lite3-standard-onnx-seed20261106-original-v1.json",
+          "sha256": "2b5b4ddeadc0fe2efae13be5643fe0f02ca2fdcfafb60739963765e43b1fb94b",
+          "size": 158030
+        },
+        {
+          "path": "hexapod/data/lite3-standard-zero-seed20261106-original-v1.json",
+          "sha256": "8267db12a16e766995c6570bae856711404531a086b26058ae09ee88a96aff63",
+          "size": 159039
+        },
+        {
+          "path": "hexapod/data/lite3-midstride-onnx-seed20261106-original-v1.json",
+          "sha256": "efbb161027b911dfde4c4fc5fd750079bebcfb31374b8a27d638f049bfe6c7f9",
+          "size": 186213
+        },
+        {
+          "path": "hexapod/data/lite3-midstride-zero-seed20261106-original-v1.json",
+          "sha256": "963a0b9b7a4d9a48bd5177cb8d068402bac6422283f87ed0fe45d558b17a54b5",
+          "size": 188161
+        }
+      ]
+    },
+    {
+      "id": "lite3-photo-finish-v2",
+      "title": "XGO-Lite3 · материалы V2",
+      "detail": "17 оригинальных STL · тёмный корпус, металл и экран по официальным фото · 4 физических replay",
+      "status": "research",
+      "duration_s": 9.5,
+      "href": "/hexapod/lite3-finish-v2/",
+      "files": [
+        {
+          "path": "hexapod/lite3-finish-v2/index.html",
+          "size": 5584,
+          "sha256": "84caeae68cc0e3f1d04c830cb4d097aede9627c32c21ca2f602da28772e2e3bf"
+        },
+        {
+          "path": "hexapod/lite3-finish-v2/app.js",
+          "size": 19660,
+          "sha256": "2e7255f43a712d45956f428b4d7dc317a74372694c3f59e1029ad24e9354752f"
+        },
+        {
+          "path": "hexapod/lite3-finish-v2/visual-finish.json",
+          "size": 2908,
+          "sha256": "c58b58c7430e49c6d1eadcc951237d1e28996e95d22a7d372f371e992cadb6b4"
+        }
+      ]
+    },
+    {
+      "id": "lite3-s2-robustness-v1",
+      "title": "XGO-Lite3 · устойчивость S2",
+      "detail": "6 физических повторов из 60 · трение, масса и приводы · по 9,5 с",
+      "duration_s": 9.5,
+      "href": "/hexapod/lite3-s2-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/lite3-s2-v1/index.html",
+          "sha256": "cb6bbb8ef03674a20c6d6fd3eafff1ef99c0bc336160ab5db709dcbbfbea3d3f",
+          "size": 6221
+        },
+        {
+          "path": "hexapod/lite3-s2-v1/app.js",
+          "sha256": "82427bc034270c8427d0b311cc3f500368ed96a379108bd26a144e6b08b4ba45",
+          "size": 19898
+        },
+        {
+          "path": "hexapod/data/lite3-s2-original_baseline-seed20261106-v1.json",
+          "sha256": "220f7f7fea3229cfa3bcce8032ccddcd7854df048d794c83e818ec33971ca913",
+          "size": 186229
+        },
+        {
+          "path": "hexapod/data/lite3-s2-friction_035-seed20261106-v1.json",
+          "sha256": "ca4db7bee8e750a6e413e67293bdcc2739e8a811c551a07706f9dd6273cd6229",
+          "size": 186223
+        },
+        {
+          "path": "hexapod/data/lite3-s2-friction_020-seed20261106-v1.json",
+          "sha256": "d3d491b160d4cde53d6ee4d88b9a5048af2fe362df4b209da2e52c092ea0bb82",
+          "size": 186292
+        },
+        {
+          "path": "hexapod/data/lite3-s2-uniform_mass_0610-seed20261106-v1.json",
+          "sha256": "5003cea6959fedd19f3ac129cb3bc17c88ea78a36984a9b784fcc079475ac567",
+          "size": 186512
+        },
+        {
+          "path": "hexapod/data/lite3-s2-actuator_cap_02256-seed20261106-v1.json",
+          "sha256": "8cd7ddac1997625719cb3d781229d317be002ecb72315b0fc1a4ef6bee941805",
+          "size": 186386
+        },
+        {
+          "path": "hexapod/data/lite3-s2-combined_stress-seed20261106-v1.json",
+          "sha256": "5dfaf2726f487891caaba718d1fed00accc2ef8ddd4fe56f59afdbe71c592565",
+          "size": 186426
+        }
+      ]
+    },
+    {
+      "id": "lite3-s2-compare-v2",
+      "title": "XGO-Lite3 · сравнение S2",
+      "detail": "Полноэкранный 3D-плеер · две реальные траектории · наложение/рядом · параметры в сворачиваемой панели",
+      "duration_s": 9.5,
+      "href": "/hexapod/lite3-s2-compare-v3/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/lite3-s2-compare-v3/index.html",
+          "size": 10180,
+          "sha256": "2ce2c0034997650699c09ec84ad616b511c96ca4f8f644e97e1d5f388fd9554c"
+        },
+        {
+          "path": "hexapod/lite3-s2-compare-v3/app.js",
+          "size": 16846,
+          "sha256": "e710d252e6ce81e81bcc204ca96c91fa4983ad075092e89f03ab2a25daabaece"
+        },
+        {
+          "path": "hexapod/data/lite3-s2-original_baseline-seed20261106-v1.json",
+          "sha256": "220f7f7fea3229cfa3bcce8032ccddcd7854df048d794c83e818ec33971ca913",
+          "size": 186229
+        },
+        {
+          "path": "hexapod/data/lite3-s2-friction_035-seed20261106-v1.json",
+          "sha256": "ca4db7bee8e750a6e413e67293bdcc2739e8a811c551a07706f9dd6273cd6229",
+          "size": 186223
+        },
+        {
+          "path": "hexapod/data/lite3-s2-friction_020-seed20261106-v1.json",
+          "sha256": "d3d491b160d4cde53d6ee4d88b9a5048af2fe362df4b209da2e52c092ea0bb82",
+          "size": 186292
+        },
+        {
+          "path": "hexapod/data/lite3-s2-uniform_mass_0610-seed20261106-v1.json",
+          "sha256": "5003cea6959fedd19f3ac129cb3bc17c88ea78a36984a9b784fcc079475ac567",
+          "size": 186512
+        },
+        {
+          "path": "hexapod/data/lite3-s2-actuator_cap_02256-seed20261106-v1.json",
+          "sha256": "8cd7ddac1997625719cb3d781229d317be002ecb72315b0fc1a4ef6bee941805",
+          "size": 186386
+        },
+        {
+          "path": "hexapod/data/lite3-s2-combined_stress-seed20261106-v1.json",
+          "sha256": "5dfaf2726f487891caaba718d1fed00accc2ef8ddd4fe56f59afdbe71c592565",
+          "size": 186426
+        }
+      ]
+    },
+    {
+      "id": "pupper-v3-cpu-stand-v1",
+      "title": "Stanford Pupper · стойка CPU",
+      "detail": "5 с · настоящая MuJoCo-физика, 1250 шагов · 13 оригинальных STL · без обучения нейросети",
+      "duration_s": 5,
+      "href": "/hexapod/pupper-stand-cpu-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-stand-cpu-v1/index.html",
+          "sha256": "0930cc1691c39e20b176c075dea194493d4e41deba01f3920141a321d8e039f3",
+          "size": 4890
+        },
+        {
+          "path": "hexapod/pupper-stand-cpu-v1/app.js",
+          "sha256": "7f5f2348728dde510cea6dc25ea3e1590563b1269346d1d80e5918ce9d869c2e",
+          "size": 12124
+        },
+        {
+          "path": "hexapod/data/pupper-v3-cpu-stance-5s-v1.json",
+          "sha256": "874b984c942cf3124f3c39b6bf40ea89ccfe3fc4ee20e9fa3e44812a4929ed52",
+          "size": 299677
+        }
+      ]
+    },
+    {
+      "id": "pupper-v3-pretrained-walk-v1",
+      "title": "Stanford Pupper · обученная ходьба",
+      "detail": "5 с · 46,9 см по X · готовая RL-политика Stanford · физика MuJoCo CPU · без нового обучения",
+      "duration_s": 5,
+      "href": "/hexapod/pupper-pretrained-walk-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-pretrained-walk-v1/index.html",
+          "size": 5421,
+          "sha256": "bb8474fbeb07defec8d6112702c97cf32d3e37651b9f3e71e466218571859234"
+        },
+        {
+          "path": "hexapod/pupper-pretrained-walk-v1/app.js",
+          "size": 13328,
+          "sha256": "dcf2b9c3e24321f51b364650c2afe06eff078f4fe8302405ffe3fa9947738790"
+        },
+        {
+          "path": "hexapod/data/pupper-v3-cpu-pretrained-walk-5s-v1.json",
+          "size": 301402,
+          "sha256": "23270ffcf273fe8be9805424d0760e3654ba5379be67ddb0c5ea03f47c6386ca"
+        }
+      ]
+    },
+    {
+      "id": "pupper-teleop-20s-v1",
+      "title": "Stanford Pupper · управление в движении",
+      "detail": "20 с · вперёд, вбок, повороты, назад и остановка · реальные команды",
+      "duration_s": 20,
+      "href": "/hexapod/pupper-teleop-20s-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-teleop-20s-v1/index.html",
+          "sha256": "c5ef1e4de0bb6feaa65b2e0736091d6c04ebd708f3e3e513188451d1d2482850",
+          "size": 4984
+        },
+        {
+          "path": "hexapod/pupper-teleop-20s-v1/app.js",
+          "sha256": "ca005e743ccf82ce286d610e95840ebcc37bc85c5a722480a367f3fefeec6d33",
+          "size": 13185
+        },
+        {
+          "path": "hexapod/data/pupper-teleop-20s-v1.json",
+          "sha256": "e0b173b083d9d39f5655f952fa10176d254b3f041c1d7c9aba9db0ce293e0e14",
+          "size": 601528
+        }
+      ]
+    },
+    {
+      "id": "pupper-jump-9s-v1",
+      "title": "Stanford Pupper · прыжок",
+      "detail": "9 с · реальный отрыв стоп и приземление в MuJoCo",
+      "duration_s": 9,
+      "href": "/hexapod/pupper-jump-9s-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-jump-9s-v1/index.html",
+          "sha256": "0c8b107b849eb5f7061513a07bb32344714e6d89769f1cf168818d88bf0acf9c",
+          "size": 4921
+        },
+        {
+          "path": "hexapod/pupper-jump-9s-v1/app.js",
+          "sha256": "ca005e743ccf82ce286d610e95840ebcc37bc85c5a722480a367f3fefeec6d33",
+          "size": 13185
+        },
+        {
+          "path": "hexapod/data/pupper-jump-9s-v1.json",
+          "sha256": "b56f52dde1c47b7ab8558a32b3eeb3162130546c39bfc1d53516ed7e1b1a2646",
+          "size": 277566
+        }
+      ]
+    },
+    {
+      "id": "pupper-turn-fail-v1",
+      "title": "Stanford Pupper · ошибка поворота",
+      "detail": "9 с · 390° вместо ≈180° · диагностический отрицательный опыт",
+      "duration_s": 9,
+      "href": "/hexapod/pupper-turn-fail-v1/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/pupper-turn-fail-v1/index.html",
+          "sha256": "03b27fdd44125f1af9b10c50e6e78bc8b526fe4e8fae523bd3120b87725ab8b5",
+          "size": 4959
+        },
+        {
+          "path": "hexapod/pupper-turn-fail-v1/app.js",
+          "sha256": "ca005e743ccf82ce286d610e95840ebcc37bc85c5a722480a367f3fefeec6d33",
+          "size": 13185
+        },
+        {
+          "path": "hexapod/data/pupper-turn-fail-v1.json",
+          "sha256": "cbfbaa2c021dcb9a4b5eb950533de6826332205876eb92c789bd32df5d81203b",
+          "size": 275597
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "schema": "xgo-lite3-original-local-stl-assets-v1",
+  "vendor": "LuwuDynamics/luwu_mjlab",
+  "commit": "447945fd40fb5585271dce4ea8cc82567916032a",
+  "asset_path": "src/assets/robots/lite3/xmls/assets",
+  "origin": "https://raw.githubusercontent.com/LuwuDynamics/luwu_mjlab/447945fd40fb5585271dce4ea8cc82567916032a/",
+  "use": "private local browser/device cache only — no STL in public Hexapod Lab repo",
+  "license_notice": "Preserve vendor copyrights; public source distribution terms not established by us",
+  "meshes": [
+    {
+      "body": "body",
+      "mesh": "body.STL",
+      "sha256": "a911d6f811d11084a36354f511ceadd99463a82af16ab8c2914f0c8d7ab020d1",
+      "size": 3968384,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "mainarm",
+      "mesh": "mainarm.STL",
+      "sha256": "0841144dde4d5e2f3b0f499f587cd9f74bc80aaa4da4240fee9716f9bb3c6995",
+      "size": 1898984,
+      "rgba": [
+        0.792159975,
+        0.81961,
+        0.933329999,
+        1.0
+      ]
+    },
+    {
+      "body": "forearm",
+      "mesh": "forearm.STL",
+      "sha256": "e955949a0c040b27c39f42402a41df8682399f9203232390f509567ac7a4fa9c",
+      "size": 1398884,
+      "rgba": [
+        0.792159975,
+        0.81961,
+        0.933329999,
+        1.0
+      ]
+    },
+    {
+      "body": "L_calw",
+      "mesh": "L_calw.STL",
+      "sha256": "35e5702eb7817639796abea5c085d5c69e62c7032aec32a5027f5d572ba6fec7",
+      "size": 41284,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "R_claw",
+      "mesh": "R_claw.STL",
+      "sha256": "9d05b04d3a8c093d4f506dc218cfa747e2fd05a53f114df89a0e82b7537748a8",
+      "size": 41284,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "FL_hip",
+      "mesh": "FL_hip.STL",
+      "sha256": "8ab563465155a77742e1a57dfc92dcacf294d5224ba8273672145f2506503d7d",
+      "size": 1052884,
+      "rgba": [
+        0.866670012,
+        0.909799993,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "FL_thigh",
+      "mesh": "FL_thigh.STL",
+      "sha256": "eba8851bf6ef8267969c076ab05611bd74a5fdde27bab75965ed6ee53b0db6ac",
+      "size": 1403084,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "FL_shank",
+      "mesh": "FL_shank.STL",
+      "sha256": "d934212f0b942eb7b0efeadbf948e20b7e218a200d4cd73a8f8fe2f5815b06c7",
+      "size": 687784,
+      "rgba": [
+        0.866670012,
+        0.909799993,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "FR_hip",
+      "mesh": "FR_hip.STL",
+      "sha256": "b3aa25c505a0c13ce5cbc4408a90498bc6f9e2253612e22a57845fc699b4978d",
+      "size": 1050884,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "FR_thigh",
+      "mesh": "FR_thigh.STL",
+      "sha256": "7f31a9ac6b9f8208acb6ddee1a8c89bd314017fb6f67a9a4e03b68160a4bf86e",
+      "size": 1404084,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "FR_shank",
+      "mesh": "FR_shank.STL",
+      "sha256": "0e2881f096a43bba55a3241d6deb1f28d02de054cfcb757461ce7b7a54b130a8",
+      "size": 685784,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "RR_hip",
+      "mesh": "RR_hip.STL",
+      "sha256": "98e984bfd4ad6ada5e330c042adefb4677d141a5ff7ade7bca7037dc2cef7dac",
+      "size": 1050884,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "RR_thigh",
+      "mesh": "RR_thigh.STL",
+      "sha256": "f91c22e87f9a7412f6355d9693bd2fac9af093dcd03cce602abb3d6a11eb716a",
+      "size": 1404084,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "RR_shank",
+      "mesh": "RR_shank.STL",
+      "sha256": "76ffe9c6518abf6d197340009a721f9d8738058e28e052e97e64122cac6dfdbe",
+      "size": 685784,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "RL_hip",
+      "mesh": "RL_hip.STL",
+      "sha256": "6995dbda56583ebea45bfb078fab2c8117284b90a969f87821ce7c82347f80ba",
+      "size": 1052884,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "RL_thigh",
+      "mesh": "RL_thigh.STL",
+      "sha256": "77278a5beb5227272d17083d37db3fbf421ea3102a5f7689dc2f43a689ba331f",
+      "size": 1403084,
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "RL_shank",
+      "mesh": "RL_shank.STL",
+      "sha256": "0da2b482709e2428df50a3c3c7a16ab32acb53dd2dcec196bc4219875fd3d185",
+      "size": 687784,
+      "rgba": [
+        0.866670012,
+        0.909799993,
+        1.0,
+        1.0
+      ]
+    }
+  ]
+}

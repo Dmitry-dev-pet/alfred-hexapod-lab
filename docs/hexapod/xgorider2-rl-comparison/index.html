@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101820">
+  <meta name="description" content="Записанная физика XGO-Rider2: оригинальная RL-политика против линейного контроллера, движения и экстремальный отказ в MuJoCo.">
+  <title>Hexapod Lab · XGO-Rider2 · RL vs Linear</title>
+  <link rel="stylesheet" href="/hexapod/claws/style.css">
+  <link rel="stylesheet" href="/hexapod/player-shell.css">
+  <style>
+    .rider-picker{position:absolute;right:12px;top:79px;z-index:5;max-width:min(80vw,335px);padding:9px 10px;background:rgba(10,20,31,.92);border:1px solid #35536a;border-radius:11px;color:#e7f4f6;display:flex;flex-direction:column;gap:6px;box-shadow:0 5px 18px #0005}
+    .rider-picker label{font-size:11px;color:#a6bbc9;letter-spacing:.04em}
+    .rider-picker select{width:100%;background:#1d2c3b;border:1px solid #416172;border-radius:7px;color:#f5fafc;padding:8px;font-size:13px}
+    .rider-stats{position:absolute;bottom:96px;left:12px;z-index:3;max-width:min(84vw,380px);padding:10px 12px;background:rgba(10,24,35,.86);border:1px solid #315168;border-radius:10px;color:#dfeefa;pointer-events:none;font-variant-numeric:tabular-nums}
+    .rider-stats strong{font-size:13px}.rider-stats .line{font-size:11px;line-height:1.6;color:#a8c5d5}.rider-stats .push{color:#f4ba83}
+    .rider-note{position:absolute;left:12px;bottom:170px;z-index:3;font-size:10px;color:#bed3df;background:#112334c9;border-radius:7px;padding:7px 9px;pointer-events:none}
+    .rider-fail{color:#ffa39d}.rider-rl{color:#83edc5}.rider-linear{color:#ffcd89}
+    #rider-error:not([hidden]){z-index:6}
+    @media(max-width:550px){.rider-picker{top:83px;right:10px;left:auto;max-width:70vw}.rider-picker select{font-size:12px}.rider-stats{left:10px;bottom:85px;padding:8px 10px}.rider-note{left:10px;bottom:161px;max-width:82vw}}
+    @media(max-height:550px){.rider-picker{top:65px}.rider-note{display:none}.rider-stats{bottom:66px}}
+  </style>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <main class="layout">
+    <section class="stage" aria-label="3D replay XGO Rider2: физические состояния MuJoCo">
+      <div id="viewer" role="img" aria-label="3D модель двухколёсного робота. Касанием и перетаскиванием можно вращать камеру."></div>
+      <div class="rider-picker"><label for="rider-case">ФИЗИЧЕСКИЙ ЭКСПЕРИМЕНТ · 2026-11-06</label>
+        <select id="rider-case" aria-label="Выбрать эксперимент XGO-Rider2">
+          <option value="rl">RL · 12 с · движение и толчки</option>
+          <option value="linear">Linear · 12 с · те же условия</option>
+          <option value="corner">RL · экстремальный случай · падение</option>
+        </select>
+      </div>
+      <div class="rider-note" id="rider-status">Загрузка настоящей трассы MuJoCo…</div>
+      <div class="rider-stats" aria-live="off"><strong id="rider-phase">XGO-Rider2 · обученная RL</strong>
+        <div class="line" id="rider-measure">—</div>
+        <div class="line" id="rider-loads">—</div>
+      </div>
+      <div class="error" id="rider-error" hidden role="alert"></div>
+    </section>
+    <section class="controls" aria-label="Воспроизведение">
+      <div class="transport"><button id="play" class="play" aria-label="Пауза">Ⅱ</button>
+        <div class="scrubber"><input id="seek" type="range" min="0" max="12" step="0.005" value="0" aria-label="Момент записи">
+          <div class="timeline-label"><span id="clock">00:00</span><span id="end-clock">00:12</span></div></div>
+        <label class="speedlabel">Скорость <select id="speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option selected value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+      </div>
+      <div class="options"><label><input id="follow" type="checkbox" checked> Следить за корпусом</label>
+        <label><input id="contacts" type="checkbox" checked> Реальные контакты</label>
+        <label><input id="path" type="checkbox" checked> Путь</label>
+        <button id="reset-camera" class="text-button">Вернуть камеру</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/hexapod/xgorider2-rl-comparison/app.js"></script>
+  <script type="module" src="/hexapod/player-shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* Two independent thumb controls on the SAME existing 3D Hexapod Lab scene.
+   Layout prioritizes tablet landscape but remains usable on narrow portrait.
+   Original shared player shell and V7 viewer assets are not changed. */
+.factory-dual-controls{
+ display:grid!important;grid-template-columns:minmax(0,1fr) minmax(140px,235px) minmax(0,1fr);
+ align-items:end;justify-items:center;gap:12px;
+ padding:0 max(10px,env(safe-area-inset-right,0px)) 0 max(10px,env(safe-area-inset-left,0px));
+ bottom:calc(9px + env(safe-area-inset-bottom,0px));
+}
+.factory-dual-controls .pilot-pad-wrap{width:100%;gap:3px;justify-self:stretch;pointer-events:none;}
+.factory-dual-controls .pilot-pad{width:clamp(96px,22vw,146px);height:clamp(96px,22vw,146px);max-width:100%;max-height:none;pointer-events:auto}
+.factory-left-stick{align-items:flex-start;}
+.factory-right-stick{align-items:flex-end;}
+.factory-dual-controls .pilot-pad-wrap small{width:100%;font-size:10px;text-align:center;letter-spacing:.04em;white-space:nowrap;}
+.factory-dual-controls .factory-right-stick .pilot-pad{border-color:#ffd4a6aa;background:radial-gradient(circle,#ad936040 0 26%,#1a353fe6 27% 65%,#d6b77652 67% 69%,#0c1a25dd 71%)}
+.factory-dual-controls .factory-right-stick .pilot-thumb{background:radial-gradient(circle at 37% 30%,#fff6de,#d0aa65);border-color:#fff0d3;}
+.factory-center-controls{display:flex;flex-direction:column;gap:6px;align-items:stretch;width:100%;max-height:min(57vh,360px);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;pointer-events:auto;touch-action:pan-y;border:1px solid #5f97a264;border-radius:15px;padding:8px;background:#0d2432eb;box-sizing:border-box;}
+.factory-center-controls .pilot-mode-switch{flex-shrink:0;}
+.factory-center-controls .factory-panel{gap:6px;}
+.factory-center-controls .factory-gait{display:flex;gap:6px;align-items:center;}
+.factory-center-controls .factory-gait label{font-size:10px;}
+.factory-center-controls .factory-gait .factory-select{max-width:100%;font-size:12px;min-height:33px;}
+.factory-center-controls .pilot-speed-wrap{padding:4px 6px;gap:4px;}
+.factory-center-controls .pilot-speed-wrap input{min-width:0;}
+.factory-center-controls .pilot-mode-switch select{font-size:12px;min-height:33px;padding:3px 5px;}
+.factory-center-controls .factory-params{gap:4px;padding:5px;}
+.factory-center-controls .factory-stoprow{gap:4px;}
+.factory-center-controls .factory-stoprow button{padding:3px 4px;min-width:0;min-height:37px;font-size:11px!important;}
+.factory-center-controls .factory-note{font-size:9px;text-align:center;line-height:1.28;}
+.factory-center-controls .factory-limits{color:#d3bda8;}
+@media (orientation:landscape){
+ .factory-dual-controls .pilot-pad{width:clamp(95px,27vh,148px);height:clamp(95px,27vh,148px)}
+ .factory-center-controls{max-height:min(67vh,280px)}
+}
+@media (max-width:520px){
+ .factory-dual-controls{grid-template-columns:minmax(0,1fr) minmax(120px,38vw) minmax(0,1fr);gap:5px;padding-inline:8px;}
+ .factory-dual-controls .pilot-pad{width:min(25vw,104px);height:min(25vw,104px);}
+ .factory-center-controls{padding:5px;gap:4px;max-height:48dvh;}
+ .factory-center-controls .factory-note{font-size:8px;}
+ .factory-center-controls .factory-stoprow button{font-size:10px!important;}
+ .factory-dual-controls .pilot-pad-wrap small{font-size:8px;}
+}
+@media (max-height:520px) and (orientation:landscape){
+ .factory-center-controls{max-height:63dvh;}
+ .factory-dual-controls .pilot-pad{width:min(25vh,113px);height:min(25vh,113px)}
+}
+@media (prefers-reduced-motion:reduce){.factory-dual-controls .pilot-thumb{transition:none;}}

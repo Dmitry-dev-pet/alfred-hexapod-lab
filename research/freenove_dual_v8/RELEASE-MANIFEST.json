@@ -1,0 +1,63 @@
+{
+  "schema": "cad30-freenove-oem-dual-stick-v8-evidence",
+  "date": "2026-11-06",
+  "physics_at_runtime": false,
+  "manufacturer_settings_unchanged": true,
+  "source_route": "/hexapod/freenove-dual-v8/",
+  "v7_dependencies": [
+    "hexapod/freenove-original-v7/factory-controller.js",
+    "hexapod/data/freenove-original-v7-kit.json",
+    "hexapod/data/live-v4-gaits-kit.json",
+    "hexapod/data/cad-rig-live-v1-slow.json"
+  ],
+  "test_receipt": {
+    "node_joystick_checks": 32,
+    "static_python_tests": 3,
+    "node_syntax_checks": 2,
+    "tablet_touch_verified": false
+  },
+  "files": {
+    "docs/hexapod/freenove-dual-v8/index.html": {
+      "bytes": 7641,
+      "sha256": "f2d79d9e1cf6db82eb9a79a70c6dd7e5e8662f86f6f27c51f8b92db4fee928cb",
+      "git_blob_sha1": "d3580a3bfb1ba1f6348120ecb798c1572e7207de"
+    },
+    "docs/hexapod/freenove-dual-v8/app.js": {
+      "bytes": 12996,
+      "sha256": "0f4161ab0382417defc1b5a245304559fec68da3b596c30434355b7263a2a650",
+      "git_blob_sha1": "b31be2d17568a1483faf561525d24c1ce5ea84cf"
+    },
+    "docs/hexapod/freenove-dual-v8/dual-stick-input.js": {
+      "bytes": 2139,
+      "sha256": "105decf0b68493b12ffac751e65298a8440d29045347177f0c8bb9718257885d",
+      "git_blob_sha1": "241a94e44fb12b09aafaf3bb8fc39d7b5c323f48"
+    },
+    "docs/hexapod/freenove-dual-v8/dual-stick.css": {
+      "bytes": 3585,
+      "sha256": "22e1924f561ea96910b79d1aac6c6f00a7d55cc5857d368e5b19dbe4ba933106",
+      "git_blob_sha1": "57d349fe29a157851dd7719230026cf65f62fc12"
+    },
+    "docs/FREENOVE_DUAL_V8.md": {
+      "bytes": 5645,
+      "sha256": "dafa43450f815f03c652fa0764df107b9b42ac4879393a47f9812a6bf659ab7f",
+      "git_blob_sha1": "b969ae1794c5fda93f982861f36717c49ebc5dcc"
+    },
+    "tests/test_dual_stick.mjs": {
+      "bytes": 3944,
+      "sha256": "c4ae8209d7d33bba7b6ca9346b092487f1662417454e60f716cbb160aefe9a03",
+      "git_blob_sha1": "b0e8b0cd6ed0897703ca91c552065bdca24e0f86"
+    },
+    "tests/test_static_v8.py": {
+      "bytes": 2581,
+      "sha256": "618d728875ba55f2145a6f699ca5e8f0dd9151540ec859d58b138e04bf5db320",
+      "git_blob_sha1": "3c6de3d2eaebf06756903b9bc39e193c77cecff7"
+    }
+  },
+  "limitations": [
+    "Two independent pointers only tested as state model, not on physical Samsung touchscreen",
+    "No physics at runtime",
+    "Simultaneous joystick controls are joint-space blended in V7 FactoryPilot and are not physics verified",
+    "No hardware actuator calibration or real PWM limits",
+    "Code does not change precomputed V7 OEM gait tables"
+  ]
+}
