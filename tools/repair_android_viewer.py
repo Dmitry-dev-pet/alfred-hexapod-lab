@@ -5,7 +5,7 @@ import json, os, runpy, shutil, signal, socket, subprocess, sys, tempfile, time
 import urllib.error, urllib.request
 
 REPO = "Dmitry-dev-pet/alfred-hexapod-lab"
-COMMIT = "6179222e5118d502e9d5fb327cc1fd2261702320"  # Stanford Pupper stance, catalog v27
+COMMIT = "b9ba0b86492173092aa9c717567d3181b171e263"  # pretrained Pupper walk, catalog v28
 BASE = f"https://raw.githubusercontent.com/{REPO}/{COMMIT}/"
 DEST = Path.home() / "hexapod-viewer-local"
 LOCAL = "http://127.0.0.1:8808"
@@ -129,21 +129,21 @@ def main():
     print("Сервер подтвердил новый интерфейс и отключённый авто-возврат", flush=True)
     before = api("/api/library")
     print("Локальный каталог: v" + str(before.get("revision")), flush=True)
-    if before.get("revision", 0) >= 27 and (DEST / "hexapod/lite3-s2-compare-v3/index.html").is_file() and (DEST / "hexapod/pupper-stand-cpu-v1/index.html").is_file() and any(
-            x.get("id") == "pupper-v3-cpu-stand-v1" and x.get("href") == "/hexapod/pupper-stand-cpu-v1/" for x in before.get("entries", [])):
+    if before.get("revision", 0) >= 28 and (DEST / "hexapod/lite3-s2-compare-v3/index.html").is_file() and (DEST / "hexapod/pupper-stand-cpu-v1/index.html").is_file() and (DEST / "hexapod/pupper-pretrained-walk-v1/index.html").is_file() and any(
+            x.get("id") == "pupper-v3-pretrained-walk-v1" and x.get("href") == "/hexapod/pupper-pretrained-walk-v1/" for x in before.get("entries", [])):
         print("Каталог уже актуален; ничего повторно не скачиваю.", flush=True)
         refresh, after = {"added": 0}, before
     else:
         print("Синхронизирую библиотеку...", flush=True)
         refresh = api("/api/refresh", post=True)
         after = api("/api/library")
-    if after.get("revision", 0) < 27 or not any(
-            x.get("id") == "pupper-v3-cpu-stand-v1" and x.get("href") == "/hexapod/pupper-stand-cpu-v1/" for x in after.get("entries", [])):
-        raise Blocked("Библиотека v27 и физическая запись Stanford Pupper не подтверждены")
+    if after.get("revision", 0) < 28 or not any(
+            x.get("id") == "pupper-v3-pretrained-walk-v1" and x.get("href") == "/hexapod/pupper-pretrained-walk-v1/" for x in after.get("entries", [])):
+        raise Blocked("Библиотека v28 и нейросетевая физическая запись Stanford Pupper не подтверждены")
     print("УСПЕХ: v%s, записей %s, новых %s" % (
         after["revision"], len(after["entries"]), refresh.get("added", "?")), flush=True)
     print("Открой библиотеку: " + LOCAL + "/hexapod/?library=1&nav=20261107a", flush=True)
-    print("Stanford Pupper: " + LOCAL + "/hexapod/pupper-stand-cpu-v1/?v=" +
+    print("Stanford Pupper · обученная ходьба: " + LOCAL + "/hexapod/pupper-pretrained-walk-v1/?v=" +
           str(after["revision"]), flush=True)
 
 if __name__ == "__main__":
