@@ -23,7 +23,7 @@ int main() {
     std::rotate(observation.rbegin(), observation.rbegin() + 48, observation.rend());
     for (int i = 0; i < 12; i++)
         observation[24 + i] = static_cast<float>(i) * 0.125f;
-    for (float v : observation) std::cout << v << '\\n';
+    for (float v : observation) std::cout << v << '\n';
 }
 """
 
