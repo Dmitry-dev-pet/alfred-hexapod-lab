@@ -22,6 +22,17 @@ class SourceRollTests(unittest.TestCase):
         self.assertEqual(upstream_roll_input(6.101),0)
         self.assertAlmostEqual(upstream_roll_input(4.601,sign=-1),-.55,places=6)
 
+    def test_short_reverse_pulse_ablation_never_changes_upstream_ramp(self):
+        self.assertAlmostEqual(upstream_roll_input(3.0, reverse_pulse_s=.3),
+                               upstream_roll_input(3.0), places=10)
+        self.assertAlmostEqual(upstream_roll_input(4.8, reverse_pulse_s=.3),
+                               .55, places=10)
+        self.assertEqual(upstream_roll_input(5.0, reverse_pulse_s=.3), 0.0)
+        self.assertAlmostEqual(upstream_roll_input(5.0, reverse_pulse_s=1.5),
+                               .55, places=10)
+        with self.assertRaises(ValueError):
+            upstream_roll_input(5.0, reverse_pulse_s=2.0)
+
     def test_speed_model_is_explicit_hypothesis(self):
         self.assertAlmostEqual(OMEGA_CAP_ASSUMED, 883.415854189,places=1)
 
