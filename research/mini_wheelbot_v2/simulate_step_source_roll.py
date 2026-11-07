@@ -124,16 +124,21 @@ def make_xml(cache: Path, params: dict, step: dict, limit_nm: float = .55,
     return xml
 
 
-def upstream_roll_input(elapsed_seconds: float, sign: int = 1) -> float:
-    """Literal RollStandupController piecewise sequence: 1 s idle, 3.6 s
-    negative ramp reaching -0.6*max, then +max for 1.5 s."""
+def upstream_roll_input(elapsed_seconds: float, sign: int = 1,
+                        reverse_pulse_s: float = 1.5) -> float:
+    """Source pulse schedule with explicit reverse-impulse duration ablation.
+    reverse_pulse_s=1.5 reproduces the published default input sequence.
+    Other durations are OUR experiments, not the upstream controller.
+    """
+    if not 0 <= reverse_pulse_s <= 1.5:
+        raise ValueError("reverse pulse must be between 0 and 1.5 seconds")
     max_input = .55 * sign
     u_time_ms = (elapsed_seconds - CONTROLLER_DELAY_S) * 1000
     if u_time_ms < 0:
         return 0.
     if u_time_ms <= 3600:
         return -max_input * (u_time_ms / 3600) * .6
-    if u_time_ms <= 5100:
+    if u_time_ms <= 3600 + reverse_pulse_s*1000 and reverse_pulse_s > 0:
         return max_input
     return 0.
 
@@ -145,7 +150,8 @@ def body_tilt(m, d, body_id):
 
 def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
             duration=8., sample_s=.05, initial_qvel=0,
-            contact_profile="default"):
+            contact_profile="default", reverse_pulse_s=1.5,
+            lqr_start_s=6.1, feedback_gain=1.0):
     xml = make_xml(cache, params, step, contact_profile=contact_profile)
     m = mujoco.MjModel.from_xml_string(xml)
     d = mujoco.MjData(m)
@@ -181,8 +187,10 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
         max_omega = max(max_omega,abs(omega))
         if mode=="passive": torque = 0.
         elif mode in ("upstream", "upstream_lqr", "upstream_lqr_inverted"):
-            torque = upstream_roll_input(float(d.time),sign=1 if start_roll>0 else -1)
-            if mode != "upstream" and d.time > 6.1:
+            torque = upstream_roll_input(float(d.time),
+                      sign=1 if start_roll>0 else -1,
+                      reverse_pulse_s=reverse_pulse_s)
+            if mode != "upstream" and d.time > lqr_start_s:
                 # This is only a SOURCE-GAIN SENSITIVITY TEST, not controller parity.
                 # C++ uses roll/rate/wheel-angle/wheel-speed, but estimator sign
                 # and axis conventions are not verified against our MuJoCo world.
@@ -192,7 +200,7 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
                     K = UPSTREAM_CONFIG["K_roll"]
                     states = (signed_roll, float(d.qvel[4]),
                               float(d.qpos[reaction_qadr]), omega)
-                    source_feedback = -sum(k*x for k,x in zip(K,states))
+                    source_feedback = -feedback_gain * sum(k*x for k,x in zip(K,states))
                     sign = 1 if mode == "upstream_lqr" else -1
                     torque = float(np.clip(source_feedback * sign,-.5,.5))
                 else:
@@ -240,6 +248,9 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
        "numerical_warning": numerical_warning,
        "simulated_duration_s": round((last_step+1)*STEP_DT,5),
        "contact_profile": contact_profile,
+       "reverse_pulse_s": reverse_pulse_s,
+       "lqr_start_s": lqr_start_s,
+       "feedback_gain": feedback_gain,
        "motor_limits_hardware_validated": False,
        "source_joint_label_parity_validated": False,
        "start_roll_deg":start_roll,"mode":mode,"speed_cap_assumed":speed_cap,
