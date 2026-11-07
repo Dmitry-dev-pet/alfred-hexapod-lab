@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 28,
+  "revision": 29,
   "entries": [
     {
       "id": "tripod-60",
@@ -1182,6 +1182,81 @@
           "path": "hexapod/data/pupper-v3-cpu-pretrained-walk-5s-v1.json",
           "size": 301402,
           "sha256": "23270ffcf273fe8be9805424d0760e3654ba5379be67ddb0c5ea03f47c6386ca"
+        }
+      ]
+    },
+    {
+      "id": "pupper-teleop-20s-v1",
+      "title": "Stanford Pupper · управление в движении",
+      "detail": "20 с · вперёд, вбок, повороты, назад и остановка · реальные команды",
+      "duration_s": 20,
+      "href": "/hexapod/pupper-teleop-20s-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-teleop-20s-v1/index.html",
+          "sha256": "c5ef1e4de0bb6feaa65b2e0736091d6c04ebd708f3e3e513188451d1d2482850",
+          "size": 4984
+        },
+        {
+          "path": "hexapod/pupper-teleop-20s-v1/app.js",
+          "sha256": "ca005e743ccf82ce286d610e95840ebcc37bc85c5a722480a367f3fefeec6d33",
+          "size": 13185
+        },
+        {
+          "path": "hexapod/data/pupper-teleop-20s-v1.json",
+          "sha256": "e0b173b083d9d39f5655f952fa10176d254b3f041c1d7c9aba9db0ce293e0e14",
+          "size": 601528
+        }
+      ]
+    },
+    {
+      "id": "pupper-jump-9s-v1",
+      "title": "Stanford Pupper · прыжок",
+      "detail": "9 с · реальный отрыв стоп и приземление в MuJoCo",
+      "duration_s": 9,
+      "href": "/hexapod/pupper-jump-9s-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-jump-9s-v1/index.html",
+          "sha256": "0c8b107b849eb5f7061513a07bb32344714e6d89769f1cf168818d88bf0acf9c",
+          "size": 4921
+        },
+        {
+          "path": "hexapod/pupper-jump-9s-v1/app.js",
+          "sha256": "ca005e743ccf82ce286d610e95840ebcc37bc85c5a722480a367f3fefeec6d33",
+          "size": 13185
+        },
+        {
+          "path": "hexapod/data/pupper-jump-9s-v1.json",
+          "sha256": "b56f52dde1c47b7ab8558a32b3eeb3162130546c39bfc1d53516ed7e1b1a2646",
+          "size": 277566
+        }
+      ]
+    },
+    {
+      "id": "pupper-turn-fail-v1",
+      "title": "Stanford Pupper · ошибка поворота",
+      "detail": "9 с · 390° вместо ≈180° · диагностический отрицательный опыт",
+      "duration_s": 9,
+      "href": "/hexapod/pupper-turn-fail-v1/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/pupper-turn-fail-v1/index.html",
+          "sha256": "03b27fdd44125f1af9b10c50e6e78bc8b526fe4e8fae523bd3120b87725ab8b5",
+          "size": 4959
+        },
+        {
+          "path": "hexapod/pupper-turn-fail-v1/app.js",
+          "sha256": "ca005e743ccf82ce286d610e95840ebcc37bc85c5a722480a367f3fefeec6d33",
+          "size": 13185
+        },
+        {
+          "path": "hexapod/data/pupper-turn-fail-v1.json",
+          "sha256": "cbfbaa2c021dcb9a4b5eb950533de6826332205876eb92c789bd32df5d81203b",
+          "size": 275597
         }
       ]
     }
