@@ -1,0 +1,100 @@
+{
+  "schema": "stanford-pupper-v3-drive-restored-cpu-validation/v1",
+  "date": "2026-11-07",
+  "environment": {
+    "os": "Linux x86_64",
+    "python": "3.13.5",
+    "mujoco": "3.14.0",
+    "numpy": "2.3.5",
+    "install_mode": "offline wheelhouse, isolated site packages; no network, no Mac, no Actions physics",
+    "wheel_archive_drive_folder": "https://drive.google.com/drive/folders/1n0qHoHFFivqQVGw-DazJqq_0nhHkk4VK",
+    "archive_sha256": "6d14d0c17294bac5436e1167ca4a97c30061da8efaa0a2b904c171bcac4a7b13",
+    "wheel_sha256_count_verified": 10
+  },
+  "sources": {
+    "assets_drive_folder": "https://drive.google.com/drive/folders/1QB_AOZuxteCA8FA0tAqyIwV2-ET75MQM",
+    "original_mjcf_git_blob_sha1": "7771e176c42b3aed1d48cc62434771b0fceb7c8c",
+    "original_policy_sha256": "ecf3a4ab8ea392dccda64977faa29d813dadc0d6099ae3abff5f84cc57156712",
+    "previous_pr": "https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/pull/73"
+  },
+  "exact_5s_reproduction": {
+    "physics_steps": 1250,
+    "frames": 250,
+    "command_vx_mps": 0.2,
+    "net_root_x_m": 0.46891788,
+    "max_servo_torque_Nm": 1.7871357496133236,
+    "fall_guard_steps": 0,
+    "legacy_json_sha256": "662a6c60f4a283cdf2ce5d18bcbfd49553d12615e853d8e040a20eeba899f573",
+    "cleaned_history_json_sha256": "662a6c60f4a283cdf2ce5d18bcbfd49553d12615e853d8e040a20eeba899f573",
+    "identical_byte_for_byte": true,
+    "explanation": "Before-next-inference history[0] is wholly overwritten; the historical wrong scratch-slot action write did not reach network input",
+    "previous_history_bug_diagnosis": "REFUTED",
+    "four_feet_contact_histogram_frames": {
+      "0": 3,
+      "1": 0,
+      "2": 99,
+      "3": 25,
+      "4": 123
+    }
+  },
+  "scenarios": [
+    {
+      "name": "neutral10",
+      "duration_s": 10,
+      "cmd_vx_mps": 0,
+      "root_dx_m": 0.00144474,
+      "final_z_m": 0.15928843,
+      "fall_guard_steps": 0,
+      "max_tilt_deg": 0.8428,
+      "peak_servo_torque_Nm": 1.104453823248817,
+      "saturation_fraction": 0
+    },
+    {
+      "name": "reverse15",
+      "duration_s": 15,
+      "cmd_vx_mps": -0.2,
+      "root_dx_m": -1.31365553,
+      "final_z_m": 0.15976481,
+      "fall_guard_steps": 0,
+      "max_tilt_deg": 19.1457,
+      "peak_servo_torque_Nm": 3,
+      "saturation_fraction": 0.0005333333333333334
+    },
+    {
+      "name": "long30",
+      "duration_s": 30,
+      "cmd_vx_mps": 0.2,
+      "root_dx_m": 1.3513031,
+      "final_z_m": 0.1600079,
+      "fall_guard_steps": 0,
+      "max_tilt_deg": 23.7168,
+      "peak_servo_torque_Nm": 3,
+      "saturation_fraction": 0.002,
+      "contact_histogram_frames": {
+        "0": 3,
+        "1": 18,
+        "2": 1035,
+        "3": 275,
+        "4": 169
+      }
+    },
+    {
+      "name": "faster15",
+      "duration_s": 15,
+      "cmd_vx_mps": 0.4,
+      "root_dx_m": 1.92987487,
+      "final_z_m": -0.03284345,
+      "fall_guard_steps": 319,
+      "max_tilt_deg": 177.6648,
+      "peak_servo_torque_Nm": 3,
+      "saturation_fraction": 0.028266666666666666,
+      "status": "FALL"
+    }
+  ],
+  "limitations": [
+    "This CPU runner is a source-aligned local reconstruction; full native Stanford C++/MJLab parity not demonstrated",
+    "Only flat floor, no physical robot or sim-to-real calibration",
+    "Long runs are single deterministic scenarios, not robustness statistics",
+    "No training or official Stanford policy evaluation pipeline executed"
+  ]
+}
