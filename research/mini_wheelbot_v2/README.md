@@ -155,3 +155,75 @@ python3 research/mini_wheelbot_v2/simulate_mujoco_probe.py \
 rim location and contact calibration; source-tested torque-speed-current
 envelopes; real righting controller; visual replay acceptance on Samsung Tab S7.
 No new library entry or merge is authorized by a provisional negative rollout.
+
+## 2026-11-07 continuation: measured STEP axle axes + original control sequence
+
+**SOURCE-STEP / GATE S0 STEP PASS** in a temporary Linux amd64 MuJoCo 3.14.0
+sandbox. Original STEP assets verified by Git blob and SHA-256. Actual
+`frame.stp` has two perpendicular **motor seats with radius 15 mm**:
+
+| STEP frame feature | Axis reference point (mm, CAD) | Axis direction (CAD) |
+|---|---|---|
+| lower, Y = -32.5 mm | (10.5, -32.5, 0) | (-1, 0, 0) |
+| upper, Y = +32.5 mm | (0, +32.5, -10.5) | (0, 0, -1) |
+
+Their shaft separation along CAD Y is exactly **65 mm**. The CNC
+`reactionwheel.stp` has radii 22.2, 27 and 31 mm. Axle identity is
+**inferred**, not labeled by STEP: this probe treats the lower seat as the
+drive axle, upper as the reaction axle. Source CAD Y-up rotates to MuJoCo
+Z-up with a +90° X rotation. These are **stronger source-derived constraints**
+than the arbitrary 43-mm axle offset used in the first test.
+
+The source C++ `RollStandupController` implements:
+- 1.0 s idle.
+- Ramp of reaction torque to -0.6 × 0.55 N·m over 3.6 s.
+- Sign reversal to +0.55 N·m for 1.5 s.
+- Return zero; actual real-world stabilization is handed to a controller
+  container/AMPC. The simple state-feedback sensitivity tests performed
+  here are **not** the official complete C++ AMPC port.
+
+See `audit_step_axes.py`, `simulate_step_source_roll.py`, tests
+`test_wheelbot_original_cad.py` and `test_wheelbot_step_roll.py`.
+**7/7 stdlib unit tests PASS**. MuJoCo ran 11 independent 8-second
+experiments (the original open loop with two contact profiles, then
+stiffer-contact LQR-sign variants). Details and SHA256 for all 11 replay
+trajectories in
+[results/2026-11-07-step-axes-source-controller.json](results/2026-11-07-step-axes-source-controller.json).
+
+Selected **stiffer-contact** findings (not hardware-reliable):
+- 90° start, passive: final 90°, no standup.
+- 90° start with original open-loop sequence and *assumed* no-load speed
+  cap ~883 rad/s: minimum tilt **0.111°** for an instant, upright interval
+  **0.066 s**, final **90°**.
+- Same source control, source LQR gains after 6.1 s with one assumed state
+  sign: final 90°, brief upright interval 0.021 s.
+- Reversed mapping sign: final **49.13°** for 90° start, upright only
+  **0.010 s**. This is a sensitivity test, **not verified parity**.
+- Runs without a motor speed cap became **numerically unstable** near
+  5.85–6.00 s with extreme nonphysical RPM, and are marked numerical
+  failures (never successes).
+- Preliminary contact depth improved from ~19 mm to **~2.17 mm** with
+  explicit stiffer contact `solref/solimp`. This is a controlled solver
+  sensitivity, not calibration against measured force data.
+
+**Result: NONE of the 11 cases meets the sustained 1-second upright
+criterion.** The original CAD meshes were not pushed into this repo;
+simulation loads and verifies them from the pinned upstream revision.
+Motor voltage/current/torque-speed behavior, COM calibration, exact
+controller estimator mapping and nonconvex contact geometry remain
+uncertain. No conclusion about the real wheelbot's ability to self-right
+is justified; the upstream authors demonstrate that ability.
+
+To reproduce after installing MuJoCo 3.14 and Trimesh in an internet-
+connected CPU environment:
+
+```sh
+python research/mini_wheelbot_v2/audit_original_cad.py --cache "$HOME/mini-wheelbot-original-cad"
+python research/mini_wheelbot_v2/audit_step_axes.py --cache "$HOME/mini-wheelbot-step"
+python -m unittest discover -s tests -p test_wheelbot_step_roll.py -v
+python research/mini_wheelbot_v2/simulate_step_source_roll.py \
+  --cache "$HOME/mini-wheelbot-original-cad" \
+  --step-cache "$HOME/mini-wheelbot-step" \
+  --out "$HOME/wheelbot-step-source-trials" \
+  --contact-profile stiff --include-lqr --duration 8
+```
