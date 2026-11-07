@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Repair installed Android Hexapod Lab UI + local update server, preserving models."""
 from pathlib import Path
-import json, os, runpy, shutil, signal, socket, subprocess, sys, tempfile, time
+import json, os, re, runpy, shutil, signal, socket, subprocess, sys, tempfile, time
 import urllib.error, urllib.request
 
 REPO = "Dmitry-dev-pet/alfred-hexapod-lab"
-COMMIT = "b9ba0b86492173092aa9c717567d3181b171e263"  # pretrained Pupper walk, catalog v28
-BASE = f"https://raw.githubusercontent.com/{REPO}/{COMMIT}/"
+BRANCH = "feature/android-local-offline-viewer-20261104"
+BRANCH_API = f"https://api.github.com/repos/{REPO}/branches/{BRANCH}"
+BASE = ""  # Filled with a single verified commit SHA at the start of repair.
 DEST = Path.home() / "hexapod-viewer-local"
 LOCAL = "http://127.0.0.1:8808"
 UI = (
@@ -76,10 +77,24 @@ def api(path, post=False):
         raise Blocked("HTTP %s %s: %s" % (ex.code, path, body)) from ex
 
 def main():
+    global BASE
     if not (DEST / "OFFLINE_MANIFEST.json").is_file():
         raise Blocked("Нет установленной сборки: " + str(DEST) + " — ничего не удалено")
     if not (DEST / "vendor/three/build/three.module.js").is_file():
         raise Blocked("Нет локальных файлов Three.js, нужна диагностика установки")
+    # Pin all downloaded source files to the same current commit.
+    try:
+        request = urllib.request.Request(
+            BRANCH_API, headers={"User-Agent": "HexapodLab-repair/2"})
+        with urllib.request.urlopen(request, timeout=25) as response:
+            branch = json.loads(response.read(100_000))
+        commit = branch.get("commit", {}).get("sha", "")
+        if not re.fullmatch(r"[0-9a-f]{40}", commit):
+            raise Blocked("GitHub не вернул проверенный SHA ветки")
+        BASE = f"https://raw.githubusercontent.com/{REPO}/{commit}/"
+    except urllib.error.URLError as exc:
+        raise Blocked("GitHub недоступен: " + str(exc)) from exc
+    print("Установлю интерфейс из commit", commit[:12], flush=True)
     # Fetch all sources before touching any installed files.
     with tempfile.TemporaryDirectory(prefix="hexapod-ui-repair-") as tmp:
         root = Path(tmp)
@@ -92,7 +107,8 @@ def main():
         if b"q(\'.hx-library-link\').addEventListener(\'click\',open)" not in shell or b"location.replace(last)" in shell or b"const libraryView=path===\'/hexapod/\'" not in shell:
             raise Blocked("Загружен неправильный дизайн, изменения отменены")
         server = (root / "tools/local_viewer_server.py").read_bytes()
-        if b"/api/refresh" not in server or b"/api/library" not in server:
+        if any(required not in server for required in
+               (b"/api/refresh", b"/api/library", b"/api/refresh-status")):
             raise Blocked("Загруженный сервер не поддерживает библиотеку")
         upgrader = runpy.run_path(str(root / "tools/upgrade_android_ui.py"))["upgrade"]
         stop_owned_server()
@@ -124,27 +140,20 @@ def main():
                                  headers={"Cache-Control": "no-cache"})
     with urllib.request.urlopen(req, timeout=10) as response:
         served_home = response.read(200_000)
-    if b"/hexapod/player-shell.js?v=20261107a" not in served_home:
+    if b"/hexapod/player-shell.js?v=20261107b" not in served_home:
         raise Blocked("Сервер отдаёт устаревшую главную страницу — пришли этот текст")
     print("Сервер подтвердил новый интерфейс и отключённый авто-возврат", flush=True)
     before = api("/api/library")
-    print("Локальный каталог: v" + str(before.get("revision")), flush=True)
-    if before.get("revision", 0) >= 28 and (DEST / "hexapod/lite3-s2-compare-v3/index.html").is_file() and (DEST / "hexapod/pupper-stand-cpu-v1/index.html").is_file() and (DEST / "hexapod/pupper-pretrained-walk-v1/index.html").is_file() and any(
-            x.get("id") == "pupper-v3-pretrained-walk-v1" and x.get("href") == "/hexapod/pupper-pretrained-walk-v1/" for x in before.get("entries", [])):
-        print("Каталог уже актуален; ничего повторно не скачиваю.", flush=True)
-        refresh, after = {"added": 0}, before
-    else:
-        print("Синхронизирую библиотеку...", flush=True)
-        refresh = api("/api/refresh", post=True)
-        after = api("/api/library")
-    if after.get("revision", 0) < 28 or not any(
-            x.get("id") == "pupper-v3-pretrained-walk-v1" and x.get("href") == "/hexapod/pupper-pretrained-walk-v1/" for x in after.get("entries", [])):
-        raise Blocked("Библиотека v28 и нейросетевая физическая запись Stanford Pupper не подтверждены")
-    print("УСПЕХ: v%s, записей %s, новых %s" % (
-        after["revision"], len(after["entries"]), refresh.get("added", "?")), flush=True)
-    print("Открой библиотеку: " + LOCAL + "/hexapod/?library=1&nav=20261107a", flush=True)
-    print("Stanford Pupper · обученная ходьба: " + LOCAL + "/hexapod/pupper-pretrained-walk-v1/?v=" +
-          str(after["revision"]), flush=True)
+    progress = api("/api/refresh-status")
+    if "phase" not in progress:
+        raise Blocked("Установленный сервер не поддерживает статус синхронизации")
+    revision = before.get("revision", "?")
+    print("УСПЕХ: локальная библиотека v%s, %s симуляций" %
+          (revision, len(before.get("entries", []))), flush=True)
+    print("Файлы моделей и экспериментальные записи сохранены.", flush=True)
+    print("Открой " + LOCAL + "/hexapod/?update=20261107b", flush=True)
+    print("Теперь нажми «Обновить библиотеку». При ошибке увидишь этап и описание.",
+          flush=True)
 
 if __name__ == "__main__":
     try:
