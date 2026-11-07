@@ -108,8 +108,8 @@ def main():
         p.error("Official Kaggle CLI is required")
     with tempfile.TemporaryDirectory(prefix="kaggle-notebook-gpu-") as d:
         dest = Path(d)
-        (dest / "kernel-metadata.json").write_text(json.dumps(meta, indent=2) + "\\n")
-        (dest / "probe.ipynb").write_text(json.dumps(notebook(), indent=2) + "\\n")
+        (dest / "kernel-metadata.json").write_text(json.dumps(meta, indent=2))
+        (dest / "probe.ipynb").write_text(json.dumps(notebook(), indent=2))
         subprocess.run(
             ["kaggle", "kernels", "push", "--path", str(dest),
              "--accelerator", "NvidiaTeslaT4", "--timeout", "600"],
