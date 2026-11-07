@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 30,
+  "revision": 31,
   "entries": [
     {
       "id": "tripod-60",
@@ -1322,6 +1322,31 @@
           "path": "hexapod/data/pupper-barrier-50mm-fall-v1.json",
           "sha256": "57b42838ac253ca94ac225483d6583ea637e729198e03a1f5657f94f2b7b077b",
           "size": 274849
+        }
+      ]
+    },
+    {
+      "id": "wheelbot-self-righting-v1",
+      "title": "Mini Wheelbot · сам встаёт",
+      "detail": "MuJoCo · реконструкция · эксперимент 10 с; высокие обороты маховика",
+      "duration_s": 9.951,
+      "href": "/hexapod/wheelbot-self-righting-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/wheelbot-self-righting-v1/index.html",
+          "sha256": "724b332684c1f46406bba6f2296acbca614ab1121d32dcea190266236e1d8464",
+          "size": 3477
+        },
+        {
+          "path": "hexapod/wheelbot-self-righting-v1/app.js",
+          "sha256": "3301991820853a8b9239be94912272f849b6b545eff1b613c50c2bf2c64cfcf6",
+          "size": 6597
+        },
+        {
+          "path": "hexapod/data/wheelbot-self-righting-v1.json",
+          "sha256": "8377acfe629eaf0f85f32c149a035e893771e21c8ac1dc0908154be60d4edf71",
+          "size": 19660
         }
       ]
     }
