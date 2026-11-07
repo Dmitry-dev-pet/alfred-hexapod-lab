@@ -4,7 +4,10 @@
 Runs inside a private Kaggle script kernel with Internet and GPU enabled.
 No secrets, W&B, deployment, policy training or hardware control.
 """
+import glob
 import json
+import os
+import shutil
 import subprocess
 import sys
 import time
@@ -37,14 +40,43 @@ def main():
     }
     started = time.monotonic()
     try:
-        output = subprocess.check_output(
-            ["nvidia-smi", "--query-gpu=name,memory.total,compute_cap",
-             "--format=csv,noheader"],
-            text=True, timeout=30,
-        )
-        result["gpus"] = output.strip().splitlines()
-        if not result["gpus"]:
-            raise RuntimeError("No NVIDIA GPU visible")
+        # Kaggle's container may omit nvidia-smi even when CUDA exists.
+        # Record both driver/device visibility and torch's actual CUDA probe.
+        result["runtime"] = {
+            "python": sys.version.split()[0],
+            "nvidia_smi_path": shutil.which("nvidia-smi"),
+            "device_nodes": sorted(glob.glob("/dev/nvidia*"))[:16],
+            "nvidia_proc_present": os.path.exists("/proc/driver/nvidia/gpus"),
+            "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES", "<unset>"),
+        }
+        smi = result["runtime"]["nvidia_smi_path"]
+        if smi:
+            smi_output = subprocess.check_output(
+                [smi, "--query-gpu=name,memory.total,compute_cap",
+                 "--format=csv,noheader"],
+                text=True, timeout=30,
+            )
+            result["gpus"] = smi_output.strip().splitlines()
+        else:
+            result["gpus"] = []
+            result["nvidia_smi_note"] = "Tool not installed; CUDA check is authoritative"
+
+        try:
+            import torch as torch_existing
+        except ImportError as exc:
+            result["torch_existing"] = {"import_error": type(exc).__name__}
+            torch_existing = None
+        if torch_existing is not None:
+            result["torch_existing"] = {
+                "version": torch_existing.__version__,
+                "compiled_cuda": torch_existing.version.cuda,
+                "cuda_available": bool(torch_existing.cuda.is_available()),
+                "device_count": int(torch_existing.cuda.device_count()),
+            }
+            if not torch_existing.cuda.is_available():
+                raise RuntimeError("CUDA unavailable in Kaggle kernel before dependency installation")
+        elif not result["runtime"]["device_nodes"] and not result["runtime"]["nvidia_proc_present"]:
+            raise RuntimeError("No NVIDIA device nodes; no CUDA GPU allocated to this Kaggle kernel")
 
         # Pinned upstream source: never execute a moving branch.
         checked(["git", "init", str(REPO)])
