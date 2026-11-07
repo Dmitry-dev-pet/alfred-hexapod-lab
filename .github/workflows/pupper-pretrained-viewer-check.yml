@@ -1,0 +1,56 @@
+name: Check Stanford pretrained walk catalog v28 for Android
+on:
+  push:
+    branches:
+      - feature/android-local-offline-viewer-20261104
+    paths:
+      - .github/workflows/pupper-pretrained-viewer-check.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/android-local-offline-viewer-20261104
+      - name: Validate catalog v28, 41 entries, source-verified 3D replay files
+        run: |
+          node --check docs/hexapod/pupper-pretrained-walk-v1/app.js
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('docs')
+          c=json.loads((root/'hexapod/library.json').read_text())
+          assert c['schema']=='hexapod-library/v1'
+          assert c['revision']>=28 and len(c['entries'])>=41
+          assert len({a['id'] for a in c['entries']})==len(c['entries'])
+          assert len({a['href'] for a in c['entries']})==len(c['entries'])
+          a=next(a for a in c['entries'] if a['id']=='pupper-v3-pretrained-walk-v1')
+          assert a['href']=='/hexapod/pupper-pretrained-walk-v1/'
+          assert a['duration_s']==5 and len(a['files'])==3
+          for f in a['files']:
+              p=root/f['path']
+              b=p.read_bytes()
+              assert len(b)==f['size'],f['path']
+              assert hashlib.sha256(b).hexdigest()==f['sha256'],f['path']
+          html=(root/'hexapod/pupper-pretrained-walk-v1/index.html').read_text()
+          js=(root/'hexapod/pupper-pretrained-walk-v1/app.js').read_text()
+          d=json.loads((root/'hexapod/data/pupper-v3-cpu-pretrained-walk-5s-v1.json').read_text())
+          assert '<main class="layout">' in html and 'class="stage"' in html
+          assert 'player-shell.js?v=20261107a' in html
+          assert 'pupper-pretrained-walk-v1/app.js' in html
+          assert 'pupper-follow' in html and 'pupper-follow' in js
+          assert 'three@0.169.0/build/three.module.js' in html
+          assert 'pupper-v3-cpu-pretrained-walk-5s-v1.json' in js
+          assert d['schema']=='pupper-v3-mujoco-cpu-pretrained-walk-replay-v1' and d['is_walk']
+          assert d['control']['training_performed_by_us']==False
+          assert d['control']['policy_sha256']=='ecf3a4ab8ea392dccda64977faa29d813dadc0d6099ae3abff5f84cc57156712'
+          assert d['duration_s']==5 and d['physics_steps']==1250 and d['frame_rate_hz']==50
+          assert len(d['frames'])==250 and len(d['visual_meshes'])==13
+          assert all(len(row)==109 for row in d['frames'])
+          assert d['frames'][-1][1]-d['frames'][0][1] > 0.45
+          assert 'pupper-v3-cpu-stand-v1' in {a['id'] for a in c['entries']}
+          print('PUPPER_PRETRAINED_VIEWER_PASS',c['revision'],len(c['entries']))
+          PY
