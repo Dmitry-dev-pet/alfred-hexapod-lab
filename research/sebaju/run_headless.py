@@ -8,6 +8,7 @@ records measured MuJoCo state, and applies an optional physical roll torque.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import contextlib
 import importlib.util
 import json
@@ -24,9 +25,30 @@ MODEL = "SeBaJu_BOT(II).xml"
 PHYSICS_VERSION = "3.14.0"
 
 
-def require_upstream(path: Path) -> Path:
-    """Accept only the exact source revision; never silently run newer code."""
+UPSTREAM_FILE_BLOBS = {
+    MODEL: "c0abe8d5f9663813e2782fbd44fb38c40d7ea048",
+    CONTROLLER: "42397bb5e613a12ecbe6074030bb917f3d03533a",
+}
+
+
+def git_blob_sha(raw: bytes) -> str:
+    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
+
+
+def require_upstream(path: Path, offline_snapshot: bool = False) -> Path:
+    """Require pinned git checkout or an exact two-file GitHub blob verified snapshot.
+
+    Offline mode exists for sandboxed Python/CPU workers with no git network.
+    It verifies *both* model and controller byte-for-byte; never trusts a
+    merely user-supplied commit name or a directory name as provenance.
+    """
     path = path.expanduser().resolve()
+    if offline_snapshot:
+        for name, expected in UPSTREAM_FILE_BLOBS.items():
+            got = git_blob_sha((path / name).read_bytes())
+            if got != expected:
+                raise RuntimeError(f"Offline SeBaJu blob mismatch: {name}: {got} != {expected}")
+        return path
     if not path.is_dir():
         path.parent.mkdir(parents=True, exist_ok=True)
         subprocess.run(["git", "clone", "--no-checkout", UPSTREAM_URL, str(path)], check=True)
@@ -46,6 +68,16 @@ def require_upstream(path: Path) -> Path:
         if not (path / name).is_file():
             raise FileNotFoundError(path / name)
     return path
+
+
+def whole_robot_airborne(t: float, wheel_gap_m: float, ground_contact_geoms: list[str]) -> bool:
+    """Jump only: both wheels clear AND no robot part contacts the floor.
+
+    The bounded window prevents a post-tip body resting on the floor from
+    being incorrectly classified as an hours-long jump just because wheels
+    are off the ground.
+    """
+    return 5.0 <= t < 9.0 and wheel_gap_m >= 0.005 and not ground_contact_geoms
 
 
 def longest_true_interval(records: list[dict], field: str) -> tuple[int, int]:
@@ -169,18 +201,22 @@ class PhysicalRecorder:
         gap = min(c[2] - 0.060 for c in wheel_centres)
         grounded = [False, False]
         normal_n = [0.0, 0.0]
+        ground_contact_geoms = []
         for ci in range(d.ncon):
             contact = d.contact[ci]
             pair = {int(contact.geom1), int(contact.geom2)}
             if self.ground not in pair:
                 continue
+            other = next(iter(pair - {self.ground}), None)
+            if other is not None:
+                ground_contact_geoms.append(mj.mj_id2name(m, mj.mjtObj.mjOBJ_GEOM, other))
             for i, wheel in enumerate(self.wheels):
                 if wheel in pair:
                     grounded[i] = True
                     force = np.zeros(6, dtype=float)
                     mj.mj_contactForce(m, d, ci, force)
                     normal_n[i] += abs(float(force[0]) * float(contact.frame[2]))
-        z_axis = float(d.xmat[self.torso][2, 2])
+        z_axis = float(d.xmat[self.torso].reshape(3, 3)[2, 2])
         tilt = math.degrees(math.acos(max(-1.0, min(1.0, z_axis))))
         speeds = [abs(float(d.qvel[m.jnt_dofadr[j]])) for j in self.wheel_joints]
         if not (math.isfinite(tilt) and math.isfinite(gap) and
@@ -189,7 +225,9 @@ class PhysicalRecorder:
         observation = {
             "t": round(t, 6), "tilt_deg": tilt, "wheel_gap_min_m": gap,
             "grounded": grounded, "wheel_speed": sum(speeds) / 2,
-            "in_flight": t >= 5 and gap >= 0.005 and not any(grounded),
+            # A wheel in the air is NOT full-body flight when a tipped
+            # torso/leg rests on the floor. Limit detection to source jump.
+            "in_flight": whole_robot_airborne(t, gap, ground_contact_geoms),
         }
         self.records.append(observation)
         if t + self.dt / 2 < self.next_frame:
@@ -205,6 +243,7 @@ class PhysicalRecorder:
             "wheel_centres_xyz": [[round(float(x), 8) for x in xyz]
                                   for xyz in wheel_centres],
             "grounded": grounded,
+            "ground_contact_geoms": sorted(set(ground_contact_geoms)),
             "wheel_vertical_normal_N": [round(x, 4) for x in normal_n],
             "wheel_gap_min_m": round(gap, 6),
             "tilt_deg": round(tilt, 3),
@@ -217,7 +256,7 @@ def run(args):
 
     if mujoco.__version__ != PHYSICS_VERSION:
         raise RuntimeError(f"Need MuJoCo {PHYSICS_VERSION}, found {mujoco.__version__}")
-    path = require_upstream(args.upstream)
+    path = require_upstream(args.upstream, args.offline_snapshot)
     spec = importlib.util.spec_from_file_location("original_sebaju_controller", path / CONTROLLER)
     controller = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(controller)
@@ -283,6 +322,7 @@ def run(args):
         "duration_s": data["duration_s"],
         "summary": summary,
         "third_party_code_vendored": False,
+        "source_verification": "pinned-git-checkout" if not args.offline_snapshot else "two-pinned-github-blobs",
         "result_status": "measured-simulation-only",
     }
     (args.out / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
@@ -294,6 +334,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--trial", choices=["jump", "tip"], default="jump")
     p.add_argument("--upstream", type=Path, default=Path.home() / ".cache/alfred-hexapod/sebaju-source")
+    p.add_argument("--offline-snapshot", action="store_true", help="Verify pinned source files by git blob SHA, no git network")
     p.add_argument("--out", type=Path, default=Path(".cache/sebaju/jump"))
     p.add_argument("--duration", type=float, default=None)
     p.add_argument("--fps", type=int, default=50)
