@@ -79,6 +79,7 @@ def build_xml(cache: Path, params: dict, torque_limit: float) -> str:
     ix, iy, iz = source_inertia_for_mujoco(params)["projected_kg_m2"]
     iside, iaxial = params["I_Wxz_Ryz"], params["I_Wy_Rx"]
     wheel_r = params["r_W"]
+    motor_range = max(torque_limit, 1e-9)  # MuJoCo requires min<max; passive run sets ctrl=0.
     # Axis convention inferred from sysid names: drive hinge Y / reaction X.
     # Physical collision dimensions and ±0.043 m joint centers are hypotheses.
     return f"""<mujoco model="Mini_Wheelbot_CAD_V2_preliminary_probe">
@@ -122,9 +123,9 @@ def build_xml(cache: Path, params: dict, torque_limit: float) -> str:
   </worldbody>
   <actuator>
     <motor name="drive" joint="drive_axis" gear="1"
-       ctrllimited="true" ctrlrange="-{torque_limit} {torque_limit}"/>
+       ctrllimited="true" ctrlrange="-{motor_range} {motor_range}"/>
     <motor name="reaction" joint="reaction_axis" gear="1"
-       ctrllimited="true" ctrlrange="-{torque_limit} {torque_limit}"/>
+       ctrllimited="true" ctrlrange="-{motor_range} {motor_range}"/>
   </actuator>
 </mujoco>"""
 
