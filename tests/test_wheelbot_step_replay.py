@@ -109,6 +109,12 @@ class WheelbotStepExporterTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Non-monotone"):
             pipe.verify_trace(self.root, job)
 
+    def test_review_only_job_refuses_publication_before_physics(self):
+        job = pipe.load_spec(ROOT / "experiments/replay-pipeline/wheelbot-v2-step-source.json")
+        self.assertEqual(job["publish_policy"], "review_only")
+        with self.assertRaisesRegex(ValueError, "review_only"):
+            pipe.run(self.root, job, do_publish=True)
+
     def test_declarative_job_is_loadable_without_source_code_installed(self):
         path = ROOT / "experiments/replay-pipeline/wheelbot-v2-step-source.json"
         job = pipe.load_spec(path)
