@@ -21,8 +21,8 @@ ISSUE = 83
 MARKER = "COLAB_ADC_CHALLENGE_V1"
 RESPONSE_MARKER = "COLAB_ADC_RESPONSE_V1"
 PATTERN = re.compile(
-    r"^COLAB_ADC_CHALLENGE_V1\\nnonce=([a-f0-9]{24})\\n"
-    r"public_key_pem_base64=([A-Za-z0-9+/=]+)\\n",
+    r"^COLAB_ADC_CHALLENGE_V1\nnonce=([a-f0-9]{24})\n"
+    r"public_key_pem_base64=([A-Za-z0-9+/=]+)\n",
     re.MULTILINE,
 )
 
@@ -95,7 +95,7 @@ def main() -> int:
         del code
         cipher = base64.b64encode(encrypted).decode("ascii")
         # Only a one-time RSA-OAEP ciphertext enters the GitHub comment body.
-        post = f"{RESPONSE_MARKER}\\nnonce={nonce}\\nciphertext_base64={cipher}\\n"
+        post = f"{RESPONSE_MARKER}\nnonce={nonce}\nciphertext_base64={cipher}\n"
         run_command(
             ["gh", "api", "-X", "POST", f"repos/{REPO}/issues/{ISSUE}/comments",
              "-f", f"body={post}"],
