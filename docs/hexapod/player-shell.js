@@ -22,7 +22,7 @@
   const sourceLabel=location.pathname.startsWith('/hexapod/cheetah-idto-')?'DRAKE · MPC · REPLAY':'MUJOCO · REPLAY';
   const shell=document.createElement('div');shell.id='hx-shell';
   shell.innerHTML=[
-    '<div class="hx-top"><a class="hx-library-link" href="/hexapod/?library=1" aria-label="Выйти из просмотра к библиотеке симуляций">← <span>Библиотека</span></a><button type="button" class="hx-select" aria-label="Выбрать симуляцию">',
+    '<div class="hx-top"><button type="button" class="hx-library-link" aria-label="Открыть библиотеку симуляций">☰ <span>Библиотека</span></button><button type="button" class="hx-select" aria-label="Выбрать симуляцию">',
     '<small>СИМУЛЯЦИЯ</small><span class="hx-title">Tripod</span><b aria-hidden="true">⌄</b>',
     '</button><span class="hx-record">'+sourceLabel+'</span></div>',
     '<div class="hx-controls"><div class="hx-transport">',
@@ -92,6 +92,9 @@
   }
   function open(){opened=true;draw();message.textContent='';shade.hidden=false;sheet.hidden=false;clearTimeout(hideTimer);shell.classList.remove('hx-hidden');q('.hx-close').focus();}
   function close(){opened=false;shade.hidden=true;sheet.hidden=true;q('.hx-select').focus();show();}
+  // Open the already-approved bottom-sheet library *in place*.
+  // Do not navigate to /hexapod/: older installed shells may redirect to the last replay.
+  q('.hx-library-link').addEventListener('click',open);
   q('.hx-select').addEventListener('click',open);
   q('.hx-close').addEventListener('click',close);
   shade.addEventListener('click',close);
