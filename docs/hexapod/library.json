@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 27,
+  "revision": 28,
   "entries": [
     {
       "id": "tripod-60",
@@ -1139,7 +1139,7 @@
       "id": "pupper-v3-cpu-stand-v1",
       "title": "Stanford Pupper · стойка CPU",
       "detail": "5 с · настоящая MuJoCo-физика, 1250 шагов · 13 оригинальных STL · без обучения нейросети",
-      "duration_s": 5.0,
+      "duration_s": 5,
       "href": "/hexapod/pupper-stand-cpu-v1/",
       "status": "research",
       "files": [
@@ -1157,6 +1157,31 @@
           "path": "hexapod/data/pupper-v3-cpu-stance-5s-v1.json",
           "sha256": "874b984c942cf3124f3c39b6bf40ea89ccfe3fc4ee20e9fa3e44812a4929ed52",
           "size": 299677
+        }
+      ]
+    },
+    {
+      "id": "pupper-v3-pretrained-walk-v1",
+      "title": "Stanford Pupper · обученная ходьба",
+      "detail": "5 с · 46,9 см по X · готовая RL-политика Stanford · физика MuJoCo CPU · без нового обучения",
+      "duration_s": 5,
+      "href": "/hexapod/pupper-pretrained-walk-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-pretrained-walk-v1/index.html",
+          "size": 5421,
+          "sha256": "bb8474fbeb07defec8d6112702c97cf32d3e37651b9f3e71e466218571859234"
+        },
+        {
+          "path": "hexapod/pupper-pretrained-walk-v1/app.js",
+          "size": 13328,
+          "sha256": "dcf2b9c3e24321f51b364650c2afe06eff078f4fe8302405ffe3fa9947738790"
+        },
+        {
+          "path": "hexapod/data/pupper-v3-cpu-pretrained-walk-5s-v1.json",
+          "size": 301402,
+          "sha256": "23270ffcf273fe8be9805424d0760e3654ba5379be67ddb0c5ea03f47c6386ca"
         }
       ]
     }
