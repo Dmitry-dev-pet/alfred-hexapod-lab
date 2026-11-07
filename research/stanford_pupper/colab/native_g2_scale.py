@@ -224,6 +224,12 @@ def run_case(python: Path, label: str, n: int, iterations: int,
     keep={models[0]["path"],models[-1]["path"]}
     if label=="extended" and len(models)>2:
         keep.add(models[len(models)//2]["path"])
+    # Preserve the full original checkpoint manifest; explicitly identify
+    # the subset shipped in this bounded transport ZIP.
+    receipt["transport_checkpoints"]=[
+        model for model in models if model["path"] in keep
+    ]
+    (root/"worker_receipt.json").write_text(json.dumps(receipt,indent=2)+"\n")
     for model in models:
         if model["path"] not in keep:
             (root/model["path"]).unlink()
