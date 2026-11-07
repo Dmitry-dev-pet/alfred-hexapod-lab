@@ -1,0 +1,92 @@
+{
+  "source_repo": "cs123-stanford/pupper_gait_deploy",
+  "source_commit": "70df56dd47e98195b7d51fe7ff7194a2581b0e0d",
+  "path": "policies/default_policy.json",
+  "git_blob_sha1": "27f8a94b95c0e960b01b0cd7b88c5cd9ab249b3c",
+  "size": 6807363,
+  "sha256": "ecf3a4ab8ea392dccda64977faa29d813dadc0d6099ae3abff5f84cc57156712",
+  "keys": [
+    "action_scale",
+    "command_clip",
+    "contract_version",
+    "control_orientation",
+    "default_joint_pos",
+    "gait_reference",
+    "heading_hold",
+    "in_shape",
+    "joint_lower_limits",
+    "joint_upper_limits",
+    "jump_slot",
+    "kd",
+    "kp",
+    "layers",
+    "obs_spec",
+    "observation_history",
+    "single_observation_size",
+    "use_imu"
+  ],
+  "in_shape": [
+    null,
+    960
+  ],
+  "observation_history": 20,
+  "single_observation_size": 48,
+  "action_scale": 0.75,
+  "joint_names": null,
+  "layer_shapes": [
+    [
+      null,
+      256
+    ],
+    [
+      null,
+      128
+    ],
+    [
+      null,
+      128
+    ],
+    [
+      null,
+      128
+    ],
+    [
+      null,
+      12
+    ]
+  ],
+  "obs_spec": {
+    "frame_order": "newest_first",
+    "history": 20,
+    "components": [
+      {
+        "name": "base_ang_vel",
+        "size": 3
+      },
+      {
+        "name": "projected_gravity",
+        "size": 3
+      },
+      {
+        "name": "command",
+        "size": 3
+      },
+      {
+        "name": "desired_world_z",
+        "size": 3
+      },
+      {
+        "name": "joint_pos_rel",
+        "size": 12
+      },
+      {
+        "name": "last_action",
+        "size": 12
+      },
+      {
+        "name": "gait_reference",
+        "size": 12
+      }
+    ]
+  }
+}
