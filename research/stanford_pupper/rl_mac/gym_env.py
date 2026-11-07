@@ -5,6 +5,8 @@ All 12 actions are servo position offsets and all root movement comes from mj_st
 """
 from __future__ import annotations
 
+import math
+
 import gymnasium as gym
 from gymnasium import spaces
 import numpy as np
