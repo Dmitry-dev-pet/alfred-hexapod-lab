@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="Stanford Pupper v3: настоящая пятисекундная стойка MuJoCo, без обучения и нейросетевого управления.">
+<title>Hexapod Lab · Stanford Pupper · стойка CPU</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css?v=20261107a">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+#viewer{width:100%;height:100%;touch-action:none}
+#pupper-hud{position:absolute;top:calc(110px + env(safe-area-inset-top,0px));left:12px;right:12px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;z-index:6;pointer-events:none;font:13px/1.4 system-ui,sans-serif}
+.pupper-label{max-width:66%;padding:9px 12px;border:1px solid #566f7f;border-radius:12px;background:#111f2be6;color:#f3f6fa}
+.pupper-label strong{display:block;font-weight:700;color:#d7f3fa;font-size:12px}
+.pupper-label span{display:block;margin-top:2px;color:#b3c9d4;font-size:10px}
+.pupper-metric{border:1px solid #566f7f;border-radius:12px;background:#111f2be6;color:#ecf6fa;padding:9px 11px;text-align:right}
+.pupper-metric strong{font-size:20px;line-height:1.2;font-weight:750;font-variant-numeric:tabular-nums}
+.pupper-metric small{display:block;color:#c3d5df;font-size:10px}
+#pupper-bottom{position:absolute;bottom:calc(119px + env(safe-area-inset-bottom,0px));left:12px;right:12px;z-index:6;pointer-events:none;display:flex;flex-direction:column;align-items:flex-start;gap:6px;font:12px/1.35 system-ui,sans-serif}
+#pupper-status{max-width:calc(100vw - 24px);padding:7px 10px;border-radius:9px;color:#b8d6e5;background:#112430dc;border:1px solid #375267;font-size:11px}
+#pupper-load{max-width:calc(100vw - 24px);padding:7px 10px;border-radius:9px;color:#b9cbd3;background:#112430dc;font-size:11px}
+#pupper-error{position:absolute;top:43%;left:12px;right:12px;z-index:16;margin:auto;max-width:500px;padding:11px 13px;border-radius:10px;background:#592a2ae8;color:#fff;font:13px/1.5 system-ui,sans-serif;white-space:pre-wrap}
+#pupper-error[hidden],#pupper-load[hidden]{display:none!important}
+#reset-camera{display:none}
+@media(max-width:400px){.pupper-label{max-width:58%}.pupper-metric strong{font-size:17px}.pupper-label strong{font-size:11px}#pupper-hud{left:8px;right:8px}#pupper-bottom{left:8px}}
+@media(max-height:530px){#pupper-hud{top:calc(83px + env(safe-area-inset-top,0px))}#pupper-bottom{bottom:85px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+<main class="layout">
+  <section class="stage" aria-label="Пятисекундная физическая стойка Stanford Pupper v3">
+    <div id="viewer" role="img" aria-label="Оригинальная кинематика Stanford Pupper из состояний MuJoCo; поверните камеру пальцем"></div>
+    <div id="pupper-hud">
+      <div class="pupper-label"><strong>СТОЙКА · НЕ RL</strong><span>MuJoCo CPU · исходная модель Stanford · 5 секунд</span></div>
+      <div class="pupper-metric"><strong id="pupper-height">—</strong><small>высота корпуса</small><strong id="pupper-feet">—</strong><small>нагруженных стоп</small></div>
+    </div>
+    <div id="pupper-bottom">
+      <div id="pupper-status" aria-live="polite">Загрузка физической записи…</div>
+      <div id="pupper-load">Кадры записаны в MuJoCo, не генерируются браузером. Оригинальные STL подгружаются отдельно.</div>
+    </div>
+    <div id="pupper-error" role="alert" hidden></div>
+  </section>
+  <section class="controls" aria-label="Управление воспроизведением">
+    <div class="transport">
+      <button type="button" id="play" class="play" aria-label="Воспроизвести">▶</button>
+      <div class="scrubber"><input id="seek" type="range" min="0" max="5" step="0.01" value="0" aria-label="Перемотка"></div>
+      <label class="speedlabel" for="speed">Скорость <select id="speed" aria-label="Скорость"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+    </div>
+    <button id="reset-camera" type="button">Вернуть камеру</button>
+  </section>
+</main>
+<script type="module" src="/hexapod/pupper-stand-cpu-v1/app.js"></script>
+<script src="/hexapod/player-shell.js?v=20261107a"></script>
+</body>
+</html>
