@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 29,
+  "revision": 30,
   "entries": [
     {
       "id": "tripod-60",
@@ -1257,6 +1257,71 @@
           "path": "hexapod/data/pupper-turn-fail-v1.json",
           "sha256": "cbfbaa2c021dcb9a4b5eb950533de6826332205876eb92c789bd32df5d81203b",
           "size": 275597
+        }
+      ]
+    },
+    {
+      "id": "pupper-barrier-25mm-jump-v1",
+      "title": "Stanford Pupper · барьер 2,5 см · прыжок",
+      "detail": "9 с · команда Jump · 0 контактов · частный успех",
+      "duration_s": 9,
+      "href": "/hexapod/pupper-barrier-25mm-jump-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-barrier-25mm-jump-v1/index.html",
+          "sha256": "2ae5a3d6abd4fe363b77feb3f992a04533b5c082040681d2ec351c72e01f09a3",
+          "size": 5112
+        },
+        {
+          "path": "hexapod/pupper-barrier-player-v1.js",
+          "sha256": "5af554b5ee875b5e5db0dc6649d2a15474656493b01030c0f3999bf29da5d2a9",
+          "size": 15537
+        },
+        {
+          "path": "hexapod/data/pupper-barrier-25mm-jump-v1.json",
+          "sha256": "e0fd44be1edcf4f688bd8ec1a227ce2df05bf552782e79407441e4b58e0dbdf1",
+          "size": 275759
+        }
+      ]
+    },
+    {
+      "id": "pupper-barrier-25mm-walk-v1",
+      "title": "Stanford Pupper · барьер 2,5 см · без прыжка",
+      "detail": "9 с · контроль · 379 физических шагов с контактом",
+      "duration_s": 9,
+      "href": "/hexapod/pupper-barrier-25mm-walk-v1/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/pupper-barrier-25mm-walk-v1/index.html",
+          "sha256": "8d99574565b528e1fe46e613a570ae507d17d4d4cf1bed15d8c0f224fbae1312",
+          "size": 5073
+        },
+        {
+          "path": "hexapod/data/pupper-barrier-25mm-walk-v1.json",
+          "sha256": "0b1e7a0b99db1bdf2d6c5ddcbc77be39b4b99dc2c1dd41cf8b7f9da0dfbaf8e8",
+          "size": 274651
+        }
+      ]
+    },
+    {
+      "id": "pupper-barrier-50mm-fall-v1",
+      "title": "Stanford Pupper · барьер 5 см · падение",
+      "detail": "9 с · Jump · 80 шагов контакта и падение",
+      "duration_s": 9,
+      "href": "/hexapod/pupper-barrier-50mm-fall-v1/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/pupper-barrier-50mm-fall-v1/index.html",
+          "sha256": "36876d72dd6a05f6ad8168353d105503de6e84f54c0ea9cd72e971f85da7e16d",
+          "size": 5064
+        },
+        {
+          "path": "hexapod/data/pupper-barrier-50mm-fall-v1.json",
+          "sha256": "57b42838ac253ca94ac225483d6583ea637e729198e03a1f5657f94f2b7b077b",
+          "size": 274849
         }
       ]
     }
