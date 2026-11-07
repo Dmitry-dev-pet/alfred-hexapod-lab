@@ -108,7 +108,8 @@ print("G2_NATIVE_TRAIN_BEGIN", label, device, flush=True)
 start=time.monotonic()
 launch_training(task_id=task, args=TrainConfig(env=env, agent=agent, gpu_ids=[0], log_root=str(root/"logs")))
 elapsed=time.monotonic()-start
-checkpoints=sorted((root/"logs").rglob("model_*.pt"))
+checkpoints=sorted((root/"logs").rglob("model_*.pt"),
+                   key=lambda path:int(path.stem.rsplit("_",1)[-1]))
 assert checkpoints, "Original RSL-RL did not save a checkpoint"
 models=[]
 for path in checkpoints:
