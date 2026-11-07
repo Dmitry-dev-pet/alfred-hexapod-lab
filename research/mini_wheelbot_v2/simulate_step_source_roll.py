@@ -44,7 +44,8 @@ def assert_source_frames(step):
     return low, high
 
 
-def make_xml(cache: Path, params: dict, step: dict, limit_nm: float = .55) -> str:
+def make_xml(cache: Path, params: dict, step: dict, limit_nm: float = .55,
+             contact_profile: str = "default") -> str:
     low, high = assert_source_frames(step)
     assert low and high
     orig = cache / "hardware/mechanical/meshes"
@@ -64,7 +65,7 @@ def make_xml(cache: Path, params: dict, step: dict, limit_nm: float = .55) -> st
     # Lower driving wheel: axial inertia about world X (CAD X).
     axle_I = params["I_Wy_Rx"]
     side_I = params["I_Wxz_Ryz"]
-    return f"""<mujoco model="mini-wheelbot-STEPAxes-original-roll-sequence">
+    xml = f"""<mujoco model="mini-wheelbot-STEPAxes-original-roll-sequence">
   <compiler angle="radian"/>
   <option timestep="{STEP_DT}" gravity="0 0 -9.81" integrator="implicitfast" iterations="100"/>
   <asset>
@@ -113,6 +114,14 @@ def make_xml(cache: Path, params: dict, step: dict, limit_nm: float = .55) -> st
           ctrllimited="true" ctrlrange="-{limit_nm} {limit_nm}"/>
   </actuator>
 </mujoco>"""
+    if contact_profile == "stiff":
+        # Sensitivity study, not a calibration based on force measurements.
+        for friction in ('0.9', '0.8', '1'):
+            needle = f'friction="{friction} .01 .001"'
+            xml = xml.replace(needle, needle + ' solref=".003 1" solimp=".97 .99 .0001"')
+    elif contact_profile != "default":
+        raise ValueError("Unsupported contact profile: " + contact_profile)
+    return xml
 
 
 def upstream_roll_input(elapsed_seconds: float, sign: int = 1) -> float:
@@ -135,8 +144,9 @@ def body_tilt(m, d, body_id):
 
 
 def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
-            duration=8., sample_s=.05, initial_qvel=0):
-    xml = make_xml(cache, params, step)
+            duration=8., sample_s=.05, initial_qvel=0,
+            contact_profile="default"):
+    xml = make_xml(cache, params, step, contact_profile=contact_profile)
     m = mujoco.MjModel.from_xml_string(xml)
     d = mujoco.MjData(m)
     joint_reaction = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, "reaction_axis_STEPZ")
@@ -191,7 +201,8 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
         ]
         if warning_records:
             numerical_warning = {
-                "simulation_time_s": float(d.time),
+                "simulation_time_s": round((k+1)*STEP_DT,5),
+                "mujoco_time_after_warning_s": float(d.time),
                 "record": warning_records,
             }
             # Fail closed: MuJoCo can reset unstable qpos/qvel after warning.
@@ -199,7 +210,7 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
             break
         if not (np.isfinite(d.qpos).all() and np.isfinite(d.qvel).all()):
             numerical_warning = {
-                "simulation_time_s": float(d.time),
+                "simulation_time_s": round((k+1)*STEP_DT,5),
                 "record": [{"error": "non-finite state"}],
             }
             break
@@ -211,7 +222,8 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
        "status": ("NUMERICAL_DIVERGENCE" if numerical_warning is not None
                   else "PROVISIONAL_GEOMETRY_MOTOR_AND_CONTROLLER_MAPPING"),
        "numerical_warning": numerical_warning,
-       "simulated_duration_s": round(float(d.time),5),
+       "simulated_duration_s": round((last_step+1)*STEP_DT,5),
+       "contact_profile": contact_profile,
        "motor_limits_hardware_validated": False,
        "source_joint_label_parity_validated": False,
        "start_roll_deg":start_roll,"mode":mode,"speed_cap_assumed":speed_cap,
@@ -234,6 +246,7 @@ def main():
     parser.add_argument("--step-cache",type=Path,default=Path.home()/"mini-wheelbot-step")
     parser.add_argument("--out",type=Path,default=Path("/tmp/wheelbot-v2-step-controller"))
     parser.add_argument("--duration",type=float,default=8.)
+    parser.add_argument("--contact-profile",choices=["default","stiff"],default="default")
     args=parser.parse_args()
     if not 3<=args.duration<=15: parser.error("Duration outside 3..15 s")
     original=acquire(args.cache)
@@ -244,7 +257,8 @@ def main():
            (60,"upstream",True),(60,"upstream",False)]
     outcomes=[]
     for initial,mode,cap in cases:
-        result=run_one(args.cache,original["params"],step,initial,mode,cap,args.duration)
+        result=run_one(args.cache,original["params"],step,initial,mode,cap,args.duration,
+                       contact_profile=args.contact_profile)
         frames=result.pop("frames")
         name=f"roll_{initial:+03d}_{mode}_{'cap' if cap else 'nocap'}"
         file=args.out/(name+".json")
@@ -257,10 +271,12 @@ def main():
     report={
        "classification":"EXPERIMENTAL_STEP_AXIS_ORIGINAL_OPEN_LOOP_NOT_HARDWARE_VALIDATED",
        "upstream_commit":SOURCE_COMMIT,
+       "contact_profile": args.contact_profile,
        "source_controller":UPSTREAM_CONFIG,
        "step_sha256":{name:info["sha256"] for name,info in step["files"].items()},
        "step_motor_seats":step["motor_seats"],
-       "source_model_xml_sha256":hashlib.sha256(make_xml(args.cache,original["params"],step).encode()).hexdigest(),
+       "source_model_xml_sha256":hashlib.sha256(make_xml(args.cache,original["params"],step,
+            contact_profile=args.contact_profile).encode()).hexdigest(),
        "source_cad_body_sha256":next(x["sha256"] for x in original["source_files"] if x["path"].endswith("body.stl")),
        "assumptions":[
           "lower CAD X-axis motor is driving wheel; upper CAD Z-axis is reaction",
