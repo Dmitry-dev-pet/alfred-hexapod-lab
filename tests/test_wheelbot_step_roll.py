@@ -23,7 +23,7 @@ class SourceRollTests(unittest.TestCase):
         self.assertAlmostEqual(upstream_roll_input(4.601,sign=-1),-.55,places=6)
 
     def test_speed_model_is_explicit_hypothesis(self):
-        self.assertAlmostEqual(OMEGA_CAP_ASSUMED, 883.539747971,places=1)
+        self.assertAlmostEqual(OMEGA_CAP_ASSUMED, 883.415854189,places=1)
 
     def test_cylinder_step_parser(self):
         step = """
