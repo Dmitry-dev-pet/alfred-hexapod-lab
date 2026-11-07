@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 25,
+  "revision": 26,
   "entries": [
     {
       "id": "tripod-60",
@@ -1088,20 +1088,20 @@
     {
       "id": "lite3-s2-compare-v2",
       "title": "XGO-Lite3 · сравнение S2",
-      "detail": "Два синхронных робота · наложение и рядом · отличие положения + трение/масса/моменты · 9,5 с",
+      "detail": "Полноэкранный 3D-плеер · две реальные траектории · наложение/рядом · параметры в сворачиваемой панели",
       "duration_s": 9.5,
-      "href": "/hexapod/lite3-s2-compare-v2/",
+      "href": "/hexapod/lite3-s2-compare-v3/",
       "status": "research",
       "files": [
         {
-          "path": "hexapod/lite3-s2-compare-v2/index.html",
-          "size": 8891,
-          "sha256": "69974795418edaef204d34260257568f575b3e242a48f71a0cf2ff3721067aff"
+          "path": "hexapod/lite3-s2-compare-v3/index.html",
+          "size": 10180,
+          "sha256": "2ce2c0034997650699c09ec84ad616b511c96ca4f8f644e97e1d5f388fd9554c"
         },
         {
-          "path": "hexapod/lite3-s2-compare-v2/app.js",
-          "size": 16029,
-          "sha256": "9d2adbdb324e7892701f77c2628ce1b925b0807a9b8924360fd39920aed39f7f"
+          "path": "hexapod/lite3-s2-compare-v3/app.js",
+          "size": 16846,
+          "sha256": "e710d252e6ce81e81bcc204ca96c91fa4983ad075092e89f03ab2a25daabaece"
         },
         {
           "path": "hexapod/data/lite3-s2-original_baseline-seed20261106-v1.json",
