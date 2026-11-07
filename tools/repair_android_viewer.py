@@ -129,9 +129,14 @@ def main():
     print("Сервер подтвердил новый интерфейс и отключённый авто-возврат", flush=True)
     before = api("/api/library")
     print("Локальный каталог: v" + str(before.get("revision")), flush=True)
-    print("Синхронизирую библиотеку...", flush=True)
-    refresh = api("/api/refresh", post=True)
-    after = api("/api/library")
+    if before.get("revision", 0) >= 25 and any(
+            x.get("id") == "lite3-s2-compare-v2" for x in before.get("entries", [])):
+        print("Каталог уже актуален; ничего повторно не скачиваю.", flush=True)
+        refresh, after = {"added": 0}, before
+    else:
+        print("Синхронизирую библиотеку...", flush=True)
+        refresh = api("/api/refresh", post=True)
+        after = api("/api/library")
     if after.get("revision", 0) < 25 or not any(
             x.get("id") == "lite3-s2-compare-v2" for x in after.get("entries", [])):
         raise Blocked("Библиотека v25 и сравнение Lite3 не подтверждены")
