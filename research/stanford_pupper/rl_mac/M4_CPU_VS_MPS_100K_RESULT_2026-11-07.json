@@ -1,0 +1,138 @@
+{
+  "schema": "alfred-pupper-m4-100k-independent-audit/v1",
+  "workflow_run": "https://github.com/Dmytry-lab/runner-smoke/actions/runs/42382356713",
+  "github_artifact_id": 13578152307,
+  "github_zip_sha256": "59aeb0867d8f726ebcbce7e31305dd247ed822d68fd5583d82e8db7e3baab61d",
+  "source_commit": "6d22db2a119fb9cf7fb2cab180bd748d7830b445",
+  "runner": "mac-m4-org-01",
+  "seed": 20261107,
+  "num_envs": 4,
+  "requested_steps": 100000,
+  "zero_policy_20s_previous": {
+    "rmse_linear_xy_mps": 0.13368,
+    "rmse_yaw_rps": 0.16658
+  },
+  "benchmarks": {
+    "cpu": {
+      "status": "TRAINED_AND_EVALUATED",
+      "steps": 100352,
+      "train_seconds": 17.788,
+      "env_steps_per_sec": 5641.674,
+      "torch_device": "cpu",
+      "checkpoint_sha256": "30e5e13f6fb8f5698379f4b2225ad97af8f98f739de07f49acea8c9217ce6c8b",
+      "checkpoint_bytes": 7599697,
+      "eval_summary": {
+        "duration_s": 20,
+        "physics_steps": 5000,
+        "policy_steps": 1000,
+        "recorded_frames": 500,
+        "end_root_xyz_m": [
+          -0.013508,
+          0.011669,
+          0.084236
+        ],
+        "net_root_yaw_degrees": -3.508,
+        "fall_guard_policy_ticks": 0,
+        "rmse_linear_xy_mps": 0.14294,
+        "rmse_yaw_rps": 0.17693,
+        "status": "NO_FALL_GUARD",
+        "limits": "One deterministic flat-ground route; no hardware qualification or original MJLab parity"
+      },
+      "reconstructed_25hz_path_xy_m": 0.030543,
+      "net_xy_displacement_m": [
+        -0.012236,
+        0.011397
+      ],
+      "recorded_25hz_mean_base_height_m": 0.084894,
+      "recorded_25hz_min_base_height_m": 0.084118,
+      "recorded_contact_histogram_threshold_0p2N": {
+        "0": 3,
+        "1": 7,
+        "2": 490,
+        "3": 0,
+        "4": 0
+      },
+      "recorded_frames": 500,
+      "model_original_xml_git_sha1": "7771e176c42b3aed1d48cc62434771b0fceb7c8c",
+      "training_profile": "tracking",
+      "reward_weights": {
+        "linear_xy": 3.0,
+        "yaw": 1.5,
+        "upright": 1.0,
+        "height": 0.2,
+        "action_rate": -0.05,
+        "torque": -0.005,
+        "vertical": -0.05,
+        "fall": -10.0
+      }
+    },
+    "mps": {
+      "status": "TRAINED_AND_EVALUATED",
+      "steps": 100352,
+      "train_seconds": 70.818,
+      "env_steps_per_sec": 1417.033,
+      "torch_device": "mps",
+      "checkpoint_sha256": "ce3eb36d78db7c51c00ebdaaaa6710b19e5a374805b2e840453de9781c4c8757",
+      "checkpoint_bytes": 7599697,
+      "eval_summary": {
+        "duration_s": 20,
+        "physics_steps": 5000,
+        "policy_steps": 1000,
+        "recorded_frames": 500,
+        "end_root_xyz_m": [
+          -0.041865,
+          0.017625,
+          0.085687
+        ],
+        "net_root_yaw_degrees": -9.143,
+        "fall_guard_policy_ticks": 0,
+        "rmse_linear_xy_mps": 0.13906,
+        "rmse_yaw_rps": 0.18379,
+        "status": "NO_FALL_GUARD",
+        "limits": "One deterministic flat-ground route; no hardware qualification or original MJLab parity"
+      },
+      "reconstructed_25hz_path_xy_m": 0.088703,
+      "net_xy_displacement_m": [
+        -0.041449,
+        0.017442
+      ],
+      "recorded_25hz_mean_base_height_m": 0.086653,
+      "recorded_25hz_min_base_height_m": 0.085642,
+      "recorded_contact_histogram_threshold_0p2N": {
+        "0": 5,
+        "1": 29,
+        "2": 466,
+        "3": 0,
+        "4": 0
+      },
+      "recorded_frames": 500,
+      "model_original_xml_git_sha1": "7771e176c42b3aed1d48cc62434771b0fceb7c8c",
+      "training_profile": "tracking",
+      "reward_weights": {
+        "linear_xy": 3.0,
+        "yaw": 1.5,
+        "upright": 1.0,
+        "height": 0.2,
+        "action_rate": -0.05,
+        "torque": -0.005,
+        "vertical": -0.05,
+        "fall": -10.0
+      }
+    }
+  },
+  "cpu_speedup_over_mps": 3.981,
+  "interpretation": {
+    "cpu_mps": "CPU roughly four times faster for this specific 4-env SB3 PPO MLP benchmark; not a universal hardware comparison",
+    "learned_locomotion": "NOT_DEMONSTRATED: the agent mostly crouches, travels centimeters and rests on two feet despite no fall-guard hits",
+    "is_hardware_safe": false,
+    "native_stanford_mjlab_training": false,
+    "limitations": [
+      "one seed per device",
+      "one flat-ground 20s evaluation per checkpoint",
+      "checkpoint outcomes differ between CPU/MPS despite same seed due to computation backend",
+      "contact count uses sampled 25Hz frames, >0.2 N threshold",
+      "a fall guard threshold is not a general uprightness guarantee",
+      "checkpoint is SB3 not native Stanford deploy policy"
+    ]
+  }
+}

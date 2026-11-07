@@ -1,0 +1,6 @@
+# 2026-11-07: versioned Mac M4 research environment; do not install in shared Python.
+numpy==2.3.5
+mujoco==3.14.0
+gymnasium==1.2.2
+stable-baselines3==2.9.2
+torch==2.10.0
