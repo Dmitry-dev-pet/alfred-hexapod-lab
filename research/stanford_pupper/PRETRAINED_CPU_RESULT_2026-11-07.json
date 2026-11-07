@@ -1,0 +1,85 @@
+{
+  "schema": "pupper-v3-pretrained-cpu-rollout-result/v1",
+  "date": "2026-11-07",
+  "status": "CPU_PRETRAINED_PHYSICS_REPLAYED",
+  "policy": {
+    "source_repo": "cs123-stanford/pupper_gait_deploy",
+    "source_commit": "70df56dd47e98195b7d51fe7ff7194a2581b0e0d",
+    "file": "policies/default_policy.json",
+    "git_blob_sha1": "27f8a94b95c0e960b01b0cd7b88c5cd9ab249b3c",
+    "sha256": "ecf3a4ab8ea392dccda64977faa29d813dadc0d6099ae3abff5f84cc57156712",
+    "size_bytes": 6807363,
+    "observation_history": 20,
+    "observation_dims_per_frame": 48,
+    "total_input_dims": 960,
+    "output_actions": 12,
+    "action_scale": 0.75,
+    "training_by_us": false
+  },
+  "model": {
+    "source_repo": "cs123-stanford/pupper-mjlab",
+    "source_commit": "aa475e9a393a209b29fd5de7e0ee10f3de643230",
+    "xml_git_blob_sha1": "7771e176c42b3aed1d48cc62434771b0fceb7c8c",
+    "mass_kg": 3.17,
+    "joints": 12,
+    "physics_timestep_s": 0.004,
+    "policy_timestep_s": 0.02
+  },
+  "control": {
+    "approach": "Independent Python NumPy inference of Stanford deploy JSON, gait_reference included",
+    "trained_weights_from_upstream": true,
+    "simulator": "MuJoCo 3.14.0 CPU",
+    "flat_floor": true,
+    "servo_kp": 5.5,
+    "servo_kd": 0.25,
+    "servo_torque_limit_Nm": 3.0,
+    "servo_command_delay_physics_steps": 4,
+    "command_vx_mps": 0.2,
+    "warmup_s": 1,
+    "policy_fade_s": 1,
+    "command_stop_from_s": 4,
+    "confidence": "End-to-end numerical parity with original Stanford C++/MJLab not yet tested"
+  },
+  "measured": {
+    "physics_steps": 1250,
+    "frames": 250,
+    "duration_s": 5.0,
+    "vx_command_mps": 0.2,
+    "initial_x": 0.0,
+    "final_x": 0.46891788,
+    "forward_dx_m": 0.46891788,
+    "final_z_m": 0.15884779,
+    "fall_guard_steps": 0,
+    "peak_servo_torque_Nm": 1.7871357496133236,
+    "torque_saturation_rate": 0.0,
+    "loaded_foot_samples": 247,
+    "events": 200,
+    "max_abs_raw_action": 1.5900819301605225
+  },
+  "raw_physics_json": {
+    "filename": "trial_5s.json",
+    "size_bytes": 229416,
+    "sha256": "662a6c60f4a283cdf2ce5d18bcbfd49553d12615e853d8e040a20eeba899f573"
+  },
+  "viewer_export": {
+    "filename": "pupper-pretrained-5s-replay.json",
+    "size_bytes": 301402,
+    "sha256": "23270ffcf273fe8be9805424d0760e3654ba5379be67ddb0c5ea03f47c6386ca",
+    "physics_derived_frames": 250,
+    "body_transforms_per_frame": 13,
+    "original_stl_count": 13
+  },
+  "tests": {
+    "count": 4,
+    "passed": 4,
+    "independent_repeat_exact_sha256": true,
+    "node_syntax_check": "PASS"
+  },
+  "limits": [
+    "This is a pretrained policy reproduction, NOT RL training by Alfred Lab",
+    "Foot contact and fall criteria use simple thresholds and are not proof of robust locomotion",
+    "Model uses Stanford original geometry and servo approximations with fixed 4-step delay",
+    "Not yet compared network outputs to native C++ or full MJLab rollout",
+    "No hardware deployment or high-variance random seed tests"
+  ]
+}
