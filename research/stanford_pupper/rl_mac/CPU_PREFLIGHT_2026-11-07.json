@@ -1,0 +1,12 @@
+{
+  "schema": "pupper-sb3-m4-preflight/v1",
+  "date": "2026-11-07",
+  "local_environment": "ChatGPT Linux x86_64 Python 3.13.5",
+  "mujoco_version": "3.14.0",
+  "cpu_dependency_source": "verified offline owner Drive wheelhouse; original Pupper MJCF from owner Drive archive",
+  "original_mjcf_git_blob_sha1": "7771e176c42b3aed1d48cc62434771b0fceb7c8c",
+  "model": {"nq": 19, "nv": 18, "nu": 12, "mass_kg": 3.17, "timestep_s": 0.004, "policy_interval_s": 0.02},
+  "actual_checks": {"model_and_contact_unit_tests": "5 PASS", "reward_tests": "6 PASS", "eval_path_tests": "2 PASS", "gym_integration_tests": "2 NOT RUN - package unavailable", "sb3_ppo_training": "NOT RUN", "mac_m4_execution": "NOT RUN"},
+  "zero_action_20s_route_baseline": {"rmse_linear_xy_mps": 0.13368, "rmse_yaw_rps": 0.16658, "fall_guard_policy_ticks": 0, "net_root_x_m": -0.00748},
+  "next_gate": "Install pinned Gymnasium/SB3/torch on Mac in isolated venv; run integration tests, 4x PPO 4096-timestep smoke, save checkpoint and 20s physics evaluation"
+}
