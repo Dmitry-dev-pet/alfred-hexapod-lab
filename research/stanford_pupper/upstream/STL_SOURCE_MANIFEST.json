@@ -1,0 +1,80 @@
+{
+  "schema": "stanford-pupper-v3-original-stl/v1",
+  "source_repo": "G-Levine/pupper_v3_description",
+  "source_commit": "1a3c8590189d3a406219d155f4177afc491a7d77",
+  "source_path": "description/meshes/stl",
+  "source_license": "MIT",
+  "source_license_git_blob": "2e54c1487040001fdb1a7c378655059017215493",
+  "author": "Gabrael Levine",
+  "upstream_mjlab_repo": "cs123-stanford/pupper-mjlab",
+  "upstream_mjlab_commit": "aa475e9a393a209b29fd5de7e0ee10f3de643230",
+  "files": [
+    {
+      "name": "BodyV4v70_001.stl",
+      "git_blob_sha": "438aef47dd158da9863de066cfbccc03464c4a67",
+      "size_bytes": 1641284
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_001.stl",
+      "git_blob_sha": "ee5d86df9ff3ce4c8c716d03a1675e89d7b3a87f",
+      "size_bytes": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_002.stl",
+      "git_blob_sha": "635e7186ec372e69af7d01bc434f99b47ee8ec51",
+      "size_bytes": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_003.stl",
+      "git_blob_sha": "8553cfe96b805bf965cd271c4f30fa7274cba0fa",
+      "size_bytes": 347884
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_005.stl",
+      "git_blob_sha": "ee5d86df9ff3ce4c8c716d03a1675e89d7b3a87f",
+      "size_bytes": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_006.stl",
+      "git_blob_sha": "635e7186ec372e69af7d01bc434f99b47ee8ec51",
+      "size_bytes": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_007.stl",
+      "git_blob_sha": "8553cfe96b805bf965cd271c4f30fa7274cba0fa",
+      "size_bytes": 347884
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_010.stl",
+      "git_blob_sha": "ee5d86df9ff3ce4c8c716d03a1675e89d7b3a87f",
+      "size_bytes": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_011.stl",
+      "git_blob_sha": "635e7186ec372e69af7d01bc434f99b47ee8ec51",
+      "size_bytes": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_012.stl",
+      "git_blob_sha": "8553cfe96b805bf965cd271c4f30fa7274cba0fa",
+      "size_bytes": 347884
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_013.stl",
+      "git_blob_sha": "ee5d86df9ff3ce4c8c716d03a1675e89d7b3a87f",
+      "size_bytes": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_014.stl",
+      "git_blob_sha": "635e7186ec372e69af7d01bc434f99b47ee8ec51",
+      "size_bytes": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_015.stl",
+      "git_blob_sha": "8553cfe96b805bf965cd271c4f30fa7274cba0fa",
+      "size_bytes": 347884
+    }
+  ],
+  "total_bytes": 7457492,
+  "unique_git_blobs": 4
+}

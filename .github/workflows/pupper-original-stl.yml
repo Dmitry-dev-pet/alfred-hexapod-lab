@@ -1,0 +1,48 @@
+name: Mirror Stanford Pupper original MIT STL assets
+on:
+  push:
+    branches:
+      - research/pupper-cpu-no-training-20261107
+    paths:
+      - .github/workflows/pupper-original-stl.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pupper-cpu-no-training-20261107
+          persist-credentials: true
+      - name: Download pinned Stanford Pupper STL and verify 13 original Git blobs
+        run: |
+          python research/stanford_pupper/fetch_original_stls.py
+          python research/stanford_pupper/fetch_original_stls.py --check-only
+      - name: Commit only SHA-verified MIT STL assets to the research branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/stanford_pupper/upstream/assets research/stanford_pupper/upstream/STL_VERIFIED_SHA256.json
+          if git diff --cached --quiet; then
+            echo 'Verified assets already in repository'
+          else
+            git commit -m "research(pupper): mirror 13 pinned MIT-licensed original STL meshes"
+            git push origin HEAD:research/pupper-cpu-no-training-20261107
+          fi
+      - name: Preserve a downloadable archive for Google Drive backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: Stanford-Pupper-v3-original-STL-MIT
+          path: |
+            research/stanford_pupper/upstream/assets/*.stl
+            research/stanford_pupper/upstream/pupper_v3.xml
+            research/stanford_pupper/upstream/LICENSE_STL_MIT
+            research/stanford_pupper/upstream/STL_SOURCE_MANIFEST.json
+            research/stanford_pupper/upstream/STL_VERIFIED_SHA256.json
+          retention-days: 30
+          if-no-files-found: error

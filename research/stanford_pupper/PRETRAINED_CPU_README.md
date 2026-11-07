@@ -1,0 +1,36 @@
+# Stanford Pupper v3 — этап 1: готовая нейросеть без обучения
+
+**2026-11-07.** Получено реальное движение в независимой MuJoCo CPU-среде (без запуска PPO и без GPU). Контрольная запись 5 с: 1250 `mj_step`, 250 кадров, поступательное движение по оси X **0.46891788 м**, конечная высота корпуса **0.15884779 м**; пик 1.78713575 Н·м при ограничителе ±3 Н·м; 0 срабатываний предварительного критерия падения. Повтор локального физического расчёта и JSON-трассы **бит-в-бит совпал на той же машине**.
+
+## Исходные материалы
+
+- Пиннинговая [оригинальная политика Stanford Pupper](https://github.com/cs123-stanford/pupper_gait_deploy/blob/70df56dd47e98195b7d51fe7ff7194a2581b0e0d/policies/default_policy.json) — Git blob `27f8a94b95c0e960b01b0cd7b88c5cd9ab249b3c`, SHA-256 `ecf3a4ab8ea392dccda64977faa29d813dadc0d6099ae3abff5f84cc57156712`, 6,807,363 байта. Ветка исследования содержит копию `default_policy.json` с оригинальным SHA. [Резервная копия на Drive](https://drive.google.com/file/d/1RjnNI4zGPvSIEkLAD8i_EhDH6fq6W_ax/view?usp=drivesdk).
+- Исходная [MJCF-модель](https://github.com/cs123-stanford/pupper-mjlab/tree/aa475e9a393a209b29fd5de7e0ee10f3de643230) — оригинальная масса 3.17 кг, 12 приводов, 8 контактных сфер, без 13 визуальных STL в CPU-модели (они не влияют на массу и контакты). 13 подлинных MIT-licensed STL для *отображения* уже зеркалированы в `upstream/assets` и на Drive.
+- Контракт нейросети: `in_shape=[null,960]`, последние **20×48** наблюдений, пять слоёв 960→256→128→128→128→12, ELU, выходы — 12 целевых отклонений суставов; применяется `action_scale=0.75` и штатные лимиты. Политика содержит встроенную таблицу фазовой походки, включая варианты быстрых движений и прыжков; во время этого теста включена только ходьба вперёд.
+
+## Воспроизвести CPU без обучения
+
+Используется тот же MuJoCo 3.14, оригинальный XML `upstream/pupper_v3.xml`, фиксированная позиционная обратная связь `kp=5.5, kd=0.25`, задержка цели **4 физических шага** (16 мс). Первая секунда — исходная стойка, следующая секунда — плавное включение нейросети, команда `vx=0.2 м/с` до 4-й секунды, далее `vx=0`.
+
+```bash
+python -m pip install "mujoco==3.14.0" "numpy==2.3.5"
+python research/stanford_pupper/infer_pupper.py \
+  --policy research/stanford_pupper/default_policy.json \
+  --duration 5 --vx 0.2 --delay 4 \
+  --output /tmp/pupper_pretrained_5s.json
+
+python research/stanford_pupper/export_pretrained_viewer.py \
+  --source /tmp/pupper_pretrained_5s.json \
+  --template research/stanford_pupper/viewer_data/pupper-stand-replay-v1.json \
+  --output /tmp/pupper_pretrained_viewer.json
+
+python -m unittest discover -s research/stanford_pupper -p 'test_pretrained_cpu.py' -v
+```
+
+Результаты первоначального 5-секундного запуска: [trial_5s.json](trial_5s.json) (qpos/qvel/servo targets/contact forces и история действий), [pupper-pretrained-5s-replay.json](pupper-pretrained-5s-replay.json) (те же qpos, преобразованные через `mj_forward` в оригинальные мировые позы 13 сегментов для 3D). [PRETRAINED_CPU_RESULT_2026-11-07.json](PRETRAINED_CPU_RESULT_2026-11-07.json) — машинная сводка, SHA-256 и ограничения. 4 локальных Python-теста успешно прошли. Полная запись опубликована в Android-плеере (catalog v28; PR #24), не смешана с прежней записью стойки.
+
+## Что **не** доказано
+
+Никакой новый PPO здесь не выполнялся. Это самостоятельная Python-реконструкция deploy-контракта, а не запуск изначального `mjlab play` или аппаратного `neural_controller`. **C++/MJLab численный parity test ещё не выполнен.** Вход IMU, задержки и динамика актуаторов здесь приближены; значения попадания в целевую скорость, устойчивости и падения относятся только к проверенной сцене. Нет аппаратного тестирования, ступенек или статистики по множеству сценариев. Браузер лишь интерполирует записанные физические кадры и не просчитывает движение.
+
+Исходная лаборатория статической стойки [README.md](README.md) по-прежнему доступна и не переопределяется этим опытом.

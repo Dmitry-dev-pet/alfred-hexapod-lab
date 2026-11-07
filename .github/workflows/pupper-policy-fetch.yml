@@ -1,0 +1,59 @@
+name: Fetch pinned Stanford Pupper pre-trained default policy
+on:
+  push:
+    branches:
+      - research/pupper-cpu-no-training-20261107
+    paths:
+      - .github/workflows/pupper-policy-fetch.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pupper-cpu-no-training-20261107
+          persist-credentials: true
+      - name: Fetch original trained policy, pin Git blob checksum and inspect contract
+        run: |
+          mkdir -p /tmp/pupper_policy
+          python - <<'PY'
+          import hashlib, json, pathlib, urllib.request
+          rev='70df56dd47e98195b7d51fe7ff7194a2581b0e0d'
+          url=f'https://raw.githubusercontent.com/cs123-stanford/pupper_gait_deploy/{rev}/policies/default_policy.json'
+          req=urllib.request.Request(url,headers={'User-Agent':'Alfred-Hexapod-Pupper-Pretrained-1'})
+          with urllib.request.urlopen(req,timeout=30) as r:
+              data=r.read(8_000_000)
+          assert len(data)==6_807_363, f'unexpected policy size {len(data)}'
+          blob=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\x00'+data).hexdigest()
+          assert blob=='27f8a94b95c0e960b01b0cd7b88c5cd9ab249b3c'
+          policy=json.loads(data)
+          summary={'source_repo':'cs123-stanford/pupper_gait_deploy','source_commit':rev,'path':'policies/default_policy.json','git_blob_sha1':blob,'size':len(data),'sha256':hashlib.sha256(data).hexdigest(),'keys':sorted(policy.keys()),'in_shape':policy.get('in_shape'),'observation_history':policy.get('observation_history'),'single_observation_size':policy.get('single_observation_size'),'action_scale':policy.get('action_scale'),'joint_names':policy.get('joint_names'),'layer_shapes':[v.get('shape') for v in policy.get('layers',[]) if isinstance(v,dict)],'obs_spec':policy.get('obs_spec')}
+          dest=pathlib.Path('/tmp/pupper_policy')
+          (dest/'default_policy.json').write_bytes(data)
+          (dest/'policy_contract.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
+          print('POLICY_CONTRACT',json.dumps(summary,ensure_ascii=False)[:5000])
+          PY
+      - name: Store exact pinned 6.8MB policy weights in research branch
+        run: |
+          cp /tmp/pupper_policy/default_policy.json research/stanford_pupper/default_policy.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/stanford_pupper/default_policy.json
+          if git diff --cached --quiet; then
+            echo 'Exact trained policy already saved'
+          else
+            git commit -m "research(pupper): mirror original SHA-verified Stanford pretrained policy"
+            git push origin HEAD:research/pupper-cpu-no-training-20261107
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Stanford-Pupper-v3-default-pretrained-policy-locked
+          path: /tmp/pupper_policy/
+          if-no-files-found: error
+          retention-days: 30

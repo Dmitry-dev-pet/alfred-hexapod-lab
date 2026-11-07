@@ -1,0 +1,72 @@
+{
+  "schema": "alfred-pupper-cpu-preflight-result-v1",
+  "date": "2026-11-07",
+  "status": "CPU_STANCE_REPRODUCED",
+  "source": {
+    "repo": "cs123-stanford/pupper-mjlab",
+    "commit": "aa475e9a393a209b29fd5de7e0ee10f3de643230",
+    "path": "src/mjlab/asset_zoo/robots/pupper_v3/xmls/pupper_v3.xml",
+    "git_blob_sha1": "7771e176c42b3aed1d48cc62434771b0fceb7c8c",
+    "source_sha256": "a62291bb236e3a92979ddbd772f3f6506bfded07a9ff939e48e6d5ffeeba611d",
+    "license": "Apache-2.0"
+  },
+  "engine": "mujoco 3.14.0 CPU, Python 3.13, Linux x86_64",
+  "model": {
+    "robot_mass_kg": 3.17,
+    "hinge_joint_count": 12,
+    "body_dofs": 6,
+    "foot_sphere_contacts": 4,
+    "knee_sphere_contacts": 4,
+    "qpos": 19,
+    "qvel": 18,
+    "actuators": 12,
+    "timestep_s": 0.004,
+    "control_update_s": 0.02,
+    "position_servo_kp": 5.5,
+    "position_servo_kd": 0.25,
+    "max_actuator_torque_Nm": 3
+  },
+  "experiment": {
+    "type": "stationary_hold_only",
+    "control": "fixed nominal joint targets, no learned policy",
+    "initial_base_z_m": 0.18,
+    "duration_s": 5,
+    "physics_steps": 1250,
+    "stored_frames": 250,
+    "final_base_z_m": 0.1565585,
+    "final_loaded_feet": 4,
+    "contact_frames": 247,
+    "peak_abs_actuator_force_Nm": 1.104454,
+    "actuator_saturation_fraction": 0,
+    "trace_sha256": "6dfee09d1638fce00160ceed44addb35589af8912f0f870f700a334eb1049777",
+    "trace_size_bytes": 269147
+  },
+  "short_experiment": {
+    "duration_s": 2,
+    "physics_steps": 500,
+    "stored_frames": 100,
+    "final_base_z_m": 0.15668371,
+    "final_loaded_feet": 4,
+    "contact_frames": 97,
+    "peak_abs_actuator_force_Nm": 1.104454,
+    "actuator_saturation_fraction": 0,
+    "trace_sha256": "e0554a011b8bb611fcf2b9d3224f145ba072212386863cfdeb43890cad704196",
+    "trace_size_bytes": 108006
+  },
+  "tests": {
+    "count": 4,
+    "passed": 4,
+    "repeatability": "same initial conditions, exact frame-by-frame equality in 1s double replay",
+    "five_second_repeatability": "Two independently executed 5s traces have identical SHA256: 6dfee09d1638fce00160ceed44addb35589af8912f0f870f700a334eb1049777"
+  },
+  "scope": {
+    "removed": "13 zero-density non-colliding STL visual meshes",
+    "retained": "all original link inertials, 12 joint limits, 8 contact spheres, site locations",
+    "added": "flat plane and standard position actuator from Stanford config",
+    "training": "NOT_RUN",
+    "pretrained_policy_inference": "NOT_RUN",
+    "native_mjlab_parity": "NOT_VALIDATED",
+    "hardware": "NOT_RUN"
+  },
+  "raw_data_storage": "Prepared locally as separate JSON traces, not committed in this research branch."
+}

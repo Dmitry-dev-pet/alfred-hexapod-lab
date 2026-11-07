@@ -1,0 +1,76 @@
+{
+  "schema": "stanford-pupper-v3-original-stl-verified/v1",
+  "original_source": "G-Levine/pupper_v3_description",
+  "source_commit": "1a3c8590189d3a406219d155f4177afc491a7d77",
+  "license": "MIT",
+  "count": 13,
+  "unique_git_blobs": 4,
+  "bytes": 7457492,
+  "files": [
+    {
+      "name": "BodyV4v70_001.stl",
+      "sha256": "703137e327683555c1f6d12d39b99fd721479af0e0785e61805ad755a8f782a8",
+      "size": 1641284
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_001.stl",
+      "sha256": "ef36b14858126b237f15c43d9176ffb9da25d98bdb903c49cf3623234bb79a0a",
+      "size": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_002.stl",
+      "sha256": "83d9b19ac0fb616cf2619228f851b01f3adac08b52344cf47080687f451fc474",
+      "size": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_003.stl",
+      "sha256": "175081bce9491118bedde36677989dee7c274a1c37022ffad33a70488cbcd835",
+      "size": 347884
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_005.stl",
+      "sha256": "ef36b14858126b237f15c43d9176ffb9da25d98bdb903c49cf3623234bb79a0a",
+      "size": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_006.stl",
+      "sha256": "83d9b19ac0fb616cf2619228f851b01f3adac08b52344cf47080687f451fc474",
+      "size": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_007.stl",
+      "sha256": "175081bce9491118bedde36677989dee7c274a1c37022ffad33a70488cbcd835",
+      "size": 347884
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_010.stl",
+      "sha256": "ef36b14858126b237f15c43d9176ffb9da25d98bdb903c49cf3623234bb79a0a",
+      "size": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_011.stl",
+      "sha256": "83d9b19ac0fb616cf2619228f851b01f3adac08b52344cf47080687f451fc474",
+      "size": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_012.stl",
+      "sha256": "175081bce9491118bedde36677989dee7c274a1c37022ffad33a70488cbcd835",
+      "size": 347884
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_013.stl",
+      "sha256": "ef36b14858126b237f15c43d9176ffb9da25d98bdb903c49cf3623234bb79a0a",
+      "size": 512434
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_014.stl",
+      "sha256": "83d9b19ac0fb616cf2619228f851b01f3adac08b52344cf47080687f451fc474",
+      "size": 593734
+    },
+    {
+      "name": "LegAssemblyForFlangedv26_015.stl",
+      "sha256": "175081bce9491118bedde36677989dee7c274a1c37022ffad33a70488cbcd835",
+      "size": 347884
+    }
+  ]
+}
