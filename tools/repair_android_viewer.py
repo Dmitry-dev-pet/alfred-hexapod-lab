@@ -110,6 +110,23 @@ def main():
     if started.returncode:
         raise Blocked("Сервер не запустился: " + (started.stderr or started.stdout).strip())
     print(started.stdout.strip(), flush=True)
+    # A successful catalog refresh is not proof that the browser receives the
+    # updated viewer. Check static HTML and JS through the *running* server.
+    req = urllib.request.Request(LOCAL + "/hexapod/player-shell.js?verify=20261107a",
+                                 headers={"Cache-Control": "no-cache"})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        served_shell = response.read(200_000)
+    installed_shell = (DEST / "hexapod/player-shell.js").read_bytes()
+    if served_shell != installed_shell or b"location.replace(last)" in served_shell or (
+            b"const libraryView=path==='/hexapod/'" not in served_shell):
+        raise Blocked("Сервер отдаёт устаревший player-shell.js — пришли этот текст")
+    req = urllib.request.Request(LOCAL + "/hexapod/?library=1&verify=20261107a",
+                                 headers={"Cache-Control": "no-cache"})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        served_home = response.read(200_000)
+    if b"/hexapod/player-shell.js?v=20261107a" not in served_home:
+        raise Blocked("Сервер отдаёт устаревшую главную страницу — пришли этот текст")
+    print("Сервер подтвердил новый интерфейс и отключённый авто-возврат", flush=True)
     before = api("/api/library")
     print("Локальный каталог: v" + str(before.get("revision")), flush=True)
     print("Синхронизирую библиотеку...", flush=True)
@@ -120,7 +137,8 @@ def main():
         raise Blocked("Библиотека v25 и сравнение Lite3 не подтверждены")
     print("УСПЕХ: v%s, записей %s, новых %s" % (
         after["revision"], len(after["entries"]), refresh.get("added", "?")), flush=True)
-    print("Открой: " + LOCAL + "/hexapod/lite3-s2-compare-v2/?v=" +
+    print("Открой библиотеку: " + LOCAL + "/hexapod/?library=1&nav=20261107a", flush=True)
+    print("Сравнение Lite3: " + LOCAL + "/hexapod/lite3-s2-compare-v2/?v=" +
           str(after["revision"]), flush=True)
 
 if __name__ == "__main__":
