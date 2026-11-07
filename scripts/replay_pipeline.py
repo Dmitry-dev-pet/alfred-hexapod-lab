@@ -89,6 +89,8 @@ def load_spec(filename: Path) -> dict:
     for key, maxlen in (("title", 100), ("detail", 180), ("robot", 100), ("engine", 60)):
         require(isinstance(job.get(key), str) and 0 < len(job[key]) <= maxlen, "Invalid " + key)
     require(job.get("status") in ("passed", "failed", "research"), "Invalid result status")
+    require(job.get("publish_policy", "auto") in ("auto", "review_only"),
+            "Unknown publication safety policy")
     require(number(job.get("duration_s")) and 0 < job["duration_s"] <= 3600, "Invalid duration")
     steps = job.get("commands")
     require(isinstance(steps, dict), "Missing simulation/export commands")
@@ -288,6 +290,8 @@ def publish(root: Path, paths: list[str], sid: str) -> None:
 
 def run(root: Path, job: dict, *, skip_execution: bool = False, do_publish: bool = False) -> dict:
     if do_publish:
+        require(job.get("publish_policy", "auto") == "auto",
+                "Publication refused: research experiment is review_only")
         require(git(root, "branch", "--show-current") == VIEWER_BRANCH,
                 "Switch to the viewer branch before --publish")
     if not skip_execution:
