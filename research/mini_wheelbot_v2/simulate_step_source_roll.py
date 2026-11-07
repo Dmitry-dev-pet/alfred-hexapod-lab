@@ -151,6 +151,7 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
     d = mujoco.MjData(m)
     joint_reaction = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, "reaction_axis_STEPZ")
     dof = int(m.jnt_dofadr[joint_reaction])
+    reaction_qadr = int(m.jnt_qposadr[joint_reaction])
     body_id = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, "body")
     # Roll about MuJoCo Y = orthogonal upper reaction wheel shaft;
     # starts as original-positive-roll (+90 degrees) but sign convention
@@ -179,8 +180,23 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
         omega = float(d.qvel[dof])
         max_omega = max(max_omega,abs(omega))
         if mode=="passive": torque = 0.
-        elif mode=="upstream":
+        elif mode in ("upstream", "upstream_lqr", "upstream_lqr_inverted"):
             torque = upstream_roll_input(float(d.time),sign=1 if start_roll>0 else -1)
+            if mode != "upstream" and d.time > 6.1:
+                # This is only a SOURCE-GAIN SENSITIVITY TEST, not controller parity.
+                # C++ uses roll/rate/wheel-angle/wheel-speed, but estimator sign
+                # and axis conventions are not verified against our MuJoCo world.
+                matrix = d.xmat[body_id].reshape(3,3)
+                signed_roll = math.atan2(float(matrix[0,2]),float(matrix[2,2]))
+                if abs(signed_roll) <= .8:
+                    K = UPSTREAM_CONFIG["K_roll"]
+                    states = (signed_roll, float(d.qvel[4]),
+                              float(d.qpos[reaction_qadr]), flywheel_speed)
+                    source_feedback = -sum(k*x for k,x in zip(K,states))
+                    sign = 1 if mode == "upstream_lqr" else -1
+                    torque = float(np.clip(source_feedback * sign,-.5,.5))
+                else:
+                    torque=0.
         else: raise ValueError(mode)
         if speed_cap and abs(omega)>=OMEGA_CAP_ASSUMED and torque*omega>0:
             torque=0.;overspeed_hits+=1
@@ -247,6 +263,7 @@ def main():
     parser.add_argument("--out",type=Path,default=Path("/tmp/wheelbot-v2-step-controller"))
     parser.add_argument("--duration",type=float,default=8.)
     parser.add_argument("--contact-profile",choices=["default","stiff"],default="default")
+    parser.add_argument("--include-lqr",action="store_true")
     args=parser.parse_args()
     if not 3<=args.duration<=15: parser.error("Duration outside 3..15 s")
     original=acquire(args.cache)
@@ -255,6 +272,9 @@ def main():
     cases=[(90,"passive",True),(90,"upstream",True),(90,"upstream",False),
            (-90,"upstream",True),(-90,"upstream",False),
            (60,"upstream",True),(60,"upstream",False)]
+    if args.include_lqr:
+        cases.extend([(90,"upstream_lqr",True),(90,"upstream_lqr_inverted",True),
+                      (-90,"upstream_lqr",True),(-90,"upstream_lqr_inverted",True)])
     outcomes=[]
     for initial,mode,cap in cases:
         result=run_one(args.cache,original["params"],step,initial,mode,cap,args.duration,
