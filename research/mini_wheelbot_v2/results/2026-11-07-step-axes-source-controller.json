@@ -1,0 +1,194 @@
+{
+  "date": "2026-11-07",
+  "source_commit": "73815e49371c5fb5f49eec59d364e4d9d1b57b10",
+  "classification": "STEP_AXES_VERIFIED__OPEN_LOOP_AND_SOURCE_GAINS_SENSITIVITY__HARDWARE_UNVALIDATED",
+  "engine": "MuJoCo 3.14.0, Linux CPU 1vCPU 2GB",
+  "step_source_sha256": {
+    "frame.stp": "413e52bbfc1391873e5d4b3cc504feaa41853f0a2786f7a9b337eb8b0eb0237a",
+    "reactionwheel.stp": "f3e9ea64a7e0a34addc8293e1acb91faee670ad01a62a01fdb680b39d784d1ef",
+    "lid.stp": "51e2ed5a9c301f0e8f6ba2316de718a77443e75331a3b5dada1089bcafc0ad9e"
+  },
+  "model_xml_sha256": "1b90aaae3cfaf1a5fc4ddf61949a7fdbcb2c886371ee955864ee2d0f34ebdc10",
+  "contact_profile": "stiff",
+  "raw_summary_sha256": "cb2761447116a7e7cc67cabb18db1f2a36f3dd902be0f274948543d193ebdf98",
+  "columns": [
+    "start_deg",
+    "mode",
+    "speed_cap_assumed",
+    "min_tilt_deg",
+    "final_tilt_deg",
+    "hold_s",
+    "peak_w_rad_s",
+    "penetration_mm",
+    "warning_time_s",
+    "success"
+  ],
+  "runs": [
+    [
+      90,
+      "passive",
+      true,
+      90,
+      90,
+      0,
+      0.008,
+      0.458,
+      null,
+      false
+    ],
+    [
+      90,
+      "upstream",
+      true,
+      0.111,
+      90,
+      0.066,
+      890.488,
+      2.169,
+      null,
+      false
+    ],
+    [
+      90,
+      "upstream",
+      false,
+      0.049,
+      0,
+      0.007,
+      1244424.566,
+      11253.186,
+      5.862,
+      false
+    ],
+    [
+      -90,
+      "upstream",
+      true,
+      0.111,
+      90,
+      0.066,
+      890.488,
+      2.169,
+      null,
+      false
+    ],
+    [
+      -90,
+      "upstream",
+      false,
+      0.049,
+      0,
+      0.007,
+      2487532.165,
+      3019.633,
+      5.846,
+      false
+    ],
+    [
+      60,
+      "upstream",
+      true,
+      0.184,
+      147.425,
+      0.046,
+      890.169,
+      2.184,
+      null,
+      false
+    ],
+    [
+      60,
+      "upstream",
+      false,
+      0.053,
+      0,
+      0.007,
+      2735692.099,
+      4.839,
+      6.004,
+      false
+    ],
+    [
+      90,
+      "upstream_lqr",
+      true,
+      0.184,
+      90,
+      0.021,
+      890.488,
+      2.169,
+      null,
+      false
+    ],
+    [
+      90,
+      "upstream_lqr_inverted",
+      true,
+      0.184,
+      49.132,
+      0.01,
+      890.488,
+      2.169,
+      null,
+      false
+    ],
+    [
+      -90,
+      "upstream_lqr",
+      true,
+      0.184,
+      90,
+      0.021,
+      890.488,
+      2.169,
+      null,
+      false
+    ],
+    [
+      -90,
+      "upstream_lqr_inverted",
+      true,
+      0.184,
+      49.144,
+      0.01,
+      890.488,
+      2.169,
+      null,
+      false
+    ]
+  ],
+  "original_cad_sha256": {
+    "hardware/mechanical/meshes/mini-wheelbot.stl": "d10f688c0257e6eeb3006397c86f5ef1153a57db43cd9f232f5eedfd39c827ca",
+    "hardware/mechanical/meshes/body.stl": "4154eec8449c616db2da265930e81633bb8daaa87530f809f2de247f9e66607d",
+    "hardware/mechanical/meshes/actuator_rotor.stl": "d5c9b8392ae6d88aa037b64700ea7e274ca4f8ff3e1873556567f6173f2b92bf",
+    "simulation/python/examples/mini_wheelbot_sysid_parameters.json": "d3cec4dfd4242ddc45c2010e2ed5fd762e4e94bb3363f49d4c50e6d6f29e25ad"
+  },
+  "raw_trace_sha256": {
+    "roll_+90_passive_cap.json": "6b881c486219469d42315a8bf616c1fa7f7386ca468abfbfc20afce67e4fb233",
+    "roll_+90_upstream_cap.json": "765ba76e0153ce4ba5a1b142f96c85cf5ea9f531fffe68645aa3baf76596e59f",
+    "roll_+90_upstream_nocap.json": "69cb4b45c0a54c36e03a8d93916b79f5e6a4f360e266640062960426055a086e",
+    "roll_-90_upstream_cap.json": "e0c810c4c57035b2b0876f4bba7fa959fa06c21fd858967f8af0a6c445369e06",
+    "roll_-90_upstream_nocap.json": "dfd25ae7e0536037aa46827a70c4d7cb7fd597a32c681cc9aa3b2a9cad2222c6",
+    "roll_+60_upstream_cap.json": "7d4dd34e609f16f7099277a491f95a4f04837f85b296f86c3dd1d8807a6ae3e8",
+    "roll_+60_upstream_nocap.json": "0781f2fefe1f826f7402299df97421a640650f5a548db6edb6306002bed2bdf0",
+    "roll_+90_upstream_lqr_cap.json": "9bbef539c3a935445577ba9dc376ae1ae8f1075a2773e985b767dead582ed140",
+    "roll_+90_upstream_lqr_inverted_cap.json": "3169e3a966a9cbbd4a185f12797c2285ec7016d564c97d7d87f020cbd1e7c75f",
+    "roll_-90_upstream_lqr_cap.json": "f8dab3dad4de5733c7c2e1d133f2990af0cedbfb65dc8d9e55cd18be9bb9ba8f",
+    "roll_-90_upstream_lqr_inverted_cap.json": "04362a61a84e6bd55333bd62d0a5772c5b97a019b4c5a57dd5568b9da18fe8ca"
+  },
+  "provenance": {
+    "original_roll_controller": "https://github.com/wheelbot/Mini-Wheelbot/blob/73815e49371c5fb5f49eec59d364e4d9d1b57b10/wheelbot-lib/include/wheelbot/controller.hpp",
+    "upstream_default_config": "https://github.com/wheelbot/Mini-Wheelbot/blob/73815e49371c5fb5f49eec59d364e4d9d1b57b10/wheelbot-lib/config/default.json",
+    "source_step_path": "https://github.com/wheelbot/Mini-Wheelbot/tree/73815e49371c5fb5f49eec59d364e4d9d1b57b10/hardware/mechanical/step"
+  },
+  "limitations": [
+    "Authentic source STEP axes, but axle identity is inferred from upright position, not uniquely labeled in source STEP",
+    "Original roll open-loop torque schedule reproduced; source C++ AMPC controller was NOT ported",
+    "Using source K_roll with two unverified sign mappings after pulse does not establish closed-loop parity",
+    "Collision box/cylinders and COM placement inferred, contact stiffness sensitivity .003s not measured",
+    "22.2V*380KV ideal speed cap assumed and motor electric envelope not measured",
+    "Original identified inertias projected to satisfy rigid body triangle inequalities",
+    "Uncapped runs numerically diverge around 5.85-6.00 s; false near-upright states rejected",
+    "All 11 candidate evaluations fail sustained upright; no real hardware assertion or tablet publication"
+  ]
+}
