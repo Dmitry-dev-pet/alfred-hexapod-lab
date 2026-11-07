@@ -37,7 +37,10 @@ class PretrainedPupperTests(unittest.TestCase):
             self.assertTrue(np.all(np.isfinite(z)))
         stop=gait_ref(self.policy,1.,0,0,0)
         self.assertTrue(np.array_equal(stop,np.zeros(12,dtype=np.float32)))
-    def test_physics_closed_loop_deterministic(self):
+    def test_history_cleanup_keeps_original_five_second_physics(self):
+        # The legacy scratch-slot write was harmless: history[0] is completely
+        # overwritten by obs() at the next inference. Keep a strict regression
+        # asserting identical old/new physics (confirmed with restored MuJoCo).
         summary,frames,events=launch(self.policy,self.weights,cmd_vx=.2,duration=5.,delay=4)
         self.assertEqual(summary,self.trace['summary'])
         self.assertEqual(frames,self.trace['frames'])
@@ -46,10 +49,9 @@ class PretrainedPupperTests(unittest.TestCase):
         self.assertEqual(summary['frames'],250)
         self.assertEqual(summary['fall_guard_steps'],0)
         self.assertLess(summary['peak_servo_torque_Nm'],3.)
-        self.assertGreater(summary['forward_dx_m'],.40)
-        self.assertLess(summary['forward_dx_m'],.55)
+        self.assertEqual(summary['forward_dx_m'],0.46891788)
         self.assertEqual(hashlib.sha256((ROOT/'trial_5s.json').read_bytes()).hexdigest(),CHECK_SHA)
-    def test_exact_exported_fk_replay(self):
+    def test_historical_exact_exported_fk_replay(self):
         d=self.viewer
         self.assertEqual(d['schema'],'pupper-v3-mujoco-cpu-pretrained-walk-replay-v1')
         self.assertTrue(d['is_walk'])
