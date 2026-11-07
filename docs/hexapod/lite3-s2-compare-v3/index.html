@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="XGO-Lite3: синхронное сравнение двух настоящих MuJoCo-траекторий в полноэкранном плеере Hexapod Lab.">
+<title>Hexapod Lab · XGO-Lite3 · сравнение S2</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css?v=20261107a">
+<style>
+/* Uses the same fullscreen .layout/.stage and controls as the approved player. */
+:root{color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+#viewer{width:100%;height:100%;touch-action:none}
+.compare-hud{position:absolute;top:calc(110px + env(safe-area-inset-top,0px));left:12px;right:12px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;z-index:7;pointer-events:none}
+.compare-legend{max-width:65%;padding:8px 10px;background:#101e2be8;border:1px solid #456073;border-radius:11px;font-size:11px;line-height:1.5;color:#d7ebf5}
+.compare-legend .base{color:#56dcf0}.compare-legend .subject{color:#ffbd76}
+.compare-toggle{pointer-events:auto;min-height:44px;flex-shrink:0;padding:8px 12px;background:#233b4bf0;border:1px solid #81b1c7;border-radius:11px;color:#effaff;font:600 12px system-ui,sans-serif;touch-action:manipulation}
+.compare-delta{position:absolute;left:12px;bottom:calc(116px + env(safe-area-inset-bottom,0px));z-index:6;pointer-events:none;max-width:min(80vw,330px);background:#102333e8;border:1px solid #52768b;border-radius:12px;padding:10px 13px;color:#edf7fa}
+.compare-delta small{display:block;font-size:10px;color:#bcd1dc;line-height:1.4}
+#delta{display:block;font-size:25px;font-weight:750;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+#segment{display:block;color:#acc5d3;font-size:11px}
+#compare-panel{position:absolute;right:12px;top:calc(166px + env(safe-area-inset-top,0px));bottom:calc(124px + env(safe-area-inset-bottom,0px));z-index:12;width:min(380px,calc(100vw - 24px));overflow-y:auto;overscroll-behavior:contain;border:1px solid #567183;border-radius:17px;background:#132432f5;box-shadow:0 12px 42px #000b;padding:13px;color:#edf6fa;font:13px/1.45 system-ui,sans-serif;pointer-events:auto}
+#compare-panel[hidden],#notice[hidden],#err[hidden]{display:none!important}
+.compare-panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.compare-panel-head strong{font-size:16px}
+#close-compare{min-height:44px;min-width:44px;font-size:26px}
+#compare-panel button,#compare-panel select{background:#293e4d;color:#edf6fb;border:1px solid #5c8195;border-radius:10px;padding:9px;font:inherit;touch-action:manipulation}
+#compare-panel button{min-height:42px}
+#compare-panel button[aria-pressed="true"]{background:#d5f0f8;color:#132331;font-weight:700}
+#compare-panel label{display:block;color:#c4d9e5;font-size:11px;margin:10px 0 5px}
+#variant{width:100%;min-height:46px}
+.compare-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+.compare-options{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.compare-options label{margin:0!important;display:inline-flex!important;align-items:center;gap:5px;font-size:12px!important}
+.compare-options input{accent-color:#69d8ec}
+.compare-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:15px 0 10px}
+.compare-metrics div{min-width:0;border:1px solid #375266;border-radius:10px;padding:7px;background:#203648}
+.compare-metrics small{display:block;color:#a8c3d2;font-size:10px;min-height:30px;line-height:1.25}
+.compare-metrics strong{display:block;font-size:14px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.compare-chart-head{color:#c2d5de;font-size:11px;margin:8px 0 6px}
+#chart{display:block;width:100%;height:130px;border:1px solid #3a5467;border-radius:8px;background:#132632}
+.compare-note{color:#a8c1cf;font-size:10px;line-height:1.5;margin:10px 0 0}
+#notice,#err{position:absolute;top:42%;left:10px;right:10px;margin:auto;max-width:440px;z-index:14;border-radius:12px;padding:12px 14px;background:#132c3fe8;color:#dbeefa;font:13px/1.5 system-ui,sans-serif}
+#err{background:#642828;color:white;white-space:pre-wrap}
+#reset-camera{display:none}
+#compare-panel button:focus-visible,.compare-toggle:focus-visible,#compare-panel input:focus-visible,#compare-panel select:focus-visible{outline:2px solid #c2effc;outline-offset:3px}
+@media(max-width:470px){
+.compare-hud{top:calc(107px + env(safe-area-inset-top,0px));left:8px;right:8px}
+.compare-legend{font-size:10px;max-width:60%}
+.compare-toggle{padding:8px;font-size:11px}
+#compare-panel{top:calc(160px + env(safe-area-inset-top,0px));left:8px;right:8px;width:auto;bottom:calc(95px + env(safe-area-inset-bottom,0px));}
+.compare-delta{bottom:calc(104px + env(safe-area-inset-bottom,0px));left:8px}
+}
+@media(max-height:590px){#compare-panel{top:92px;bottom:52px}.compare-hud{top:85px}.compare-delta{bottom:80px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+<main class="layout">
+  <section class="stage" aria-label="XGO-Lite3 · две синхронные физические записи MuJoCo">
+    <div id="viewer" role="img" aria-label="Полноэкранное 3D-сравнение исходной модели Lite3 и выбранного физического эксперимента"></div>
+    <div class="compare-hud">
+      <div class="compare-legend"><span class="base">● Бирюзовый контур — исходная модель</span><div><span class="subject">● Тёмный робот — выбранные условия</span></div></div>
+      <button type="button" class="compare-toggle" id="compare-toggle" aria-controls="compare-panel" aria-expanded="false">⚖ Сравнение</button>
+    </div>
+    <div class="compare-delta" aria-live="off">
+      <small>Разница положения корпусов</small>
+      <strong id="delta">— мм</strong>
+      <span id="segment">Одна временная шкала · 9,5 с</span>
+    </div>
+    <section id="compare-panel" aria-label="Настройки и результаты сравнения S2" hidden>
+      <div class="compare-panel-head"><strong>Сравнение физических опытов</strong><button type="button" id="close-compare" aria-label="Закрыть настройки сравнения">×</button></div>
+      <label for="variant">Исходная модель (345 г) против:</label>
+      <select id="variant">
+        <option value="combined_stress">Совместный стресс-тест · максимальная разница</option>
+        <option value="uniform_mass_0610">Масса 610 г · условная развесовка</option>
+        <option value="actuator_cap_02256">Предел усилия ±0,2256 Н·м</option>
+        <option value="friction_020">Трение μ=0,20</option>
+        <option value="friction_035">Трение μ=0,35</option>
+      </select>
+      <div class="compare-actions">
+        <button type="button" id="overlay" aria-pressed="true">Наложение</button>
+        <button type="button" id="separate" aria-pressed="false">Два робота рядом</button>
+        <button type="button" id="top">Вид сверху</button>
+        <button type="button" id="camera">Сброс ракурса</button>
+      </div>
+      <div class="compare-options">
+        <label><input id="trails" type="checkbox" checked> Два пути</label>
+        <label><input id="feet" type="checkbox" checked> Контакты</label>
+        <label><input id="follow" type="checkbox"> Следить за парой</label>
+      </div>
+      <div class="compare-metrics">
+        <div><small>Отличие в конце</small><strong id="finaldelta">—</strong></div>
+        <div><small>Скольжение¹ (база / опыт)</small><strong id="slip">—</strong></div>
+        <div><small>Насыщение¹ (база / опыт)</small><strong id="saturation">—</strong></div>
+      </div>
+      <div class="compare-chart-head">Фактические траектории в масштабе 1:1</div>
+      <svg id="chart" viewBox="0 0 430 145" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Сопоставление двух измеренных траекторий"></svg>
+      <p class="compare-note">¹ Средние значения 10 прогонов, а не покадровые измерения. В режиме «рядом» сдвиг моделей служит только для сравнения. Исходные qpos/Fz не меняются. Масса 610 г и момент привода — условные параметры, не калибровка реального робота. Никаких MP4.</p>
+    </section>
+    <div id="notice" role="status">Загружаем исходные STL и траектории…</div>
+    <div id="err" role="alert" hidden></div>
+  </section>
+  <section class="controls" aria-label="Воспроизведение записи">
+    <div class="transport">
+      <button id="play" class="play" type="button" aria-label="Пауза">Ⅱ</button>
+      <div class="scrubber"><input id="seek" type="range" min="0" max="9.5" step="0.01" value="0" aria-label="Перемотка"></div>
+      <label class="speedlabel">Скорость <select id="speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+    </div>
+    <button id="reset-camera" type="button">Сбросить ракурс</button>
+    <span id="clock" hidden>00:00</span>
+  </section>
+</main>
+<script type="module" src="/hexapod/lite3-s2-compare-v3/app.js"></script>
+<script src="/hexapod/player-shell.js?v=20261107a"></script>
+</body>
+</html>
