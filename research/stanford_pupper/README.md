@@ -1,6 +1,8 @@
 # Stanford Pupper v3 — Этап 0: физика без обучения
 
-**Статус 2026-11-07:** `SOURCE_LOCKED=PASS`, `CPU_PHYSICS=PASS`, `STATIC_STANCE=PASS`, `DETERMINISTIC_REPLAY=PASS`; `PRETRAINED_POLICY=NOT_RUN`, `NATIVE_MJLAB_PARITY=NOT_VALIDATED`, `HARDWARE=NOT_RUN`.
+> **Продолжение (7 ноября 2026):** готовая нейросеть Stanford запущена в MuJoCo CPU, 5 секунд / 46,9 см по X, без обучения. Результат и ограничения — [PRETRAINED_CPU_README.md](PRETRAINED_CPU_README.md). Ниже сохранён отдельный протокол первоначального **этапа 0**, когда сеть ещё не запускалась.
+
+**Статус этапа 0 (2026-11-07):** `SOURCE_LOCKED=PASS`, `CPU_PHYSICS=PASS`, `STATIC_STANCE=PASS`, `DETERMINISTIC_REPLAY=PASS`; `PRETRAINED_POLICY=NOT_RUN`, `NATIVE_MJLAB_PARITY=NOT_VALIDATED`, `HARDWARE=NOT_RUN`.
 
 ## Что реально сделано
 
