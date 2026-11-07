@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 31,
+  "revision": 32,
   "entries": [
     {
       "id": "tripod-60",
@@ -1102,36 +1102,6 @@
           "path": "hexapod/lite3-s2-compare-v3/app.js",
           "size": 16846,
           "sha256": "e710d252e6ce81e81bcc204ca96c91fa4983ad075092e89f03ab2a25daabaece"
-        },
-        {
-          "path": "hexapod/data/lite3-s2-original_baseline-seed20261106-v1.json",
-          "sha256": "220f7f7fea3229cfa3bcce8032ccddcd7854df048d794c83e818ec33971ca913",
-          "size": 186229
-        },
-        {
-          "path": "hexapod/data/lite3-s2-friction_035-seed20261106-v1.json",
-          "sha256": "ca4db7bee8e750a6e413e67293bdcc2739e8a811c551a07706f9dd6273cd6229",
-          "size": 186223
-        },
-        {
-          "path": "hexapod/data/lite3-s2-friction_020-seed20261106-v1.json",
-          "sha256": "d3d491b160d4cde53d6ee4d88b9a5048af2fe362df4b209da2e52c092ea0bb82",
-          "size": 186292
-        },
-        {
-          "path": "hexapod/data/lite3-s2-uniform_mass_0610-seed20261106-v1.json",
-          "sha256": "5003cea6959fedd19f3ac129cb3bc17c88ea78a36984a9b784fcc079475ac567",
-          "size": 186512
-        },
-        {
-          "path": "hexapod/data/lite3-s2-actuator_cap_02256-seed20261106-v1.json",
-          "sha256": "8cd7ddac1997625719cb3d781229d317be002ecb72315b0fc1a4ef6bee941805",
-          "size": 186386
-        },
-        {
-          "path": "hexapod/data/lite3-s2-combined_stress-seed20261106-v1.json",
-          "sha256": "5dfaf2726f487891caaba718d1fed00accc2ef8ddd4fe56f59afdbe71c592565",
-          "size": 186426
         }
       ]
     },
