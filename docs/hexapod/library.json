@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 34,
+  "revision": 35,
   "entries": [
     {
       "id": "tripod-60",
@@ -1427,6 +1427,71 @@
           "path": "hexapod/data/wheelbot-v2-brake-feedback-90.json",
           "sha256": "777babe4d60213f066e650ce071e1427f14b543330d9b994e0853d78241d97d0",
           "size": 6714
+        }
+      ]
+    },
+    {
+      "id": "sebaju-jump-v1",
+      "title": "SeBaJu · прыжок и баланс",
+      "detail": "13 с · настоящая динамика · прыжок 44 мм",
+      "duration_s": 13.0,
+      "href": "/hexapod/sebaju-jump-v1/",
+      "status": "passed",
+      "files": [
+        {
+          "path": "hexapod/sebaju-player.js",
+          "sha256": "ff02d988c88f922868492fabe5db401d3bbc3ff591a2f995dd01143e52727c4c",
+          "size": 10951
+        },
+        {
+          "path": "hexapod/sebaju-jump-v1/index.html",
+          "sha256": "1c55ffb5a0755966b0e6dfd5f39c756241c18a8f8c59de2b51dde388c2c535e7",
+          "size": 3365
+        },
+        {
+          "path": "hexapod/data/sebaju-jump-v1.json",
+          "sha256": "b23cd325f22b9ed6b9445e7930b935a81a3aa2ce97498f4fe39156de6fa399a7",
+          "size": 40334
+        }
+      ]
+    },
+    {
+      "id": "sebaju-tip12-v1",
+      "title": "SeBaJu · падение набок",
+      "detail": "18 с · импульс 12 Н·м · не встал",
+      "duration_s": 18.0,
+      "href": "/hexapod/sebaju-tip12-v1/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/sebaju-tip12-v1/index.html",
+          "sha256": "8f407d339cebc0871f2343b45c95ce5a6f01663ce2e42cab3ef2097b44d572b0",
+          "size": 3317
+        },
+        {
+          "path": "hexapod/data/sebaju-tip12-v1.json",
+          "sha256": "9d0f556901fa45845312158fefde788add9964c94d4d653c50b24a4119f1a70c",
+          "size": 58095
+        }
+      ]
+    },
+    {
+      "id": "sebaju-tip20-long-v1",
+      "title": "SeBaJu · переворот и ожидание",
+      "detail": "30 с · импульс 20 Н·м · не встал",
+      "duration_s": 30.0,
+      "href": "/hexapod/sebaju-tip20-long-v1/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/sebaju-tip20-long-v1/index.html",
+          "sha256": "1f43e1c678f63d097c2cef8f3c2e8872a7627127f170a7bcbabb96dbb9e962bc",
+          "size": 3345
+        },
+        {
+          "path": "hexapod/data/sebaju-tip20-long-v1.json",
+          "sha256": "654aff33009e672549726b1c9647ed24e2515d12f401e3c5e5478f2e6df4941d",
+          "size": 77149
         }
       ]
     }
