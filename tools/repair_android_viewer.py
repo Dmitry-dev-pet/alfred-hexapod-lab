@@ -5,7 +5,7 @@ import json, os, runpy, shutil, signal, socket, subprocess, sys, tempfile, time
 import urllib.error, urllib.request
 
 REPO = "Dmitry-dev-pet/alfred-hexapod-lab"
-COMMIT = "79392f55172a861b692404a09a7fe08194b4367b"  # root always opens library, cached HTML fixed
+COMMIT = "c3f4da602cdb3129b37e4c1b7e9c1efb4ce9254e"  # full-screen S2 comparison, catalog v26
 BASE = f"https://raw.githubusercontent.com/{REPO}/{COMMIT}/"
 DEST = Path.home() / "hexapod-viewer-local"
 LOCAL = "http://127.0.0.1:8808"
@@ -129,21 +129,21 @@ def main():
     print("Сервер подтвердил новый интерфейс и отключённый авто-возврат", flush=True)
     before = api("/api/library")
     print("Локальный каталог: v" + str(before.get("revision")), flush=True)
-    if before.get("revision", 0) >= 25 and any(
-            x.get("id") == "lite3-s2-compare-v2" for x in before.get("entries", [])):
+    if before.get("revision", 0) >= 26 and (DEST / "hexapod/lite3-s2-compare-v3/index.html").is_file() and any(
+            x.get("id") == "lite3-s2-compare-v2" and x.get("href") == "/hexapod/lite3-s2-compare-v3/" for x in before.get("entries", [])):
         print("Каталог уже актуален; ничего повторно не скачиваю.", flush=True)
         refresh, after = {"added": 0}, before
     else:
         print("Синхронизирую библиотеку...", flush=True)
         refresh = api("/api/refresh", post=True)
         after = api("/api/library")
-    if after.get("revision", 0) < 25 or not any(
-            x.get("id") == "lite3-s2-compare-v2" for x in after.get("entries", [])):
-        raise Blocked("Библиотека v25 и сравнение Lite3 не подтверждены")
+    if after.get("revision", 0) < 26 or not any(
+            x.get("id") == "lite3-s2-compare-v2" and x.get("href") == "/hexapod/lite3-s2-compare-v3/" for x in after.get("entries", [])):
+        raise Blocked("Библиотека v26 и полноэкранное сравнение Lite3 не подтверждены")
     print("УСПЕХ: v%s, записей %s, новых %s" % (
         after["revision"], len(after["entries"]), refresh.get("added", "?")), flush=True)
     print("Открой библиотеку: " + LOCAL + "/hexapod/?library=1&nav=20261107a", flush=True)
-    print("Сравнение Lite3: " + LOCAL + "/hexapod/lite3-s2-compare-v2/?v=" +
+    print("Сравнение Lite3: " + LOCAL + "/hexapod/lite3-s2-compare-v3/?v=" +
           str(after["revision"]), flush=True)
 
 if __name__ == "__main__":
