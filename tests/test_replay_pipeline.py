@@ -108,6 +108,13 @@ class PipelineTests(unittest.TestCase):
             pipe.package(self.root, self.job)
         self.assertFalse((self.docs / "wheelbot-next-v1").exists())
 
+    def test_title_replacement_can_appear_in_only_one_template_file(self):
+        template = self.docs / "wheelbot-self-righting-v1" / "index.html"
+        template.write_text(template.read_text() + "<h1>Old wheelbot title</h1>")
+        self.job["player"]["replacements"] = {"Old wheelbot title": "New wheelbot title"}
+        pipe.package(self.root, self.job)
+        self.assertIn("New wheelbot title", (self.docs / "wheelbot-next-v1/index.html").read_text())
+
     def test_renderer_must_reference_new_file(self):
         template = self.docs / "wheelbot-self-righting-v1" / "app.js"
         template.write_text('console.log("wheelbot-self-righting-v1");')
