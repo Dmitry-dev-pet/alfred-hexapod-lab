@@ -100,8 +100,21 @@ def load_spec(filename: Path) -> dict:
     trace, replay, player = job.get("trace"), job.get("replay"), job.get("player")
     require(all(isinstance(x, dict) for x in (trace, replay, player)), "Incomplete replay contract")
     inside(ROOT, trace.get("path", ""), prefix="results/")
-    require(all(isinstance(trace.get(k), str) and trace[k] for k in
-                ("samples_field", "time_field", "qpos_field")), "Incomplete raw-trace selectors")
+    require(isinstance(trace.get("samples_field"), str) and trace["samples_field"],
+            "Missing trace samples field")
+    layout = trace.get("sample_format", "object")
+    require(layout in ("object", "array"), "Unknown physical sample layout")
+    if layout == "object":
+        require(all(isinstance(trace.get(k), str) and trace[k] for k in
+                    ("time_field", "qpos_field")), "Incomplete object trace selectors")
+    else:
+        indices = trace.get("qpos_slice")
+        ti = trace.get("time_index")
+        require(type(ti) is int and ti >= 0 and isinstance(indices, list) and
+                len(indices) == 2 and all(type(i) is int for i in indices) and
+                0 <= indices[0] < indices[1] and indices[1] <= 1000,
+                "Invalid array-based physical sample selectors")
+
     rp = replay.get("path")
     require(rp == "hexapod/data/" + sid + ".json", "Replay must have an immutable per-ID JSON path")
     require(isinstance(replay.get("format"), str) and replay["format"], "Replay format required")
@@ -123,8 +136,15 @@ def verify_trace(root: Path, job: dict) -> str:
     prev = None
     first = None
     for sample in samples:
-        require(isinstance(sample, dict), "Non-object raw physics sample")
-        t, q = sample.get(spec["time_field"]), sample.get(spec["qpos_field"])
+        if spec.get("sample_format", "object") == "array":
+            i0, i1 = spec["qpos_slice"]
+            ti = spec["time_index"]
+            require(isinstance(sample, list) and len(sample) > max(ti, i1 - 1),
+                    "Missing full array-based physical sample")
+            t, q = sample[ti], sample[i0:i1]
+        else:
+            require(isinstance(sample, dict), "Non-object raw physics sample")
+            t, q = sample.get(spec["time_field"]), sample.get(spec["qpos_field"])
         require(number(t) and (prev is None or t > prev), "Non-monotone physics time")
         require(isinstance(q, list) and len(q) >= 3 and all(number(x) for x in q),
                 "Missing/non-finite physical qpos")
