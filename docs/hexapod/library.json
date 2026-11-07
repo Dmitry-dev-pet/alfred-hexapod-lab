@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 26,
+  "revision": 27,
   "entries": [
     {
       "id": "tripod-60",
@@ -1132,6 +1132,31 @@
           "path": "hexapod/data/lite3-s2-combined_stress-seed20261106-v1.json",
           "sha256": "5dfaf2726f487891caaba718d1fed00accc2ef8ddd4fe56f59afdbe71c592565",
           "size": 186426
+        }
+      ]
+    },
+    {
+      "id": "pupper-v3-cpu-stand-v1",
+      "title": "Stanford Pupper · стойка CPU",
+      "detail": "5 с · настоящая MuJoCo-физика, 1250 шагов · 13 оригинальных STL · без обучения нейросети",
+      "duration_s": 5.0,
+      "href": "/hexapod/pupper-stand-cpu-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/pupper-stand-cpu-v1/index.html",
+          "sha256": "0930cc1691c39e20b176c075dea194493d4e41deba01f3920141a321d8e039f3",
+          "size": 4890
+        },
+        {
+          "path": "hexapod/pupper-stand-cpu-v1/app.js",
+          "sha256": "7f5f2348728dde510cea6dc25ea3e1590563b1269346d1d80e5918ce9d869c2e",
+          "size": 12124
+        },
+        {
+          "path": "hexapod/data/pupper-v3-cpu-stance-5s-v1.json",
+          "sha256": "874b984c942cf3124f3c39b6bf40ea89ccfe3fc4ee20e9fa3e44812a4929ed52",
+          "size": 299677
         }
       ]
     }
