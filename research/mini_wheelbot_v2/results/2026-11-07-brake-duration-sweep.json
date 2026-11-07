@@ -19,7 +19,8 @@
     "final_tilt_deg",
     "upright_s",
     "max_omega_rad_s",
-    "contact_pen_mm", "warning"
+    "contact_pen_mm",
+    "warning"
   ],
   "runs": [
     [
@@ -90,7 +91,8 @@
       0.01,
       90.0,
       0.034,
-      886.569,     1.702,
+      886.569,
+      1.702,
       false
     ],
     [
@@ -228,7 +230,8 @@
     [
       0.3,
       "upstream_lqr_inverted",
-      5.0,     0.25,
+      5.0,
+      0.25,
       0.036,
       36.554,
       0.083,
