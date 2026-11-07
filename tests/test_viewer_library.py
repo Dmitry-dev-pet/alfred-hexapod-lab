@@ -77,6 +77,10 @@ class LibraryTests(unittest.TestCase):
             return data
         with patch.object(server, "remote_bytes", side_effect=fake_fetch):
             result = server.refresh_library()
+        progress = server.refresh_status()
+        self.assertEqual(progress["phase"], "install")
+        self.assertEqual(progress["checked"], 2)
+        self.assertEqual(progress["total"], 2)
         self.assertEqual(result["added"], 1)
         self.assertEqual(result["assets"], 2)
         self.assertEqual(json.loads(self.library.read_text())["revision"], 2)
@@ -87,6 +91,12 @@ class LibraryTests(unittest.TestCase):
             again = server.refresh_library()
         self.assertEqual(again["added"], 0)
         self.assertEqual(again["assets"], 0)
+
+    def test_status_snapshot_does_not_expose_mutable_shared_state(self):
+        server.refresh_status("download", checked=1, total=3, asset="hexapod/x.json")
+        snapshot = server.refresh_status()
+        snapshot["checked"] = 900
+        self.assertEqual(server.refresh_status()["checked"], 1)
 
     def test_mismatched_integrity_does_not_modify_library(self):
         entry = {
