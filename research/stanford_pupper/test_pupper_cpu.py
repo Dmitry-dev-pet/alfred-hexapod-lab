@@ -9,7 +9,7 @@ from reproduce_pupper import (
     git_blob_sha, read_pinned_xml, build_cpu_mjcf, load_model, run_free_stance,
 )
 
-XML = Path(__file__).with_name('pupper_v3.xml')
+XML = Path(__file__).parent / 'upstream' / 'pupper_v3.xml'
 
 class OriginalModelSmokeTests(unittest.TestCase):
     @classmethod
@@ -23,7 +23,7 @@ class OriginalModelSmokeTests(unittest.TestCase):
             read_pinned_xml(self._corrupted_copy())
 
     def _corrupted_copy(self):
-        p = Path(__file__).with_name('_altered_model.xml')
+        p = Path(__file__).parent / '_altered_model.xml'
         p.write_bytes(self.raw.replace(b'pupper_v3', b'pupper_vX', 1))
         self.addCleanup(p.unlink)
         return p
