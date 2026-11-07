@@ -191,7 +191,7 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
                 if abs(signed_roll) <= .8:
                     K = UPSTREAM_CONFIG["K_roll"]
                     states = (signed_roll, float(d.qvel[4]),
-                              float(d.qpos[reaction_qadr]), flywheel_speed)
+                              float(d.qpos[reaction_qadr]), omega)
                     source_feedback = -sum(k*x for k,x in zip(K,states))
                     sign = 1 if mode == "upstream_lqr" else -1
                     torque = float(np.clip(source_feedback * sign,-.5,.5))
