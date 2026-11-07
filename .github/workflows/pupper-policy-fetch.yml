@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   fetch:
@@ -16,6 +16,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: research/pupper-cpu-no-training-20261107
+          persist-credentials: true
       - name: Fetch original trained policy, pin Git blob checksum and inspect contract
         run: |
           mkdir -p /tmp/pupper_policy
@@ -36,6 +39,18 @@ jobs:
           (dest/'policy_contract.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
           print('POLICY_CONTRACT',json.dumps(summary,ensure_ascii=False)[:5000])
           PY
+      - name: Store exact pinned 6.8MB policy weights in research branch
+        run: |
+          cp /tmp/pupper_policy/default_policy.json research/stanford_pupper/default_policy.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/stanford_pupper/default_policy.json
+          if git diff --cached --quiet; then
+            echo 'Exact trained policy already saved'
+          else
+            git commit -m "research(pupper): mirror original SHA-verified Stanford pretrained policy"
+            git push origin HEAD:research/pupper-cpu-no-training-20261107
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: Stanford-Pupper-v3-default-pretrained-policy-locked
