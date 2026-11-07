@@ -36,6 +36,19 @@ SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 ID_RE = re.compile(r"^[a-z0-9-]{1,64}$")
 HREF_RE = re.compile(r"^/hexapod/(?:[a-z0-9-]+/)?$")
 REFRESH_LOCK = threading.Lock()
+REFRESH_STATUS_LOCK = threading.Lock()
+REFRESH_STATUS = {"phase": "idle", "checked": 0, "total": 0, "asset": "", "error": ""}
+
+
+def refresh_status(phase=None, **fields):
+    """A read-only progress snapshot for the browser while the POST is running."""
+    with REFRESH_STATUS_LOCK:
+        if phase is not None:
+            REFRESH_STATUS["phase"] = phase
+        REFRESH_STATUS.update(fields)
+        return dict(REFRESH_STATUS)
+
+
 ALLOWED_SUFFIX = {".json", ".html", ".css", ".js"}
 MAX_FILE_BYTES = 8_000_000
 MAX_ENTRIES = 120
@@ -124,6 +137,7 @@ def read_local_library():
 def refresh_library():
     """No background work. A single explicit browser click performs the refresh."""
     local = read_local_library()
+    refresh_status("github", checked=0, total=0, asset="", error="")
     branch = json.loads(remote_bytes(BRANCH_API, 100_000))
     sha = branch.get("commit", {}).get("sha", "")
     if not HEAD_RE.fullmatch(sha):
@@ -132,6 +146,9 @@ def refresh_library():
     remote = validate_catalog(json.loads(remote_bytes(base + "hexapod/library.json", 200_000)))
     if remote["revision"] < local["revision"]:
         raise ValueError("Remote library revision is older than local library")
+    file_total = sum(len(e.get("files", [])) for e in remote["entries"])
+    checked = 0
+    refresh_status("files", checked=checked, total=file_total)
     local_ids = {e["id"] for e in local["entries"]}
     remote_ids = {e["id"] for e in remote["entries"]}
     if not local_ids.issubset(remote_ids):
@@ -144,6 +161,8 @@ def refresh_library():
         for entry in remote["entries"]:
             for file in entry.get("files", []):
                 destination = safe_asset_path(file["path"])
+                refresh_status("files", checked=checked, total=file_total,
+                               asset=file["path"])
                 wanted_sha, expected_size = file["sha256"], file["size"]
                 if destination.exists():
                     if not destination.is_file() or destination.is_symlink():
@@ -154,10 +173,13 @@ def refresh_library():
                         if cached.get("sha256") != wanted_sha or cached.get("local_sha256") != existing:
                             raise ValueError("Immutable local asset differs: " + file["path"])
                         file["local_sha256"] = existing
+                    checked += 1
+                    refresh_status("files", checked=checked, total=file_total, asset="")
                     continue
                 if any(previous[1] == destination for previous in staged):
                     raise ValueError("Duplicate asset across simulations")
                 url = base + urllib.parse.quote(file["path"], safe="/")
+                refresh_status("download", checked=checked, total=file_total, asset=file["path"])
                 payload = remote_bytes(url, expected_size)
                 if len(payload) != expected_size or hashlib.sha256(payload).hexdigest() != wanted_sha:
                     raise ValueError("Remote asset integrity mismatch: " + file["path"])
@@ -199,6 +221,9 @@ def refresh_library():
                 staging.parent.mkdir(parents=True, exist_ok=True)
                 staging.write_bytes(payload)
                 staged.append((staging, destination))
+                checked += 1
+                refresh_status("files", checked=checked, total=file_total, asset="")
+        refresh_status("install", checked=checked, total=file_total, asset="")
         # Never advertise a new simulation unless its page and all assets exist.
         staged_destinations = {destination for _, destination in staged}
         for item in remote["entries"]:
@@ -264,6 +289,9 @@ def run_server():
             self.wfile.write(data)
 
         def do_GET(self):
+            if urllib.parse.urlsplit(self.path).path == "/api/refresh-status":
+                self.send_json(refresh_status())
+                return
             if urllib.parse.urlsplit(self.path).path == "/api/library":
                 try:
                     self.send_json(read_local_library())
@@ -289,9 +317,15 @@ def run_server():
             if not REFRESH_LOCK.acquire(blocking=False):
                 self.send_json({"error": "Обновление уже выполняется"}, 409)
                 return
+            refresh_status("github", checked=0, total=0, asset="", error="")
             try:
-                self.send_json(refresh_library())
+                result = refresh_library()
+                refresh_status("done", asset="")
+                self.send_json(result)
             except Exception as ex:
+                refresh_status("error", asset="", error=str(ex))
+                print("Hexapod refresh failed:", type(ex).__name__, str(ex),
+                      file=sys.stderr, flush=True)
                 self.send_json({"error": "Обновление не выполнено: " + str(ex)}, 502)
             finally:
                 REFRESH_LOCK.release()
