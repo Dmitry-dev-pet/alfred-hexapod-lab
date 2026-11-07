@@ -1,7 +1,6 @@
 # Mini Wheelbot V2 — original CAD + physically constrained self-righting
 
-**Status (2026-11-07): SOURCE_AUDIT_ONLY.** Not yet a self-righting simulation, not yet a
-tablet-library entry. Previous `wheelbot-self-righting-v1` remains unchanged, and
+**Status (2026-11-07): VERIFIED_SOURCE_AND_PRELIMINARY_MUJOCO_NEGATIVE.** Eight physical MuJoCo runs completed; hardware-validated self-righting is not established; no new tablet-library entry. Previous `wheelbot-self-righting-v1` remains unchanged, and
 its near-vertical trajectory must **not** be reused for any V2 success claim.
 
 ## Provenance / upstream
@@ -106,13 +105,13 @@ not modified.
 
 The original identified chassis inertias violate the triangle inequality for
 physical rigid bodies:
-\`I_Bx + I_Bz = 3.95e-4 < I_By = 4.50e-4 kg·m²\`.
+`I_Bx + I_Bz = 3.95e-4 < I_By = 4.50e-4 kg·m²`.
 MuJoCo refused them. The source code applies and reports the nearest
 Euclidean admissible projection, **not** an assertion of revised real
 hardware parameters:
-\`[0.00012832667, 0.00043167333, 0.00030334667] kg·m²\`.
+`[0.00012832667, 0.00043167333, 0.00030334667] kg·m²`.
 
-Actual \`mj_step\` physics was executed for 8 runs (60°/90° initial roll ×
+Actual `mj_step` physics was executed for 8 runs (60°/90° initial roll ×
 0/0.03/0.10/0.20 N·m **assumed** torque caps), 8 seconds each, timestep 1ms
 (**64,000 physics integration steps**). Source CAD is used as authentic
 visual meshes; collisions are still approximate cylinders/box. Drive and
@@ -143,14 +142,14 @@ to Drive; their full SHA-256 identifiers can be regenerated from the code.
 
 ### Re-run on a connected CPU environment (not requiring Mac or GPU)
 
-\`\`\`sh
+```sh
 python3 -m pip install "mujoco==3.14.0" "trimesh" "numpy"
 python3 research/mini_wheelbot_v2/audit_original_cad.py --cache "$HOME/mini-wheelbot-original-cad"
 python3 -m unittest discover -s tests -p test_wheelbot_original_cad.py -v
 python3 research/mini_wheelbot_v2/simulate_mujoco_probe.py \
   --cache "$HOME/mini-wheelbot-original-cad" \
   --out "$HOME/mini-wheelbot-v2-probe" --seconds 8
-\`\`\`
+```
 
 **Unfinished validation gates:** original CAD/STEP frame alignment; drive wheel
 rim location and contact calibration; source-tested torque-speed-current
