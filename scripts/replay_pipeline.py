@@ -146,6 +146,8 @@ def verify_replay(root: Path, job: dict, trace_sha256: str) -> None:
             "Replay duration differs from experiment")
     frames = dotted(obj, spec.get("frames_field", "frames"))
     require(isinstance(frames, list) and len(frames) >= 2, "Empty replay frames")
+    require(all(isinstance(frame, (list, dict)) and len(frame) > 0 for frame in frames),
+            "Invalid recorded replay frames")
     require(len(frames) <= 200_000, "Excessive replay sample count")
     require(dotted(obj, spec["trace_sha256_field"]) == trace_sha256,
             "Replay not bound to recorded physical trace SHA-256")
@@ -167,16 +169,19 @@ def make_pages(root: Path, job: dict) -> dict[str, bytes]:
     require(0 < len(paths) <= 18, "Renderer template is unexpectedly large")
     output = {}
     changed = False
+    seen_replacements = {key: False for key in job["player"].get("replacements", {})}
     for path in paths:
         require(path.suffix in (".html", ".js", ".css"), "Binary/unsupported renderer template")
         body = bytes_of(path).decode("utf-8")
         replaced = body.replace(template, sid)
         changed |= replaced != body
         for old, new in job["player"].get("replacements", {}).items():
-            require(old in replaced, "Missing replacement marker: " + old)
-            replaced = replaced.replace(old, new)
+            if old in replaced:
+                seen_replacements[old] = True
+                replaced = replaced.replace(old, new)
         dest = "hexapod/" + sid + "/" + path.name
         output[dest] = replaced.encode("utf-8")
+    require(all(seen_replacements.values()), "Some renderer replacement markers were missing")
     require(changed, "Renderer template does not reference its original ID")
     wanted = "/" + job["replay"]["path"]
     require(any(wanted in payload.decode("utf-8") for payload in output.values()),
