@@ -1,6 +1,8 @@
 """Offline tests for SeBaJu physics-result classification (no MuJoCo needed)."""
 import importlib.util
 from pathlib import Path
+import tempfile
+from unittest.mock import patch
 import unittest
 
 SRC = Path(__file__).resolve().parents[1] / "research/sebaju/run_headless.py"
@@ -75,6 +77,30 @@ class SeBaJuAnalysisTests(unittest.TestCase):
         self.assertTrue(result["physical_tip_observed"])
         self.assertTrue(result["self_righted"])
         self.assertGreater(result["self_righted_at_s"], 13.0)
+
+    def test_fallen_body_contact_never_counts_as_flight(self):
+        self.assertFalse(mod.whole_robot_airborne(12.4, 0.18, []))
+        self.assertFalse(mod.whole_robot_airborne(5.9, 0.04, ["torso_box"]))
+        self.assertTrue(mod.whole_robot_airborne(5.9, 0.04, []))
+
+    def test_offline_snapshot_rejects_mutated_model_and_controller(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            model = root / mod.MODEL
+            ctrl = root / mod.CONTROLLER
+            model.write_bytes(b"test model")
+            ctrl.write_bytes(b"test controller")
+            hashes = {mod.MODEL: mod.git_blob_sha(model.read_bytes()),
+                      mod.CONTROLLER: mod.git_blob_sha(ctrl.read_bytes())}
+            with patch.dict(mod.UPSTREAM_FILE_BLOBS, hashes, clear=True):
+                self.assertEqual(mod.require_upstream(root, True), root)
+                ctrl.write_bytes(b"malicious controller")
+                with self.assertRaises(RuntimeError):
+                    mod.require_upstream(root, True)
+                ctrl.write_bytes(b"test controller")
+                model.write_bytes(b"wrong model")
+                with self.assertRaises(RuntimeError):
+                    mod.require_upstream(root, True)
 
     def test_empty_observations_fail_closed(self):
         with self.assertRaises(ValueError):
