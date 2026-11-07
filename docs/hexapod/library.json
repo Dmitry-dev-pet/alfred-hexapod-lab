@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 33,
+  "revision": 34,
   "entries": [
     {
       "id": "tripod-60",
@@ -1382,6 +1382,51 @@
           "path": "hexapod/data/wheelbot-v2-feedback-trial-90.json",
           "sha256": "189b477de47a46c911461db4e7fb0ef19935d8133646484f7a01a9c6efeafe1d",
           "size": 7350
+        }
+      ]
+    },
+    {
+      "id": "wheelbot-v2-brake-short-90",
+      "title": "Mini Wheelbot · обратный импульс 0,30 с",
+      "detail": "8 с · 0,127 с возле вертикали · затем падение · MuJoCo V2",
+      "duration_s": 8,
+      "href": "/hexapod/wheelbot-v2-brake-short-90/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/wheelbot-v2-brake-player.js",
+          "sha256": "2d2ebd0198b7eb9f855c5395fe0ea361f0ea634c8665d017bc1790844d008e62",
+          "size": 10270
+        },
+        {
+          "path": "hexapod/wheelbot-v2-brake-short-90/index.html",
+          "sha256": "46a030b4819b4c774a8855b1e11642d9783a0b530cd963027d27db548d581155",
+          "size": 3557
+        },
+        {
+          "path": "hexapod/data/wheelbot-v2-brake-short-90.json",
+          "sha256": "3a09b8a24387e8d4ae451910db69061e5a78bf3b38f625d8986b70497ae040bf",
+          "size": 5630
+        }
+      ]
+    },
+    {
+      "id": "wheelbot-v2-brake-feedback-90",
+      "title": "Mini Wheelbot · короткий импульс + ранний LQR",
+      "detail": "8 с · 1,692 с возле вертикали · затем падение · экспериментальный LQR",
+      "duration_s": 8,
+      "href": "/hexapod/wheelbot-v2-brake-feedback-90/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/wheelbot-v2-brake-feedback-90/index.html",
+          "sha256": "f55e4372c18418d0cd085d3ec9c1ba6391e62751061ff0a7dfa6b8306a8be819",
+          "size": 3615
+        },
+        {
+          "path": "hexapod/data/wheelbot-v2-brake-feedback-90.json",
+          "sha256": "777babe4d60213f066e650ce071e1427f14b543330d9b994e0853d78241d97d0",
+          "size": 6714
         }
       ]
     }
