@@ -56,7 +56,8 @@
   "tests": {
     "count": 4,
     "passed": 4,
-    "repeatability": "same initial conditions, exact frame-by-frame equality in 1s double replay"
+    "repeatability": "same initial conditions, exact frame-by-frame equality in 1s double replay",
+    "five_second_repeatability": "Two independently executed 5s traces have identical SHA256: 6dfee09d1638fce00160ceed44addb35589af8912f0f870f700a334eb1049777"
   },
   "scope": {
     "removed": "13 zero-density non-colliding STL visual meshes",
