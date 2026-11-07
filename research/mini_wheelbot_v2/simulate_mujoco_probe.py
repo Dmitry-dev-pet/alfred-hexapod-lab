@@ -18,6 +18,7 @@ import xml.etree.ElementTree as ET
 
 import mujoco
 import numpy as np
+import trimesh
 
 from audit_original_cad import acquire
 
@@ -33,14 +34,49 @@ DURATION_S = 8.0
 REPLAY_INTERVAL = 0.05
 
 
+def source_inertia_for_mujoco(params: dict) -> dict:
+    """Project identified principal inertias minimally onto triangle inequality.
+
+    Official sysid I_Bx + I_Bz < I_By, impossible for a rigid body's
+    principal moments. Explicit Euclidean correction is an experiment,
+    not a statement about the real hardware.
+    """
+    original = [params["I_Bx"], params["I_By"], params["I_Bz"]]
+    ix, iy, iz = original
+    violation = max(0., iy - ix - iz)
+    if violation:
+        delta = violation / 3.
+        ix, iy, iz = ix + delta, iy - delta, iz + delta
+    if any(v <= 0 for v in (ix, iy, iz)) or max(ix, iy, iz) > sum((ix, iy, iz)) - max(ix, iy, iz) + 1e-12:
+        raise ValueError("Inertia projection failed")
+    return {
+        "original_kg_m2": original,
+        "projected_kg_m2": [ix, iy, iz],
+        "triangle_violation_kg_m2": violation
+    }
+
+
+def compiled_visual_body(cache: Path) -> Path:
+    """Convert verified original binary STL to OBJ without decimation."""
+    cad = cache / CAD_SUBDIR
+    source = cad / "body.stl"
+    derived = cad / "body-source-unaltered-faces.obj"
+    if not derived.is_file():
+        src = trimesh.load(source, force="mesh")
+        if len(src.faces) != 255098:
+            raise ValueError("Unexpected original triangle count")
+        src.export(derived)
+    return derived
+
+
 def build_xml(cache: Path, params: dict, torque_limit: float) -> str:
     cad = cache / CAD_SUBDIR
-    body, rotor = (cad / "body.stl"), (cad / "actuator_rotor.stl")
+    body, rotor = compiled_visual_body(cache), (cad / "actuator_rotor.stl")
     for path in (body, rotor):
         if not path.is_file():
             raise RuntimeError("Missing verified original source mesh: " + str(path))
     mb, mw = params["m_B"], params["m_WR"]
-    ix, iy, iz = (params[k] for k in ("I_Bx", "I_By", "I_Bz"))
+    ix, iy, iz = source_inertia_for_mujoco(params)["projected_kg_m2"]
     iside, iaxial = params["I_Wxz_Ryz"], params["I_Wy_Rx"]
     wheel_r = params["r_W"]
     # Axis convention inferred from sysid names: drive hinge Y / reaction X.
@@ -235,6 +271,12 @@ def main():
         "upstream_commit": verified["upstream_commit"],
         "original_meshes_verification": {x["path"]: x["sha256"]
                                         for x in verified["source_files"]},
+        "inertia_correction": source_inertia_for_mujoco(params),
+        "visual_mesh_conversion": {
+            "method": "trimesh STL-to-OBJ, all 255098 triangles retained",
+            "derived_obj_sha256": hashlib.sha256(
+                compiled_visual_body(args.cache).read_bytes()).hexdigest()
+        },
         "model_xml_sha256_example": hashlib.sha256(
             build_xml(args.cache, params, .1).encode()).hexdigest(),
         "assumptions": [
@@ -243,6 +285,8 @@ def main():
             "±0.043m wheel-center placements are assumed, not measured from STEP",
             "22.2V assumed from 6 cells; 380 KV is no-load speed estimate, not real RPM cap",
             "Torque test set is hypothetical 0 to 0.20 Nm, not verified drive/battery limit",
+            "Original sysid inertias violate rigid-body triangle inequality; minimum Euclidean correction used",
+            "MuJoCo STL decoder triangle limit: converted original body STL to OBJ with all triangles retained",
             "The model is not a physical digital twin and cannot verify self-righting"
         ],
         "runs": runs
