@@ -26,6 +26,7 @@ import mujoco
 WORK=Path(__file__).resolve().parent
 sys.path.insert(0,str(WORK))
 from reproduce_pupper import load_model,read_pinned_xml,DEFAULT_POSE,PUPPER_JOINTS,FOOT_GEOMS,FOOT_SITES,TORQUE_LIMIT,contact_snapshot
+from history_contract import advance_history
 
 POLICY_SHA256='ecf3a4ab8ea392dccda64977faa29d813dadc0d6099ae3abff5f84cc57156712'
 
@@ -146,8 +147,9 @@ def launch(policy,weights,cmd_vx=0.20,duration=8.,delay=4,warmup=1.,fade=1.,seed
                 scaled=multiplier*action*action_scale
                 current_command=np.clip(baseline+scaled,low,high)
                 last_action=(multiplier*action).astype(np.float32)
-                history[1:]=history[:-1].copy()
-                history[0,36:48]=last_action
+                advance_history(history,last_action)
+                # Keep gait_reference in this frame: Stanford stores the next
+                # last_action in the *next* frame at offsets 24:36 after rotate.
                 policy_events.append({'t':round(t,5),'command':list(cmd),'mean_action':float(np.mean(action)),
                                        'max_abs_action':float(np.max(np.abs(action))),
                                        'mean_target_delta':float(np.mean(current_command-baseline))})
