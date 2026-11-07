@@ -36,7 +36,7 @@ class OfficialCadGateTests(unittest.TestCase):
 
     def test_git_blob_digest_is_content_addressed(self):
         b = fixture_stl()
-        expected = hashlib.sha1(f"blob {len(b)}\\0".encode() + b).hexdigest()
+        expected = hashlib.sha1(b"blob " + str(len(b)).encode() + bytes([0]) + b).hexdigest()
         self.assertEqual(gate.git_blob_sha1(b), expected)
         with self.assertRaises(ValueError):
             gate.verify_asset("hardware/mechanical/meshes/mini-wheelbot.stl", b)
