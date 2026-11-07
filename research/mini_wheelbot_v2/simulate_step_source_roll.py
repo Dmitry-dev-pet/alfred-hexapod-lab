@@ -155,8 +155,10 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
     mins, max_torque, max_omega, collision_steps, max_pen_mm = 180.,0.,0.,0,0.
     time_with_upright, prev_in_upright, overspeed_hits = 0.,None,0
     frames = []
-    max_omega_sample = 0
+    numerical_warning = None
+    last_step = 0
     for k in range(n):
+        last_step = k
         tilt = body_tilt(m,d,body_id)
         mins = min(mins,tilt)
         if tilt <= 10:
@@ -183,12 +185,35 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
                            *[round(float(v),6) for v in d.qpos],
                            round(tilt,3),round(omega,3),round(torque,4),d.ncon])
         mujoco.mj_step(m,d)
+        warning_records = [
+            {"warning_index": i, "count": int(stat.number)}
+            for i, stat in enumerate(d.warning) if stat.number > 0
+        ]
+        if warning_records:
+            numerical_warning = {
+                "simulation_time_s": float(d.time),
+                "record": warning_records,
+            }
+            # Fail closed: MuJoCo can reset unstable qpos/qvel after warning.
+            # Continuing would generate false "standing up" segments.
+            break
         if not (np.isfinite(d.qpos).all() and np.isfinite(d.qvel).all()):
-            raise RuntimeError("MuJoCo numerical divergence")
+            numerical_warning = {
+                "simulation_time_s": float(d.time),
+                "record": [{"error": "non-finite state"}],
+            }
+            break
     final_tilt=body_tilt(m,d,body_id)
-    success=bool(final_tilt<=10 and time_with_upright>=1 and overspeed_hits==0)
+    observed_upright=bool(final_tilt<=10 and time_with_upright>=1)
+    success=bool(observed_upright and overspeed_hits==0 and
+                 numerical_warning is None and speed_cap)
     return {
-       "status": "PROVISIONAL_GEOMETRY_MOTOR_AND_CONTROLLER_MAPPING",
+       "status": ("NUMERICAL_DIVERGENCE" if numerical_warning is not None
+                  else "PROVISIONAL_GEOMETRY_MOTOR_AND_CONTROLLER_MAPPING"),
+       "numerical_warning": numerical_warning,
+       "simulated_duration_s": round(float(d.time),5),
+       "motor_limits_hardware_validated": False,
+       "source_joint_label_parity_validated": False,
        "start_roll_deg":start_roll,"mode":mode,"speed_cap_assumed":speed_cap,
        "min_tilt_deg":round(mins,3),"final_tilt_deg":round(final_tilt,3),
        "longest_upright_s":round(time_with_upright,3),
@@ -197,6 +222,7 @@ def run_one(cache, params, step, start_roll=90, mode="upstream", speed_cap=True,
        "speed_limit_command_blocks":overspeed_hits,
        "contact_steps":collision_steps,
        "max_contact_penetration_mm":round(max_pen_mm,3),
+       "observed_upright_duration_and_final_pose": observed_upright,
        "meets_provisional_up_criterion":success,
        "frames":frames
     }
