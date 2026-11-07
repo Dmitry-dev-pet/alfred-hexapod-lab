@@ -16,7 +16,8 @@ UI = (
     "hexapod/player-shell.js", "hexapod/player-shell.css",
 )
 SOURCES = tuple("docs/" + p for p in UI) + (
-    "tools/local_viewer_server.py", "tools/upgrade_android_ui.py"
+    "tools/local_viewer_server.py", "tools/upgrade_android_ui.py",
+    "docs/hexapod/library.json",
 )
 
 class Blocked(Exception):
@@ -94,7 +95,13 @@ def main():
             raise Blocked("Загруженный сервер не поддерживает библиотеку")
         upgrader = runpy.run_path(str(root / "tools/upgrade_android_ui.py"))["upgrade"]
         stop_owned_server()
-        result = upgrader(root, DEST)
+        try:
+            result = upgrader(root, DEST)
+        except Exception:
+            # The official upgrader rolls back partial updates; restore previous viewer service.
+            subprocess.run([sys.executable, str(DEST / "local_viewer_server.py"), "start"],
+                           cwd=DEST, capture_output=True, text=True, timeout=25)
+            raise
         print("Резервная копия:", result["backup"], flush=True)
     started = subprocess.run(
         [sys.executable, str(DEST / "local_viewer_server.py"), "start"],
