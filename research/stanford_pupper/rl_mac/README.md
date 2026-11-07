@@ -1,6 +1,6 @@
 # Stanford Pupper v3 — Mac M4 / SB3 PPO training pilot (2026-11-07)
 
-**Status: CODE_PREPARED / CPU_PHYSICS_TESTED / MAC_PPO_NOT_RUN.**
+**Status: MAC_CPU_PPO_SMOKE_VERIFIED (4096 steps, checkpoint saved) / WALKING_NOT_LEARNED.** [Actual Mac M4 run, measurements and Drive receipt](MAC_M4_CPU_SMOKE_RESULT_2026-11-07.md).
 Separate draft research branch; **do not merge into `main`** before owner approval. No Apple runner, GitHub Actions physics, background service, real robot or automated robot deployment.
 
 ## Scientific goal
@@ -31,6 +31,8 @@ From repository root, using existing local Mac interactive executor (not a new r
 bash research/stanford_pupper/rl_mac/run_on_mac.sh
 ```
 
+**Verified run:** This script was actually run through the existing non-admin `M4-ci-private` GitHub self-hosted Mac runner, [Actions #42379724161](https://github.com/Dmytry-lab/runner-smoke/actions/runs/42379724161). The executed code was pinned to commit `6d22db2a119fb9cf7fb2cab180bd748d7830b445`; it passed 15/15 tests, created a 4096-step PPO checkpoint and evaluated the 20-second route. See the [measured report](MAC_M4_CPU_SMOKE_RESULT_2026-11-07.md). The following command remains a manual alternative for repeating the experiment, not a claim that the repo has a general-purpose remote shell.
+
 This script creates an **isolated persistent venv** at `$HOME/alfred-robotics/.venvs/pupper-sb3-py313` once, using Python 3.13 and pinned `torch==2.10.0`, `mujoco==3.14.0`, `numpy==2.3.5`, `gymnasium==1.2.2`, `stable-baselines3==2.9.2`. It prints Mac CPU/MPS capability; runs **4096 training environment timesteps over four independent Gym environments** on CPU (not 4096 per env), then loads the checkpoint on CPU and evaluates one full 20-second multi-axis route. Writes checkpoint+receipts under `$HOME/alfred-robotics/pupper-training/smoke-cpu-20261107/` **outside GitHub**. On rerun use a new `PUPPER_RUN_OUTPUT` directory (never clobber checkpoints). Does not transmit proprietary binaries or request secrets. The original MJCF is already part of the reviewed research branch.
 
 For a later larger run (only after smoke has completed and been examined):
@@ -54,7 +56,7 @@ Offline in ChatGPT CPU Linux x86_64 / Python 3.13.5, MuJoCo 3.14.0 independently
 - 2 Gymnasium integration tests are defined but **not executed in current CPU container** because Gymnasium/SB3 wheels aren't available here. They **must** pass on Mac before PPO smoke.
 - Placeholder zero-action policy evaluated on the 20s route: XY RMSE 0.13368m/s, yaw RMSE 0.16658rad/s, 0 fall-guard ticks, world X≈−7.5mm. This is **not an RL-trained result** and illustrates why fall count alone is insufficient.
 
-On Mac, report actual macOS version, `uname -m` (require `arm64`), Python/tool versions, peak RSS, Mac M4 vs MPS availability, installed package hashes (`pip freeze` in a sanitized receipt), both integration tests, PPO smoke exit code, checkpoint SHA-256, training wall seconds, steps/sec, PPO reward/error stats, 20s independent evaluation output, and logs. **Mac execution status currently NOT RUN.**
+On Mac, report actual macOS version, `uname -m` (require `arm64`), Python/tool versions, peak RSS, Mac M4 vs MPS availability, installed package hashes (`pip freeze` in a sanitized receipt), both integration tests, PPO smoke exit code, checkpoint SHA-256, training wall seconds, steps/sec, PPO reward/error stats, 20s independent evaluation output, and logs. **Mac execution now verified** in the separate pinned one-off workflow; see [evidence](MAC_M4_CPU_SMOKE_RESULT_2026-11-07.md). Longer/MPS training has **not** been executed.
 
 ## Known limits
 
