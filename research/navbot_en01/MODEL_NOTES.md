@@ -1,6 +1,6 @@
 # NavBot EN01 — actuator-grounded MuJoCo prototype (P0)
 
-Status: **APPROXIMATE MODEL / NOT PHYSICS-VALIDATED** (2026-11-08).
+Status: **APPROXIMATE MODEL / CPU PHYSICS EXERCISED, HARDWARE NOT VALIDATED** (2026-11-08).
 Owner project: [Alfred Hexapod Lab](../../README.md), independent of the SeBaJu W0 baseline in [#93](https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/issues/93).
 Do not merge into main without owner review. Do not publish a replay until it comes from a measured MuJoCo trajectory.
 
@@ -40,7 +40,7 @@ The real EN01 firmware does contain `jump_loop()` at lines ~504–534.
 It first sends mirrored positions `2048 +/- (12 + 8.4*(80-32))` = approx `2048 +/- 415.2` ticks, then `2048 +/- (12 + 8.4*(40-32))` = `2048 +/- 79.2` ticks.
 At 4096 counts/revolution these are **0.637 rad** and **0.121 rad** from 2048; right-side servo direction is mechanically mirrored.
 The source advances phases by *loop iterations* (30+, 200+), not clocked milliseconds. Its original physical timing cannot be inferred from that code alone.
-Our `probe.py` reproduces the two commanded angular setpoints but uses explicitly **assumed timings**, PD gains, current/torque limits and wheel stabilizer; it is not the original controller.
+Our `probe.py` reproduces the two commanded angular setpoints with **assumed timings**, tuned PD gains, motor limits and a wheel stabilizer; it is not the original controller. Slow preparation exists as a diagnostic comparator, not a claim of upstream behaviour.
 
 ## Reproducible gate
 
@@ -52,10 +52,12 @@ python -m unittest discover -s tests -p 'test_navbot_en01_model.py' -v
 With an **existing authorised MuJoCo 3.x runtime**:
 ```sh
 python research/navbot_en01/probe.py --mode stand --duration 6 --out .cache/navbot/stand.json
+python research/navbot_en01/probe.py --mode crouch --duration 6 --out .cache/navbot/crouch.json
 python research/navbot_en01/probe.py --mode jump --duration 6 --out .cache/navbot/jump.json
+python research/navbot_en01/probe.py --mode jump_fast --duration 6 --out .cache/navbot/jump_fast.json
 ```
 
-Do not run physics in GitHub Actions. No new Mac runner/GPU is needed. No run has been claimed here: MuJoCo is not installed in the authoring environment.
+Do not run physics in GitHub Actions. No new Mac runner/GPU is needed. **Physics has now been run** in the restored offline Linux CPU MuJoCo 3.14.0. Results and failures are recorded in [CPU physical probe receipt](results/cpu_mu3140_20261108.md).
 
 Probe outputs full `qpos`, `qvel`, actuator commands, rigid-body pitch, wheel clearance, whole-body ground contacts, servo peak flag, and source/assumption markers. Flight is reported only for whole-body no-floor-contact intervals >=20 ms after the command, followed by contact and a separate >=2 s landing-stability assessment. Any result without contact/velocity and source proof is incomplete.
 

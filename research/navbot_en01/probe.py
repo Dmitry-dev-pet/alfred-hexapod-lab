@@ -21,12 +21,19 @@ def clamp(value: float, maximum: float) -> float:
 
 
 def setpoint(t: float, mode: str) -> tuple[float, bool]:
-    """Return model-space symmetric hip angle and a short stall-envelope trial flag."""
+    """Probe targets. Timings are OUR assumptions, not original firmware timing."""
     if mode == "stand":
         return EXTEND_RAD, False
-    if mode == "crouch":
-        return (EXTEND_RAD if t < 1.5 else CROUCH_RAD), False
-    if mode == "jump":
+    if mode in ("crouch", "jump"):
+        # Limited-speed preparation tests if normal motion destabilises the robot.
+        if t < 1.5:
+            return EXTEND_RAD, False
+        if t < 3.35:
+            return EXTEND_RAD + (CROUCH_RAD - EXTEND_RAD) * (t - 1.5) / 1.85, False
+        if mode == "crouch" or t < 3.60:
+            return CROUCH_RAD, False
+        return EXTEND_RAD, (3.60 <= t < 3.75)
+    if mode == "jump_fast":
         if t < 1.5:
             return EXTEND_RAD, False
         if t < 2.1:
@@ -56,13 +63,25 @@ def run(mode: str, duration: float, output: Path) -> dict:
     # Only the measured source contains mirrored servo position counts;
     # model-space hip axes are aligned, so both targets use the same sign.
     frames = []
+    launch_t = {"jump": 3.6, "jump_fast": 2.1}.get(mode)
     flight_start = None
+    flight_takeoff_upright = False
+    flight_takeoff_vz = 0.0
     flight_durations = []
+    accepted_flights = []
     contacted_after_launch = False
-    flight_seen = False
+    qualified_landing_started = False
     stable_after_touchdown_s = 0.0
+    max_stable_landing_s = 0.0
     max_min_wheel_clearance = -1.0
     floor_penetration_max = 0.0
+    prelaunch_samples = 0
+    prelaunch_valid_samples = 0
+    max_abs_pitch = 0.0
+    torso_ground_steps = 0
+    max_abs_x = 0.0
+    mujoco.mj_forward(m, d)
+    prev_com_z = float(d.subtree_com[torso, 2])
 
     steps = math.ceil(duration / m.opt.timestep)
     for step in range(steps):
@@ -86,7 +105,7 @@ def run(mode: str, duration: float, output: Path) -> dict:
         mean_wheel_rate = sum(float(d.qvel[m.jnt_dofadr[joint[n]]])
                               for n in ("wheel_left", "wheel_right")) / 2
         # Diagnostic wheel stabilizer, NOT original firmware and NOT tuned to EN01.
-        wheel_ctrl = clamp(-0.22 * pitch - 0.016 * gyro_y - 0.0004 * mean_wheel_rate,
+        wheel_ctrl = clamp(0.15 * pitch + 0.050 * gyro_y + 0.008 * mean_wheel_rate,
                            WHEEL_ASSUMED_NM)
         d.ctrl[actuator["wheel_left"]] = wheel_ctrl
         d.ctrl[actuator["wheel_right"]] = wheel_ctrl
@@ -109,22 +128,41 @@ def run(mode: str, duration: float, output: Path) -> dict:
         floor_penetration_max = max(floor_penetration_max, penetration)
         clearance = min(float(d.xpos[b, 2]) - 0.024
                         for b in (left_wheel_body, right_wheel_body))
-        if t >= 2.1 and mode == "jump":
-            max_min_wheel_clearance = max(max_min_wheel_clearance, clearance)
-            if not floor_ground:
-                if flight_start is None and contacted_after_launch:
-                    flight_start = float(d.time)
-            else:
-                contacted_after_launch = True
-                if flight_start is not None:
-                    duration_flight = float(d.time) - flight_start
-                    flight_durations.append(duration_flight)
-                    flight_seen |= duration_flight >= 0.020
-                    flight_start = None
-                if flight_seen and abs(pitch) < 0.35 and not torso_ground:
-                    stable_after_touchdown_s += m.opt.timestep
-                elif flight_seen:
-                    stable_after_touchdown_s = 0
+        # Record physical contact on every physics step; never infer flight from video frames.
+        post_R = d.xmat[torso].reshape(3, 3)
+        post_pitch = math.atan2(-float(post_R[2, 0]), float(post_R[2, 2]))
+        max_abs_pitch = max(max_abs_pitch, abs(post_pitch))
+        max_abs_x = max(max_abs_x, abs(float(d.qpos[0])))
+        torso_ground_steps += int(torso_ground)
+        com_z = float(d.subtree_com[torso, 2])
+        com_vz = (com_z - prev_com_z) / m.opt.timestep
+        prev_com_z = com_z
+        if launch_t is not None:
+            if launch_t - 0.25 <= float(d.time) < launch_t:
+                prelaunch_samples += 1
+                prelaunch_valid_samples += int(floor_ground and not torso_ground and abs(post_pitch) < 0.35)
+            if float(d.time) >= launch_t:
+                max_min_wheel_clearance = max(max_min_wheel_clearance, clearance)
+                if not floor_ground:
+                    if flight_start is None and contacted_after_launch:
+                        flight_start = float(d.time)
+                        flight_takeoff_upright = abs(post_pitch) < 0.35 and not torso_ground
+                        flight_takeoff_vz = com_vz
+                else:
+                    contacted_after_launch = True
+                    if flight_start is not None:
+                        duration_flight = float(d.time) - flight_start
+                        flight_durations.append(duration_flight)
+                        if (duration_flight >= 0.020 and flight_takeoff_upright
+                                and flight_takeoff_vz > 0.05):
+                            accepted_flights.append(duration_flight)
+                            qualified_landing_started = True
+                        flight_start = None
+                    if qualified_landing_started and abs(post_pitch) < 0.35 and not torso_ground:
+                        stable_after_touchdown_s += m.opt.timestep
+                        max_stable_landing_s = max(max_stable_landing_s, stable_after_touchdown_s)
+                    else:
+                        stable_after_touchdown_s = 0.0
 
         if step % 10 == 0:  # every 20 ms at default 0.002 s physics dt
             frames.append({
@@ -140,6 +178,10 @@ def run(mode: str, duration: float, output: Path) -> dict:
     if flight_start is not None:
         flight_durations.append(float(d.time) - flight_start)
 
+    prelaunch_pass = (prelaunch_samples >= 100 and
+                      prelaunch_valid_samples / prelaunch_samples >= 0.95)
+    qualified_jump = bool(accepted_flights) and prelaunch_pass
+    state_pass = torso_ground_steps == 0 and max_abs_pitch < 0.35 and max_abs_x < 0.5
     stats = {
         "mode": mode, "duration_s": duration, "physics_steps": steps,
         "mujoco_version": mujoco.__version__, "source_sha": UPSTREAM_SHA,
@@ -147,10 +189,18 @@ def run(mode: str, duration: float, output: Path) -> dict:
         "controller": "exploratory PD, NOT upstream firmware, NOT trained policy",
         "rated_servo_nm": SERVO_RATED_NM, "stall_servo_nm": SERVO_STALL_NM,
         "wheel_torque_nm_assumed": WHEEL_ASSUMED_NM,
-        "full_body_airborne_intervals_s": flight_durations,
-        "has_flight_ge_20ms": max(flight_durations, default=0) >= 0.020,
+        "raw_full_body_no_contact_intervals_s": flight_durations,
+        "candidate_upright_upward_flights_s": accepted_flights,
+        "prelaunch_upright_supported": prelaunch_pass,
+        "prelaunch_valid_fraction": (prelaunch_valid_samples / prelaunch_samples
+                                      if prelaunch_samples else None),
+        "has_flight_ge_20ms": qualified_jump,
+        "torso_ground_steps": torso_ground_steps,
+        "max_abs_pitch_rad": max_abs_pitch,
+        "max_abs_x_m": max_abs_x,
+        "stable_stand_or_crouch": state_pass if mode in ("stand", "crouch") else None,
         "max_min_wheel_clearance_m": max_min_wheel_clearance if mode == "jump" else None,
-        "stable_landing_2s_observed": stable_after_touchdown_s >= 2.0,
+        "stable_landing_2s_observed": qualified_jump and max_stable_landing_s >= 2.0,
         "max_floor_penetration_m": floor_penetration_max,
         "result_classification": "EXPLORATORY_ONLY_NOT_SIM_TO_REAL_VALIDATED",
         "frames": frames,
@@ -162,7 +212,7 @@ def run(mode: str, duration: float, output: Path) -> dict:
 
 def main() -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("--mode", choices=["stand", "crouch", "jump"], default="stand")
+    p.add_argument("--mode", choices=["stand", "crouch", "jump", "jump_fast"], default="stand")
     p.add_argument("--duration", type=float, default=6)
     p.add_argument("--out", type=Path, default=Path(".cache/navbot_en01/probe.json"))
     args = p.parse_args()

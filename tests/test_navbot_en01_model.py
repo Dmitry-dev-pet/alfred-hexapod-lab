@@ -44,7 +44,7 @@ class NavBotEN01StaticModelTests(unittest.TestCase):
         self.assertEqual(len(self.root.findall("./sensor/gyro")), 1)
         notes = (XML.parent / "MODEL_NOTES.md").read_text(encoding="utf-8")
         self.assertIn("3139f2fb32b38d10611feb905e16f8aa012f2f2e", notes)
-        self.assertIn("NOT PHYSICS-VALIDATED", notes)
+        self.assertIn("CPU PHYSICS EXERCISED", notes)
         self.assertIn("UNVERIFIED", notes)
 
 
