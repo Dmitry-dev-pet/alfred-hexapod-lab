@@ -1,0 +1,47 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "navbot-en01-jump-20261108",
+  "title": "Прыжок EN01 · неудачная попытка",
+  "detail": "6 с · после разгона опрокинулся; прыжка нет",
+  "robot": "NavBot EN01 approximate MuJoCo 4-axis",
+  "engine": "MuJoCo",
+  "status": "failed",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "research/navbot_en01/probe.py",
+      "--mode",
+      "jump",
+      "--duration",
+      "6",
+      "--out",
+      "results/navbot_en01/jump_verified.json"
+    ],
+    "export": [
+      "python",
+      "research/navbot_en01/export_replay.py",
+      "--trace",
+      "results/navbot_en01/jump_verified.json",
+      "--mode",
+      "jump",
+      "--out",
+      "docs/hexapod/data/navbot-en01-jump-20261108.json"
+    ]
+  },
+  "trace": {
+    "path": "results/navbot_en01/jump_verified.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/navbot-en01-jump-20261108.json",
+    "format": "navbot-en01-mujoco-physical-replay-v1",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "navbot-en01-template"
+  }
+}
