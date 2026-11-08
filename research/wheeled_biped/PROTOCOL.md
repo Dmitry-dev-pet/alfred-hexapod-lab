@@ -56,3 +56,21 @@ Capture `qpos`, `qvel`, actual joint controls, torso pose/quaternion, wheel spee
 - **Replay:** only measured states from physics, not a scripted visualization. Reuse the existing Android viewer and the reviewed import pipeline [PR #91](https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/pull/91). No new player, no automatic publication.
 - **Cost and scope:** do not create new Mac runners, initiate paid GPU jobs, run physical hardware, alter `main`, or auto-merge PRs. Pure code tests may use CI; physics should run in a real verified local/runtime simulation outside free Actions quota.
 - This file does **not** claim any new run, learned gait, working self-righting, or Android/WebGL verification.
+
+## Hardware acquisition constraint — owner decision 2026-11-08
+
+**All-in budget ceiling: €250 delivered to Portugal, including taxes, delivery, hardware, printed structure, battery, charger (if required), PCB fabrication, wiring, fasteners and a modest spare/repair allowance.** This replaces the earlier exploratory €150 suggestion. Budget does **not** authorize placing an order.
+
+Shortlist for sourcing and physics evaluation, **not yet validated as delivered ≤€250**:
+
+1. [Skythinker616 FOC wheel-legged robot](https://github.com/Skythinker616/foc-wheel-legged-robot/blob/master/README_en.md) — source author reports ¥549 historical component cost **inside China**, including 4×4010 leg motors, 2×2804 wheel motors, 6× driver electronics, controller, battery, printed/acrylic parts and bearings. No current Portugal checkout quote, unknown assembly effort/PCB manufacturing cost, **no documented successful full-body jump**. Favor for open hardware and six BLDC actuators, *conditional* on physical jump feasibility.
+2. [KudoC0nan Balance_On_Wheels](https://github.com/KudoC0nan/Balance_On_Wheels) — open CAD, ESP32, N20 geared-wheel motors and MG90 leg servos, video `Jumping_Bot.mp4`. Authors report servo gear damage during jump tests. An initial cheap build is plausible, **durable repeatable jumps unproven**; cannot call €70–130 a current validated Portuguese delivered price.
+3. [ToolKnox Wheeliebot](https://github.com/ToolKnox/Wheeliebot-w-Code) — creator claims real jumping with two leg STS3032 bus servos and gimbal wheel motors; **controller PCB v2 still pending** per author warning. BOM+part prices and manufacturing before deciding; not automatically build-ready.
+
+### Purchasing gate
+
+- [ ] Itemized BOM with exact vendor SKU, quantity, voltage/current, torque/speed, VAT applicability, shipping to Portuguese postcode and availability; links to **current checkout prices**, not historical China BOM.
+- [ ] Whole project total ≤€250, including identified hidden costs (PCB fab/assembly, LiPo-safe charger, connectors, printed part quotation, replacement gears/servo/motor).
+- [ ] Independent real-model MuJoCo probe of full-body lift-off + landed recovery, explicitly separating demonstrated physics from extrapolated actuator specs.
+- [ ] Make explicit whether **jumping is mandatory hardware capability** or a research target needing redesign; if proof unavailable, document risk, do not claim a purchase candidate can jump.
+- [ ] Owner approval before spending. No auto-order, no automatic source/firmware updates.
