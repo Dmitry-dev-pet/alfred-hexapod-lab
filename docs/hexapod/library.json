@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 58,
+  "revision": 59,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -2222,6 +2222,111 @@
           "path": "hexapod/microduck-step-goal-v1/tracks-f0dc02f696c4f885.json",
           "size": 1297899,
           "sha256": "f0dc02f696c4f88589880b22ff6957199b079d225c1d289908e0b873657821cd"
+        }
+      ]
+    },
+    {
+      "id": "microduck-single-support-v1",
+      "title": "MicroDuck · равновесие на одной ноге",
+      "detail": "14 записей · ходьба с короткой опорой на одну стопу · 10 неудачных попыток медленного переноса веса",
+      "href": "/hexapod/microduck-single-support-v1/",
+      "duration_s": 8.2,
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-single-support-v1/app.js",
+          "size": 11921,
+          "sha256": "682add514b0f172df722e540d814c45e9b190a9203f96e64fbe8c8ea6f92b6d9"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/index.html",
+          "size": 6381,
+          "sha256": "ce30e3ab31e7c10a32e80757b871710ffc76ba870cb649d590e19f27acc5a4f8"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/pose-loader.js",
+          "size": 7524,
+          "sha256": "732041a5605d0aeeb5a6cac9ba1d30d1d5700f2d95c085947adbac674280c6a0"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/replays.json",
+          "size": 552832,
+          "sha256": "83ae92c8e0da4c6491d201bb32ab027292cf322ef8bc36c415cc89684c8680c4"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/safe-camera.js",
+          "size": 451,
+          "sha256": "74cb990e36ebf86d24c0eb21250b31d1afe2d31fb18f78269c9a47824f1a48e2"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-1791229f3a3ef82f.json",
+          "size": 667385,
+          "sha256": "1791229f3a3ef82f245ce5267e9efcfdbeebf2f2b86d644570069de9b5ff7d4b"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-2fc21d718ede5ac6.json",
+          "size": 667873,
+          "sha256": "2fc21d718ede5ac676f4f1b3dc6fd403fd4460087b564a02a37843e4a80a4f0f"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-3897f36206602d13.json",
+          "size": 662213,
+          "sha256": "3897f36206602d13724b6eeb2723325f52413f5ba4fbbcf551dbbc12f1f13be7"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-3c807c08ea00f7c8.json",
+          "size": 658509,
+          "sha256": "3c807c08ea00f7c8271c08aa6fd86cd25c054ef185de26d652510dfa42da06a0"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-3e57247c947efc20.json",
+          "size": 660713,
+          "sha256": "3e57247c947efc2005e0d057c86a916cff935abda7cffdd3e83758e247110c9f"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-4ae8e777ca6007fa.json",
+          "size": 662857,
+          "sha256": "4ae8e777ca6007fa5a51cb52240f76c2034904095cc61ee543b35aa281caa126"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-6dbcb4914d2cef87.json",
+          "size": 659429,
+          "sha256": "6dbcb4914d2cef8742bcbb0fe19cdbab6fc1cace565fe3c6145db16f8cb5f2b3"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-87d8f9fc3dbd8486.json",
+          "size": 413613,
+          "sha256": "87d8f9fc3dbd84869dabaf0b541bf4293e84078611253f035c0588b23267c151"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-95d48c04a155cb9d.json",
+          "size": 665509,
+          "sha256": "95d48c04a155cb9d5f823f010bd47b6a28556fa313bc8e23fb4bde4240a9a5e3"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-97508305a6dfd0a3.json",
+          "size": 661685,
+          "sha256": "97508305a6dfd0a369c2163166bea3c124326504c70e8f44c69df0cd0be2808c"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-c489d4fbeb776334.json",
+          "size": 661917,
+          "sha256": "c489d4fbeb776334cafa6ac3db2285d192f4dba2208ec9ec407527f16ad8014f"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-d137cf072e735f70.json",
+          "size": 682717,
+          "sha256": "d137cf072e735f70d163c6e2eb9387c207f98004d875b41a4a155a5c9b51b1d0"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-dcb5f30b5eb9025c.json",
+          "size": 670569,
+          "sha256": "dcb5f30b5eb9025c461f20964967e1aaf3b2abbf88e72d21dcaa65780c1a41b5"
+        },
+        {
+          "path": "hexapod/microduck-single-support-v1/tracks-e7526f653a5fb3f3.json",
+          "size": 658513,
+          "sha256": "e7526f653a5fb3f36304ae9fca744ce3680750010ffbb8aca447256038b8607b"
         }
       ]
     }
