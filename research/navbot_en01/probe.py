@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -42,14 +43,14 @@ def setpoint(t: float, mode: str) -> tuple[float, bool]:
     raise ValueError(mode)
 
 
-def run(mode: str, duration: float, output: Path) -> dict:
+def run(mode: str, duration: float, output: Path, model_path: Path = MODEL) -> dict:
     try:
         import mujoco
         import numpy as np
     except ImportError as exc:
         raise SystemExit("A local MuJoCo 3.x runtime + numpy is required; NO physics was run.") from exc
 
-    m = mujoco.MjModel.from_xml_path(str(MODEL))
+    m = mujoco.MjModel.from_xml_path(str(model_path))
     d = mujoco.MjData(m)
     torso = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, "torso")
     left_wheel_body = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, "left_wheel")
@@ -62,6 +63,8 @@ def run(mode: str, duration: float, output: Path) -> dict:
                 for name in joint}
     # Only the measured source contains mirrored servo position counts;
     # model-space hip axes are aligned, so both targets use the same sign.
+    wheel_geom = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_GEOM, "left_wheel_geom")
+    wheel_radius_m = float(m.geom_size[wheel_geom, 0])
     frames = []
     launch_t = {"jump": 3.6, "jump_fast": 2.1}.get(mode)
     flight_start = None
@@ -126,7 +129,7 @@ def run(mode: str, duration: float, output: Path) -> dict:
             contact_total_n += max(0.0, float(wrench[0]))
             penetration = max(penetration, max(0.0, -float(contact.dist)))
         floor_penetration_max = max(floor_penetration_max, penetration)
-        clearance = min(float(d.xpos[b, 2]) - 0.024
+        clearance = min(float(d.xpos[b, 2]) - wheel_radius_m
                         for b in (left_wheel_body, right_wheel_body))
         # Record physical contact on every physics step; never infer flight from video frames.
         post_R = d.xmat[torso].reshape(3, 3)
@@ -185,7 +188,11 @@ def run(mode: str, duration: float, output: Path) -> dict:
     stats = {
         "mode": mode, "duration_s": duration, "physics_steps": steps,
         "mujoco_version": mujoco.__version__, "source_sha": UPSTREAM_SHA,
-        "model": "hand-built approximate EN01, NOT upstream CAD",
+        "model": ("source CAD nominal pose surrogate; four-bar NOT VALIDATED"
+                  if model_path.name == "model_v1_cad_pose.xml" else
+                  "hand-built approximate EN01, NOT upstream CAD"),
+        "model_file": model_path.name,
+        "model_sha256": hashlib.sha256(model_path.read_bytes()).hexdigest(),
         "controller": "exploratory PD, NOT upstream firmware, NOT trained policy",
         "rated_servo_nm": SERVO_RATED_NM, "stall_servo_nm": SERVO_STALL_NM,
         "wheel_torque_nm_assumed": WHEEL_ASSUMED_NM,
@@ -214,11 +221,13 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--mode", choices=["stand", "crouch", "jump", "jump_fast"], default="stand")
     p.add_argument("--duration", type=float, default=6)
+    p.add_argument("--model", type=Path, default=MODEL,
+                   help="Explicit model variant; default remains original v0")
     p.add_argument("--out", type=Path, default=Path(".cache/navbot_en01/probe.json"))
     args = p.parse_args()
     if args.duration <= 0:
         p.error("duration must be positive")
-    print(json.dumps(run(args.mode, args.duration, args.out), indent=2))
+    print(json.dumps(run(args.mode, args.duration, args.out, args.model), indent=2))
 
 
 if __name__ == "__main__":
