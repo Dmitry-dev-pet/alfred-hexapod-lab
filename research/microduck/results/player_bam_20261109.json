@@ -1,0 +1,15 @@
+{
+  "filename": "MicroDuck_BAM_63_interactive_replays_20261109.zip",
+  "size_bytes": 33440719,
+  "sha256": "648c5eec148731f14076057901c2eb95be68a90669fde176b7e993b61bbed576",
+  "clips": 63,
+  "frames": 18900,
+  "model_package_sha256": "e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b",
+  "source_trace_archive_sha256": "67a2426d154254f8678cde24e75b4d06c5cb690f8ce52d36d86830f9c318923a",
+  "drive_file_id": "1fvS0B7C7HtFmXvqzCVyWd8DF7_t271mX",
+  "drive_url": "https://drive.google.com/file/d/1fvS0B7C7HtFmXvqzCVyWd8DF7_t271mX/view?usp=drivesdk",
+  "site_version": 6,
+  "site_source_commit": "28533e49ce37518b4cb4c28440cfcecb6f47a1d5",
+  "deployment_id": "appgdep_6af1efe887b081919235a45fbe0639ac",
+  "route": "/hexapod/microduck-bam-v2/"
+}
