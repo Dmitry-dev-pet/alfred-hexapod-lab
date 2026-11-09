@@ -1,0 +1,297 @@
+{
+  "schema": "alfred-bb8-stl-dimension-probe/v1",
+  "date": "2026-11-09",
+  "units_status": "STL length units unspecified; do not interpret as mm without CAD provenance",
+  "scope": "Selected upstream STL parts only; not a full BB-8 CAD assembly, no transforms or physics",
+  "measurements": [
+    {
+      "repo": "jrbedard/BB8-3D-Printed",
+      "path": "bb8_bottomfront.stl",
+      "status": "measured",
+      "git_blob_sha": "5358240886d1f7defc5a92572773f5e084aae737",
+      "file_size_bytes": 21721,
+      "format": "ascii",
+      "vertices": 210,
+      "bbox_min": [
+        -208.9239,
+        -0.4807,
+        0.6767
+      ],
+      "bbox_max": [
+        -119.594,
+        88.8667,
+        89.952
+      ],
+      "bbox_extent": [
+        89.3299,
+        89.3475,
+        89.2753
+      ]
+    },
+    {
+      "repo": "jrbedard/BB8-3D-Printed",
+      "path": "bb8_neck.stl",
+      "status": "measured",
+      "git_blob_sha": "1526feced0bc64a057e57ad0c3a213de24c9a60b",
+      "file_size_bytes": 631769,
+      "format": "ascii",
+      "vertices": 6237,
+      "bbox_min": [
+        -53.6118,
+        -54.0469,
+        85.0161
+      ],
+      "bbox_max": [
+        53.9802,
+        53.545,
+        95.8471
+      ],
+      "bbox_extent": [
+        107.5919,
+        107.5919,
+        10.831
+      ]
+    },
+    {
+      "repo": "jrbedard/BB8-3D-Printed",
+      "path": "bb8_spine.stl",
+      "status": "measured",
+      "git_blob_sha": "d066c0d1a7d9d568c5e051b0f15e21ac8f0860cf",
+      "file_size_bytes": 175664,
+      "format": "ascii",
+      "vertices": 1848,
+      "bbox_min": [
+        -10.968,
+        -11.1055,
+        90.9363
+      ],
+      "bbox_max": [
+        11.045,
+        10.9074,
+        138.1991
+      ],
+      "bbox_extent": [
+        22.0129,
+        22.0129,
+        47.2628
+      ]
+    },
+    {
+      "repo": "jrbedard/BB8-3D-Printed",
+      "path": "bb8_servo_gear.stl",
+      "status": "measured",
+      "git_blob_sha": "665dc4bb9687352e58cb61be994f187cf26432ec",
+      "file_size_bytes": 515642,
+      "format": "ascii",
+      "vertices": 5472,
+      "bbox_min": [
+        -9.8219,
+        13.1456,
+        129.9872
+      ],
+      "bbox_max": [
+        10.0899,
+        33.5477,
+        133.8872
+      ],
+      "bbox_extent": [
+        19.9117,
+        20.4021,
+        3.9
+      ]
+    },
+    {
+      "repo": "HWeigo/BB8_Robot",
+      "path": "Model/头部底面.STL",
+      "status": "measured",
+      "git_blob_sha": "837bded36ae0655e2a250eab17d4c03f03563c4b",
+      "file_size_bytes": 95884,
+      "format": "binary",
+      "vertices": 5748,
+      "bbox_min": [
+        0.0199,
+        0,
+        0
+      ],
+      "bbox_max": [
+        119.9801,
+        120,
+        11
+      ],
+      "bbox_extent": [
+        119.9602,
+        120,
+        11
+      ]
+    },
+    {
+      "repo": "HWeigo/BB8_Robot",
+      "path": "Model/舵机转板新.STL",
+      "status": "measured",
+      "git_blob_sha": "dd88ca3c97caddef3eeb9a70904b7593a572c846",
+      "file_size_bytes": 177084,
+      "format": "binary",
+      "vertices": 10620,
+      "bbox_min": [
+        0.0117,
+        0,
+        0
+      ],
+      "bbox_max": [
+        70.5642,
+        70.5759,
+        8.5
+      ],
+      "bbox_extent": [
+        70.5525,
+        70.5759,
+        8.5
+      ]
+    },
+    {
+      "repo": "HWeigo/BB8_Robot",
+      "path": "Model/铜套座板连接板.STL",
+      "status": "measured",
+      "git_blob_sha": "fbd0a6a8d896fb9cc05b01580bf116460e180ea6",
+      "file_size_bytes": 36284,
+      "format": "binary",
+      "vertices": 2172,
+      "bbox_min": [
+        0,
+        0,
+        0
+      ],
+      "bbox_max": [
+        38,
+        18,
+        20.5
+      ],
+      "bbox_extent": [
+        38,
+        18,
+        20.5
+      ]
+    },
+    {
+      "repo": "PatchBOTS/bb8head",
+      "path": "MECH_DomeMagneticMount.STL",
+      "status": "measured",
+      "git_blob_sha": "83a11c22ab804e62d1dd1d3a3ffe0de315f59ed9",
+      "file_size_bytes": 397184,
+      "format": "binary",
+      "vertices": 23826,
+      "bbox_min": [
+        -37.8377,
+        -45,
+        282.096
+      ],
+      "bbox_max": [
+        37.8377,
+        45,
+        304.2373
+      ],
+      "bbox_extent": [
+        75.6753,
+        90,
+        22.1413
+      ]
+    },
+    {
+      "repo": "PatchBOTS/bb8head",
+      "path": "MECH_SpindleArm.STL",
+      "status": "measured",
+      "git_blob_sha": "a17ae12326301dd1b3db12e4e74633b21078a8da",
+      "file_size_bytes": 109684,
+      "format": "binary",
+      "vertices": 6576,
+      "bbox_min": [
+        -507.4547,
+        12.3004,
+        274.3718
+      ],
+      "bbox_max": [
+        -482.0547,
+        129.2206,
+        324.0119
+      ],
+      "bbox_extent": [
+        25.4,
+        116.9202,
+        49.6401
+      ]
+    },
+    {
+      "repo": "PatchBOTS/bb8head",
+      "path": "MECH_Cradle.STL",
+      "status": "measured",
+      "git_blob_sha": "bf68d3cf35ac995a770f7cfdfb57fd03e17f949e",
+      "file_size_bytes": 111084,
+      "format": "binary",
+      "vertices": 6660,
+      "bbox_min": [
+        -38.7493,
+        -27.8731,
+        377.9615
+      ],
+      "bbox_max": [
+        38.6537,
+        28.0067,
+        389.6789
+      ],
+      "bbox_extent": [
+        77.403,
+        55.8798,
+        11.7174
+      ]
+    },
+    {
+      "repo": "PatchBOTS/bb8head",
+      "path": "MISC_BodyMagneticMount_Bearclaw.STL",
+      "status": "measured",
+      "git_blob_sha": "03ffa6d37162abed6077eec71b7b7767c9c9ab6a",
+      "file_size_bytes": 797184,
+      "format": "binary",
+      "vertices": 47826,
+      "bbox_min": [
+        -46.0143,
+        -46.0144,
+        205.5461
+      ],
+      "bbox_max": [
+        46.0145,
+        46.0144,
+        235.4154
+      ],
+      "bbox_extent": [
+        92.0287,
+        92.0287,
+        29.8692
+      ]
+    },
+    {
+      "repo": "PatchBOTS/bb8head",
+      "path": "EXTERNAL_RingSkirt.STL",
+      "status": "measured",
+      "git_blob_sha": "6ab8ef541b23b82cda9749ef85b060249d88408f",
+      "file_size_bytes": 692584,
+      "format": "binary",
+      "vertices": 41550,
+      "bbox_min": [
+        -636.8378,
+        -142.2994,
+        242.5002
+      ],
+      "bbox_max": [
+        -351.7818,
+        142.7579,
+        283.7605
+      ],
+      "bbox_extent": [
+        285.0561,
+        285.0573,
+        41.2602
+      ]
+    }
+  ],
+  "physics": "not_run"
+}

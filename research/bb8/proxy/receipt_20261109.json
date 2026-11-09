@@ -1,0 +1,66 @@
+{
+  "schema": "alfred-bb8-proxy-physics-receipt/v1",
+  "date": "2026-11-09",
+  "status": "DIAGNOSTIC ONLY: simplified dynamics, NOT authentic BB-8 CAD or motor performance",
+  "engine": "MuJoCo",
+  "engine_version": "3.14.0",
+  "source_file_sha256": "2b27ca27f47374019d5daa2d1e0921459fbfff1e4a9f45b88e127ac5b436d23a",
+  "model_xml_sha256": "1d734c3d0fec32d8ca0f8b3299d4e3c780df11f4aa645caf93315203cf9a8260",
+  "model_assumptions": {
+    "outer_radius_m": 0.2,
+    "shell_mass_kg": 0.2,
+    "pendulum_mass_kg": 0.38,
+    "pendulum_COM_offset_m": 0.11,
+    "contact_friction": 0.8,
+    "torque_schedule": "positive 0-1.5 s, reverse 1.5-3.0 s, coast to 6 s",
+    "steering": "not modelled",
+    "head": "not modelled",
+    "CAD": "none; ideal sphere + box",
+    "timestep_s": 0.002,
+    "duration_s": 6
+  },
+  "runs": [
+    {
+      "assumed_hinge_torque_Nm": 0.01,
+      "qpos_samples": 301,
+      "steps": 3000,
+      "raw_trace_sha256_reproducible_from_python_json": "e2bdd60fe7420fe95dc7bcc8df2fc47353e67b7a90ce392850897ad3e08eacd6",
+      "displacement_x_m": -0.01371,
+      "max_abs_pendulum_angle_deg": 26.54,
+      "floor_contact_samples": 300
+    },
+    {
+      "assumed_hinge_torque_Nm": 0.03,
+      "qpos_samples": 301,
+      "steps": 3000,
+      "raw_trace_sha256_reproducible_from_python_json": "733564cdc5022d78681fd74b0a88799a05859295d947b8a6ff0234f5007df5bb",
+      "displacement_x_m": -0.041127,
+      "max_abs_pendulum_angle_deg": 79.61,
+      "floor_contact_samples": 300
+    },
+    {
+      "assumed_hinge_torque_Nm": 0.06,
+      "qpos_samples": 301,
+      "steps": 3000,
+      "raw_trace_sha256_reproducible_from_python_json": "b9862ff0e275ca84551be71971360f599c462fabf345fa0570e934b4b43f4d0e",
+      "displacement_x_m": -0.082231,
+      "max_abs_pendulum_angle_deg": 159.07,
+      "floor_contact_samples": 300
+    },
+    {
+      "assumed_hinge_torque_Nm": 0.1,
+      "qpos_samples": 301,
+      "steps": 3000,
+      "raw_trace_sha256_reproducible_from_python_json": "90781d287da6e4edebb35b61b4e866ca61297f95acc22f22740fff0cd01b3379",
+      "displacement_x_m": -0.136973,
+      "max_abs_pendulum_angle_deg": 264.45,
+      "floor_contact_samples": 300
+    }
+  ],
+  "limitations": [
+    "Proxy shape and actuator are assumptions, do not call source geometry",
+    "No physical BB-8 claim",
+    "No turn, no head, no original STL",
+    "Do not publish into Alfred Robot Player as authentic CAD/physics"
+  ]
+}

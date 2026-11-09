@@ -1,0 +1,418 @@
+{
+  "schema": "alfred-bb8-cad-sources/v1",
+  "generated_utc": "2026-11-09",
+  "status": "CAD inventory and integrity lock only: no 3D assembly, confirmed dimensions, actual MuJoCo physics, or player publication yet",
+  "boundaries": [
+    "Git blob SHA1 authenticates source bytes; it is not a license",
+    "STL has no reliable length units or joint definitions",
+    "HWeigo SLDASM requires export of native components with assembly transforms",
+    "Do not combine body/head sizes across repos before checking scales",
+    "Do not vendor assets or publish them without clear redistribution rights"
+  ],
+  "sources": [
+    {
+      "repo": "jrbedard/BB8-3D-Printed",
+      "revision": "a209880372e7637179a12bad86043174c8bff91b",
+      "license_status": "no explicit license file or GitHub license detected; do not rehost assets",
+      "purpose": "BB-8 multi-part body, head, decorative and mechanical pieces",
+      "files": [
+        {
+          "path": "bb8_body1.stl",
+          "size": 1141184,
+          "git_blob_sha": "ce422c2529556caf5937d2cdd152f7a579c0ade6"
+        },
+        {
+          "path": "bb8_body2.stl",
+          "size": 1267549,
+          "git_blob_sha": "eedeca190c8e2d2523ad7cb5be132b193e739bd5"
+        },
+        {
+          "path": "bb8_body3.stl",
+          "size": 1095371,
+          "git_blob_sha": "cd4ea6d00b0a9db743e5ba35db41fe465cd6e161"
+        },
+        {
+          "path": "bb8_body4.stl",
+          "size": 1282178,
+          "git_blob_sha": "39b13806efe7eaed4fd9916c4740791e1df6007b"
+        },
+        {
+          "path": "bb8_body5.stl",
+          "size": 1506719,
+          "git_blob_sha": "f96bcad21aa7a9725f9dde5134c088a66f3d38e7"
+        },
+        {
+          "path": "bb8_body6.stl",
+          "size": 1582642,
+          "git_blob_sha": "2e4a19393a9b307ec891675ffe34e9908a1906e0"
+        },
+        {
+          "path": "bb8_body7.stl",
+          "size": 1548057,
+          "git_blob_sha": "219fb0764d6d49686f0d697db566d1afc2f0fe9a"
+        },
+        {
+          "path": "bb8_body8.stl",
+          "size": 1665019,
+          "git_blob_sha": "9b9cd57c9f608a95289e55a054ed098648a2d912"
+        },
+        {
+          "path": "bb8_bottomfront.stl",
+          "size": 21721,
+          "git_blob_sha": "5358240886d1f7defc5a92572773f5e084aae737"
+        },
+        {
+          "path": "bb8_head.stl",
+          "size": 4983716,
+          "git_blob_sha": "58f98ee123841ea0931f71925fb8fc6b49855478"
+        },
+        {
+          "path": "bb8_neck.stl",
+          "size": 631769,
+          "git_blob_sha": "1526feced0bc64a057e57ad0c3a213de24c9a60b"
+        },
+        {
+          "path": "bb8_projector.stl",
+          "size": 158365,
+          "git_blob_sha": "1fc79f1caca7011f49535745805cc6c1d17594b8"
+        },
+        {
+          "path": "bb8_servo_gear.stl",
+          "size": 515642,
+          "git_blob_sha": "665dc4bb9687352e58cb61be994f187cf26432ec"
+        },
+        {
+          "path": "bb8_spine_gear.stl",
+          "size": 796662,
+          "git_blob_sha": "ab8b3269f7c47d0483aa00e7e551209fb8935063"
+        },
+        {
+          "path": "bb8_spine.stl",
+          "size": 175664,
+          "git_blob_sha": "d066c0d1a7d9d568c5e051b0f15e21ac8f0860cf"
+        }
+      ]
+    },
+    {
+      "repo": "HWeigo/BB8_Robot",
+      "revision": "7318411cfbfbffdbd68f75e3734a50c3933969e5",
+      "license_status": "no explicit license file or GitHub license detected; do not rehost assets",
+      "purpose": "BB-8 internal drive and native SolidWorks 2018 assembly",
+      "files": [
+        {
+          "path": "Model/M1-19(1).sldprt",
+          "size": 698699,
+          "git_blob_sha": "15a998e10f9df4cf2a88ed4f05584e44de69684e"
+        },
+        {
+          "path": "Model/M1-35.SLDPRT",
+          "size": 909397,
+          "git_blob_sha": "60c0f8323dab6589e07810a101593d946e32c179"
+        },
+        {
+          "path": "Model/SG90.SLDPRT",
+          "size": 164259,
+          "git_blob_sha": "ad3c32cd9b61bf3bbf3a79e94feebe67c6ad7327"
+        },
+        {
+          "path": "Model/一模凸台35.SLDPRT",
+          "size": 94606,
+          "git_blob_sha": "402a6d9a476ad266f3bee4d017e72faf25745154"
+        },
+        {
+          "path": "Model/一模平齿轮15.SLDPRT",
+          "size": 104676,
+          "git_blob_sha": "0d518cc3cc28f45bba002a3e416a2da547c2a44b"
+        },
+        {
+          "path": "Model/主动旋转板.SLDPRT",
+          "size": 75252,
+          "git_blob_sha": "c932eddf3f054d4ac9f5b79e280603ae17fd1937"
+        },
+        {
+          "path": "Model/主控座板.SLDPRT",
+          "size": 105862,
+          "git_blob_sha": "796cc6af9cf35df3f9cea6500d1b22f6ccd28ef2"
+        },
+        {
+          "path": "Model/主控板.SLDPRT",
+          "size": 89081,
+          "git_blob_sha": "57a65998ede0c9b7aff69362d7915d8cc0330b90"
+        },
+        {
+          "path": "Model/初装.SLDASM",
+          "size": 1175685,
+          "git_blob_sha": "bcfead6e92329575aa474fb4be05c24191ac5294"
+        },
+        {
+          "path": "Model/原装轮子.SLDPRT",
+          "size": 154684,
+          "git_blob_sha": "085e20f256f77a8f281a4d5bfad49784c92aa113"
+        },
+        {
+          "path": "Model/头部底面.SLDPRT",
+          "size": 164256,
+          "git_blob_sha": "04b36bbf6f3262713860988eacf4888373dc24ef"
+        },
+        {
+          "path": "Model/头部底面.STL",
+          "size": 95884,
+          "git_blob_sha": "837bded36ae0655e2a250eab17d4c03f03563c4b"
+        },
+        {
+          "path": "Model/头部底面旧.SLDPRT",
+          "size": 164610,
+          "git_blob_sha": "319d8ac5fc6d414939f5522dd444de90db10c2b4"
+        },
+        {
+          "path": "Model/小牛眼轮.SLDPRT",
+          "size": 94934,
+          "git_blob_sha": "94ede24817c7d067b5ac3dca5dc26d59c1d30526"
+        },
+        {
+          "path": "Model/平衡车电机座板.SLDPRT",
+          "size": 132014,
+          "git_blob_sha": "19efe3ce334c070af851c97729c1a5213fa5f536"
+        },
+        {
+          "path": "Model/平衡车电机支架1.SLDPRT",
+          "size": 115072,
+          "git_blob_sha": "86c21047aecae06378ecd308009a5794a7a5924b"
+        },
+        {
+          "path": "Model/平衡车电机支架2.SLDPRT",
+          "size": 115770,
+          "git_blob_sha": "bf7276b14c0e1ae1d349944d5a7950ec917ed615"
+        },
+        {
+          "path": "Model/平衡车轮电机1.SLDPRT",
+          "size": 180949,
+          "git_blob_sha": "ae4d013dcacbfc5781759b41c7e700daba11a32d"
+        },
+        {
+          "path": "Model/平衡车轮电机2.SLDPRT",
+          "size": 168492,
+          "git_blob_sha": "bee67cafc88dd6eb3e1cf2f1e0880446868492fd"
+        },
+        {
+          "path": "Model/平衡车轮轴.SLDPRT",
+          "size": 88035,
+          "git_blob_sha": "c7b91f6bb54ce31811c52ce50cb4f072f3b1b7b5"
+        },
+        {
+          "path": "Model/新版轮子.SLDPRT",
+          "size": 228947,
+          "git_blob_sha": "ef28ee21c6ff2d447b437b2df2539f9feb10b492"
+        },
+        {
+          "path": "Model/牛眼轮NL-8H.SLDPRT",
+          "size": 102932,
+          "git_blob_sha": "74b5749ef8cff6936bf99cd29ba101725fb3a93a"
+        },
+        {
+          "path": "Model/球壳1.SLDPRT",
+          "size": 159089,
+          "git_blob_sha": "53c2838e3b47c6202399faea08960dc0d6a7e051"
+        },
+        {
+          "path": "Model/球壳小.SLDPRT",
+          "size": 159089,
+          "git_blob_sha": "77c1f5028bcc326f1c0833f6cb33d6e577b96852"
+        },
+        {
+          "path": "Model/电池.SLDPRT",
+          "size": 64104,
+          "git_blob_sha": "6b30e0b09cc4025f666f17defe232f8ee68bc7d0"
+        },
+        {
+          "path": "Model/联轴器1.SLDPRT",
+          "size": 119406,
+          "git_blob_sha": "f4fbe49b83ea60090f6c1d92f9c927f516bb20d9"
+        },
+        {
+          "path": "Model/联轴器2.SLDPRT",
+          "size": 117243,
+          "git_blob_sha": "083e061670d4eff5bc346287d4a3d17734c4a669"
+        },
+        {
+          "path": "Model/舵机座板.SLDPRT",
+          "size": 111617,
+          "git_blob_sha": "18e404f0a04f73e6b0d2d82828d2179dbe79b40c"
+        },
+        {
+          "path": "Model/舵机简图.SLDPRT",
+          "size": 109537,
+          "git_blob_sha": "bfccdc39e539b1a3dc6cdd89341113c867bab01c"
+        },
+        {
+          "path": "Model/舵机转板新.SLDPRT",
+          "size": 171406,
+          "git_blob_sha": "8084d47889658511d488519502f057a2e1799be9"
+        },
+        {
+          "path": "Model/舵机转板新.STL",
+          "size": 177084,
+          "git_blob_sha": "dd88ca3c97caddef3eeb9a70904b7593a572c846"
+        },
+        {
+          "path": "Model/轮子1.SLDPRT",
+          "size": 228947,
+          "git_blob_sha": "ef28ee21c6ff2d447b437b2df2539f9feb10b492"
+        },
+        {
+          "path": "Model/轮胎1.SLDPRT",
+          "size": 126583,
+          "git_blob_sha": "c86528aaebaf7663c8b9fb2e91e063b7fd0678aa"
+        },
+        {
+          "path": "Model/轮胎2.SLDPRT",
+          "size": 125831,
+          "git_blob_sha": "3ea42edbdd1614493de8f8d723d4364bf3b51457"
+        },
+        {
+          "path": "Model/轴承座.SLDPRT",
+          "size": 130370,
+          "git_blob_sha": "97daa4808da6e0f5a55b80dac92a7f3df1a0a5fe"
+        },
+        {
+          "path": "Model/轴承座2.SLDPRT",
+          "size": 116047,
+          "git_blob_sha": "3e8893ab24f2721ede54da2de6ec7f20ce352b29"
+        },
+        {
+          "path": "Model/铜套.SLDPRT",
+          "size": 95495,
+          "git_blob_sha": "8930af6501f9461312ef77df0fcfbb6e0ff9b6c5"
+        },
+        {
+          "path": "Model/铜套座板.SLDPRT",
+          "size": 69538,
+          "git_blob_sha": "15cf42991b2d057a87004eee8371736730a7d048"
+        },
+        {
+          "path": "Model/铜套座板连接板.SLDPRT",
+          "size": 110511,
+          "git_blob_sha": "96b0b0dc6a55f98aa93a7a368b1ec2416df161a2"
+        },
+        {
+          "path": "Model/铜套座板连接板.STL",
+          "size": 36284,
+          "git_blob_sha": "fbd0a6a8d896fb9cc05b01580bf116460e180ea6"
+        },
+        {
+          "path": "Model/铜柱2.SLDPRT",
+          "size": 59991,
+          "git_blob_sha": "9cc1ccdbb85ca34117380a1f2421f6356344ad81"
+        },
+        {
+          "path": "Model/铜柱长.SLDPRT",
+          "size": 53029,
+          "git_blob_sha": "1aeb512d29d78c67881a14d77fe7ac25d8b570f7"
+        }
+      ]
+    },
+    {
+      "repo": "PatchBOTS/bb8head",
+      "revision": "8a81628d416d57f2b540ed1cb858c272c5ca39ea",
+      "license_status": "no explicit license file or GitHub license detected; do not rehost assets",
+      "purpose": "magnetic dome, casters, mounts and head",
+      "files": [
+        {
+          "path": "CASTERS_EndCap.STL",
+          "size": 76484,
+          "git_blob_sha": "9690ee4baf28cbf42df406229f81e8cfadaf9111"
+        },
+        {
+          "path": "CASTERS_MainHUB_Updated.STL",
+          "size": 181984,
+          "git_blob_sha": "e2766d9bfce0717f7d88089aa94c08b926c4a5bc"
+        },
+        {
+          "path": "CASTERS_Tire.STL",
+          "size": 834884,
+          "git_blob_sha": "7addf7aed73a1f8f63dc701aa2333f940713b2d8"
+        },
+        {
+          "path": "CASTERS_WheelHub.stl",
+          "size": 32084,
+          "git_blob_sha": "c2420bb5a8790e8c206ccb1f9a84210d4af40acf"
+        },
+        {
+          "path": "ELECTRONICS_BatteryMount.STL",
+          "size": 169984,
+          "git_blob_sha": "cda5ae129bc13b943ef25437626ff97dc6b27138"
+        },
+        {
+          "path": "EXTERNAL_Dome.STL",
+          "size": 2526384,
+          "git_blob_sha": "431b65af83f697e54ab0fca23fdf595285aa9586"
+        },
+        {
+          "path": "EXTERNAL_DomeTop_FULL.STL",
+          "size": 1390734,
+          "git_blob_sha": "472600867f479c5c2e017ae32f6eb0676af6ef31"
+        },
+        {
+          "path": "EXTERNAL_DomeTop1.STL",
+          "size": 895234,
+          "git_blob_sha": "792dd482270c8b282e8bf1700df47e908391a330"
+        },
+        {
+          "path": "EXTERNAL_DomeTop2.STL",
+          "size": 756084,
+          "git_blob_sha": "2a73a7304ada090fa7fdda52fac9cc5b68f85de7"
+        },
+        {
+          "path": "EXTERNAL_RingSkirt.STL",
+          "size": 692584,
+          "git_blob_sha": "6ab8ef541b23b82cda9749ef85b060249d88408f"
+        },
+        {
+          "path": "MECH_Cradle.STL",
+          "size": 111084,
+          "git_blob_sha": "bf68d3cf35ac995a770f7cfdfb57fd03e17f949e"
+        },
+        {
+          "path": "MECH_DomeMagneticMount.STL",
+          "size": 397184,
+          "git_blob_sha": "83a11c22ab804e62d1dd1d3a3ffe0de315f59ed9"
+        },
+        {
+          "path": "MECH_Spacer.STL",
+          "size": 30484,
+          "git_blob_sha": "c43fc390f8b3d4b8a32e106e31a32fc751748c2a"
+        },
+        {
+          "path": "MECH_SpindleArm.STL",
+          "size": 109684,
+          "git_blob_sha": "a17ae12326301dd1b3db12e4e74633b21078a8da"
+        },
+        {
+          "path": "MECH_SpindleHub.STL",
+          "size": 165484,
+          "git_blob_sha": "cf9ab725064d03cf5697e4123346ff0323fd652e"
+        },
+        {
+          "path": "MISC_BodyMagneticMount_Bearclaw.STL",
+          "size": 797184,
+          "git_blob_sha": "03ffa6d37162abed6077eec71b7b7767c9c9ab6a"
+        },
+        {
+          "path": "MISC_Cradle for Crossba_mk2r.STL",
+          "size": 115384,
+          "git_blob_sha": "4ef7927f77028f08a7bae50b2c076de18ca800dd"
+        },
+        {
+          "path": "MISC_Cradle for Crossbar.STL",
+          "size": 115784,
+          "git_blob_sha": "1fc575b248e2ce334de550c560dcee5b4512d40e"
+        },
+        {
+          "path": "MISC_Crossbar(see README).STL",
+          "size": 46684,
+          "git_blob_sha": "a03a5ca500b715acba2ffd6167a4baea07bc38b4"
+        }
+      ]
+    }
+  ]
+}

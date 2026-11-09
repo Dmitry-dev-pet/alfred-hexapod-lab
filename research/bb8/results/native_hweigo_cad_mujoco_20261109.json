@@ -1,0 +1,87 @@
+{
+  "schema": "alfred-bb8-real-cad-import-and-proxy-physics/v1",
+  "date": "2026-11-09",
+  "status": "SOURCE_CAD_IMPORT_AND_REAL_MUJOCO_PROXY_COMPLETE; FULL_INNER_WHEEL_PHYSICS_AND_PRIVATE_PLAYER_PUBLICATION_PENDING",
+  "source": {
+    "repo": "HWeigo/BB8_Robot",
+    "commit": "7318411cfbfbffdbd68f75e3734a50c3933969e5",
+    "assembly": "Model/初装.SLDASM",
+    "git_blob_sha1": "bcfead6e92329575aa474fb4be05c24191ac5294"
+  },
+  "cad": {
+    "software": "FreeCAD 1.1.4",
+    "importer": "djbarrow/freecad_solidworks_plugin@72d8a1ccde195725da159fc1266729d936f52884",
+    "instances": 55,
+    "unique_native_parts": 26,
+    "resolved_references": 55,
+    "valid_feature_shapes": 55,
+    "hidden_instances": 2,
+    "source_sphere_diameter_m": 0.2,
+    "source_head_sphere_diameter_m": 0.12,
+    "source_axis_up": "negative-Y",
+    "file_fcstd_sha256": "63d06b84413ee3a7fbeb7586825c64e1fc164bf10cf5eb4e435498a1b85c427e",
+    "warning": "Open/non-solid mesh parts exist; some source shell geometry models nearly solid balls, not physical hollow shell mass"
+  },
+  "visual": {
+    "stl_unique_meshes": 26,
+    "cad_instances": 55,
+    "meshes_total_bytes": 2161284,
+    "exterior_glb_bytes": 4009752,
+    "exterior_glb_sha256": "13a75aee80d71f613a09fcdc54f5ae6178e44586cfdddb2b8d1f0a32d5be2949",
+    "internal_glb_bytes": 3405876,
+    "internal_glb_sha256": "63a8496f3f2861b4c5c7b9a8740139549fde64397d0cf564332359a982bdb146"
+  },
+  "physics": {
+    "engine": "MuJoCo 3.14.0",
+    "step_s": 0.002,
+    "run_duration_s": 6,
+    "physics_steps_per_run": 3000,
+    "recorded_frames_per_run": 301,
+    "original_visual_meshes_in_xml": 21,
+    "mesh_geoms_plus_collision_count": 45,
+    "model_type": "ORIGINAL CAD VISUALS + UNCALIBRATED PENDULUM-REACTION-TORQUE AND SPHERE FLOOR CONTACT",
+    "head_dynamics": false,
+    "real_motor_contacts": false,
+    "real_motor_parameters": false,
+    "runs": [
+      {
+        "assumed_hinge_torque_Nm": 0.01,
+        "max_abs_displacement_m": 0.0667642,
+        "max_abs_hinge_deg": 35.0167,
+        "final_x_m": 0.0000485
+      },
+      {
+        "assumed_hinge_torque_Nm": 0.02,
+        "max_abs_displacement_m": 0.1335674,
+        "max_abs_hinge_deg": 70.0073,
+        "final_x_m": 0.0000979
+      },
+      {
+        "assumed_hinge_torque_Nm": 0.04,
+        "max_abs_displacement_m": 0.2674295,
+        "max_abs_hinge_deg": 139.8435,
+        "final_x_m": 0.000202
+      }
+    ]
+  },
+  "storage": {
+    "drive_folder": "https://drive.google.com/drive/folders/1DFnNwApyA0w_xDXUAf_xOzfQrcLoLHbC",
+    "bundle": "https://drive.google.com/file/d/12Ljj8sBQssdePQ0L8WD4klb_Iz1wtzHa/view?usp=drivesdk",
+    "bundle_bytes": 14757129,
+    "bundle_sha256": "6ae64c6cf4eb9e4d93fde8eb174a3c35cc23d969cecb4aae591a06d03ddcee31",
+    "bundle_entries": 89,
+    "source_scripts_committed": true
+  },
+  "site": {
+    "name": "Alfred Robot Player",
+    "access": "private",
+    "status": "NOT_UPDATED",
+    "reason": "No supported direct Sites editor from this chat; source CAD mesh replay adapter and licence-hosting rights not yet accepted"
+  },
+  "scope": {
+    "main_unchanged": true,
+    "pr_draft": true,
+    "no_new_site": true,
+    "no_new_autonomous_controller": true
+  }
+}
