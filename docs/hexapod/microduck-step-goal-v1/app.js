@@ -18,7 +18,7 @@ const description=c=>{
  return 'Команда '+c.approach_command_mps.toFixed(2)+' м/с · до края '+Math.round(c.trigger_gap_m*100)+' см · кувырок '+c.roll_duration_s+' с';
 };
 const outcome=c=>!c.height_m?(c.standing_final_1s?'Стойка на полу':'Не встал'):
- c.status==='PASS'?'Подъём прошёл проверки':c.step_goal_reached?'Наверху, проверка отклонена':c.trigger_s===null?'Не дошёл до запуска':'Подъём не завершён';
+ c.step_goal_reached?'Подъём выполнен · '+(c.quality_gate?'проверки пройдены':'проверка движения не пройдена'):c.trigger_s===null?'Не дошёл до запуска':'Подъём не завершён';
 const label=c=>description(c)+' · '+outcome(c);
 const PHASES={settle:'Стойка',approach:'Подход приводами',roll:'Кувырок вперёд',recovery:'Готовая политика вставания',no_trigger:'Запуск не достигнут'};
 let replayIndex=null;
@@ -141,7 +141,7 @@ function frame(seconds){
  stage.dataset.clip=replay.id;stage.dataset.frame=String(seconds.toFixed(2));stage.dataset.outcome=replay.status;stage.dataset.goal=String(replay.step_goal_reached);stage.dataset.quality=String(replay.quality_gate);
  const launch=replay.trigger_s===null?'кувырок не запущен':'запуск '+replay.trigger_s.toFixed(2)+' с · скорость '+replay.trigger_vx_mps.toFixed(2)+' м/с';
  metric.textContent=launch+' · поворот '+replay.max_forward_rotation_deg.toFixed(0)+'° · выход угла '+(replay.max_motor_limit_overshoot_rad*180/Math.PI).toFixed(2)+'°';
- origin.textContent=(replay.height_m?'Обе стопы наверху '+(replay.step_goal_reached?'да':'нет'):'Стойка на полу '+(replay.standing_final_1s?'да':'нет'))+' · проверки '+(replay.quality_gate?'пройдены':'не пройдены')+' · '+fmt(seconds)+' / '+fmt(replay.duration_s);
+ origin.textContent=(replay.height_m?'Цель подъёма '+(replay.step_goal_reached?'выполнена':'не выполнена'):'Стойка на полу '+(replay.standing_final_1s?'да':'нет'))+' · проверки '+(replay.quality_gate?'пройдены':'не пройдены')+' · '+fmt(seconds)+' / '+fmt(replay.duration_s);
  seek.value=String(seconds);
 }
 function cameraReset(){

@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 57,
+  "revision": 58,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -2118,20 +2118,20 @@
     {
       "id": "microduck-step-goal-v1",
       "title": "MicroDuck · подъём кувырком · 37 записей",
-      "detail": "Ступени 1–5 см · номинальный подъём на 1 см · отдельно показаны цель и проверки движения · все отклонённые попытки сохранены",
+      "detail": "Ступени 1–5 см · подъёмы на 1 и 2 см · результат подъёма и проверки движения показаны отдельно · все попытки сохранены",
       "duration_s": 10,
       "href": "/hexapod/microduck-step-goal-v1/",
       "status": "research",
       "files": [
         {
           "path": "hexapod/microduck-step-goal-v1/app.js",
-          "size": 12968,
-          "sha256": "92b13b4706019609a36976d95450df9bfc2eca4d151ee143f817b736578b2e9c"
+          "size": 13020,
+          "sha256": "688d8475a82259e6b59830415f29131d76a7cc624d38be1accce9028a097b47a"
         },
         {
           "path": "hexapod/microduck-step-goal-v1/index.html",
-          "size": 6325,
-          "sha256": "4fc47cb50daa01a0d2ca598879ba0f745f2d8687301df1d2ffdb1fdac4bd9afa"
+          "size": 6432,
+          "sha256": "16abd2802148b019b02642c758f3b8146725bf18ccc8caf17e15d4dcf832ef1c"
         },
         {
           "path": "hexapod/microduck-step-goal-v1/pose-loader.js",
