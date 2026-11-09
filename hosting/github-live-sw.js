@@ -15,6 +15,7 @@ const MAX_FILE_BYTES = 8_000_000;
 const SHA = /^[a-f0-9]{40}$/;
 const DIGEST = /^[a-f0-9]{64}$/;
 const ID = /^[a-z0-9-]{1,64}$/;
+const LEGACY_BUNDLED_ONLY = new Set(['tripod-60','claws-10','six-to-four']);
 const PATH = /^hexapod\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_.-]+\.(?:html|js|css|json)$/;
 const MIME = { html:'text/html; charset=utf-8', js:'text/javascript; charset=utf-8', css:'text/css; charset=utf-8', json:'application/json; charset=utf-8' };
 const SAME_ORIGIN = self.location.origin;
@@ -39,7 +40,7 @@ function validateCatalog(doc) {
         !/^\/hexapod\/(?:[a-z0-9-]+\/)?$/.test(entry.href) ||
         routes.has(entry.href) ||
         !Number.isFinite(entry.duration_s) || entry.duration_s <= 0 ||
-        !Array.isArray(entry.files) || entry.files.length < 1 || entry.files.length > 30) {
+        !Array.isArray(entry.files) || (entry.files.length === 0 && !LEGACY_BUNDLED_ONLY.has(entry.id)) || entry.files.length > 30) {
       throw Error('Invalid GitHub catalogue entry');
     }
     ids.add(entry.id); routes.add(entry.href);
