@@ -1,0 +1,55 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "en01-getup-v7-left-asymmetric-20261109",
+  "title": "EN01 v7 · left-asymmetric",
+  "detail": "Попытка вставания · устойчивая стойка не достигнута · динамика не откалибрована",
+  "robot": "NavBot EN01 self-righting surrogate",
+  "engine": "MuJoCo",
+  "status": "failed",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "-m",
+      "research.navbot_en01.getup_probe",
+      "--orientation",
+      "left",
+      "--strategy",
+      "asymmetric",
+      "--model",
+      "results/en01_getup_v7/final/model.xml",
+      "--cad-mesh",
+      "docs/hexapod/en01-original-cad-v1/original-meshes.json",
+      "--out",
+      "results/en01_getup_v7/final/raw/left-asymmetric_raw.json"
+    ],
+    "export": [
+      "python",
+      "-m",
+      "research.navbot_en01.getup_export",
+      "--trace",
+      "results/en01_getup_v7/final/raw/left-asymmetric_raw.json",
+      "--out",
+      "docs/hexapod/data/en01-getup-v7-left-asymmetric-20261109.json",
+      "--model",
+      "results/en01_getup_v7/final/model.xml",
+      "--cad-mesh",
+      "docs/hexapod/en01-original-cad-v1/original-meshes.json"
+    ]
+  },
+  "trace": {
+    "path": "results/en01_getup_v7/final/raw/left-asymmetric_raw.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/en01-getup-v7-left-asymmetric-20261109.json",
+    "format": "navbot-en01-fourbar-physical-replay-v2",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "en01-getup-template"
+  }
+}

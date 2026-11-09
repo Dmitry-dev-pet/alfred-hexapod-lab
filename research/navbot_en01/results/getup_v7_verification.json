@@ -1,0 +1,48 @@
+{
+  "schema": "en01-getup-verification/v1",
+  "cases": 20,
+  "active_attempts": 16,
+  "idle_controls": 4,
+  "successful_recoveries": 0,
+  "physics_steps": 480000,
+  "saved_frames": 6000,
+  "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+  "cad_sha256": "8b034155dc50bb6c4e94a55bfa4ebca7b1fb742f2f38fc5c6c9f158c0cae313b",
+  "mass_kg": 0.322,
+  "geometry_valid_cases": 20,
+  "unexpected_self_intersection_frames": 0,
+  "max_fk_residual": 0.0,
+  "max_contact_penetration_m": 0.0003109767196582333,
+  "minimum_sampled_original_cad_z_m": -0.00022482126360845976,
+  "max_linkage_error_m": 0.00025237469972894176,
+  "repeats": [
+    {
+      "case": "front-extend-backward",
+      "raw_byte_identical": true
+    },
+    {
+      "case": "back-extend-backward",
+      "raw_byte_identical": true
+    },
+    {
+      "case": "left-asymmetric",
+      "raw_byte_identical": true
+    },
+    {
+      "case": "right-asymmetric",
+      "raw_byte_identical": true
+    }
+  ],
+  "unit_tests_passed": 5,
+  "pipeline": {
+    "recordings": 20,
+    "prior_entries": 71,
+    "review_entries": 91,
+    "previous_entries_preserved": true,
+    "idempotent": true,
+    "research_publication_refused": true,
+    "published": false
+  },
+  "webgl_visual_validation": false,
+  "hardware_validation": false
+}
