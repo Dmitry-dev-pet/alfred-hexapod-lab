@@ -1,0 +1,22 @@
+{
+  "filename": "MicroDuck_close_wall_backward_20261109.zip",
+  "size_bytes": 19833401,
+  "sha256": "afd190249567546a39c84197936444715fa895947388ab5371fc271a5aa826af",
+  "files": 41,
+  "drive_file_id": "1-Ulb0XAyYANk5MVXZ3tIo5lXagBsvuwt",
+  "drive_url": "https://drive.google.com/file/d/1-Ulb0XAyYANk5MVXZ3tIo5lXagBsvuwt/view?usp=drivesdk",
+  "route": "/hexapod/microduck-wall-v1/",
+  "catalog_revision": 48,
+  "catalog_entries": 69,
+  "clips": 8,
+  "total_frames": 4000,
+  "client_tests_passed": 5,
+  "webgl_rendering_verified": false,
+  "partial_edge_stance_height_mm": 10,
+  "sole_overhang_mm": 18.296,
+  "site_version": 15,
+  "site_source_commit": "7a67ebc42b514c1b9d12890fbdc80193d2fda57a",
+  "deployment_id": "appgdep_6af223d6e7b881918a069b291e304ece",
+  "site_url": "https://alfred-robot-player.curlyeave.chatgpt.site",
+  "byte_identical_repeats": 2
+}
