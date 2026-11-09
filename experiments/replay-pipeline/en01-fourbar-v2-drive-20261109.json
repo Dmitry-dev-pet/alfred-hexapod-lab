@@ -1,0 +1,45 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "en01-fourbar-v2-drive-20261109",
+  "title": "EN01 v2 \u00b7 drive",
+  "detail": "CAD four-bar \u00b7 diagnostic \u00b7 6 s \u00b7 uncalibrated dynamics",
+  "robot": "NavBot EN01 fourbar surrogate",
+  "engine": "MuJoCo",
+  "status": "research",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "-m",
+      "research.navbot_en01.linkage_probe",
+      "--mode",
+      "drive",
+      "--out",
+      "results/en01_v2/drive_raw.json"
+    ],
+    "export": [
+      "python",
+      "-m",
+      "research.navbot_en01.linkage_export",
+      "--trace",
+      "results/en01_v2/drive_raw.json",
+      "--out",
+      "docs/hexapod/data/en01-fourbar-v2-drive-20261109.json"
+    ]
+  },
+  "trace": {
+    "path": "results/en01_v2/drive_raw.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/en01-fourbar-v2-drive-20261109.json",
+    "format": "navbot-en01-fourbar-physical-replay-v2",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "en01-linkage-template"
+  }
+}

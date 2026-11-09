@@ -1,0 +1,434 @@
+{
+  "schema": "en01-fourbar-source-evidence/v1",
+  "source": {
+    "repo": "fuwei007/Navbot-EN01",
+    "commit": "3139f2fb32b38d10611feb905e16f8aa012f2f2e",
+    "path": "Hardware/RebotModel/OriginalRobotModel.stp",
+    "git_blob_sha1": "9156683a0bb694c84dc541a3e26b5f6b08db1a41",
+    "sha256": "4715cf940718af95872bd2a771fdde61de3376bb748936e2299f94fa76416947",
+    "bytes": 12358579
+  },
+  "part_count": 73,
+  "sides": {
+    "cad_z_positive": {
+      "points_xy_mm": {
+        "A": [
+          -4.79358148976195,
+          15.5000000000027
+        ],
+        "B": [
+          43.843533312366695,
+          -3.1395027756778684
+        ],
+        "C": [
+          55.05965116220978,
+          1.1264907051366793
+        ],
+        "D": [
+          12.90107459367752,
+          31.71416498277999
+        ],
+        "W": [
+          -2.89029106199937,
+          -20.9144756123861
+        ]
+      },
+      "axis_evidence": [
+        {
+          "part_id": 22,
+          "name": "Flange:1",
+          "reference_name": "舵盘",
+          "radius_mm": 2.2,
+          "xy_mm": [
+            -4.79358148976195,
+            15.5000000000027
+          ],
+          "face_indices": [
+            10
+          ]
+        },
+        {
+          "part_id": 31,
+          "name": "bearing4-7-2.5:4",
+          "reference_name": "bearing4-7-2.5",
+          "radius_mm": 2,
+          "xy_mm": [
+            43.843533312366695,
+            -3.1395027756778684
+          ],
+          "face_indices": [
+            2
+          ]
+        },
+        {
+          "part_id": 37,
+          "name": "bearing3-6-2:2",
+          "reference_name": "轴承3-6-2",
+          "radius_mm": 1.5,
+          "xy_mm": [
+            55.05965116220978,
+            1.1264907051366793
+          ],
+          "face_indices": [
+            30
+          ]
+        },
+        {
+          "part_id": 36,
+          "name": "bearing3-6-2:1",
+          "reference_name": "轴承3-6-2",
+          "radius_mm": 1.5,
+          "xy_mm": [
+            12.90107459367752,
+            31.71416498277999
+          ],
+          "face_indices": [
+            30
+          ]
+        },
+        {
+          "part_id": 65,
+          "name": "Hub:2",
+          "reference_name": "2208电机轮胎",
+          "radius_mm": 18.5,
+          "xy_mm": [
+            -2.89029106199937,
+            -20.9144756123861
+          ],
+          "face_indices": [
+            70,
+            72
+          ]
+        },
+        {
+          "part_id": 24,
+          "name": "Thigh",
+          "reference_name": "大腿",
+          "radius_mm": 1.2,
+          "xy_mm": [
+            -4.793581489760624,
+            15.500000000002682
+          ],
+          "face_indices": [
+            40
+          ]
+        },
+        {
+          "part_id": 24,
+          "name": "Thigh",
+          "reference_name": "大腿",
+          "radius_mm": 3.505,
+          "xy_mm": [
+            43.84353331236759,
+            -3.139502775677819
+          ],
+          "face_indices": [
+            21
+          ]
+        },
+        {
+          "part_id": 62,
+          "name": "Calf",
+          "reference_name": "小腿_2208电机版本",
+          "radius_mm": 2,
+          "xy_mm": [
+            43.84353331236761,
+            -3.1395027756779648
+          ],
+          "face_indices": [
+            92
+          ]
+        },
+        {
+          "part_id": 62,
+          "name": "Calf",
+          "reference_name": "小腿_2208电机版本",
+          "radius_mm": 1.505,
+          "xy_mm": [
+            55.059651162216014,
+            1.126490705131971
+          ],
+          "face_indices": [
+            118
+          ]
+        },
+        {
+          "part_id": 62,
+          "name": "Calf",
+          "reference_name": "小腿_2208电机版本",
+          "radius_mm": 19.35,
+          "xy_mm": [
+            -2.8902910620004576,
+            -20.91447561238624
+          ],
+          "face_indices": [
+            26
+          ]
+        },
+        {
+          "part_id": 43,
+          "name": "SidePanel:2",
+          "reference_name": "侧板_MIR",
+          "radius_mm": 0.95,
+          "xy_mm": [
+            12.90107459367717,
+            31.714164982780296
+          ],
+          "face_indices": [
+            28
+          ]
+        },
+        {
+          "part_id": 28,
+          "name": "Rod:1",
+          "reference_name": "小腿副拉杆",
+          "radius_mm": 2.96,
+          "xy_mm": [
+            55.05965116220984,
+            1.1264907051366617
+          ],
+          "face_indices": [
+            12
+          ]
+        },
+        {
+          "part_id": 28,
+          "name": "Rod:1",
+          "reference_name": "小腿副拉杆",
+          "radius_mm": 2.96,
+          "xy_mm": [
+            12.901074593677464,
+            31.714164982779806
+          ],
+          "face_indices": [
+            10
+          ]
+        }
+      ],
+      "tire_midplane_cad_z_mm": 75.65000005000218,
+      "tire_width_mm": 13.00000010000123,
+      "lengths_mm": {
+        "AB": 52.0864665724221,
+        "BC": 11.999999999996705,
+        "DC": 52.086,
+        "AD": 23.99999999999839,
+        "BW": 49.999999999998074
+      }
+    },
+    "cad_z_negative": {
+      "points_xy_mm": {
+        "A": [
+          -4.79358148976599,
+          15.5000000000047
+        ],
+        "B": [
+          43.8435333123641,
+          -3.139502775671411
+        ],
+        "C": [
+          55.0596511622116,
+          1.1264907051399957
+        ],
+        "D": [
+          12.901074593677196,
+          31.714164982780698
+        ],
+        "W": [
+          -2.89029106200198,
+          -20.9144756123855
+        ]
+      },
+      "axis_evidence": [
+        {
+          "part_id": 23,
+          "name": "Flange:2",
+          "reference_name": "舵盘_MIR1",
+          "radius_mm": 2.2,
+          "xy_mm": [
+            -4.79358148976599,
+            15.5000000000047
+          ],
+          "face_indices": [
+            10
+          ]
+        },
+        {
+          "part_id": 30,
+          "name": "bearing4-7-2.5:3",
+          "reference_name": "bearing4-7-2.5",
+          "radius_mm": 2,
+          "xy_mm": [
+            43.8435333123641,
+            -3.139502775671411
+          ],
+          "face_indices": [
+            2
+          ]
+        },
+        {
+          "part_id": 39,
+          "name": "bearing3-6-2:4",
+          "reference_name": "轴承3-6-2",
+          "radius_mm": 1.5,
+          "xy_mm": [
+            55.0596511622116,
+            1.1264907051399957
+          ],
+          "face_indices": [
+            30
+          ]
+        },
+        {
+          "part_id": 38,
+          "name": "bearing3-6-2:3",
+          "reference_name": "轴承3-6-2",
+          "radius_mm": 1.5,
+          "xy_mm": [
+            12.901074593677196,
+            31.714164982780698
+          ],
+          "face_indices": [
+            30
+          ]
+        },
+        {
+          "part_id": 64,
+          "name": "Hub:1",
+          "reference_name": "2208电机轮胎",
+          "radius_mm": 18.5,
+          "xy_mm": [
+            -2.89029106200198,
+            -20.9144756123855
+          ],
+          "face_indices": [
+            70,
+            72
+          ]
+        },
+        {
+          "part_id": 26,
+          "name": "Thigh_MIR",
+          "reference_name": "大腿_MIR1",
+          "radius_mm": 1.2,
+          "xy_mm": [
+            -4.793581489765965,
+            15.500000000004817
+          ],
+          "face_indices": [
+            40
+          ]
+        },
+        {
+          "part_id": 26,
+          "name": "Thigh_MIR",
+          "reference_name": "大腿_MIR1",
+          "radius_mm": 3.505,
+          "xy_mm": [
+            43.84353331236392,
+            -3.139502775671339
+          ],
+          "face_indices": [
+            21
+          ]
+        },
+        {
+          "part_id": 63,
+          "name": "Calf_MIR",
+          "reference_name": "小腿_2208电机版本_MIR",
+          "radius_mm": 2,
+          "xy_mm": [
+            43.84353331236365,
+            -3.139502775671282
+          ],
+          "face_indices": [
+            92
+          ]
+        },
+        {
+          "part_id": 63,
+          "name": "Calf_MIR",
+          "reference_name": "小腿_2208电机版本_MIR",
+          "radius_mm": 1.505,
+          "xy_mm": [
+            55.059651162211594,
+            1.1264907051400321
+          ],
+          "face_indices": [
+            118
+          ]
+        },
+        {
+          "part_id": 63,
+          "name": "Calf_MIR",
+          "reference_name": "小腿_2208电机版本_MIR",
+          "radius_mm": 19.35,
+          "xy_mm": [
+            -2.8902910620024365,
+            -20.914475612385374
+          ],
+          "face_indices": [
+            26
+          ]
+        },
+        {
+          "part_id": 44,
+          "name": "SidePanel:1",
+          "reference_name": "侧板",
+          "radius_mm": 0.95,
+          "xy_mm": [
+            12.901074593677144,
+            31.714164982780602
+          ],
+          "face_indices": [
+            28
+          ]
+        },
+        {
+          "part_id": 29,
+          "name": "Rod:2",
+          "reference_name": "小腿副拉杆",
+          "radius_mm": 2.96,
+          "xy_mm": [
+            55.0596511622115,
+            1.1264907051399908
+          ],
+          "face_indices": [
+            12
+          ]
+        },
+        {
+          "part_id": 29,
+          "name": "Rod:2",
+          "reference_name": "小腿副拉杆",
+          "radius_mm": 2.96,
+          "xy_mm": [
+            12.901074593677293,
+            31.71416498278063
+          ],
+          "face_indices": [
+            10
+          ]
+        }
+      ],
+      "tire_midplane_cad_z_mm": -11.650000049998996,
+      "tire_width_mm": 13.000000100001227,
+      "lengths_mm": {
+        "AB": 52.086466572421855,
+        "BC": 11.999999999999714,
+        "DC": 52.086000000000205,
+        "AD": 24.000000000000256,
+        "BW": 50.00000000000017
+      }
+    }
+  },
+  "mirror_xy_error_mm": 6.958840806903707e-12,
+  "status": "SOURCE_GEOMETRY_ONLY_SERVO_ZERO_AND_DYNAMICS_UNVALIDATED",
+  "omissions": [
+    "torsion spring stiffness/preload",
+    "servo encoder zero and direction",
+    "material densities and actual mass/COM/inertia",
+    "wheel motor electrical parameters",
+    "effective loaded tire rolling radius",
+    "link collision and assembly interference"
+  ]
+}
