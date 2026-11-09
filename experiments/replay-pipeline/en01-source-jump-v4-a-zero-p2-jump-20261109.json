@@ -1,0 +1,47 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "en01-source-jump-v4-a-zero-p2-jump-20261109",
+  "title": "EN01 v4 · a-zero-p2-jump",
+  "detail": "Исходные команды · цикл 2 мс и q0 0.0 рад — предположения · прыжок/посадка FAIL",
+  "robot": "NavBot EN01 source-command surrogate",
+  "engine": "MuJoCo",
+  "status": "failed",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "-m",
+      "research.navbot_en01.source_jump_probe",
+      "--out",
+      "results/en01_source_jump_v4/frozen/raw/a-zero-p2-jump_raw.json",
+      "--loop-ms",
+      "2",
+      "--anchor-q",
+      "0.0"
+    ],
+    "export": [
+      "python",
+      "-m",
+      "research.navbot_en01.source_jump_export",
+      "--trace",
+      "results/en01_source_jump_v4/frozen/raw/a-zero-p2-jump_raw.json",
+      "--out",
+      "docs/hexapod/data/en01-source-jump-v4-a-zero-p2-jump-20261109.json"
+    ]
+  },
+  "trace": {
+    "path": "results/en01_source_jump_v4/frozen/raw/a-zero-p2-jump_raw.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/en01-source-jump-v4-a-zero-p2-jump-20261109.json",
+    "format": "navbot-en01-fourbar-physical-replay-v2",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "en01-source-jump-template"
+  }
+}
