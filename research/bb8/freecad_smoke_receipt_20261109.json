@@ -1,0 +1,11 @@
+{
+  "schema": "alfred-bb8-freecad-smoke/v1",
+  "freecad_version": "1.1.4",
+  "headless_ok": true,
+  "step_reimport_ok": true,
+  "synthetic_only": true,
+  "bb8_source_cad_imported": false,
+  "step_sha256": "e09f70575f81d1e5fda9958eaf950b8cb9f178c23871da42299d0b76ad791d7e",
+  "stl_sha256": "1e572f1046779a8cd83b98ffb0d07fa772f89ed084d54df82f135a31a9b6d7ab",
+  "body_volume_native_units3": 9424.778
+}
