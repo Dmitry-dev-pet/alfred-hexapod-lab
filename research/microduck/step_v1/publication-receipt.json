@@ -1,0 +1,23 @@
+{
+  "filename": "MicroDuck_step5mm_physics_replays_20261109.zip",
+  "size_bytes": 7649134,
+  "sha256": "99fc61956b3103ae9d48ebf6d33b372fa8ca15eec1b3733e8b2eaa95ae4b27b2",
+  "files": 23,
+  "drive_file_id": "15Vev3ROvOJfO3Ae-6kaaR84ByJ0vB3O7",
+  "drive_url": "https://drive.google.com/file/d/15Vev3ROvOJfO3Ae-6kaaR84ByJ0vB3O7/view?usp=drivesdk",
+  "site_version": 9,
+  "site_source_commit": "ca2a7cfac96108e90395be8cf25293133bf9b834",
+  "deployment_id": "appgdep_6af20723594481919d8e1a9e5e6deb85",
+  "route": "/hexapod/microduck-step-v1/",
+  "catalog_revision": 42,
+  "catalog_entries": 63,
+  "nominal_step_trials": 3,
+  "nominal_step_passes": 1,
+  "firm_contact_trial_status": "FAIL",
+  "falls": 0,
+  "reliable_step_ascent_demonstrated": false,
+  "clips": 5,
+  "total_frames": 2987,
+  "client_tests_passed": 5,
+  "webgl_rendering_verified": false
+}

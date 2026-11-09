@@ -1,0 +1,152 @@
+{
+  "schema": "microduck-step-summary/v1",
+  "source_gate": {
+    "verified_git_blobs": {
+      "microduck_rl": 259,
+      "bam": 112
+    },
+    "manifest_sha256": "1248837b9bc0e2087af1067f3ed174f97ae576f15888a5fb6275ee31822405a4"
+  },
+  "episodes": [
+    {
+      "contact_profile": "upstream_5ms",
+      "height_m": 0.005,
+      "seed": 20261109,
+      "status": "FAIL",
+      "first_foot_top_contact_s": 2.72,
+      "fully_crossed_s": null,
+      "stop_command_s": null,
+      "fell_s": null,
+      "both_feet_supported_final_1s": false,
+      "quiet_final_1s": false,
+      "final_position_m": [
+        0.160204682,
+        -0.075341765,
+        0.117342745
+      ],
+      "final_tilt_deg": 2.529379839717014,
+      "max_tilt_deg": 4.857060810838432,
+      "max_contact_penetration_m": 0.0038545084082470408,
+      "peak_environment_contact_n": 19.127132972154534,
+      "max_actuator_torque_nm": 0.49299678377519796,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 15.0,
+      "frames": 750,
+      "trace_file": "step5mm-20261109.json",
+      "trace_sha256": "da0a695229d29bd490b07d8732d174e4df69ff5f8d0168bb4e63c6853a5d73ab"
+    },
+    {
+      "contact_profile": "upstream_5ms",
+      "height_m": 0.005,
+      "seed": 20261110,
+      "status": "FAIL",
+      "first_foot_top_contact_s": 2.7,
+      "fully_crossed_s": null,
+      "stop_command_s": null,
+      "fell_s": null,
+      "both_feet_supported_final_1s": false,
+      "quiet_final_1s": false,
+      "final_position_m": [
+        0.15945601,
+        -0.080497292,
+        0.117856654
+      ],
+      "final_tilt_deg": 2.815749148400751,
+      "max_tilt_deg": 4.864827977865852,
+      "max_contact_penetration_m": 0.004022235752324323,
+      "peak_environment_contact_n": 18.7765208641064,
+      "max_actuator_torque_nm": 0.564165578255586,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 15.0,
+      "frames": 750,
+      "trace_file": "step5mm-20261110.json",
+      "trace_sha256": "88e55e331ff4237cf66b97de4411fef1f3d25ea93c3f5a63da503147cbba1e43"
+    },
+    {
+      "contact_profile": "upstream_5ms",
+      "height_m": 0.005,
+      "seed": 20261111,
+      "status": "PASS",
+      "first_foot_top_contact_s": 2.7,
+      "fully_crossed_s": 3.96,
+      "stop_command_s": 3.96,
+      "fell_s": null,
+      "both_feet_supported_final_1s": true,
+      "quiet_final_1s": true,
+      "final_position_m": [
+        0.227330142,
+        -0.055991335,
+        0.120536465
+      ],
+      "final_tilt_deg": 0.8323096253247315,
+      "max_tilt_deg": 4.814645854132511,
+      "max_contact_penetration_m": 0.0032976777346478484,
+      "peak_environment_contact_n": 19.20924414443057,
+      "max_actuator_torque_nm": 0.5623733769481918,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 6.98,
+      "frames": 349,
+      "trace_file": "step5mm-20261111.json",
+      "trace_sha256": "5f4faa3d5cd70f97608858bd7c488c821963b2a19bb9c29fd1d0f96c09eb1666"
+    },
+    {
+      "contact_profile": "upstream_5ms",
+      "height_m": 0.0,
+      "seed": 20261109,
+      "status": "CONTROL",
+      "first_foot_top_contact_s": null,
+      "fully_crossed_s": null,
+      "stop_command_s": 4.74,
+      "fell_s": null,
+      "both_feet_supported_final_1s": false,
+      "quiet_final_1s": true,
+      "final_position_m": [
+        0.317323309,
+        -0.100728013,
+        0.11536902
+      ],
+      "final_tilt_deg": 0.599461240611574,
+      "max_tilt_deg": 4.1231961006507305,
+      "max_contact_penetration_m": 0.0030744681203701543,
+      "peak_environment_contact_n": 19.85447859225959,
+      "max_actuator_torque_nm": 0.49299678377519796,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 7.76,
+      "frames": 388,
+      "trace_file": "flat-20261109.json",
+      "trace_sha256": "6a6f112c41997cb6dcb8e7c9752c7bcc6664014e29f5d2f573fba47c804939e0"
+    },
+    {
+      "contact_profile": "firm_1ms",
+      "height_m": 0.005,
+      "seed": 20261111,
+      "status": "FAIL",
+      "first_foot_top_contact_s": 3.08,
+      "fully_crossed_s": null,
+      "stop_command_s": null,
+      "fell_s": null,
+      "both_feet_supported_final_1s": false,
+      "quiet_final_1s": false,
+      "final_position_m": [
+        0.162879282,
+        -0.03378261,
+        0.115784995
+      ],
+      "final_tilt_deg": 2.640436786046648,
+      "max_tilt_deg": 4.522986306114933,
+      "max_contact_penetration_m": 0.0010481550671786373,
+      "peak_environment_contact_n": 56.92894214816345,
+      "max_actuator_torque_nm": 0.6534596301456654,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 15.0,
+      "frames": 750,
+      "trace_file": "step5mm-firm-20261111.json",
+      "trace_sha256": "2e3f0b06ff78bb827ddfb1f0a61cc252940fa6f3bfd61d6f32eb6dacefe705c0"
+    }
+  ]
+}
