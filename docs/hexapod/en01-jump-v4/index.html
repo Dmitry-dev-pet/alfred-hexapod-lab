@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10212c"><title>EN01 · авторский прыжок · 24 записи</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css"><link rel="stylesheet" href="./replay.css">
+<script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+<script src="/github-live-boot.js"></script><script src="/webgl-fallback.js"></script>
+</head><body><main class="layout"><section class="stage" aria-label="EN01: 24 записи исходной команды прыжка">
+<div id="viewer" role="img" aria-label="Оригинальная модель EN01; вращайте камеру пальцем"></div>
+<div class="md-case en01-pickers"><label class="picker-title">Запись</label>
+<div class="choice"><span>Опыт</span><select id="kind" aria-label="Вид опыта" disabled><option value="jump">Прыжок</option><option value="baseline">Контроль стойки</option></select></div>
+<div class="choice"><span>Импульс</span><select id="pulse" aria-label="Задержка возврата ног" disabled><option value="1">29 мс</option><option value="2">58 мс</option><option value="5" selected>145 мс</option><option value="10">290 мс</option></select></div>
+<div class="choice"><span>Поза</span><select id="anchor" aria-label="Начальная поза модели" disabled><option value="-0.04">−0,04 рад</option><option value="0" selected>Исходная</option><option value="0.04">+0,04 рад</option></select></div></div>
+<div class="status-strip" aria-live="polite"><strong id="verdict">Загружаем записи…</strong><span id="metrics">—</span></div>
+<div class="telemetry"><span id="pose">—</span><span id="contact">—</span><span id="joints">—</span></div>
+<div class="replay-hud"><p id="scenario">12 попыток прыжка и 12 контрольных стоек · по 6 секунд</p><p id="mode">MuJoCo 3.14.0 · 6000 шагов на опыт · 73 оригинальные детали.</p>
+<p>Последовательность команд совпадает с исходной прошивкой. Импульс и начальная поза — проверяемые предположения: фактический период программы и ноль сервоприводов неизвестны. Массы и приводы не откалиброваны; контакты упрощены.</p>
+<p>Подтверждённый полёт: весь робот без контакта с полом, центр масс движется вверх, отрыв дольше 20 мс. В двух вариантах есть короткий полёт, но ни один не удержал посадку 2 секунды. Поднятые колёса при падении не считаются прыжком.</p>
+<p>Это просмотр сохранённых состояний физического расчёта; между кадрами применяется интерполяция. Камера поворачивается пальцем. Сведения о текущем опыте и метрики — здесь.</p><p id="provenance"></p></div>
+<div id="loading" role="status">Загружаем оригинальную модель и запись…</div><div id="replay-error" role="alert" hidden></div><div id="webgl-note" hidden>В этом браузере WebGL недоступен. Выбор записей и метрики работают; для изображения нужен браузер с WebGL.</div>
+</section><section class="controls" aria-label="Управление записью"><button id="play" aria-label="Пауза">Ⅱ</button><input id="seek" type="range" min="0" max="6" step=".005" value="0" aria-label="Время записи"><span id="time">0,0 / 6,0 с</span><select id="speed" aria-label="Скорость"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option></select><button id="reset-camera">Камера</button></section></main>
+<script type="module" src="./app.js"></script><script src="/hexapod/player-shell.js"></script></body></html>
