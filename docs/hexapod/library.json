@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 35,
+  "revision": 36,
   "entries": [
     {
       "id": "tripod-60",
@@ -1492,6 +1492,66 @@
           "path": "hexapod/data/sebaju-tip20-long-v1.json",
           "sha256": "654aff33009e672549726b1c9647ed24e2515d12f401e3c5e5478f2e6df4941d",
           "size": 77149
+        }
+      ]
+    },
+    {
+      "id": "microduck-standup-v1",
+      "title": "MicroDuck · 7 испытаний вставания",
+      "detail": "6 с каждый · оригинальные STL · MuJoCo/ONNX · CPU с приближёнными приводами",
+      "duration_s": 6.0,
+      "href": "/hexapod/microduck-standup-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-standup-v1/index.html",
+          "sha256": "9e9d852dd9e914378f49047c178bd69323639e3c89bc1ea272af8f3b29708e73",
+          "size": 4468
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/app.js",
+          "sha256": "89d3bbed897896614b23516b49462e95851db54ceeb75608b8112c95d415e041",
+          "size": 12432
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/asset-manifest.json",
+          "sha256": "02defede129e2edecb0a9129acaecb8966fabdd598fd62f23cbf1ae3d7b912ce",
+          "size": 18104
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/stand.json",
+          "sha256": "cad3502bde51206576dd8897cb1b10b7d2a5c027b97bd336d5ada5fa57d61279",
+          "size": 1527628
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/sit.json",
+          "sha256": "06d1d8c1f66bbb46d21f3481572774638f52df7c0d850c6d1ecf701f5f2220bc",
+          "size": 1534869
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/fold.json",
+          "sha256": "d769f03f6c56cdf5506ef7fe52b67190a57a62f87acc1ebda145e6df0b5a616b",
+          "size": 1519798
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/roll180.json",
+          "sha256": "6a824873f0db10ddb957b52fe632cb7d99414996ad6fc35ce09d67d1c9244c21",
+          "size": 1554372
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/pitch180.json",
+          "sha256": "0d399d3a0efc30d8e8e80ebe98fdb7d0f589e379b41d62837231b5c1b0b6989f",
+          "size": 1509686
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/side90.json",
+          "sha256": "a40bc448fc94dcce64d7ff2a6e330275a144d77fdfe5e4991dba94e5a3387607",
+          "size": 1544490
+        },
+        {
+          "path": "hexapod/microduck-standup-v1/push.json",
+          "sha256": "35d62c4fc835d5fd1c7f1aa3f020533f24fb18e03dffcd8e5fb61ff2e451b4e0",
+          "size": 1522940
         }
       ]
     }
