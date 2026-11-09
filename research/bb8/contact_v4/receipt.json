@@ -1,0 +1,388 @@
+{
+  "schema": "alfred-bb8-first-trip-receipt/v4",
+  "hardware_calibrated": false,
+  "protocol": {
+    "schema": "alfred-bb8-first-trip-protocol/v4",
+    "scope": "First commanded translation in the existing estimated-mass simulation; excludes automatic balancing, physical hardware, head, and robust stopping",
+    "declared_before_validation_battery": true,
+    "drive_window_s": [
+      2,
+      10
+    ],
+    "drive_criteria": {
+      "commanded_signed_x_at_least_m": 0.3,
+      "absolute_cross_track_at_most_m": 0.1,
+      "max_full_chassis_tilt_at_most_deg": 45,
+      "each_wheel_contact_fraction_at_least": 0.98,
+      "max_contact_penetration_at_most_m": 0.0005,
+      "floor_rolling_residual_rms_at_most_m_s": 0.005,
+      "warnings": 0
+    },
+    "stop_criteria_separate": {
+      "tail_window_s": 2,
+      "tail_speed_rms_at_most_m_s": 0.01,
+      "each_tail_position_range_at_most_m": 0.01,
+      "final_speed_at_most_m_s": 0.01
+    },
+    "manual_schedule_s": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        "effort"
+      ],
+      [
+        9,
+        "effort"
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        14,
+        0
+      ]
+    ],
+    "validation_cases": [
+      [
+        "nominal",
+        "zero",
+        0
+      ],
+      [
+        "nominal",
+        "forward",
+        0.04
+      ],
+      [
+        "nominal",
+        "reverse",
+        -0.2
+      ],
+      [
+        "nominal",
+        "forward-repeat",
+        0.04
+      ],
+      [
+        "light",
+        "forward",
+        0.04
+      ],
+      [
+        "heavy",
+        "forward",
+        0.04
+      ]
+    ]
+  },
+  "results": {
+    "nominal-zero.json": {
+      "summary": {
+        "drive_displacement_2_to_10s_m": [
+          -0.049306598327321066,
+          0.004027612491691601
+        ],
+        "max_full_tilt_deg": 41.52246748563217,
+        "final_xy_m": [
+          -0.05697928134203548,
+          0.0047756693905808625
+        ],
+        "final_speed_m_s": 0.0254214763820889,
+        "tail_speed_rms_m_s": 0.06291879549477339,
+        "tail_position_range_m": [
+          0.05877428127108582,
+          0.0047408805288132886
+        ],
+        "wheel_contact_fraction": {
+          "left": 0.9983572601957003,
+          "right": 0.9985715306049567
+        },
+        "max_contact_penetration_m": 0.00025976209884942753,
+        "floor_rolling_residual_rms_m_s": 0.00022152765609852773,
+        "max_abs_motor_torque_Nm": 0.010783399536664625,
+        "warnings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "steps": 14000,
+        "runtime_s": 27.51550576099544
+      },
+      "drive_checks": {
+        "commanded_travel": false,
+        "cross_track": true,
+        "tilt": true,
+        "wheel_contact": true,
+        "penetration": true,
+        "rolling": true,
+        "warnings": true
+      },
+      "first_translation_passed": false,
+      "stop_passed": false,
+      "sha256": "8e34c388d0b27beb78065e494e406ad7985239bca13302117977e99aa1054e36"
+    },
+    "nominal-forward.json": {
+      "summary": {
+        "drive_displacement_2_to_10s_m": [
+          0.5718612859577454,
+          0.057674862956915054
+        ],
+        "max_full_tilt_deg": 41.52246748563217,
+        "final_xy_m": [
+          0.550549728178884,
+          0.04446551303882271
+        ],
+        "final_speed_m_s": 0.05513174273322609,
+        "tail_speed_rms_m_s": 0.0405030155464976,
+        "tail_position_range_m": [
+          0.03807581099360546,
+          0.01928774582957802
+        ],
+        "wheel_contact_fraction": {
+          "left": 0.9982858367259482,
+          "right": 0.9983572601957003
+        },
+        "max_contact_penetration_m": 0.00025976209884942753,
+        "floor_rolling_residual_rms_m_s": 0.00016620487636496298,
+        "max_abs_motor_torque_Nm": 0.03866520073394663,
+        "warnings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "steps": 14000,
+        "runtime_s": 30.57053680300305
+      },
+      "drive_checks": {
+        "commanded_travel": true,
+        "cross_track": true,
+        "tilt": true,
+        "wheel_contact": true,
+        "penetration": true,
+        "rolling": true,
+        "warnings": true
+      },
+      "first_translation_passed": true,
+      "stop_passed": false,
+      "sha256": "bb206c36edf0c65e92d64f4e1546c32400c817b186da367befcfcfb5a52904a6"
+    },
+    "nominal-reverse.json": {
+      "summary": {
+        "drive_displacement_2_to_10s_m": [
+          -0.08601338605022286,
+          -0.002610325887647751
+        ],
+        "max_full_tilt_deg": 41.8046295281141,
+        "final_xy_m": [
+          -0.08497508969353003,
+          -2.541016061685012e-05
+        ],
+        "final_speed_m_s": 0.03446199937134289,
+        "tail_speed_rms_m_s": 0.05010286774983502,
+        "tail_position_range_m": [
+          0.04687508427678011,
+          0.008628909602710526
+        ],
+        "wheel_contact_fraction": {
+          "left": 0.9983572601957003,
+          "right": 0.9985715306049567
+        },
+        "max_contact_penetration_m": 0.00025976209884942753,
+        "floor_rolling_residual_rms_m_s": 0.000208253269536579,
+        "max_abs_motor_torque_Nm": 0.1998015885819554,
+        "warnings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "steps": 14000,
+        "runtime_s": 27.18573790800292
+      },
+      "drive_checks": {
+        "commanded_travel": false,
+        "cross_track": true,
+        "tilt": true,
+        "wheel_contact": true,
+        "penetration": true,
+        "rolling": true,
+        "warnings": true
+      },
+      "first_translation_passed": false,
+      "stop_passed": false,
+      "sha256": "f3de6d09a29a5bffbefb3962ab035aabe0f8619c1591c1adc3bda4969d837667"
+    },
+    "nominal-forward-repeat.json": {
+      "summary": {
+        "drive_displacement_2_to_10s_m": [
+          0.5718612859577454,
+          0.057674862956915054
+        ],
+        "max_full_tilt_deg": 41.52246748563217,
+        "final_xy_m": [
+          0.550549728178884,
+          0.04446551303882271
+        ],
+        "final_speed_m_s": 0.05513174273322609,
+        "tail_speed_rms_m_s": 0.0405030155464976,
+        "tail_position_range_m": [
+          0.03807581099360546,
+          0.01928774582957802
+        ],
+        "wheel_contact_fraction": {
+          "left": 0.9982858367259482,
+          "right": 0.9983572601957003
+        },
+        "max_contact_penetration_m": 0.00025976209884942753,
+        "floor_rolling_residual_rms_m_s": 0.00016620487636496298,
+        "max_abs_motor_torque_Nm": 0.03866520073394663,
+        "warnings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "steps": 14000,
+        "runtime_s": 30.535347027005628
+      },
+      "drive_checks": {
+        "commanded_travel": true,
+        "cross_track": true,
+        "tilt": true,
+        "wheel_contact": true,
+        "penetration": true,
+        "rolling": true,
+        "warnings": true
+      },
+      "first_translation_passed": true,
+      "stop_passed": false,
+      "sha256": "cc0bc3e15bfc4376da597c3d363260fba8149b914215d80dd0992798201ce82d"
+    },
+    "light-forward.json": {
+      "summary": {
+        "drive_displacement_2_to_10s_m": [
+          0.6928743717097894,
+          0.0909636673428926
+        ],
+        "max_full_tilt_deg": 43.659430597303434,
+        "final_xy_m": [
+          0.6522865646680772,
+          0.07040476635953355
+        ],
+        "final_speed_m_s": 0.07340098415275892,
+        "tail_speed_rms_m_s": 0.05066581704131389,
+        "tail_position_range_m": [
+          0.04437922187781207,
+          0.033274757331438594
+        ],
+        "wheel_contact_fraction": {
+          "left": 0.9963574030426399,
+          "right": 0.9970716377401614
+        },
+        "max_contact_penetration_m": 0.00025779176348000735,
+        "floor_rolling_residual_rms_m_s": 0.0001666098288904091,
+        "max_abs_motor_torque_Nm": 0.03577467554502087,
+        "warnings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "steps": 14000,
+        "runtime_s": 30.915278927001054
+      },
+      "drive_checks": {
+        "commanded_travel": true,
+        "cross_track": true,
+        "tilt": true,
+        "wheel_contact": true,
+        "penetration": true,
+        "rolling": true,
+        "warnings": true
+      },
+      "first_translation_passed": true,
+      "stop_passed": false,
+      "sha256": "df13245df48dd8aa0d0f695d2bd972c628624a1f65394a97d0009ca3562a5f73"
+    },
+    "heavy-forward.json": {
+      "summary": {
+        "drive_displacement_2_to_10s_m": [
+          0.36763993933124384,
+          0.05198016271299317
+        ],
+        "max_full_tilt_deg": 48.08417945954344,
+        "final_xy_m": [
+          0.33500312025657597,
+          0.039557111866326745
+        ],
+        "final_speed_m_s": 0.04614642814058575,
+        "tail_speed_rms_m_s": 0.03373764739765856,
+        "tail_position_range_m": [
+          0.034958543683151155,
+          0.015780779044533587
+        ],
+        "wheel_contact_fraction": {
+          "left": 0.9984286836654525,
+          "right": 0.9985715306049567
+        },
+        "max_contact_penetration_m": 0.00026084239739482045,
+        "floor_rolling_residual_rms_m_s": 0.0001569206297803596,
+        "max_abs_motor_torque_Nm": 0.03986771450212098,
+        "warnings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "steps": 14000,
+        "runtime_s": 32.325232133996906
+      },
+      "drive_checks": {
+        "commanded_travel": true,
+        "cross_track": true,
+        "tilt": false,
+        "wheel_contact": true,
+        "penetration": true,
+        "rolling": true,
+        "warnings": true
+      },
+      "first_translation_passed": false,
+      "stop_passed": false,
+      "sha256": "4ab232b515bd8b86faaf673ad1f556fba646cb303b8520930a3fe0fcee7d1a18"
+    }
+  },
+  "model_sha256": {
+    "nominal": "9d14a52b856221dc602cb6f0b8a2c88abd66655938c28cf1e02523a84f69256c",
+    "light": "d7a615ec52272398b1b9a405618bc975fe761c40c2cff997b927091b93e505a4",
+    "heavy": "ce5b2b9a59e03c9b1a27146e554a1fc3a6d9496b55cc4aae734b2c46de7ef9ab"
+  },
+  "exact_forward_repeat": true
+}

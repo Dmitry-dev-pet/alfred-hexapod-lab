@@ -1,0 +1,26 @@
+{
+  "schema": "alfred-bb8-first-trip-verification/v4",
+  "local_physics_test_passed": 1,
+  "closed_system_COM_drift_m_at_1ms_and_05ms": [
+    7.005666019297993e-06,
+    3.114203701648232e-06
+  ],
+  "replay_sha256_verified": 6,
+  "model_sha256_verified_unchanged_from_v3": 3,
+  "all_6_streams_finite_701_timed_frames": true,
+  "exact_nominal_forward_repeat": true,
+  "first_translation_passed_profiles": [
+    "nominal",
+    "light"
+  ],
+  "heavy_failed_tilt_limit": true,
+  "reverse_passed": false,
+  "stopping_passed": false,
+  "hardware_calibrated": false,
+  "source_sha256": {
+    "test_physics.py": "15dfe747e2b2a1c865a863ffe68ce996517d7b0db196c0a241baa9b5e12a4a4e",
+    "direct_drive.py": "14c78044e74120d7c40416a1fc8a9688a292603c369cd53c4be8877d08bed5fd",
+    "battery.py": "6ef76d7591f9154b82744286d7556df1bd83290c7ccdc0e6874a01ebc1d2fd39",
+    "contact_check.py": "041e10685f20426a996572968da6b38f87863b0525542b50333195ca125c8ec8"
+  }
+}

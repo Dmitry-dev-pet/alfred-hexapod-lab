@@ -1,0 +1,30 @@
+{
+  "schema": "alfred-bb8-first-trip-protocol/v4",
+  "scope": "First commanded translation in the existing estimated-mass simulation; excludes automatic balancing, physical hardware, head, and robust stopping",
+  "declared_before_validation_battery": true,
+  "drive_window_s": [2, 10],
+  "drive_criteria": {
+    "commanded_signed_x_at_least_m": 0.3,
+    "absolute_cross_track_at_most_m": 0.1,
+    "max_full_chassis_tilt_at_most_deg": 45,
+    "each_wheel_contact_fraction_at_least": 0.98,
+    "max_contact_penetration_at_most_m": 0.0005,
+    "floor_rolling_residual_rms_at_most_m_s": 0.005,
+    "warnings": 0
+  },
+  "stop_criteria_separate": {
+    "tail_window_s": 2,
+    "tail_speed_rms_at_most_m_s": 0.01,
+    "each_tail_position_range_at_most_m": 0.01,
+    "final_speed_at_most_m_s": 0.01
+  },
+  "manual_schedule_s": [[0, 0], [2, 0], [3, "effort"], [9, "effort"], [10, 0], [14, 0]],
+  "validation_cases": [
+    ["nominal", "zero", 0],
+    ["nominal", "forward", 0.04],
+    ["nominal", "reverse", -0.2],
+    ["nominal", "forward-repeat", 0.04],
+    ["light", "forward", 0.04],
+    ["heavy", "forward", 0.04]
+  ]
+}
