@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 38,
+  "revision": 39,
   "entries": [
     {
       "id": "tripod-60",
@@ -1647,6 +1647,36 @@
           "path": "hexapod/en01-original-cad-v1/replay.css",
           "size": 2266,
           "sha256": "6e629cd5a5a9b0077e9fd73bda84f1a4ed57b88e02537015071607c823821db4"
+        }
+      ]
+    },
+    {
+      "id": "microduck-bam-v2",
+      "title": "MicroDuck · BAM и люфты · 63 записи",
+      "detail": "3 привода × 7 сценариев × 3 старта · 6 с · исходная геометрия · смещение и нагрузки",
+      "duration_s": 6,
+      "href": "/hexapod/microduck-bam-v2/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-bam-v2/index.html",
+          "sha256": "cbb9d1661228d19624215c08a4c872aee0673f7c60cbc5f13bf171f9e5b26e07",
+          "size": 6168
+        },
+        {
+          "path": "hexapod/microduck-bam-v2/app.js",
+          "sha256": "9a6e12e92c9b5e510813311a591d425537e16c33cba7e53e33f51c877f935759",
+          "size": 10472
+        },
+        {
+          "path": "hexapod/microduck-bam-v2/pose-loader.js",
+          "sha256": "0b26f2a23b178b0323531a6aef0be804f93d864ef896d9a796869abc9407b1fb",
+          "size": 4230
+        },
+        {
+          "path": "hexapod/microduck-bam-v2/replays.json",
+          "sha256": "fbe17e3f355d6f574b94ce59b5b3b137a6eae395140e3612b4eb15b241481b27",
+          "size": 68553
         }
       ]
     }
