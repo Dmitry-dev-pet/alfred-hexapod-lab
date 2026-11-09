@@ -1,0 +1,106 @@
+{
+  "filename": "MicroDuck_runup_forward_roll_20261109.zip",
+  "size_bytes": 29120502,
+  "sha256": "3c0c8a75d4826ce51de2fa32ba8fdd665f56eda98c504e24722a09279ef7c0e5",
+  "files": 58,
+  "drive_file_id": "1mqP8cQTFurQMbF3x59ZSyTmnkPLlftAn",
+  "drive_url": "https://drive.google.com/file/d/1mqP8cQTFurQMbF3x59ZSyTmnkPLlftAn/view?usp=drivesdk",
+  "figure_drive_id": "1nXtmB0F1ARNkFr46SXUhHfpRcGUUKZwY",
+  "figure_drive_url": "https://drive.google.com/file/d/1nXtmB0F1ARNkFr46SXUhHfpRcGUUKZwY/view?usp=drivesdk",
+  "figure_size_bytes": 558459,
+  "figure_sha256": "843121e48b12f3be483cbdbf1991f496c82eb7b9dc274b11bef5909c2c9211a3",
+  "route": "/hexapod/microduck-runup-roll-v1/",
+  "site_version": 24,
+  "site_version_id": "appgprj_6aefa6b6da408191a522c12fca25b21a~appgver_eeee744c0fc0819180519e6c68984ca3",
+  "site_source_commit": "8282f2c60aab76ba450ce1b369ba86e5c00e2431",
+  "preserved_native_source_commit": "a43910e42eb54615ae5d1a1a0b1f6b20ec4e51e6",
+  "catalog_revision": 56,
+  "catalog_entries": 73,
+  "preserved_native_extra_clients": [
+    "en01-getup-v7"
+  ],
+  "node_tests_passed": 4,
+  "original_stl_render_verified": true,
+  "browser_webgl_verified": false,
+  "run_issue": "https://github.com/Dmitry-dev-pet/truthrail/issues/326",
+  "verification": {
+    "episodes_checked": 12,
+    "frames_checked": 7600,
+    "independent_quaternion_max_error_deg": 0.36377527945440136,
+    "matching_flat_step_approach_frames": 230,
+    "matching_approach_until_s": 4.6000000000000005,
+    "byte_identical_repeats": [
+      "runup-flat-moving.json",
+      "runup-contact-long.json"
+    ],
+    "flat_controls_complete_and_stable": true,
+    "step_goal_successes": 0,
+    "triggered_step_trials": 8,
+    "max_body_step_penetration_m": 0.0,
+    "max_all_step_penetration_m": 0.000990248643936431,
+    "max_self_contact_penetration_m": 0.00035702536329802585,
+    "warnings_or_resets": 0,
+    "hardware_tested": false
+  },
+  "player_interpolation": {
+    "samples": 191700,
+    "fractions_per_interval": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "maximum_body_step_overlap_m": 0.0,
+    "episodes": [
+      {
+        "clip": "runup-6",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-3",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-1",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-contact",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-1-long",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-contact-long",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-contact-fast",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-10-early",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-1-roll3",
+        "max_interpolated_body_step_overlap_m": 0.0
+      },
+      {
+        "clip": "runup-1-roll4",
+        "max_interpolated_body_step_overlap_m": 0.0
+      }
+    ]
+  },
+  "site_deployment_id": "appgdep_6af23d3b92a881919185ccd013a70b97",
+  "site_deployment_status": "succeeded",
+  "browser_ui_verified": true,
+  "browser_ui_checks": [
+    "12 selectable cases",
+    "original model package loaded",
+    "16-second clip seek beyond 14 seconds",
+    "moving flat control loaded with 364-degree roll and stable stance"
+  ],
+  "browser_webgl_limitation": "Cloud browser has no WebGL; original-STL geometry checked by actual MuJoCo EGL render and numerical pose export/interpolation audits."
+}

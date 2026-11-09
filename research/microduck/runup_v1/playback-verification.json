@@ -1,0 +1,51 @@
+{
+  "samples": 191700,
+  "fractions_per_interval": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "maximum_body_step_overlap_m": 0.0,
+  "episodes": [
+    {
+      "clip": "runup-6",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-3",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-1",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-contact",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-1-long",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-contact-long",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-contact-fast",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-10-early",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-1-roll3",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "runup-1-roll4",
+      "max_interpolated_body_step_overlap_m": 0.0
+    }
+  ]
+}
