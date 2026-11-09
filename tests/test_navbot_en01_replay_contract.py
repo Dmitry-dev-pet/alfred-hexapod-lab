@@ -31,7 +31,7 @@ class EN01ReplayContractTests(unittest.TestCase):
 
     def test_pipeline_and_provenance(self):
         script=(ROOT/"scripts/navbot_en01_replays.py").read_text()
-        self.assertIn("from replay_pipeline import ROOT,load_spec,run",script)
+        self.assertIn("from replay_pipeline import ROOT, load_spec, run",script)
         self.assertIn("do_publish=False",script)
         exporter=(ROOT/"research/navbot_en01/export_replay.py").read_text()
         for token in ("mujoco_version","qpos","trace_sha256","immutable replay"):
