@@ -1,0 +1,15 @@
+{
+  "schema": "alfred-bb8-bidirectional-verification/v5",
+  "record_count": 35,
+  "integration_steps": 528000,
+  "raw_hashes_verified": 35,
+  "conditional_bidirectional_drive_stop_passed": true,
+  "zero_loss_stop_passed": false,
+  "exact_independent_18s_prefix_repeats": 2,
+  "new_analytical_physics_tests_passed": 1,
+  "hardware_calibrated": false,
+  "source_sha256": {
+    "manual_trip.py": "7c82d4c36fed7fce9a39a4a61597d438174289a233adb3f2711af821c83ff8c3",
+    "test_floor_loss.py": "920bc72c342c8b10321ad49fb9769d7e4bf160306a5aafe13e7b18979a734a3f"
+  }
+}
