@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 52,
+  "revision": 53,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -1977,7 +1977,7 @@
     },
     {
       "id": "microduck-back-to-wall-v1",
-      "title": "MicroDuck · корпус и ступень · контакты исправлены",
+      "title": "MicroDuck · корпус и ступень · контакты v2",
       "detail": "Добавлены столкновения для всех видимых деталей. 9 пересчитанных проверок; большой провал корпуса в ступеньку устранён. Прежний подъём на 1 см не подтверждён.",
       "href": "/hexapod/microduck-wall-v1/",
       "duration_s": 10,
@@ -1985,13 +1985,13 @@
       "files": [
         {
           "path": "hexapod/microduck-wall-v1/app.js",
-          "sha256": "d815619b2d07d7f78187ea5a4e2a7dab42a17beb59d168fba8de0b41f6df977a",
-          "size": 11217
+          "sha256": "7ab43981ffae16b3a7f127baaa2698d5e7f4daf1324bba83220740d79a3a1158",
+          "size": 11477
         },
         {
           "path": "hexapod/microduck-wall-v1/index.html",
-          "sha256": "ab6ebc90e0e818c5081fef726bef24a8a80f0db30332d029243941603de65a23",
-          "size": 6350
+          "sha256": "bef21302fe5132795ebce5076183f8f8366d0d1bbff3ab3b990ed89fc874b281",
+          "size": 6467
         },
         {
           "path": "hexapod/microduck-wall-v1/pose-loader.js",
@@ -2002,6 +2002,11 @@
           "path": "hexapod/microduck-wall-v1/replays.json",
           "sha256": "795d9daf5d64249a39cc626c95cfbf319b0ad9d13bcfcad928486efdee2dae81",
           "size": 19029
+        },
+        {
+          "path": "hexapod/microduck-wall-v1/safe-camera.js",
+          "sha256": "74cb990e36ebf86d24c0eb21250b31d1afe2d31fb18f78269c9a47824f1a48e2",
+          "size": 451
         }
       ]
     },
