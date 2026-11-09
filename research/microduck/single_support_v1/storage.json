@@ -1,0 +1,17 @@
+{
+  "schema": "microduck-single-support-storage/v1",
+  "result_archive": {
+    "drive_file_id": "1S6ZdRII1jX8_88p0BYOZVUqWZhb9v_B6",
+    "url": "https://drive.google.com/file/d/1S6ZdRII1jX8_88p0BYOZVUqWZhb9v_B6/view?usp=drivesdk",
+    "file_name": "MicroDuck_single_support_20261109.zip",
+    "size_bytes": 5776982,
+    "sha256": "e0f1d3527879007fc5c438935524dc8fdaccd90f90ceb698e0209ac0a6d0ae97",
+    "contents": "experiment source and receipts, all 14 canonical traces, two exact repeat traces; no external credentials"
+  },
+  "restored_input_archive": {
+    "drive_file_id": "1q_CmK4XggV4fv_21_Pa75-B9tKNp-que",
+    "sha256": "881977efcf04af626928c779be39f99c79e59091f2a19250ad58ad947cd16208"
+  },
+  "source_base_commit": "5f697daa774fea728d810dc49882a57d9978694a",
+  "run_issue": "https://github.com/Dmitry-dev-pet/truthrail/issues/332"
+}

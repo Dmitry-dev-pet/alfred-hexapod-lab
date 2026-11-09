@@ -1,0 +1,335 @@
+{
+  "schema": "microduck-single-support-verification/v1",
+  "frames_checked": 5540,
+  "sample_period_s": 0.02,
+  "cad_instances": 70,
+  "mass_kg": 0.7372431800000001,
+  "source_code_sha256": "41a50a2016206c624ea3ab70b82cfad01995dc2edf4e0b4ef6fc754e42335d12",
+  "summary_sha256": "0a08be93d5ba66d96c9b3aea9469cc8a4879bc1a2c76135b15268dee512089b4",
+  "corruption_tests_rejected": [
+    "sole_bound",
+    "foot_load"
+  ],
+  "repeats": [
+    {
+      "trace_file": "walk030-seed20261109.json",
+      "byte_identical": true,
+      "sha256": "08b8273b9d10b96eaf190ff44efa191f0579f99359a1c3514e36b93374656ee3"
+    },
+    {
+      "trace_file": "left-inner0.55-gravity1.json",
+      "byte_identical": true,
+      "sha256": "4b2b375b411d361d29018bd389b952900c0efebede417591d746e24742e76935"
+    }
+  ],
+  "episodes": [
+    {
+      "trace_file": "stand-control.json",
+      "longest_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "CONTROL",
+      "params": {
+        "name": "stand-control",
+        "control": "stand"
+      }
+    },
+    {
+      "trace_file": "walk030-seed20261109.json",
+      "longest_single_support_s": {
+        "left": 0.12,
+        "right": 0.14
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.04
+      },
+      "quality_gate": true,
+      "status": "CONTROL",
+      "params": {
+        "name": "walk030-seed20261109",
+        "control": "walk",
+        "speed_mps": 0.3,
+        "seed": 20261109
+      }
+    },
+    {
+      "trace_file": "walk030-seed20261110.json",
+      "longest_single_support_s": {
+        "left": 0.12,
+        "right": 0.14
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.04
+      },
+      "quality_gate": true,
+      "status": "CONTROL",
+      "params": {
+        "name": "walk030-seed20261110",
+        "control": "walk",
+        "speed_mps": 0.3,
+        "seed": 20261110
+      }
+    },
+    {
+      "trace_file": "walk030-seed20261111.json",
+      "longest_single_support_s": {
+        "left": 0.12,
+        "right": 0.14
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.04
+      },
+      "quality_gate": true,
+      "status": "CONTROL",
+      "params": {
+        "name": "walk030-seed20261111",
+        "control": "walk",
+        "speed_mps": 0.3,
+        "seed": 20261111
+      }
+    },
+    {
+      "trace_file": "left-inner0.55-gravity0.json",
+      "longest_single_support_s": {
+        "left": 0.04,
+        "right": 0.08
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "FAIL",
+      "params": {
+        "name": "left-inner0.55-gravity0",
+        "support": "left",
+        "shift_fraction": 0.55,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": false,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "left-inner0.55-gravity1.json",
+      "longest_single_support_s": {
+        "left": 0.04,
+        "right": 0.06
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "FAIL",
+      "params": {
+        "name": "left-inner0.55-gravity1",
+        "support": "left",
+        "shift_fraction": 0.55,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": true,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "left-inner0.7-gravity0.json",
+      "longest_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": false,
+      "status": "FAIL",
+      "params": {
+        "name": "left-inner0.7-gravity0",
+        "support": "left",
+        "shift_fraction": 0.7,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": false,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "left-inner0.7-gravity1.json",
+      "longest_single_support_s": {
+        "left": 0.0,
+        "right": 0.04
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "FAIL",
+      "params": {
+        "name": "left-inner0.7-gravity1",
+        "support": "left",
+        "shift_fraction": 0.7,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": true,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "left-feedback.json",
+      "longest_single_support_s": {
+        "left": 0.02,
+        "right": 0.06
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "FAIL",
+      "params": {
+        "name": "left-feedback",
+        "support": "left",
+        "shift_fraction": 0.55,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": true,
+        "shift_s": 2.5,
+        "feedback": true
+      }
+    },
+    {
+      "trace_file": "right-inner0.55-gravity0.json",
+      "longest_single_support_s": {
+        "left": 0.02,
+        "right": 0.0
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "FAIL",
+      "params": {
+        "name": "right-inner0.55-gravity0",
+        "support": "right",
+        "shift_fraction": 0.55,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": false,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "right-inner0.55-gravity1.json",
+      "longest_single_support_s": {
+        "left": 0.02,
+        "right": 0.02
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": false,
+      "status": "FAIL",
+      "params": {
+        "name": "right-inner0.55-gravity1",
+        "support": "right",
+        "shift_fraction": 0.55,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": true,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "right-inner0.7-gravity0.json",
+      "longest_single_support_s": {
+        "left": 0.02,
+        "right": 0.12
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "FAIL",
+      "params": {
+        "name": "right-inner0.7-gravity0",
+        "support": "right",
+        "shift_fraction": 0.7,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": false,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "right-inner0.7-gravity1.json",
+      "longest_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": true,
+      "status": "FAIL",
+      "params": {
+        "name": "right-inner0.7-gravity1",
+        "support": "right",
+        "shift_fraction": 0.7,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": true,
+        "shift_s": 2.5
+      }
+    },
+    {
+      "trace_file": "right-feedback.json",
+      "longest_single_support_s": {
+        "left": 0.0,
+        "right": 0.04
+      },
+      "longest_quiet_single_support_s": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quality_gate": false,
+      "status": "FAIL",
+      "params": {
+        "name": "right-feedback",
+        "support": "right",
+        "shift_fraction": 0.55,
+        "lift_m": 0.015,
+        "free_swing": true,
+        "head": false,
+        "gravity_comp": true,
+        "shift_s": 2.5,
+        "feedback": true
+      }
+    }
+  ],
+  "measurement_limit": "Support durations are consecutive 50 Hz observations, not substep-continuous contact guarantees.",
+  "hardware_tested": false
+}

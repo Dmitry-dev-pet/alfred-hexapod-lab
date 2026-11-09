@@ -1,0 +1,126 @@
+[
+  {
+    "name": "stand-control",
+    "control": "stand"
+  },
+  {
+    "name": "walk030-seed20261109",
+    "control": "walk",
+    "speed_mps": 0.3,
+    "seed": 20261109
+  },
+  {
+    "name": "walk030-seed20261110",
+    "control": "walk",
+    "speed_mps": 0.3,
+    "seed": 20261110
+  },
+  {
+    "name": "walk030-seed20261111",
+    "control": "walk",
+    "speed_mps": 0.3,
+    "seed": 20261111
+  },
+  {
+    "name": "left-inner0.55-gravity0",
+    "support": "left",
+    "shift_fraction": 0.55,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": false,
+    "shift_s": 2.5
+  },
+  {
+    "name": "left-inner0.55-gravity1",
+    "support": "left",
+    "shift_fraction": 0.55,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": true,
+    "shift_s": 2.5
+  },
+  {
+    "name": "left-inner0.7-gravity0",
+    "support": "left",
+    "shift_fraction": 0.7,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": false,
+    "shift_s": 2.5
+  },
+  {
+    "name": "left-inner0.7-gravity1",
+    "support": "left",
+    "shift_fraction": 0.7,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": true,
+    "shift_s": 2.5
+  },
+  {
+    "name": "left-feedback",
+    "support": "left",
+    "shift_fraction": 0.55,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": true,
+    "shift_s": 2.5,
+    "feedback": true
+  },
+  {
+    "name": "right-inner0.55-gravity0",
+    "support": "right",
+    "shift_fraction": 0.55,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": false,
+    "shift_s": 2.5
+  },
+  {
+    "name": "right-inner0.55-gravity1",
+    "support": "right",
+    "shift_fraction": 0.55,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": true,
+    "shift_s": 2.5
+  },
+  {
+    "name": "right-inner0.7-gravity0",
+    "support": "right",
+    "shift_fraction": 0.7,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": false,
+    "shift_s": 2.5
+  },
+  {
+    "name": "right-inner0.7-gravity1",
+    "support": "right",
+    "shift_fraction": 0.7,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": true,
+    "shift_s": 2.5
+  },
+  {
+    "name": "right-feedback",
+    "support": "right",
+    "shift_fraction": 0.55,
+    "lift_m": 0.015,
+    "free_swing": true,
+    "head": false,
+    "gravity_comp": true,
+    "shift_s": 2.5,
+    "feedback": true
+  }
+]
