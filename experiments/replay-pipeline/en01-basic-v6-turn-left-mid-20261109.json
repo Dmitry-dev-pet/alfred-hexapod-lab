@@ -1,0 +1,51 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "en01-basic-v6-turn-left-mid-20261109",
+  "title": "EN01 v6 · Поворот · средняя стойка",
+  "detail": "Базовое управление на модели v5 · есть непройденные проверки · динамика не откалибрована",
+  "robot": "NavBot EN01 basic-control surrogate",
+  "engine": "MuJoCo",
+  "status": "failed",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "-m",
+      "research.navbot_en01.basic_case",
+      "--case",
+      "turn-left-mid",
+      "--cad-mesh",
+      "docs/hexapod/en01-original-cad-v1/original-meshes.json",
+      "--out",
+      "results/en01_basic_v6/final/raw/turn-left-mid_raw.json"
+    ],
+    "export": [
+      "python",
+      "-m",
+      "research.navbot_en01.basic_export",
+      "--trace",
+      "results/en01_basic_v6/final/raw/turn-left-mid_raw.json",
+      "--out",
+      "docs/hexapod/data/en01-basic-v6-turn-left-mid-20261109.json",
+      "--model",
+      "results/en01_basic_v6/final/model.xml",
+      "--cad-mesh",
+      "docs/hexapod/en01-original-cad-v1/original-meshes.json"
+    ]
+  },
+  "trace": {
+    "path": "results/en01_basic_v6/final/raw/turn-left-mid_raw.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/en01-basic-v6-turn-left-mid-20261109.json",
+    "format": "navbot-en01-fourbar-physical-replay-v2",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "en01-basic-template"
+  }
+}

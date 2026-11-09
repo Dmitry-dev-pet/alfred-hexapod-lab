@@ -1,0 +1,71 @@
+{
+  "schema": "en01-basic-render-surface-audit/v1",
+  "fractions": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "rows": [
+    {
+      "case": "drive-backward",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "drive-forward",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "drive-turn-left",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "squat-cycle",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "squat-turn-left",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "squat-turn-right",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "stand-low",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "stand-mid",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "turn-left-high",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "turn-left-low",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "turn-left-mid",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "case": "turn-right-low",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    }
+  ],
+  "scope": "Original 73-part surfaces, intended joint mates excluded; sampled interpolation, not a continuous solid guarantee"
+}

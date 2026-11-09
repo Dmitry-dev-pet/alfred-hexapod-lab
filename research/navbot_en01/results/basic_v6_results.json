@@ -1,0 +1,438 @@
+[
+  {
+    "case": "stand-low",
+    "basic_pass": true,
+    "failed_checks": [],
+    "metrics": {
+      "max_abs_tilt_deg": 9.282488622774,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.00033812346990013705,
+      "final_stop_yaw_rate_rad_s": 5.387436444627161e-15,
+      "active_contact_slip_rms_m_s": 3.876750230983936e-05,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.0008604079844937414,
+      "peak_wheel_normal_force_n": [
+        1.968982889072467,
+        1.9689828890724554
+      ],
+      "hip_min_rad": 0.059218511884820385,
+      "hip_max_rad": 0.09999999999998915,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.010097988903932653,
+      "axle_net_displacement_m": 0.01081077939885066,
+      "yaw_change_deg": -6.598574145045178e-15,
+      "final_yaw_error_deg": 1.9016972349473335e-15,
+      "squat_height_change_m": 0.00026815690847076246,
+      "final_height_error_m": -0.00011021800389600378
+    },
+    "peak_hip_torque_nm": 0.13317931320104448,
+    "peak_wheel_torque_nm": 0.017918731504607648,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "2dcd36de375e1e947a3f080f6c516df2fa0ecd0ed12933e6064758981e9b332f",
+    "geometry_ok": true
+  },
+  {
+    "case": "stand-mid",
+    "basic_pass": false,
+    "failed_checks": [
+      "balance",
+      "stop"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 24.751125474134046,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 1.1710491957515938,
+      "final_stop_yaw_rate_rad_s": 6.508381096508802e-14,
+      "active_contact_slip_rms_m_s": 0.0008677310218494648,
+      "active_slip_supported_s": 2.9972499999996987,
+      "peak_contact_slip_m_s": 0.004049715550107746,
+      "peak_wheel_normal_force_n": [
+        1.9110405616654749,
+        1.911040561665462
+      ],
+      "hip_min_rad": 0.26290479332395944,
+      "hip_max_rad": 0.29999999999998733,
+      "two_wheel_support_fraction": 0.9995,
+      "signed_axle_travel_m": -0.798675501817192,
+      "axle_net_displacement_m": 2.360567506154886,
+      "yaw_change_deg": -7.521028248316723e-16,
+      "final_yaw_error_deg": -2.5756636353182745e-15,
+      "squat_height_change_m": 0.007738685393575598,
+      "final_height_error_m": 0.0004915562710983007
+    },
+    "peak_hip_torque_nm": 0.11423694690235485,
+    "peak_wheel_torque_nm": 0.03,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.11416666666666667,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "29f410857c4878241ebe3f05fcf4abe3b0cb2ee24146f4f6d7f19cfa32196b21",
+    "geometry_ok": true
+  },
+  {
+    "case": "drive-forward",
+    "basic_pass": true,
+    "failed_checks": [],
+    "metrics": {
+      "max_abs_tilt_deg": 9.282488622774,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.003999274986257172,
+      "final_stop_yaw_rate_rad_s": 9.13736640001068e-15,
+      "active_contact_slip_rms_m_s": 4.4767112082532566e-05,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.0008604079844937414,
+      "peak_wheel_normal_force_n": [
+        1.968982889072467,
+        1.9689828890724554
+      ],
+      "hip_min_rad": 0.059218511884820385,
+      "hip_max_rad": 0.09999999999998915,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.08729423214238541,
+      "axle_net_displacement_m": 0.08654519153368628,
+      "yaw_change_deg": -7.034693515911989e-15,
+      "final_yaw_error_deg": 2.3378166058141435e-15,
+      "squat_height_change_m": 0.00032737955593790946,
+      "final_height_error_m": -0.00013470285339683974
+    },
+    "peak_hip_torque_nm": 0.13317931320104448,
+    "peak_wheel_torque_nm": 0.017918731504607648,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "3b0875750d7dc69f4991445b1e05b72bef12b68b4dc25e25dac0c9f7a5fba2cf",
+    "geometry_ok": true
+  },
+  {
+    "case": "drive-backward",
+    "basic_pass": true,
+    "failed_checks": [],
+    "metrics": {
+      "max_abs_tilt_deg": 9.282488622774,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.0035271557095001033,
+      "final_stop_yaw_rate_rad_s": 2.4077311631856317e-15,
+      "active_contact_slip_rms_m_s": 7.143160969478704e-05,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.0008604079844937414,
+      "peak_wheel_normal_force_n": [
+        1.968982889072467,
+        1.9689828890724554
+      ],
+      "hip_min_rad": 0.059218511884820385,
+      "hip_max_rad": 0.09999999999998915,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": -0.06709245245104221,
+      "axle_net_displacement_m": 0.06492446329001356,
+      "yaw_change_deg": -4.807147091201648e-15,
+      "final_yaw_error_deg": 1.1027018110380277e-16,
+      "squat_height_change_m": 0.0004966105966002776,
+      "final_height_error_m": -8.637711288383976e-05
+    },
+    "peak_hip_torque_nm": 0.13317931320104448,
+    "peak_wheel_torque_nm": 0.017918731504607648,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "586eca0101965078e2be9aee0e28b53b2760d17b4dc33f6c41364fcf63d26974",
+    "geometry_ok": true
+  },
+  {
+    "case": "turn-left-low",
+    "basic_pass": false,
+    "failed_checks": [
+      "stop"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 9.282488622774,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.00033778715384948684,
+      "final_stop_yaw_rate_rad_s": 0.10779635773101866,
+      "active_contact_slip_rms_m_s": 0.0015052850885110287,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.0023784938501293547,
+      "peak_wheel_normal_force_n": [
+        1.968982889072467,
+        1.9689828890724554
+      ],
+      "hip_min_rad": 0.059218511884820385,
+      "hip_max_rad": 0.09999999999998915,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.010090959250916425,
+      "axle_net_displacement_m": 0.010551676235370289,
+      "yaw_change_deg": 48.89110989352368,
+      "final_yaw_error_deg": 8.404669619575175,
+      "squat_height_change_m": 0.0002681573604809695,
+      "final_height_error_m": -0.00011018956790856405
+    },
+    "peak_hip_torque_nm": 0.13317931320104448,
+    "peak_wheel_torque_nm": 0.017918731504607648,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "245fe2a7a193dda798088c7b4969928274052d19476f48d2c90fbc8b9eb6466b",
+    "geometry_ok": true
+  },
+  {
+    "case": "turn-right-low",
+    "basic_pass": false,
+    "failed_checks": [
+      "stop"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 9.282488622774,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.00033778715384984366,
+      "final_stop_yaw_rate_rad_s": 0.1077963577310181,
+      "active_contact_slip_rms_m_s": 0.0015052850885110295,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.002378493850129296,
+      "peak_wheel_normal_force_n": [
+        1.968982889072467,
+        1.9689828890724554
+      ],
+      "hip_min_rad": 0.059218511884820385,
+      "hip_max_rad": 0.09999999999998915,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.010090959250916296,
+      "axle_net_displacement_m": 0.010551676235370205,
+      "yaw_change_deg": -48.891109893523755,
+      "final_yaw_error_deg": -8.404669619575111,
+      "squat_height_change_m": 0.0002681573604809556,
+      "final_height_error_m": -0.00011018956790860568
+    },
+    "peak_hip_torque_nm": 0.13317931320104448,
+    "peak_wheel_torque_nm": 0.017918731504607648,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "2dcf03e29d1b980b1d2c50477d2376027dc56cd43c0b3f9d101ac127b40449f9",
+    "geometry_ok": true
+  },
+  {
+    "case": "turn-left-mid",
+    "basic_pass": false,
+    "failed_checks": [
+      "balance",
+      "slip",
+      "two_wheel_support",
+      "turn_direction_and_angle",
+      "heading_settle",
+      "turn_in_place"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 180.0,
+      "nonwheel_ground_steps": 8086,
+      "final_stop_speed_m_s": 2.9176478379101457e-08,
+      "final_stop_yaw_rate_rad_s": 9.329587784314579e-14,
+      "active_contact_slip_rms_m_s": 0.0015863195591552736,
+      "active_slip_supported_s": 2.4495000000000022,
+      "peak_contact_slip_m_s": 0.010538935804557269,
+      "peak_wheel_normal_force_n": [
+        1.9110405616654749,
+        1.911040561665462
+      ],
+      "hip_min_rad": 0.2585533222327074,
+      "hip_max_rad": 0.433858682732785,
+      "two_wheel_support_fraction": 0.658,
+      "signed_axle_travel_m": -0.003434944968190033,
+      "axle_net_displacement_m": 0.31627562936107617,
+      "yaw_change_deg": -169.5910300857522,
+      "final_yaw_error_deg": 226.88680959885107,
+      "squat_height_change_m": 0.07062875994222256,
+      "final_height_error_m": -0.07024669297036816
+    },
+    "peak_hip_torque_nm": 0.14709975,
+    "peak_wheel_torque_nm": 0.03,
+    "hip_saturated_fraction": 0.011333333333333334,
+    "wheel_saturated_fraction": 0.19625,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "c68f123ce98f60cf9d1acd8211574e4a6b85c4e2c04db9cbeffe183db7d5c457",
+    "geometry_ok": true
+  },
+  {
+    "case": "turn-left-high",
+    "basic_pass": false,
+    "failed_checks": [
+      "balance",
+      "slip",
+      "two_wheel_support",
+      "heading_settle",
+      "turn_in_place"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 179.98238193897458,
+      "nonwheel_ground_steps": 7989,
+      "final_stop_speed_m_s": 1.9574851371687053e-12,
+      "final_stop_yaw_rate_rad_s": 5.3747726073581326e-14,
+      "active_contact_slip_rms_m_s": 0.042135923395906695,
+      "active_slip_supported_s": 2.4052500000000268,
+      "peak_contact_slip_m_s": 0.5777632780813147,
+      "peak_wheel_normal_force_n": [
+        37.824524454659965,
+        26.437893437829548
+      ],
+      "hip_min_rad": 0.4564765137052524,
+      "hip_max_rad": 0.5232688152929191,
+      "two_wheel_support_fraction": 0.8795,
+      "signed_axle_travel_m": -3.344345972852315,
+      "axle_net_displacement_m": 4.042487972829894,
+      "yaw_change_deg": 347.3233401879556,
+      "final_yaw_error_deg": -290.0275606748567,
+      "squat_height_change_m": 0.06614805751548156,
+      "final_height_error_m": -0.05099962830126999
+    },
+    "peak_hip_torque_nm": 0.14709975,
+    "peak_wheel_torque_nm": 0.03,
+    "hip_saturated_fraction": 0.004166666666666667,
+    "wheel_saturated_fraction": 0.12208333333333334,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "b6e734c2e34ba6bd3c51c94b4ad21d9b3f54309737e2ab579959e53c2c8bebe0",
+    "geometry_ok": true
+  },
+  {
+    "case": "squat-cycle",
+    "basic_pass": false,
+    "failed_checks": [
+      "stop"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 10.761427988147881,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.037578591320021934,
+      "final_stop_yaw_rate_rad_s": 8.19764641285544e-15,
+      "active_contact_slip_rms_m_s": 0.0003390549558500378,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.0011256538517913778,
+      "peak_wheel_normal_force_n": [
+        1.9110405616654749,
+        1.911040561665462
+      ],
+      "hip_min_rad": 0.012917433925726925,
+      "hip_max_rad": 0.29999999999998733,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.004165430567997584,
+      "axle_net_displacement_m": 0.0032262227126016313,
+      "yaw_change_deg": -4.734187804814442e-15,
+      "final_yaw_error_deg": 1.406421344664495e-15,
+      "squat_height_change_m": 0.02384308351300654,
+      "final_height_error_m": 0.0006763570059948459
+    },
+    "peak_hip_torque_nm": 0.11182787685838477,
+    "peak_wheel_torque_nm": 0.019748259604007244,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "0fdc80e7d87982e67d045525f66f38379add1fbe2da66fbcfe7d53b23f07727e",
+    "geometry_ok": true
+  },
+  {
+    "case": "squat-turn-left",
+    "basic_pass": false,
+    "failed_checks": [
+      "stop"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 10.761409656136298,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.037758185078430484,
+      "final_stop_yaw_rate_rad_s": 0.10778816493319411,
+      "active_contact_slip_rms_m_s": 0.0015422803873215353,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.0025051537960852394,
+      "peak_wheel_normal_force_n": [
+        1.9110405616654749,
+        1.911040561665462
+      ],
+      "hip_min_rad": 0.012933220151020058,
+      "hip_max_rad": 0.29999999999998733,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.004148083738620576,
+      "axle_net_displacement_m": 0.007592188436237371,
+      "yaw_change_deg": 48.88949099624861,
+      "final_yaw_error_deg": 8.406288516850246,
+      "squat_height_change_m": 0.023832562604856347,
+      "final_height_error_m": 0.0006772909337153382
+    },
+    "peak_hip_torque_nm": 0.11214253446891284,
+    "peak_wheel_torque_nm": 0.019844433687335506,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "552bb18c21b66a40c5327eed1ecdacd9439d4fa8a9ac0dde66d7cf3f2719dfb8",
+    "geometry_ok": true
+  },
+  {
+    "case": "squat-turn-right",
+    "basic_pass": false,
+    "failed_checks": [
+      "stop"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 10.761409656136406,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.037759695109662934,
+      "final_stop_yaw_rate_rad_s": 0.10778817107868677,
+      "active_contact_slip_rms_m_s": 0.0015422803285754893,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.0025051589960525546,
+      "peak_wheel_normal_force_n": [
+        1.9110405616654749,
+        1.911040561665462
+      ],
+      "hip_min_rad": 0.012932850372054851,
+      "hip_max_rad": 0.29999999999998733,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.0041480019551608585,
+      "axle_net_displacement_m": 0.007592128468471093,
+      "yaw_change_deg": -48.889490569112674,
+      "final_yaw_error_deg": -8.406288943986196,
+      "squat_height_change_m": 0.023832579642995788,
+      "final_height_error_m": 0.0006772695538459633
+    },
+    "peak_hip_torque_nm": 0.11214249627626384,
+    "peak_wheel_torque_nm": 0.019844433687335013,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "b784c285fc7176412ab07f05f2774672f125b50a7fa9df2442836e0b4e423a01",
+    "geometry_ok": true
+  },
+  {
+    "case": "drive-turn-left",
+    "basic_pass": false,
+    "failed_checks": [
+      "stop"
+    ],
+    "metrics": {
+      "max_abs_tilt_deg": 9.282488622774,
+      "nonwheel_ground_steps": 0,
+      "final_stop_speed_m_s": 0.003996337375967884,
+      "final_stop_yaw_rate_rad_s": 0.10771313437398765,
+      "active_contact_slip_rms_m_s": 0.001503611729615363,
+      "active_slip_supported_s": 3.000249999999697,
+      "peak_contact_slip_m_s": 0.002386110496959595,
+      "peak_wheel_normal_force_n": [
+        1.968982889072467,
+        1.9689828890724554
+      ],
+      "hip_min_rad": 0.059218511884820385,
+      "hip_max_rad": 0.09999999999998915,
+      "two_wheel_support_fraction": 1.0,
+      "signed_axle_travel_m": 0.08728404109321436,
+      "axle_net_displacement_m": 0.08527214303498336,
+      "yaw_change_deg": 48.89735648222224,
+      "final_yaw_error_deg": 8.398423030876613,
+      "squat_height_change_m": 0.00032697812480274313,
+      "final_height_error_m": -0.0001346202754199527
+    },
+    "peak_hip_torque_nm": 0.13317931320104448,
+    "peak_wheel_torque_nm": 0.017918731504607648,
+    "hip_saturated_fraction": 0.0,
+    "wheel_saturated_fraction": 0.0,
+    "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+    "trace_sha256": "f825a41026a3d5eac9477befa31eb7c5a8bc197fecf457e27b432d26b111b8d6",
+    "geometry_ok": true
+  }
+]
