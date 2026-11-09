@@ -1,0 +1,261 @@
+{
+  "new_cases": 31,
+  "physics_steps": 186000,
+  "frames": 9300,
+  "existing_review_entries_preserved": 65,
+  "review_entries_total": 96,
+  "published": false,
+  "all_idempotent": true,
+  "all_publish_blocked": true,
+  "all_qpos_body_residual": 0.0,
+  "cases": [
+    {
+      "id": "en01-v3-g00-crouch-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "7356c4699f7cb007683a91241a6e7c89c5df961ac01e4c6c60c5ff47b2ed4dc8",
+      "replay_sha256": "9b126413224d2be06bda709acfaa7a61fdb1960556afd8628b8c549008c6e80a",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-g00-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "06905d164f4ed2267477acdc6cade7ae755f700a18186ae8899efc65b6254054",
+      "replay_sha256": "f3fc5cd211e4f796a4c03880d5da398ecef505b20b695fdc94ab124796378e9c",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-g03-crouch-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "4c7fb02862286731bfaec461b67d0a15f7a54b5c2f517a2e3c99c78b323365d9",
+      "replay_sha256": "a2432728a519a76dcb2a7f81d153428fab29913a859bf914f82c684d192c91d4",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-g03-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "98a8eb7a5e24b1d53287a9cfe318667187b754f2acb071024c265727ae4b42b3",
+      "replay_sha256": "a300937fa862278ffa16c684de26791da5e71b68173726bdaa8acd8ece751201",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-g10-crouch-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "ab67d42bc52e02f520db0c2652f12a046a1bdc2fe91a5debc0085e65a57a14f3",
+      "replay_sha256": "ca8e5d4e8a7719097bb38449c7b9667ca72e89c172b9ea111edc26cf545f70e6",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-g10-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "d6b4ff2ca22494c85667c5719b22a532d8444d2ad5ddb5135e1afc8447257a63",
+      "replay_sha256": "24a0e0d25fed5f107af04f9bb5c1d23259ff4293498692dbffef23ef4971f263",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-g30-crouch-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "7fa5289c293e48ef391ca1955deb0aab6c81fb2b7e9208c60707d3ddea15cef0",
+      "replay_sha256": "f5127941400e19e0aa58a846dba1f42a5b93d7e42e26c73e1263cefb6ba76c31",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-g30-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "44a641a7ec7fd1c1e3944db76617516c6d8cb38659eb19b9be2e772e227de20d",
+      "replay_sha256": "90b2aa3fd36c43f1d1c2d8106f487c786367ea4bc2eb40fa86d0aba62e5b1f03",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-friction-035-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "fbbc8cf95b875ade0ea94e0b186cf9e039879ac566e0e3b479de3258dfbae1d6",
+      "replay_sha256": "269c7d50c5e61d65562866ae90c6857eee9611984e92f92319cf4e4db924f272",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-g30-crouch-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "c100e013615a8c96d79aad5967989a0e9d36ea868157ef1ec20c190974db84ed",
+      "replay_sha256": "342062e5a14c43a30f88e241f5f04716eafb5d2a3e5cdfb6cb2b6635b2681715",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-g30-drive-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "95e16f666a86b4ab3d829af463c75ff2c51c1c25fb3d71f8ab99b0b0a0b6380d",
+      "replay_sha256": "8b8e598c7263f7ae4687adffa9123a1902754351d238a5834fcfbdb85fe684f0",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-g30-fall-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "c8434d50dff8e385d95f9b5118f0082a5230fce7247c994303c0be22df36e978",
+      "replay_sha256": "4ff45991c4a6c8c162a23a76a7e628c9357d2d21d8546b2fddbb8e7ff3d3c6ce",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-g30-jump-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "687d83b6a5788ec89e744cdce63c30baa22c7f1c5f3e177a7b9c4e723197b7fc",
+      "replay_sha256": "c5c555105d6caa5be984d8ed1cd0707f7edbb5ad5589e4f0b14a889e7b71217d",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-g30-push-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "31e79fcc970d27cd2cb6ff574c5fbf50745fbebfbe158955d25c1b0b4d787835",
+      "replay_sha256": "a0c9709de08e2d10bf765c65b9bab3c4f106b084a00b7a7c7ac17da01897981b",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-g30-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "2cdce4c620b177fdf4682eaccc39c4d187e594f119ceff9242a0d667c202e5f4",
+      "replay_sha256": "6a16d548c45b544b33df4f7b2b602d2fc0d0c4ed4229f325c53d70f3ed5eb989",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-mass-090-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "82a34ea29488e24b77ab2317de07395bdca0eea7d9839548bb86998b52434cd4",
+      "replay_sha256": "832372ca11d09960c0292bd7229d80208f113c609f36aa3c6e3608fac72c52da",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-gated-mass-110-stand-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "4a1b814724049614868afedf3fb6b2b93ea04f0338777d37b65c25d856a50af2",
+      "replay_sha256": "e97b85278da2fd5726a6dbde5e9fd6a79db14ade3a9eeeeb60a83862f5e14bb5",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-held-friction-035-g00-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "50b18be00c2b70640b698ddbbcd9fc53d8782baee8413587b378760fc684b762",
+      "replay_sha256": "06c4a3441d1fa0900c5fc86eb9c48afb3a47cece7a71cc1e6ef5b55c53f8cea5",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-held-friction-035-g30-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "8e91ac2ad24836f75b4bf092b76f03aac07b78c3fc35b79bf95f0f3bffb7f5da",
+      "replay_sha256": "4db281bede673b8414a12e4cc6014a6d0fac73b62157cf9faf44c24e937b45a3",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-held-mass-090-g00-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "85880c33bce8e8ce88c25acaf607b2a3a84bca1718a00a6eb1b93a9ce14af47b",
+      "replay_sha256": "f0fea31b25ceda9ac394e8919658109d1b2c335e2784878a4cf9050c41e21208",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-held-mass-090-g30-stand-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "29ffef02b14c3ca2050b742e4adc3a4f2bc0f2552e1b2dd79027221d9db504fd",
+      "replay_sha256": "44ee3349b1d7ad9c4870c395bcdac1ff81f3e7886d90c3f9d235caa5d4962cc2",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-held-mass-110-g00-stand-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "6f0ce921a35e904d8ab060560aac07be3e1581b7345e2935e3f6a4b777d797d3",
+      "replay_sha256": "249f0ddbb41cb79b46a51b1943db86ab5aae8e363e29d9c94b407b8cdf3e2d1c",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-held-mass-110-g30-stand-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "01f073d9f257e4eff8fb4d32402ae2644c7f93e81827d5e1d3ae2b28eec4f1ad",
+      "replay_sha256": "9efd77045ae333aa1b31af5eaa84132fe86214c4dba57d3f6a44bbfe94c27388",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g00-drive-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "02d07dde904daab3185725afffe4fe81d6ee035510be202eaa5ece2fdb04eadf",
+      "replay_sha256": "078861076c002e7291ebb9958450c450069036efe466f19b1f24823a791e5f7d",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g00-fall-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "17a0d1280f1c1ea54f34ee0f27205893bf896fc1c59caae6451625b9cb1e182a",
+      "replay_sha256": "ab82a2a10a213fd18a7f1bf129ac71abf177fbdc73c7c056adfe73b6e20b33b2",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g00-jump-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "c1e3c729d0b9e30f97331ec3f93fb280a2978330fa309bf8829b11f4d1c049a3",
+      "replay_sha256": "e02163a56137680b5b89fbe91d9485a9e0e2a04a0ebcdf03fe33934ab2a9eac5",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g00-push-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "5afc0752394777cc60ebebae72100cc3211b3a4171134505c9995066cab3a1e4",
+      "replay_sha256": "cdfeedb43fb470fd8ad3b0c08a576fa43f1014d35ec031b095143537331d2a06",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g30-drive-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "6ea85c50dce0e2ad6a2434cae72f920135cb2fd917244069138cb6f79565e5a9",
+      "replay_sha256": "27ecf3ca7035b9c4c26040376322b8012937c2e9c0fb4f75387b93a7616c66a0",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g30-fall-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "63fb0b728611405e76ed670c913f0b1fc41dcdb11218fbcf196c67f8502f7297",
+      "replay_sha256": "51f039919ab8a5f9d82e6db5746cca959ef104c607962bb75e14b0fa64b25e1a",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g30-jump-20261109",
+      "frames": 300,
+      "status": "failed",
+      "trace_sha256": "8282cad3c72ccd2adbd2310b86a71ac646f010614dddb62282bbb1ffd0fc4609",
+      "replay_sha256": "c364f80a0be9cc0dad586ae6d605acf78fbb1fd29c897856e76b5e8e00e0a4ec",
+      "qpos_body_residual": 0.0
+    },
+    {
+      "id": "en01-v3-paired-g30-push-20261109",
+      "frames": 300,
+      "status": "research",
+      "trace_sha256": "52920130ba18bb866087cea904bd6e0459e3c7b4a84a6d836aba75d2686d4611",
+      "replay_sha256": "b24cea652cc9a2386f0f4cfb3233a5a4c690ab62e9ba4e76ea4790d23031b8d0",
+      "qpos_body_residual": 0.0
+    }
+  ]
+}

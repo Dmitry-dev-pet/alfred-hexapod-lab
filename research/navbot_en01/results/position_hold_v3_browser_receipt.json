@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED",
+  "current_probe": "socket(AF_UNIX, SOCK_STREAM) raises PermissionError errno 1 Operation not permitted",
+  "prior_actual_chromium_launch": "process_singleton_posix.cc socket() failed",
+  "webgl_verified": false,
+  "android_verified": false
+}
