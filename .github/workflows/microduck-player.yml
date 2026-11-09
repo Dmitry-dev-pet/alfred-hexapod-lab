@@ -1,4 +1,4 @@
-name: MicroDuck 3D viewer: original STL + recorded MuJoCo qpos
+name: "MicroDuck 3D viewer - original STL and recorded MuJoCo qpos"
 
 on:
   pull_request:
