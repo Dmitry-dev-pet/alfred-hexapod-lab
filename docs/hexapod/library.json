@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 48,
+  "revision": 49,
   "entries": [
     {
       "id": "tripod-60",
@@ -1972,6 +1972,41 @@
           "path": "hexapod/microduck-wall-v1/replays.json",
           "sha256": "0beb8635425e4f2ffa94521acb23bdc7a970bef6dc92ce5847a6174bc563ca3a",
           "size": 16269
+        }
+      ]
+    },
+    {
+      "id": "en01-basic-v6",
+      "title": "EN01 · движение и приседания с поворотами · v6",
+      "detail": "12 базовых проверок · 3 пройдены · есть проблемы устойчивости и остановки · модель v5",
+      "duration_s": 6,
+      "href": "/hexapod/en01-basic-v6/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/en01-basic-v6/app.js",
+          "size": 9203,
+          "sha256": "d464de2c5ccb50500f574587e4d8f08108d434c203019f7b856b304f21d57a58"
+        },
+        {
+          "path": "hexapod/en01-basic-v6/index.html",
+          "size": 3811,
+          "sha256": "59fd586ed33394d51ad87c17a6e105b04364a951b9a835a7bcbd8673b625705e"
+        },
+        {
+          "path": "hexapod/en01-basic-v6/record-loader.js",
+          "size": 4855,
+          "sha256": "bf6a371108188fa04e8316557b4b95423a3cd4deca20dab5ce4faecbbdaf2e7a"
+        },
+        {
+          "path": "hexapod/en01-basic-v6/replay.css",
+          "size": 1797,
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056"
+        },
+        {
+          "path": "hexapod/en01-basic-v6/replays.json",
+          "size": 20381,
+          "sha256": "44435632a4a6b894b6d8d12823d7c571af63ceac5c3a830df9e02e5f0a002270"
         }
       ]
     }
