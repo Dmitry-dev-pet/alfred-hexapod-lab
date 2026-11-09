@@ -1,7 +1,37 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 49,
+  "revision": 51,
   "entries": [
+    {
+      "id": "bb8-mechanism-v1",
+      "title": "BB‑8 · устройство и движение",
+      "detail": "Исходная CAD-сборка HWeigo · разрез и узлы · три диагностических записи MuJoCo по 6 с",
+      "duration_s": 6,
+      "href": "/hexapod/bb8-mechanism-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/bb8-mechanism-v1/index.html",
+          "size": 6084,
+          "sha256": "4abfa3a70986a84e43c279cb6bc29fc079a0b6ae015afeaba8384d65945f408e"
+        },
+        {
+          "path": "hexapod/bb8-mechanism-v1/style.css",
+          "size": 5639,
+          "sha256": "b02ee309c55b84d30de61c8785ebd0e61b1fe37bfdf5d3d22f35abfc7b4ebdf8"
+        },
+        {
+          "path": "hexapod/bb8-mechanism-v1/app.js",
+          "size": 14277,
+          "sha256": "f3a96a99d9b1a65e43898fac0fd53a026a7acf11987d8ea47d3e7ca321423a75"
+        },
+        {
+          "path": "hexapod/bb8-mechanism-v1/data.js",
+          "size": 1764,
+          "sha256": "0b234e209814a4401966e0fe9da7c571ce5d72cad4b1369b0fd37041ca12f0ce"
+        }
+      ]
+    },
     {
       "id": "tripod-60",
       "title": "Tripod",
@@ -1757,8 +1787,8 @@
     },
     {
       "id": "microduck-step-v1",
-      "title": "MicroDuck · ступенька 5 мм",
-      "detail": "Физический опыт · 1 из 3 прошёл; жёсткий повтор не прошёл · 5 записей",
+      "title": "MicroDuck · ступенька 5 мм · архив",
+      "detail": "Архивная модель с неполными столкновениями корпуса. Результаты прохождения требуют пересчёта; исправленные контакты — в опыте «корпус и ступень».",
       "duration_s": 15,
       "href": "/hexapod/microduck-step-v1/",
       "status": "research",
@@ -1770,8 +1800,8 @@
         },
         {
           "path": "hexapod/microduck-step-v1/index.html",
-          "size": 5996,
-          "sha256": "b6f0aa5fcd30503001d16aaf32b9512cf6a85918f33908aa00bc0065fe27a415"
+          "size": 6348,
+          "sha256": "f39fd17e0526b38a84ff484f997205314ed5ec696af8fd528ddb600de8cebe7e"
         },
         {
           "path": "hexapod/microduck-step-v1/pose-loader.js",
@@ -1787,8 +1817,8 @@
     },
     {
       "id": "microduck-roll-v1",
-      "title": "MicroDuck · кувырок на ступеньку",
-      "detail": "Ступенька 5 мм · 3 расстояния · полный оборот при 2 с · 10 записей",
+      "title": "MicroDuck · кувырок на ступеньку · архив",
+      "detail": "Архивная модель с неполными столкновениями корпуса. Результаты прохождения требуют пересчёта; исправленные контакты — в опыте «корпус и ступень».",
       "duration_s": 10,
       "href": "/hexapod/microduck-roll-v1/",
       "status": "research",
@@ -1800,8 +1830,8 @@
         },
         {
           "path": "hexapod/microduck-roll-v1/index.html",
-          "size": 6813,
-          "sha256": "0ebe7675f9fb006eac33dfa4eb0648fe6a712644b600bfe9131d09e8f13d565a"
+          "size": 7165,
+          "sha256": "c439c11372d423c1d049e3279497234b89c9ed3a7db3ecd595d9d3fdfab0ba80"
         },
         {
           "path": "hexapod/microduck-roll-v1/pose-loader.js",
@@ -1852,8 +1882,8 @@
     },
     {
       "id": "microduck-heights-v1",
-      "title": "MicroDuck · высота ступеньки",
-      "detail": "Кувырок · до 2 см пройдено · 3–10 см не пройдены в этих тестах · 13 записей",
+      "title": "MicroDuck · высота ступеньки · архив",
+      "detail": "Архивная модель с неполными столкновениями корпуса. Результаты прохождения требуют пересчёта; исправленные контакты — в опыте «корпус и ступень».",
       "duration_s": 10,
       "href": "/hexapod/microduck-heights-v1/",
       "status": "research",
@@ -1865,8 +1895,8 @@
         },
         {
           "path": "hexapod/microduck-heights-v1/index.html",
-          "size": 6985,
-          "sha256": "efcedf16d169e863f4de80d50c94df7168cd4b9e1fd72e1dcb385fb6273ac6a1"
+          "size": 7337,
+          "sha256": "632cfd4201e195c8c32161de2b2a80974f7e7425327d543d15e8969943eae74f"
         },
         {
           "path": "hexapod/microduck-heights-v1/pose-loader.js",
@@ -1882,8 +1912,8 @@
     },
     {
       "id": "microduck-directed-falls-v1",
-      "title": "MicroDuck · назад и на бок: падение и вставание",
-      "detail": "24 физических попытки: моторные команды и исходное вставание v8. На полу все направления; ступень 1 см слева пройдена, 2 см пока нет.",
+      "title": "MicroDuck · назад и на бок: падение и вставание · архив",
+      "detail": "Архивная модель с неполными столкновениями корпуса. Результаты прохождения требуют пересчёта; исправленные контакты — в опыте «корпус и ступень».",
       "duration_s": 10,
       "href": "/hexapod/microduck-falls-v1/",
       "status": "research",
@@ -1895,8 +1925,8 @@
         },
         {
           "path": "hexapod/microduck-falls-v1/index.html",
-          "sha256": "52f00b9e304c61563528e2e1e3efefd1e80c365eae577228e8b8ee19ce02e726",
-          "size": 6054
+          "sha256": "8e9677dbdd7fd81f130b98df2b75b5897ca64aef58e11becfbb2b4ddbba93d42",
+          "size": 6406
         },
         {
           "path": "hexapod/microduck-falls-v1/pose-loader.js",
@@ -1947,31 +1977,31 @@
     },
     {
       "id": "microduck-back-to-wall-v1",
-      "title": "MicroDuck · вплотную к стене, падение назад",
-      "detail": "Зазор 2 мм. На 1 см встал на край, одна стопа свисает на 18 мм. У 2–5 см остался лежать. 6 высот и 2 прежних старта для сравнения.",
+      "title": "MicroDuck · корпус и ступень · контакты исправлены",
+      "detail": "Добавлены столкновения для всех видимых деталей. 9 пересчитанных проверок; большой провал корпуса в ступеньку устранён. Прежний подъём на 1 см не подтверждён.",
       "href": "/hexapod/microduck-wall-v1/",
       "duration_s": 10,
       "status": "research",
       "files": [
         {
           "path": "hexapod/microduck-wall-v1/app.js",
-          "sha256": "1a0c9c13e9a3591aad0650c354ea1c3e6fc5bad3ab764c677533f24f3ecc1a7d",
-          "size": 11342
+          "sha256": "d815619b2d07d7f78187ea5a4e2a7dab42a17beb59d168fba8de0b41f6df977a",
+          "size": 11217
         },
         {
           "path": "hexapod/microduck-wall-v1/index.html",
-          "sha256": "4760169e3e56dc44bd85838895ae3e326ae58c89cdf0b077e129bbe485f1e75b",
-          "size": 6300
+          "sha256": "ab6ebc90e0e818c5081fef726bef24a8a80f0db30332d029243941603de65a23",
+          "size": 6350
         },
         {
           "path": "hexapod/microduck-wall-v1/pose-loader.js",
-          "sha256": "af4c58a3c44d760a7ff0497ecd84444cc960c58f21180f1010887afc199102a5",
-          "size": 4577
+          "sha256": "b3149976a6d821d2b6a255bd8163bd8f61fa9fe0d2254016d93f7507c9d2ee40",
+          "size": 4671
         },
         {
           "path": "hexapod/microduck-wall-v1/replays.json",
-          "sha256": "0beb8635425e4f2ffa94521acb23bdc7a970bef6dc92ce5847a6174bc563ca3a",
-          "size": 16269
+          "sha256": "795d9daf5d64249a39cc626c95cfbf319b0ad9d13bcfcad928486efdee2dae81",
+          "size": 19029
         }
       ]
     },

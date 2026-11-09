@@ -1,0 +1,122 @@
+{
+  "schema": "microduck-contact-verification/v2",
+  "episodes": [
+    {
+      "max_visible_body_convex_overlap_m": 0.0,
+      "max_all_visible_convex_overlap_m": 0.0008098310862460959,
+      "max_visible_body_vertex_inside_step_m": 0.0,
+      "worst_body_mesh": null,
+      "trace_file": "close-h10.json",
+      "trace_sha256": "d9dda94b7160a4ef5308535e9e0d8fec0753cb9705fdb2262bfadd6b7c075568",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 0.0,
+      "max_all_visible_convex_overlap_m": 2.4613246956476844e-05,
+      "max_visible_body_vertex_inside_step_m": 0.0,
+      "worst_body_mesh": null,
+      "trace_file": "close-h20.json",
+      "trace_sha256": "376d692fc98c3dddd68db2440e49dc3c03259592516387b25c1400b8d1559728",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 0.0,
+      "max_all_visible_convex_overlap_m": 3.4245335934469934e-05,
+      "max_visible_body_vertex_inside_step_m": 0.0,
+      "worst_body_mesh": null,
+      "trace_file": "close-h30.json",
+      "trace_sha256": "fde285ce81a87ec158bc4ef8cd12fc59b373572b0dd6f7344c3452b51e0659a6",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 2.522410496285164e-06,
+      "max_all_visible_convex_overlap_m": 0.00012464492842908378,
+      "max_visible_body_vertex_inside_step_m": 0.0,
+      "worst_body_mesh": {
+        "t": 2.48,
+        "mesh": "np_f970"
+      },
+      "trace_file": "close-h50.json",
+      "trace_sha256": "9814ff34d4b3f59d68855ca4d1273db6b20b3ee7e9e2f278da859b9c42c07e68",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 1.595758423576108e-05,
+      "max_all_visible_convex_overlap_m": 1.595758423576108e-05,
+      "max_visible_body_vertex_inside_step_m": 1.5732869028881047e-06,
+      "worst_body_mesh": {
+        "t": 1.26,
+        "mesh": "np_f970"
+      },
+      "trace_file": "close-h100.json",
+      "trace_sha256": "ea7879109f195a89ff6787d189b9496859799db99d49e6832fc758477c5ac3f2",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 0.0,
+      "max_all_visible_convex_overlap_m": 2.6245415650494314e-07,
+      "max_visible_body_vertex_inside_step_m": 0.0,
+      "worst_body_mesh": null,
+      "trace_file": "close-h250.json",
+      "trace_sha256": "de2c8632e2f841eeef7a9c837c5429f49af2f1eb5d47d3b530ddbfa92c0bf9a4",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 2.1730771674523947e-06,
+      "max_all_visible_convex_overlap_m": 9.32343282828547e-05,
+      "max_visible_body_vertex_inside_step_m": 2.1730771674523947e-06,
+      "worst_body_mesh": {
+        "t": 2.34,
+        "mesh": "left_shell"
+      },
+      "trace_file": "reference-h10.json",
+      "trace_sha256": "e3b10a87a6d1586927aad27254eb8462c930618d447b17a43d59ce11a5fc8d57",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 1.214923183955399e-05,
+      "max_all_visible_convex_overlap_m": 0.00041341475368714473,
+      "max_visible_body_vertex_inside_step_m": 1.2149231839550523e-05,
+      "worst_body_mesh": {
+        "t": 2.46,
+        "mesh": "left_shell"
+      },
+      "trace_file": "reference-h20.json",
+      "trace_sha256": "292467aed1d993fde3b5642523fb940f981e974d07139bb5021be32c4a72646b",
+      "supported_top_stance": false
+    },
+    {
+      "max_visible_body_convex_overlap_m": 0.0,
+      "max_all_visible_convex_overlap_m": 0.0,
+      "max_visible_body_vertex_inside_step_m": 0.0,
+      "worst_body_mesh": null,
+      "trace_file": "flat-h0.json",
+      "trace_sha256": "02abbb6dd61e98b8447c3d248a8b29984920e5483b84783aefcb0db77530a754",
+      "supported_top_stance": false
+    }
+  ],
+  "legacy_5cm_body_step_overlap": {
+    "max_visible_body_convex_overlap_m": 0.01108609167712768,
+    "max_all_visible_convex_overlap_m": 0.023179686966980625,
+    "max_visible_body_vertex_inside_step_m": 0.010336380346850402,
+    "worst_body_mesh": {
+      "t": 7.9,
+      "mesh": "left_shell"
+    }
+  },
+  "old_5cm_trace_sha256": "4c46ccc98217e477fccf9810e2880ca74300a11e160bb86442511a91adf2b76c",
+  "corrected_5cm_substep_body_penetration_m": 0.00028469040055433,
+  "max_substep_body_step_penetration_m": 0.00028469040055433,
+  "max_substep_all_step_penetration_m": 0.0010677590933199557,
+  "max_visible_body_step_convex_overlap_m": 1.595758423576108e-05,
+  "byte_identical_repeats": [
+    "close-h50.json",
+    "flat-h0.json"
+  ],
+  "flat_recovery": true,
+  "upper_platform_successes": 0,
+  "initial_obstacle_contacts": 0,
+  "warnings_or_resets": 0,
+  "hardware_tested": false,
+  "actual_webgl_rendering_verified": false
+}
