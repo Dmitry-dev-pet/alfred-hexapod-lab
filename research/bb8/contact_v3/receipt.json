@@ -1,0 +1,619 @@
+{
+  "schema": "alfred-bb8-IMU-battery/v3",
+  "hardware_calibrated": false,
+  "gains_frozen": {
+    "kp": 0.3,
+    "kd": 0.04,
+    "kv": 1.2,
+    "ki": 0.3
+  },
+  "peak_torque_Nm_ESTIMATED": 0.2,
+  "control_rate_Hz": 100,
+  "sensor_latency_s": 0.01,
+  "nominal_only_tuning_then_frozen": true,
+  "controlled_cases": 9,
+  "controlled_behavior_passed": 0,
+  "off_control_comparison_cases": 1,
+  "integration_steps": 74000,
+  "exact_hold_repeat": true,
+  "fixture_only_pass": true,
+  "fixture_only_max_pitch_error_deg": 2.2068229954349037,
+  "mass_range_without_head_kg": {
+    "light": 1.059596005939802,
+    "nominal": 1.3269561752258163,
+    "heavy": 1.5349230266148006
+  },
+  "criteria": {
+    "max_pitch_error_deg": 10,
+    "max_full_tilt_deg": 15,
+    "max_final_speed_m_s": 0.01,
+    "max_contact_penetration_m": 0.0005,
+    "minimum_each_wheel_contact_fraction": 0.8
+  },
+  "trace_sha256": {
+    "hold-nominal": "37d8a4e52aa8c2dc7e0fd563000fafa220d9dec41ef105dce71b9e0a2811a12a",
+    "forward-nominal": "748b134b64465da554dc94198bdc53dbe3c11cf717f24e891810d3ef970b5947",
+    "reverse-nominal": "0705030eac32fc636f2a3c92a42fce3224e87ac69db0f69229656b67ace4a5b7",
+    "yaw-left-nominal": "19f850b777bf270bd91eea3252590f93b46ec84fdaf7f07fc65fd4ada1be6c94",
+    "yaw-right-nominal": "6a83bdadef5280e8670a7871e28350da7d8bc9bfdb3b82cd990f6f2763943fd0",
+    "push-nominal": "27d73d9e210b88749cf019b2cb2957a49502414b0da40ab02f78091d812dfe55",
+    "hold-light": "b7a08ae515e005ed77163757186609806e7e86bd6b96f8e84b40fe19c834a8b9",
+    "hold-heavy": "b5c10639e5d6223a159b2e18fdb61e342aeac56f29e777e05d4c1ecee16eb628",
+    "hold-nominal-noise": "4cc1b12c6660648c3172dd7c62aa87bb93ad045c97c1a83fda2ea7ceeb776e40",
+    "hold-nominal-OFF": "47882eed1dc009c2fb6349960f1104a7628d5d4772bc705da090d64a2b42dd9b"
+  },
+  "xml_sha256": {
+    "light": "d7a615ec52272398b1b9a405618bc975fe761c40c2cff997b927091b93e505a4",
+    "nominal": "9d14a52b856221dc602cb6f0b8a2c88abd66655938c28cf1e02523a84f69256c",
+    "heavy": "ce5b2b9a59e03c9b1a27146e554a1fc3a6d9496b55cc4aae734b2c46de7ef9ab"
+  },
+  "cases": [
+    {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 41.32052122120006,
+      "rms_pitch_error_deg": 24.96483838835121,
+      "max_IMU_pitch_error_deg": 2.384001174653896,
+      "final_pitch_error_deg": -26.236776690755566,
+      "final_shell_xy_m": [
+        -0.04496271592636084,
+        0.0022837381904851524
+      ],
+      "shell_xy_from_1s_m": [
+        0.021575402893072936,
+        -0.0030362272849810664
+      ],
+      "final_speed_m_s": 0.06862124170146906,
+      "peak_speed_m_s": 0.10617424426099753,
+      "final_yaw_rad": 0.01187675490765732,
+      "final_yaw_rate_rad_s": -0.006202719179867119,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00025976209884945225,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.266309981001541,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 43.77213786330479,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.920265780730897
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 20.50990876440807
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "hold-nominal",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "forward",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 41.32052122120006,
+      "rms_pitch_error_deg": 25.200186042504516,
+      "max_IMU_pitch_error_deg": 2.3119977615029983,
+      "final_pitch_error_deg": -27.003510707643414,
+      "final_shell_xy_m": [
+        -0.04664754217641959,
+        0.0022050642747174125
+      ],
+      "shell_xy_from_1s_m": [
+        0.01989057664301419,
+        -0.0031149012007488062
+      ],
+      "final_speed_m_s": 0.0751401319910517,
+      "peak_speed_m_s": 0.10617424426099753,
+      "final_yaw_rad": 0.021013284763164435,
+      "final_yaw_rate_rad_s": -0.001790187105324678,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00025976209884945225,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.787437418999616,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 43.77213786330479,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.9302325581395349
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 21.021393708416692
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "forward-nominal",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "reverse",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 41.32052122120006,
+      "rms_pitch_error_deg": 24.862812141632276,
+      "max_IMU_pitch_error_deg": 2.315847517975981,
+      "final_pitch_error_deg": -26.644057178283816,
+      "final_shell_xy_m": [
+        -0.04345771587262265,
+        0.0023266869146046578
+      ],
+      "shell_xy_from_1s_m": [
+        0.02308040294681113,
+        -0.002993278560861561
+      ],
+      "final_speed_m_s": 0.06767109014982674,
+      "peak_speed_m_s": 0.10617424426099753,
+      "final_yaw_rad": 0.010324383839689583,
+      "final_yaw_rate_rad_s": -0.010204381296204244,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00025976209884945225,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.964990577995195,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 43.77213786330479,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.9235880398671097
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 19.461747207007974
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "reverse-nominal",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "yaw-left",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 41.32052122120006,
+      "rms_pitch_error_deg": 24.876713122452884,
+      "max_IMU_pitch_error_deg": 2.3147986947296393,
+      "final_pitch_error_deg": -26.49484272876143,
+      "final_shell_xy_m": [
+        -0.04529485438624146,
+        0.001997762937060376
+      ],
+      "shell_xy_from_1s_m": [
+        0.02124326443319232,
+        -0.0033222025384058427
+      ],
+      "final_speed_m_s": 0.0660951803148357,
+      "peak_speed_m_s": 0.10617424426099753,
+      "final_yaw_rad": 0.03122997945486119,
+      "final_yaw_rate_rad_s": -0.00394193658524927,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00025976209884945225,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.466215374006424,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 43.77213786330479,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.9435215946843853
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 23.432091356102042
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "yaw-left-nominal",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "yaw-right",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 41.32052122120006,
+      "rms_pitch_error_deg": 24.99093962066399,
+      "max_IMU_pitch_error_deg": 2.3131877075536837,
+      "final_pitch_error_deg": -26.920465446314097,
+      "final_shell_xy_m": [
+        -0.04651331340763493,
+        0.0020535311275191345
+      ],
+      "shell_xy_from_1s_m": [
+        0.020024805411798845,
+        -0.0032664343479470843
+      ],
+      "final_speed_m_s": 0.06989342972407891,
+      "peak_speed_m_s": 0.10617424426099753,
+      "final_yaw_rad": 0.013866885272625418,
+      "final_yaw_rate_rad_s": 1.0277804357654396e-05,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00025976209884945225,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.520124080998357,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 43.77213786330479,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.9169435215946844
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 19.36187495143913
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "yaw-right-nominal",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "push",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 41.32052122120006,
+      "rms_pitch_error_deg": 25.034149037016537,
+      "max_IMU_pitch_error_deg": 2.3130086549743556,
+      "final_pitch_error_deg": -28.562169085829293,
+      "final_shell_xy_m": [
+        -0.0466196374383669,
+        0.002605075360017487
+      ],
+      "shell_xy_from_1s_m": [
+        0.01991848138106688,
+        -0.002714890115448732
+      ],
+      "final_speed_m_s": 0.06808149580865788,
+      "peak_speed_m_s": 0.10617424426099753,
+      "final_yaw_rad": 0.013363643863500122,
+      "final_yaw_rate_rad_s": -0.00626103885060638,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00025976209884945225,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.457531845007907,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 43.77213786330479,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.9269102990033222
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 21.000015195032226
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "push-nominal",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "hold",
+      "mass_profile": "light",
+      "total_mass_without_head_kg": 1.059596005939802,
+      "max_pitch_error_deg": 43.92295427648899,
+      "rms_pitch_error_deg": 25.775105248666566,
+      "max_IMU_pitch_error_deg": 2.2617498419853788,
+      "final_pitch_error_deg": -38.91639854828842,
+      "final_shell_xy_m": [
+        -0.06723009715782945,
+        0.003377118236770144
+      ],
+      "shell_xy_from_1s_m": [
+        -3.769266281344885e-05,
+        -0.0013764704525086875
+      ],
+      "final_speed_m_s": 0.002423384197941835,
+      "peak_speed_m_s": 0.1056067376853012,
+      "final_yaw_rad": 0.03504906698187477,
+      "final_yaw_rate_rad_s": -0.004738091883958507,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.0002577917634800464,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.417100790000404,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 46.36369103386963,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.946843853820598
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 20.99037691946217
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "hold-light",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "hold",
+      "mass_profile": "heavy",
+      "total_mass_without_head_kg": 1.5349230266148006,
+      "max_pitch_error_deg": 47.829771044978905,
+      "rms_pitch_error_deg": 28.84985499318,
+      "max_IMU_pitch_error_deg": 2.5260383051685573,
+      "final_pitch_error_deg": -39.90083686159798,
+      "final_shell_xy_m": [
+        -0.06886941852166388,
+        0.0048644743371169434
+      ],
+      "shell_xy_from_1s_m": [
+        0.006371389017090556,
+        -0.00269298304341659
+      ],
+      "final_speed_m_s": 0.04753092046757716,
+      "peak_speed_m_s": 0.118312466433279,
+      "final_yaw_rad": 0.02147584002996801,
+      "final_yaw_rate_rad_s": -0.0060547119146073195,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00026084239739481525,
+      "wheel_contact_fraction": {
+        "left": 0.9963339443426096,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 14.111519054000382,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 50.318390335277066,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.946843853820598
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 27.692534461105705
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "hold-heavy",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 41.26821873040216,
+      "rms_pitch_error_deg": 24.977320218207744,
+      "max_IMU_pitch_error_deg": 2.283926725158911,
+      "final_pitch_error_deg": -26.62070491342523,
+      "final_shell_xy_m": [
+        -0.04568198662281216,
+        0.002282317895031349
+      ],
+      "shell_xy_from_1s_m": [
+        0.020766013171017714,
+        -0.003000662657901746
+      ],
+      "final_speed_m_s": 0.06880941046002131,
+      "peak_speed_m_s": 0.10609099085546451,
+      "final_yaw_rad": 0.01148476207562984,
+      "final_yaw_rate_rad_s": -0.00630165849805644,
+      "max_abs_motor_torque_Nm": 0.2,
+      "max_contact_penetration_m": 0.00025975415883437757,
+      "wheel_contact_fraction": {
+        "left": 0.9961673054490918,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 13.99782793300983,
+      "controller_enabled": true,
+      "max_full_tilt_deg": 43.71924056823004,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.9501661129568106
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 21.841540833909313
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "hold-nominal-noise",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": true
+    },
+    {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 32.741540346347165,
+      "rms_pitch_error_deg": 22.882420229042523,
+      "max_IMU_pitch_error_deg": 2.7318195703338306,
+      "final_pitch_error_deg": -18.7067293870511,
+      "final_shell_xy_m": [
+        -0.014612165866601199,
+        0.00014335949425647656
+      ],
+      "shell_xy_from_1s_m": [
+        0.02345586458768876,
+        -0.002498392694289384
+      ],
+      "final_speed_m_s": 0.05784346276612288,
+      "peak_speed_m_s": 0.06339844752594279,
+      "final_yaw_rad": 0.02313922568799073,
+      "final_yaw_rate_rad_s": -0.01172149072559091,
+      "max_abs_motor_torque_Nm": 0.0,
+      "max_contact_penetration_m": 0.00025981859141631976,
+      "wheel_contact_fraction": {
+        "left": 0.9963339443426096,
+        "right": 0.9966672221296451
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 6000,
+      "frames": 301,
+      "runtime_s": 13.840468064998277,
+      "controller_enabled": false,
+      "max_full_tilt_deg": 35.17188483825443,
+      "CAD_shell_contact_fraction_sampled": {
+        "cad_c21": 0.9667774086378738
+      },
+      "CAD_max_single_contact_force_N_sampled": {
+        "cad_c21": 10.910287102149184
+      },
+      "upper_caster_contact_fraction_sampled": {
+        "cad_c35": 0.0,
+        "cad_c36": 0.0,
+        "cad_c37": 0.0,
+        "cad_c38": 0.0
+      },
+      "id": "hold-nominal-OFF",
+      "behavior_pass": false,
+      "included_in_controlled_behavior_count": false
+    }
+  ],
+  "limitations": [
+    "Estimated components; no measured HWeigo motor/driver curve or actual mass verification",
+    "Head and magnetic load absent; fixed-shell pass does not validate rolling BB8",
+    "Upper caster contacts and servo-plate interference must be reconciled with physical assembly",
+    "Failed counterfactuals/slow analytic-SDF probe retained as research evidence, not successful behavior"
+  ],
+  "fixture_off_control_max_pitch_error_deg": 8.83390098473985
+}

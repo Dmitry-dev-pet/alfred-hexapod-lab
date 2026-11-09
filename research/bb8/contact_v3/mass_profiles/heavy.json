@@ -1,0 +1,1652 @@
+{
+  "schema": "alfred-bb8-component-mass-scenarios/v3",
+  "profile": "heavy",
+  "hardware_calibrated": false,
+  "source_commit": "7318411cfbfbffdbd68f75e3734a50c3933969e5",
+  "assumptions": {
+    "polymer": 1240.0,
+    "motor": 0.23,
+    "battery": 0.14,
+    "pcb": 0.055,
+    "servo": 0.014,
+    "bracket": 7800.0,
+    "extras": 0.12
+  },
+  "wall_m": 0.002,
+  "components": [
+    {
+      "id": "c00",
+      "source_file": "平衡车电机座板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.036400690057713465,
+      "center_m": [
+        -0.0031371662474283797,
+        0.0007351025094076474,
+        -0.004725087674251421
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.015220876527824e-05,
+          1.1537369268319832e-08,
+          -6.053706772685124e-23
+        ],
+        [
+          1.1537369268319583e-08,
+          3.007251338656021e-05,
+          -1.1981774826963677e-21
+        ],
+        [
+          -8.279905063832477e-23,
+          -1.1979896706920526e-21,
+          6.017012111675188e-05
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c01",
+      "source_file": "平衡车电机支架1.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.03347182599523479,
+      "center_m": [
+        0.02386283375257162,
+        -0.007242742369921123,
+        -0.01560024043255653
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.156230033672232e-05,
+          1.03523568114802e-21,
+          5.348600978266196e-22
+        ],
+        [
+          9.394636758508647e-22,
+          1.0201665637360587e-05,
+          -3.2542668132168863e-06
+        ],
+        [
+          5.209983602178208e-22,
+          -3.2542668132168863e-06,
+          1.0588037869175244e-05
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c02",
+      "source_file": "平衡车轮电机1.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.23,
+      "center_m": [
+        0.023947479875040475,
+        0.00506174834418156,
+        -0.03237296558470268
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          6.869970901914762e-05,
+          -5.775963414912471e-07,
+          -2.8495433952902047e-09
+        ],
+        [
+          -5.775963414912457e-07,
+          3.4573942388494764e-05,
+          -9.811432872457154e-07
+        ],
+        [
+          -2.8495433952902486e-09,
+          -9.811432872457169e-07,
+          6.872349599416599e-05
+        ]
+      ],
+      "status": "UNIDENTIFIED_MOTOR_CLASS_PROXY",
+      "evidence": "https://www.pololu.com/product/4752/specs : 200 g; class reference only, not matched HWeigo motor",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c03",
+      "source_file": "平衡车电机支架2.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.03347182599523479,
+      "center_m": [
+        -0.030137166247428376,
+        0.008712947388736436,
+        -0.01560024043255653
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.156230033672232e-05,
+          1.2018653740862368e-21,
+          -9.333928414643715e-22
+        ],
+        [
+          1.1060933687890816e-21,
+          1.0201665637360587e-05,
+          3.2542668132168863e-06
+        ],
+        [
+          -9.195311038555727e-22,
+          3.2542668132168863e-06,
+          1.0588037869175244e-05
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c04",
+      "source_file": "平衡车轮电机2.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.23,
+      "center_m": [
+        -0.030221643099856744,
+        -0.0035478957592840372,
+        -0.032372669867673266
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          6.883671231279745e-05,
+          -5.772893583936258e-07,
+          2.8380993699079003e-09
+        ],
+        [
+          -5.772893583936249e-07,
+          3.461590314629283e-05,
+          9.776996892315178e-07
+        ],
+        [
+          2.8380993699079437e-09,
+          9.776996892315193e-07,
+          6.886044497297385e-05
+        ]
+      ],
+      "status": "UNIDENTIFIED_MOTOR_CLASS_PROXY",
+      "evidence": "https://www.pololu.com/product/4752/specs : 200 g; class reference only, not matched HWeigo motor",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c05",
+      "source_file": "铜套.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0025505444697919693,
+      "center_m": [
+        -0.003137166247428616,
+        -0.02251489749059252,
+        -0.03922508767425143
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.9221474117618733e-08,
+          1.2430509171156212e-24,
+          2.0470650191946547e-25
+        ],
+        [
+          9.80082076075651e-25,
+          4.3139681416485745e-08,
+          -4.518455188192031e-25
+        ],
+        [
+          -7.314743380077119e-26,
+          9.218833118278272e-25,
+          2.9221474117618733e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c06",
+      "source_file": "铜套.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0025505444697919693,
+      "center_m": [
+        -0.0031371662474285883,
+        -0.04701489749059252,
+        -0.03922508767425143
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.9221474117618737e-08,
+          1.3870317681411749e-24,
+          1.652321343380194e-25
+        ],
+        [
+          8.84239780306841e-25,
+          4.3139681416485745e-08,
+          -6.187449067626033e-25
+        ],
+        [
+          2.984156225915851e-25,
+          6.864308394410877e-25,
+          2.9221474117618737e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c07",
+      "source_file": "平衡车轮轴.SLDPRT",
+      "group": "left",
+      "mass_kg": 0.009873982671484456,
+      "center_m": [
+        -2.0816681711721685e-16,
+        0.024500000070459008,
+        -1.3877787807814457e-17
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.6883385308205236e-06,
+          2.7688421218671453e-24,
+          -2.5757680854361433e-23
+        ],
+        [
+          1.1679869828418694e-23,
+          4.420791001503604e-08,
+          -6.555916628000502e-23
+        ],
+        [
+          -2.735971206089218e-23,
+          -6.757478903711143e-23,
+          1.6883385308205236e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c08",
+      "source_file": "联轴器1.SLDPRT",
+      "group": "right",
+      "mass_kg": 0.011185826860541918,
+      "center_m": [
+        8.413408858487514e-17,
+        -0.003718112259395466,
+        0.0
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          4.27285991512525e-07,
+          -6.9279616540401355e-22,
+          1.9246150041713156e-10
+        ],
+        [
+          -6.92206833980625e-22,
+          2.3174653254323406e-07,
+          -1.187247124347568e-23
+        ],
+        [
+          1.9246150041713574e-10,
+          -1.14229692164449e-23,
+          4.2246018739492993e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c09",
+      "source_file": "联轴器1.SLDPRT",
+      "group": "left",
+      "mass_kg": 0.011185826860541918,
+      "center_m": [
+        -7.025630077706069e-17,
+        0.003718112329854785,
+        0.0
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          4.2721963895643577e-07,
+          -6.804357658688531e-22,
+          5.940060654840194e-10
+        ],
+        [
+          -6.809439290225588e-22,
+          2.3174653254323406e-07,
+          -2.1710915572167195e-23
+        ],
+        [
+          5.940060654840256e-10,
+          -2.1171347403986588e-23,
+          4.225265399510193e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c10",
+      "source_file": "轮子1.SLDPRT",
+      "group": "right",
+      "mass_kg": 0.013558188741821383,
+      "center_m": [
+        -3.6100126360461005e-11,
+        0.0010426040349353904,
+        3.0402839967802464e-11
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.218537906657258e-06,
+          -1.2485658015975471e-15,
+          -1.989917412553661e-15
+        ],
+        [
+          -1.248565799151577e-15,
+          4.243662208935331e-06,
+          1.351360089054481e-15
+        ],
+        [
+          -1.989917569374617e-15,
+          1.3513600983728037e-15,
+          2.218537884539942e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c11",
+      "source_file": "轮子1.SLDPRT",
+      "group": "left",
+      "mass_kg": 0.013558188741821383,
+      "center_m": [
+        -1.574416595359618e-11,
+        -0.0010426039644760715,
+        4.449363100178516e-11
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.2185378859706076e-06,
+          8.25171465370858e-16,
+          5.792706402940112e-15
+        ],
+        [
+          8.251714575106042e-16,
+          4.243662208935335e-06,
+          -1.6444487443125524e-15
+        ],
+        [
+          5.792706380089665e-15,
+          -1.6444487498830387e-15,
+          2.218537905226593e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c12",
+      "source_file": "轮胎1.SLDPRT",
+      "group": "left",
+      "mass_kg": 0.0033814428324720775,
+      "center_m": [
+        -0.0002005374170854432,
+        -0.0025000000712512987,
+        0.000399156215640753
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0681243387233638e-06,
+          4.3897678321620815e-17,
+          1.4043981627149031e-15
+        ],
+        [
+          4.389767784515611e-17,
+          2.1256991573876786e-06,
+          -1.2279869986052144e-16
+        ],
+        [
+          1.4043981758307759e-15,
+          -1.227986982729087e-16,
+          1.0681243244210818e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c13",
+      "source_file": "轮胎1.SLDPRT",
+      "group": "right",
+      "mass_kg": 0.0033814428324720775,
+      "center_m": [
+        0.0004602625529633343,
+        0.0024999999992076916,
+        0.00031137012624535276
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0681243388576223e-06,
+          3.340360784334057e-17,
+          1.8465686288470424e-16
+        ],
+        [
+          3.3403607234906536e-17,
+          2.125699157387678e-06,
+          -1.260653758659914e-16
+        ],
+        [
+          1.8465685001927261e-16,
+          -1.2606537432412864e-16,
+          1.068124324286822e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c14",
+      "source_file": "铜套.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0025505444697919693,
+      "center_m": [
+        -0.003137166247428349,
+        0.048485102509407546,
+        -0.03922508767425143
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.9221474117618737e-08,
+          4.9830261035814974e-23,
+          2.934300166037798e-25
+        ],
+        [
+          4.952412035043426e-23,
+          4.3139681416485745e-08,
+          -1.7235525193807033e-24
+        ],
+        [
+          -1.6965294487045255e-25,
+          -3.587956207854259e-25,
+          2.9221474117618733e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c15",
+      "source_file": "铜套.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0025505444697919693,
+      "center_m": [
+        -0.003137166247428845,
+        0.023985102509407438,
+        -0.03922508767425147
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.9221474117618737e-08,
+          1.2247665087844176e-24,
+          1.5556337050958353e-25
+        ],
+        [
+          9.887393259422909e-25,
+          4.3139681416485745e-08,
+          -4.325734550997523e-25
+        ],
+        [
+          -5.632466863278027e-26,
+          9.460398628644881e-25,
+          2.9221474117618737e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c16",
+      "source_file": "平衡车轮轴.SLDPRT",
+      "group": "right",
+      "mass_kg": 0.009873982671484456,
+      "center_m": [
+        -4.579669976578771e-16,
+        -0.024499999999999966,
+        -2.0816681711721685e-17
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.6883385308205238e-06,
+          5.451645869173877e-23,
+          -8.396241754211053e-23
+        ],
+        [
+          4.786913179492046e-23,
+          4.420791001503604e-08,
+          4.629222249729092e-23
+        ],
+        [
+          1.0083839292350427e-22,
+          4.0024671539162974e-23,
+          1.6883385308205238e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c17",
+      "source_file": "铜柱长.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.001994591097342579,
+      "center_m": [
+        0.041862833752571646,
+        0.04573510250940763,
+        0.009274912325748574
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0764227560340775e-07,
+          1.9980304506981637e-16,
+          8.246112713986296e-25
+        ],
+        [
+          1.9980304497842086e-16,
+          1.076422748119625e-07,
+          3.5766106672451825e-24
+        ],
+        [
+          7.038376570097044e-25,
+          3.7132777497663894e-24,
+          7.514644442184926e-09
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c18",
+      "source_file": "铜柱长.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.001994591097342579,
+      "center_m": [
+        0.04186283375257163,
+        -0.04426489749059236,
+        0.009274912325748574
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0764227565098825e-07,
+          1.931131495981037e-25,
+          1.6307332632728754e-24
+        ],
+        [
+          1.5019911635408062e-25,
+          1.0764227476438202e-07,
+          3.2882877973232652e-24
+        ],
+        [
+          1.5449051967848295e-24,
+          3.449215421988351e-24,
+          7.514644442184926e-09
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c19",
+      "source_file": "铜柱长.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.001994591097342579,
+      "center_m": [
+        -0.04813716624742838,
+        -0.044264897490592356,
+        0.009274912325748574
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0764227515277687e-07,
+          -4.398894563762057e-16,
+          -3.544297949842341e-24
+        ],
+        [
+          -4.398894526681593e-16,
+          1.0764227526259354e-07,
+          -9.539809519655413e-25
+        ],
+        [
+          -3.6081257585307086e-24,
+          -1.1248322563663693e-24,
+          7.514644442184926e-09
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c20",
+      "source_file": "铜柱长.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.001994591097342579,
+      "center_m": [
+        -0.048137166247428365,
+        0.04573510250940763,
+        0.009274912325748574
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0764227565098825e-07,
+          1.931131495981037e-25,
+          1.6307332632728754e-24
+        ],
+        [
+          1.5019911635408062e-25,
+          1.0764227476438202e-07,
+          3.2882877973232652e-24
+        ],
+        [
+          1.5449051967848295e-24,
+          3.449215421988351e-24,
+          7.514644442184926e-09
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c21",
+      "source_file": "舵机座板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.035932233474069424,
+      "center_m": [
+        -0.003381031725173606,
+        0.0007351025094076415,
+        0.06827491232574859
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.0607749695222846e-05,
+          -1.833073468188063e-22,
+          1.826147137258239e-22
+        ],
+        [
+          -2.3459254479709416e-22,
+          3.0493804753374048e-05,
+          -1.6743815808692467e-23
+        ],
+        [
+          2.8913996339922117e-22,
+          -1.413948934885754e-23,
+          6.104765609838579e-05
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c26",
+      "source_file": "M1-35.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.02161563831320838,
+      "center_m": [
+        -0.030151393378057473,
+        0.03634840130728248,
+        -0.039132243490708825
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.2467601489817807e-06,
+          -1.8080021131749777e-09,
+          -3.1737666410299745e-09
+        ],
+        [
+          -1.8080021131749622e-09,
+          3.1124289430914784e-06,
+          1.1797732348800534e-08
+        ],
+        [
+          -3.1737666410299274e-09,
+          1.1797732348800587e-08,
+          2.2669852509684167e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c27",
+      "source_file": "M1-35.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.02161563831320838,
+      "center_m": [
+        0.023862712501692116,
+        -0.034785147502942856,
+        -0.03913115983513089
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.246273844644881e-06,
+          1.5251962068306217e-11,
+          -2.7349100322630045e-11
+        ],
+        [
+          1.5251962068313432e-11,
+          3.1124289430914784e-06,
+          -1.1935456740017784e-08
+        ],
+        [
+          -2.7349100322621792e-11,
+          -1.1935456740017839e-08,
+          2.267471555305316e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c28",
+      "source_file": "M1-19(1).sldprt",
+      "group": "left",
+      "mass_kg": 0.005818311771756121,
+      "center_m": [
+        5.578721535971602e-07,
+        0.02886982623831904,
+        5.6106784641782315e-05
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.1394036624291504e-07,
+          -2.2835797535896026e-11,
+          1.8485709489212467e-11
+        ],
+        [
+          -2.2835797535893686e-11,
+          2.598289903392898e-07,
+          -2.2976811554223247e-09
+        ],
+        [
+          1.8485709489215246e-11,
+          -2.297681155422313e-09,
+          3.1580009740904925e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c29",
+      "source_file": "M1-19(1).sldprt",
+      "group": "right",
+      "mass_kg": 0.005818311771756121,
+      "center_m": [
+        6.5395006577902495e-06,
+        -0.028500786648227652,
+        5.572716963318097e-05
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.139654511208215e-07,
+          2.678152404715909e-10,
+          2.1532208339365748e-10
+        ],
+        [
+          2.6781524047159475e-10,
+          2.598289903392898e-07,
+          2.282133905493512e-09
+        ],
+        [
+          2.1532208339365327e-10,
+          2.2821339054935003e-09,
+          3.1577501253114275e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c34",
+      "source_file": "舵机转板新.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.02571291714929598,
+      "center_m": [
+        -3.698600738712501e-05,
+        0.000735248871935032,
+        0.08752070429277035
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          6.707900674617434e-06,
+          -5.199320780660889e-12,
+          1.9166293563429378e-12
+        ],
+        [
+          -5.199320780569264e-12,
+          6.7077849334567336e-06,
+          6.815939235159696e-12
+        ],
+        [
+          1.9166293563925868e-12,
+          6.8159392351615145e-12,
+          1.3161050292447649e-05
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c35",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.008779312523781661,
+      "center_m": [
+        0.025347714645704802,
+        0.0016650140048441817,
+        0.08808894228541729
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.489715461134476e-07,
+          1.0651167385228034e-10,
+          1.0160559680624648e-08
+        ],
+        [
+          1.0651167385227747e-10,
+          1.4606700756735e-07,
+          3.721817504624398e-10
+        ],
+        [
+          1.0160559680624648e-08,
+          3.7218175046244126e-10,
+          1.8152936717321042e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c36",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.008779312523781661,
+      "center_m": [
+        -0.000967057206115792,
+        0.026119831957800047,
+        0.08808898589796706
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.4606692797371803e-07,
+          -1.0644087131390193e-10,
+          -3.730207546782103e-10
+        ],
+        [
+          -1.0644087131390704e-10,
+          1.4897483023048514e-07,
+          1.0165650665823305e-08
+        ],
+        [
+          -3.730207546782072e-10,
+          1.0165650665823295e-08,
+          1.815261626498051e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c37",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.008779312523781661,
+      "center_m": [
+        -0.02542189468277968,
+        -0.00019481686091508813,
+        0.08808898589001607
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.489747979694641e-07,
+          1.0689270319102635e-10,
+          -1.0165695511935166e-08
+        ],
+        [
+          1.068927031910189e-10,
+          1.46066959528791e-07,
+          -3.7175945070648477e-10
+        ],
+        [
+          -1.0165695511935158e-08,
+          -3.7175945070648286e-10,
+          1.8152616335575293e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c38",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.008779312523781661,
+      "center_m": [
+        0.0008928132856877867,
+        -0.024649735189641395,
+        0.08808895394861806
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.4606515527015635e-07,
+          -1.0506891635515246e-10,
+          3.6990500727220243e-10
+        ],
+        [
+          -1.0506891635515555e-10,
+          1.4897412455032455e-07,
+          -1.0161556178949843e-08
+        ],
+        [
+          3.6990500727220336e-10,
+          -1.0161556178949854e-08,
+          1.815286410335273e-07
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c39",
+      "source_file": "SG90.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.014,
+      "center_m": [
+        0.004564036512571669,
+        0.0007351025094076435,
+        0.06673928672030931
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          9.151805092536049e-07,
+          1.259783726061627e-22,
+          6.409959037538047e-08
+        ],
+        [
+          1.2535008047388076e-22,
+          1.4019352217664886e-06,
+          -1.1556102986312595e-22
+        ],
+        [
+          6.409959037538047e-08,
+          -1.230711988528933e-22,
+          8.35610011186877e-07
+        ]
+      ],
+      "status": "SERVO_SPEC_REFERENCE",
+      "evidence": "https://towerpro.com.tw/product/sg90-analog/ : 9 g; actual servo/clone not confirmed",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c40",
+      "source_file": "铜套座板连接板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.011738742390893911,
+      "center_m": [
+        -0.0031371662418960763,
+        -0.034764897490592375,
+        -0.013226570230389105
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          6.823906686575166e-07,
+          4.329176775666398e-21,
+          7.428535723871592e-16
+        ],
+        [
+          4.322766125919112e-21,
+          1.4191107792863894e-06,
+          2.1802857846823833e-23
+        ],
+        [
+          7.428534132975342e-16,
+          2.741217637569995e-23,
+          1.580021752699535e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c41",
+      "source_file": "铜套座板连接板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.011738742390893911,
+      "center_m": [
+        -0.003137166252961454,
+        0.03623510250940737,
+        -0.013226570230389105
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          6.823906686575166e-07,
+          1.6619609467356274e-22,
+          -7.428535723871592e-16
+        ],
+        [
+          1.5978544492627673e-22,
+          1.4191107792863894e-06,
+          -2.1802862044462838e-23
+        ],
+        [
+          -7.428534132975342e-16,
+          -2.7412180573338057e-23,
+          1.580021752699535e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c42",
+      "source_file": "铜套座板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0026996773002451167,
+      "center_m": [
+        -0.003137166247428424,
+        0.02348510250940764,
+        -0.023560298832613548
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.021515671334402e-07,
+          1.5404042028215343e-22,
+          7.001912859485588e-23
+        ],
+        [
+          1.5403963773213545e-22,
+          3.459322449969401e-07,
+          -1.646435246588753e-22
+        ],
+        [
+          6.770278054163732e-23,
+          -1.646435246588753e-22,
+          5.502933328118796e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c43",
+      "source_file": "铜套座板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0026996773002451167,
+      "center_m": [
+        -0.0031371662474283337,
+        0.04898510250940755,
+        -0.023560298832613458
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.021515671334402e-07,
+          1.5404042028215343e-22,
+          7.001912859485588e-23
+        ],
+        [
+          1.5403963773213545e-22,
+          3.459322449969401e-07,
+          -1.646435246588753e-22
+        ],
+        [
+          6.770278054163732e-23,
+          -1.646435246588753e-22,
+          5.502933328118796e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c44",
+      "source_file": "铜套座板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0026996773002451167,
+      "center_m": [
+        -0.003137166247428313,
+        -0.022014897490592388,
+        -0.023560298832613458
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.021515671334402e-07,
+          1.5404042028215343e-22,
+          7.001912859485588e-23
+        ],
+        [
+          1.5403963773213545e-22,
+          3.459322449969401e-07,
+          -1.646435246588753e-22
+        ],
+        [
+          6.770278054163732e-23,
+          -1.646435246588753e-22,
+          5.502933328118796e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c45",
+      "source_file": "铜套座板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0026996773002451167,
+      "center_m": [
+        -0.003137166247428403,
+        -0.04751489749059239,
+        -0.023560298832613458
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.021515671334402e-07,
+          1.5404042028215343e-22,
+          7.001912859485588e-23
+        ],
+        [
+          1.5403963773213545e-22,
+          3.459322449969401e-07,
+          -1.646435246588753e-22
+        ],
+        [
+          6.770278054163732e-23,
+          -1.646435246588753e-22,
+          5.502933328118796e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c46",
+      "source_file": "轮胎1.SLDPRT",
+      "group": "left",
+      "mass_kg": 0.0033814428324720775,
+      "center_m": [
+        -0.0002946984157944526,
+        0.0025000000712513473,
+        5.198820159737355e-05
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0681243298455335e-06,
+          -7.982429555573842e-17,
+          7.080233082413143e-15
+        ],
+        [
+          -7.982429714999618e-17,
+          2.1256991573876773e-06,
+          1.0312787434023575e-16
+        ],
+        [
+          7.080233171882872e-15,
+          1.0312787388650132e-16,
+          1.068124333298911e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c47",
+      "source_file": "轮胎1.SLDPRT",
+      "group": "right",
+      "mass_kg": 0.0033814428324720775,
+      "center_m": [
+        0.00033575796026356214,
+        -0.0024999999992075805,
+        0.00038372240021807
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.0681243356788942e-06,
+          8.71955609828497e-17,
+          -6.020498400997203e-15
+        ],
+        [
+          8.719556114431574e-17,
+          2.125699157387678e-06,
+          9.697944301659015e-17
+        ],
+        [
+          -6.020498454745532e-15,
+          9.697944136690489e-17,
+          1.0681243274655507e-06
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c48",
+      "source_file": "主控板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.055,
+      "center_m": [
+        -0.003137166247428389,
+        0.0007351025094076436,
+        0.030741235932522974
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          2.423569102702031e-05,
+          1.2392216773450368e-21,
+          -3.8763245639017596e-21
+        ],
+        [
+          1.9207935998848073e-21,
+          3.283270936990276e-05,
+          -2.5098557510151395e-22
+        ],
+        [
+          -3.938285647769011e-21,
+          -1.9676962671766857e-22,
+          5.5738646739184234e-05
+        ]
+      ],
+      "status": "PCB_ENVELOPE_ESTIMATE",
+      "evidence": "25/35/55 g design scenarios; actual board model/mass unconfirmed",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c49",
+      "source_file": "主控座板.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.036871603164946615,
+      "center_m": [
+        -0.0031371662474283784,
+        0.0007351025094076394,
+        0.02327491232574858
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          3.0429083423348012e-05,
+          2.974541482740688e-21,
+          -2.530488796378487e-22
+        ],
+        [
+          2.5129747009360985e-21,
+          3.0381501615101957e-05,
+          -2.4724073080040686e-23
+        ],
+        [
+          -2.4165495137607093e-22,
+          -1.612228328241287e-23,
+          6.0755277633702544e-05
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c50",
+      "source_file": "铜柱2.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0033509130435355316,
+      "center_m": [
+        0.04186283375257163,
+        -0.04426489749059236,
+        0.04577491232574859
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          4.988965193233892e-07,
+          4.515697021029978e-16,
+          2.5721713058878144e-23
+        ],
+        [
+          4.515696911791313e-16,
+          4.988965181389296e-07,
+          2.4887615006131637e-23
+        ],
+        [
+          2.674780287449109e-23,
+          2.0240328868723396e-23,
+          1.2624602662870719e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c51",
+      "source_file": "铜柱2.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0033509130435355316,
+      "center_m": [
+        0.041862833752571646,
+        0.04573510250940763,
+        0.04577491232574859
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          4.988965183991184e-07,
+          -6.666333782950703e-16,
+          -3.0069381749942175e-23
+        ],
+        [
+          -6.66633373398691e-16,
+          4.988965190632007e-07,
+          1.941216589031053e-23
+        ],
+        [
+          -2.577555723815591e-23,
+          2.1464773942188638e-23,
+          1.2624602662870719e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c52",
+      "source_file": "铜柱2.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0033509130435355316,
+      "center_m": [
+        -0.048137166247428365,
+        0.04573510250940763,
+        0.04577491232574859
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          4.988965194068084e-07,
+          3.132887913997505e-16,
+          2.826844345386451e-23
+        ],
+        [
+          3.13288800315456e-16,
+          4.988965180555105e-07,
+          2.1952107144243708e-23
+        ],
+        [
+          2.8784617243729077e-23,
+          1.7220966333476366e-23,
+          1.2624602662870719e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c53",
+      "source_file": "铜柱2.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.0033509130435355316,
+      "center_m": [
+        -0.04813716624742838,
+        -0.04426489749059236,
+        0.04577491232574859
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          4.988965179900663e-07,
+          -7.370549000845004e-17,
+          -1.693127763271963e-23
+        ],
+        [
+          -7.370548945663509e-17,
+          4.988965194722524e-07,
+          3.153302619636211e-23
+        ],
+        [
+          -1.21803020737885e-23,
+          3.125309764996064e-23,
+          1.2624602662870719e-08
+        ]
+      ],
+      "status": "MATERIAL_AND_DENSITY_ESTIMATE",
+      "evidence": "Geometric volume and assumed actual material; not CAD cached mass",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "c54",
+      "source_file": "电池.SLDPRT",
+      "group": "chassis",
+      "mass_kg": 0.14,
+      "center_m": [
+        -0.006148420858415764,
+        0.004365750500398932,
+        0.006274912325748571
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.769833333333334e-05,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          5.9756666666666684e-05,
+          0.0
+        ],
+        [
+          5.1960912530813425e-22,
+          1.2990228132703356e-22,
+          6.903166666666669e-05
+        ]
+      ],
+      "status": "UNIDENTIFIED_BATTERY_ESTIMATE",
+      "evidence": "60/90/140 g design scenarios; actual battery unknown; original schematic says 12 V",
+      "inertia_assumption": "uniform source envelope rescaled to selected mass; internal material distribution unmeasured"
+    },
+    {
+      "id": "extra_driver_power_receiver",
+      "source_file": null,
+      "group": "chassis",
+      "mass_kg": 0.066,
+      "center_m": [
+        -0.003137166247428389,
+        0.0007351025094076436,
+        0.02
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          5.940000000000001e-06,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          5.940000000000001e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          5.940000000000001e-06
+        ]
+      ],
+      "status": "MISSING_FROM_CAD_ESTIMATE",
+      "evidence": "Mass and mounting location unresolved; explicit sensitivity profile",
+      "inertia_assumption": "15mm effective-radius isotropic distribution"
+    },
+    {
+      "id": "extra_wiring_fasteners_magnets",
+      "source_file": null,
+      "group": "chassis",
+      "mass_kg": 0.054,
+      "center_m": [
+        -0.003137166247428389,
+        0.0007351025094076436,
+        0.005
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          4.86e-06,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.86e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          4.86e-06
+        ]
+      ],
+      "status": "MISSING_FROM_CAD_ESTIMATE",
+      "evidence": "Mass and mounting location unresolved; explicit sensitivity profile",
+      "inertia_assumption": "15mm effective-radius isotropic distribution"
+    }
+  ],
+  "groups": {
+    "chassis": {
+      "mass_kg": 1.135070010983487,
+      "center_m": [
+        -0.0032554077524860787,
+        0.0011935268415643188,
+        -0.003813164047338451
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          0.0019134283476456458,
+          2.6363448558814282e-06,
+          -1.9955545297957536e-05
+        ],
+        [
+          2.636344855881423e-06,
+          0.0021887257740772856,
+          -4.772631327319798e-06
+        ],
+        [
+          -1.9955545297957536e-05,
+          -4.772631327319798e-06,
+          0.00115726339254848
+        ]
+      ],
+      "component_count": 37
+    },
+    "left": {
+      "mass_kg": 0.047199195710548036,
+      "center_m": [
+        -3.541089994566059e-05,
+        0.009265847835978553,
+        3.923724540236937e-05
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.3720318705725575e-05,
+          -1.4807165949221203e-08,
+          8.69220835362806e-10
+        ],
+        [
+          -1.4807165949221202e-08,
+          9.031707967910877e-06,
+          8.372717567618287e-09
+        ],
+        [
+          8.69220835362893e-10,
+          8.372717567618289e-09,
+          1.3717362278028293e-05
+        ]
+      ],
+      "component_count": 6
+    },
+    "right": {
+      "mass_kg": 0.047199195710548036,
+      "center_m": [
+        5.7834591925991494e-05,
+        -0.00922035575082526,
+        5.6667366054450455e-05
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          1.3637116753474993e-05,
+          -2.4869507310073247e-08,
+          -3.599162606006856e-10
+        ],
+        [
+          -2.4869507310073247e-08,
+          9.032476095678114e-06,
+          -1.2526450423271868e-08
+        ],
+        [
+          -3.599162606007242e-10,
+          -1.2526450423271877e-08,
+          1.3634348140707074e-05
+        ]
+      ],
+      "component_count": 6
+    },
+    "shell": {
+      "mass_kg": 0.3054546242102175,
+      "center_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_COM_kg_m2": [
+        [
+          0.0019961799012292946,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0019961799012292946,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0019961799012292946
+        ]
+      ],
+      "component_count": 1
+    }
+  },
+  "total_mass_without_head_kg": 1.5349230266148006,
+  "internal_mass_kg": 1.2294684024045832,
+  "head_excluded": true,
+  "limitations": [
+    "No weighed HWeigo components; ranges are hypotheses, not confidence intervals",
+    "Source photograph suggests polymer plates; actual material not confirmed",
+    "37D-class motor proxy is not an identified substitution or purchase selection",
+    "Head and its magnetic/dynamic load absent; full robot not validated"
+  ]
+}
