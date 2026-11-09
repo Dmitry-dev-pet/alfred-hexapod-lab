@@ -1,3 +1,4 @@
+import {cameraOutsideTerrain} from '../docs/hexapod/microduck-wall-v1/safe-camera.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -41,4 +42,12 @@ test('complete environment contacts withdraw the previous edge-stance claim',()=
  assert.equal(index.clips.find(c=>c.id==='flat-h0').status,'PASS');
  const case5=index.clips.find(c=>c.id==='close-h50');assert.ok(!case5.standing_final_1s&&case5.max_body_step_penetration_m<.0003);
  const legacy=structuredClone(index);legacy.schema='microduck-back-to-wall-replays/v1';assert.throws(()=>validateIndex(legacy,sha));
+});
+
+test('the orbit camera cannot enter the 5 cm step or the floor',()=>{
+ const terrain={height_m:.05,center_xy_m:[.6294373124348494,0],half_size_xy_m:[.6,.6]};
+ const clipped=cameraOutsideTerrain([.05,.03,.015],terrain);assert.ok(clipped[2]>.05+.006);assert.equal(clipped[0],.05);
+ const outside=[-.3,-.4,.3];assert.deepEqual(cameraOutsideTerrain(outside,terrain),outside);
+ assert.ok(cameraOutsideTerrain([-.3,0,-.1],terrain)[2]>.006);
+ const tall={...terrain,height_m:.25};assert.ok(cameraOutsideTerrain([.05,0,.13],tall)[2]>.25+.006);
 });

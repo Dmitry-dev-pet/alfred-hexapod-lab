@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { loadModelPackage } from '../model-package.js';
 import {validateIndex,loadPoseClip} from './pose-loader.js';
+import {cameraOutsideTerrain} from './safe-camera.js';
 
 // A single immutable package retains all original STL bytes and instance links.
 const MODEL_PACKAGE={"schema":"robot-model-package-ref/v1","id":"microduck-original","url":"/assets/robot-models/microduck-original-e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b.json","sha256":"e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b","size":10340979,"source_revision":"bae39f5900b318f7e87fc485c30a31213cfa14eb","mesh_count":38,"instance_count":70,"license_spdx":"CC-BY-NC-SA-4.0"};
@@ -30,7 +31,7 @@ const floor=new THREE.Mesh(new THREE.PlaneGeometry(9,9),
 floor.rotation.x=-Math.PI/2;floor.position.y=0;scene.add(floor);
 const grid=new THREE.GridHelper(3,150,0x456f85,0x2b4455);grid.position.y=.0001;scene.add(grid);
 const world=new THREE.Group();world.rotation.x=-Math.PI/2;scene.add(world); // MJCF z-up -> Three y-up
-const platform=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshStandardMaterial({color:0x8da66c,roughness:.9}));world.add(platform);
+const platform=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshStandardMaterial({color:0x8da66c,roughness:.9,side:THREE.DoubleSide}));world.add(platform);
 const loader=new STLLoader();
 const qa=new THREE.Quaternion(),qb=new THREE.Quaternion();
 const previous=new THREE.Vector3();
@@ -168,6 +169,8 @@ function tick(t){
    clock=Math.min(replay.duration_s,clock+Math.min(.1,(t-lastTime)/1000)*Number(speed.value||1));if(clock>=replay.duration_s)setPlaying(false);
    frame(clock);
  }
- lastTime=t;orbit.update();renderer?.render(scene,camera);
+ lastTime=t;orbit.update();
+ if(replay){const p=cameraOutsideTerrain([camera.position.x,-camera.position.z,camera.position.y],replay.terrain);camera.position.set(p[0],p[2],-p[1]);camera.lookAt(orbit.target);}
+ renderer?.render(scene,camera);
 }
 requestAnimationFrame(tick);init();
