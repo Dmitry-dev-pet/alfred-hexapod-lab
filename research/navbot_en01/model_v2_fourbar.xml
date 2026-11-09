@@ -1,0 +1,66 @@
+<mujoco model="EN01_v2_CAD_fourbar_SURROGATE_DYNAMICS">
+  <!--CAD axes/planar closure only. Masses, motor limits, servo zero, springs and collisions UNCALIBRATED.-->
+  <compiler angle="radian" autolimits="true" />
+  <option timestep="0.001" gravity="0 0 -9.81" integrator="implicitfast" solver="Newton" iterations="100" tolerance="1e-10" />
+  <default>
+    <joint damping="0.0005" armature="0.0000001" />
+    <geom contype="2" conaffinity="1" condim="3" friction="0.9 0.005 0.0001" solref="0.006 1" />
+  </default>
+  <worldbody>
+    <geom name="floor" type="plane" size="3 3 .1" contype="1" conaffinity="2" />
+    <body name="torso" pos="0 0 0.0699144756124">
+      <freejoint name="root" />
+      <geom name="torso_geom" type="box" size=".047 .034 .024" mass=".180" />
+      <site name="imu_site" size=".002" />
+      <body name="left_upper" pos="0 0.04365000005 -0.015">
+        <joint name="hip_left" axis="0 1 0" range="-.22 .65" armature=".00002" />
+        <geom name="left_upper_geom" type="capsule" fromto="0 0 0 0.0486371148021 0 -0.0186395027757" size=".004" mass=".009" />
+        <body name="left_calf" pos="0.0486371148021 0 -0.0186395027757">
+          <joint name="knee_left" axis="0 1 0" limited="false" />
+          <geom name="left_calf_geom" type="capsule" fromto="0.0112161178498 0 0.00426599348081 -0.0467338243744 0 -0.0177749728367" size=".004" mass=".013" />
+          <site name="left_closure_calf" pos="0.0112161178498 0 0.00426599348081" size=".001" />
+          <body name="left_wheel" pos="-0.0467338243744 0 -0.0177749728367">
+            <joint name="wheel_left" axis="0 1 0" limited="false" armature=".00005" damping=".0002" />
+            <geom name="left_wheel_geom" type="cylinder" size=".0185 .0065" quat=".707106781 .707106781 0 0" mass=".047" />
+          </body>
+        </body>
+      </body>
+      <body name="left_rod" pos="0.0176946560834 0.04365000005 0.00121416498278">
+        <joint name="rod_left" axis="0 1 0" limited="false" />
+        <geom name="left_rod_geom" type="capsule" fromto="0 0 0 0.0421585765685 0 -0.0305876742776" size=".002" mass=".002" />
+        <site name="left_closure_rod" pos="0.0421585765685 0 -0.0305876742776" size=".001" />
+      </body>
+      <body name="right_upper" pos="0 -0.04365000005 -0.015">
+        <joint name="hip_right" axis="0 1 0" range="-.22 .65" armature=".00002" />
+        <geom name="right_upper_geom" type="capsule" fromto="0 0 0 0.0486371148021 0 -0.0186395027757" size=".004" mass=".009" />
+        <body name="right_calf" pos="0.0486371148021 0 -0.0186395027757">
+          <joint name="knee_right" axis="0 1 0" limited="false" />
+          <geom name="right_calf_geom" type="capsule" fromto="0.0112161178498 0 0.00426599348081 -0.0467338243744 0 -0.0177749728367" size=".004" mass=".013" />
+          <site name="right_closure_calf" pos="0.0112161178498 0 0.00426599348081" size=".001" />
+          <body name="right_wheel" pos="-0.0467338243744 0 -0.0177749728367">
+            <joint name="wheel_right" axis="0 1 0" limited="false" armature=".00005" damping=".0002" />
+            <geom name="right_wheel_geom" type="cylinder" size=".0185 .0065" quat=".707106781 .707106781 0 0" mass=".047" />
+          </body>
+        </body>
+      </body>
+      <body name="right_rod" pos="0.0176946560834 -0.04365000005 0.00121416498278">
+        <joint name="rod_right" axis="0 1 0" limited="false" />
+        <geom name="right_rod_geom" type="capsule" fromto="0 0 0 0.0421585765685 0 -0.0305876742776" size=".002" mass=".002" />
+        <site name="right_closure_rod" pos="0.0421585765685 0 -0.0305876742776" size=".001" />
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <connect name="left_fourbar" site1="left_closure_calf" site2="left_closure_rod" solref=".003 1" solimp=".99 .9999 .001" />
+    <connect name="right_fourbar" site1="right_closure_calf" site2="right_closure_rod" solref=".003 1" solimp=".99 .9999 .001" />
+  </equality>
+  <actuator>
+    <motor name="a_hip_left" joint="hip_left" gear="1" ctrlrange="-.14709975 .14709975" />
+    <motor name="a_wheel_left" joint="wheel_left" gear="1" ctrlrange="-.03 .03" />
+    <motor name="a_hip_right" joint="hip_right" gear="1" ctrlrange="-.14709975 .14709975" />
+    <motor name="a_wheel_right" joint="wheel_right" gear="1" ctrlrange="-.03 .03" />
+  </actuator>
+  <sensor>
+    <gyro name="imu_gyro" site="imu_site" />
+  </sensor>
+</mujoco>

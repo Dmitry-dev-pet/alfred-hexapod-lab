@@ -1,0 +1,10 @@
+{
+  "status": "BLOCKED",
+  "launch_error": "Chromium process_singleton_posix.cc socket() Operation not permitted",
+  "attempts": [
+    "Playwright default missing browser binary",
+    "Installed /usr/bin/chromium launch failed at sandbox socket syscall"
+  ],
+  "webgl_verified": false,
+  "android_device_verified": false
+}
