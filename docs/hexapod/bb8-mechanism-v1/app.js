@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { validatePackage, frameAt, sha256 } from './data.js';
 
-const MODEL_SHA='2fc23f67f588da81fe1cc1431b2c2cd98c2353ec5181a6dd7653b40812f06118';
+const MODEL_SHA='e4984076ee368406a02e29a01df49059b245566c7c93564a032c8435ae930e80';
 const MODEL_URL='/assets/robot-models/bb8-hweigo-'+MODEL_SHA+'.json';
 const $=id=>document.getElementById(id),viewer=$('viewer');
 let renderer, controls, pack, staticRoot, replayRoot, innerRoot;
@@ -144,7 +144,7 @@ async function start(){
       const tick=now=>{const delta=previous?Math.min((now-previous)/1000,.1):0;previous=now;if(playing){time=Math.min(6,time+delta*Number($('speed').value));applyFrame();if(time>=6)setPlaying(false);}requestAnimationFrame(tick);};requestAnimationFrame(tick);
     }
     const response=await fetch(MODEL_URL);if(!response.ok)throw Error('Пакет модели недоступен');
-    const bytes=await response.arrayBuffer();if(bytes.byteLength!==3152484||await sha256(bytes)!==MODEL_SHA)throw Error('Контрольная сумма пакета не совпадает');
+    const bytes=await response.arrayBuffer();if(bytes.byteLength!==3553460||await sha256(bytes)!==MODEL_SHA)throw Error('Контрольная сумма пакета не совпадает');
     pack=validatePackage(JSON.parse(new TextDecoder().decode(bytes)));
     const loader=new STLLoader();let loaded=0;
     for(const [id,spec] of Object.entries(pack.meshes)){

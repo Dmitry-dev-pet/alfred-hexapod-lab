@@ -1,0 +1,53 @@
+{
+  "schema": "alfred-bb8-tire-source-repair/v1",
+  "source_repo": "HWeigo/BB8_Robot",
+  "source_commit": "7318411cfbfbffdbd68f75e3734a50c3933969e5",
+  "source_file": "Model/轮胎1.SLDPRT",
+  "source_git_blob_sha1": "c86528aaebaf7663c8b9fb2e91e063b7fd0678aa",
+  "reader_repo": "djbarrow/freecad_solidworks_plugin",
+  "reader_commit": "72d8a1ccde195725da159fc1266729d936f52884",
+  "source_topology": "one torus face; one closed seam edge used twice with opposite FIN senses; solid region; no cut end faces",
+  "source_parameters": {
+    "major_radius_mm": 25.0,
+    "tube_radius_mm": 2.4999999999999987,
+    "axis": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "centre_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "outer_diameter_mm": 55.0,
+    "cross_section_diameter_mm": 4.999999999999997
+  },
+  "before": {
+    "triangles": 1944,
+    "boundary_edges": 72,
+    "nonmanifold_edges": 0,
+    "angular_coverage_degrees": 270,
+    "signed_volume_mm3": 2289.795565532348
+  },
+  "after": {
+    "triangles": 7938,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "angular_coverage_degrees": 360,
+    "signed_volume_mm3": 3074.037857052705
+  },
+  "analytical_volume_mm3": 3084.251375340421,
+  "occt_volume_mm3": 3084.251375340421,
+  "replacement_stl_sha256": "9d1790d179a52d8b26da8945cd273a1f0a64ea25b8cf0a8e3037cf10cb1717c7",
+  "replacement_stl_bytes": 396984,
+  "affected_instances": [
+    "c12",
+    "c13",
+    "c46",
+    "c47"
+  ],
+  "placements_unchanged": true,
+  "recorded_poses_unchanged": true,
+  "scope": "source-derived visual mesh repair only; no inner-wheel contact or motor dynamics calibration"
+}

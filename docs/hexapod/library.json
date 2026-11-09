@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 51,
+  "revision": 52,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -12,8 +12,8 @@
       "files": [
         {
           "path": "hexapod/bb8-mechanism-v1/index.html",
-          "size": 6084,
-          "sha256": "4abfa3a70986a84e43c279cb6bc29fc079a0b6ae015afeaba8384d65945f408e"
+          "size": 6359,
+          "sha256": "871f35942433100bc067e7202efcc500c1ded84d785b33d50b36244a7d66a13f"
         },
         {
           "path": "hexapod/bb8-mechanism-v1/style.css",
@@ -23,7 +23,7 @@
         {
           "path": "hexapod/bb8-mechanism-v1/app.js",
           "size": 14277,
-          "sha256": "f3a96a99d9b1a65e43898fac0fd53a026a7acf11987d8ea47d3e7ca321423a75"
+          "sha256": "44ada8bda921f632b2a2ec0d78b8e8a07b48a8396d9a3c2fc664f98988c3f9fa"
         },
         {
           "path": "hexapod/bb8-mechanism-v1/data.js",
