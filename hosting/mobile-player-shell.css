@@ -20,3 +20,18 @@ html,body{height:100%;margin:0;overscroll-behavior:none;background:#0c1821}body{
 @media(prefers-reduced-motion:reduce){#hx-shell *{transition:none!important;scroll-behavior:auto!important}}
 
 .hx-play:before{content:"";display:block;width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid #112b25;margin-left:3px}.hx-play[data-playing="true"]:before{width:17px;height:20px;border:0;border-left:6px solid #112b25;border-right:6px solid #112b25;margin:0}
+
+/* Interactive pages keep their thumb pads on the scene, outside the menus. */
+#hx-shell .hx-controls{display:block!important}
+.hx-interactive{--hx-dock:calc(72px + env(safe-area-inset-bottom,0px))}
+.hx-interactive #hx-shell .hx-controls{padding-top:8px}
+.hx-interactive .hx-time{font-size:0}.hx-live-label{font-size:14px;color:#b9d2df}
+.hx-stop{min-height:48px;min-width:88px;padding:10px 18px;border:1px solid #dc9f95;border-radius:14px;background:#503238;color:#ffe4df;font-weight:650!important}
+.hx-mobile-player .stage>.pilot-controls{bottom:calc(var(--hx-dock) + 12px)!important;z-index:22!important;pointer-events:none!important}
+.hx-mobile-player .stage>.factory-dual-controls{display:flex!important;justify-content:space-between!important;gap:12px!important}
+.hx-mobile-player .stage>.factory-dual-controls>.pilot-pad-wrap{width:auto!important;flex:0 0 auto!important}
+.hx-mobile-player .stage .pilot-pad{width:clamp(104px,30vw,146px)!important;height:clamp(104px,30vw,146px)!important;max-width:none!important;max-height:none!important;pointer-events:auto!important;touch-action:none!important}
+.hx-mobile-player .stage .pilot-pad-wrap small{max-width:146px;font-size:11px!important;white-space:normal!important;text-align:center!important}
+.hx-native-options .factory-center-controls{display:flex!important;flex-direction:column;gap:10px;padding:12px!important}
+.hx-native-options .factory-row{display:flex;align-items:center;gap:12px}.hx-native-options .factory-row label{flex:0 0 90px;font-size:13px}.hx-native-options .factory-row select{flex:1;width:0;min-width:0}
+@media(orientation:landscape) and (max-height:520px){.hx-interactive{--hx-dock:64px}.hx-mobile-player .stage .pilot-pad{width:clamp(96px,26vh,128px)!important;height:clamp(96px,26vh,128px)!important}.hx-interactive #hx-shell .hx-controls{padding-top:4px}.hx-live-label{font-size:13px}}

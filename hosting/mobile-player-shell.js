@@ -30,7 +30,22 @@
   q('.hx-about-close').addEventListener('click',()=>{panel('about',false);q('.hx-info-toggle').focus();});q('.hx-more-close').addEventListener('click',()=>{panel('more',false);q('.hx-more-toggle').focus();});
   const scenario=stage.querySelector('.md-case,.lite3-picker,.rider-picker');if(scenario){if(scenario.matches('.md-case'))scenario.querySelector('label').textContent='Сценарий';q('.hx-scenario').append(scenario);q('.hx-scenario').hidden=false;document.documentElement.classList.add('hx-has-scenario');}
   for(const el of stage.querySelectorAll('.md-stat,.wb-note,.wb-stat,#pupper-hud,#pupper-bottom,.lite3-stats,.rider-stats,.pilot-stats,.factory-stats,.factory-stamp,.pilot-tag,.stage-phase,.replay-hud,.stage-info,.stage-right'))q('.hx-native-info').append(el);
-  for(const el of stage.querySelectorAll('.pilot-controls,.replay-console'))q('.hx-native-options').append(el);
+  const joystickControls=stage.querySelector('.pilot-controls');
+  if(joystickControls){
+    document.documentElement.classList.add('hx-interactive');
+    top.querySelector('small').textContent='УПРАВЛЕНИЕ · КИНЕМАТИКА';
+    slider.hidden=true;play.hidden=true;
+    const label=document.createElement('span');label.className='hx-live-label';label.textContent='Джойстики';q('.hx-time').append(label);
+    const originalStop=joystickControls.querySelector('.pilot-stop');
+    if(originalStop){const stop=document.createElement('button');stop.type='button';stop.className='hx-stop';stop.textContent='Стоп';stop.setAttribute('aria-label','Остановить движение');stop.addEventListener('click',()=>originalStop.click());q('.hx-transport').prepend(stop);}
+    q('.hx-more-toggle').setAttribute('aria-label','Настройки управления');
+    q('#hx-more').setAttribute('aria-label','Настройки управления');
+    q('#hx-more .hx-panel-head strong').textContent='Управление';
+    // Thumb pads stay on the scene; only the center's tuning controls move.
+    const tuning=joystickControls.querySelector('.factory-center-controls');
+    if(tuning)q('.hx-native-options').append(tuning);
+  }
+  for(const el of stage.querySelectorAll('.replay-console'))q('.hx-native-options').append(el);
   function setTitle(){const e=selection();title.textContent=e?.title||document.title.split('·').at(-1).trim();q('.hx-description').textContent=e?.detail||'Запись физического эксперимента. Камера поворачивается пальцем, масштаб меняется двумя пальцами.';}
   function check(doc){const a=Array.isArray(doc)?doc:doc?.entries;if(!Array.isArray(a))throw Error('Неверный формат каталога');const v=a.filter(e=>e&&/^[a-z0-9-]{1,64}$/.test(e.id||'')&&safeHref(e.href)&&typeof e.title==='string'&&e.title.length<=100&&typeof e.detail==='string'&&e.detail.length<=180&&Number.isFinite(e.duration_s)&&e.duration_s>0);if(!v.length)throw Error('Библиотека пуста');return v;}
   const items=()=>[...entries.map(e=>({...e,format:'3D',robot:family(e)})),...videos];
