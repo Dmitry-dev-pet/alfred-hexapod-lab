@@ -1,0 +1,17 @@
+{
+  "trials": 12,
+  "fallen_active_trials": 8,
+  "immediate_upright_controls": 4,
+  "stable_getups": 0,
+  "final_stable_stands": 0,
+  "physics_steps": 288000,
+  "saved_frames": 3600,
+  "virtual_forward_queries": 33712,
+  "qpos_body_residual": 0.0,
+  "unexpected_surface_intersection_frames": 0,
+  "max_floor_penetration_m": 0.00024391467840834472,
+  "max_closure_error_m": 0.00017820632267770553,
+  "max_sampled_cad_floor_penetration_m": 0.0001887813838881442,
+  "hardware_torque_calibrated": false,
+  "four_targeted_local_tests_passed": true
+}
