@@ -56,3 +56,21 @@ python research/navbot_en01/audit_step.py \
 
 The receipt records SHA-256, imported solid count, per-solid bounds/volumes/centres and an explicit **geometric-audit-only** status. A successful import is **not** identification of the hip/wheel moving groups, masses, inertias or motor constraints, and is not permission to replace MuJoCo physics with a static animation. Do not commit third-party original STEP until its redistribution rights are established. Source: `fuwei007/Navbot-EN01@3139f2fb32b38d10611feb905e16f8aa012f2f2e`.
 
+
+
+## Original STEP source-derived checkpoint — 9 November 2026
+
+- [Pinned semantic STEP evidence](results/original_step_semantic_probe_20261109.md): source Git blob `9156683a0bb694c84dc541a3e26b5f6b08db1a41`, 46 PRODUCT entities, 62 manifold solids, mm units. This is STEP-entity analysis, **not** a verified articulated model.
+- Part `2208电机轮胎` has two outer cylindrical faces of radius **18.5 mm** (candidate outer tire geometry), versus **24 mm** assumed in `model_v0.xml`. Never silently patch the old model or classify old replays as hardware-accurate.
+- The CAD names include `QUANUM GIMBAL MOTOR 2208` and `STS3032`; the exact motor as sold and servo wiring remain uncertain.
+
+To repeat the source-pinned entity audit on a machine with the official STEP locally present:
+
+```sh
+python research/navbot_en01/step_semantic_audit.py \
+  --step /path/to/OriginalRobotModel.stp \
+  --out results/navbot_en01/step_semantic_audit.json
+python -m unittest discover -s tests -p test_navbot_en01_step_semantic_audit.py -v
+```
+
+The script first verifies the exact upstream Git blob SHA1 then records original file SHA256, named parts, selected axis/radius observations and explicit limitations. **It does not run MuJoCo.** A new versioned joint/COM/inertia/contact model and real `mj_step` are still required before a new EN01 physics replay can be published.
