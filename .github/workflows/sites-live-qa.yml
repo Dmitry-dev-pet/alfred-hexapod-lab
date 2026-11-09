@@ -6,6 +6,7 @@ on:
       - "hosting/player-refresh-live.js"
       - "scripts/build_hosted_player.py"
       - "tests/test_sites_live_worker.mjs"
+      - "tests/check_sites_live_catalog.mjs"
       - ".github/workflows/sites-live-qa.yml"
   workflow_dispatch:
 
@@ -30,6 +31,11 @@ jobs:
           node --check hosting/github-live-boot.js
           node --check hosting/player-refresh-live.js
           node --test tests/test_sites_live_worker.mjs
+      - name: Validate actual working GitHub library revision and MicroDuck manifest
+        run: |
+          git fetch --no-tags --depth=1 origin feature/android-local-offline-viewer-20261104
+          git show FETCH_HEAD:docs/hexapod/library.json > /tmp/alfred-live-library.json
+          node tests/check_sites_live_catalog.mjs /tmp/alfred-live-library.json
       - name: Verify existing hosted player tests
         run: |
           python -m unittest discover -s tests -p 'test_hosted_player.py' -v
