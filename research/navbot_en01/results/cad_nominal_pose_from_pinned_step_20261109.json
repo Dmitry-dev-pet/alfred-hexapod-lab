@@ -1,0 +1,101 @@
+{
+  "schema": "navbot-en01-cad-nominal-pose-evidence/v1",
+  "source": {
+    "repository": "fuwei007/Navbot-EN01",
+    "commit": "3139f2fb32b38d10611feb905e16f8aa012f2f2e",
+    "path": "Hardware/RebotModel/OriginalRobotModel.stp",
+    "git_blob_sha1": "9156683a0bb694c84dc541a3e26b5f6b08db1a41",
+    "raw_bytes": 12358579,
+    "declared_length_units": "mm"
+  },
+  "frame": "Original STEP assembly frame; CAD Y is vertical in this snapshot, CAD Z lateral. Geometry pose ONLY, not a joint transform over motion.",
+  "entities": {
+    "428": {
+      "name": "舵盘",
+      "occurrence_step_id": 428,
+      "axis2_placement_step_id": 70809,
+      "origin_mm": [
+        -4.79358149,
+        15.5,
+        61.6
+      ],
+      "local_y_axis_in_cad": [
+        0,
+        0,
+        1
+      ]
+    },
+    "429": {
+      "name": "舵盘_MIR1",
+      "occurrence_step_id": 429,
+      "axis2_placement_step_id": 70810,
+      "origin_mm": [
+        -4.79358149,
+        15.5,
+        2.4
+      ],
+      "local_y_axis_in_cad": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "471": {
+      "name": "2208电机轮胎",
+      "occurrence_step_id": 471,
+      "axis2_placement_step_id": 70852,
+      "origin_mm": [
+        -2.890291062,
+        -20.914475612,
+        -5.15
+      ],
+      "local_y_axis_in_cad": [
+        0,
+        0,
+        -1
+      ]
+    },
+    "472": {
+      "name": "2208电机轮胎",
+      "occurrence_step_id": 472,
+      "axis2_placement_step_id": 70853,
+      "origin_mm": [
+        -2.890291062,
+        -20.914475612,
+        69.15
+      ],
+      "local_y_axis_in_cad": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "measurements": {
+    "hip_servo_horn_separation_z_mm": 59.2,
+    "tire_axis_separation_z_mm": 74.3,
+    "plus_side_wheel_minus_horn_xyz_mm": [
+      1.903290428,
+      -36.414475612,
+      7.55
+    ],
+    "minus_side_wheel_minus_horn_xyz_mm": [
+      1.903290428,
+      -36.414475612,
+      -7.55
+    ],
+    "nominal_hip_to_wheel_xy_distance_mm": 36.464182,
+    "tire_cylinder_radius_candidates_mm": [
+      18.3,
+      18.5
+    ],
+    "model_v0_wheel_radius_mm": 24
+  },
+  "limits": [
+    "Cad placement axis and tire/servo-horn BREP local bore directions were checked; a static pose is not a four-bar linkage model.",
+    "The 18.5 mm cylinder is a local tire part surface, not a verified rolling radius under contact.",
+    "Part mass, COM, inertia, servo shaft zero, torque-speed, power rail and angular linkage Jacobian are unknown.",
+    "Do not use these derived values as hardware-validated sim-to-real parameters.",
+    "Third-party source CAD bytes not redistributed. No hardware physics or Android publication is claimed."
+  ]
+}
