@@ -20,6 +20,7 @@ const MIME = { html:'text/html; charset=utf-8', js:'text/javascript; charset=utf
 const SAME_ORIGIN = self.location.origin;
 let current = null;
 let currentCheckedAt = 0;
+let lastCatalogWasOffline = false;
 let inflight = null;
 
 function isRecord(x) { return x !== null && typeof x === 'object' && !Array.isArray(x); }
@@ -94,6 +95,7 @@ async function refreshCatalog(force) {
       const sha = head && head.commit && head.commit.sha;
       if (typeof sha !== 'string' || !SHA.test(sha)) throw Error('Invalid GitHub branch commit');
       if (existing && existing.sha === sha) {
+        lastCatalogWasOffline = false;
         currentCheckedAt = Date.now();
         return existing;
       }
@@ -108,10 +110,15 @@ async function refreshCatalog(force) {
         headers:{'Content-Type':'application/json'}
       }));
       current = snapshot;
+      lastCatalogWasOffline = false;
       currentCheckedAt = Date.now();
       return snapshot;
     } catch (error) {
-      if (existing) return existing; // Previously validated offline copy.
+      if (existing) {
+        lastCatalogWasOffline = true;
+        currentCheckedAt = Date.now(); // Bound repeat requests while offline.
+        return existing;
+      }
       throw error;
     }
   })();
@@ -167,7 +174,7 @@ async function handle(event) {
   if (pathname === '/hexapod/library.json') {
     try {
       const item = await refreshCatalog(true);
-      const src = currentCheckedAt && Date.now()-currentCheckedAt < 10_000 ? 'github' : 'cached-github';
+      const src = lastCatalogWasOffline ? 'cached-github' : 'github';
       return new Response(JSON.stringify(item.document), {status:200, headers:{
         'Content-Type':'application/json; charset=utf-8',
         'Cache-Control':'no-store',
