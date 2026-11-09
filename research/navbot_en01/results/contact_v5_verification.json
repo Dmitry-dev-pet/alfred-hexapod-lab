@@ -1,0 +1,22 @@
+{
+  "schema": "en01-contact-v5-verification/v1",
+  "mujoco": "3.14.0",
+  "cadquery": "2.7.0",
+  "python_fcl": "0.7.0.11",
+  "recordings": 9,
+  "physics_steps_per_battery": 240000,
+  "repeat_byte_identical": true,
+  "saved_frames_cad_checked": 2700,
+  "interpolated_poses_cad_checked": 8073,
+  "unexpected_intersections": 0,
+  "discrete_operating_poses_checked": 651,
+  "body_pose_fk_max_residual": 0.0,
+  "three_part_transforms": 197100,
+  "three_max_residual_m": 4.440892098500626e-16,
+  "focused_python_tests": 14,
+  "hardware_validation": false,
+  "webgl_visual_validation": false,
+  "pipeline_recordings": 9,
+  "old_catalog_entries_preserved": 66,
+  "publish_refused_in_research": true
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10212c"><title>EN01 · контакты и упоры · v5</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#10212c;color:#edf7fd;font-family:system-ui,-apple-system,Arial,sans-serif}
+.layout{width:100%;height:100%;height:100dvh}.stage{position:relative;width:100%;height:100%;height:100dvh;overflow:hidden}
+#viewer{position:absolute;inset:0}#viewer canvas{display:block;width:100%;height:100%}
+.panels{position:absolute;top:67px;left:12px;right:12px;display:flex;justify-content:space-between;gap:8px;pointer-events:none;z-index:2}
+.panel{background:#112634e6;border:1px solid #416076;border-radius:10px;padding:8px 10px;max-width:min(46vw,360px);font-size:12px;line-height:1.35;box-shadow:0 2px 14px #0003}
+.panel h1{font-size:13px;margin:0 0 4px;font-weight:700}.panel p{margin:2px 0;color:#c4d7e2}.panel #verdict{font-weight:700;color:#ffb6a0}
+.panel strong{font-size:12px;color:#e9f9ff}
+.warning{position:absolute;bottom:79px;left:12px;max-width:min(82vw,600px);font-size:11px;color:#dce3bb;background:#142734ee;border:1px solid #52616b;border-radius:9px;padding:6px 9px;pointer-events:none;z-index:2}
+.error{position:absolute;inset:auto 10% 20% 10%;padding:15px;border-radius:9px;background:#85252f;color:#fff;z-index:10}
+.controls{display:none}
+@media(max-height:580px){.panels{top:52px}.panel{max-width:44vw;font-size:11px;padding:6px 8px}.panel h1{font-size:12px}.warning{bottom:58px;max-width:60vw;font-size:10px}}
+@media(max-width:420px){.panels{left:8px;right:8px;gap:5px}.panel{max-width:49vw}.warning{left:8px;max-width:85vw}}
+</style>
+<script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+<div class="layout"><main class="stage" aria-label="NavBot EN01: 3D-повтор настоящих измеренных состояний MuJoCo; перемещайте для вращения камеры">
+<div id="viewer"></div>
+<div class="panels">
+<section class="panel"><h1>EN01 · контакты и упоры v5</h1><p id="verdict">Загружаем исходные кадры…</p><p id="scenario">—</p><p id="mode">—</p></section>
+<section class="panel" aria-live="polite"><strong id="time">0:00 / 0:06</strong><p id="pose">Положение корпуса: —</p><p id="joints">Суставы: —</p><p id="contact">Контакт с полом: —</p></section>
+</div>
+<div class="warning">73 оригинальные детали · включены контакты и рабочие упоры · ноль сервопривода и динамика остаются предположениями.</div>
+<div id="replay-error" class="error" role="alert" hidden></div>
+<section class="controls" aria-label="Управление 3D-записью">
+<button id="play" type="button" aria-label="Пауза">Ⅱ</button>
+<input id="seek" type="range" min="0" max="6" step="0.005" value="0" aria-label="Перемотка"/>
+<select id="speed" aria-label="Скорость просмотра"><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+<button id="reset-camera" type="button">Камера</button>
+</section>
+</main></div>
+<script type="module" src="/hexapod/en01-contact-template/app.js"></script>
+<script src="/hexapod/player-shell.js"></script>
+</body>
+</html>

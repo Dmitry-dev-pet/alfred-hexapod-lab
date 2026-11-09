@@ -1,0 +1,11 @@
+{
+  "schema": "en01-cad-operating-sweep/v1",
+  "poses": 651,
+  "q_min": 0,
+  "q_max": 0.65,
+  "q_step": 0.001,
+  "unexpected_intersections": [],
+  "model_sha256": "04f24a31a9c1f72e6f8599c266876ec6bdf17f2819ed79f510d1c145c82663f3",
+  "method": "Original 73-part FCL triangle surfaces, intended joint mating groups excluded",
+  "scope": "Discrete geometric sweep, not a certified continuous interval or measured hardware stop"
+}
