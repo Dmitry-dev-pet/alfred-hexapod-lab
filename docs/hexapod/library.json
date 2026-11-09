@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 36,
+  "revision": 37,
   "entries": [
     {
       "id": "tripod-60",
@@ -1552,6 +1552,71 @@
           "path": "hexapod/microduck-standup-v1/push.json",
           "sha256": "35d62c4fc835d5fd1c7f1aa3f020533f24fb18e03dffcd8e5fb61ff2e451b4e0",
           "size": 1522940
+        }
+      ]
+    },
+    {
+      "id": "en01-experiments-v1",
+      "title": "EN01 · 8 записей: v0 / v1",
+      "detail": "Баланс, приседание и 2 попытки прыжка · 6 с · диагностические модели · прыжки FAIL",
+      "duration_s": 6,
+      "href": "/hexapod/en01-experiments-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/en01-experiments-v1/app.js",
+          "sha256": "eeebdcd930c2a6a75cb13764ece5630b289db413e88b85c685f7e4d444742b44",
+          "size": 7563
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/index.html",
+          "sha256": "342eb5af1d16241c3757f0a650b2c8f18a90499e6128cdc01bf259fec38eafee",
+          "size": 2940
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/replay.css",
+          "sha256": "b7faa16f37d0aa6e09e759c7697ff7e6bd7891863fe81f7beba070a08526f750",
+          "size": 2113
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v0-crouch.json",
+          "sha256": "b6f9531bf5080470e74d452350efdef7757003b5f32d54b71e6077b1e9152d11",
+          "size": 84214
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v0-jump.json",
+          "sha256": "140d8939dac8a266ac91b64abda73502a2edc61a6d412d87ad27caf34202803b",
+          "size": 83830
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v0-jump_fast.json",
+          "sha256": "373ffef71b86c2ec49cbfe080938a89d2a4e8e5cb1c3fdc6a11bafef02d3339b",
+          "size": 83943
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v0-stand.json",
+          "sha256": "41d24ed2f5aa25eab83875dc58d7f0320df70374df37fff1b81f655d3bbb6eca",
+          "size": 84473
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v1-crouch.json",
+          "sha256": "6eb31b89a165d4caa08f6df98d2b7d2ec639453d9cb7215ef9325ad0bdc43bcf",
+          "size": 84000
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v1-jump.json",
+          "sha256": "772e1ee3bda1a006e98a971f00eec290cb025ef50801ee80874634b106b50868",
+          "size": 83922
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v1-jump_fast.json",
+          "sha256": "d90057568e4a12cc8e82e5c7b3b095f3ffac34e02f03875ebf83d41d2891a5db",
+          "size": 82558
+        },
+        {
+          "path": "hexapod/en01-experiments-v1/v1-stand.json",
+          "sha256": "f54cf830f5330a1d4a4437b674e5aa4746aa87268040a6b28e829734ea9ed1ce",
+          "size": 84889
         }
       ]
     }

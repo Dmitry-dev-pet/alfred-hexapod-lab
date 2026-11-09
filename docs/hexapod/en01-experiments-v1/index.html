@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10212c"><title>EN01 · 8 физических записей</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<link rel="stylesheet" href="./replay.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body><main class="layout"><section class="stage" aria-label="Интерактивные записи EN01">
+<div id="viewer" aria-label="3D-сцена: вращайте одним пальцем, масштабируйте двумя"></div>
+<div class="experiment">
+<div class="heading"><h1>EN01 · эксперименты</h1><a href="/hexapod/">Библиотека</a></div>
+<div class="selectors"><label>Модель<select id="model"><option value="v1" selected>v1 · поза из CAD</option><option value="v0">v0 · исходная</option></select></label><label>Сценарий<select id="case"><option value="stand">Баланс</option><option value="crouch">Приседание</option><option value="jump">Попытка прыжка</option><option value="jump_fast">Быстрый прыжок</option></select></label></div>
+<p id="verdict" role="status">Загружаем запись…</p>
+<p id="metrics">300 кадров · 6 секунд · MuJoCo 3.14.0</p>
+<details><summary>О модели и записи</summary><p id="limitations">Обе модели диагностические. Четырёхзвенный механизм, массы и параметры приводов ещё не проверены. Успешных прыжков нет.</p><p>Показаны сохранённые состояния физического расчёта. Между кадрами применяется интерполяция только для плавного просмотра.</p><p id="provenance"></p></details>
+</div>
+<div class="telemetry" aria-live="off"><span id="pose">—</span><span id="contact">—</span></div>
+<div id="replay-error" class="error" role="alert" hidden></div>
+<section class="controls" aria-label="Управление записью"><button id="play" aria-label="Пауза">Ⅱ</button><input id="seek" type="range" min="0" max="6" step=".005" value="0" aria-label="Время записи"><span id="time">0:00 / 0:06</span><select id="speed" aria-label="Скорость"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option></select><button id="reset-camera">Камера</button></section>
+</section></main><script type="module" src="./app.js"></script><script src="/hexapod/player-shell.js"></script></body></html>
