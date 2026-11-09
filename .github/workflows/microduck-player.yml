@@ -1,0 +1,118 @@
+name: "MicroDuck 3D viewer - original STL and recorded MuJoCo qpos"
+
+on:
+  pull_request:
+    paths:
+      - "research/microduck/player_export.py"
+      - "docs/hexapod/microduck-standup-v1/**"
+      - ".github/workflows/microduck-player.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  build-microduck-viewer:
+    # Only ever commits generated preview assets to this dedicated, review-only
+    # branch. Production Android viewer is untouched until separately accepted.
+    if: github.head_ref == 'feature/microduck-standup-player-20261109' || github.ref_name == 'feature/microduck-standup-player-20261109'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # PR checkouts default to a synthetic merge ref, which cannot
+          # fast-forward the feature branch; take the real head instead.
+          ref: feature/microduck-standup-player-20261109
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install MuJoCo FK export/runtime verification only
+        run: |
+          python -m pip install "numpy>=1.26,<3" "mujoco==3.10.0" "scipy>=1.14,<2"
+      - name: Fetch exact original 3D model (temporary CI dir; no STL commits)
+        run: |
+          git clone --filter=blob:none https://github.com/pollen-robotics/microduck_rl.git upstream_microduck_rl
+          git -C upstream_microduck_rl checkout bae39f5900b318f7e87fc485c30a31213cfa14eb
+          test "$(git -C upstream_microduck_rl rev-parse HEAD)" = "bae39f5900b318f7e87fc485c30a31213cfa14eb"
+      - name: Fetch genuine 7-case MuJoCo source archive from verified previous CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p evidence
+          gh run download 42602465706 --repo Dmitry-dev-pet/alfred-hexapod-lab \
+            --name microduck-standup-cpu-review-only --dir evidence
+          echo '95b9d9bd8c7ab215103ed8984aebda8b1ec078bb7a3de0ee140bfa1dac38e750  evidence/standup-cpu.json' | sha256sum -c
+      - name: Export measured 3D visual-geometry transforms for all seven clips
+        run: |
+          python research/microduck/player_export.py \
+            --upstream upstream_microduck_rl \
+            --trace evidence/standup-cpu.json \
+            --output docs/hexapod/microduck-standup-v1
+      - name: Check JS, exact frames, geometry source, catalog integrity and size
+        run: |
+          node --input-type=module --check < docs/hexapod/microduck-standup-v1/app.js
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          from scripts.register_viewer_replays import register
+          docs=Path('docs')
+          base=Path('docs/hexapod/microduck-standup-v1')
+          manifest=json.loads((base/'asset-manifest.json').read_text())
+          assert manifest['revision']=='bae39f5900b318f7e87fc485c30a31213cfa14eb'
+          assert len(manifest['visible_geoms'])>=15
+          cases=['stand','sit','fold','roll180','pitch180','side90','push']
+          for name in cases:
+              obj=json.loads((base/(name+'.json')).read_text())
+              assert obj['case']==name and obj['status']=='PASS'
+              assert len(obj['frames'])==300 and obj['layout']['frame_stride']==8+7*len(manifest['visible_geoms'])
+              assert obj['frames'][0][0]==.02 and obj['frames'][-1][0]==6.0
+          names=['index.html','app.js','asset-manifest.json']+[x+'.json' for x in cases]
+          files=[]
+          for name in names:
+              p=base/name
+              data=p.read_bytes()
+              assert len(data)<8_000_000
+              assert not p.is_symlink()
+              files.append({'path':'hexapod/microduck-standup-v1/'+name,
+                            'sha256':hashlib.sha256(data).hexdigest(),'size':len(data)})
+          entry={'id':'microduck-standup-v1','title':'MicroDuck · 7 испытаний вставания',
+                 'detail':'6 с каждый · оригинальные STL · MuJoCo/ONNX · CPU с приближёнными приводами',
+                 'duration_s':6.0,'href':'/hexapod/microduck-standup-v1/',
+                 'status':'research','files':files}
+          catalog=docs/'hexapod/library.json'
+          updated=register(json.loads(catalog.read_text()),[entry],docs)
+          assert updated['revision']>=36
+          catalog.write_text(json.dumps(updated,ensure_ascii=False,indent=2)+'\n')
+          print('catalog revision',updated['revision'],'entries',len(updated['entries']))
+          PY
+      - name: Commit only reviewable JSON/HTML/JS and catalog to draft PR branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/hexapod/microduck-standup-v1 docs/hexapod/library.json
+          if git diff --cached --quiet; then
+            echo "No changes to publish in draft branch"
+          else
+            git diff --cached --name-only | tee /tmp/microduck-files.txt
+            if grep -E '\.(stl|obj|glb|mjb|pt|onnx)$' /tmp/microduck-files.txt; then
+              echo "Refusing third-party binary/CAD commit" >&2; exit 1
+            fi
+            git commit -m "viewer(microduck): register 7 authentic MuJoCo 3D replays (draft)"
+            git push origin HEAD:feature/microduck-standup-player-20261109
+          fi
+      - name: Upload source-verified player build receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: microduck-original-stl-7-case-player-build
+          path: |
+            docs/hexapod/microduck-standup-v1/asset-manifest.json
+            docs/hexapod/microduck-standup-v1/*.json
+          retention-days: 14
+          if-no-files-found: warn
