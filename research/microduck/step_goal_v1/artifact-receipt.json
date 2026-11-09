@@ -1,0 +1,16 @@
+{
+  "schema": "microduck-step-goal-artifacts/v1",
+  "archive": {
+    "name": "MicroDuck_step_goal_tuning_20261109.zip",
+    "bytes": 47982387,
+    "sha256": "881977efcf04af626928c779be39f99c79e59091f2a19250ad58ad947cd16208",
+    "url": "https://drive.google.com/file/d/1q_CmK4XggV4fv_21_Pa75-B9tKNp-que/view?usp=drivesdk"
+  },
+  "image": {
+    "url": "https://drive.google.com/file/d/1GIybO6wMkkxwVTvHU5nufPik_F6aocQh/view?usp=drivesdk",
+    "bytes": 271640
+  },
+  "current_player_updated": false,
+  "policy_weights_changed": false,
+  "run_issue": "https://github.com/Dmitry-dev-pet/truthrail/issues/327"
+}

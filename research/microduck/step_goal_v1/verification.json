@@ -1,0 +1,311 @@
+{
+  "schema": "microduck-step-goal-independent-audit/v1",
+  "source": {
+    "pinned_commit": "471418514b7ad89ccdbca82985f4fce5327d1bd2",
+    "verified_helpers": {
+      "bam_backlash_cpu.py": {
+        "pinned_git_blob_sha1": "aabaf8d6a11b16a6ba6d8531fdcd3d810945f117",
+        "adapter_sha256": "c0b3e44b12602db72c06be8a9e3fa1d835c82348f673797f4ca7185cd157bf6f"
+      },
+      "collision_model.py": {
+        "pinned_git_blob_sha1": "5718cd8bbc6d04a273de2d05e8cfd500143dcbcb",
+        "adapter_sha256": "fda97e35310b9a675da841d88427b98f7747481419118073ac2effd6a06cf72d"
+      },
+      "fall_cpu.py": {
+        "pinned_git_blob_sha1": "8503d0e9e0ef90b5e03b6a9237bc3a2ab799ba1f",
+        "adapter_sha256": "51025ba1b6805dcfc5df13ad6d3d794ddb6977702c9fbc6e474713331882bd23"
+      },
+      "measure_clearance.py": {
+        "pinned_git_blob_sha1": "1506a527d18729a44e67d28e209d0cc642654362",
+        "adapter_sha256": "c3f0d4471ce392d886ecdaf26c85e9ad951c167bf678bf0d8701f2ec93f71619"
+      },
+      "standup_cpu.py": {
+        "pinned_git_blob_sha1": "77196dfab77667b72cef1ac8fc5bcef48e731051",
+        "adapter_sha256": "9cd18b69aec3d601798a279202bb69bc1825695af3b7a1d8862d6935a99e9787"
+      },
+      "step_cpu.py": {
+        "pinned_git_blob_sha1": "e227056b1bf08bbbe7bec3989680ed4cc660cbbd",
+        "adapter_sha256": "9b929df5ea5dc1f5582fb3d75b0f32c8b8e3e43efcab198e9c4da16f06b60942"
+      },
+      "wall_cpu.py": {
+        "pinned_git_blob_sha1": "fd3576e1a512f545a466418edc6479e99b4452e7",
+        "adapter_sha256": "5b37ab8e756d8325f24b7e884161829ef867a06f56a05f8023ed2a757dea7b20"
+      }
+    },
+    "adapter_scope": "filesystem resolution only; no physics function modifications"
+  },
+  "audits": [
+    {
+      "trace_file": "flat-control.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.596003743197798e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0
+    },
+    {
+      "trace_file": "step-1cm-baseline.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.71501854121459e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0005366502059983829
+    },
+    {
+      "trace_file": "search-v18-g03-d10.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.645986261322179e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0
+    },
+    {
+      "trace_file": "search-v18-g03-d20.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.645986261322179e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0
+    },
+    {
+      "trace_file": "search-v18-g03-d30.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.645986261322179e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0
+    },
+    {
+      "trace_file": "search-v18-g07-d10.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.645986261322179e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0
+    },
+    {
+      "trace_file": "search-v18-g07-d20.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.645986261322179e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0
+    },
+    {
+      "trace_file": "search-v18-g07-d30.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.645986261322179e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0
+    },
+    {
+      "trace_file": "search-v30-g03-d10.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.931024087997173e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0008931361519460402
+    },
+    {
+      "trace_file": "search-v30-g03-d20.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698280818895341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356
+    },
+    {
+      "trace_file": "search-v30-g03-d30.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698280818895341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356
+    },
+    {
+      "trace_file": "search-v30-g07-d10.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.674427815989148e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00016916820417917262
+    },
+    {
+      "trace_file": "search-v30-g07-d20.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 7.556272274555909e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00026832864790682544
+    },
+    {
+      "trace_file": "search-v30-g07-d30.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.596548862702889e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00026832864790682544
+    },
+    {
+      "trace_file": "search-v45-g03-d10.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.72124023104459e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0008937259535754545
+    },
+    {
+      "trace_file": "search-v45-g03-d20.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.458632517691854e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0006485359247030541
+    },
+    {
+      "trace_file": "search-v45-g03-d30.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.424067944266199e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0006485359247030541
+    },
+    {
+      "trace_file": "search-v45-g07-d10.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.77225900358458e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.000877989624874313
+    },
+    {
+      "trace_file": "search-v45-g07-d20.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.77225900358458e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0005844376713220415
+    },
+    {
+      "trace_file": "search-v45-g07-d30.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.77225900358458e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0005844376713220415
+    },
+    {
+      "trace_file": "assist-r1-v12.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698280818895341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356
+    },
+    {
+      "trace_file": "assist-r1-v24.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698280818895341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356
+    },
+    {
+      "trace_file": "assist-r2-v12.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698280818895341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356
+    },
+    {
+      "trace_file": "assist-r2-v24.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698280818895341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356
+    },
+    {
+      "trace_file": "height-2cm.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.468124369440886e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0003164432718439706
+    },
+    {
+      "trace_file": "height-3cm.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.351343895261152e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0002749918758473691
+    },
+    {
+      "trace_file": "height-5cm.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.798473867197785e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0006150030351240454
+    },
+    {
+      "trace_file": "perturb-20261109.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.923755666021769e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0001220905299590836
+    },
+    {
+      "trace_file": "perturb-20261110.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.853397849226894e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00025340399466394943
+    },
+    {
+      "trace_file": "perturb-20261111.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.591335255379249e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00016622045016435189
+    },
+    {
+      "trace_file": "margin-2cm-105.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.541119486336289e-10,
+      "all_visible_mesh_max_step_overlap_m": 8.83758369066047e-05
+    },
+    {
+      "trace_file": "margin-2cm-140.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.824489862111704e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00031061085471910393
+    },
+    {
+      "trace_file": "margin-2cm-210.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.700839605411346e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0003582051521416089
+    },
+    {
+      "trace_file": "final-h1-margin28.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.696623047752759e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00012088736680607344
+    },
+    {
+      "trace_file": "final-h1-margin35.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.802818516837839e-10,
+      "all_visible_mesh_max_step_overlap_m": 2.2290198353276012e-05
+    },
+    {
+      "trace_file": "final-h2-margin28.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.707963906560366e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0003114319507087661
+    },
+    {
+      "trace_file": "final-h2-margin35.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.802818516837839e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0003584826046059697
+    }
+  ],
+  "byte_repeat": {
+    "trace_file": "search-v30-g03-d20.json",
+    "sha256": "9a9fb5396d90dcf713c1ed5182be35d1a454d393a44665ce2d712574465c01d6",
+    "byte_identical": true
+  },
+  "accepted_step_trials": 7,
+  "goal_without_quality_trials": 17,
+  "corruption_rejected": [
+    "sole_geometry",
+    "illegal_target"
+  ],
+  "policy_weights_changed": false,
+  "hardware_tested": false
+}
