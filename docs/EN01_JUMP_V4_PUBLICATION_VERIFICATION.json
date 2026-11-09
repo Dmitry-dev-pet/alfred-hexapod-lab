@@ -1,0 +1,11 @@
+{
+  "clips": 24,
+  "source_frames_exact": 7200,
+  "source_frame_max_residual": 0,
+  "hosted_replay_bytes": 10393040,
+  "cad_sha256": "8b034155dc50bb6c4e94a55bfa4ebca7b1fb742f2f38fc5c6c9f158c0cae313b",
+  "old_entries": 64,
+  "entries": 65,
+  "revision": 44,
+  "physics_rerun": false
+}

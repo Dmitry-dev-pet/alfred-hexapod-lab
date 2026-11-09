@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 43,
+  "revision": 44,
   "entries": [
     {
       "id": "tripod-60",
@@ -1812,6 +1812,41 @@
           "path": "hexapod/microduck-roll-v1/replays.json",
           "size": 14396,
           "sha256": "374c9468b04201fe2a88771eae4d5c6c7611ffca108b733b7f98733d0938a0e0"
+        }
+      ]
+    },
+    {
+      "id": "en01-jump-v4",
+      "title": "EN01 · авторский прыжок · 24 записи",
+      "detail": "12 попыток и 12 контрольных стоек · есть короткий отрыв · устойчивой посадки нет · время импульса и начальная поза — предположения",
+      "duration_s": 6,
+      "href": "/hexapod/en01-jump-v4/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/en01-jump-v4/app.js",
+          "size": 8406,
+          "sha256": "dd3fce2f595bacaff610dc92a6163379deebf80576563d1848fffdc4aecbe795"
+        },
+        {
+          "path": "hexapod/en01-jump-v4/index.html",
+          "size": 4488,
+          "sha256": "da84f8d24a97ce7df113ae420548bda46a19ab40b8904ad4188feb74f245b1f0"
+        },
+        {
+          "path": "hexapod/en01-jump-v4/record-loader.js",
+          "size": 4914,
+          "sha256": "44e79313e55935b959eb4dbb967e606679ed876962328b55d9693494f298b94f"
+        },
+        {
+          "path": "hexapod/en01-jump-v4/replay.css",
+          "size": 1797,
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056"
+        },
+        {
+          "path": "hexapod/en01-jump-v4/replays.json",
+          "size": 18915,
+          "sha256": "c1f2ae26303bdb53f5551a64bbfc2db88746eac1e008dc4ec2ee42aff4f71127"
         }
       ]
     }
