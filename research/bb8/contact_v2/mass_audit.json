@@ -1,0 +1,1590 @@
+{
+  "schema": "alfred-bb8-mass-audit/v2",
+  "source_commit": "7318411cfbfbffdbd68f75e3734a50c3933969e5",
+  "converter_commit": "72d8a1ccde195725da159fc1266729d936f52884",
+  "physical_mass_model_ready": false,
+  "unique_parts": {
+    "平衡车电机座板.sldprt": {
+      "source_file": "平衡车电机座板.SLDPRT",
+      "source_git_blob_sha1": "19efe3ce334c070af851c97729c1a5213fa5f536",
+      "material_names_in_native_CAD": [
+        "solidworks materials|普通碳钢"
+      ],
+      "current_shape_volume_mm3": 29353.6394,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "平衡车电机支架1.sldprt": {
+      "source_file": "平衡车电机支架1.SLDPRT",
+      "source_git_blob_sha1": "86c21047aecae06378ecd308009a5794a7a5924b",
+      "material_names_in_native_CAD": [
+        "solidworks materials|AISI 4340 钢，退火"
+      ],
+      "current_shape_volume_mm3": 4294.4761,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "平衡车轮电机1.sldprt": {
+      "source_file": "平衡车轮电机1.SLDPRT",
+      "source_git_blob_sha1": "ae4d013dcacbfc5781759b41c7e700daba11a32d",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 48162.1853,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "平衡车电机支架2.sldprt": {
+      "source_file": "平衡车电机支架2.SLDPRT",
+      "source_git_blob_sha1": "bf7276b14c0e1ae1d349944d5a7950ec917ed615",
+      "material_names_in_native_CAD": [
+        "solidworks materials|AISI 4130 钢，退火温度为 865C"
+      ],
+      "current_shape_volume_mm3": 4294.4761,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "平衡车轮电机2.sldprt": {
+      "source_file": "平衡车轮电机2.SLDPRT",
+      "source_git_blob_sha1": "bee67cafc88dd6eb3e1cf2f1e0880446868492fd",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 48258.695,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "铜套.sldprt": {
+      "source_file": "铜套.SLDPRT",
+      "source_git_blob_sha1": "8930af6501f9461312ef77df0fcfbb6e0ff9b6c5",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 301.5929,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "平衡车轮轴.sldprt": {
+      "source_file": "平衡车轮轴.SLDPRT",
+      "source_git_blob_sha1": "c7b91f6bb54ce31811c52ce50cb4f072f3b1b7b5",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 1272.345,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "联轴器1.sldprt": {
+      "source_file": "联轴器1.SLDPRT",
+      "source_git_blob_sha1": "f4fbe49b83ea60090f6c1d92f9c927f516bb20d9",
+      "material_names_in_native_CAD": [
+        "solidworks materials|合金钢"
+      ],
+      "current_shape_volume_mm3": 1437.9703,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "轮子1.sldprt": {
+      "source_file": "轮子1.SLDPRT",
+      "source_git_blob_sha1": "ef28ee21c6ff2d447b437b2df2539f9feb10b492",
+      "material_names_in_native_CAD": [
+        "solidworks materials|PC 高粘度"
+      ],
+      "current_shape_volume_mm3": 11345.0764,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": null,
+      "custom_weight_text_UNVERIFIED": null,
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "轮胎1.sldprt": {
+      "source_file": "轮胎1.SLDPRT",
+      "source_git_blob_sha1": "c86528aaebaf7663c8b9fb2e91e063b7fd0678aa",
+      "material_names_in_native_CAD": [
+        "solidworks materials|橡胶"
+      ],
+      "current_shape_volume_mm3": 2486.6306,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "铜柱长.sldprt": {
+      "source_file": "铜柱长.SLDPRT",
+      "source_git_blob_sha1": "1aeb512d29d78c67881a14d77fe7ac25d8b570f7",
+      "material_names_in_native_CAD": [
+        "solidworks materials|黄铜"
+      ],
+      "current_shape_volume_mm3": 233.762,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "舵机座板.sldprt": {
+      "source_file": "舵机座板.SLDPRT",
+      "source_git_blob_sha1": "18e404f0a04f73e6b0d2d82828d2179dbe79b40c",
+      "material_names_in_native_CAD": [
+        "solidworks materials|普通碳钢"
+      ],
+      "current_shape_volume_mm3": 28977.9658,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "球壳1.sldprt": {
+      "source_file": "球壳1.SLDPRT",
+      "source_git_blob_sha1": "53c2838e3b47c6202399faea08960dc0d6a7e051",
+      "material_names_in_native_CAD": [
+        "solidworks materials|玻璃"
+      ],
+      "current_shape_volume_mm3": 4064783.732,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": null,
+      "custom_weight_text_UNVERIFIED": null,
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS",
+        "DISPLAY_OR_SUSPECT_MATERIAL"
+      ]
+    },
+    "球壳小.sldprt": {
+      "source_file": "球壳小.SLDPRT",
+      "source_git_blob_sha1": "77c1f5028bcc326f1c0833f6cb33d6e577b96852",
+      "material_names_in_native_CAD": [
+        "solidworks materials|丙烯酸(中高冲击)"
+      ],
+      "current_shape_volume_mm3": 860854.7199,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": null,
+      "custom_weight_text_UNVERIFIED": null,
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "头部底面.sldprt": {
+      "source_file": "头部底面.SLDPRT",
+      "source_git_blob_sha1": "04b36bbf6f3262713860988eacf4888373dc24ef",
+      "material_names_in_native_CAD": [
+        "solidworks materials|陶瓷"
+      ],
+      "current_shape_volume_mm3": 63142.5758,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS",
+        "DISPLAY_OR_SUSPECT_MATERIAL"
+      ]
+    },
+    "m1-35.sldprt": {
+      "source_file": "M1-35.SLDPRT",
+      "source_git_blob_sha1": "60c0f8323dab6589e07810a101593d946e32c179",
+      "material_names_in_native_CAD": [
+        "solidworks materials|玻璃"
+      ],
+      "current_shape_volume_mm3": 15361.2041,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": null,
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS",
+        "DISPLAY_OR_SUSPECT_MATERIAL"
+      ]
+    },
+    "m1-19(1).sldprt": {
+      "source_file": "M1-19(1).sldprt",
+      "source_git_blob_sha1": "15a998e10f9df4cf2a88ed4f05584e44de69684e",
+      "material_names_in_native_CAD": [
+        "MISUMI_materials|S45C"
+      ],
+      "current_shape_volume_mm3": 4134.738,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": null,
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "牛眼轮nl-8h.sldprt": {
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_git_blob_sha1": "74b5749ef8cff6936bf99cd29ba101725fb3a93a",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 1132.9821,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": null,
+      "custom_weight_text_UNVERIFIED": null,
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "舵机转板新.sldprt": {
+      "source_file": "舵机转板新.SLDPRT",
+      "source_git_blob_sha1": "8084d47889658511d488519502f057a2e1799be9",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 21001.725,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "sg90.sldprt": {
+      "source_file": "SG90.SLDPRT",
+      "source_git_blob_sha1": "ad3c32cd9b61bf3bbf3a79e94feebe67c6ad7327",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 7230.1886,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": null,
+      "custom_weight_text_UNVERIFIED": null,
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "铜套座板连接板.sldprt": {
+      "source_file": "铜套座板连接板.SLDPRT",
+      "source_git_blob_sha1": "96b0b0dc6a55f98aa93a7a368b1ec2416df161a2",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 9460.2302,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "铜套座板.sldprt": {
+      "source_file": "铜套座板.SLDPRT",
+      "source_git_blob_sha1": "15cf42991b2d057a87004eee8371736730a7d048",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 2176.4823,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "主控板.sldprt": {
+      "source_file": "主控板.SLDPRT",
+      "source_git_blob_sha1": "57a65998ede0c9b7aff69362d7915d8cc0330b90",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 73424.7313,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "主控座板.sldprt": {
+      "source_file": "主控座板.SLDPRT",
+      "source_git_blob_sha1": "796cc6af9cf35df3f9cea6500d1b22f6ccd28ef2",
+      "material_names_in_native_CAD": [
+        "solidworks materials|普通碳钢"
+      ],
+      "current_shape_volume_mm3": 29735.3429,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "铜柱2.sldprt": {
+      "source_file": "铜柱2.SLDPRT",
+      "source_git_blob_sha1": "9cc1ccdbb85ca34117380a1f2421f6356344ad81",
+      "material_names_in_native_CAD": [
+        "solidworks materials|黄铜"
+      ],
+      "current_shape_volume_mm3": 392.7201,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "NO_CACHED_MASS"
+      ]
+    },
+    "电池.sldprt": {
+      "source_file": "电池.SLDPRT",
+      "source_git_blob_sha1": "6b30e0b09cc4025f666f17defe232f8ee68bc7d0",
+      "material_names_in_native_CAD": [],
+      "current_shape_volume_mm3": 44574.0,
+      "cached_mass_kg_UNVERIFIED": null,
+      "cached_volume_m3": null,
+      "cached_mass_properties_raw": "",
+      "custom_weight_text_UNVERIFIED": "",
+      "mass_used_for_next_physical_model_kg": null,
+      "mass_evidence": null,
+      "flags": [
+        "NOT_HARDWARE_MEASURED",
+        "MATERIAL_NOT_ASSIGNED",
+        "NO_CACHED_MASS"
+      ]
+    }
+  },
+  "components": [
+    {
+      "id": "c00",
+      "source_file": "平衡车电机座板.SLDPRT",
+      "source_position_mm": [
+        -44.385332977496155,
+        -24.03210904685198,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c01",
+      "source_file": "平衡车电机支架1.SLDPRT",
+      "source_position_mm": [
+        -17.38533297749615,
+        -21.032109046851982,
+        81.50000000000003
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c02",
+      "source_file": "平衡车轮电机1.SLDPRT",
+      "source_position_mm": [
+        -17.38533297749615,
+        4.96789095314801,
+        81.50000000000003
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c03",
+      "source_file": "平衡车电机支架2.SLDPRT",
+      "source_position_mm": [
+        -71.38533297749615,
+        -21.032109046851982,
+        118.5
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        6.123233995736766e-17
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c04",
+      "source_file": "平衡车轮电机2.SLDPRT",
+      "source_position_mm": [
+        -71.38533297749615,
+        4.967890953148011,
+        118.5
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        6.123233995736766e-17
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c05",
+      "source_file": "铜套.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749639,
+        11.967890953148029,
+        73.74999999999984
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.009788160809181531,
+        0.999952094806533
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c06",
+      "source_file": "铜套.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749636,
+        11.967890953148029,
+        49.249999999999844
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.09891114979003228,
+        0.9950962689344252
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c07",
+      "source_file": "平衡车轮轴.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749636,
+        11.96789095314804,
+        37.24999999999993
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.9938208291074825,
+        0.11099621449453158
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c08",
+      "source_file": "联轴器1.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749606,
+        11.967890953148029,
+        162.75
+      ],
+      "source_rotation_xyzw": [
+        1.247254239784061e-15,
+        1.247254239784061e-15,
+        0.6929190221022563,
+        0.7210154150979387
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c09",
+      "source_file": "联轴器1.SLDPRT",
+      "source_position_mm": [
+        -44.385332977496226,
+        11.967890953148029,
+        37.24999999999998
+      ],
+      "source_rotation_xyzw": [
+        -0.6619256629119556,
+        0.7495694876251088,
+        1.2e-15,
+        -1.2710352895928203e-15
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c10",
+      "source_file": "轮子1.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749606,
+        11.967890953148029,
+        163.75
+      ],
+      "source_rotation_xyzw": [
+        1.72906773021899e-15,
+        4.802965917274973e-16,
+        0.9605931834549944,
+        0.2779581549438682
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c11",
+      "source_file": "轮子1.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749624,
+        11.967890953148029,
+        36.24999999999998
+      ],
+      "source_rotation_xyzw": [
+        0.9480291833111633,
+        -0.3181833867290511,
+        -1.7e-15,
+        5.053215498074303e-16
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c12",
+      "source_file": "轮胎1.SLDPRT",
+      "source_position_mm": [
+        -44.585870127521254,
+        11.5687347081995,
+        32.74999985908197
+      ],
+      "source_rotation_xyzw": [
+        0.5300256676702438,
+        0.46805212488644443,
+        0.4680521248864447,
+        0.5300256676702371
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c13",
+      "source_file": "轮胎1.SLDPRT",
+      "source_position_mm": [
+        -43.9250701559532,
+        11.656520820182731,
+        167.2499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.5098348893557876,
+        0.4899677393416583,
+        0.489967739341655,
+        0.5098348893557841
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c14",
+      "source_file": "铜套.SLDPRT",
+      "source_position_mm": [
+        -44.385332977496134,
+        11.967890953148029,
+        144.74999999999991
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.7450029149747405e-15,
+        0.025549090995239526,
+        0.9996735686959604
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c15",
+      "source_file": "铜套.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749662,
+        11.96789095314807,
+        120.2499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c16",
+      "source_file": "平衡车轮轴.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749661,
+        11.96789095314805,
+        117.7499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.3690626571807104,
+        0.9294045163838582
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c17",
+      "source_file": "铜柱长.SLDPRT",
+      "source_position_mm": [
+        0.6146670225038731,
+        -49.03210904685198,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.11662532317828675,
+        0.0,
+        0.9931759833954706
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c18",
+      "source_file": "铜柱长.SLDPRT",
+      "source_position_mm": [
+        0.6146670225038592,
+        -49.03210904685198,
+        55.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c19",
+      "source_file": "铜柱长.SLDPRT",
+      "source_position_mm": [
+        -89.38533297749615,
+        -49.03210904685198,
+        55.00000000000001
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.9115557787918368,
+        0.0,
+        -0.4111764367655424
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c20",
+      "source_file": "铜柱长.SLDPRT",
+      "source_position_mm": [
+        -89.38533297749613,
+        -49.03210904685198,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c21",
+      "source_file": "舵机座板.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749614,
+        -97.03210904685199,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        6.123233995736766e-17
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c22",
+      "source_file": "球壳1.SLDPRT",
+      "source_position_mm": [
+        -41.24816673006777,
+        -27.2571967211034,
+        99.26489749059236
+      ],
+      "source_rotation_xyzw": [
+        0.5900045816218107,
+        0.3897365695765226,
+        -0.38973656957651837,
+        0.5900045816218077
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c23",
+      "source_file": "球壳1.SLDPRT",
+      "source_position_mm": [
+        -41.24816673006777,
+        -27.2571967211034,
+        99.26489749059236
+      ],
+      "source_rotation_xyzw": [
+        -0.4977307219905409,
+        0.5022590251919603,
+        0.5022590251919571,
+        0.49773072199053764
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c24",
+      "source_file": "球壳小.SLDPRT",
+      "source_position_mm": [
+        -41.24816673006779,
+        -131.3774689320194,
+        99.26489749059228
+      ],
+      "source_rotation_xyzw": [
+        0.5700118010948597,
+        -0.418433443468123,
+        0.4184334434681269,
+        0.5700118010948625
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c25",
+      "source_file": "头部底面.SLDPRT",
+      "source_position_mm": [
+        -40.2000730324405,
+        -125.8774689320194,
+        98.83676744758138
+      ],
+      "source_rotation_xyzw": [
+        -0.3942867275047272,
+        0.586973573948276,
+        0.5869735739482783,
+        0.39428672750472593
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c26",
+      "source_file": "M1-35.SLDPRT",
+      "source_position_mm": [
+        -71.38533297749615,
+        11.96789095314801,
+        144.72852318335418
+      ],
+      "source_rotation_xyzw": [
+        0.05370188307388907,
+        0.7050646124677642,
+        -0.05370188307388907,
+        0.7050646124677641
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c27",
+      "source_file": "M1-35.SLDPRT",
+      "source_position_mm": [
+        -17.38533297749615,
+        11.96789095314801,
+        55.364525602170154
+      ],
+      "source_rotation_xyzw": [
+        -0.00046191350515913104,
+        -0.7071066303153392,
+        -0.00046191350515913104,
+        0.7071066303153393
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c28",
+      "source_file": "M1-19(1).sldprt",
+      "source_position_mm": [
+        -44.38533297749617,
+        11.967890953148029,
+        55.159615952072045
+      ],
+      "source_rotation_xyzw": [
+        0.0035108342392799726,
+        -0.7070980653650119,
+        0.0035108342392799726,
+        0.7070980653650143
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c29",
+      "source_file": "M1-19(1).sldprt",
+      "source_position_mm": [
+        -44.385332977496134,
+        11.967890953148029,
+        145.20942356756
+      ],
+      "source_rotation_xyzw": [
+        -0.041281026833882,
+        0.70590075564738,
+        0.041281026833882,
+        0.7059007556473775
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c30",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -66.78067025514201,
+        -123.7847793959952,
+        109.69452974304569
+      ],
+      "source_rotation_xyzw": [
+        -0.08797244512902283,
+        -0.28930441712351324,
+        -0.10784248202291095,
+        0.9470658911617414
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c31",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -51.67779898252112,
+        -123.7847793959952,
+        73.73239396551801
+      ],
+      "source_rotation_xyzw": [
+        0.13681007146354013,
+        0.536328314146535,
+        0.02553735258365387,
+        0.8324558771573992
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c32",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -30.81853447761445,
+        -123.7847793959952,
+        124.7974010156666
+      ],
+      "source_rotation_xyzw": [
+        -0.133663249663631,
+        0.10425331397804673,
+        0.038772254515291676,
+        0.9847649945513671
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c33",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -15.71566320499359,
+        -123.7847793959952,
+        88.83526523813872
+      ],
+      "source_rotation_xyzw": [
+        0.054401620594446476,
+        -0.013666364276327052,
+        0.12810002227766581,
+        0.9901737617492327
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c34",
+      "source_file": "舵机转板新.SLDPRT",
+      "source_position_mm": [
+        -40.86580309436391,
+        -115.5821090468521,
+        88.54759207147971
+      ],
+      "source_rotation_xyzw": [
+        0.012945018769327965,
+        0.7069882788908622,
+        -0.7069882788908597,
+        0.012945018769327903
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c35",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -15.40606649796139,
+        -117.07171207909391,
+        100.9480212117375
+      ],
+      "source_rotation_xyzw": [
+        -0.023366176548344317,
+        0.001811716540404046,
+        0.9899923584365043,
+        -0.13916130825059403
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c36",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -42.233354189233694,
+        -117.071712079094,
+        125.87926647953479
+      ],
+      "source_rotation_xyzw": [
+        0.6211266903479581,
+        0.10512436495318647,
+        0.7712538379201446,
+        0.09120317935263425
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c37",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -67.16459945703097,
+        -117.071712079094,
+        99.05197878826213
+      ],
+      "source_rotation_xyzw": [
+        0.07104423516834353,
+        -0.015059630889238226,
+        0.987716338134844,
+        0.13835591620281193
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c38",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "source_position_mm": [
+        -40.337311765758635,
+        -117.071712079094,
+        74.12073352046517
+      ],
+      "source_rotation_xyzw": [
+        0.2218642539392322,
+        -0.13440277914726045,
+        0.9650943481303517,
+        -0.036125406410619745
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c39",
+      "source_file": "SG90.SLDPRT",
+      "source_position_mm": [
+        -36.28533297749614,
+        -81.33210904685197,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.7071067811865476,
+        0.0,
+        0.7071067811865475,
+        6.123233995736766e-17
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c40",
+      "source_file": "铜套座板连接板.SLDPRT",
+      "source_position_mm": [
+        -34.135332977496134,
+        -21.032109046851982,
+        64.49999999999993
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        -2.8253475240680394e-15
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c41",
+      "source_file": "铜套座板连接板.SLDPRT",
+      "source_position_mm": [
+        -54.63533297749694,
+        -21.032109046851982,
+        135.49999999999972
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c42",
+      "source_file": "铜套座板.SLDPRT",
+      "source_position_mm": [
+        -44.385332977496184,
+        -21.03210904685188,
+        125.25
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c43",
+      "source_file": "铜套座板.SLDPRT",
+      "source_position_mm": [
+        -44.3853329774961,
+        -21.03210904685197,
+        150.74999999999991
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c44",
+      "source_file": "铜套座板.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749608,
+        -21.03210904685197,
+        79.74999999999997
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c45",
+      "source_file": "铜套座板.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749617,
+        -21.03210904685197,
+        54.24999999999997
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c46",
+      "source_file": "轮胎1.SLDPRT",
+      "source_position_mm": [
+        -44.68003156183564,
+        11.91590296077001,
+        37.749999999999886
+      ],
+      "source_rotation_xyzw": [
+        -0.6650979330626682,
+        -0.24009318906575983,
+        0.24009318906576133,
+        0.6650979330626674
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c47",
+      "source_file": "轮胎1.SLDPRT",
+      "source_position_mm": [
+        -44.0495752532088,
+        11.58416842449555,
+        162.2499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.35674660215560944,
+        0.6105176998666221,
+        -0.6105176998666171,
+        -0.3567466021556082
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c48",
+      "source_file": "主控板.SLDPRT",
+      "source_position_mm": [
+        -44.38533297749616,
+        -52.03210904685198,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c49",
+      "source_file": "主控座板.SLDPRT",
+      "source_position_mm": [
+        -44.385332977496155,
+        -52.03210904685198,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c50",
+      "source_file": "铜柱2.SLDPRT",
+      "source_position_mm": [
+        0.614667022503861,
+        -94.03210904685199,
+        55.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.16214281626468874,
+        0.0,
+        0.9867673014109027
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c51",
+      "source_file": "铜柱2.SLDPRT",
+      "source_position_mm": [
+        0.6146670225038731,
+        -94.03210904685199,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.8736081772180625,
+        0.0,
+        -0.4866299956822785
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c52",
+      "source_file": "铜柱2.SLDPRT",
+      "source_position_mm": [
+        -89.38533297749613,
+        -94.03210904685199,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.10833111833979062,
+        0.0,
+        0.9941148670044374
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c53",
+      "source_file": "铜柱2.SLDPRT",
+      "source_position_mm": [
+        -89.38533297749615,
+        -94.03210904685199,
+        55.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.7244115791051096,
+        0.0,
+        0.6893677277465501
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "c54",
+      "source_file": "电池.SLDPRT",
+      "source_position_mm": [
+        -47.396587588483534,
+        -43.03210904685197,
+        103.63064799099129
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mass_kg": null,
+      "center_of_mass_local_m": null,
+      "inertia_at_COM_kg_m2": null,
+      "evidence": null,
+      "status": "UNRESOLVED"
+    }
+  ],
+  "previous_diagnostic_only": {
+    "shell_mass_kg": 0.2,
+    "lumped_chassis_kg": 0.38,
+    "each_wheel_kg": 0.025,
+    "total_without_head_kg": 0.63,
+    "battery_individually_modelled": false,
+    "chassis_COM_m": [
+      -0.003,
+      0.000735,
+      0.008
+    ],
+    "status": "ASSUMED_NOT_VALIDATED_DO_NOT_INFER_REAL_ROBOT_BEHAVIOR"
+  },
+  "required_next": [
+    "Identify battery model, chemistry, configuration, capacity and mass",
+    "Identify exact motor/gearbox, hub, servo and board masses",
+    "Select actual plate, shell and spacer materials and shell wall thickness",
+    "Assign component masses with evidence; recompute group COM and full inertia tensor",
+    "Use measured mass ranges/sensitivity for unknown wiring, fasteners and magnets before behavior claims"
+  ]
+}

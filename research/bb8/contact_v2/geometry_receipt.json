@@ -1,0 +1,947 @@
+{
+  "schema": "alfred-bb8-source-cavity-fit/v2",
+  "source_repo": "HWeigo/BB8_Robot",
+  "source_commit": "7318411cfbfbffdbd68f75e3734a50c3933969e5",
+  "assembly_blob_sha1": "bcfead6e92329575aa474fb4be05c24191ac5294",
+  "excluded_shell_instances": [
+    "c22",
+    "c23"
+  ],
+  "excluded_external_head_instances": [
+    "c24",
+    "c25",
+    "c30",
+    "c31",
+    "c32",
+    "c33"
+  ],
+  "internal_instances": 47,
+  "fitted_geometry": "verified source STL vertices with corrected complete source torus; source articulation frozen",
+  "fit": {
+    "minimum_enclosing_radius_mm": 96.65141915696297,
+    "rigid_translation_from_source_pose_mm": [
+      2.747459105324122,
+      -0.7761233883673487,
+      -2.0227605047608033
+    ],
+    "support_points_mm": [
+      [
+        -3.354815465830903,
+        -68.3045647610268,
+        -65.57151786340054
+      ],
+      [
+        -2.280985777845949,
+        69.77476963892404,
+        -65.65637988044402
+      ],
+      [
+        -51.967389330924455,
+        -47.478837157340415,
+        69.77491232574859
+      ],
+      [
+        27.032055501624093,
+        1.7267147107666432,
+        93.96716604945557
+      ]
+    ],
+    "support_weights": [
+      0.21762754953531901,
+      0.3327651373339803,
+      0.16977506818743673,
+      0.279832244943264
+    ],
+    "radius_lower_bound_mm": 96.65141915696307,
+    "certificate_gap_mm": -9.947598300641403e-14,
+    "input_vertices": 44104,
+    "convex_hull_vertices": 1421
+  },
+  "max_uniform_wall_that_fits_source_mesh_mm": 3.348580843037027,
+  "wall_scenarios": [
+    {
+      "wall_mm": 1.0,
+      "inner_radius_mm": 99.0,
+      "clearance_at_best_translation_mm": 2.348580843037027,
+      "fits_this_rigid_mesh_envelope": true
+    },
+    {
+      "wall_mm": 1.5,
+      "inner_radius_mm": 98.5,
+      "clearance_at_best_translation_mm": 1.848580843037027,
+      "fits_this_rigid_mesh_envelope": true
+    },
+    {
+      "wall_mm": 2.0,
+      "inner_radius_mm": 98.0,
+      "clearance_at_best_translation_mm": 1.348580843037027,
+      "fits_this_rigid_mesh_envelope": true
+    },
+    {
+      "wall_mm": 2.5,
+      "inner_radius_mm": 97.5,
+      "clearance_at_best_translation_mm": 0.848580843037027,
+      "fits_this_rigid_mesh_envelope": true
+    },
+    {
+      "wall_mm": 3.0,
+      "inner_radius_mm": 97.0,
+      "clearance_at_best_translation_mm": 0.34858084303702697,
+      "fits_this_rigid_mesh_envelope": true
+    }
+  ],
+  "parts": [
+    {
+      "id": "c00",
+      "source_file": "平衡车电机座板.SLDPRT",
+      "mesh_sha256": "ac2dc01244fcd7bc1158b7a991ca69bb6228d6d9fa486ab1cdb916b2452b5840",
+      "max_radius_at_source_pose_mm": 71.66149594019836,
+      "source_position_mm": [
+        -44.385332977496155,
+        -24.03210904685198,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 69.42024019163874
+    },
+    {
+      "id": "c01",
+      "source_file": "平衡车电机支架1.SLDPRT",
+      "mesh_sha256": "960221dff7b7640d79bfc8982820dc57ffc0f7aae01b238877efd760d36e9b43",
+      "max_radius_at_source_pose_mm": 63.087325720366024,
+      "source_position_mm": [
+        -17.38533297749615,
+        -21.032109046851982,
+        81.50000000000003
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 66.4550289426823
+    },
+    {
+      "id": "c02",
+      "source_file": "平衡车轮电机1.SLDPRT",
+      "mesh_sha256": "1c65d02f7824e0f7a8732c0f1067161250f596ddb44fbc23d16eea344b36cd80",
+      "max_radius_at_source_pose_mm": 67.36375350109951,
+      "source_position_mm": [
+        -17.38533297749615,
+        4.96789095314801,
+        81.50000000000003
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 69.80595770541116
+    },
+    {
+      "id": "c03",
+      "source_file": "平衡车电机支架2.SLDPRT",
+      "mesh_sha256": "960221dff7b7640d79bfc8982820dc57ffc0f7aae01b238877efd760d36e9b43",
+      "max_radius_at_source_pose_mm": 67.37176965875061,
+      "source_position_mm": [
+        -71.38533297749615,
+        -21.032109046851982,
+        118.5
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        6.123233995736766e-17
+      ],
+      "max_radius_after_best_rigid_translation_mm": 66.89631892918851
+    },
+    {
+      "id": "c04",
+      "source_file": "平衡车轮电机2.SLDPRT",
+      "mesh_sha256": "887e30679dece89da7ae98b0e721916c7d35cb6b7dd9694f14bf0255ec00eafe",
+      "max_radius_at_source_pose_mm": 70.61040111186314,
+      "source_position_mm": [
+        -71.38533297749615,
+        4.967890953148011,
+        118.5
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        6.123233995736766e-17
+      ],
+      "max_radius_after_best_rigid_translation_mm": 70.3408767620238
+    },
+    {
+      "id": "c05",
+      "source_file": "铜套.SLDPRT",
+      "mesh_sha256": "7d03302350ffca656382082b8d72596b6c50dc4e6401421058b2af6f848c5b06",
+      "max_radius_at_source_pose_mm": 51.15905722872738,
+      "source_position_mm": [
+        -44.38533297749639,
+        11.967890953148029,
+        73.74999999999984
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.009788160809181531,
+        0.999952094806533
+      ],
+      "max_radius_after_best_rigid_translation_mm": 53.19990940612208
+    },
+    {
+      "id": "c06",
+      "source_file": "铜套.SLDPRT",
+      "mesh_sha256": "7d03302350ffca656382082b8d72596b6c50dc4e6401421058b2af6f848c5b06",
+      "max_radius_at_source_pose_mm": 66.84176495746914,
+      "source_position_mm": [
+        -44.38533297749636,
+        11.967890953148029,
+        49.249999999999844
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.09891114979003228,
+        0.9950962689344252
+      ],
+      "max_radius_after_best_rigid_translation_mm": 68.69294118427638
+    },
+    {
+      "id": "c07",
+      "source_file": "平衡车轮轴.SLDPRT",
+      "mesh_sha256": "4c88003259a3b8655166d958cf1f1f0ee490762bf0431e1816b833656cd9529f",
+      "max_radius_at_source_pose_mm": 75.09420947395323,
+      "source_position_mm": [
+        -44.38533297749636,
+        11.96789095314804,
+        37.24999999999993
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.9938208291074825,
+        0.11099621449453158
+      ],
+      "max_radius_after_best_rigid_translation_mm": 76.81367170205712
+    },
+    {
+      "id": "c08",
+      "source_file": "联轴器1.SLDPRT",
+      "mesh_sha256": "80c2cb75fff370275f02ff5a4ff3340ccb6732f86492f3bbe6baa1cfa75e1d50",
+      "max_radius_at_source_pose_mm": 83.46251596872867,
+      "source_position_mm": [
+        -44.38533297749606,
+        11.967890953148029,
+        162.75
+      ],
+      "source_rotation_xyzw": [
+        1.247254239784061e-15,
+        1.247254239784061e-15,
+        0.6929190221022563,
+        0.7210154150979387
+      ],
+      "max_radius_after_best_rigid_translation_mm": 83.91270402679824
+    },
+    {
+      "id": "c09",
+      "source_file": "联轴器1.SLDPRT",
+      "mesh_sha256": "80c2cb75fff370275f02ff5a4ff3340ccb6732f86492f3bbe6baa1cfa75e1d50",
+      "max_radius_at_source_pose_mm": 82.19757740636217,
+      "source_position_mm": [
+        -44.385332977496226,
+        11.967890953148029,
+        37.24999999999998
+      ],
+      "source_rotation_xyzw": [
+        -0.6619256629119556,
+        0.7495694876251088,
+        1.2e-15,
+        -1.2710352895928203e-15
+      ],
+      "max_radius_after_best_rigid_translation_mm": 83.95373737224752
+    },
+    {
+      "id": "c10",
+      "source_file": "轮子1.SLDPRT",
+      "mesh_sha256": "223532d41fea4bb920b49405a41664d64757424115936a9d533d24dfa57e431d",
+      "max_radius_at_source_pose_mm": 95.4261094692242,
+      "source_position_mm": [
+        -44.38533297749606,
+        11.967890953148029,
+        163.75
+      ],
+      "source_rotation_xyzw": [
+        1.72906773021899e-15,
+        4.802965917274973e-16,
+        0.9605931834549944,
+        0.2779581549438682
+      ],
+      "max_radius_after_best_rigid_translation_mm": 96.1554410380083
+    },
+    {
+      "id": "c11",
+      "source_file": "轮子1.SLDPRT",
+      "mesh_sha256": "223532d41fea4bb920b49405a41664d64757424115936a9d533d24dfa57e431d",
+      "max_radius_at_source_pose_mm": 94.35665263471142,
+      "source_position_mm": [
+        -44.38533297749624,
+        11.967890953148029,
+        36.24999999999998
+      ],
+      "source_rotation_xyzw": [
+        0.9480291833111633,
+        -0.3181833867290511,
+        -1.7e-15,
+        5.053215498074303e-16
+      ],
+      "max_radius_after_best_rigid_translation_mm": 96.21886380763544
+    },
+    {
+      "id": "c12",
+      "source_file": "轮胎1.SLDPRT",
+      "mesh_sha256": "9d1790d179a52d8b26da8945cd273a1f0a64ea25b8cf0a8e3037cf10cb1717c7",
+      "max_radius_at_source_pose_mm": 94.7824650871479,
+      "source_position_mm": [
+        -44.585870127521254,
+        11.5687347081995,
+        32.74999985908197
+      ],
+      "source_rotation_xyzw": [
+        0.5300256676702438,
+        0.46805212488644443,
+        0.4680521248864447,
+        0.5300256676702371
+      ],
+      "max_radius_after_best_rigid_translation_mm": 96.65141915696313
+    },
+    {
+      "id": "c13",
+      "source_file": "轮胎1.SLDPRT",
+      "mesh_sha256": "9d1790d179a52d8b26da8945cd273a1f0a64ea25b8cf0a8e3037cf10cb1717c7",
+      "max_radius_at_source_pose_mm": 95.87217075570679,
+      "source_position_mm": [
+        -43.9250701559532,
+        11.656520820182731,
+        167.2499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.5098348893557876,
+        0.4899677393416583,
+        0.489967739341655,
+        0.5098348893557841
+      ],
+      "max_radius_after_best_rigid_translation_mm": 96.65141915696309
+    },
+    {
+      "id": "c14",
+      "source_file": "铜套.SLDPRT",
+      "mesh_sha256": "7d03302350ffca656382082b8d72596b6c50dc4e6401421058b2af6f848c5b06",
+      "max_radius_at_source_pose_mm": 67.95223613417552,
+      "source_position_mm": [
+        -44.385332977496134,
+        11.967890953148029,
+        144.74999999999991
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.7450029149747405e-15,
+        0.025549090995239526,
+        0.9996735686959604
+      ],
+      "max_radius_after_best_rigid_translation_mm": 68.62999685964954
+    },
+    {
+      "id": "c15",
+      "source_file": "铜套.SLDPRT",
+      "mesh_sha256": "7d03302350ffca656382082b8d72596b6c50dc4e6401421058b2af6f848c5b06",
+      "max_radius_at_source_pose_mm": 51.90275473712801,
+      "source_position_mm": [
+        -44.38533297749662,
+        11.96789095314807,
+        120.2499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 53.1594386672084
+    },
+    {
+      "id": "c16",
+      "source_file": "平衡车轮轴.SLDPRT",
+      "mesh_sha256": "4c88003259a3b8655166d958cf1f1f0ee490762bf0431e1816b833656cd9529f",
+      "max_radius_at_source_pose_mm": 76.31417156454748,
+      "source_position_mm": [
+        -44.38533297749661,
+        11.96789095314805,
+        117.7499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.3690626571807104,
+        0.9294045163838582
+      ],
+      "max_radius_after_best_rigid_translation_mm": 76.74738409275186
+    },
+    {
+      "id": "c17",
+      "source_file": "铜柱长.SLDPRT",
+      "mesh_sha256": "906982b0852aa5436b10f93edb593789bc806dd7862d05cc61a46967ed9c4136",
+      "max_radius_at_source_pose_mm": 68.08511357847573,
+      "source_position_mm": [
+        0.6146670225038731,
+        -49.03210904685198,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.11662532317828675,
+        0.0,
+        0.9931759833954706
+      ],
+      "max_radius_after_best_rigid_translation_mm": 68.7468662230855
+    },
+    {
+      "id": "c18",
+      "source_file": "铜柱长.SLDPRT",
+      "mesh_sha256": "906982b0852aa5436b10f93edb593789bc806dd7862d05cc61a46967ed9c4136",
+      "max_radius_at_source_pose_mm": 66.97687244628867,
+      "source_position_mm": [
+        0.6146670225038592,
+        -49.03210904685198,
+        55.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 68.72197629174578
+    },
+    {
+      "id": "c19",
+      "source_file": "铜柱长.SLDPRT",
+      "mesh_sha256": "906982b0852aa5436b10f93edb593789bc806dd7862d05cc61a46967ed9c4136",
+      "max_radius_at_source_pose_mm": 71.31453464717613,
+      "source_position_mm": [
+        -89.38533297749615,
+        -49.03210904685198,
+        55.00000000000001
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.9115557787918368,
+        0.0,
+        -0.4111764367655424
+      ],
+      "max_radius_after_best_rigid_translation_mm": 69.32778964073647
+    },
+    {
+      "id": "c20",
+      "source_file": "铜柱长.SLDPRT",
+      "mesh_sha256": "906982b0852aa5436b10f93edb593789bc806dd7862d05cc61a46967ed9c4136",
+      "max_radius_at_source_pose_mm": 72.20751690255095,
+      "source_position_mm": [
+        -89.38533297749613,
+        -49.03210904685198,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 69.20015200284978
+    },
+    {
+      "id": "c21",
+      "source_file": "舵机座板.SLDPRT",
+      "mesh_sha256": "0861a8393bef67bfb7fa5e5d4d0f76c1224f97a84c1c4dd215c81234baaa4bc5",
+      "max_radius_at_source_pose_mm": 99.82563134736915,
+      "source_position_mm": [
+        -44.38533297749614,
+        -97.03210904685199,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        6.123233995736766e-17
+      ],
+      "max_radius_after_best_rigid_translation_mm": 96.65141915696302
+    },
+    {
+      "id": "c26",
+      "source_file": "M1-35.SLDPRT",
+      "mesh_sha256": "bb0ed5a6d56e270612d29ce307fd8bb13a2e53412ec4d316791e51c8384faf7f",
+      "max_radius_at_source_pose_mm": 81.6951315254144,
+      "source_position_mm": [
+        -71.38533297749615,
+        11.96789095314801,
+        144.72852318335418
+      ],
+      "source_rotation_xyzw": [
+        0.05370188307388907,
+        0.7050646124677642,
+        -0.05370188307388907,
+        0.7050646124677641
+      ],
+      "max_radius_after_best_rigid_translation_mm": 81.29100224332862
+    },
+    {
+      "id": "c27",
+      "source_file": "M1-35.SLDPRT",
+      "mesh_sha256": "bb0ed5a6d56e270612d29ce307fd8bb13a2e53412ec4d316791e51c8384faf7f",
+      "max_radius_at_source_pose_mm": 77.85103275417482,
+      "source_position_mm": [
+        -17.38533297749615,
+        11.96789095314801,
+        55.364525602170154
+      ],
+      "source_rotation_xyzw": [
+        -0.00046191350515913104,
+        -0.7071066303153392,
+        -0.00046191350515913104,
+        0.7071066303153393
+      ],
+      "max_radius_after_best_rigid_translation_mm": 80.93510623390756
+    },
+    {
+      "id": "c28",
+      "source_file": "M1-19(1).sldprt",
+      "mesh_sha256": "eaa58d46551dc641628f6e6b84cd5380a2531372049e05f917e309c0d5930809",
+      "max_radius_at_source_pose_mm": 66.45569656208782,
+      "source_position_mm": [
+        -44.38533297749617,
+        11.967890953148029,
+        55.159615952072045
+      ],
+      "source_rotation_xyzw": [
+        0.0035108342392799726,
+        -0.7070980653650119,
+        0.0035108342392799726,
+        0.7070980653650143
+      ],
+      "max_radius_after_best_rigid_translation_mm": 68.34949141053177
+    },
+    {
+      "id": "c29",
+      "source_file": "M1-19(1).sldprt",
+      "mesh_sha256": "eaa58d46551dc641628f6e6b84cd5380a2531372049e05f917e309c0d5930809",
+      "max_radius_at_source_pose_mm": 67.66888507144702,
+      "source_position_mm": [
+        -44.385332977496134,
+        11.967890953148029,
+        145.20942356756
+      ],
+      "source_rotation_xyzw": [
+        -0.041281026833882,
+        0.70590075564738,
+        0.041281026833882,
+        0.7059007556473775
+      ],
+      "max_radius_after_best_rigid_translation_mm": 68.59736558002531
+    },
+    {
+      "id": "c34",
+      "source_file": "舵机转板新.SLDPRT",
+      "mesh_sha256": "16a477ae6562b3b5b2ca47110394a79642be63da88302f8fda34a90e07ee2d91",
+      "max_radius_at_source_pose_mm": 94.27944435966842,
+      "source_position_mm": [
+        -40.86580309436391,
+        -115.5821090468521,
+        88.54759207147971
+      ],
+      "source_rotation_xyzw": [
+        0.012945018769327965,
+        0.7069882788908622,
+        -0.7069882788908597,
+        0.012945018769327903
+      ],
+      "max_radius_after_best_rigid_translation_mm": 93.19950184256983
+    },
+    {
+      "id": "c35",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "mesh_sha256": "4133ef866935efad73049b51977e7803638f7fddf5164aefa027722f91dead9c",
+      "max_radius_at_source_pose_mm": 97.79336308615845,
+      "source_position_mm": [
+        -15.40606649796139,
+        -117.07171207909391,
+        100.9480212117375
+      ],
+      "source_rotation_xyzw": [
+        -0.023366176548344317,
+        0.001811716540404046,
+        0.9899923584365043,
+        -0.13916130825059403
+      ],
+      "max_radius_after_best_rigid_translation_mm": 96.65141915696304
+    },
+    {
+      "id": "c36",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "mesh_sha256": "4133ef866935efad73049b51977e7803638f7fddf5164aefa027722f91dead9c",
+      "max_radius_at_source_pose_mm": 97.99983228522514,
+      "source_position_mm": [
+        -42.233354189233694,
+        -117.071712079094,
+        125.87926647953479
+      ],
+      "source_rotation_xyzw": [
+        0.6211266903479581,
+        0.10512436495318647,
+        0.7712538379201446,
+        0.09120317935263425
+      ],
+      "max_radius_after_best_rigid_translation_mm": 95.8501497987382
+    },
+    {
+      "id": "c37",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "mesh_sha256": "4133ef866935efad73049b51977e7803638f7fddf5164aefa027722f91dead9c",
+      "max_radius_at_source_pose_mm": 97.79903047987644,
+      "source_position_mm": [
+        -67.16459945703097,
+        -117.071712079094,
+        99.05197878826213
+      ],
+      "source_rotation_xyzw": [
+        0.07104423516834353,
+        -0.015059630889238226,
+        0.987716338134844,
+        0.13835591620281193
+      ],
+      "max_radius_after_best_rigid_translation_mm": 95.1220135340412
+    },
+    {
+      "id": "c38",
+      "source_file": "牛眼轮NL-8H.SLDPRT",
+      "mesh_sha256": "4133ef866935efad73049b51977e7803638f7fddf5164aefa027722f91dead9c",
+      "max_radius_at_source_pose_mm": 97.5921364586962,
+      "source_position_mm": [
+        -40.337311765758635,
+        -117.071712079094,
+        74.12073352046517
+      ],
+      "source_rotation_xyzw": [
+        0.2218642539392322,
+        -0.13440277914726045,
+        0.9650943481303517,
+        -0.036125406410619745
+      ],
+      "max_radius_after_best_rigid_translation_mm": 95.92936499000055
+    },
+    {
+      "id": "c39",
+      "source_file": "SG90.SLDPRT",
+      "mesh_sha256": "c88e265a1fb9ec32743415dba07fa151ac2ce274a24b37c176a6c25ba89e14ef",
+      "max_radius_at_source_pose_mm": 84.13523127805287,
+      "source_position_mm": [
+        -36.28533297749614,
+        -81.33210904685197,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.7071067811865476,
+        0.0,
+        0.7071067811865475,
+        6.123233995736766e-17
+      ],
+      "max_radius_after_best_rigid_translation_mm": 82.2142683725782
+    },
+    {
+      "id": "c40",
+      "source_file": "铜套座板连接板.SLDPRT",
+      "mesh_sha256": "d58cde7d523221ac086e90dd0d970a580970495e3997e4aa7bf86f463d8de1ca",
+      "max_radius_at_source_pose_mm": 52.72237281830133,
+      "source_position_mm": [
+        -34.135332977496134,
+        -21.032109046851982,
+        64.49999999999993
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        1.0,
+        0.0,
+        -2.8253475240680394e-15
+      ],
+      "max_radius_after_best_rigid_translation_mm": 53.29516768724782
+    },
+    {
+      "id": "c41",
+      "source_file": "铜套座板连接板.SLDPRT",
+      "mesh_sha256": "d58cde7d523221ac086e90dd0d970a580970495e3997e4aa7bf86f463d8de1ca",
+      "max_radius_at_source_pose_mm": 53.983074706926175,
+      "source_position_mm": [
+        -54.63533297749694,
+        -21.032109046851982,
+        135.49999999999972
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 53.22469424958893
+    },
+    {
+      "id": "c42",
+      "source_file": "铜套座板.SLDPRT",
+      "mesh_sha256": "2edb9a9fe94b3a04a0709694a93dcff313643645352c3191ce08970be5d2997f",
+      "max_radius_at_source_pose_mm": 53.12086308580338,
+      "source_position_mm": [
+        -44.385332977496184,
+        -21.03210904685188,
+        125.25
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "max_radius_after_best_rigid_translation_mm": 54.43803223745946
+    },
+    {
+      "id": "c43",
+      "source_file": "铜套座板.SLDPRT",
+      "mesh_sha256": "2edb9a9fe94b3a04a0709694a93dcff313643645352c3191ce08970be5d2997f",
+      "max_radius_at_source_pose_mm": 69.26266182410576,
+      "source_position_mm": [
+        -44.3853329774961,
+        -21.03210904685197,
+        150.74999999999991
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "max_radius_after_best_rigid_translation_mm": 69.99576622239171
+    },
+    {
+      "id": "c44",
+      "source_file": "铜套座板.SLDPRT",
+      "mesh_sha256": "2edb9a9fe94b3a04a0709694a93dcff313643645352c3191ce08970be5d2997f",
+      "max_radius_at_source_pose_mm": 52.4173706087065,
+      "source_position_mm": [
+        -44.38533297749608,
+        -21.03210904685197,
+        79.74999999999997
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "max_radius_after_best_rigid_translation_mm": 54.47607238652212
+    },
+    {
+      "id": "c45",
+      "source_file": "铜套座板.SLDPRT",
+      "mesh_sha256": "2edb9a9fe94b3a04a0709694a93dcff313643645352c3191ce08970be5d2997f",
+      "max_radius_at_source_pose_mm": 68.17690601333196,
+      "source_position_mm": [
+        -44.38533297749617,
+        -21.03210904685197,
+        54.24999999999997
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.7071067811865487,
+        0.0,
+        0.7071067811865464
+      ],
+      "max_radius_after_best_rigid_translation_mm": 70.05522484075364
+    },
+    {
+      "id": "c46",
+      "source_file": "轮胎1.SLDPRT",
+      "mesh_sha256": "9d1790d179a52d8b26da8945cd273a1f0a64ea25b8cf0a8e3037cf10cb1717c7",
+      "max_radius_at_source_pose_mm": 91.50132638274395,
+      "source_position_mm": [
+        -44.68003156183564,
+        11.91590296077001,
+        37.749999999999886
+      ],
+      "source_rotation_xyzw": [
+        -0.6650979330626682,
+        -0.24009318906575983,
+        0.24009318906576133,
+        0.6650979330626674
+      ],
+      "max_radius_after_best_rigid_translation_mm": 93.39496928410462
+    },
+    {
+      "id": "c47",
+      "source_file": "轮胎1.SLDPRT",
+      "mesh_sha256": "9d1790d179a52d8b26da8945cd273a1f0a64ea25b8cf0a8e3037cf10cb1717c7",
+      "max_radius_at_source_pose_mm": 92.25157564750492,
+      "source_position_mm": [
+        -44.0495752532088,
+        11.58416842449555,
+        162.2499999999998
+      ],
+      "source_rotation_xyzw": [
+        0.35674660215560944,
+        0.6105176998666221,
+        -0.6105176998666171,
+        -0.3567466021556082
+      ],
+      "max_radius_after_best_rigid_translation_mm": 93.09540426705114
+    },
+    {
+      "id": "c48",
+      "source_file": "主控板.SLDPRT",
+      "mesh_sha256": "f9668d3b09c46aeb18d25a0c33680ba5b53545c4356771895984a01645266c19",
+      "max_radius_at_source_pose_mm": 66.02757642110204,
+      "source_position_mm": [
+        -44.38533297749616,
+        -52.03210904685198,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17
+      ],
+      "max_radius_after_best_rigid_translation_mm": 62.673674170481036
+    },
+    {
+      "id": "c49",
+      "source_file": "主控座板.SLDPRT",
+      "mesh_sha256": "6166059de36c9e68f5ae5ecfe98978158e305d565ef87e0aa7e5816099f083b0",
+      "max_radius_at_source_pose_mm": 75.5672850152993,
+      "source_position_mm": [
+        -44.385332977496155,
+        -52.03210904685198,
+        100.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 72.5865218974298
+    },
+    {
+      "id": "c50",
+      "source_file": "铜柱2.SLDPRT",
+      "mesh_sha256": "148f79cada6d91b75c2a19b02c4fec18911d64a080a503e936e570c9bedba001",
+      "max_radius_at_source_pose_mm": 91.95265920746108,
+      "source_position_mm": [
+        0.614667022503861,
+        -94.03210904685199,
+        55.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.16214281626468874,
+        0.0,
+        0.9867673014109027
+      ],
+      "max_radius_after_best_rigid_translation_mm": 92.21851708543832
+    },
+    {
+      "id": "c51",
+      "source_file": "铜柱2.SLDPRT",
+      "mesh_sha256": "148f79cada6d91b75c2a19b02c4fec18911d64a080a503e936e570c9bedba001",
+      "max_radius_at_source_pose_mm": 92.78687261150482,
+      "source_position_mm": [
+        0.6146670225038731,
+        -94.03210904685199,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.8736081772180625,
+        0.0,
+        -0.4866299956822785
+      ],
+      "max_radius_after_best_rigid_translation_mm": 92.30513835576986
+    },
+    {
+      "id": "c52",
+      "source_file": "铜柱2.SLDPRT",
+      "mesh_sha256": "148f79cada6d91b75c2a19b02c4fec18911d64a080a503e936e570c9bedba001",
+      "max_radius_at_source_pose_mm": 95.78215768658832,
+      "source_position_mm": [
+        -89.38533297749613,
+        -94.03210904685199,
+        145.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.10833111833979062,
+        0.0,
+        0.9941148670044374
+      ],
+      "max_radius_after_best_rigid_translation_mm": 92.55525723328647
+    },
+    {
+      "id": "c53",
+      "source_file": "铜柱2.SLDPRT",
+      "mesh_sha256": "148f79cada6d91b75c2a19b02c4fec18911d64a080a503e936e570c9bedba001",
+      "max_radius_at_source_pose_mm": 95.13290956052525,
+      "source_position_mm": [
+        -89.38533297749615,
+        -94.03210904685199,
+        55.0
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        -0.7244115791051096,
+        0.0,
+        0.6893677277465501
+      ],
+      "max_radius_after_best_rigid_translation_mm": 92.70242789270007
+    },
+    {
+      "id": "c54",
+      "source_file": "电池.SLDPRT",
+      "mesh_sha256": "4cec51aecb0c0950803cf52670264a36425c7f88f551949aa95fe43839823869",
+      "max_radius_at_source_pose_mm": 48.55550711930872,
+      "source_position_mm": [
+        -47.396587588483534,
+        -43.03210904685197,
+        103.63064799099129
+      ],
+      "source_rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "max_radius_after_best_rigid_translation_mm": 45.27181602420338
+    }
+  ],
+  "limitations": [
+    "STL tessellation error in source CAD not bounded; exact BRep not certified",
+    "Necessary static fit only; wheel rotation, servo articulation and tolerances not covered",
+    "Wall thickness absent from imported sphere; scenarios are assumptions",
+    "No mesh/shell modification or hardware inference from this test"
+  ]
+}
