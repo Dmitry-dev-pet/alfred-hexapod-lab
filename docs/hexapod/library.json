@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 46,
+  "revision": 47,
   "entries": [
     {
       "id": "tripod-60",
@@ -1907,6 +1907,41 @@
           "path": "hexapod/microduck-falls-v1/replays.json",
           "sha256": "37cc2db089821895a3665fd5464c997448a0f9b2a7cd53320959c632fb4cecad",
           "size": 36712
+        }
+      ]
+    },
+    {
+      "id": "en01-contact-v5",
+      "title": "EN01 · исправленные упоры и контакты · v5",
+      "detail": "9 записей: стойка, приседание, упоры и прыжок · CAD без лишних пересечений · динамика не откалибрована",
+      "duration_s": 6,
+      "href": "/hexapod/en01-contact-v5/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/en01-contact-v5/app.js",
+          "size": 8338,
+          "sha256": "f925a7c2e70fee6f48b60c0177cb24f4d637cd6e9824d9e2876f9d02373f0e11"
+        },
+        {
+          "path": "hexapod/en01-contact-v5/index.html",
+          "size": 3681,
+          "sha256": "cc26c93622e7736ab4b4f782d681d179e29f243a6f489a400e0f13971505a28f"
+        },
+        {
+          "path": "hexapod/en01-contact-v5/record-loader.js",
+          "size": 4920,
+          "sha256": "4525144d2c3c4fbc6569347f8b1418299f699fd9b5c4fa8972b7aa673cce09d4"
+        },
+        {
+          "path": "hexapod/en01-contact-v5/replay.css",
+          "size": 1797,
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056"
+        },
+        {
+          "path": "hexapod/en01-contact-v5/replays.json",
+          "size": 8801,
+          "sha256": "cda475335af0510e834bb5b53955c86a7e1e48f28983a37c8d5465394a1833c0"
         }
       ]
     }
