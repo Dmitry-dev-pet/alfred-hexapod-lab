@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 47,
+  "revision": 48,
   "entries": [
     {
       "id": "tripod-60",
@@ -1942,6 +1942,36 @@
           "path": "hexapod/en01-contact-v5/replays.json",
           "size": 8801,
           "sha256": "cda475335af0510e834bb5b53955c86a7e1e48f28983a37c8d5465394a1833c0"
+        }
+      ]
+    },
+    {
+      "id": "microduck-back-to-wall-v1",
+      "title": "MicroDuck · вплотную к стене, падение назад",
+      "detail": "Зазор 2 мм. На 1 см встал на край, одна стопа свисает на 18 мм. У 2–5 см остался лежать. 6 высот и 2 прежних старта для сравнения.",
+      "href": "/hexapod/microduck-wall-v1/",
+      "duration_s": 10,
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-wall-v1/app.js",
+          "sha256": "1a0c9c13e9a3591aad0650c354ea1c3e6fc5bad3ab764c677533f24f3ecc1a7d",
+          "size": 11342
+        },
+        {
+          "path": "hexapod/microduck-wall-v1/index.html",
+          "sha256": "4760169e3e56dc44bd85838895ae3e326ae58c89cdf0b077e129bbe485f1e75b",
+          "size": 6300
+        },
+        {
+          "path": "hexapod/microduck-wall-v1/pose-loader.js",
+          "sha256": "af4c58a3c44d760a7ff0497ecd84444cc960c58f21180f1010887afc199102a5",
+          "size": 4577
+        },
+        {
+          "path": "hexapod/microduck-wall-v1/replays.json",
+          "sha256": "0beb8635425e4f2ffa94521acb23bdc7a970bef6dc92ce5847a6174bc563ca3a",
+          "size": 16269
         }
       ]
     }

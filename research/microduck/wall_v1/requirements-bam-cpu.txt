@@ -1,0 +1,5 @@
+numpy==2.3.5
+scipy==1.17.0
+mujoco==3.10.0
+onnxruntime==1.24.4
+better-actuator-models @ https://codeload.github.com/Rhoban/bam/tar.gz/62bd8ce12154340be97e06f7f41a0ca8f116d967
