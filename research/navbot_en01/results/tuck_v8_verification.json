@@ -1,0 +1,27 @@
+{
+  "trials": 40,
+  "fallen_trials": 38,
+  "wheel_pulse_trials": 32,
+  "leg_only_trials": 4,
+  "fallen_idle_controls": 2,
+  "standing_controls": 2,
+  "stable_getups": 0,
+  "physics_steps": 960000,
+  "frames": 12000,
+  "position_timeouts": [],
+  "sequence_readiness_and_impulse_integrals_verified": true,
+  "qpos_body_pose_residual": 0,
+  "unexpected_saved_frame_surface_intersections": 0,
+  "max_floor_penetration_m": 0.0003548521334093887,
+  "max_closure_error_m": 0.00014239903082225895,
+  "max_sampled_cad_penetration_m": 0.0003001889745590479,
+  "repeat_cases_byte_identical": [
+    "back-tuck-neg-500",
+    "back-baseline-neg-500"
+  ],
+  "limitations": [
+    "No hardware calibration",
+    "Standing control starts with the same passive 0.75 s settling; it falls before capture and does not establish an effective standing controller",
+    "No WebGL in cloud browser; rendering/physical Android touch unverified"
+  ]
+}
