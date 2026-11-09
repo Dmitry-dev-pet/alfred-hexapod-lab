@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 45,
+  "revision": 46,
   "entries": [
     {
       "id": "tripod-60",
@@ -1877,6 +1877,36 @@
           "path": "hexapod/microduck-heights-v1/replays.json",
           "size": 19795,
           "sha256": "eddf7fe5633976d1ec7a7014d41be20563c0374e7b3e9431a1aec52109ede4aa"
+        }
+      ]
+    },
+    {
+      "id": "microduck-directed-falls-v1",
+      "title": "MicroDuck · назад и на бок: падение и вставание",
+      "detail": "24 физических попытки: моторные команды и исходное вставание v8. На полу все направления; ступень 1 см слева пройдена, 2 см пока нет.",
+      "duration_s": 10,
+      "href": "/hexapod/microduck-falls-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-falls-v1/app.js",
+          "sha256": "522f55981a487e0d9a49b8a4bc690a1ba73defd81a67924dbb38336183531509",
+          "size": 11146
+        },
+        {
+          "path": "hexapod/microduck-falls-v1/index.html",
+          "sha256": "52f00b9e304c61563528e2e1e3efefd1e80c365eae577228e8b8ee19ce02e726",
+          "size": 6054
+        },
+        {
+          "path": "hexapod/microduck-falls-v1/pose-loader.js",
+          "sha256": "709bbea173da35b4d24f55dd8f26cf1e685c41dabc0bb36cfea140d543692382",
+          "size": 4296
+        },
+        {
+          "path": "hexapod/microduck-falls-v1/replays.json",
+          "sha256": "37cc2db089821895a3665fd5464c997448a0f9b2a7cd53320959c632fb4cecad",
+          "size": 36712
         }
       ]
     }
