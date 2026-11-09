@@ -1,0 +1,53 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "openbeni-recovery-v1",
+  "title": "OpenBeni · стойка и вставание",
+  "detail": "17 измеренных записей · авторская нейросеть · проверка контактов",
+  "robot": "OpenBeni",
+  "engine": "MuJoCo",
+  "status": "research",
+  "publish_policy": "review_only",
+  "duration_s": 10.5,
+  "commands": {
+    "simulate": [
+      "python",
+      "research/openbeni/evaluate.py",
+      "--upstream",
+      "../open-beni",
+      "--out",
+      "../beni-results-stiff",
+      "--contact-timeconstant",
+      ".005"
+    ],
+    "export": [
+      "python",
+      "research/openbeni/export.py",
+      "--inputs",
+      "../beni-results-audited",
+      "../beni-results-stiff",
+      "--out",
+      "docs/hexapod/openbeni-recovery-v1"
+    ]
+  },
+  "trace": {
+    "path": "results/openbeni-local/stiff-front.json",
+    "samples_field": "samples",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/openbeni-recovery-v1.json",
+    "format": "openbeni-measured-replay/v1",
+    "trace_sha256_field": "trace_sha256",
+    "frames_field": "frames"
+  },
+  "player": {
+    "template": "openbeni-template"
+  },
+  "extra_assets": [
+    "hexapod/openbeni-recovery-v1/rig.json",
+    "hexapod/openbeni-recovery-v1/replays.json",
+    "hexapod/openbeni-recovery-v1/source-records.json",
+    "hexapod/openbeni-recovery-v1/stiff-records.json"
+  ]
+}
