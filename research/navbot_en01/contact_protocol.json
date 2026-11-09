@@ -1,0 +1,25 @@
+{
+  "schema": "en01-cad-contact-protocol/v1",
+  "physics_timestep_s": 0.00025,
+  "duration_s": 6,
+  "source_jump_command_s": 1.5,
+  "anchor_rad_ASSUMED": 0.1,
+  "loop_ms_ASSUMED": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "operating_range_rad": [
+    0,
+    0.65
+  ],
+  "limit_margin_rad": 0.01,
+  "mass_kg_ASSUMED": 0.322,
+  "hip_ceiling_nm_ASSUMED": 0.14709975,
+  "scope": "Conservative CAD envelopes and operating guards; no hardware-stop or absolute servo-zero calibration",
+  "physics_timesteps_s": [
+    0.00025,
+    0.000125
+  ]
+}

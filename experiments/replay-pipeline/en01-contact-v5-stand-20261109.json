@@ -1,0 +1,51 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "en01-contact-v5-stand-20261109",
+  "title": "EN01 v5 · Стойка",
+  "detail": "Контакты CAD и рабочие упоры · угловой ноль и динамика не откалиброваны · диагностика",
+  "robot": "NavBot EN01 CAD-contact surrogate",
+  "engine": "MuJoCo",
+  "status": "research",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "-m",
+      "research.navbot_en01.contact_case",
+      "--case",
+      "stand",
+      "--cad-mesh",
+      "docs/hexapod/en01-original-cad-v1/original-meshes.json",
+      "--out",
+      "results/en01_contact_v5/final/raw/stand_raw.json"
+    ],
+    "export": [
+      "python",
+      "-m",
+      "research.navbot_en01.contact_export",
+      "--trace",
+      "results/en01_contact_v5/final/raw/stand_raw.json",
+      "--out",
+      "docs/hexapod/data/en01-contact-v5-stand-20261109.json",
+      "--model",
+      "results/en01_contact_v5/final/model-0.00025.xml",
+      "--cad-mesh",
+      "docs/hexapod/en01-original-cad-v1/original-meshes.json"
+    ]
+  },
+  "trace": {
+    "path": "results/en01_contact_v5/final/raw/stand_raw.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/en01-contact-v5-stand-20261109.json",
+    "format": "navbot-en01-fourbar-physical-replay-v2",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "en01-contact-template"
+  }
+}

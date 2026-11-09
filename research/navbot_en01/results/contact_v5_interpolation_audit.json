@@ -1,0 +1,55 @@
+{
+  "schema": "en01-render-interpolation-audit/v1",
+  "fractions": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "rows": [
+    {
+      "name": "stand",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "crouch",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "forced-fold",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "forced-extend",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "jump-p1",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "jump-p2",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "jump-p5",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "jump-p10",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    },
+    {
+      "name": "jump-p5-halfdt",
+      "interpolated_poses": 897,
+      "unexpected_intersections": []
+    }
+  ]
+}

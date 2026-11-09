@@ -54,7 +54,7 @@ def build(src,dst,*,model_xml=None):
         tail=[int(f["ground_contact"]),int(f["nonwheel_ground_contact"]),f["ground_normal_force_n"],f["pitch_rad"],f["roll_rad"],f["closure_error_m"]]
         if not all(math.isfinite(v) for v in tail):raise ValueError("Nonfinite telemetry")
         frames.append([f["t"],*poses.flatten().tolist(),*tail])
-    if len(frames)!=300 or abs(frames[-1][0]-5.981)>1e-8:
+    if len(frames)!=300 or abs(frames[-1][0]-(5.98+s['timestep_s']))>1e-8:
         raise ValueError("Incomplete six-second physical trace")
     status="failed" if s["mode"] in ("jump","fall") or not s["upright_6s"] else "research"
     doc={"schema":FORMAT,"format":FORMAT,"physics_engine":"MuJoCo","physics_version":"3.14.0",
