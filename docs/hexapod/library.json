@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 37,
+  "revision": 38,
   "entries": [
     {
       "id": "tripod-60",
@@ -1434,7 +1434,7 @@
       "id": "sebaju-jump-v1",
       "title": "SeBaJu · прыжок и баланс",
       "detail": "13 с · настоящая динамика · прыжок 44 мм",
-      "duration_s": 13.0,
+      "duration_s": 13,
       "href": "/hexapod/sebaju-jump-v1/",
       "status": "passed",
       "files": [
@@ -1459,7 +1459,7 @@
       "id": "sebaju-tip12-v1",
       "title": "SeBaJu · падение набок",
       "detail": "18 с · импульс 12 Н·м · не встал",
-      "duration_s": 18.0,
+      "duration_s": 18,
       "href": "/hexapod/sebaju-tip12-v1/",
       "status": "failed",
       "files": [
@@ -1479,7 +1479,7 @@
       "id": "sebaju-tip20-long-v1",
       "title": "SeBaJu · переворот и ожидание",
       "detail": "30 с · импульс 20 Н·м · не встал",
-      "duration_s": 30.0,
+      "duration_s": 30,
       "href": "/hexapod/sebaju-tip20-long-v1/",
       "status": "failed",
       "files": [
@@ -1499,7 +1499,7 @@
       "id": "microduck-standup-v1",
       "title": "MicroDuck · 7 испытаний вставания",
       "detail": "6 с каждый · оригинальные STL · MuJoCo/ONNX · CPU с приближёнными приводами",
-      "duration_s": 6.0,
+      "duration_s": 6,
       "href": "/hexapod/microduck-standup-v1/",
       "status": "research",
       "files": [
@@ -1617,6 +1617,36 @@
           "path": "hexapod/en01-experiments-v1/v1-stand.json",
           "sha256": "f54cf830f5330a1d4a4437b674e5aa4746aa87268040a6b28e829734ea9ed1ce",
           "size": 84889
+        }
+      ]
+    },
+    {
+      "id": "en01-original-cad-v1",
+      "title": "EN01 · оригинальная CAD · 8 записей",
+      "detail": "73 детали исходной сборки · v0/v1 · физика и кинематика пока приближённые · прыжки FAIL",
+      "duration_s": 6,
+      "href": "/hexapod/en01-original-cad-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/en01-original-cad-v1/app.js",
+          "size": 9252,
+          "sha256": "3018b1acb5be961fc0a8030f6b375875b11a4cefd65a7eeccd58ec364113e4c0"
+        },
+        {
+          "path": "hexapod/en01-original-cad-v1/index.html",
+          "size": 3257,
+          "sha256": "ce0029606619d5ca5dfbdc78135146f46a6fc46bcda261cb964ce714eadb344b"
+        },
+        {
+          "path": "hexapod/en01-original-cad-v1/original-meshes.json",
+          "size": 5717216,
+          "sha256": "8b034155dc50bb6c4e94a55bfa4ebca7b1fb742f2f38fc5c6c9f158c0cae313b"
+        },
+        {
+          "path": "hexapod/en01-original-cad-v1/replay.css",
+          "size": 2266,
+          "sha256": "6e629cd5a5a9b0077e9fd73bda84f1a4ed57b88e02537015071607c823821db4"
         }
       ]
     }
