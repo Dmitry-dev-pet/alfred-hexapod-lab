@@ -1,0 +1,47 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "navbot-en01-stand-20261108",
+  "title": "Стойка EN01 · физический повтор",
+  "detail": "6 с · без падения, дрейф 34 см",
+  "robot": "NavBot EN01 approximate MuJoCo 4-axis",
+  "engine": "MuJoCo",
+  "status": "research",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "research/navbot_en01/probe.py",
+      "--mode",
+      "stand",
+      "--duration",
+      "6",
+      "--out",
+      "results/navbot_en01/stand_verified.json"
+    ],
+    "export": [
+      "python",
+      "research/navbot_en01/export_replay.py",
+      "--trace",
+      "results/navbot_en01/stand_verified.json",
+      "--mode",
+      "stand",
+      "--out",
+      "docs/hexapod/data/navbot-en01-stand-20261108.json"
+    ]
+  },
+  "trace": {
+    "path": "results/navbot_en01/stand_verified.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/navbot-en01-stand-20261108.json",
+    "format": "navbot-en01-mujoco-physical-replay-v1",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "navbot-en01-template"
+  }
+}

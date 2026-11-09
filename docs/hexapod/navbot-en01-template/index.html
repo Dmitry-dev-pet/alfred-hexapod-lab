@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Alfred Hexapod Lab · EN01 · MuJoCo 3D replay</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#122636;color:#eaf5ff;font-family:system-ui,-apple-system,Arial,sans-serif}
+.stage{position:relative;width:100%;height:100dvh}
+#viewer{position:absolute;inset:0}#viewer canvas{width:100%;height:100%;display:block}
+.panels{position:absolute;top:65px;left:12px;right:12px;display:flex;justify-content:space-between;gap:8px;pointer-events:none}
+.panel{border:1px solid #486273;background:#102737e9;border-radius:10px;padding:8px 11px;max-width:47vw;font-size:12px;line-height:1.4}
+.panel strong{font-size:13px}.panel p{margin:4px 0;color:#d0e2ec}
+.note{position:absolute;bottom:80px;left:12px;max-width:65vw;background:#122737eb;border:1px solid #586776;border-radius:8px;padding:7px 9px;font-size:11px;pointer-events:none;color:#eddda7}
+.error{position:absolute;top:40%;left:10%;width:80%;padding:12px;background:#842a36;border-radius:8px;z-index:10}
+.controls{display:none}
+@media(max-height:550px){.panels{top:50px}.panel{padding:5px 8px;font-size:11px}.note{bottom:58px;font-size:10px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head><body>
+<main class="stage" aria-label="NavBot EN01: интерактивный 3D-повтор реальных кадров MuJoCo">
+<div id="viewer"></div>
+<div class="panels">
+<div class="panel"><strong>NavBot EN01 · MuJoCo</strong><p id="result">Загружаем физику…</p><p id="description">—</p></div>
+<div class="panel"><strong id="time">0:00 / 0:06</strong><p id="pose">Наклон: —</p><p id="joints">Приводы: —</p><p id="contacts">Контакт: —</p></div>
+</div>
+<div class="note">Геометрия приближённая, не оригинальный STEP. Неудачные прыжки показаны как FAIL; это не видео и не реальный робот.</div>
+<div id="replay-error" class="error" hidden role="alert"></div>
+<section class="controls"><button id="play" aria-label="Пауза">Ⅱ</button>
+<input id="seek" type="range" min="0" max="6" step=".005" value="0" aria-label="Перемотка">
+<select id="speed" aria-label="Скорость"><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+<button id="reset-camera" type="button">Камера</button></section>
+</main><script type="module" src="/hexapod/navbot-en01-template/app.js"></script>
+<script src="/hexapod/player-shell.js"></script>
+</body></html>
