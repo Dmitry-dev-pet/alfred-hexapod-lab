@@ -1,0 +1,55 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "wheelbot-offline-proxy-20261107-v1",
+  "title": "Mini Wheelbot · физическая диагностика, FAIL",
+  "detail": "8 с, MuJoCo 3.14.0 · 8000 шагов · без STL · вертикаль не удержана",
+  "robot": "Mini Wheelbot collision-only experimental STEP-axis model",
+  "engine": "MuJoCo",
+  "status": "failed",
+  "publish_policy": "review_only",
+  "duration_s": 8,
+  "commands": {
+    "simulate": [
+      "python",
+      "research/wheelbot_offline_proxy/simulate.py",
+      "--out",
+      "results/wheelbot-offline-proxy/v1.json",
+      "--seconds",
+      "8",
+      "--mode",
+      "upstream"
+    ],
+    "export": [
+      "python",
+      "research/wheelbot_offline_proxy/export.py",
+      "--source",
+      "results/wheelbot-offline-proxy/v1.json",
+      "--output",
+      "docs/hexapod/data/wheelbot-offline-proxy-20261107-v1.json"
+    ]
+  },
+  "trace": {
+    "path": "results/wheelbot-offline-proxy/v1.json",
+    "samples_field": "samples",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/wheelbot-offline-proxy-20261107-v1.json",
+    "format": "mini-wheelbot-mujoco-physical-replay-v1",
+    "trace_sha256_field": "verification.source_trace_sha256"
+  },
+  "player": {
+    "template": "wheelbot-self-righting-v1",
+    "replacements": {
+      "Hexapod Lab · Mini Wheelbot · вставание": "Hexapod Lab · Mini Wheelbot · отрицательный результат",
+      "MINI WHEELBOT · MUJOCO · 10 С": "MINI WHEELBOT · MUJOCO · 8 С · FAIL",
+      "Пробный физический подъём: старт на боку → импульс реакционного колеса → перехват вертикали. Упрощённая модель, не фирменный CAD.": "Контактная модель без оригинальных CAD/STL. Физическая трасса MuJoCo: кратковременное приближение к вертикали без удержания.",
+      "Обороты реакционного колеса существенно завышены — это исследовательская демонстрация, не подтверждение возможности на настоящем роботе.": "Геометрия контактов и привод не калиброваны. Не доказывает самоподъём реального робота.",
+      "Лежит на боку": "Старт под 90°",
+      "Разгон реакционного колеса": "Открытый импульс",
+      "Подъём и перехват": "Краткий переход к вертикали",
+      "Балансировка (приближённая модель)": "Не удержал вертикаль · FAIL"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "wheelbot-v2-step-upstream90-cap-v1",
+  "title": "Mini Wheelbot V2 · исходный импульс (не встал)",
+  "detail": "8 с · MuJoCo · модель непроверена · схематический просмотр · FAIL",
+  "robot": "Mini Wheelbot V2 experimental STEP-axis model",
+  "engine": "MuJoCo",
+  "status": "failed",
+  "duration_s": 8,
+  "commands": {
+    "simulate": [
+      "python",
+      "research/mini_wheelbot_v2/simulate_step_source_roll.py",
+      "--out",
+      "results/wheelbot-v2-step",
+      "--duration",
+      "8",
+      "--contact-profile",
+      "stiff"
+    ],
+    "export": [
+      "python",
+      "scripts/export_wheelbot_step_replay.py",
+      "--trace",
+      "results/wheelbot-v2-step/roll_+90_upstream_cap.json",
+      "--summary",
+      "results/wheelbot-v2-step/summary.json",
+      "--out",
+      "docs/hexapod/data/wheelbot-v2-step-upstream90-cap-v1.json"
+    ]
+  },
+  "trace": {
+    "path": "results/wheelbot-v2-step/roll_+90_upstream_cap.json",
+    "samples_field": "frames",
+    "sample_format": "array",
+    "time_index": 0,
+    "qpos_slice": [
+      1,
+      10
+    ]
+  },
+  "replay": {
+    "path": "hexapod/data/wheelbot-v2-step-upstream90-cap-v1.json",
+    "format": "mini-wheelbot-mujoco-physical-replay-v1",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "wheelbot-self-righting-v1",
+    "replacements": {
+      "Hexapod Lab · Mini Wheelbot · вставание": "Hexapod Lab · Mini Wheelbot V2 · схема, FAIL"
+    }
+  },
+  "publish_policy": "review_only"
+}
