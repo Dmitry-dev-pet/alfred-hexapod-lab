@@ -1,4 +1,5 @@
 import copy
+import importlib.util
 import json
 import math
 from pathlib import Path
@@ -6,6 +7,8 @@ import tempfile
 import unittest
 from research.navbot_en01.linkage import solve, audit
 from research.navbot_en01.linkage_model import create,load_evidence,set_configuration
+
+HAS_PHYSICS = all(importlib.util.find_spec(name) is not None for name in ('mujoco','numpy'))
 
 
 class FourBarTests(unittest.TestCase):
@@ -38,6 +41,7 @@ class FourBarTests(unittest.TestCase):
         e=copy.deepcopy(self.e);e['source']['git_blob_sha1']='0'*40
         with self.assertRaises(ValueError):create(e)
 
+    @unittest.skipUnless(HAS_PHYSICS, 'MuJoCo/numpy required; use configured research runtime')
     def test_mujoco_independent_forward_kinematics(self):
         import mujoco
         import numpy as np
@@ -55,6 +59,7 @@ class FourBarTests(unittest.TestCase):
                 c=mujoco.mj_name2id(m,mujoco.mjtObj.mjOBJ_SITE,side+'_closure_rod')
                 self.assertLess(float(np.linalg.norm(d.site_xpos[a]-d.site_xpos[c])),1e-11)
 
+    @unittest.skipUnless(HAS_PHYSICS, 'MuJoCo/numpy required; use configured research runtime')
     def test_export_rejects_forged_poses_and_model(self):
         # A short genuine trace is sufficient for failure-path integrity checks.
         from research.navbot_en01.linkage_probe import run
