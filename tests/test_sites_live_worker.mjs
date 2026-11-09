@@ -89,6 +89,6 @@ test('previously verified catalog and replay stay available when offline',async(
  assert.equal((await env.request('/hexapod/microduck/app.js')).status,200);
  env.status.offline=true;
  const c=await env.request('/hexapod/library.json');
- assert.equal(c.status,200);assert.equal((await c.json()).revision,36);
+ assert.equal(c.status,200);assert.equal(c.headers.get('X-Alfred-Catalog-Source'),'cached-github');assert.equal((await c.json()).revision,36);
  assert.equal((await env.request('/hexapod/microduck/app.js')).status,200);
 });
