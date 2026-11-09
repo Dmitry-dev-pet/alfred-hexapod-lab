@@ -13,7 +13,7 @@ Do not merge into main without owner review. Do not publish a replay until it co
 - Manufacturer [Feetech STS3032 6 V datasheet](https://pages.switch-science.com/comparison/files/feetech/serial-sts/STS3032_datasheet.pdf), dated 2020-06-08.
 - [SimpleFOC BLDC reference](https://docs.simplefoc.com/bldc_motors) describes 2208 90 KV gimbal motor, 39 g, 13–16 ohm phase resistance.
 - [Frank Fu EN01 product page](https://frankfu.blog/product/navbot-en01/) lists the 322 g overall mass and 12 x 9.5 x 9 cm envelope.
-- [Frank Fu assembly guide](https://frankfu.blog/embodied-ai-robot/building-a-tabletop-wheel-legged-robot-from-scratch/) calls the wheel motor TMCM-6210, not 2208 90 KV. **The actual assembled SKU is not verified.**
+- [Frank Fu assembly guide](https://frankfu.blog/embodied-ai-robot/building-a-tabletop-wheel-legged-robot-from-scratch/) calls the wheel motor TMCM-6210, not 2208 90 KV. **The actual assembled SKU is not verified (UNVERIFIED hardware configuration).**
 - Upstream has no project-wide explicit license. This folder contains an original analytical approximation; third-party CAD, firmware, meshes and binaries are **not copied**.
 
 ## Four actuated axes
