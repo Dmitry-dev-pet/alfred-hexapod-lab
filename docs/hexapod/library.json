@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 53,
+  "revision": 56,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -2042,6 +2042,76 @@
           "path": "hexapod/en01-basic-v6/replays.json",
           "size": 20381,
           "sha256": "44435632a4a6b894b6d8d12823d7c571af63ceac5c3a830df9e02e5f0a002270"
+        }
+      ]
+    },
+    {
+      "id": "en01-getup-v7",
+      "title": "EN01 · попытки вставания после падения · v7",
+      "detail": "20 записей · 16 активных попыток и 4 контроля · устойчивое вставание пока не получено",
+      "duration_s": 6,
+      "href": "/hexapod/en01-getup-v7/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/en01-getup-v7/app.js",
+          "size": 8559,
+          "sha256": "bcc2ce19c017eacc62a17978ab5b5c1eb0140df4fb1909ccf41dc9c8654b4b06"
+        },
+        {
+          "path": "hexapod/en01-getup-v7/index.html",
+          "size": 3583,
+          "sha256": "bf3842920d29d32957cdfc4ef93dd786287b4fd6af953fd4adeb388ef2584e56"
+        },
+        {
+          "path": "hexapod/en01-getup-v7/record-loader.js",
+          "size": 4494,
+          "sha256": "be449e4957c9f050217bdce40aa3c456b0d142c0ceb6d7760ed5e1f126be142b"
+        },
+        {
+          "path": "hexapod/en01-getup-v7/replay.css",
+          "size": 1797,
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056"
+        },
+        {
+          "path": "hexapod/en01-getup-v7/replays.json",
+          "size": 16855,
+          "sha256": "d2804249083609e645617d042d2907fd28b338d806d406f1d41e88c422adb66b"
+        }
+      ]
+    },
+    {
+      "id": "microduck-runup-roll-v1",
+      "title": "MicroDuck · кувырок вперёд с разбега",
+      "detail": "12 записей · на полу полный оборот и стойка · ступень 5 см пока не пройдена · запуск до грани и при касании",
+      "duration_s": 16,
+      "href": "/hexapod/microduck-runup-roll-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-runup-roll-v1/app.js",
+          "size": 12494,
+          "sha256": "729a07d2b0c0f8b5870144b1f4aaa94435848112bb5c9d78a5a585a907fcf81a"
+        },
+        {
+          "path": "hexapod/microduck-runup-roll-v1/index.html",
+          "size": 5953,
+          "sha256": "bae431c19550bb02aa09fdc373f7712cade07b980d9301e1ec12284af04ee258"
+        },
+        {
+          "path": "hexapod/microduck-runup-roll-v1/pose-loader.js",
+          "size": 4866,
+          "sha256": "49aa196c657c4497ea74b0b8de42f539856d8fe021e80696d345e206fd5d2bf3"
+        },
+        {
+          "path": "hexapod/microduck-runup-roll-v1/replays.json",
+          "size": 21776,
+          "sha256": "60439abd651851b9bd8f9429e9311bb7523bdcc68fa9642da2868e1bdd200aa0"
+        },
+        {
+          "path": "hexapod/microduck-runup-roll-v1/safe-camera.js",
+          "size": 451,
+          "sha256": "74cb990e36ebf86d24c0eb21250b31d1afe2d31fb18f78269c9a47824f1a48e2"
         }
       ]
     }
