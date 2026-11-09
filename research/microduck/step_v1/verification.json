@@ -1,0 +1,7 @@
+{
+  "nominal_frames_reproduced": 4,
+  "firm_trace_byte_identical": true,
+  "firm_trace_sha256": "2e3f0b06ff78bb827ddfb1f0a61cc252940fa6f3bfd61d6f32eb6dacefe705c0",
+  "acceptance_criteria_rechecked": 5,
+  "browser_rendering": "unverified: WebGL disabled"
+}

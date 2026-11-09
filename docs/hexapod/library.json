@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 41,
+  "revision": 42,
   "entries": [
     {
       "id": "tripod-60",
@@ -1752,6 +1752,36 @@
           "path": "hexapod/microduck-control-v1/rig.json",
           "sha256": "30dd440b80a4764c3425280fe3784167af0aa02fd87355f62ad14d69fd30c8af",
           "size": 17925
+        }
+      ]
+    },
+    {
+      "id": "microduck-step-v1",
+      "title": "MicroDuck · ступенька 5 мм",
+      "detail": "Физический опыт · 1 из 3 прошёл; жёсткий повтор не прошёл · 5 записей",
+      "duration_s": 15,
+      "href": "/hexapod/microduck-step-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-step-v1/app.js",
+          "size": 10847,
+          "sha256": "934baffcb515fcdbf17e2a9a2371d4c7ac8588837433560b41ec706b3fd04496"
+        },
+        {
+          "path": "hexapod/microduck-step-v1/index.html",
+          "size": 5996,
+          "sha256": "b6f0aa5fcd30503001d16aaf32b9512cf6a85918f33908aa00bc0065fe27a415"
+        },
+        {
+          "path": "hexapod/microduck-step-v1/pose-loader.js",
+          "size": 4033,
+          "sha256": "19f4c9391685e0dc014a1cbf273fdb023a2199fdad7f0d32228c73775cecd491"
+        },
+        {
+          "path": "hexapod/microduck-step-v1/replays.json",
+          "size": 5876,
+          "sha256": "b636986b8e0678b05198eadaed8e9467eef69034ad809550f26dfbca08d37dbe"
         }
       ]
     }
