@@ -1,0 +1,11 @@
+{
+  "schema": "robot-model-package-ref/v1",
+  "id": "microduck-original",
+  "url": "/assets/robot-models/microduck-original-e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b.json",
+  "sha256": "e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b",
+  "size": 10340979,
+  "source_revision": "bae39f5900b318f7e87fc485c30a31213cfa14eb",
+  "mesh_count": 38,
+  "instance_count": 70,
+  "license_spdx": "CC-BY-NC-SA-4.0"
+}
