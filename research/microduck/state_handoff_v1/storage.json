@@ -1,0 +1,16 @@
+{
+  "schema": "microduck-state-handoff-storage/v1",
+  "archive": {
+    "file_name": "MicroDuck_state_handoff_20261109.zip",
+    "size_bytes": 19054960,
+    "sha256": "6777f1c96e457ebec0d4128e8571e0211e52714e91d51ab3634189008f90683a",
+    "drive_file_id": "1T_fe8uLulsg3SvDOcMa739ktlqjlib6B",
+    "url": "https://drive.google.com/file/d/1T_fe8uLulsg3SvDOcMa739ktlqjlib6B/view?usp=drivesdk"
+  },
+  "input_archive": {
+    "drive_file_id": "1q_CmK4XggV4fv_21_Pa75-B9tKNp-que",
+    "sha256": "881977efcf04af626928c779be39f99c79e59091f2a19250ad58ad947cd16208"
+  },
+  "source_base_commit": "5f697daa774fea728d810dc49882a57d9978694a",
+  "run_issue": "https://github.com/Dmitry-dev-pet/truthrail/issues/336"
+}

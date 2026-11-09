@@ -1,0 +1,2963 @@
+{
+  "schema": "microduck-state-handoff-audit/v1",
+  "source_gate": {
+    "verified_git_blobs": {
+      "microduck_rl": 259,
+      "bam": 112
+    },
+    "manifest_sha256": "1248837b9bc0e2087af1067f3ed174f97ae576f15888a5fb6275ee31822405a4"
+  },
+  "helpers": {
+    "pinned_commit": "471418514b7ad89ccdbca82985f4fce5327d1bd2",
+    "verified_helpers": {
+      "bam_backlash_cpu.py": {
+        "pinned_git_blob_sha1": "aabaf8d6a11b16a6ba6d8531fdcd3d810945f117",
+        "adapter_sha256": "c0b3e44b12602db72c06be8a9e3fa1d835c82348f673797f4ca7185cd157bf6f"
+      },
+      "collision_model.py": {
+        "pinned_git_blob_sha1": "5718cd8bbc6d04a273de2d05e8cfd500143dcbcb",
+        "adapter_sha256": "fda97e35310b9a675da841d88427b98f7747481419118073ac2effd6a06cf72d"
+      },
+      "fall_cpu.py": {
+        "pinned_git_blob_sha1": "8503d0e9e0ef90b5e03b6a9237bc3a2ab799ba1f",
+        "adapter_sha256": "51025ba1b6805dcfc5df13ad6d3d794ddb6977702c9fbc6e474713331882bd23"
+      },
+      "measure_clearance.py": {
+        "pinned_git_blob_sha1": "1506a527d18729a44e67d28e209d0cc642654362",
+        "adapter_sha256": "c3f0d4471ce392d886ecdaf26c85e9ad951c167bf678bf0d8701f2ec93f71619"
+      },
+      "standup_cpu.py": {
+        "pinned_git_blob_sha1": "77196dfab77667b72cef1ac8fc5bcef48e731051",
+        "adapter_sha256": "9cd18b69aec3d601798a279202bb69bc1825695af3b7a1d8862d6935a99e9787"
+      },
+      "step_cpu.py": {
+        "pinned_git_blob_sha1": "e227056b1bf08bbbe7bec3989680ed4cc660cbbd",
+        "adapter_sha256": "9b929df5ea5dc1f5582fb3d75b0f32c8b8e3e43efcab198e9c4da16f06b60942"
+      },
+      "wall_cpu.py": {
+        "pinned_git_blob_sha1": "fd3576e1a512f545a466418edc6479e99b4452e7",
+        "adapter_sha256": "5b37ab8e756d8325f24b7e884161829ef867a06f56a05f8023ed2a757dea7b20"
+      }
+    },
+    "adapter_scope": "filesystem resolution only; no physics function modifications"
+  },
+  "audits": [
+    {
+      "trace_file": "h1-timer2.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698280818895341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356,
+      "handoff_reason": "original_timer",
+      "handoff_s": 4.64,
+      "sampled_frames": 450
+    },
+    {
+      "trace_file": "h1-angle75-blend0.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 7.011985159177669e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00014598508821816048,
+      "handoff_reason": "angle",
+      "handoff_s": 2.94,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h1-angle75-blend150.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.439754562936884e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0002524156291403134,
+      "handoff_reason": "angle",
+      "handoff_s": 2.94,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h1-angle135-blend0.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.660580420536633e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0001017504389401163,
+      "handoff_reason": "angle",
+      "handoff_s": 3.14,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h1-angle135-blend150.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.736723956457524e-10,
+      "all_visible_mesh_max_step_overlap_m": 6.301990889424382e-05,
+      "handoff_reason": "angle",
+      "handoff_s": 3.14,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h1-angle225-blend0.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.310335587400573e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.001007286316285062,
+      "handoff_reason": "angle",
+      "handoff_s": 3.44,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h1-angle225-blend150.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.673396280021393e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0003762593273122037,
+      "handoff_reason": "angle",
+      "handoff_s": 3.44,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h1-angle300-blend0.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.357282200664116e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0005870013806001714,
+      "handoff_reason": "angle",
+      "handoff_s": 3.68,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h1-angle300-blend150.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.766283089376657e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00016250553868585142,
+      "handoff_reason": "angle",
+      "handoff_s": 3.68,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h1-angle345-blend0.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.862568568966054e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356,
+      "handoff_reason": "angle",
+      "handoff_s": 3.84,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h1-angle345-blend150.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.554293219274143e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356,
+      "handoff_reason": "angle",
+      "handoff_s": 3.84,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h1-one-foot-top.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.710466626813627e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00038614493565166356,
+      "handoff_reason": "one_foot_top",
+      "handoff_s": 3.78,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h2-timer2.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.468124369440886e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00031644327184397053,
+      "handoff_reason": "original_timer",
+      "handoff_s": 4.64,
+      "sampled_frames": 450
+    },
+    {
+      "trace_file": "h2-angle75-blend0.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.321300427547527e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00021818773522419566,
+      "handoff_reason": "angle",
+      "handoff_s": 2.94,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle75-blend150.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.698309684693982e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00016782638239914646,
+      "handoff_reason": "angle",
+      "handoff_s": 2.94,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h2-angle135-blend0.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.559783272130915e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00015854356347190166,
+      "handoff_reason": "angle",
+      "handoff_s": 3.24,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle135-blend150.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.362182447539055e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0002942225418798364,
+      "handoff_reason": "angle",
+      "handoff_s": 3.24,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h2-angle225-blend0.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.862294066323216e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0004306164974838718,
+      "handoff_reason": "angle",
+      "handoff_s": 3.54,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle225-blend150.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.761350368478247e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0006815541860106834,
+      "handoff_reason": "angle",
+      "handoff_s": 3.54,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h2-angle300-blend0.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.758347215196636e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00030842303861638304,
+      "handoff_reason": "angle",
+      "handoff_s": 3.74,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle300-blend150.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.72162436821111e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00030842303861638304,
+      "handoff_reason": "angle",
+      "handoff_s": 3.74,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h2-angle345-blend0.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.697757765072865e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00031644327184397053,
+      "handoff_reason": "angle",
+      "handoff_s": 3.92,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle345-blend150.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.605372082635341e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00031644327184397053,
+      "handoff_reason": "angle",
+      "handoff_s": 3.92,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h2-one-foot-top.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.571087285411892e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00031644327184397053,
+      "handoff_reason": "one_foot_top",
+      "handoff_s": 3.84,
+      "sampled_frames": 491
+    },
+    {
+      "trace_file": "h2-angle90-blend0.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.843264566125384e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00015854356347190166,
+      "handoff_reason": "angle",
+      "handoff_s": 3.0,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle90-blend60.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.960436740865994e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00015854356347190166,
+      "handoff_reason": "angle",
+      "handoff_s": 3.0,
+      "sampled_frames": 486
+    },
+    {
+      "trace_file": "h2-angle100-blend0.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.531272189747028e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00015854356347190166,
+      "handoff_reason": "angle",
+      "handoff_s": 3.06,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle100-blend60.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.785080275406585e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0002798667287160321,
+      "handoff_reason": "angle",
+      "handoff_s": 3.06,
+      "sampled_frames": 486
+    },
+    {
+      "trace_file": "h2-angle110-blend0.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.987226630617016e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00015854356347190166,
+      "handoff_reason": "angle",
+      "handoff_s": 3.12,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle110-blend60.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.420527998152181e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.000342476222029469,
+      "handoff_reason": "angle",
+      "handoff_s": 3.12,
+      "sampled_frames": 486
+    },
+    {
+      "trace_file": "h2-headguard14-timer2.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.629725657347763e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00032436970756464026,
+      "handoff_reason": "original_timer",
+      "handoff_s": 4.64,
+      "sampled_frames": 450
+    },
+    {
+      "trace_file": "h2-headguard21-timer2.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.735018931447456e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00040963360780239474,
+      "handoff_reason": "original_timer",
+      "handoff_s": 4.64,
+      "sampled_frames": 450
+    },
+    {
+      "trace_file": "h1-angle135-allmargin105.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.613626313267673e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0003018619716501896,
+      "handoff_reason": "angle",
+      "handoff_s": 3.16,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h1-angle135-allmargin140.json",
+      "independent_goal": true,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.570335386868464e-10,
+      "all_visible_mesh_max_step_overlap_m": 6.357926620211181e-05,
+      "handoff_reason": "angle",
+      "handoff_s": 3.16,
+      "sampled_frames": 482
+    },
+    {
+      "trace_file": "h2-angle135-headguard280.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 6.946548614106263e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.00027216971432285006,
+      "handoff_reason": "timeout",
+      "handoff_s": 5.66,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle135-headguard350.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.634849475384286e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.000441032194738733,
+      "handoff_reason": "timeout",
+      "handoff_s": 5.66,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h1-angle135-allmargin140-seed20261109.json",
+      "independent_goal": false,
+      "quality_gate": true,
+      "foot_bounds_max_error_m": 7.141828656243021e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0001568801680662136,
+      "handoff_reason": "angle",
+      "handoff_s": 3.0,
+      "sampled_frames": 475
+    },
+    {
+      "trace_file": "h1-angle135-allmargin140-seed20261110.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.452381129395945e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0002446041694389011,
+      "handoff_reason": "angle",
+      "handoff_s": 3.32,
+      "sampled_frames": 490
+    },
+    {
+      "trace_file": "h1-angle135-allmargin140-seed20261111.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.522168360945102e-10,
+      "all_visible_mesh_max_step_overlap_m": 7.998881607541516e-05,
+      "handoff_reason": "angle",
+      "handoff_s": 3.18,
+      "sampled_frames": 483
+    },
+    {
+      "trace_file": "h2-angle135-blend0-seed20261109.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.859997569996779e-10,
+      "all_visible_mesh_max_step_overlap_m": 9.337213662757166e-05,
+      "handoff_reason": "angle",
+      "handoff_s": 3.24,
+      "sampled_frames": 482
+    },
+    {
+      "trace_file": "h2-angle135-blend0-seed20261110.json",
+      "independent_goal": false,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.58941221032272e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0002853214659642271,
+      "handoff_reason": "angle",
+      "handoff_s": 3.54,
+      "sampled_frames": 490
+    },
+    {
+      "trace_file": "h2-angle135-blend0-seed20261111.json",
+      "independent_goal": true,
+      "quality_gate": false,
+      "foot_bounds_max_error_m": 6.544319669510301e-10,
+      "all_visible_mesh_max_step_overlap_m": 0.0002505199161340274,
+      "handoff_reason": "angle",
+      "handoff_s": 3.28,
+      "sampled_frames": 483
+    }
+  ],
+  "frames_checked": 20263,
+  "baselines": [
+    {
+      "trace_file": "h1-timer2.json",
+      "reference_trace_file": "search-v30-g03-d20.json",
+      "all_states_and_targets_identical": true
+    },
+    {
+      "trace_file": "h2-timer2.json",
+      "reference_trace_file": "height-2cm.json",
+      "all_states_and_targets_identical": true
+    }
+  ],
+  "byte_repeats": [
+    {
+      "trace_file": "h1-angle135-blend0.json",
+      "sha256": "0295830283170b6e3124c552ab826d49e31115acad0d95886e1e54029a21ecb0",
+      "byte_identical": true
+    },
+    {
+      "trace_file": "h2-angle135-blend0.json",
+      "sha256": "31797588549e41678b4ae04796a7b863b75c9c629eb10413760d748ab5047d51",
+      "byte_identical": true
+    }
+  ],
+  "corruption_rejected": [
+    "sole_geometry",
+    "illegal_target"
+  ],
+  "physics_steps": 810520,
+  "model_mass_kg": 15.137243179999999,
+  "code_sha256": "878eaf1da716839463dfa4daf493e501ace183156b5bad5201df31949511a347",
+  "summary_sha256": "8441867e4ab71f97247f4c9e7cbf152b842228963ad6578c30886404e259eb1d",
+  "signed_distance_bound_corrections": [
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -3.9972535831496464e-07,
+      "bounded_distance_m": 3.997253583149646e-07,
+      "geom_id": 2,
+      "vertex_lower": [
+        0.4563461658631352,
+        0.04538333112289168,
+        0.010000399725358315
+      ],
+      "vertex_upper": [
+        0.5179633537715452,
+        0.08082115964533579,
+        0.08539992064680038
+      ]
+    },
+    {
+      "raw_distance_m": -1.8143931683999026e-07,
+      "bounded_distance_m": 1.8143931683999026e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.48901448980506257,
+        0.06190897713933509,
+        0.01000018143931684
+      ],
+      "vertex_upper": [
+        0.5664919838086642,
+        0.11077881434128947,
+        0.04434983633503401
+      ]
+    },
+    {
+      "raw_distance_m": -3.969009914461114e-07,
+      "bounded_distance_m": 3.9690099144611135e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.49313008850954737,
+        0.06337627114926692,
+        0.010000396900991446
+      ],
+      "vertex_upper": [
+        0.5698335458737219,
+        0.11096351071937254,
+        0.05607394936318405
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -3.9972535831496464e-07,
+      "bounded_distance_m": 3.997253583149646e-07,
+      "geom_id": 2,
+      "vertex_lower": [
+        0.4563461658631352,
+        0.04538333112289168,
+        0.010000399725358315
+      ],
+      "vertex_upper": [
+        0.5179633537715452,
+        0.08082115964533579,
+        0.08539992064680038
+      ]
+    },
+    {
+      "raw_distance_m": -1.8143931683999026e-07,
+      "bounded_distance_m": 1.8143931683999026e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.48901448980506257,
+        0.06190897713933509,
+        0.01000018143931684
+      ],
+      "vertex_upper": [
+        0.5664919838086642,
+        0.11077881434128947,
+        0.04434983633503401
+      ]
+    },
+    {
+      "raw_distance_m": -3.969009914461114e-07,
+      "bounded_distance_m": 3.9690099144611135e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.49313008850954737,
+        0.06337627114926692,
+        0.010000396900991446
+      ],
+      "vertex_upper": [
+        0.5698335458737219,
+        0.11096351071937254,
+        0.05607394936318405
+      ]
+    },
+    {
+      "raw_distance_m": -6.226581818046667e-07,
+      "bounded_distance_m": 6.226581818064014e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.1522722232362691,
+        0.055947347434538525,
+        0.010000622658181807
+      ],
+      "vertex_upper": [
+        0.2094131646119617,
+        0.10288445690497679,
+        0.032761528633225304
+      ]
+    },
+    {
+      "raw_distance_m": -5.204298383180983e-07,
+      "bounded_distance_m": 5.204298383180983e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.155524393086332,
+        0.04122869085615548,
+        0.010000520429838318
+      ],
+      "vertex_upper": [
+        0.21427084930275006,
+        0.09133085823149523,
+        0.033416900760601255
+      ]
+    },
+    {
+      "raw_distance_m": -4.2260010401674875e-07,
+      "bounded_distance_m": 4.2260010401674875e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.17426844978281858,
+        -0.047219550485096705,
+        0.010000422600104017
+      ],
+      "vertex_upper": [
+        0.23447589639822083,
+        0.004077167278993106,
+        0.02345719090593025
+      ]
+    },
+    {
+      "raw_distance_m": -2.5440001093918196e-07,
+      "bounded_distance_m": 2.5440001093918196e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.17792961081077988,
+        -0.05292592427148094,
+        0.01000025440001094
+      ],
+      "vertex_upper": [
+        0.240675809858282,
+        0.006116448922413871,
+        0.025120524050856272
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6202570355588215e-07,
+      "bounded_distance_m": 3.6202570355588215e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24399459320707695,
+        0.0023706092350476438,
+        0.010000362025703556
+      ],
+      "vertex_upper": [
+        0.37034582377459774,
+        0.0952564859739195,
+        0.05917272524498996
+      ]
+    },
+    {
+      "raw_distance_m": -5.601687515753573e-08,
+      "bounded_distance_m": 5.601687515753573e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24474008521354434,
+        0.0004181920883460019,
+        0.010000056016875158
+      ],
+      "vertex_upper": [
+        0.3745846544756308,
+        0.09447743218417179,
+        0.06663820195609435
+      ]
+    },
+    {
+      "raw_distance_m": -4.3798112924452176e-07,
+      "bounded_distance_m": 4.379811292445218e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24041049922789212,
+        0.01863813178625181,
+        0.010000437981129245
+      ],
+      "vertex_upper": [
+        0.3676665394321963,
+        0.10926616632469058,
+        0.07175886042375287
+      ]
+    },
+    {
+      "raw_distance_m": -1.2497212056004903e-07,
+      "bounded_distance_m": 1.2497212056004903e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.27472290905866287,
+        0.28553508702975844,
+        0.01000012497212056
+      ],
+      "vertex_upper": [
+        0.3254683299091325,
+        0.34554234747938284,
+        0.044595565781305316
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.9435065644737033e-07,
+      "bounded_distance_m": 3.943506564456356e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.48457335950995195,
+        0.23943557378963765,
+        0.010000394350656446
+      ],
+      "vertex_upper": [
+        0.5437215018589711,
+        0.29804516054188734,
+        0.04397430068081547
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -7.186189642828523e-08,
+      "bounded_distance_m": 7.186189642134633e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.3856144707239374,
+        -0.0011873574902169087,
+        0.010000071861896422
+      ],
+      "vertex_upper": [
+        0.5059122742439777,
+        0.09174389727621796,
+        0.1278718097344801
+      ]
+    },
+    {
+      "raw_distance_m": -6.779656347259688e-08,
+      "bounded_distance_m": 6.779656346912744e-08,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.5933085435776071,
+        0.03848567841705487,
+        0.01000006779656347
+      ],
+      "vertex_upper": [
+        0.6549539366725912,
+        0.09182653803188039,
+        0.04634339259385799
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -2.559910911043712e-07,
+      "bounded_distance_m": 2.5599109110437113e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.4902956373101902,
+        0.061088041666578274,
+        0.010000255991091105
+      ],
+      "vertex_upper": [
+        0.569443943954705,
+        0.11397793832566705,
+        0.05076321737994807
+      ]
+    },
+    {
+      "raw_distance_m": -3.6660701959595476e-07,
+      "bounded_distance_m": 3.6660701959595476e-07,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.5714652553750884,
+        0.13404688613362545,
+        0.010000366607019596
+      ],
+      "vertex_upper": [
+        0.6377390361851918,
+        0.18669527733103616,
+        0.039552208697559044
+      ]
+    },
+    {
+      "raw_distance_m": -4.4458984845355276e-07,
+      "bounded_distance_m": 4.4458984845355265e-07,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.5725353824412672,
+        0.13506543966455462,
+        0.010000444589848454
+      ],
+      "vertex_upper": [
+        0.6348109458778566,
+        0.19189630329787133,
+        0.04333139634379149
+      ]
+    },
+    {
+      "raw_distance_m": -2.2476440993991764e-07,
+      "bounded_distance_m": 2.2476440993991764e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.4688504092662924,
+        0.16381326537488078,
+        0.01000022476440994
+      ],
+      "vertex_upper": [
+        0.5276886336511409,
+        0.22531659492451728,
+        0.037378249423001685
+      ]
+    },
+    {
+      "raw_distance_m": -8.340521353948638e-08,
+      "bounded_distance_m": 8.340521353948638e-08,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.5004396581518228,
+        0.12005091425407433,
+        0.01000008340521354
+      ],
+      "vertex_upper": [
+        0.5628523101005062,
+        0.1816360104754746,
+        0.023585261057380562
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -3.9972535831496464e-07,
+      "bounded_distance_m": 3.997253583149646e-07,
+      "geom_id": 2,
+      "vertex_lower": [
+        0.4563461658631352,
+        0.04538333112289168,
+        0.010000399725358315
+      ],
+      "vertex_upper": [
+        0.5179633537715452,
+        0.08082115964533579,
+        0.08539992064680038
+      ]
+    },
+    {
+      "raw_distance_m": -1.8143931683999026e-07,
+      "bounded_distance_m": 1.8143931683999026e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.48901448980506257,
+        0.06190897713933509,
+        0.01000018143931684
+      ],
+      "vertex_upper": [
+        0.5664919838086642,
+        0.11077881434128947,
+        0.04434983633503401
+      ]
+    },
+    {
+      "raw_distance_m": -3.969009914461114e-07,
+      "bounded_distance_m": 3.9690099144611135e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.49313008850954737,
+        0.06337627114926692,
+        0.010000396900991446
+      ],
+      "vertex_upper": [
+        0.5698335458737219,
+        0.11096351071937254,
+        0.05607394936318405
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -3.9972535831496464e-07,
+      "bounded_distance_m": 3.997253583149646e-07,
+      "geom_id": 2,
+      "vertex_lower": [
+        0.4563461658631352,
+        0.04538333112289168,
+        0.010000399725358315
+      ],
+      "vertex_upper": [
+        0.5179633537715452,
+        0.08082115964533579,
+        0.08539992064680038
+      ]
+    },
+    {
+      "raw_distance_m": -1.8143931683999026e-07,
+      "bounded_distance_m": 1.8143931683999026e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.48901448980506257,
+        0.06190897713933509,
+        0.01000018143931684
+      ],
+      "vertex_upper": [
+        0.5664919838086642,
+        0.11077881434128947,
+        0.04434983633503401
+      ]
+    },
+    {
+      "raw_distance_m": -3.969009914461114e-07,
+      "bounded_distance_m": 3.9690099144611135e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.49313008850954737,
+        0.06337627114926692,
+        0.010000396900991446
+      ],
+      "vertex_upper": [
+        0.5698335458737219,
+        0.11096351071937254,
+        0.05607394936318405
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -3.9972535831496464e-07,
+      "bounded_distance_m": 3.997253583149646e-07,
+      "geom_id": 2,
+      "vertex_lower": [
+        0.4563461658631352,
+        0.04538333112289168,
+        0.010000399725358315
+      ],
+      "vertex_upper": [
+        0.5179633537715452,
+        0.08082115964533579,
+        0.08539992064680038
+      ]
+    },
+    {
+      "raw_distance_m": -1.8143931683999026e-07,
+      "bounded_distance_m": 1.8143931683999026e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.48901448980506257,
+        0.06190897713933509,
+        0.01000018143931684
+      ],
+      "vertex_upper": [
+        0.5664919838086642,
+        0.11077881434128947,
+        0.04434983633503401
+      ]
+    },
+    {
+      "raw_distance_m": -3.969009914461114e-07,
+      "bounded_distance_m": 3.9690099144611135e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.49313008850954737,
+        0.06337627114926692,
+        0.010000396900991446
+      ],
+      "vertex_upper": [
+        0.5698335458737219,
+        0.11096351071937254,
+        0.05607394936318405
+      ]
+    },
+    {
+      "raw_distance_m": -1.7791595215317649e-07,
+      "bounded_distance_m": 1.7791595215317646e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.6590344385747837,
+        0.056356033508073736,
+        0.010000177915952153
+      ],
+      "vertex_upper": [
+        0.7152294515006554,
+        0.10066029711698285,
+        0.02474969133959174
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -3.9972535831496464e-07,
+      "bounded_distance_m": 3.997253583149646e-07,
+      "geom_id": 2,
+      "vertex_lower": [
+        0.4563461658631352,
+        0.04538333112289168,
+        0.010000399725358315
+      ],
+      "vertex_upper": [
+        0.5179633537715452,
+        0.08082115964533579,
+        0.08539992064680038
+      ]
+    },
+    {
+      "raw_distance_m": -1.8143931683999026e-07,
+      "bounded_distance_m": 1.8143931683999026e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.48901448980506257,
+        0.06190897713933509,
+        0.01000018143931684
+      ],
+      "vertex_upper": [
+        0.5664919838086642,
+        0.11077881434128947,
+        0.04434983633503401
+      ]
+    },
+    {
+      "raw_distance_m": -3.969009914461114e-07,
+      "bounded_distance_m": 3.9690099144611135e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.49313008850954737,
+        0.06337627114926692,
+        0.010000396900991446
+      ],
+      "vertex_upper": [
+        0.5698335458737219,
+        0.11096351071937254,
+        0.05607394936318405
+      ]
+    },
+    {
+      "raw_distance_m": -2.1666552135236883e-07,
+      "bounded_distance_m": 2.1666552135236883e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23970542366210046,
+        0.001973034099506804,
+        0.010000216665521353
+      ],
+      "vertex_upper": [
+        0.3628324197238815,
+        0.09790567191315425,
+        0.06928199915723438
+      ]
+    },
+    {
+      "raw_distance_m": -3.6270156924221586e-07,
+      "bounded_distance_m": 3.6270156924221586e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.246229578770663,
+        0.0037733813887481024,
+        0.010000362701569242
+      ],
+      "vertex_upper": [
+        0.37007140664339944,
+        0.09545437992455,
+        0.05810654805192203
+      ]
+    },
+    {
+      "raw_distance_m": -3.9972535831496464e-07,
+      "bounded_distance_m": 3.997253583149646e-07,
+      "geom_id": 2,
+      "vertex_lower": [
+        0.4563461658631352,
+        0.04538333112289168,
+        0.010000399725358315
+      ],
+      "vertex_upper": [
+        0.5179633537715452,
+        0.08082115964533579,
+        0.08539992064680038
+      ]
+    },
+    {
+      "raw_distance_m": -1.8143931683999026e-07,
+      "bounded_distance_m": 1.8143931683999026e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.48901448980506257,
+        0.06190897713933509,
+        0.01000018143931684
+      ],
+      "vertex_upper": [
+        0.5664919838086642,
+        0.11077881434128947,
+        0.04434983633503401
+      ]
+    },
+    {
+      "raw_distance_m": -3.969009914461114e-07,
+      "bounded_distance_m": 3.9690099144611135e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.49313008850954737,
+        0.06337627114926692,
+        0.010000396900991446
+      ],
+      "vertex_upper": [
+        0.5698335458737219,
+        0.11096351071937254,
+        0.05607394936318405
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -3.4747920225550177e-07,
+      "bounded_distance_m": 3.4747920225550177e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.5102122602363289,
+        0.10192694386915156,
+        0.020000347479202256
+      ],
+      "vertex_upper": [
+        0.5805995807281306,
+        0.15168254868134787,
+        0.08386968234743775
+      ]
+    },
+    {
+      "raw_distance_m": -3.877275994434992e-07,
+      "bounded_distance_m": 3.877275994434992e-07,
+      "geom_id": 118,
+      "vertex_lower": [
+        0.12532016909935123,
+        -0.023466675434505965,
+        0.0017692469809729994
+      ],
+      "vertex_upper": [
+        0.1799996122724006,
+        0.029879386462431233,
+        0.04476287790063328
+      ]
+    },
+    {
+      "raw_distance_m": -5.813822844848159e-07,
+      "bounded_distance_m": 5.81382284484816e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.19788396875135283,
+        -0.044339315214976735,
+        0.020000581382284485
+      ],
+      "vertex_upper": [
+        0.2590744963472948,
+        0.013708692183739983,
+        0.05288543633945153
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -2.1434181573729008e-07,
+      "bounded_distance_m": 2.1434181573729005e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23349578569373453,
+        0.01599841450919815,
+        0.020000214341815738
+      ],
+      "vertex_upper": [
+        0.36674042804850815,
+        0.11949040947389367,
+        0.09320036504424814
+      ]
+    },
+    {
+      "raw_distance_m": -2.197397301860471e-07,
+      "bounded_distance_m": 2.197397301860471e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2326716916722945,
+        0.028499539365846906,
+        0.020000219739730186
+      ],
+      "vertex_upper": [
+        0.3654416838214499,
+        0.12362393559360876,
+        0.10237347263597638
+      ]
+    },
+    {
+      "raw_distance_m": -1.4896954915119553e-07,
+      "bounded_distance_m": 1.4896954915119553e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21619685345242767,
+        0.10188144160853568,
+        0.02000014896954915
+      ],
+      "vertex_upper": [
+        0.32412616032574,
+        0.23182374286897695,
+        0.12236937583191633
+      ]
+    },
+    {
+      "raw_distance_m": -2.020044477350769e-07,
+      "bounded_distance_m": 2.0200444773507686e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.3027543521673885,
+        0.3121887996561543,
+        0.020000202004447735
+      ],
+      "vertex_upper": [
+        0.35573128432883594,
+        0.37322752963391875,
+        0.0338241428536282
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -7.527220020238369e-07,
+      "bounded_distance_m": 7.527220020238368e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23637164707526553,
+        0.00448383304396166,
+        0.020000752722002024
+      ],
+      "vertex_upper": [
+        0.36676548862699443,
+        0.1078080166406716,
+        0.06749109648576371
+      ]
+    },
+    {
+      "raw_distance_m": -3.4488995520609583e-07,
+      "bounded_distance_m": 3.448899552060958e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23619760031083575,
+        0.0023250651433325484,
+        0.020000344889955207
+      ],
+      "vertex_upper": [
+        0.3680945897117356,
+        0.10814103484105203,
+        0.07095580074826836
+      ]
+    },
+    {
+      "raw_distance_m": -1.0544383175284389e-07,
+      "bounded_distance_m": 1.0544383175284389e-07,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.44618912619447304,
+        0.1505324079699527,
+        0.020000105443831753
+      ],
+      "vertex_upper": [
+        0.5122609084269364,
+        0.20450682155964847,
+        0.049731389663598774
+      ]
+    },
+    {
+      "raw_distance_m": -1.7320656977085072e-07,
+      "bounded_distance_m": 1.732065697708507e-07,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.4575234377100772,
+        0.15874624431002474,
+        0.02000017320656977
+      ],
+      "vertex_upper": [
+        0.5182028624280668,
+        0.2186567877377664,
+        0.05240291497160693
+      ]
+    },
+    {
+      "raw_distance_m": -3.383984649336924e-07,
+      "bounded_distance_m": 3.383984649336924e-07,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.455510929736614,
+        0.16160150654547997,
+        0.020000338398464934
+      ],
+      "vertex_upper": [
+        0.5186448946302131,
+        0.2174348235820317,
+        0.05290770843843933
+      ]
+    },
+    {
+      "raw_distance_m": -5.51480068243515e-08,
+      "bounded_distance_m": 5.514800682782095e-08,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.45476689083178984,
+        0.16943758120435085,
+        0.020000055148006828
+      ],
+      "vertex_upper": [
+        0.5175987585146785,
+        0.21925604843241625,
+        0.06068400133317768
+      ]
+    },
+    {
+      "raw_distance_m": -2.07577295258804e-07,
+      "bounded_distance_m": 2.0757729525880397e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.36986003961620284,
+        0.2608091334999475,
+        0.02000020757729526
+      ],
+      "vertex_upper": [
+        0.4119232141236388,
+        0.3154785690374734,
+        0.03346569126270741
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -7.681315956804825e-07,
+      "bounded_distance_m": 7.681315956804824e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.6218627018324764,
+        0.08577525125200536,
+        0.02000076813159568
+      ],
+      "vertex_upper": [
+        0.6812272871711803,
+        0.13963381895922053,
+        0.048080365628264975
+      ]
+    },
+    {
+      "raw_distance_m": -6.217398948807351e-08,
+      "bounded_distance_m": 6.217398948807351e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.4338920871546351,
+        0.07050394895759254,
+        0.02000006217398949
+      ],
+      "vertex_upper": [
+        0.5356606105543024,
+        0.201334389195325,
+        0.1135370970694306
+      ]
+    },
+    {
+      "raw_distance_m": -5.232690626980064e-08,
+      "bounded_distance_m": 5.232690626980063e-08,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.456343722749731,
+        0.2130546861301385,
+        0.02000005232690627
+      ],
+      "vertex_upper": [
+        0.5183006492697414,
+        0.2751784086481599,
+        0.0338033498652636
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -8.080368449001063e-08,
+      "bounded_distance_m": 8.080368449001063e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.4274624153214682,
+        0.03673877355353915,
+        0.02000008080368449
+      ],
+      "vertex_upper": [
+        0.5268234251369645,
+        0.13074223239653268,
+        0.14520643851238005
+      ]
+    },
+    {
+      "raw_distance_m": -1.305298799776644e-07,
+      "bounded_distance_m": 1.305298799846033e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.4246805093726221,
+        0.058211278998374166,
+        0.020000130529879985
+      ],
+      "vertex_upper": [
+        0.5197203073393688,
+        0.1907124448988996,
+        0.12755653077501306
+      ]
+    },
+    {
+      "raw_distance_m": -3.2610801641713705e-07,
+      "bounded_distance_m": 3.261080164136676e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.46600120537743595,
+        0.13395874244742187,
+        0.020000326108016414
+      ],
+      "vertex_upper": [
+        0.5831123776567418,
+        0.26291868459606993,
+        0.09285532770915228
+      ]
+    },
+    {
+      "raw_distance_m": -2.6817322677438743e-07,
+      "bounded_distance_m": 2.681732267743875e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.44786029676095457,
+        0.2079741140191142,
+        0.020000268173226775
+      ],
+      "vertex_upper": [
+        0.5071893910592097,
+        0.27082473749150326,
+        0.03474023832714682
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -3.4747920225550177e-07,
+      "bounded_distance_m": 3.4747920225550177e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.5102122602363289,
+        0.10192694386915156,
+        0.020000347479202256
+      ],
+      "vertex_upper": [
+        0.5805995807281306,
+        0.15168254868134787,
+        0.08386968234743775
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -3.4747920225550177e-07,
+      "bounded_distance_m": 3.4747920225550177e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.5102122602363289,
+        0.10192694386915156,
+        0.020000347479202256
+      ],
+      "vertex_upper": [
+        0.5805995807281306,
+        0.15168254868134787,
+        0.08386968234743775
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -1.7228632889776388e-07,
+      "bounded_distance_m": 1.7228632889776385e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23715053924490864,
+        0.0039105733084252026,
+        0.020000172286328898
+      ],
+      "vertex_upper": [
+        0.3648466457839183,
+        0.10407450438836457,
+        0.06711911109713152
+      ]
+    },
+    {
+      "raw_distance_m": -3.6766808463040146e-07,
+      "bounded_distance_m": 3.6766808463040146e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24020371562350729,
+        0.009655365858227787,
+        0.02000036766808463
+      ],
+      "vertex_upper": [
+        0.3725300858120463,
+        0.10833163102052587,
+        0.07923828405864775
+      ]
+    },
+    {
+      "raw_distance_m": -3.4747920225550177e-07,
+      "bounded_distance_m": 3.4747920225550177e-07,
+      "geom_id": 8,
+      "vertex_lower": [
+        0.5102122602363289,
+        0.10192694386915156,
+        0.020000347479202256
+      ],
+      "vertex_upper": [
+        0.5805995807281306,
+        0.15168254868134787,
+        0.08386968234743775
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -7.256321081158812e-08,
+      "bounded_distance_m": 7.256321081158812e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.243137429713761,
+        0.009148122991022224,
+        0.020000072563210812
+      ],
+      "vertex_upper": [
+        0.36986600486029647,
+        0.10067473569752541,
+        0.07139773191223195
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -9.293516012656712e-08,
+      "bounded_distance_m": 9.293516012656711e-08,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.21499426281156225,
+        -0.0455573335942159,
+        0.020000092935160127
+      ],
+      "vertex_upper": [
+        0.2736882817714435,
+        0.016705199474696057,
+        0.04023375963704175
+      ]
+    },
+    {
+      "raw_distance_m": -8.814057114725494e-08,
+      "bounded_distance_m": 8.814057114725493e-08,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.21884859572789758,
+        -0.05313032955575063,
+        0.020000088140571148
+      ],
+      "vertex_upper": [
+        0.28064312698674365,
+        0.009145390309629946,
+        0.03357933210447555
+      ]
+    },
+    {
+      "raw_distance_m": -8.3431010961324e-07,
+      "bounded_distance_m": 8.343101096132399e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.21860729902124423,
+        -0.05315041087118015,
+        0.020000834310109614
+      ],
+      "vertex_upper": [
+        0.2803799321850234,
+        0.009137036328628004,
+        0.03380169924907357
+      ]
+    },
+    {
+      "raw_distance_m": -3.96667332376588e-07,
+      "bounded_distance_m": 3.966673323765879e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.21848024371118255,
+        -0.05265847654680397,
+        0.020000396667332377
+      ],
+      "vertex_upper": [
+        0.2800017078839254,
+        0.009792697124776203,
+        0.0336023697170583
+      ]
+    },
+    {
+      "raw_distance_m": -5.946589285293903e-07,
+      "bounded_distance_m": 5.946589285293902e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.21829526983991016,
+        -0.05169499926718791,
+        0.02000059465892853
+      ],
+      "vertex_upper": [
+        0.27932064853055394,
+        0.010980435932188483,
+        0.03348462937216027
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -3.359161329132e-07,
+      "bounded_distance_m": 3.359161329131999e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.240968749612231,
+        0.004929384168285485,
+        0.020000335916132914
+      ],
+      "vertex_upper": [
+        0.3719674886826696,
+        0.10162049879001836,
+        0.07824481899713238
+      ]
+    },
+    {
+      "raw_distance_m": -4.2738759984881086e-07,
+      "bounded_distance_m": 4.273875998488108e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.13375413585809665,
+        0.012201932615118025,
+        0.02000042738759985
+      ],
+      "vertex_upper": [
+        0.19597750759195598,
+        0.06937419274800154,
+        0.0433432356004014
+      ]
+    },
+    {
+      "raw_distance_m": -1.7279629488040071e-07,
+      "bounded_distance_m": 1.7279629488040071e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.2297181000914154,
+        -0.03133166800747712,
+        0.02000017279629488
+      ],
+      "vertex_upper": [
+        0.2790157400967841,
+        0.027810532886159575,
+        0.03342314119964548
+      ]
+    },
+    {
+      "raw_distance_m": -3.875395743237199e-07,
+      "bounded_distance_m": 3.8753957432371977e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.21109363910237502,
+        -0.0002945631033937704,
+        0.020000387539574324
+      ],
+      "vertex_upper": [
+        0.3188156229990817,
+        0.09561945320121634,
+        0.13172668769634932
+      ]
+    },
+    {
+      "raw_distance_m": -8.2936040878695e-08,
+      "bounded_distance_m": 8.2936040878695e-08,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.1604911727804498,
+        0.14463571245692813,
+        0.02000008293604088
+      ],
+      "vertex_upper": [
+        0.22622628305619258,
+        0.19420644010473698,
+        0.05100444536273396
+      ]
+    },
+    {
+      "raw_distance_m": -4.429691523206991e-07,
+      "bounded_distance_m": 4.429691523206991e-07,
+      "geom_id": 109,
+      "vertex_lower": [
+        0.5209231555384078,
+        -0.19951010068569686,
+        0.02000044296915232
+      ],
+      "vertex_upper": [
+        0.5652787108832296,
+        -0.1597502452960015,
+        0.08168510545137472
+      ]
+    },
+    {
+      "raw_distance_m": -4.327257675310059e-07,
+      "bounded_distance_m": 4.327257675310059e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.6313560018335426,
+        -0.14411701334473345,
+        0.02000043272576753
+      ],
+      "vertex_upper": [
+        0.6934677648334501,
+        -0.08840308400928584,
+        0.03332800019142743
+      ]
+    },
+    {
+      "raw_distance_m": -1.7674765586186972e-07,
+      "bounded_distance_m": 1.767476558618697e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.601522194358727,
+        -0.22271825224815217,
+        0.020000176747655862
+      ],
+      "vertex_upper": [
+        0.6611657991348413,
+        -0.17251410212504606,
+        0.03449583640612687
+      ]
+    },
+    {
+      "raw_distance_m": -2.1766640003785529e-07,
+      "bounded_distance_m": 2.176664000378553e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24917857158656498,
+        -0.00825843095223465,
+        0.010000217666400038
+      ],
+      "vertex_upper": [
+        0.3777054982615017,
+        0.08583230163923636,
+        0.06357776540407156
+      ]
+    },
+    {
+      "raw_distance_m": -5.369080808594052e-08,
+      "bounded_distance_m": 5.369080808594051e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24586869748614137,
+        0.04367011163366624,
+        0.010000053690808086
+      ],
+      "vertex_upper": [
+        0.37750158968112435,
+        0.14220093269666384,
+        0.09709456873783617
+      ]
+    },
+    {
+      "raw_distance_m": -6.36073384708072e-07,
+      "bounded_distance_m": 6.360733847080718e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2552648600747429,
+        0.1079022647110171,
+        0.010000636073384708
+      ],
+      "vertex_upper": [
+        0.34443278859967297,
+        0.22817043061313008,
+        0.0916623696020328
+      ]
+    },
+    {
+      "raw_distance_m": -6.223995941030681e-08,
+      "bounded_distance_m": 6.22399594103068e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.33389143610796196,
+        0.040764190108273576,
+        0.01000006223995941
+      ],
+      "vertex_upper": [
+        0.41486882840421785,
+        0.1521602060073079,
+        0.1335356686590766
+      ]
+    },
+    {
+      "raw_distance_m": -2.1002180513284013e-07,
+      "bounded_distance_m": 2.1002180513284008e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.4568237378696593,
+        0.25683103827446624,
+        0.010000210021805133
+      ],
+      "vertex_upper": [
+        0.5089304643343893,
+        0.31351561487727836,
+        0.043313569524142184
+      ]
+    },
+    {
+      "raw_distance_m": -4.3297392847245486e-07,
+      "bounded_distance_m": 4.3297392847245486e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.3626425869363786,
+        0.11924998468759836,
+        0.010000432973928473
+      ],
+      "vertex_upper": [
+        0.4647003061240067,
+        0.24692889518726768,
+        0.08359560536459776
+      ]
+    },
+    {
+      "raw_distance_m": -3.9787141793527775e-07,
+      "bounded_distance_m": 3.978714179352777e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.34513027150838144,
+        0.19506146345950148,
+        0.010000397871417935
+      ],
+      "vertex_upper": [
+        0.40302202950218263,
+        0.25723644026125947,
+        0.03245850949094453
+      ]
+    },
+    {
+      "raw_distance_m": -9.43067784784507e-08,
+      "bounded_distance_m": 9.430677847151181e-08,
+      "geom_id": 71,
+      "vertex_lower": [
+        0.30416809658162763,
+        0.037875995733467324,
+        0.010000094306778472
+      ],
+      "vertex_upper": [
+        0.3972285797936461,
+        0.07148572584137057,
+        0.1314958399853594
+      ]
+    },
+    {
+      "raw_distance_m": -3.8477558898276925e-07,
+      "bounded_distance_m": 3.847755889827692e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.25947504172557817,
+        -0.016361276076750537,
+        0.010000384775588983
+      ],
+      "vertex_upper": [
+        0.37641002555276976,
+        0.08431325237038109,
+        0.13045577541745335
+      ]
+    },
+    {
+      "raw_distance_m": -1.2375032641155637e-07,
+      "bounded_distance_m": 1.2375032641155637e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2650690647405408,
+        -0.06918529816029473,
+        0.010000123750326412
+      ],
+      "vertex_upper": [
+        0.38423013896421765,
+        0.022300845563198318,
+        0.07130619958703348
+      ]
+    },
+    {
+      "raw_distance_m": -3.8644983253559306e-07,
+      "bounded_distance_m": 3.8644983253559306e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.26401741961306235,
+        -0.09501629146556126,
+        0.010000386449832536
+      ],
+      "vertex_upper": [
+        0.398092345755988,
+        0.015882618248497495,
+        0.07281275292929992
+      ]
+    },
+    {
+      "raw_distance_m": -2.3197936253362142e-07,
+      "bounded_distance_m": 2.319793625336214e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.33295478152282404,
+        -0.05134445879040635,
+        0.010000231979362534
+      ],
+      "vertex_upper": [
+        0.4133595838890618,
+        0.061066456428816335,
+        0.1336001109174686
+      ]
+    },
+    {
+      "raw_distance_m": -7.81851224202282e-07,
+      "bounded_distance_m": 7.818512241988124e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.488622134509091,
+        0.14894657859232305,
+        0.010000781851224199
+      ],
+      "vertex_upper": [
+        0.5495994825957349,
+        0.2027094731025409,
+        0.05179060872609931
+      ]
+    },
+    {
+      "raw_distance_m": -7.529808949482966e-07,
+      "bounded_distance_m": 7.529808949482963e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.46886419060633516,
+        0.15287114243022087,
+        0.010000752980894949
+      ],
+      "vertex_upper": [
+        0.5118645753718075,
+        0.20719402055978947,
+        0.03559232653494569
+      ]
+    },
+    {
+      "raw_distance_m": -1.513122312602616e-07,
+      "bounded_distance_m": 1.513122312602616e-07,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.45096270669719424,
+        0.15318018748284254,
+        0.01000015131223126
+      ],
+      "vertex_upper": [
+        0.5152149391891875,
+        0.2053429086984986,
+        0.042981847713218474
+      ]
+    },
+    {
+      "raw_distance_m": -7.625769833825846e-08,
+      "bounded_distance_m": 7.625769833825846e-08,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.452916112873536,
+        0.15100788807060905,
+        0.010000076257698338
+      ],
+      "vertex_upper": [
+        0.51560030379236,
+        0.20703468583166992,
+        0.03936052621458293
+      ]
+    },
+    {
+      "raw_distance_m": -3.2778707131399243e-07,
+      "bounded_distance_m": 3.2778707131399243e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.3204994535858693,
+        0.09319375144491875,
+        0.010000327787071314
+      ],
+      "vertex_upper": [
+        0.4063884569856197,
+        0.20900004557433244,
+        0.13134341419744716
+      ]
+    },
+    {
+      "raw_distance_m": -4.1907353879634684e-07,
+      "bounded_distance_m": 4.190735387963468e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.3227419052152788,
+        0.09666235042786589,
+        0.010000419073538797
+      ],
+      "vertex_upper": [
+        0.41072800915410107,
+        0.2147917754964388,
+        0.12976278145659947
+      ]
+    },
+    {
+      "raw_distance_m": -0.04299620788499765,
+      "bounded_distance_m": 8.698751778838526e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.5382559047506651,
+        0.19113051017104357,
+        0.010000869875177884
+      ],
+      "vertex_upper": [
+        0.5697779188337864,
+        0.24929984462237592,
+        0.06332063508130174
+      ]
+    },
+    {
+      "raw_distance_m": -2.0832631164244278e-07,
+      "bounded_distance_m": 2.0832631164244275e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2485225416615992,
+        -0.010451296908560101,
+        0.020000208326311643
+      ],
+      "vertex_upper": [
+        0.37837121874253177,
+        0.0857006044764379,
+        0.0728544094855578
+      ]
+    },
+    {
+      "raw_distance_m": -7.267887095797898e-07,
+      "bounded_distance_m": 7.267887095797898e-07,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.31266375111214856,
+        0.22261104005671134,
+        0.02000072678870958
+      ],
+      "vertex_upper": [
+        0.3685282404627392,
+        0.28166026410697487,
+        0.055369861427427114
+      ]
+    },
+    {
+      "raw_distance_m": -7.44864359202707e-07,
+      "bounded_distance_m": 7.448643592027071e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2520116291247725,
+        0.06152843978395392,
+        0.020000744864359203
+      ],
+      "vertex_upper": [
+        0.36903635010051955,
+        0.16761987921236032,
+        0.1354849596851878
+      ]
+    },
+    {
+      "raw_distance_m": -8.097936008560902e-08,
+      "bounded_distance_m": 8.097936008560902e-08,
+      "geom_id": 20,
+      "vertex_lower": [
+        0.3153678508867173,
+        0.21747362499935885,
+        0.020000080979360086
+      ],
+      "vertex_upper": [
+        0.3743969848583378,
+        0.27061721276632256,
+        0.054636035888424805
+      ]
+    },
+    {
+      "raw_distance_m": -1.150989292868221e-07,
+      "bounded_distance_m": 1.1509892928682208e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24030434546039847,
+        0.06543702665011099,
+        0.020000115098929287
+      ],
+      "vertex_upper": [
+        0.3624691739762844,
+        0.18396802324504197,
+        0.12103784216601762
+      ]
+    },
+    {
+      "raw_distance_m": -4.4388616238580375e-07,
+      "bounded_distance_m": 4.4388616238927314e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2343901307759776,
+        0.06882707454326761,
+        0.02000044388616239
+      ],
+      "vertex_upper": [
+        0.3603080707861274,
+        0.18890267151302248,
+        0.11206603708025052
+      ]
+    },
+    {
+      "raw_distance_m": -9.359504911585217e-07,
+      "bounded_distance_m": 9.359504911585215e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.2599842462716325,
+        0.2418753903708997,
+        0.02000093595049116
+      ],
+      "vertex_upper": [
+        0.3205995937160846,
+        0.2939931183138292,
+        0.03355809570252959
+      ]
+    },
+    {
+      "raw_distance_m": -1.6436903120878313e-07,
+      "bounded_distance_m": 1.643690312087831e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2587327984403224,
+        -0.05415099481419216,
+        0.02000016436903121
+      ],
+      "vertex_upper": [
+        0.3850639556273202,
+        0.03764491890054415,
+        0.07843148373064845
+      ]
+    },
+    {
+      "raw_distance_m": -7.341413102088246e-08,
+      "bounded_distance_m": 7.341413102088246e-08,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.2284686982572908,
+        0.004630578034370322,
+        0.02000007341413102
+      ],
+      "vertex_upper": [
+        0.3492186668011371,
+        0.10395618923173891,
+        0.10462820769003706
+      ]
+    },
+    {
+      "raw_distance_m": -4.748981086225013e-07,
+      "bounded_distance_m": 4.7489810862250126e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24168258594777714,
+        0.005233768322521953,
+        0.020000474898108623
+      ],
+      "vertex_upper": [
+        0.37367483087864917,
+        0.11056192497152656,
+        0.07251578750578161
+      ]
+    },
+    {
+      "raw_distance_m": -2.5762896636513655e-07,
+      "bounded_distance_m": 2.5762896636513655e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.24095784829156197,
+        0.0027569775851178924,
+        0.020000257628966366
+      ],
+      "vertex_upper": [
+        0.37321629222088915,
+        0.11008950088572309,
+        0.07265928092877724
+      ]
+    },
+    {
+      "raw_distance_m": -2.4214516466253283e-07,
+      "bounded_distance_m": 2.421451646625328e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23733291676413631,
+        0.00801665387604332,
+        0.020000242145164663
+      ],
+      "vertex_upper": [
+        0.37015230869110066,
+        0.11919415233597512,
+        0.07278693571977078
+      ]
+    },
+    {
+      "raw_distance_m": -1.1153830545632126e-07,
+      "bounded_distance_m": 1.1153830545979071e-07,
+      "geom_id": 62,
+      "vertex_lower": [
+        0.23603241948050813,
+        0.022608631768371086,
+        0.02000011153830546
+      ],
+      "vertex_upper": [
+        0.36652577035033446,
+        0.12449717261416983,
+        0.0834293655247895
+      ]
+    },
+    {
+      "raw_distance_m": -5.047809192963715e-07,
+      "bounded_distance_m": 5.047809192963715e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.21223149326836765,
+        0.2913117950246973,
+        0.020000504780919297
+      ],
+      "vertex_upper": [
+        0.2732902196670085,
+        0.35306698942552694,
+        0.043450273675570444
+      ]
+    },
+    {
+      "raw_distance_m": -2.2564156066176566e-07,
+      "bounded_distance_m": 2.2564156066176566e-07,
+      "geom_id": 28,
+      "vertex_lower": [
+        0.211845415839971,
+        0.29100087366544936,
+        0.020000225641560662
+      ],
+      "vertex_upper": [
+        0.2730601716516827,
+        0.35240762761138966,
+        0.044520957397279556
+      ]
+    },
+    {
+      "raw_distance_m": -1.0740631043934524e-07,
+      "bounded_distance_m": 1.0740631043934523e-07,
+      "geom_id": 115,
+      "vertex_lower": [
+        0.29187722493118545,
+        0.1735723590494982,
+        0.02000010740631044
+      ],
+      "vertex_upper": [
+        0.34823873347904105,
+        0.22133399487219815,
+        0.04882713068921892
+      ]
+    }
+  ],
+  "hardware_tested": false,
+  "policy_weights_changed": false
+}
