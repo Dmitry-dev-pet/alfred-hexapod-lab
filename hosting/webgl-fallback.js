@@ -14,5 +14,6 @@ window.addEventListener('error', event => {
   const disable = () => {
     for (const control of document.querySelectorAll('#play,#seek,#speed,#reset-camera,.hx-play,.hx-seek,.hx-speed,.hx-reset')) control.disabled=true;
   };
+  for (const loading of stage.querySelectorAll('.md-loading,.lite3-status,.pilot-load')) loading.hidden=true;
   disable(); setTimeout(disable,0);
 });

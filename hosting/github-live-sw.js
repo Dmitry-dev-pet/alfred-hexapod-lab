@@ -8,7 +8,7 @@ const GH_REPO = 'alfred-hexapod-lab';
 const GH_BRANCH = 'feature/android-local-offline-viewer-20261104';
 const GH_API = 'https://api.github.com/repos/'+GH_OWNER+'/'+GH_REPO+'/branches/'+GH_BRANCH;
 const GH_RAW = 'https://raw.githubusercontent.com/'+GH_OWNER+'/'+GH_REPO+'/';
-const CACHE_NAME = 'alfred-robot-github-catalog-v1';
+const CACHE_NAME = 'alfred-robot-github-catalog-v3';
 const META_KEY = '/__alfred_github_catalog_v1.json';
 const MAX_CATALOG_BYTES = 250_000;
 const MAX_FILE_BYTES = 8_000_000;
@@ -157,6 +157,10 @@ async function serveAsset(item, path, file) {
                              '/vendor/three/build/three.module.js')
                  .replaceAll('https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/',
                              '/vendor/three/examples/jsm/');
+      // Shared UI needs the same boot/fallback on replay pages loaded from GitHub.
+      const scripts = (html.includes('src="/github-live-boot.js"') ? '' : '<script src="/github-live-boot.js"></script>') +
+        (html.includes('src="/webgl-fallback.js"') ? '' : '<script src="/webgl-fallback.js"></script>');
+      html = html.replace('</head>', scripts + '</head>');
       payload = new TextEncoder().encode(html);
     }
     const response = publicResponse(payload, path);
@@ -202,6 +206,8 @@ self.addEventListener('activate', event => event.waitUntil(self.clients.claim())
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || new URL(event.request.url).origin !== SAME_ORIGIN) return;
   const pathname = new URL(event.request.url).pathname;
+  // The hosted UI must load immediately even if GitHub is slow/offline.
+  if (pathname === '/hexapod/player-shell.js' || pathname === '/hexapod/player-shell.css') return;
   if (!pathname.startsWith('/hexapod/')) return;
   event.respondWith(handle(event));
 });

@@ -5,7 +5,7 @@ try {
   const data = await response.json();
   for (const item of data.videos) {
     if (!/^[a-zA-Z0-9_-]+\.mp4$/.test(item.filename)) continue;
-    const card = document.createElement('article'); card.className='video-card';
+    const card = document.createElement('article'); card.className='video-card'; card.id=item.filename;
     const video = document.createElement('video');
     video.controls=true; video.playsInline=true; video.preload='metadata';
     video.src='./'+item.filename; video.setAttribute('aria-label',item.title);
@@ -21,6 +21,10 @@ try {
     card.append(video,info); document.querySelector('#videos').append(card);
   }
   status.textContent = data.videos.length ? '' : 'В этой публикации ещё нет видеозаписей.';
+  if (location.hash) {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    target?.scrollIntoView({block:'start'});
+  }
 } catch (error) {
   status.textContent='Не удалось загрузить видеозаписи. Обновите страницу при подключении к интернету.';
 }
