@@ -1,0 +1,19 @@
+{
+  "schema": "en01-source-jump-verification/v1",
+  "final_cases": 24,
+  "repeat_cases": 24,
+  "final_physical_steps": 144000,
+  "repeat_physical_steps": 144000,
+  "final_frames": 7200,
+  "final_and_repeat_all_files_byte_identical": true,
+  "zero_anchor_1ms_baseline_max_qpos_difference_from_v3": 2.6645352591003757e-14,
+  "all_frame_qpos_pose_max_residual": 0.0,
+  "focused_unit_tests_pass": 8,
+  "actual_three_part_transforms_checked": 525600,
+  "actual_three_max_numeric_residual_m": 4.440892098500626e-16,
+  "webgl_visual_qa_verified": false,
+  "review_package_records": 24,
+  "review_catalog_old_entries_preserved": 62,
+  "review_catalog_entries": 86,
+  "review_package_publish_refused": true
+}

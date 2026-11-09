@@ -1,0 +1,58 @@
+{
+  "schema": "en01-source-jump-audit/v1",
+  "upstream_commit": "3139f2fb32b38d10611feb905e16f8aa012f2f2e",
+  "firmware_blob": "c5c69e515d7d2a22edc3779667fc3edfe4045ae9",
+  "servo_blob": "cb945e94855da31e050b9b482a9ad2682376811e",
+  "web_blob": "0400a92d7f1de9d4374367c5c3936d39032a5b5f",
+  "compiled_original_cpp_iterations": 480,
+  "all_commands_and_flags_match": true,
+  "transitions": [
+    {
+      "iteration": 0,
+      "event": "extend"
+    },
+    {
+      "iteration": 29,
+      "event": "return"
+    },
+    {
+      "iteration": 190,
+      "event": "resume"
+    },
+    {
+      "iteration": 250,
+      "event": "extend"
+    },
+    {
+      "iteration": 279,
+      "event": "return"
+    },
+    {
+      "iteration": 440,
+      "event": "resume"
+    }
+  ],
+  "normal_positions_38": [
+    2110,
+    1986
+  ],
+  "extend_positions": [
+    2463,
+    1632
+  ],
+  "return_positions": [
+    2127,
+    1968
+  ],
+  "launch_targets_at_anchor_zero_rad": [
+    0.5414952181236313,
+    0.543029198911517
+  ],
+  "return_targets_at_anchor_zero_rad": [
+    0.02607767339405591,
+    0.027611654181941545
+  ],
+  "source_loop_fixed_period": false,
+  "source_voltage_to_torque_calibrated": false,
+  "speed_acc_zero_interpretation": "Exact zero protocol bytes; physical internal-servo response unverified"
+}
