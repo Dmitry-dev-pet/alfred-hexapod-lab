@@ -104,9 +104,9 @@ def build(source: Path, site: Path, vendor: Path, media: Path | None = None) -> 
             html.write_text(text.replace('</head>', '<script src="/github-live-boot.js"></script><script src="/webgl-fallback.js"></script></head>'))
         shutil.copyfile(source / 'hosting/webgl-fallback.js', stage / 'webgl-fallback.js')
         shell = stage / 'hexapod/player-shell.js'
-        shell.write_text(adapt_shell(shell.read_text(), build_id, (source / 'hosting/player-refresh-live.js').read_text()))
+        shell.write_text((source / 'hosting/mobile-player-shell.js').read_text())
         css = stage / 'hexapod/player-shell.css'
-        css.write_text(css.read_text() + '\n.hx-videos-link{display:block;text-align:center;color:#a8dfff;text-decoration:none;padding:13px;border:1px solid #33444f;border-radius:10px;margin-bottom:10px;font:600 14px system-ui}.hx-videos-link:focus-visible{outline:2px solid #a8dfff;outline-offset:3px}\n')
+        css.write_text((source / 'hosting/mobile-player-shell.css').read_text())
         shutil.copytree(source / 'hosting/videos', stage / 'videos')
         if media:
             metadata = json.loads((media / 'media.json').read_text())

@@ -9,7 +9,7 @@ const sha = '0123456789abcdef0123456789abcdef01234567';
 const owner='Dmitry-dev-pet/alfred-hexapod-lab';
 const ghRoot='https://raw.githubusercontent.com/'+owner+'/'+sha+'/docs/';
 const digest = text => createHash('sha256').update(text).digest('hex');
-const html='<!doctype html><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}</script><script type="module" src="/hexapod/microduck/app.js"></script>';
+const html='<!doctype html><html><head><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}</script></head><body><script type="module" src="/hexapod/microduck/app.js"></script></body></html>';
 const js="export const ok = 1;";
 const sample=JSON.stringify({format:'replay-v1',frames:[1,2]});
 const payloads = {'hexapod/microduck/index.html':html,'hexapod/microduck/app.js':js,'hexapod/microduck/pose.json':sample};
@@ -64,7 +64,10 @@ test('verified HTML, JavaScript and JSON get correct browser MIME types',async()
  const h=await env.request('/hexapod/microduck/');
  assert.equal(h.status,200);
  assert.match(h.headers.get('Content-Type'),/text\/html/);
- assert.match(await h.text(),/\/vendor\/three\/build\/three.module.js/);
+ const output=await h.text();
+ assert.match(output,/\/vendor\/three\/build\/three.module.js/);
+ assert.match(output,/<script src="\/github-live-boot.js"><\/script>/);
+ assert.match(output,/<script src="\/webgl-fallback.js"><\/script>/);
  const s=await env.request('/hexapod/microduck/app.js');
  assert.equal(s.status,200);assert.match(s.headers.get('Content-Type'),/text\/javascript/);
  assert.equal(await s.text(),js);
@@ -91,4 +94,10 @@ test('previously verified catalog and replay stay available when offline',async(
  const c=await env.request('/hexapod/library.json');
  assert.equal(c.status,200);assert.equal(c.headers.get('X-Alfred-Catalog-Source'),'cached-github');assert.equal((await c.json()).revision,36);
  assert.equal((await env.request('/hexapod/microduck/app.js')).status,200);
+});
+test('shared hosted controls never wait for GitHub, including when offline',async()=>{
+ const env=init();env.status.offline=true;
+ assert.equal(await env.request('/hexapod/player-shell.js'),null);
+ assert.equal(await env.request('/hexapod/player-shell.css?v=old'),null);
+ assert.equal(env.fetched.length,0);
 });

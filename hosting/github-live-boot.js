@@ -27,7 +27,13 @@
     })().catch(error => {
       console.warn('Alfred GitHub live catalog unavailable; bundled recordings remain available.', error);
       return false;
+    }).then(ok => {
+      // A slow first claim can finish after the six-second wait. Allow retry.
+      if (!ok) promise = null;
+      return ok;
     });
     return promise;
   };
+  // Start registration before a replay engine or its shared shell executes.
+  window.alfredGithubCatalogBoot();
 })();
