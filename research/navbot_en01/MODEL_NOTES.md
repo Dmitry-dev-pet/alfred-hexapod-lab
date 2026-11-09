@@ -1,6 +1,8 @@
 # NavBot EN01 — actuator-grounded MuJoCo prototype (P0)
 
 Status: **APPROXIMATE MODEL / CPU PHYSICS EXERCISED, HARDWARE NOT VALIDATED** (2026-11-08).
+
+**UNVERIFIED**: wheel torque, current sold motor SKU and servo power rail; the v1 CAD-pose variant is only a static-pose surrogate, NOT a validated four-bar linkage.
 Owner project: [Alfred Hexapod Lab](../../README.md), independent of the SeBaJu W0 baseline in [#93](https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/issues/93).
 Do not merge into main without owner review. Do not publish a replay until it comes from a measured MuJoCo trajectory.
 
