@@ -1,0 +1,162 @@
+{
+  "schema": "en01-getup-protocol/v1",
+  "version": 8,
+  "duration_s": 6,
+  "settle_s": 0.75,
+  "recovery_deadline_s": 3.5,
+  "timestep_s": 0.00025,
+  "control_period_s_ASSUMED": 0.005,
+  "initial_hip_q_rad": 0.1,
+  "initial_surface_gap_m": 0.0005,
+  "orientations": [
+    "front",
+    "back"
+  ],
+  "strategies": [
+    "tuck-pos-150",
+    "tuck-pos-500",
+    "tuck-neg-150",
+    "tuck-neg-500",
+    "mid-pos-150",
+    "mid-pos-500",
+    "mid-neg-150",
+    "mid-neg-500",
+    "baseline-pos-150",
+    "baseline-pos-500",
+    "baseline-neg-150",
+    "baseline-neg-500",
+    "extend-pos-150",
+    "extend-pos-500",
+    "extend-neg-150",
+    "extend-neg-500",
+    "tuck-only",
+    "extend-only",
+    "idle",
+    "balance"
+  ],
+  "acceptance": {
+    "final_stable_s": 2.0,
+    "max_tilt_deg": 15,
+    "min_each_wheel_normal_force_n": 0.15,
+    "max_nonwheel_normal_force_n": 0.05,
+    "max_axle_speed_m_s": 0.03,
+    "max_body_angular_speed_rad_s": 0.3,
+    "max_floor_penetration_m": 0.002,
+    "max_self_proxy_penetration_m": 0.002,
+    "max_closure_error_m": 0.001,
+    "operating_q_min_rad": 0,
+    "operating_q_max_rad": 0.65
+  },
+  "notes": [
+    "Same frozen v7 mechanics, floor and original CAD; commands only change",
+    "At 0.75 s begin 0.3 s hip ramp, wheels remain at zero",
+    "Pulse begins only after both hips within 0.015 rad and below 0.1 rad/s for 0.1 s; preparation times out after 1.25 s with no pulse",
+    "Pulse is one rectangular 0.03 Nm per wheel command, held for 0.15 or 0.5 s; then zero until balance capture",
+    "Leg q=0.02 is most retracted, q=0.06 intermediate, q=0.1 matched baseline, q=0.45 extended comparison",
+    "Balance capture allowed only after pulse ends, tilt<20deg and two wheels loaded; capture lost at 35deg",
+    "Control period assumed 5ms; all original v7 success/geometry criteria retained"
+  ],
+  "experiment": "tuck_impulse_v8",
+  "cases": {
+    "tuck-pos-150": {
+      "target": 0.02,
+      "sign": 1,
+      "pulse_s": 0.15
+    },
+    "tuck-pos-500": {
+      "target": 0.02,
+      "sign": 1,
+      "pulse_s": 0.5
+    },
+    "tuck-neg-150": {
+      "target": 0.02,
+      "sign": -1,
+      "pulse_s": 0.15
+    },
+    "tuck-neg-500": {
+      "target": 0.02,
+      "sign": -1,
+      "pulse_s": 0.5
+    },
+    "mid-pos-150": {
+      "target": 0.06,
+      "sign": 1,
+      "pulse_s": 0.15
+    },
+    "mid-pos-500": {
+      "target": 0.06,
+      "sign": 1,
+      "pulse_s": 0.5
+    },
+    "mid-neg-150": {
+      "target": 0.06,
+      "sign": -1,
+      "pulse_s": 0.15
+    },
+    "mid-neg-500": {
+      "target": 0.06,
+      "sign": -1,
+      "pulse_s": 0.5
+    },
+    "baseline-pos-150": {
+      "target": 0.1,
+      "sign": 1,
+      "pulse_s": 0.15
+    },
+    "baseline-pos-500": {
+      "target": 0.1,
+      "sign": 1,
+      "pulse_s": 0.5
+    },
+    "baseline-neg-150": {
+      "target": 0.1,
+      "sign": -1,
+      "pulse_s": 0.15
+    },
+    "baseline-neg-500": {
+      "target": 0.1,
+      "sign": -1,
+      "pulse_s": 0.5
+    },
+    "extend-pos-150": {
+      "target": 0.45,
+      "sign": 1,
+      "pulse_s": 0.15
+    },
+    "extend-pos-500": {
+      "target": 0.45,
+      "sign": 1,
+      "pulse_s": 0.5
+    },
+    "extend-neg-150": {
+      "target": 0.45,
+      "sign": -1,
+      "pulse_s": 0.15
+    },
+    "extend-neg-500": {
+      "target": 0.45,
+      "sign": -1,
+      "pulse_s": 0.5
+    },
+    "tuck-only": {
+      "target": 0.02,
+      "sign": 0,
+      "pulse_s": 0.5
+    },
+    "extend-only": {
+      "target": 0.45,
+      "sign": 0,
+      "pulse_s": 0.5
+    },
+    "idle": {
+      "target": 0.1,
+      "sign": 0,
+      "pulse_s": 0
+    },
+    "balance": {
+      "target": 0.1,
+      "sign": 0,
+      "pulse_s": 0
+    }
+  }
+}
