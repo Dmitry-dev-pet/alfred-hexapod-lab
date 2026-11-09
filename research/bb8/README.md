@@ -13,7 +13,7 @@ No full upstream CAD binary was downloaded in this execution environment, no par
 
 All source files are pinned by upstream **commit SHA**, exact Git blob SHA-1, path, and byte count in [sources.lock.json](sources.lock.json). The lock is a manifest, **not** an archive of third-party parts. Source code and STL content is not copied into this repository.
 
-**Legal limitation:** none of the three repositories had a clearly declared reuse license in the checked repository metadata/root contents. Public access is not an open-source license. Do not redistribute, bundle into a public website or copy their 3D assets into GitHub without clarifying rights. It is acceptable to examine repository metadata and design a separate original solution. [RoundRover](https://github.com/EmmeEffe/RoundRover) has an explicit GPL-3.0 license and is a possible compatible-rights alternative for a fresh independently designed BB-8-style robot, though its mechanics, scale, and head would be different.
+**Private player vs public redistribution:** the existing ChatGPT robot player is **private**, as the owner has confirmed. An internal access-controlled preview of the CAD simulation should **not** be blocked by public-site publication criteria. Continue building and testing geometry and physics privately. However, a private hosted service still creates copies of models: absence of a license does not automatically grant permission to upload or redistribute third-party binaries. Keep source attribution and access restrictions; check any applicable rights before uploading upstream CAD into a hosted service. Do not publish third-party STL to public GitHub, and do not make a public asset bundle without appropriate permission. For a private preview where third-party copying is not authorized, use independently created geometry and recorded physical trajectories. [RoundRover](https://github.com/EmmeEffe/RoundRover) is GPL-3.0 and remains an alternative with explicit license terms.
 
 ## Tool
 
@@ -37,13 +37,14 @@ Downloaded files live **outside the Git checkout** under \`~/.cache/alfred-bb8-c
 2. Measure native shell diameter, wall thickness, internal-clearance budget and frame placement. Then evaluate whether jrbedard outer-body STLs or PatchBOTS head can be adapted without structural interference, while retaining source credits and redistribution restrictions.
 3. Specify accurate component masses/inertias (estimate vs verified), motor torque, internal wheel/shell contact, floor friction, head magnet model, camera weight, and solver tolerances. Do not silently swap original STL for invented geometry in the final visualization.
 4. Execute CPU MuJoCo \`mj_step\` under static/drive/brake/turn cases, record raw qpos, qvel, time, actuator command and contact diagnostics. Preserve failed runs as failed.
-5. Export immutable physical replays through the existing [replay pipeline](../../docs/hexapod/REPLAY_PIPELINE.md) on the research branch, with \`publish_policy: review_only\` until genuine CAD mesh mapping, playback and publication rights are verified.
-6. Only after physical validation and owner approval, integrate **records** into the existing Alfred Robot Player. Do not create a new site, new video format, alter the UI, or merge into \`main\`. Prefer interactive 3D to MP4.
+5. Export verified physical replays through the existing [replay pipeline](../../docs/hexapod/REPLAY_PIPELINE.md) on a research branch with `publish_policy: review_only` while original assembly transforms, contact behavior and playback are unvalidated. A private preview is distinct from a public distribution, but license constraints on third-party mesh copies still need attention.
+6. After physical validation, prepare an **internal preview** for our existing **private** ChatGPT robot player through a supported integration. No new site, no public release, no MP4 requirement, no merge to `main` without approval. The player should replay actual MuJoCo states, not staged motion.
 
 ### Current hard blockers
 
 - Execution container does not have MuJoCo and outbound network requests to GitHub/PyPI fail; we have not obtained the upstream binary CAD here.
 - \`HWeigo/BB8_Robot\` publishes a native SolidWorks assembly, not a ready-to-run MuJoCo MJCF; assembly-to-joints conversion has not been done.
-- No verified rights for redistributing the three selected upstream CAD sets. The existing public player cannot be updated with third-party STL on current evidence.
+- The player is **private**, not public; public redistribution of CAD is therefore not the active task. Still confirm whether the chosen private hosting arrangement permits copies of unlicensed third-party assets. This is separate from, and should not block, the physics research.
 
 This is the first audited import milestone, **not a finished simulation**.
+
