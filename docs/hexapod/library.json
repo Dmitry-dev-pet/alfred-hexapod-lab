@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 40,
+  "revision": 41,
   "entries": [
     {
       "id": "tripod-60",
@@ -1712,6 +1712,46 @@
           "path": "hexapod/en01-v2-v3/replays.json",
           "size": 25491,
           "sha256": "f0e27cbcebfca1d582e9f192483ace46ac193232541b35adbbdd6f5d91a55d8e"
+        }
+      ]
+    },
+    {
+      "id": "microduck-control-v1",
+      "title": "MicroDuck · джойстики и подъём",
+      "detail": "Кинематическое управление · два джойстика · 3 падения и вставания",
+      "duration_s": 3600,
+      "href": "/hexapod/microduck-control-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-control-v1/app.js",
+          "sha256": "3986f34b64a80765c057b2d5fba8fc9280221628c0c1d47ff9a0c448e5ccc853",
+          "size": 10056
+        },
+        {
+          "path": "hexapod/microduck-control-v1/control-core.js",
+          "sha256": "671868f6326414dd3de1ed40803d4b893337a627a31c4502ee11d1e6a97aef16",
+          "size": 4671
+        },
+        {
+          "path": "hexapod/microduck-control-v1/index.html",
+          "sha256": "3f0d0969e546c01702f3bcc8ab7b5d56f36cf97551b3476e6145ec9f705656a2",
+          "size": 7417
+        },
+        {
+          "path": "hexapod/microduck-control-v1/kinematics.js",
+          "sha256": "6f0b7a18fdecf449c1c1d2b8457e46953c1087207c7c0604ae5cf49cf8f73dcd",
+          "size": 1928
+        },
+        {
+          "path": "hexapod/microduck-control-v1/motions.json",
+          "sha256": "4b5f2cd5ea1dbb6ceff95c964a7c01eb55dc23a0e8a73653e2e16d5575988670",
+          "size": 254
+        },
+        {
+          "path": "hexapod/microduck-control-v1/rig.json",
+          "sha256": "30dd440b80a4764c3425280fe3784167af0aa02fd87355f62ad14d69fd30c8af",
+          "size": 17925
         }
       ]
     }
