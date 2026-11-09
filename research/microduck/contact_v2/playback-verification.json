@@ -1,0 +1,43 @@
+{
+  "samples": 119760,
+  "fractions_per_interval": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "maximum_body_step_overlap_m": 1.7998655623800014e-05,
+  "episodes": [
+    {
+      "clip": "close-h10",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "close-h20",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "close-h30",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "close-h50",
+      "max_interpolated_body_step_overlap_m": 2.2879178525247828e-06
+    },
+    {
+      "clip": "close-h100",
+      "max_interpolated_body_step_overlap_m": 1.0667795956454532e-06
+    },
+    {
+      "clip": "close-h250",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "reference-h10",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "reference-h20",
+      "max_interpolated_body_step_overlap_m": 1.7998655623800014e-05
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101e2b">
-<title>Alfred Hexapod Lab · MicroDuck · спиной к стене</title>
+<title>Alfred Hexapod Lab · MicroDuck · корпус и ступень: контакты исправлены</title>
 <link rel="stylesheet" href="/hexapod/player-shell.css">
 <style>
 :root{color-scheme:dark}*{box-sizing:border-box}
@@ -31,11 +31,11 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;color:#ecf7fc;backgrou
 <script src="/github-live-boot.js"></script><script src="/webgl-fallback.js"></script></head><body>
 <main class="layout"><section class="stage" aria-label="MicroDuck · оригинальные детали STL и записанные физические движения MuJoCo">
 <div id="viewer" role="img" aria-label="3D-модель MicroDuck, камера поворачивается пальцем"></div>
-<div class="md-case"><label>Высота и расстояние</label><select id="microduck-case" aria-label="Высота и расстояние"><option value="close-h100">Вплотную · ступень 10 см</option></select></div>
+<div class="md-case"><label>Высота и расстояние</label><select id="microduck-case" aria-label="Высота и расстояние"><option value="close-h50">Вплотную · ступень 5 см</option></select></div>
 <div id="md-webgl" hidden role="status">Этот браузер не поддерживает 3D. Данные записи доступны; для изображения нужен WebGL.</div>
 <div class="md-stat"><strong id="md-state">Загружаем 3D-модель…</strong>
 <p id="md-metric">—</p><p id="md-origin">MuJoCo 3.10 · ONNX v8 · 50 Гц</p>
-<small>Стойка спиной к грани с зазором около 2 мм от ближайшей детали на высоте препятствия. Затем прежняя команда заваливания назад и исходная политика вставания. Внешних толчков и перестановки корпуса нет.</small><small>На 1 см робот встал на край с опорой обеих ног сверху, но одна стопа свисает на 18 мм. Полного размещения обеих стоп нет. У 2–5 см робот остался лежать; у 10 см встал внизу. У стены 25 см было только короткое касание. Два прежних старта оставлены для сравнения.</small><small>Столкновения упрощены. В пробе 5 см проникновение оболочек друг в друга достигло 6,3 мм; реальные механические ограничения этим расчётом не подтверждены. Все команды внутри исходных диапазонов с запасом 2°. На настоящем роботе не проверяли.</small><small>3D: <a href="https://github.com/pollen-robotics/microduck_rl" target="_blank" rel="noopener" style="color:inherit">Pollen Robotics</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color:inherit">CC BY-NC-SA 4.0</a>. Упаковка без изменения геометрии.</small></div>
+<small>Исправленные контакты: все видимые детали теперь сталкиваются с полом и ступенькой. Прежние ролики могли показывать корпус внутри ступеньки; заявленный ранее результат на краю 1 см после исправления не повторился.</small><small>Пересчитаны восемь опытов у грани и контроль на ровном полу. Вставание на полу сохранилось, полного подъёма на ступеньку нет. Численное проникновение корпуса в контакте — не более 0,29 мм среди этих проверок. Массы, инерции, суставы и исходная политика сохранены.</small><small>Контактные поверхности — выпуклые оболочки оригинальных STL. Полости могут быть перекрыты, поэтому модель остаётся приближённой. Самопересечения деталей робота — отдельная проверка. На настоящем роботе не испытывали.</small><small>3D: <a href="https://github.com/pollen-robotics/microduck_rl" target="_blank" rel="noopener" style="color:inherit">Pollen Robotics</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color:inherit">CC BY-NC-SA 4.0</a>. Упаковка без изменения геометрии.</small></div>
 <div id="md-loading" class="md-loading" role="status">Загружаем единый пакет модели MicroDuck…</div>
 <div id="md-error" class="md-error" hidden role="alert"></div>
 </section>

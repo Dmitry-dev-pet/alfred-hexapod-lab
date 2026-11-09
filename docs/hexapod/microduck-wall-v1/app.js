@@ -7,7 +7,7 @@ import {validateIndex,loadPoseClip} from './pose-loader.js';
 // A single immutable package retains all original STL bytes and instance links.
 const MODEL_PACKAGE={"schema":"robot-model-package-ref/v1","id":"microduck-original","url":"/assets/robot-models/microduck-original-e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b.json","sha256":"e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b","size":10340979,"source_revision":"bae39f5900b318f7e87fc485c30a31213cfa14eb","mesh_count":38,"instance_count":70,"license_spdx":"CC-BY-NC-SA-4.0"};
 const PIN=MODEL_PACKAGE.source_revision;
-const label=c=>(c.condition==='close'?'Вплотную':'Прежний старт')+' · '+(c.height_m===.25?'стена 25 см':'ступень '+Math.round(c.height_m*100)+' см')+' · '+(c.step_goal_reached?'наверху':c.supported_top_stance?'стоит на краю':c.standing_final_1s?'встал внизу':'остался лежать');
+const label=c=>(c.condition==='flat'?'Контроль · ровный пол':(c.condition==='close'?'Вплотную':'Прежний старт')+' · '+(c.height_m===.25?'стена 25 см':'ступень '+Math.round(c.height_m*100)+' см'))+' · '+(c.step_goal_reached?'наверху':c.standing_final_1s?'встал':'остался лежать');
 const PHASES={settle:'Стойка',fall:'Заваливание · команда моторам',recovery:'Исходная политика вставания'};
 let replayIndex=null;
 let indexReady=fetch('./replays.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Нет каталога кувырков');return r.json();}).then(d=>replayIndex=validateIndex(d,MODEL_PACKAGE.sha256));
@@ -126,7 +126,7 @@ function frame(seconds){
  const phase=replay.phase_events.filter(e=>e.t<=seconds+.001).at(-1)?.name||'settle';
  status.textContent=label(replay)+' · '+PHASES[phase];
  stage.dataset.clip=replay.id;stage.dataset.frame=String(seconds.toFixed(2));stage.dataset.outcome=replay.status;
- metric.textContent='Зазор '+(replay.surface_gap_before_trigger_m*1000).toFixed(1)+' мм · корпус на препятствии '+(replay.rear_body_contact_s*1000).toFixed(0)+' мс · встал '+(replay.standing_final_1s?'да':'нет')+' · обе ноги нагружают верх '+(replay.supported_top_stance?'да':'нет')+' · стопы целиком '+(replay.step_goal_reached?'да':'нет');
+ metric.textContent=(replay.height_m?'Макс. корпус–ступень '+(replay.max_body_step_penetration_m*1000).toFixed(2)+' мм · ':'')+'встал '+(replay.standing_final_1s?'да':'нет')+' · стопы целиком наверху '+(replay.step_goal_reached?'да':'нет');
  origin.textContent='Наклон назад '+replay.peak_directional_lean_deg.toFixed(0)+'° · пик нагрузки на спину '+replay.peak_rear_body_contact_n.toFixed(1)+' Н · '+fmt(seconds)+' / '+fmt(replay.duration_s);
  seek.value=String(seconds);
 }
@@ -155,7 +155,7 @@ async function loadSelected(){
 }
 for(const select of [selector])select.addEventListener('change',loadSelected);
 async function init(){
- try{await Promise.all([loadGeometry(),indexReady]);selector.replaceChildren();for(const c of replayIndex.clips){const o=new Option(label(c),c.id);selector.add(o);}selector.value='close-h100';await loadSelected();}
+ try{await Promise.all([loadGeometry(),indexReady]);selector.replaceChildren();for(const c of replayIndex.clips){const o=new Option(label(c),c.id);selector.add(o);}selector.value='close-h50';await loadSelected();}
  catch(e){
   fail('Не удалось проверить оригинальную модель MicroDuck: '+(e.message||e)+
        '\nПервоначальная загрузка пакета требует интернет; затем проверенная модель сохраняется в браузере. Никакая схематическая модель не подставляется.');

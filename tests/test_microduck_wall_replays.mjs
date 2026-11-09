@@ -7,10 +7,10 @@ const root=new URL('../docs/',import.meta.url);
 const index=JSON.parse(readFileSync(new URL('hexapod/microduck-wall-v1/replays.json',root)));
 const sha=index.model_package_sha256;
 const buffer=c=>{const b=readFileSync(new URL(c.url.slice(1),root));return b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength);};
-test('eight clips retain close-wall trials and two previous placements',()=>{
- assert.equal(validateIndex(index,sha).clips.length,8);
+test('nine corrected clips include a flat recovery control',()=>{
+ assert.equal(validateIndex(index,sha).clips.length,9);
  assert.throws(()=>validateIndex(index,'f'.repeat(64)));
- const duplicate=structuredClone(index);duplicate.clips[7]=duplicate.clips[0];assert.throws(()=>validateIndex(duplicate,sha));
+ const duplicate=structuredClone(index);duplicate.clips[8]=duplicate.clips[0];assert.throws(()=>validateIndex(duplicate,sha));
  const unsafe=structuredClone(index);unsafe.clips[0].url='/assets/../private.bin';assert.throws(()=>validateIndex(unsafe,sha));
 });
 test('every complete physical track decodes with 70 unit-quaternion part poses',async()=>{
@@ -34,14 +34,11 @@ test('a viewed clip is reused offline from the verified browser cache',async()=>
  }finally{globalThis.fetch=originalFetch;globalThis.caches=oldCaches;}
 });
 
-test('rear-body contact is kept separate from climbing success',()=>{
- assert.equal(index.clips.length,8);
- assert.equal(index.clips.filter(c=>c.condition==='close').length,6);
- assert.equal(index.clips.filter(c=>c.condition==='reference').length,2);
- assert.ok(index.clips.every(c=>!c.step_goal_reached&&c.status==='FAIL'));
- const edge=index.clips.find(c=>c.id==='close-h10');assert.ok(edge.supported_top_stance&&!edge.step_goal_reached&&edge.max_sole_overhang_m>.018&&edge.max_sole_overhang_m<.019);
- assert.equal(index.clips.filter(c=>c.supported_top_stance).length,1);
- const close=index.clips.find(c=>c.id==='close-h100');assert.ok(close.back_into_obstacle&&close.standing_final_1s&&close.rear_body_contact_s>.8);
- const stuck=index.clips.find(c=>c.id==='close-h20');assert.ok(stuck.back_into_obstacle&&!stuck.standing_final_1s);
- assert.ok(index.clips.filter(c=>c.condition==='close').every(c=>Math.abs(c.surface_gap_before_trigger_m-.002)<.00002));
+test('complete environment contacts withdraw the previous edge-stance claim',()=>{
+ assert.equal(index.clips.length,9);assert.equal(index.environment_mesh_count,60);
+ assert.ok(index.clips.every(c=>c.contact_profile==='complete_env_05ms'&&!c.step_goal_reached&&!c.supported_top_stance));
+ assert.ok(index.clips.every(c=>c.max_body_step_penetration_m<.0003));
+ assert.equal(index.clips.find(c=>c.id==='flat-h0').status,'PASS');
+ const case5=index.clips.find(c=>c.id==='close-h50');assert.ok(!case5.standing_final_1s&&case5.max_body_step_penetration_m<.0003);
+ const legacy=structuredClone(index);legacy.schema='microduck-back-to-wall-replays/v1';assert.throws(()=>validateIndex(legacy,sha));
 });
