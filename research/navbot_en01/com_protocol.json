@@ -1,0 +1,94 @@
+{
+  "schema": "en01-getup-protocol/v1",
+  "version": 9,
+  "duration_s": 6,
+  "settle_s": 0.75,
+  "recovery_deadline_s": 3.5,
+  "timestep_s": 0.00025,
+  "control_period_s_ASSUMED": 0.005,
+  "initial_hip_q_rad": 0.1,
+  "initial_surface_gap_m": 0.0005,
+  "orientations": [
+    "front",
+    "back"
+  ],
+  "strategies": [
+    "computed-080",
+    "computed-120",
+    "upright-080",
+    "upright-120"
+  ],
+  "acceptance": {
+    "final_stable_s": 2.0,
+    "max_tilt_deg": 15,
+    "min_each_wheel_normal_force_n": 0.15,
+    "max_nonwheel_normal_force_n": 0.05,
+    "max_axle_speed_m_s": 0.03,
+    "max_body_angular_speed_rad_s": 0.3,
+    "max_floor_penetration_m": 0.002,
+    "max_self_proxy_penetration_m": 0.002,
+    "max_closure_error_m": 0.001,
+    "operating_q_min_rad": 0,
+    "operating_q_max_rad": 0.65
+  },
+  "notes": [
+    "Identical frozen v7 mechanics and 0.03Nm/side surrogate ceiling; no hardware torque calibration claimed",
+    "Fallen starts settle .75s then position hips at .02rad; same two-hip readiness gate as v8; zero wheel moment before readiness",
+    "After readiness, every5ms request critical-damped pitch acceleration with wn=4/T for T=.8 or1.2s; invert three current-state constrained-dynamics torque queries and verify interpolated torque with a fourth query",
+    "Virtual forward queries never step time or overwrite live state; gravity/contact/selfcontact/hip control remain in those queries",
+    "Upright controls use zero initial settling and immediate same computed torque, hold hips at .1rad",
+    "Fallen attempts stop recovery at3.5s unless two-wheel capture below20deg occurred; captured trials and upright controls continue to6s",
+    "No XY-position controller added; strict original final2s stability gate remains; all failures retained",
+    "COM-corrected series derives body trim from current COM-to-axle vector; adds critical-damped .7rad/s axle-position outer loop after within15deg of trim, requested axle acceleration clipped\u00b11.5m/s\u00b2; gains are assumptions, not hardware calibration"
+  ],
+  "experiment": "computed_com_torque_v9",
+  "cases": {
+    "computed-080": {
+      "target": 0.02,
+      "sign": 0,
+      "pulse_s": 0.0
+    },
+    "computed-120": {
+      "target": 0.02,
+      "sign": 0,
+      "pulse_s": 0.0
+    },
+    "upright-080": {
+      "target": 0.1,
+      "sign": 0,
+      "pulse_s": 0.0
+    },
+    "upright-120": {
+      "target": 0.1,
+      "sign": 0,
+      "pulse_s": 0.0
+    }
+  },
+  "upright_settle_s": 0.0,
+  "tasks": [
+    {
+      "orientation": "front",
+      "strategy": "computed-080"
+    },
+    {
+      "orientation": "front",
+      "strategy": "computed-120"
+    },
+    {
+      "orientation": "back",
+      "strategy": "computed-080"
+    },
+    {
+      "orientation": "back",
+      "strategy": "computed-120"
+    },
+    {
+      "orientation": "upright",
+      "strategy": "upright-080"
+    },
+    {
+      "orientation": "upright",
+      "strategy": "upright-120"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "schema": "en01-wheel-torque-physics-diagnostic/v1",
+  "source_trace": "en01_tuck_v8/raw/back-tuck-neg-500_raw.json",
+  "sample_time_s": 1.2602500000000045,
+  "mass_kg": 0.322,
+  "com_m": [
+    0.03278804558492424,
+    -2.1511936615177293e-05,
+    0.03142740668940403
+  ],
+  "contacts": [
+    {
+      "geom": "floorcad_41",
+      "normal_n": 1.2859050937617356,
+      "position_m": [
+        0.025245773517606228,
+        -0.029225785076252012,
+        -1.0465479506659506e-07
+      ],
+      "mu": 0.9
+    },
+    {
+      "geom": "floorcad_41",
+      "normal_n": 1.1770488924666322,
+      "position_m": [
+        0.025212720642363195,
+        0.029174206947082598,
+        -1.0377501940975545e-07
+      ],
+      "mu": 0.9
+    },
+    {
+      "geom": "floorcad_64",
+      "normal_n": 0.18856764514037214,
+      "position_m": [
+        0.06411719276364378,
+        0.04764622629956949,
+        -9.111285415031034e-08
+      ],
+      "mu": 0.9
+    },
+    {
+      "geom": "floorcad_64",
+      "normal_n": 0.12686097592118836,
+      "position_m": [
+        0.06412228645428938,
+        0.03864622810825927,
+        -9.094268876158607e-08
+      ],
+      "mu": 0.9
+    },
+    {
+      "geom": "floorcad_65",
+      "normal_n": 0.22169630992876374,
+      "position_m": [
+        0.0645955378862167,
+        -0.03815351645357469,
+        -9.025702850558315e-08
+      ],
+      "mu": 0.9
+    },
+    {
+      "geom": "floorcad_65",
+      "normal_n": 0.04624717867228119,
+      "position_m": [
+        0.06460119751574635,
+        -0.04815351651353771,
+        -8.958635936730242e-08
+      ],
+      "mu": 0.9
+    }
+  ],
+  "wheel_normal_n": 0.5833721096626054,
+  "nonwheel_normal_n": 2.462953986228368,
+  "mu_assumed": 0.9,
+  "rough_combined_tangential_capacity_n": 0.5250348986963449,
+  "rough_combined_axle_traction_moment_nm": 0.00971314562588238,
+  "instantaneous_torque_response": [
+    {
+      "torque_each_nm": 0,
+      "angular_accel_y_rad_s2": 1.2298187390118531
+    },
+    {
+      "torque_each_nm": -0.005,
+      "angular_accel_y_rad_s2": 7.546243022810181
+    },
+    {
+      "torque_each_nm": -0.01,
+      "angular_accel_y_rad_s2": 13.861944930381023
+    },
+    {
+      "torque_each_nm": -0.015,
+      "angular_accel_y_rad_s2": 20.17752916814277
+    },
+    {
+      "torque_each_nm": -0.02,
+      "angular_accel_y_rad_s2": 26.491122772586156
+    },
+    {
+      "torque_each_nm": -0.03,
+      "angular_accel_y_rad_s2": 38.988867742912625
+    },
+    {
+      "torque_each_nm": 0.03,
+      "angular_accel_y_rad_s2": -36.68002414010406
+    }
+  ],
+  "upright_com_trim_deg": -4.994910312112564,
+  "admissible_standing_com_height_m": 0.05213933728692516,
+  "potential_difference_j": 0.0654252606100617,
+  "limits": [
+    "Snapshot normal loads change with torque and motion; initial traction estimate is not an absolute motor torque cap",
+    "Potential difference is a posture-to-posture estimate, not complete minimum-energy trajectory or a per-wheel torque requirement",
+    "All masses/inertias and torque ceiling remain surrogate assumptions; installed voltage-to-torque map unknown"
+  ],
+  "initial_com_controller_estimates": {
+    "0.8": {
+      "requested_alpha_rad_s2": 29.06993129059662,
+      "predicted_alpha_rad_s2": 29.163798441450087,
+      "torque_nm": -0.022119290569560177,
+      "sampled_response": [
+        [
+          -0.03,
+          38.988867742912625
+        ],
+        [
+          0.0,
+          1.2298187390118531
+        ],
+        [
+          0.03,
+          -36.68002414010406
+        ]
+      ],
+      "wn_rad_s": 5.0,
+      "com_trim_rad": -0.08584500235162582,
+      "target_pitch_rad": -0.08584500235162582,
+      "axle_speed_x_m_s": -0.0029617737832547935,
+      "axle_reference_x_m": null,
+      "outer_requested_acceleration_m_s2": 0.0
+    },
+    "1.2": {
+      "requested_alpha_rad_s2": 12.862947988616284,
+      "predicted_alpha_rad_s2": 12.905330183748879,
+      "torque_nm": -0.009242655381815346,
+      "sampled_response": [
+        [
+          -0.03,
+          38.988867742912625
+        ],
+        [
+          0.0,
+          1.2298187390118531
+        ],
+        [
+          0.03,
+          -36.68002414010406
+        ]
+      ],
+      "wn_rad_s": 3.3333333333333335,
+      "com_trim_rad": -0.08584500235162582,
+      "target_pitch_rad": -0.08584500235162582,
+      "axle_speed_x_m_s": -0.0029617737832547935,
+      "axle_reference_x_m": null,
+      "outer_requested_acceleration_m_s2": 0.0
+    }
+  }
+}

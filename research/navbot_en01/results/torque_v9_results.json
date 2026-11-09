@@ -1,0 +1,242 @@
+[
+  {
+    "case": "pitch-back-computed-080",
+    "min_active_tilt_deg": 64.91124726362122,
+    "final_tilt_deg": 161.24033771569762,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1792
+  },
+  {
+    "case": "pitch-back-computed-120",
+    "min_active_tilt_deg": 71.52644629994914,
+    "final_tilt_deg": 72.11797422252918,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1792
+  },
+  {
+    "case": "pitch-front-computed-080",
+    "min_active_tilt_deg": 63.95424005188453,
+    "final_tilt_deg": 72.1195505982588,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1836
+  },
+  {
+    "case": "pitch-front-computed-120",
+    "min_active_tilt_deg": 71.41718850935628,
+    "final_tilt_deg": 72.12447879966656,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1836
+  },
+  {
+    "case": "pitch-upright-upright-080",
+    "min_active_tilt_deg": 0.0,
+    "final_tilt_deg": 3.188787013770678,
+    "longest_stable_s": 0.0032500000000000003,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 4800
+  },
+  {
+    "case": "pitch-upright-upright-120",
+    "min_active_tilt_deg": 0.0,
+    "final_tilt_deg": 74.61332529827106,
+    "longest_stable_s": 0.0032500000000000003,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 4800
+  },
+  {
+    "case": "com-back-computed-080",
+    "min_active_tilt_deg": 66.95894659586477,
+    "final_tilt_deg": 72.08283154837927,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1792
+  },
+  {
+    "case": "com-back-computed-120",
+    "min_active_tilt_deg": 71.51502673080438,
+    "final_tilt_deg": 72.06116395552186,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1792
+  },
+  {
+    "case": "com-front-computed-080",
+    "min_active_tilt_deg": 64.7569892992102,
+    "final_tilt_deg": 72.11280051248153,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1836
+  },
+  {
+    "case": "com-front-computed-120",
+    "min_active_tilt_deg": 71.52909474094054,
+    "final_tilt_deg": 72.06374040425214,
+    "longest_stable_s": 0.0,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 1836
+  },
+  {
+    "case": "com-upright-upright-080",
+    "min_active_tilt_deg": 5.915117333884395e-06,
+    "final_tilt_deg": 3.6349245229302807,
+    "longest_stable_s": 0.0032500000000000003,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 4800
+  },
+  {
+    "case": "com-upright-upright-120",
+    "min_active_tilt_deg": 2.561320938754782e-06,
+    "final_tilt_deg": 74.70470630541142,
+    "longest_stable_s": 0.0032500000000000003,
+    "final_stable_s": 0.0,
+    "peak_wheel_torque_nm": 0.03,
+    "checks": {
+      "fallen_at_command": true,
+      "final_two_seconds_stable": false,
+      "hip_bounds": true,
+      "floor_contact_penetration": true,
+      "original_cad_floor_penetration": true,
+      "self_proxy_penetration": true,
+      "linkage_closure": true,
+      "no_warnings": true
+    },
+    "model_sha256": "f66fba3a526aa586232253b1444cba35c145980ed412dccdb6802db6ad13d5ae",
+    "virtual_forward_queries": 4800
+  }
+]
