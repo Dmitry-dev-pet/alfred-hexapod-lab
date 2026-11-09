@@ -1,0 +1,155 @@
+{
+  "samples": 487980,
+  "fractions_per_interval": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "maximum_body_step_overlap_m": 0.0005320634532050682,
+  "episodes": [
+    {
+      "clip": "step-1cm-baseline",
+      "max_interpolated_body_step_overlap_m": 9.423465022235199e-05
+    },
+    {
+      "clip": "search-v18-g03-d10",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "search-v18-g03-d20",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "search-v18-g03-d30",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "search-v18-g07-d10",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "search-v18-g07-d20",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "search-v18-g07-d30",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "search-v30-g03-d10",
+      "max_interpolated_body_step_overlap_m": 0.00010138243021372112
+    },
+    {
+      "clip": "search-v30-g03-d20",
+      "max_interpolated_body_step_overlap_m": 0.00010138243021372112
+    },
+    {
+      "clip": "search-v30-g03-d30",
+      "max_interpolated_body_step_overlap_m": 0.00010138243021372112
+    },
+    {
+      "clip": "search-v30-g07-d10",
+      "max_interpolated_body_step_overlap_m": 9.973475317711333e-05
+    },
+    {
+      "clip": "search-v30-g07-d20",
+      "max_interpolated_body_step_overlap_m": 9.973475317711333e-05
+    },
+    {
+      "clip": "search-v30-g07-d30",
+      "max_interpolated_body_step_overlap_m": 9.973475317711333e-05
+    },
+    {
+      "clip": "search-v45-g03-d10",
+      "max_interpolated_body_step_overlap_m": 0.0005320634532050682
+    },
+    {
+      "clip": "search-v45-g03-d20",
+      "max_interpolated_body_step_overlap_m": 0.0005320634532050682
+    },
+    {
+      "clip": "search-v45-g03-d30",
+      "max_interpolated_body_step_overlap_m": 0.0005320634532050682
+    },
+    {
+      "clip": "search-v45-g07-d10",
+      "max_interpolated_body_step_overlap_m": 0.00033564280255945876
+    },
+    {
+      "clip": "search-v45-g07-d20",
+      "max_interpolated_body_step_overlap_m": 0.00033564280255945876
+    },
+    {
+      "clip": "search-v45-g07-d30",
+      "max_interpolated_body_step_overlap_m": 0.00033564280255945876
+    },
+    {
+      "clip": "assist-r1-v12",
+      "max_interpolated_body_step_overlap_m": 0.00010138243021372112
+    },
+    {
+      "clip": "assist-r1-v24",
+      "max_interpolated_body_step_overlap_m": 0.00010138243021372112
+    },
+    {
+      "clip": "assist-r2-v12",
+      "max_interpolated_body_step_overlap_m": 0.00010138243021372112
+    },
+    {
+      "clip": "assist-r2-v24",
+      "max_interpolated_body_step_overlap_m": 0.00010138243021372112
+    },
+    {
+      "clip": "height-2cm",
+      "max_interpolated_body_step_overlap_m": 0.00024108497813676166
+    },
+    {
+      "clip": "height-3cm",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "height-5cm",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "perturb-20261109",
+      "max_interpolated_body_step_overlap_m": 0.00011137494935756742
+    },
+    {
+      "clip": "perturb-20261110",
+      "max_interpolated_body_step_overlap_m": 0.000209420214310958
+    },
+    {
+      "clip": "perturb-20261111",
+      "max_interpolated_body_step_overlap_m": 0.00014447870575375575
+    },
+    {
+      "clip": "margin-2cm-105",
+      "max_interpolated_body_step_overlap_m": 0.0001142202320916115
+    },
+    {
+      "clip": "margin-2cm-140",
+      "max_interpolated_body_step_overlap_m": 0.00014911223746909635
+    },
+    {
+      "clip": "margin-2cm-210",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "final-h1-margin28",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "final-h1-margin35",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "final-h2-margin28",
+      "max_interpolated_body_step_overlap_m": 0.0
+    },
+    {
+      "clip": "final-h2-margin35",
+      "max_interpolated_body_step_overlap_m": 0.0
+    }
+  ]
+}

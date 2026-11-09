@@ -1,0 +1,17 @@
+{
+  "schema": "microduck-step-goal-export-verification/v1",
+  "clips": 37,
+  "frames": 16752,
+  "original_visible_meshes": 70,
+  "max_float32_error": 4.5776367230132564e-07,
+  "all_raw_trace_hashes_verified": true,
+  "source_gate": {
+    "verified_git_blobs": {
+      "microduck_rl": 259,
+      "bam": 112
+    },
+    "manifest_sha256": "1248837b9bc0e2087af1067f3ed174f97ae576f15888a5fb6275ee31822405a4"
+  },
+  "index_sha256": "08e347a2b8851622c0fdfe07a4982105e0a613450eb22de3391a84f0f6a0848f",
+  "physics_rerun": false
+}

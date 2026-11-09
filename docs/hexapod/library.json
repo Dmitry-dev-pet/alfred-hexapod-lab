@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 56,
+  "revision": 57,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -2112,6 +2112,116 @@
           "path": "hexapod/microduck-runup-roll-v1/safe-camera.js",
           "size": 451,
           "sha256": "74cb990e36ebf86d24c0eb21250b31d1afe2d31fb18f78269c9a47824f1a48e2"
+        }
+      ]
+    },
+    {
+      "id": "microduck-step-goal-v1",
+      "title": "MicroDuck · подъём кувырком · 37 записей",
+      "detail": "Ступени 1–5 см · номинальный подъём на 1 см · отдельно показаны цель и проверки движения · все отклонённые попытки сохранены",
+      "duration_s": 10,
+      "href": "/hexapod/microduck-step-goal-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-step-goal-v1/app.js",
+          "size": 12968,
+          "sha256": "92b13b4706019609a36976d95450df9bfc2eca4d151ee143f817b736578b2e9c"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/index.html",
+          "size": 6325,
+          "sha256": "4fc47cb50daa01a0d2ca598879ba0f745f2d8687301df1d2ffdb1fdac4bd9afa"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/pose-loader.js",
+          "size": 7851,
+          "sha256": "f32c7fcb180d4f0f578ac643c9aa899e37a4122c865942edbb476b8a0bfca2a7"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/replays.json",
+          "size": 75662,
+          "sha256": "34a21995dd78509ce1bd47d20a1b32620e3f9ff41631a7bb8e9d5a72d622bccb"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/safe-camera.js",
+          "size": 451,
+          "sha256": "74cb990e36ebf86d24c0eb21250b31d1afe2d31fb18f78269c9a47824f1a48e2"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-007248a282d5ce26.json",
+          "size": 1271487,
+          "sha256": "007248a282d5ce2644d0365e3e3f90591f9352afccc68a993744f1876d54cdf1"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-035b097cc445e132.json",
+          "size": 1270199,
+          "sha256": "035b097cc445e132c71de8f216f66a4f16fc642ec4b1946739732256aab581de"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-0b049c0b08ec56cb.json",
+          "size": 1443767,
+          "sha256": "0b049c0b08ec56cb417d719ba2f37eb06c1dbf5fef6e87d95f52faf3acb81f79"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-32bda35763ffbbe8.json",
+          "size": 1253235,
+          "sha256": "32bda35763ffbbe8043fbe297617b04f175d10601f4be9577d239e0b42e2c820"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-4339ae9a01d42f1f.json",
+          "size": 1341091,
+          "sha256": "4339ae9a01d42f1ffb7e66c7968fe994cb643930a470b62e04c5ee9b7fe240e0"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-4e4187923ed19b93.json",
+          "size": 1239291,
+          "sha256": "4e4187923ed19b93c9923c0a4c6208fa9dcfc1ca9ce93472f3920710b27b0fd7"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-5e4ec9841e678cbd.json",
+          "size": 1382911,
+          "sha256": "5e4ec9841e678cbd55d417b563455eeed0984e2ea60fddc7dc989cbdef3be26f"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-6ae584df72a019d6.json",
+          "size": 1401211,
+          "sha256": "6ae584df72a019d60910e48ff84a9a2be6a9ec03002570f7dabf3bc978ee5f6c"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-737d10a148221b84.json",
+          "size": 1293567,
+          "sha256": "737d10a148221b84833f021d93124c4b98e138c8fc68418d0282ff777da3bfd9"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-8981c56279b1ae9f.json",
+          "size": 1275987,
+          "sha256": "8981c56279b1ae9f525772c734dc3005108e9e9550f73f8266b74a13afae6e85"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-b834c3e7257d8871.json",
+          "size": 1350463,
+          "sha256": "b834c3e7257d8871cfef2155a1b8c84f578931bff828921643fd2a6c459b74f7"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-c5c2fa4cd6b431ec.json",
+          "size": 783200,
+          "sha256": "c5c2fa4cd6b431ec0313927435517c86af1112f9b1d88abc528dbfb21239c953"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-cec2375bb7b18165.json",
+          "size": 1341995,
+          "sha256": "cec2375bb7b181659fc3cee31756b8e819c086981b25dc0b921ef287309f660b"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-edb2e83357b74564.json",
+          "size": 718732,
+          "sha256": "edb2e83357b74564586cea00622774295b8c2c59f7231978f0699d56796514d0"
+        },
+        {
+          "path": "hexapod/microduck-step-goal-v1/tracks-f0dc02f696c4f885.json",
+          "size": 1297899,
+          "sha256": "f0dc02f696c4f88589880b22ff6957199b079d225c1d289908e0b873657821cd"
         }
       ]
     }
