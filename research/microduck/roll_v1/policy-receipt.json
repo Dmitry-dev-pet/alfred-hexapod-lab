@@ -1,0 +1,15 @@
+{
+  "repository": "pollen-robotics/microduck-policies",
+  "revision": "v8",
+  "commit": "665ae4eb20bfe13bca1ef4ea6d4bb6b4a096e448",
+  "file": "roulade.onnx",
+  "sha256": "3d60da08fc13f29c1b57f41977aa898132c0d60042100149d8e775affcbca32b",
+  "size_bytes": 793685,
+  "official_manifest_entry": {
+    "file": "roulade.onnx",
+    "kind": "episodic",
+    "duration_s": 1.0,
+    "chain": true
+  },
+  "manifest_sha256": "c566390738dd90a54c1e2de829aaab0e904c636949e2c2c6158ee7bbb889b818"
+}

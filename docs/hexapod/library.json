@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 42,
+  "revision": 43,
   "entries": [
     {
       "id": "tripod-60",
@@ -1782,6 +1782,36 @@
           "path": "hexapod/microduck-step-v1/replays.json",
           "size": 5876,
           "sha256": "b636986b8e0678b05198eadaed8e9467eef69034ad809550f26dfbca08d37dbe"
+        }
+      ]
+    },
+    {
+      "id": "microduck-roll-v1",
+      "title": "MicroDuck · кувырок на ступеньку",
+      "detail": "Ступенька 5 мм · 3 расстояния · полный оборот при 2 с · 10 записей",
+      "duration_s": 10,
+      "href": "/hexapod/microduck-roll-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-roll-v1/app.js",
+          "size": 10982,
+          "sha256": "6cb5d744119b443eccc176620e13d3723dbfe74cb023ead485ea75d6a36cd203"
+        },
+        {
+          "path": "hexapod/microduck-roll-v1/index.html",
+          "size": 6813,
+          "sha256": "0ebe7675f9fb006eac33dfa4eb0648fe6a712644b600bfe9131d09e8f13d565a"
+        },
+        {
+          "path": "hexapod/microduck-roll-v1/pose-loader.js",
+          "size": 4307,
+          "sha256": "1476e2d3ce9f26baa673c673d4e682a6aa649a2d7b51f27136a833767412fa8b"
+        },
+        {
+          "path": "hexapod/microduck-roll-v1/replays.json",
+          "size": 14396,
+          "sha256": "374c9468b04201fe2a88771eae4d5c6c7611ffca108b733b7f98733d0938a0e0"
         }
       ]
     }
