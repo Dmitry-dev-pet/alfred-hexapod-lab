@@ -1,0 +1,38 @@
+{
+  "filename": "MicroDuck_roll_step_heights_20261109.zip",
+  "size_bytes": 16986363,
+  "sha256": "1665e31535d43c3d26c3c8e3a3114b7b5a066c7af9c0d764b8d44e418a236591",
+  "files": 45,
+  "drive_file_id": "1XvtsSuhppdDYrX_5F144VnIwzwPE1RGa",
+  "drive_url": "https://drive.google.com/file/d/1XvtsSuhppdDYrX_5F144VnIwzwPE1RGa/view?usp=drivesdk",
+  "site_version": 12,
+  "site_source_commit": "6e9e98f0c0ddc170085a161702bc2fbb20aeab85",
+  "deployment_id": "appgdep_6af2126f65448191876dfbaeed62e666",
+  "route": "/hexapod/microduck-heights-v1/",
+  "catalog_revision": 45,
+  "catalog_entries": 66,
+  "clips": 13,
+  "total_frames": 6500,
+  "heights_mm": [
+    5,
+    10,
+    20,
+    30,
+    50,
+    75,
+    100
+  ],
+  "highest_successful_tested_mm": 20,
+  "goal_success_cases": 4,
+  "successful_20mm_gaps_cm": [
+    8,
+    18
+  ],
+  "failed_30mm_gaps_cm": [
+    8,
+    12,
+    18
+  ],
+  "client_tests_passed": 5,
+  "webgl_rendering_verified": false
+}

@@ -1,0 +1,16 @@
+{
+  "trace_checks": 13,
+  "independent_quaternion_max_error_deg": 0.6714154988712387,
+  "all_initial_qpos_matched": true,
+  "initial_step_contacts": 0,
+  "byte_identical_repeats": [
+    "height20-edge8-firm-roll2s.json",
+    "height20-firm-roll2s.json"
+  ],
+  "step_goal_passes": 4,
+  "highest_successful_tested_mm": 20,
+  "success_max_penetration_m": 0.0019084635222099153,
+  "webgl_rendering_verified": false,
+  "height_status_semantics_verified": true,
+  "archive_baseline_without_prior_roll_trace_verified": true
+}

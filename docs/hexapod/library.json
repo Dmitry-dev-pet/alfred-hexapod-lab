@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 44,
+  "revision": 45,
   "entries": [
     {
       "id": "tripod-60",
@@ -1847,6 +1847,36 @@
           "path": "hexapod/en01-jump-v4/replays.json",
           "size": 18915,
           "sha256": "c1f2ae26303bdb53f5551a64bbfc2db88746eac1e008dc4ec2ee42aff4f71127"
+        }
+      ]
+    },
+    {
+      "id": "microduck-heights-v1",
+      "title": "MicroDuck · высота ступеньки",
+      "detail": "Кувырок · до 2 см пройдено · 3–10 см не пройдены в этих тестах · 13 записей",
+      "duration_s": 10,
+      "href": "/hexapod/microduck-heights-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/microduck-heights-v1/app.js",
+          "size": 10935,
+          "sha256": "906269bdedc0e233b933d113ba5d2358b419b3267193506d9828d41c92c3ff07"
+        },
+        {
+          "path": "hexapod/microduck-heights-v1/index.html",
+          "size": 6985,
+          "sha256": "efcedf16d169e863f4de80d50c94df7168cd4b9e1fd72e1dcb385fb6273ac6a1"
+        },
+        {
+          "path": "hexapod/microduck-heights-v1/pose-loader.js",
+          "size": 4342,
+          "sha256": "32a8e94063c9366f1042f0f3e3d3dcc544b84469eceb614810a683b1b9522e98"
+        },
+        {
+          "path": "hexapod/microduck-heights-v1/replays.json",
+          "size": 19795,
+          "sha256": "eddf7fe5633976d1ec7a7014d41be20563c0374e7b3e9431a1aec52109ede4aa"
         }
       ]
     }
