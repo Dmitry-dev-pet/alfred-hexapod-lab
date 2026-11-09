@@ -51,6 +51,12 @@ def adapt_shell(text: str, build_id: str, replacement: str) -> str:
     last = text.index("  play.addEventListener('click'", first)
     text = text[:first] + '  const HOSTED_BUILD_ID = ' + json.dumps(build_id) + ';\n' + replacement + '\n' + text[last:]
     text = text.replace("['/api/library','/hexapod/library.json']", "['/hexapod/library.json']")
+    text = text.replace("let entries=fallback,opened=false,visible=true,hideTimer,toastTimer;",
+                        "let entries=fallback,opened=false,visible=true,hideTimer,toastTimer,lastCatalogSource='bundled';")
+    text = text.replace("entries=check(await response.json());setTitle();if(opened)draw();return true;",
+                        "entries=check(await response.json());lastCatalogSource=response.headers.get('X-Alfred-Catalog-Source')||'bundled';setTitle();if(opened)draw();return true;")
+    text = text.replace("  setTitle();readLibrary();requestAnimationFrame(sync);show();",
+                        "  setTitle();const ready=window.alfredGithubCatalogBoot?.()||Promise.resolve(false);ready.then(()=>readLibrary()).catch(()=>readLibrary());requestAnimationFrame(sync);show();")
     text = text.replace('async function readLibrary(){', 'async function readLibrary(signal){')
     text = text.replace("fetch(url,{cache:'no-store'})", "fetch(url,{cache:'no-store',signal})")
     text = text.replace('Обновить библиотеку', 'Проверить обновления')
@@ -89,12 +95,16 @@ def build(source: Path, site: Path, vendor: Path, media: Path | None = None) -> 
     try:
         shutil.copytree(source / 'docs', stage, dirs_exist_ok=True)
         shutil.copytree(vendor / 'vendor', stage / 'vendor')
+        # A one-time Sites build installs the read-only dynamic GitHub bridge.
+        # Future GitHub recordings do NOT require a new Sites version.
+        shutil.copyfile(source / 'hosting/github-live-sw.js', stage / 'github-live-sw.js')
+        shutil.copyfile(source / 'hosting/github-live-boot.js', stage / 'github-live-boot.js')
         for html in stage.rglob('*.html'):
             text = html.read_text().replace(THREE_URL, '/vendor/three/')
-            html.write_text(text.replace('</head>', '<script src="/webgl-fallback.js"></script></head>'))
+            html.write_text(text.replace('</head>', '<script src="/github-live-boot.js"></script><script src="/webgl-fallback.js"></script></head>'))
         shutil.copyfile(source / 'hosting/webgl-fallback.js', stage / 'webgl-fallback.js')
         shell = stage / 'hexapod/player-shell.js'
-        shell.write_text(adapt_shell(shell.read_text(), build_id, (source / 'hosting/player-refresh.js').read_text()))
+        shell.write_text(adapt_shell(shell.read_text(), build_id, (source / 'hosting/player-refresh-live.js').read_text()))
         css = stage / 'hexapod/player-shell.css'
         css.write_text(css.read_text() + '\n.hx-videos-link{display:block;text-align:center;color:#a8dfff;text-decoration:none;padding:13px;border:1px solid #33444f;border-radius:10px;margin-bottom:10px;font:600 14px system-ui}.hx-videos-link:focus-visible{outline:2px solid #a8dfff;outline-offset:3px}\n')
         shutil.copytree(source / 'hosting/videos', stage / 'videos')
@@ -117,6 +127,8 @@ def build(source: Path, site: Path, vendor: Path, media: Path | None = None) -> 
         report = {'schema':'hexapod-hosted-player/v1', 'source_commit':commit, 'build_id':build_id,
                   'catalog_revision':catalog['revision'], 'entries':len(catalog['entries']),
                   'video_count':len(metadata['videos']) if media else 0,
+                  'catalog_mode':'github-live-verified',
+                  'catalog_source_branch':'feature/android-local-offline-viewer-20261104',
                   'mesh_policy':'pinned-upstream-URLs-no-hosted-CAD-copies'}
         (stage / 'hosted-version.json').write_text(json.dumps(report, indent=2) + '\n')
         validate_catalog(stage)
