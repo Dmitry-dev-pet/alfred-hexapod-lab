@@ -1,0 +1,7 @@
+{
+  "default_clip": "h1-angle135-blend0",
+  "default_by_height": {
+    "0.01": "h1-angle135-blend0",
+    "0.02": "h2-angle135-blend0"
+  }
+}
