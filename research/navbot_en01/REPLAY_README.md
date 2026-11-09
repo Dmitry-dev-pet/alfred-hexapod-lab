@@ -43,3 +43,16 @@ python -m unittest discover -s tests -p 'test_navbot_en01_archive.py' -v
 
 **Before publication:** reconstruct moving parts from the pinned original STEP rather than the approximate XML; reconcile purchased wheel motor, servo electrical supply and torque-speed limits; rerun measured `mj_step` simulations; prove replay hashes, contact semantics and device-side WebGL on Samsung Tab S7. No physical success, hardware parity or new animation may be inferred from the archival 3D entries.
 
+
+## Original STEP audit gate (without fabricating an articulated model)
+
+The `model_v0.xml` is still approximate. First inspect the authentic local upstream `Hardware/RebotModel/OriginalRobotModel.stp` using CadQuery/OpenCascade:
+
+```sh
+python research/navbot_en01/audit_step.py \
+  --step /path/to/OriginalRobotModel.stp \
+  --receipt results/navbot_en01/original_step_audit.json
+```
+
+The receipt records SHA-256, imported solid count, per-solid bounds/volumes/centres and an explicit **geometric-audit-only** status. A successful import is **not** identification of the hip/wheel moving groups, masses, inertias or motor constraints, and is not permission to replace MuJoCo physics with a static animation. Do not commit third-party original STEP until its redistribution rights are established. Source: `fuwei007/Navbot-EN01@3139f2fb32b38d10611feb905e16f8aa012f2f2e`.
+
