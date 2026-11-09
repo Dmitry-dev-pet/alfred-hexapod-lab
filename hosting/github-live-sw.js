@@ -55,9 +55,8 @@ function validateCatalog(doc) {
       }
       files.set(file.path, {sha256:file.sha256, size:file.size});
     }
-    if (entry.href !== '/hexapod/' && !files.has(entry.href.slice(1)+'index.html')) {
-      throw Error('Replay entry has no verified HTML');
-    }
+    // Legacy entries may share a bundled page not listed in entry.files.
+    // The worker only proxies assets explicitly listed and SHA-verified.
   }
   if (files.size > 600) throw Error('Too many catalogue assets');
   return {document:doc, files};
