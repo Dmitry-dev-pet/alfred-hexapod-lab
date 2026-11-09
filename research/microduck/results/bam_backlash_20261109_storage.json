@@ -1,0 +1,14 @@
+{
+  "filename": "MicroDuck_BAM_backlash_63runs_20261109.zip",
+  "size_bytes": 10267106,
+  "sha256": "67a2426d154254f8678cde24e75b4d06c5cb690f8ce52d36d86830f9c318923a",
+  "summary_sha256": "0ac2c56e14e969cd3875692e1102561ffe756c21931edc892e22a8017bb2c409",
+  "runner_sha256": "c0b3e44b12602db72c06be8a9e3fa1d835c82348f673797f4ca7185cd157bf6f",
+  "episodes": 63,
+  "active_frames": 18900,
+  "physics_steps": 78840,
+  "repeated_trace_checksums": 63,
+  "legacy_baseline_byte_identical": true,
+  "drive_file_id": "1GlZF-ApSTSYr1U4UnQ8Ct_5jucfrdQTH",
+  "drive_url": "https://drive.google.com/file/d/1GlZF-ApSTSYr1U4UnQ8Ct_5jucfrdQTH/view?usp=drivesdk"
+}
