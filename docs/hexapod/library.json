@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 39,
+  "revision": 40,
   "entries": [
     {
       "id": "tripod-60",
@@ -1677,6 +1677,41 @@
           "path": "hexapod/microduck-bam-v2/replays.json",
           "sha256": "fbe17e3f355d6f574b94ce59b5b3b137a6eae395140e3612b4eb15b241481b27",
           "size": 68553
+        }
+      ]
+    },
+    {
+      "id": "en01-v2-v3",
+      "title": "EN01 · v2 / v3 · 37 записей",
+      "detail": "6 опытов четырёхзвенной модели и 31 опыт удержания позиции · исходная CAD · приседание, прыжки и подъём пока FAIL",
+      "duration_s": 6,
+      "href": "/hexapod/en01-v2-v3/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/en01-v2-v3/app.js",
+          "size": 8493,
+          "sha256": "f9f32077e69fb381101beb4f7aab7836b2a97510af7a10a71922a3302562171c"
+        },
+        {
+          "path": "hexapod/en01-v2-v3/index.html",
+          "size": 3837,
+          "sha256": "1315beb9e109ffc68f2cbc91cc80d44dde37b664e53c4e0712293b53dfe95d2d"
+        },
+        {
+          "path": "hexapod/en01-v2-v3/record-loader.js",
+          "size": 3734,
+          "sha256": "5c3056e7112599022ac6c8df4fa33e7c311b06c74cff20cdc73d30e5acf3e372"
+        },
+        {
+          "path": "hexapod/en01-v2-v3/replay.css",
+          "size": 1780,
+          "sha256": "7016e1aa0b7cda40661e44a63376e18c38cf29ac8373acbefd9e395edb40a3f5"
+        },
+        {
+          "path": "hexapod/en01-v2-v3/replays.json",
+          "size": 25491,
+          "sha256": "f0e27cbcebfca1d582e9f192483ace46ac193232541b35adbbdd6f5d91a55d8e"
         }
       ]
     }
