@@ -1,0 +1,73 @@
+name: Sites live GitHub library - offline regression QA
+on:
+  pull_request:
+    paths:
+      - "hosting/github-live-*.js"
+      - "hosting/player-refresh-live.js"
+      - "scripts/build_hosted_player.py"
+      - "tests/test_sites_live_worker.mjs"
+      - "tests/check_sites_live_catalog.mjs"
+      - ".github/workflows/sites-live-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  github-live-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify service-worker static JavaScript and full manifest-gated routing
+        run: |
+          node --check hosting/github-live-sw.js
+          node --check hosting/github-live-boot.js
+          node --check hosting/player-refresh-live.js
+          node --test tests/test_sites_live_worker.mjs
+      - name: Validate actual working GitHub library revision and MicroDuck manifest
+        run: |
+          git fetch --no-tags --depth=1 origin feature/android-local-offline-viewer-20261104
+          git show FETCH_HEAD:docs/hexapod/library.json > /tmp/alfred-live-library.json
+          node tests/check_sites_live_catalog.mjs /tmp/alfred-live-library.json
+      - name: Verify existing hosted player tests
+        run: |
+          python -m unittest discover -s tests -p 'test_hosted_player.py' -v
+      - name: Build existing hosted site with disposable integrity-matched vendor fixture
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib,tempfile,subprocess,sys
+          with tempfile.TemporaryDirectory() as folder:
+              tmp=pathlib.Path(folder)
+              vendor=tmp/'vendor'
+              required=['build/three.module.js','examples/jsm/controls/OrbitControls.js','examples/jsm/loaders/STLLoader.js','LICENSE']
+              hashes={}
+              for name in required:
+                  path=vendor/'vendor/three'/name
+                  path.parent.mkdir(parents=True,exist_ok=True)
+                  data=('TEST-FIXTURE-ONLY:'+name).encode()
+                  path.write_bytes(data)
+                  hashes['vendor/three/'+name]=hashlib.sha256(data).hexdigest()
+              (vendor/'VENDOR_SHA256.json').write_text(json.dumps(hashes))
+              site=tmp/'private-site-preview'
+              subprocess.run([sys.executable,'scripts/build_hosted_player.py','--site',str(site),'--vendor',str(vendor)],check=True)
+              dist=site/'dist'
+              for name in ['github-live-sw.js','github-live-boot.js','hexapod/player-shell.js',
+                           'hexapod/library.json','hosted-version.json']:
+                  assert (dist/name).is_file(),name
+              shell=(dist/'hexapod/player-shell.js').read_text()
+              assert 'alfredGithubCatalogBoot' in shell
+              assert 'X-Alfred-Catalog-Source' in shell
+              assert '/api/' not in shell
+              home=(dist/'hexapod/index.html').read_text()
+              assert '/github-live-boot.js' in home
+              report=json.loads((dist/'hosted-version.json').read_text())
+              assert report['catalog_mode']=='github-live-verified',report
+              print('Sites preview built: catalog',report['catalog_revision'],'entries',report['entries'])
+          PY
