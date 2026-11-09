@@ -1,0 +1,164 @@
+{
+  "schema": "en01-cad-interference-witness/v1",
+  "source_step_git_blob": "9156683a0bb694c84dc541a3e26b5f6b08db1a41",
+  "moving_parts": [
+    62,
+    65,
+    28
+  ],
+  "fixed_parts": [
+    40,
+    41,
+    42,
+    43,
+    53,
+    56,
+    72
+  ],
+  "part_names": {
+    "62": "小腿_2208电机版本",
+    "65": "2208电机轮胎",
+    "28": "小腿副拉杆",
+    "40": "底板",
+    "41": "前板",
+    "42": "电池",
+    "43": "侧板_MIR",
+    "53": "扭簧外壳固定",
+    "56": "舵机驱动板上壳",
+    "72": "ESP32PCB"
+  },
+  "intersection_reporting_threshold_mm3": 0.01,
+  "method": "OpenCascade exact BRep common, analytical closed four-bar branch",
+  "rows": [
+    {
+      "q_rad": 0.0,
+      "hits": []
+    },
+    {
+      "q_rad": -0.04,
+      "hits": [
+        {
+          "parts": [
+            62,
+            43
+          ],
+          "volume_mm3": 2.4706079530925726
+        }
+      ]
+    },
+    {
+      "q_rad": -0.08,
+      "hits": [
+        {
+          "parts": [
+            62,
+            40
+          ],
+          "volume_mm3": 45.284838397905425
+        },
+        {
+          "parts": [
+            62,
+            42
+          ],
+          "volume_mm3": 0.024396105206916072
+        },
+        {
+          "parts": [
+            62,
+            43
+          ],
+          "volume_mm3": 61.90076294212777
+        }
+      ]
+    },
+    {
+      "q_rad": -0.12,
+      "hits": [
+        {
+          "parts": [
+            62,
+            40
+          ],
+          "volume_mm3": 83.13974320159788
+        },
+        {
+          "parts": [
+            62,
+            42
+          ],
+          "volume_mm3": 138.6919409396366
+        },
+        {
+          "parts": [
+            62,
+            43
+          ],
+          "volume_mm3": 105.85746351159592
+        }
+      ]
+    },
+    {
+      "q_rad": -0.18,
+      "hits": [
+        {
+          "parts": [
+            62,
+            40
+          ],
+          "volume_mm3": 105.64015198520626
+        },
+        {
+          "parts": [
+            62,
+            42
+          ],
+          "volume_mm3": 560.165052192137
+        },
+        {
+          "parts": [
+            62,
+            43
+          ],
+          "volume_mm3": 184.74860366692496
+        }
+      ]
+    },
+    {
+      "q_rad": -0.22,
+      "hits": [
+        {
+          "parts": [
+            62,
+            40
+          ],
+          "volume_mm3": 30.815342044364098
+        },
+        {
+          "parts": [
+            62,
+            42
+          ],
+          "volume_mm3": 891.4856371701446
+        }
+      ]
+    },
+    {
+      "q_rad": 0.1,
+      "hits": []
+    },
+    {
+      "q_rad": 0.3,
+      "hits": []
+    },
+    {
+      "q_rad": 0.5,
+      "hits": []
+    },
+    {
+      "q_rad": 0.65,
+      "hits": []
+    }
+  ],
+  "scope": "Right-side witness subset only. Discrete poses do not establish a collision-free continuous interval, encoder zero, mechanical stop, or collision response. No safe joint range is asserted."
+}

@@ -1,0 +1,1710 @@
+{
+  "schema": "en01-trace-validity-battery/v1",
+  "trace_count": 24,
+  "rows": [
+    {
+      "trace": "a-neg004-p1-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.2519056903138209,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03190569031382087,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8898649193985587,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.13431468518558473,
+          "max_rad": 143.2553504202054,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12726357159063342,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.25190569031381765,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03190569031381765,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8898649193985585,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.1343146851855847,
+          "max_rad": 143.25535042020536,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.12726357159063342,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "1f8e3bdcf6e6f972e746334648dfb6dd9ec114cee85afa3b720f8daef3c83b50"
+    },
+    {
+      "trace": "a-neg004-p1-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.25185898497540576,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03185898497540576,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8898649193985587,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -68.02231103385269,
+          "max_rad": 33.09663550151973,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12726357159063342,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.25185898497540576,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03185898497540576,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8898649193985585,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -68.02231103385279,
+          "max_rad": 33.09663550151973,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.12726357159063342,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "e0108f99c8ad1b967bc4e4895a00cb18c945e76fad4c3dc8ca90483ae546cebd"
+    },
+    {
+      "trace": "a-neg004-p10-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.25206427777713397,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03206427777713397,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8887311207855835,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.14433941582320006,
+          "max_rad": 138.39168786355543,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.1274845491304346,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.25206427777713325,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03206427777713325,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8887311207855829,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.14433941582320003,
+          "max_rad": 138.3916878635555,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.1274845491304346,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "ea7a6a225c9ef8cbcefcbeec5c8e3332377782f010b6e2c44b6adc0708191746"
+    },
+    {
+      "trace": "a-neg004-p10-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.25206427777713397,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03206427777713397,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8891792040420692,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -21.2356380964916,
+          "max_rad": 35.67354510382694,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.1274845491304346,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.25206427777713325,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03206427777713325,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8891792040420698,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -21.235638096493048,
+          "max_rad": 35.67354510382696,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.1274845491304346,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "2ae384c63006932b57f770958217acf897e20d42dc8fe635b04b1c600032a107"
+    },
+    {
+      "trace": "a-neg004-p2-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.2517685457808357,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03176854578083568,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8888171296463487,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.13546114542066232,
+          "max_rad": 142.78465902146613,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12726983887358967,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.2517685457808354,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.031768545780835405,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.888817129646349,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.13546114542066245,
+          "max_rad": 142.784659021466,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.12726983887358967,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "0d3cabb5c2c7db53a66c3044522633d2dca16314a04f702a7fa490caaef7d922"
+    },
+    {
+      "trace": "a-neg004-p2-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.2517685457808357,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03176854578083568,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8896259487749778,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -61.347563291493685,
+          "max_rad": 33.338791483426604,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12726983887358967,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.2517685457808354,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.031768545780835405,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8896259487749784,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -61.34756329149368,
+          "max_rad": 33.338791483426576,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.12726983887358967,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "24e3e98e9559f111b9596c6d3ed9580a2dc5a69fcbe3d249b4fb08de59c53d1d"
+    },
+    {
+      "trace": "a-neg004-p5-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.25238831544891843,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03238831544891843,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8886807155429751,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.13889109989351198,
+          "max_rad": 141.47732226002285,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12731102466187233,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.2523883154489185,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03238831544891849,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.888680715542975,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.1388910998935117,
+          "max_rad": 141.47732226002293,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.12731102466187233,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "0d428e950b35d0ce4f257d99c8567f1c5456fd33ec2284e3b476e1dd38ffce59"
+    },
+    {
+      "trace": "a-neg004-p5-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.25238831544891843,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03238831544891843,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.88899011793521,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -44.860371221857285,
+          "max_rad": 32.99979699635158,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12731102466187233,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.2523883154489185,
+          "max_rad": -0.040000000000158985,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03238831544891849,
+          "violating_saved_frames": 285,
+          "first_violation_s": 0.3010000000000002
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.09625173648277752,
+          "max_rad": 0.8889901179352103,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -44.860371221859616,
+          "max_rad": 32.99979699635158,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.12731102466187233,
+          "max_rad": -0.031026265532839686,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "0790f237e4a5139cb753d361daf9faed8b3410543f8f5d3150429fb10e04efa9"
+    },
+    {
+      "trace": "a-pos004-p1-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.004733381430791642,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.01844443700667558,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.11079102601007285,
+          "max_rad": 2.565424344660864,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.002868278040916979,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.004733381430791547,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.018444437006675595,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.110791026010073,
+          "max_rad": 2.5654243446608564,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.0028682780409169037,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "c12b442bdbff4a8abd5dd8aeff8fe1eb29d59c0d03f90162420680a31c14ed43"
+    },
+    {
+      "trace": "a-pos004-p1-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.004733381430791642,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.01844443700667558,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.11079102601007285,
+          "max_rad": 4.364551819877222,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.002868278040916979,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.004733381430791547,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.018444437006675595,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.110791026010073,
+          "max_rad": 4.364404941119032,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.0028682780409169037,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "c69af7c080b52caa53f3b67fa4d1334865295d2df7ea5e5acb20ff4f5fa219a8"
+    },
+    {
+      "trace": "a-pos004-p10-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.005033027764926308,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.019152459798299232,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.12316402581599424,
+          "max_rad": 2.565202822089995,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.0031059109723675644,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.005033027764926321,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.019152459798299225,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.12316402581599417,
+          "max_rad": 2.5652028220899883,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.0031059109723675445,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "0ea7854b061e63d18b05f8b1c003b50524711142f6df445e412e890dad4704d4"
+    },
+    {
+      "trace": "a-pos004-p10-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.2525959315334052,
+          "max_rad": 0.5695252664363979,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.032595931533405204,
+          "violating_saved_frames": 203,
+          "first_violation_s": 1.940999999999897
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -1.1883537053417055,
+          "max_rad": 0.9066153373099473,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -56.17674892513308,
+          "max_rad": 2.424189239350033,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12701621374135263,
+          "max_rad": 0.5519802855284491,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.2525956484228753,
+          "max_rad": 0.5700381974741161,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.032595648422875295,
+          "violating_saved_frames": 203,
+          "first_violation_s": 1.940999999999897
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -1.189377592369166,
+          "max_rad": 0.9066216889052039,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -55.68178769303252,
+          "max_rad": 2.4242919127136187,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.1270240615881843,
+          "max_rad": 0.552544275235117,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "fd643ca9009ed3f368c5f854c898d8073927a83c61e6e5ad4b4a88b1ac6173e4"
+    },
+    {
+      "trace": "a-pos004-p2-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.004756871889489336,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.018499674301597862,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.11226570986806843,
+          "max_rad": 2.565411010747847,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.0028869290044503974,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.004756871889489365,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.018499674301597855,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.11226570986806837,
+          "max_rad": 2.5654110107478467,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.002886929004450415,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "fbce9ed1f713fcdf18bd3b85df179796aed546c8d946f78f574dfd7aeea10ebc"
+    },
+    {
+      "trace": "a-pos004-p2-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.004756871889489336,
+          "max_rad": 0.05197953020130024,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.11633661310298449,
+          "max_rad": 0.018499674301597862,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.11226570986806843,
+          "max_rad": 4.412645593044535,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.0028869290044503974,
+          "max_rad": 0.042916492241511985,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.004756871889489365,
+          "max_rad": 0.052225694323588874,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.11671898695794031,
+          "max_rad": 0.018499674301597855,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.11226570986806837,
+          "max_rad": 4.412714923669828,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.002886929004450415,
+          "max_rad": 0.04314080630224345,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "2d97cb5ccb286763a9f3e128e8a7bcb4f67fd5cb133eec061b8d5ade439acd41"
+    },
+    {
+      "trace": "a-pos004-p5-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.004839014424373465,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.018693282663091504,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.11664676870898663,
+          "max_rad": 2.5653529212076305,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.002952119303437269,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.0048390144243733915,
+          "max_rad": 0.03999999999983412,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.091573598711683,
+          "max_rad": 0.018693282663091483,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.11664676870898673,
+          "max_rad": 2.5653529212076402,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.0029521193034371955,
+          "max_rad": 0.03259162098286245,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "d25037f80692be8ce56d7f22bb6767608ea2b3a299235b71073465091c270bd1"
+    },
+    {
+      "trace": "a-pos004-p5-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.25475126548212096,
+          "max_rad": 0.23196745091873325,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03475126548212096,
+          "violating_saved_frames": 208,
+          "first_violation_s": 1.840999999999908
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.49029453723856964,
+          "max_rad": 0.9019064371320715,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -76.45466141309247,
+          "max_rad": 2.600109357483043,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12652764627651328,
+          "max_rad": 0.204333166097527,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.25475160452236323,
+          "max_rad": 0.2319674509187334,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03475160452236323,
+          "violating_saved_frames": 208,
+          "first_violation_s": 1.840999999999908
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.49029453723856975,
+          "max_rad": 0.9019084199160019,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -77.868869799814,
+          "max_rad": 2.5983307765908346,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.1265259269416436,
+          "max_rad": 0.20433316609752725,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "b4ab8e23ae40008c8a3c7e52f62212ddacf2c770ab14d218e7fa80b056aba3ea"
+    },
+    {
+      "trace": "a-zero-p1-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.05470942491641881,
+          "max_rad": -8.175275659509705e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.00019661662761047947,
+          "max_rad": 0.1412231335084952,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.12113809493430878,
+          "max_rad": 3.061459489172626,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.04079612128197158,
+          "max_rad": -5.136139127901538e-05,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.054709424916418795,
+          "max_rad": -8.175275659509739e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.00019661662761048115,
+          "max_rad": 0.1412231335084952,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.12113809493430881,
+          "max_rad": 3.0614594891726385,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.04079612128197159,
+          "max_rad": -5.136139127904638e-05,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "4872400f5f887c7f6190aaf9567dacf79151b23cd63477a9e2698059c2bfa06f"
+    },
+    {
+      "trace": "a-zero-p1-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.05470942491641881,
+          "max_rad": -8.175275659509705e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.00019661662761047947,
+          "max_rad": 0.1412231335084952,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.12113809493430878,
+          "max_rad": 5.338720896234075,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.04079612128197158,
+          "max_rad": -5.136139127901538e-05,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.054709424916418795,
+          "max_rad": -8.175275659509739e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.00019661662761048115,
+          "max_rad": 0.1412231335084952,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.12113809493430881,
+          "max_rad": 5.338651263195545,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.04079612128197159,
+          "max_rad": -5.136139127904638e-05,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "8aee50adf987794aa794cd08935dde45ec68a44404c951501c69a8eacc282e77"
+    },
+    {
+      "trace": "a-zero-p10-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.055118854427025785,
+          "max_rad": -8.175275659509705e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.00019661662761047947,
+          "max_rad": 0.14225168440447025,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.13206502380747073,
+          "max_rad": 3.061366341481363,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.04109718515526104,
+          "max_rad": -5.136139127901538e-05,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.05511885442702582,
+          "max_rad": -8.175275659509739e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.00019661662761048115,
+          "max_rad": 0.14225168440447028,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.13206502380747073,
+          "max_rad": 3.061366341481365,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.0410971851552611,
+          "max_rad": -5.136139127904638e-05,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "df1ee813b90943117f76bbf7ab76629de8f6d42ecd601325da051966f60c06f9"
+    },
+    {
+      "trace": "a-zero-p10-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.2557609164134165,
+          "max_rad": 0.5286745818925536,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03576091641341647,
+          "violating_saved_frames": 204,
+          "first_violation_s": 1.9209999999998992
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -1.0972344142872765,
+          "max_rad": 0.9014092620121043,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -56.59104095244234,
+          "max_rad": 2.8790914819539952,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12226537853234226,
+          "max_rad": 0.5062598518125756,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.25576425912568224,
+          "max_rad": 0.5291677036830523,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.035764259125682235,
+          "violating_saved_frames": 204,
+          "first_violation_s": 1.9209999999998992
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -1.098180067521347,
+          "max_rad": 0.9014338201938852,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -56.587876899203096,
+          "max_rad": 2.8790804576754008,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.12226541890885766,
+          "max_rad": 0.5067888650187263,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "fe37d0a9326578671014ccd8069a6f595894fcd1c16e43c56596d17560137e16"
+    },
+    {
+      "trace": "a-zero-p2-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.05474095506035147,
+          "max_rad": -8.175275659509705e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.00019661662761047947,
+          "max_rad": 0.1413019888899864,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.12239096509121312,
+          "max_rad": 3.0614451511723804,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.04081936715196568,
+          "max_rad": -5.136139127901538e-05,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.05474095506035146,
+          "max_rad": -8.175275659509739e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.00019661662761048115,
+          "max_rad": 0.1413019888899864,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.12239096509121306,
+          "max_rad": 3.061445151172374,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.04081936715196564,
+          "max_rad": -5.136139127904638e-05,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "8091c65d17edfe6bb9573b67234df911edee01e98996da668d3ecd234d974cfc"
+    },
+    {
+      "trace": "a-zero-p2-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.05474095506035147,
+          "max_rad": -8.175275659509705e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.00019661662761047947,
+          "max_rad": 0.1413019888899864,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.12239096509121312,
+          "max_rad": 5.479883090695732,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.04081936715196568,
+          "max_rad": -5.136139127901538e-05,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.05474095506035146,
+          "max_rad": -8.175275659509739e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.00019661662761048115,
+          "max_rad": 0.1413019888899864,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.12239096509121306,
+          "max_rad": 5.4800724344934695,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.04081936715196564,
+          "max_rad": -5.136139127904638e-05,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "fe02a92a7403c77fd6ed37a31d737b003219beedf8a2430d9bee2c60f27d7937"
+    },
+    {
+      "trace": "a-zero-p5-baseline_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.054853561668304254,
+          "max_rad": -8.175275659509705e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_left",
+          "min_rad": 0.00019661662761047947,
+          "max_rad": 0.14158432485055816,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -0.1261020151097863,
+          "max_rad": 3.061408399046796,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.04090226226056838,
+          "max_rad": -5.136139127901538e-05,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.05485356166830426,
+          "max_rad": -8.175275659509739e-05,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.0,
+          "violating_saved_frames": 0,
+          "first_violation_s": null
+        },
+        {
+          "name": "knee_right",
+          "min_rad": 0.00019661662761048115,
+          "max_rad": 0.14158432485055816,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -0.1261020151097863,
+          "max_rad": 3.0614083990468,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.040902262260568326,
+          "max_rad": -5.136139127904638e-05,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "24555c6e802ba5482cb1c62cdc85480dea807461be09b43deee423581c8700e3"
+    },
+    {
+      "trace": "a-zero-p5-jump_raw.json",
+      "status": "INVALID_FOR_HARDWARE_INFERENCE",
+      "physical_jump_claim_allowed": false,
+      "mask_enabled_robot_pairs": 0,
+      "joints": [
+        {
+          "name": "hip_left",
+          "min_rad": -0.2535234347875366,
+          "max_rad": 0.10898580700533875,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03352343478753658,
+          "violating_saved_frames": 208,
+          "first_violation_s": 1.840999999999908
+        },
+        {
+          "name": "knee_left",
+          "min_rad": -0.2364015657673529,
+          "max_rad": 0.9029740043167971,
+          "limited": false
+        },
+        {
+          "name": "wheel_left",
+          "min_rad": -75.69322937628088,
+          "max_rad": 2.7562341958656233,
+          "limited": false
+        },
+        {
+          "name": "rod_left",
+          "min_rad": -0.12684927277939184,
+          "max_rad": 0.09212578211264992,
+          "limited": false
+        },
+        {
+          "name": "hip_right",
+          "min_rad": -0.25352383913515114,
+          "max_rad": 0.10898580700533898,
+          "limited": true,
+          "declared_range_rad": [
+            -0.22,
+            0.65
+          ],
+          "max_limit_excursion_rad": 0.03352383913515114,
+          "violating_saved_frames": 208,
+          "first_violation_s": 1.840999999999908
+        },
+        {
+          "name": "knee_right",
+          "min_rad": -0.2364015657673529,
+          "max_rad": 0.9029763088319074,
+          "limited": false
+        },
+        {
+          "name": "wheel_right",
+          "min_rad": -75.69607808375217,
+          "max_rad": 2.7562905130196964,
+          "limited": false
+        },
+        {
+          "name": "rod_right",
+          "min_rad": -0.1268486363186738,
+          "max_rad": 0.09212578211265017,
+          "limited": false
+        }
+      ],
+      "trace_sha256": "ec047a1d72e6d07dc8bd34e1eac64e925651742532043002dc1573185745dedc"
+    }
+  ]
+}

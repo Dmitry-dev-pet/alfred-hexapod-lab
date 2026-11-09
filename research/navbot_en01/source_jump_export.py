@@ -4,6 +4,7 @@ import argparse, hashlib, json, tempfile
 from pathlib import Path
 from .feedback_export import export as base_export
 from .source_jump import FIRMWARE_BLOB
+from .model_validity import audit_trace
 
 def export(trace,out):
     raw=Path(trace).read_bytes();record=json.loads(raw);s=record['summary']
@@ -16,7 +17,11 @@ def export(trace,out):
         'cad_anchor_q_rad_ASSUMED':s['cad_anchor_q_at_height38_rad_ASSUMED'],
         'events':s['command_events'],'scope':s['source_jump_exactness']}
     doc['limitations'].append('Only source jump command sequencing is reproduced; loop clock and encoder/CAD zero are sensitivity hypotheses')
-    if s['source_jump_enabled']:doc['status']='research' if s['jump_pass'] else 'failed'
+    doc['model_validity'] = audit_trace(record)
+    # Keep measured flight telemetry, but never promote this surrogate to a
+    # physical success while mechanical admissibility is unverified.
+    doc['status'] = 'failed'
+    doc['limitations'].append('MODEL INVALID FOR HARDWARE INFERENCE: uncalibrated stops and disabled self-collision; flight metrics are surrogate diagnostics only')
     payload=json.dumps(doc,allow_nan=False,separators=(',',':'))+'\n';out=Path(out);out.parent.mkdir(parents=True,exist_ok=True)
     if out.exists() and out.read_text()!=payload:raise ValueError('Immutable replay conflict')
     out.write_text(payload)
