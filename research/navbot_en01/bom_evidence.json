@@ -1,0 +1,122 @@
+{
+  "schema": "en01-source-bom-facts/v1",
+  "source": {
+    "repo": "fuwei007/Navbot-EN01",
+    "commit": "3139f2fb32b38d10611feb905e16f8aa012f2f2e",
+    "path": "Hardware/RebotModel/BOM.xlsx",
+    "git_blob_sha1": "f91c763c29d0182c4d5018cd622a569bca2f483a",
+    "raw_sha256": "c6a33ca9bb5376c7122a4b96ef8fd0102ff9697d9fa0ae72f2364cc8f9e525a7"
+  },
+  "spring_part_rows": [],
+  "inference": "No explicitly named spring in the 22-row BOM. Does not prove no spring is fitted. CAD spring-cover names alone do not establish stiffness/preload or even installed spring.",
+  "row_names": [
+    {
+      "row": 2,
+      "part": "Servo"
+    },
+    {
+      "row": 3,
+      "part": "Motor"
+    },
+    {
+      "row": 4,
+      "part": "Neodymium Magnet"
+    },
+    {
+      "row": 5,
+      "part": "Battery"
+    },
+    {
+      "row": 6,
+      "part": "Screw M2*4"
+    },
+    {
+      "row": 7,
+      "part": "Screw M2*6"
+    },
+    {
+      "row": 8,
+      "part": "Screw M2.5*5"
+    },
+    {
+      "row": 9,
+      "part": "Screw M3*6"
+    },
+    {
+      "row": 10,
+      "part": "BigHead Screw M2*6"
+    },
+    {
+      "row": 11,
+      "part": "Nut M2"
+    },
+    {
+      "row": 12,
+      "part": "Screw M2.3*15"
+    },
+    {
+      "row": 13,
+      "part": "Earings 3-6-2"
+    },
+    {
+      "row": 14,
+      "part": "Earings 4-7-2.5"
+    },
+    {
+      "row": 15,
+      "part": "Cylindrical Pin 4x12"
+    },
+    {
+      "row": 16,
+      "part": "Brass Standoff M2*8+3"
+    },
+    {
+      "row": 17,
+      "part": "Brass Standoff M2*25+4"
+    },
+    {
+      "row": 18,
+      "part": "Brass Standoff M2*8"
+    },
+    {
+      "row": 19,
+      "part": "Brass Standoff M2*3*3"
+    },
+    {
+      "row": 20,
+      "part": "Tire（Round Silicone Ring）"
+    },
+    {
+      "row": 21,
+      "part": "OLED"
+    },
+    {
+      "row": 22,
+      "part": "sh1.0 4P"
+    },
+    {
+      "row": 23,
+      "part": "MX1.27 7P"
+    }
+  ],
+  "key_parts": [
+    {
+      "part": "Servo",
+      "specification": "1pcs ST3032 all metal hollow cup 360 degree magnetic coding rotating TTL signal level minibus steering gear (black)",
+      "quantity": 2,
+      "source_row": 2
+    },
+    {
+      "part": "Motor",
+      "specification": "Fityle 2208 90KV 3mm Shaft Gimbal Brushless Motor for 100-200g Gopro3 RC Quadcopter",
+      "quantity": 2,
+      "source_row": 3
+    },
+    {
+      "part": "Battery",
+      "specification": "MakerHawk 4 Pack 3.7V 1000mAh LiPo Battery Rechargeable",
+      "quantity": 1,
+      "source_row": 5
+    }
+  ]
+}

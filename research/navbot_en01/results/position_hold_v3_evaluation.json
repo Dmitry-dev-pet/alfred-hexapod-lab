@@ -1,0 +1,132 @@
+{
+  "schema": "en01-position-feedback-evaluation/v1",
+  "source_model_sha256": "d70f67e32bfdaa1faf296c216a66c859e759eb75e75f63f0b3e365b767dacffc",
+  "nominal_model_unchanged": true,
+  "controller_source_sha256": "8ea5f58ad83376950645b65b41dc0deab651d14a362618948ca420f1e77577e5",
+  "gain_candidates_nm_per_m": [
+    0,
+    0.03,
+    0.1,
+    0.3
+  ],
+  "selected_gain_nm_per_m": 0.3,
+  "selection_rule": "minimum stand max |x| among four declared gains with upright_6s true; crouch is reported, not a success claim",
+  "baseline_stand_drift_m": 0.25000942446155733,
+  "selected_stand_drift_m": 0.050706919769792726,
+  "drift_ratio": 4.930479421676362,
+  "baseline_pitch_deg": 11.537049350185514,
+  "selected_pitch_deg": 13.242726358678459,
+  "zero_gain_v2_nominal_qpos_exact": true,
+  "case_count": 31,
+  "new_physics_steps": 186000,
+  "recorded_frames": 9300,
+  "gated_cases": [
+    {
+      "id": "gated-friction-035-stand",
+      "model_profile": "friction-035",
+      "mode": "stand",
+      "max_abs_x_m": 0.05077172974646443,
+      "max_abs_pitch_deg": 13.253971234320048,
+      "nonwheel_ground_steps": 0,
+      "upright_6s": true,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    },
+    {
+      "id": "gated-g30-crouch",
+      "model_profile": "nominal",
+      "mode": "crouch",
+      "max_abs_x_m": 1.624159942668302,
+      "max_abs_pitch_deg": 13.242726358678459,
+      "nonwheel_ground_steps": 348,
+      "upright_6s": false,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    },
+    {
+      "id": "gated-g30-drive",
+      "model_profile": "nominal",
+      "mode": "drive",
+      "max_abs_x_m": 0.36314291315391645,
+      "max_abs_pitch_deg": 15.494671988603727,
+      "nonwheel_ground_steps": 0,
+      "upright_6s": true,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    },
+    {
+      "id": "gated-g30-fall",
+      "model_profile": "nominal",
+      "mode": "fall",
+      "max_abs_x_m": 0.011040897939301153,
+      "max_abs_pitch_deg": 179.9908279927255,
+      "nonwheel_ground_steps": 5633,
+      "upright_6s": false,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 6000
+    },
+    {
+      "id": "gated-g30-jump",
+      "model_profile": "nominal",
+      "mode": "jump",
+      "max_abs_x_m": 0.36319711921542863,
+      "max_abs_pitch_deg": 13.242726358678459,
+      "nonwheel_ground_steps": 3280,
+      "upright_6s": false,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    },
+    {
+      "id": "gated-g30-push",
+      "model_profile": "nominal",
+      "mode": "push",
+      "max_abs_x_m": 0.057513449060012024,
+      "max_abs_pitch_deg": 17.339046403890276,
+      "nonwheel_ground_steps": 0,
+      "upright_6s": true,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    },
+    {
+      "id": "gated-g30-stand",
+      "model_profile": "nominal",
+      "mode": "stand",
+      "max_abs_x_m": 0.050706919769792726,
+      "max_abs_pitch_deg": 13.242726358678459,
+      "nonwheel_ground_steps": 0,
+      "upright_6s": true,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    },
+    {
+      "id": "gated-mass-090-stand",
+      "model_profile": "mass-090",
+      "mode": "stand",
+      "max_abs_x_m": 0.04957731254122872,
+      "max_abs_pitch_deg": 12.481255270225613,
+      "nonwheel_ground_steps": 0,
+      "upright_6s": true,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    },
+    {
+      "id": "gated-mass-110-stand",
+      "model_profile": "mass-110",
+      "mode": "stand",
+      "max_abs_x_m": 2.5724608895169623,
+      "max_abs_pitch_deg": 11.78237060327025,
+      "nonwheel_ground_steps": 596,
+      "upright_6s": false,
+      "jump_pass": false,
+      "safety_wheel_cut_steps": 0
+    }
+  ],
+  "limits": [
+    "six seconds per case only",
+    "selected gain from nominal development data",
+    "+10% mass variant unstable",
+    "crouch/jump/self-right not demonstrated",
+    "motor torque and mass distribution uncalibrated",
+    "no WebGL/Android visual validation"
+  ]
+}

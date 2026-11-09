@@ -1,0 +1,11 @@
+{
+  "three_revision": "169",
+  "scenarios": 31,
+  "frames": 9300,
+  "part_mapping_count": 73,
+  "vertex_checks": 3645538,
+  "body_pose_checks": 83700,
+  "max_rest_reconstruction_error_m": 0,
+  "webgl_rendered": false,
+  "android_verified": false
+}

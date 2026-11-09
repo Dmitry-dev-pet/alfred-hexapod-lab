@@ -1,0 +1,49 @@
+{
+  "schema": "hexapod-replay-job/v1",
+  "id": "en01-v3-g00-crouch-20261109",
+  "title": "EN01 v3 \u00b7 g00-crouch",
+  "detail": "Recorded dynamics \u00b7 wheel-position feedback \u00b7 diagnostic \u00b7 uncalibrated",
+  "robot": "NavBot EN01 source fourbar surrogate",
+  "engine": "MuJoCo",
+  "status": "failed",
+  "publish_policy": "review_only",
+  "duration_s": 6,
+  "commands": {
+    "simulate": [
+      "python",
+      "-m",
+      "research.navbot_en01.feedback_probe",
+      "--mode",
+      "crouch",
+      "--out",
+      "results/en01_v3/g00-crouch_raw.json",
+      "--position-gain",
+      "0",
+      "--profile",
+      "nominal"
+    ],
+    "export": [
+      "python",
+      "-m",
+      "research.navbot_en01.feedback_export",
+      "--trace",
+      "results/en01_v3/g00-crouch_raw.json",
+      "--out",
+      "docs/hexapod/data/en01-v3-g00-crouch-20261109.json"
+    ]
+  },
+  "trace": {
+    "path": "results/en01_v3/g00-crouch_raw.json",
+    "samples_field": "frames",
+    "time_field": "t",
+    "qpos_field": "qpos"
+  },
+  "replay": {
+    "path": "hexapod/data/en01-v3-g00-crouch-20261109.json",
+    "format": "navbot-en01-fourbar-physical-replay-v2",
+    "trace_sha256_field": "source.trace_sha256"
+  },
+  "player": {
+    "template": "en01-linkage-template"
+  }
+}

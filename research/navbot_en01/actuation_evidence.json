@@ -1,0 +1,84 @@
+{
+  "schema": "en01-actuation-source-audit/v1",
+  "source": {
+    "repo": "fuwei007/Navbot-EN01",
+    "commit": "3139f2fb32b38d10611feb905e16f8aa012f2f2e",
+    "firmware_blob": "c5c69e515d7d2a22edc3779667fc3edfe4045ae9",
+    "readme_blob": "f55071256a4c2d94ca42fcb21f69ad55585ee1d2"
+  },
+  "encoder": {
+    "zero": 2048,
+    "zero_meaning": "fully squatted mechanical limit per source README",
+    "counts_per_turn": 4096,
+    "left_id": 1,
+    "right_id": 2,
+    "cad_squat_zero_rad": null,
+    "normal_left_limits": [
+      2110,
+      2510
+    ],
+    "normal_right_limits": [
+      1586,
+      1986
+    ],
+    "normal_speed_parameter": 150,
+    "normal_acceleration_parameter": 5,
+    "jump_speed_parameter": 0,
+    "jump_acceleration_parameter": 0
+  },
+  "timing": {
+    "jump_return_flag_interval": [
+      31,
+      34
+    ],
+    "clock": "main-loop iterations, not documented seconds",
+    "fixed_period_jump_timing_proven": false
+  },
+  "wheel_control": {
+    "mode": "SimpleFOC TorqueControlType::voltage",
+    "configured_driver_supply_v": 8,
+    "voltage_to_torque_nm": null,
+    "source_distance_feedback": true,
+    "source_distance_signal": "sum of direction-normalized wheel shaft angles",
+    "source_airborne_handling": "distance and speed terms suppressed when jump flag active or wheel speed/step change exceeds source thresholds"
+  },
+  "motor": {
+    "bom": "Fityle 2208 90KV 3mm shaft; BOM row 3",
+    "author_blog": "TMCM-6210 BLDC motors",
+    "sku_resolved": false
+  },
+  "spring": {
+    "bom_explicit_rows": 0,
+    "presence": "unconfirmed",
+    "stiffness_nm_rad": null,
+    "preload_nm": null
+  },
+  "servo_references": [
+    {
+      "source": "https://www.feetechrc.com/Data/feetechrc/upload/file/20200611/6372749220559698399729459.pdf",
+      "model": "STS3032-C001",
+      "mass_g": 20,
+      "mass_tolerance_g": 0.2,
+      "nominal_voltage_v": 6,
+      "no_load_seconds_per_60_deg": 0.09,
+      "stall_kgcm": 4.5,
+      "counts_per_turn": 4096
+    },
+    {
+      "source": "https://www.feetechrc.com/Data/feetechrc/upload/file/20240706/2024%E9%A3%9E%E7%89%B9%E5%AE%A3%E4%BC%A0%E5%86%8C.pdf",
+      "catalog": "20230718V1; ST-3032-C001 entry",
+      "mass_g": 20.6,
+      "rated_kgcm": 1.5,
+      "rated_current_a": 0.4,
+      "stall_kgcm": 4.5,
+      "exact_installed_revision_confirmed": false
+    }
+  ],
+  "rules": [
+    "Do not identify CAD joint zero with encoder 2048 without measured squat angle",
+    "Do not infer installed springs from CAD cover names",
+    "Do not convert voltage controller output directly to Nm",
+    "Do not replace nominal torque with continuous stall torque",
+    "Do not change whole-robot mass from one servo datasheet"
+  ]
+}

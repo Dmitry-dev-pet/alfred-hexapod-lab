@@ -22,14 +22,14 @@ def part_groups():
     return groups
 
 
-def build(src,dst):
+def build(src,dst,*,model_xml=None):
     import mujoco
     import numpy as np
     raw=Path(src).read_bytes();record=json.loads(raw);s=record["summary"]
     if (s["schema"]!="en01-fourbar-diagnostic/v1" or s["mujoco_version"]!="3.14.0"
             or s["geometry_source_blob"]!=PINNED_BLOB or s["duration_s"]!=6):
         raise ValueError("Unexpected trace provenance")
-    xml=create(timestep=s["timestep_s"])
+    xml=model_xml if model_xml is not None else create(timestep=s["timestep_s"])
     if hashlib.sha256(xml.encode()).hexdigest()!=s["model_sha256"]:
         raise ValueError("Trace model hash mismatch")
     m=mujoco.MjModel.from_xml_string(xml);d=mujoco.MjData(m);mujoco.mj_forward(m,d)
