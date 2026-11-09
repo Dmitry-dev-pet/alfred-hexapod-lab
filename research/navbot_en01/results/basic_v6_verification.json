@@ -1,0 +1,22 @@
+{
+  "schema": "en01-basic-motion-verification/v1",
+  "cases": 12,
+  "passed": 3,
+  "failed": 9,
+  "physics_steps_per_battery": 288000,
+  "repeat_byte_identical": true,
+  "saved_frames": 3600,
+  "interpolated_surface_poses": 10764,
+  "unexpected_surface_intersections": 0,
+  "fk_max_residual": 0.0,
+  "three_part_transforms": 262800,
+  "three_max_numeric_residual_m": 8.881784197001252e-16,
+  "unit_tests_passed": 7,
+  "source_model_frozen_from_v5": true,
+  "mujoco": "3.14.0",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "python_fcl": "0.7.0.11",
+  "hardware_validation": false,
+  "webgl_visual_validation": false
+}
