@@ -1,0 +1,20 @@
+{
+  "filename": "MicroDuck_joysticks_falls_getups_20261109.zip",
+  "size_bytes": 41438980,
+  "sha256": "633f948b3340fb6c63087e84a25b33e6f69d6025ae63a4c5384f09befdb9a10e",
+  "files": 31,
+  "drive_file_id": "1S7FgYnz_Y31OedO98oUUC_Gp1loifPqz",
+  "drive_url": "https://drive.google.com/file/d/1S7FgYnz_Y31OedO98oUUC_Gp1loifPqz/view?usp=drivesdk",
+  "route": "/hexapod/microduck-control-v1/",
+  "source_player_base": "ed028319b1a9a5b6579efe38fcf443234582d343",
+  "catalog_revision": 41,
+  "catalog_entries": 62,
+  "tests_passed": 6,
+  "webgl_rendering_verified": false,
+  "android_multitouch_verified": false,
+  "kinematic_preview": true,
+  "site_version": 8,
+  "site_source_commit": "6236f565295590a862ed9998e2c34c761f1e29df",
+  "deployment_id": "appgdep_6af200ee532881919d58f0e375b6bf89",
+  "deployment_status": "succeeded"
+}
