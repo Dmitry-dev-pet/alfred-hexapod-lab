@@ -1,0 +1,19 @@
+{
+  "schema": "hexarth-private-artifact/v1",
+  "filename": "HexArth_v1_first_obstacles_20261110.zip",
+  "size_bytes": 77464315,
+  "sha256": "aa0e575b52fba221b8543c3d097de13579b66b6efe44584a5f911f18c36058e7",
+  "source_code_commit": "f0f52c5c23080545a9a7ac9e5ed826bd3cf540e4",
+  "drive_url": "https://drive.google.com/file/d/1I1RVO7Ko2GlrdWLb-h9rMQiyYdUUJFmo/view?usp=drivesdk",
+  "drive_folder_id": "1QB_AOZuxteCA8FA0tAqyIwV2-ET75MQM",
+  "drive_size_verified": true,
+  "contents": [
+    "original OEM CAD and code archives",
+    "113 derived STL meshes and assembly/axis manifest",
+    "four physical traces and body-pose replays",
+    "half-timestep sensitivity run",
+    "source and compact evidence",
+    "PNG rendered from saved physical state"
+  ],
+  "publication": "private artifact; no Site or player catalog publication"
+}
