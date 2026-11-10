@@ -55,3 +55,20 @@
 - Не предлагай писать в поддержку Freenove: для текущей реконструкции использовать открытый STEP/URDF/MJCF и независимые технические источники; предпочтение пользователя — без обращения в поддержку.
 
 **Короткое правило:** считай и рисуй здесь → сохраняй MP4/GIF и большие данные в Drive → фиксируй воспроизводимый код/результаты в GitHub → используй Actions только для контрольного CI.
+
+
+## Standalone recordings and automatic library loading (owner decision 2026-11-10)
+
+New recorded experiments use the shared `robot-replay/v1` data-only format: embed
+model geometry, materials, terrain and measured transforms in one standalone file.
+JavaScript belongs in the shared player. Do not generate a new app.js/HTML module
+for each robot or recording. The normal user flow is selecting an experience in
+the library; the player fetches its file automatically. Manual download/file
+selection is optional and must not be the required publication handoff.
+
+Publish the standalone file at an owner-authorized accessible URL and register
+its title, URL, exact size and SHA-256 in `docs/replay/catalog.json` using
+`scripts/register_robot_recording.py`. New compatible descriptors are consumed
+without a player-code deployment. Keep large package payloads out of this public
+research repository. Preserve the legacy catalog while migrating records.
+The owner explicitly authorized a public file path for HexArth in this chat.

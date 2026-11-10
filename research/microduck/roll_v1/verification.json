@@ -1,0 +1,9 @@
+{
+  "source_trace_checks": 10,
+  "independent_quaternion_max_error_deg": 0.18489997484891774,
+  "four_flat_physics_streams_reproduced": true,
+  "step12_roll2s_byte_identical": true,
+  "step12_trace_sha256": "014e29bbd55ab5899eed6b851a02e0f85d390c8b559ece4998f1d6ca79c67758",
+  "body_link_angular_frame_verified": true,
+  "webgl_rendering_verified": false
+}

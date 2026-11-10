@@ -1,0 +1,32 @@
+{
+  "episodes_checked": 24,
+  "flat_directed_successes": 6,
+  "flat_candidate_count": 18,
+  "step_successes": [
+    "step10-left.json"
+  ],
+  "step_count": 6,
+  "successful_cases": [
+    "flat-back-4.json",
+    "flat-back-6.json",
+    "flat-left-4.json",
+    "flat-left-6.json",
+    "flat-right-4.json",
+    "flat-right-6.json",
+    "step10-left.json"
+  ],
+  "byte_identical_nominal_repeats": [
+    "flat-back-4.json",
+    "flat-left-4.json",
+    "flat-right-4.json",
+    "step10-left.json"
+  ],
+  "all_motor_targets_within_2deg_margin": true,
+  "max_motor_limit_overshoot_deg": 1.1390095944727228,
+  "max_sparse_self_contact_penetration_m": 0.000892828723412542,
+  "max_environment_penetration_m": 0.0030220743995470326,
+  "all_warnings_and_physics_resets_zero": true,
+  "success_full_soles_recomputed": true,
+  "robustness_to_noise_tested": false,
+  "webgl_rendering_verified": false
+}

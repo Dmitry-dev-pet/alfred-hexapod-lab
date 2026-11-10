@@ -1,0 +1,14 @@
+{
+  "clips": 37,
+  "v2": 6,
+  "v3": 31,
+  "verified_source_frames": 11100,
+  "visual_pose_values": 699300,
+  "max_source_frame_residual": 0,
+  "hosted_replay_bytes": 15884976,
+  "cad_sha256": "8b034155dc50bb6c4e94a55bfa4ebca7b1fb742f2f38fc5c6c9f158c0cae313b",
+  "previous_entries": 60,
+  "catalog_entries": 61,
+  "catalog_revision": 40,
+  "physics_rerun": false
+}

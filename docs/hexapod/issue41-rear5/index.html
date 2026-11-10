@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101923">
+<title>Hexapod Lab — Задние вперёд · 4,6 мм</title>
+<link rel="stylesheet" href="/hexapod/claws/style.css">
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+<main class="layout">
+  <header class="topbar"><div class="brand"><span class="brand-mark">⬡</span><div><strong>HEXAPOD LAB</strong><small>Freenove FNK0052 · CAD30 · MuJoCo 3.14</small></div></div></header>
+  <section class="stage" aria-label="Наблюдаемая настоящая физическая запись MuJoCo">
+    <div id="viewer" role="img" aria-label="3D воспроизведение настоящих поз, движение пальца вращает камеру"></div>
+    <div class="stage-info"><div class="pill">Недобор до цели 5 мм</div><div class="measure"><span id="distance">0,0</span><small>см, перемещение корпуса</small></div></div>
+    <div class="stage-right"><div><b id="feet">—</b><small>ОПОРЫ ИЗ ЧЕТЫРЁХ</small></div></div>
+    <div class="stage-phase"><strong id="phase-label">Загрузка физической записи…</strong><small id="support-margin">Измеренные силы и перемещение обеих задних стоп</small></div>
+    <div class="stage-help">Поворот — перетаскивание · масштаб — двумя пальцами</div>
+    <div class="stage-bottom-tag" id="cad-status">Загрузка оригинальной геометрии Freenove…</div>
+    <div class="error" id="error" hidden role="alert"></div>
+  </section>
+  <section class="controls" aria-label="Воспроизведение">
+    <div class="transport"><button id="play" class="play" aria-label="Пауза">Ⅱ</button>
+      <div class="scrubber"><input id="seek" type="range" min="0" max="4" step="0.01" value="0" aria-label="Время записи"><div class="timeline-label"><span id="clock">00:00</span><span>Время</span></div></div>
+      <label class="speedlabel">Скорость <select id="speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option selected value="1">1×</option><option value="2">2×</option></select></label></div>
+    <div class="options"><label><input id="show-cad" type="checkbox" checked> CAD</label><label><input id="follow" type="checkbox" checked> Следить за корпусом</label>
+      <label><input id="contacts" type="checkbox" checked> Настоящие контакты ног</label><label><input id="path" type="checkbox"> Путь</label><button id="reset-camera" class="text-button">Сброс камеры</button></div>
+  </section>
+  <footer><div><strong>При целевых 5 мм реально переместились примерно на 4,6 мм. Физический перенос есть, но исследовательский критерий посадки ≥5 мм не выполнен.</strong> Источник: <a href="https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/pull/42">исследовательский PR #42</a>. Положение суставов записано из MuJoCo через 20 мс, силы и контакты проверялись каждые 2 мс.</div>
+  <div>Массы, сцепление, моменты и лимиты модели не откалиброваны на настоящем роботе. На этой странице не показан полный цикл ходьбы. CAD © Freenove, 30 из 32 оригинальных STL — только существующий проверенный локальный кэш; 2 заменены визуальными заглушками.</div></footer>
+</main>
+<script type="module" src="/hexapod/issue41-rear5/app.js"></script>
+<script type="module" src="/hexapod/player-shell.js"></script>
+</body>
+</html>

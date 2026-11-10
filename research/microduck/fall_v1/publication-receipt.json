@@ -1,0 +1,20 @@
+{
+  "filename": "MicroDuck_directed_fall_getup_20261109.zip",
+  "size_bytes": 38122396,
+  "sha256": "3438bbe2ca10109cc1ac55d487f6575f72c97e5a61186124cc318540d95b1237",
+  "files": 70,
+  "drive_file_id": "1odL_U4oLMbTJLyLhTiEaILhFSCat5T4i",
+  "drive_url": "https://drive.google.com/file/d/1odL_U4oLMbTJLyLhTiEaILhFSCat5T4i/view?usp=drivesdk",
+  "route": "/hexapod/microduck-falls-v1/",
+  "catalog_revision": 46,
+  "catalog_entries": 67,
+  "clips": 24,
+  "total_frames": 12000,
+  "client_tests_passed": 5,
+  "webgl_rendering_verified": false,
+  "site_version": 13,
+  "site_source_commit": "a4c142d5a0a336319aa227207892b270596d3840",
+  "deployment_id": "appgdep_6af21d7bbb3c8191b9a7561213966af3",
+  "site_url": "https://alfred-robot-player.curlyeave.chatgpt.site",
+  "byte_identical_repeats": 4
+}

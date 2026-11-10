@@ -1,0 +1,10 @@
+{
+  "recordings": 9,
+  "physical_frames_exact": 2700,
+  "hosted_replay_bytes": 3907634,
+  "entries": 68,
+  "revision": 47,
+  "prior_entries_preserved": true,
+  "source_archive_sha256": "a42c9e1a6f5debd610711d819a2ed00fcd8f1416ff07a2355961efd54d27e233",
+  "physics_rerun": false
+}

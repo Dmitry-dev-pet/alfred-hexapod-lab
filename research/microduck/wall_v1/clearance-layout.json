@@ -1,0 +1,67 @@
+{
+  "method": "Maximum support X of all original visual/collision convex hulls clipped to platform vertical slab, over initial keyframe plus 50 settled reference states. Add 2 mm. This conservative geometry setup is followed by continuous initial contact checks in the actual run.",
+  "reference_trace_sha256": "7a038e4579b8f106641f2371759799e3406adb768c70704bfcdb36b83e8bf28c",
+  "samples": 51,
+  "entries": [
+    {
+      "height_m": 0.01,
+      "edge_x_m": 0.0221168856759869,
+      "swept_outer_rear_x_m": 0.0201168856759869,
+      "settled_outer_rear_x_m": 0.0201168856759869,
+      "settled_surface_gap_m": 0.0020000000000000018,
+      "swept_collision_rear_x_m": 0.0201168856759869,
+      "limiting_gid": 78,
+      "limiting_body": "ankle_right"
+    },
+    {
+      "height_m": 0.02,
+      "edge_x_m": 0.0221168856759869,
+      "swept_outer_rear_x_m": 0.0201168856759869,
+      "settled_outer_rear_x_m": 0.0201168856759869,
+      "settled_surface_gap_m": 0.0020000000000000018,
+      "swept_collision_rear_x_m": 0.0201168856759869,
+      "limiting_gid": 78,
+      "limiting_body": "ankle_right"
+    },
+    {
+      "height_m": 0.03,
+      "edge_x_m": 0.0221168856759869,
+      "swept_outer_rear_x_m": 0.0201168856759869,
+      "settled_outer_rear_x_m": 0.0201168856759869,
+      "settled_surface_gap_m": 0.0020000000000000018,
+      "swept_collision_rear_x_m": 0.0201168856759869,
+      "limiting_gid": 78,
+      "limiting_body": "ankle_right"
+    },
+    {
+      "height_m": 0.05,
+      "edge_x_m": 0.02943731243484938,
+      "swept_outer_rear_x_m": 0.027437312434849377,
+      "settled_outer_rear_x_m": 0.027437312434849377,
+      "settled_surface_gap_m": 0.0020000000000000018,
+      "swept_collision_rear_x_m": 0.024493665293323155,
+      "limiting_gid": 20,
+      "limiting_body": "upper_leg_left"
+    },
+    {
+      "height_m": 0.1,
+      "edge_x_m": 0.0495693467347744,
+      "swept_outer_rear_x_m": 0.0475693467347744,
+      "settled_outer_rear_x_m": 0.04756304001090905,
+      "settled_surface_gap_m": 0.002006306723865349,
+      "swept_collision_rear_x_m": 0.0475693467347744,
+      "limiting_gid": 8,
+      "limiting_body": "trunk_base"
+    },
+    {
+      "height_m": 0.25,
+      "edge_x_m": 0.0495693467347744,
+      "swept_outer_rear_x_m": 0.0475693467347744,
+      "settled_outer_rear_x_m": 0.04756304001090905,
+      "settled_surface_gap_m": 0.002006306723865349,
+      "swept_collision_rear_x_m": 0.0475693467347744,
+      "limiting_gid": 8,
+      "limiting_body": "trunk_base"
+    }
+  ]
+}

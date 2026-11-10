@@ -1,0 +1,19 @@
+{
+  "episodes_checked": 12,
+  "frames_checked": 7600,
+  "independent_quaternion_max_error_deg": 0.36377527945440136,
+  "matching_flat_step_approach_frames": 230,
+  "matching_approach_until_s": 4.6000000000000005,
+  "byte_identical_repeats": [
+    "runup-flat-moving.json",
+    "runup-contact-long.json"
+  ],
+  "flat_controls_complete_and_stable": true,
+  "step_goal_successes": 0,
+  "triggered_step_trials": 8,
+  "max_body_step_penetration_m": 0.0,
+  "max_all_step_penetration_m": 0.000990248643936431,
+  "max_self_contact_penetration_m": 0.00035702536329802585,
+  "warnings_or_resets": 0,
+  "hardware_tested": false
+}

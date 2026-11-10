@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101820">
+  <meta name="description" content="Настоящие оригинальные STL XGO-Lite3 и измеренные MuJoCo/ONNX CPU replay, локально на планшете.">
+  <title>Hexapod Lab · XGO-Lite3 · заводская 3D-модель</title>
+  <link rel="stylesheet" href="/hexapod/claws/style.css">
+  <link rel="stylesheet" href="/hexapod/player-shell.css">
+  <style>
+    .lite3-picker{position:absolute;right:12px;top:80px;z-index:4;width:min(65vw,315px);background:#0b1a28ed;border:1px solid #385566;border-radius:10px;padding:10px;color:#ebf6f9}
+    .lite3-picker label{display:block;font-size:10px;letter-spacing:.07em;color:#acc8d4;margin-bottom:6px}
+    .lite3-picker select{width:100%;min-height:38px;font-size:12px;color:#eaf7fc;border:1px solid #456477;border-radius:7px;background:#1a3040;padding:7px}
+    .lite3-stats{position:absolute;bottom:92px;left:12px;max-width:min(85vw,390px);padding:9px 11px;color:#eaf7f4;background:#0b1a28e6;border:1px solid #315168;border-radius:9px;pointer-events:none;z-index:2;font-size:11px;line-height:1.65;font-variant-numeric:tabular-nums}
+    .lite3-stats strong{font-size:13px}.lite3-stats .line{color:#a7c5d1}
+    .lite3-status{position:absolute;left:12px;bottom:180px;max-width:min(83vw,450px);z-index:4;background:#102635e8;color:#bde4ed;padding:8px 10px;border-radius:7px;font-size:11px;line-height:1.45}
+    .lite3-error{z-index:6;white-space:pre-wrap}
+    .lite3-private{font-size:11px;line-height:1.5;color:#aabdc6;padding:5px 10px}
+    @media (max-width:550px){.lite3-picker{top:82px;right:8px;width:min(64vw,275px);padding:8px}.lite3-stats{bottom:83px;left:8px;padding:7px}.lite3-status{left:8px;bottom:169px}}
+    @media (max-height:580px){.lite3-status{bottom:128px}.lite3-stats{bottom:64px}}
+  </style>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <main class="layout">
+    <section class="stage" aria-label="XGO-Lite3 original factory STL physics replay">
+      <div id="viewer" role="img" aria-label="Оригинальная STL-модель XGO-Lite3 с фактически записанными движениями MuJoCo"></div>
+      <div class="lite3-picker"><label for="lite3-case">XGO-LITE3 · ОРИГИНАЛЬНЫЕ STL · ONNX</label>
+        <select id="lite3-case" aria-label="Выбрать физический эксперимент Lite3">
+          <option value="standard-onnx">ONNX · вперёд / поворот / стоп · 8 с</option>
+          <option value="standard-zero">Без нейросети · те же команды · 8 с</option>
+          <option value="midstride-onnx">ONNX · смена направления · 9,5 с</option>
+          <option value="midstride-zero">Без нейросети · смена команд · 9,5 с</option>
+        </select>
+      </div>
+      <div class="lite3-status" id="lite3-status">Загружаем физическую запись и проверенные оригинальные STL…</div>
+      <div class="lite3-stats"><strong id="lite3-phase">XGO-Lite3 · ONNX</strong>
+        <div class="line" id="lite3-motion">—</div>
+        <div class="line" id="lite3-contact">—</div>
+      </div>
+      <div class="error lite3-error" id="lite3-error" hidden role="alert"></div>
+    </section>
+    <section class="controls" aria-label="Воспроизведение записи">
+      <div class="transport">
+        <button id="play" class="play" aria-label="Пауза">Ⅱ</button>
+        <div class="scrubber"><input id="seek" type="range" min="0" max="8" step="0.01" value="0" aria-label="Перемотать">
+          <div class="timeline-label"><span id="clock">00:00</span><span id="end-clock">00:08</span></div></div>
+        <label class="speedlabel">Скорость <select id="speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option selected value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+      </div>
+      <div class="options">
+        <label><input id="follow" type="checkbox" checked> Следить за роботом</label>
+        <label><input id="contacts" type="checkbox" checked> Контакты</label>
+        <label><input id="path" type="checkbox" checked> Траектория</label>
+        <button id="reset-camera" class="text-button">Вернуть камеру</button>
+      </div>
+      <div class="lite3-private">17 оригинальных STL Luwu Dynamics загружаются с закреплённого исходника, проверяются SHA-256 и сохраняются только локально в браузере планшета. Никакие STL не размещены в публичном GitHub Alfred Lab. Это replay, не управление настоящим роботом.</div>
+    </section>
+  </main>
+  <script type="module" src="/hexapod/lite3-original-v1/app.js"></script>
+  <script type="module" src="/hexapod/player-shell.js"></script>
+</body>
+</html>

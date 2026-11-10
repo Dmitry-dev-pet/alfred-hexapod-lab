@@ -1,0 +1,366 @@
+{
+  "schema": "cad30-six-wave-contact-gated/1",
+  "mode": "gate+feedback",
+  "run_seconds": 60.0,
+  "elapsed_seconds": 60.0,
+  "gait": "wave",
+  "phase_duty": 0.16,
+  "ramp_s": 10.0,
+  "step_m": 0.02,
+  "lift_m": 0.012,
+  "period_s": 3.0,
+  "model_source": "CAD30 30 original STL, 2 visual proxies; local scene_local30_nominal.xml",
+  "mu": 1.1,
+  "model_mass_kg": 1.80487,
+  "dt_s": 0.002,
+  "Fz_threshold_N": 0.2,
+  "progress_m": 0.320282,
+  "max_progress_m": 0.320282,
+  "min_real_Fz_loaded_legs": 5,
+  "num_under5_ticks": 0,
+  "fraction_5plus": 1.0,
+  "loaded_hist": {
+    "5": 22680,
+    "6": 7320
+  },
+  "contact_geom_hist": {
+    "5": 22555,
+    "6": 7445
+  },
+  "phase_holds": {
+    "pre_swing": 560,
+    "touchdown": 1833
+  },
+  "hold_s_total": 4.786,
+  "gate_started_swing": {
+    "fl": 19,
+    "fr": 19,
+    "mr": 19,
+    "br": 18,
+    "bl": 18,
+    "ml": 18
+  },
+  "gate_verified_touchdown": {
+    "fl": 19,
+    "fr": 19,
+    "mr": 18,
+    "br": 18,
+    "bl": 18,
+    "ml": 18
+  },
+  "unplanned_stance_Fz_under_0p2_ticks": 165,
+  "unplanned_stance_losses_by_leg": {
+    "bl": 119,
+    "br": 1,
+    "fl": 1,
+    "fr": 44
+  },
+  "unplanned_stance_loss_examples": [
+    {
+      "t": 5.0,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 5.016,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 5.03,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 5.044,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 5.06,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 7.716,
+      "leg": "br",
+      "swing": [
+        "mr"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.252,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.262,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.272,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.284,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.298,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.314,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.334,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.35,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.362,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.374,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.388,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 8.404,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 11.65,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 11.664,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 11.682,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 11.698,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 11.71,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 11.724,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 11.74,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 13.332,
+      "leg": "fl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 13.838,
+      "leg": "fr",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 13.844,
+      "leg": "fr",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 14.91,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 14.924,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 14.94,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 14.96,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 17.072,
+      "leg": "fr",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 17.078,
+      "leg": "fr",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 17.092,
+      "leg": "fr",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 18.158,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 18.172,
+      "leg": "bl",
+      "swing": [
+        "br"
+      ],
+      "Fz": 0.0
+    },
+    {
+      "t": 18.19,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 18.206,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    },
+    {
+      "t": 18.218,
+      "leg": "bl",
+      "swing": [],
+      "Fz": 0.0
+    }
+  ],
+  "unplanned_stance_loss_mode_counts": {
+    "all_stance_gap": 127,
+    "swing": 38
+  },
+  "observed_swing_no_contact_ticks_by_leg": {
+    "fr": 3690,
+    "mr": 4132,
+    "br": 3914,
+    "bl": 3768,
+    "ml": 3476,
+    "fl": 3410
+  },
+  "observed_swing_2mm_mesh_clearance_sample_frames_by_leg": {
+    "br": 15,
+    "fr": 14,
+    "mr": 14,
+    "bl": 13,
+    "ml": 12,
+    "fl": 11
+  },
+  "leg_toe_world_Y_range_mm": {
+    "ml": 321.92,
+    "bl": 321.23,
+    "br": 317.76,
+    "mr": 316.89,
+    "fr": 328.45,
+    "fl": 324.65
+  },
+  "max_actual_tilt_deg": 0.5543,
+  "min_body_z_m": 0.13696,
+  "max_leg_joint_abs_rad": 1.58205,
+  "model_joint_limit_rad": 1.7,
+  "max_raw_PD_torque_Nm": 0.32909,
+  "max_clipped_torque_Nm": 0.32909,
+  "saturated_ticks": 0,
+  "strict_5_support_pass": false,
+  "stop_reason": null,
+  "physics_body_teleported": false
+}

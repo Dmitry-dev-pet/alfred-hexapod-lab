@@ -1,0 +1,70 @@
+{
+  "episodes_checked": 8,
+  "source_and_policy_hashes_checked": true,
+  "unchanged_reference_physical_streams": 2,
+  "same_first_second_qpos_all_cases": true,
+  "initial_obstacle_contacts_all_cases": 0,
+  "independent_linear_program_clearances": [
+    {
+      "case": "close-h10.json",
+      "gap_m": 0.0020000000000000018
+    },
+    {
+      "case": "close-h20.json",
+      "gap_m": 0.0020000000000000018
+    },
+    {
+      "case": "close-h30.json",
+      "gap_m": 0.0020000000000000018
+    },
+    {
+      "case": "close-h50.json",
+      "gap_m": 0.0020000000000000018
+    },
+    {
+      "case": "close-h100.json",
+      "gap_m": 0.002006306723865349
+    },
+    {
+      "case": "close-h250.json",
+      "gap_m": 0.002006306723865349
+    }
+  ],
+  "byte_identical_repeats": [
+    "close-h20.json",
+    "close-h100.json"
+  ],
+  "rear_contact_protocol_pass_cases": [
+    "close-h10.json",
+    "close-h20.json",
+    "close-h30.json",
+    "close-h50.json",
+    "close-h100.json",
+    "reference-h10.json",
+    "reference-h20.json"
+  ],
+  "standing_final_1s_cases": [
+    "close-h10.json",
+    "close-h100.json",
+    "close-h250.json",
+    "reference-h10.json",
+    "reference-h20.json"
+  ],
+  "upper_platform_successes": 0,
+  "max_sparse_self_penetration_m": 0.006277390362972718,
+  "max_rotor_limit_overshoot_deg": 0.40296462349395884,
+  "all_command_targets_2deg_inside_limits": true,
+  "warnings_or_resets": 0,
+  "hardware_tested": false,
+  "webgl_verified": false,
+  "edge_stance": {
+    "case": "close-h10.json",
+    "both_feet_loading_top": true,
+    "minimum_top_loads_n": {
+      "left": 2.793981964976322,
+      "right": 2.787799539834346
+    },
+    "left_sole_overhang_m": 0.01829603909899206,
+    "strict_full_sole_goal": false
+  }
+}

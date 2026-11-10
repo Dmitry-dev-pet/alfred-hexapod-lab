@@ -1,0 +1,374 @@
+{
+  "added_environment_meshes": 60,
+  "all_original_visible_instances_covered": 70,
+  "robot_mass_kg": 0.7372431800000001,
+  "zero_mass_added_welded_bodies": 15,
+  "new_robot_self_collision_pairs": 0,
+  "mass_matrix_max_error": 0.0,
+  "original_mesh_bytes_joint_ranges_actuators_and_inertias_unchanged": true,
+  "moving_attachment_checks": 10,
+  "visible_mapping": [
+    {
+      "original_gid": 1,
+      "corrected_visual_gid": 1,
+      "environment_collision_gid": 133
+    },
+    {
+      "original_gid": 2,
+      "corrected_visual_gid": 2,
+      "environment_collision_gid": 134
+    },
+    {
+      "original_gid": 3,
+      "corrected_visual_gid": 3,
+      "environment_collision_gid": 135
+    },
+    {
+      "original_gid": 4,
+      "corrected_visual_gid": 4,
+      "environment_collision_gid": 136
+    },
+    {
+      "original_gid": 5,
+      "corrected_visual_gid": 5,
+      "environment_collision_gid": 137
+    },
+    {
+      "original_gid": 6,
+      "corrected_visual_gid": 6,
+      "environment_collision_gid": 138
+    },
+    {
+      "original_gid": 8,
+      "corrected_visual_gid": 8,
+      "environment_collision_gid": 9
+    },
+    {
+      "original_gid": 10,
+      "corrected_visual_gid": 10,
+      "environment_collision_gid": 139
+    },
+    {
+      "original_gid": 11,
+      "corrected_visual_gid": 11,
+      "environment_collision_gid": 140
+    },
+    {
+      "original_gid": 12,
+      "corrected_visual_gid": 12,
+      "environment_collision_gid": 141
+    },
+    {
+      "original_gid": 13,
+      "corrected_visual_gid": 13,
+      "environment_collision_gid": 43
+    },
+    {
+      "original_gid": 14,
+      "corrected_visual_gid": 14,
+      "environment_collision_gid": 44
+    },
+    {
+      "original_gid": 15,
+      "corrected_visual_gid": 15,
+      "environment_collision_gid": 45
+    },
+    {
+      "original_gid": 16,
+      "corrected_visual_gid": 16,
+      "environment_collision_gid": 46
+    },
+    {
+      "original_gid": 17,
+      "corrected_visual_gid": 17,
+      "environment_collision_gid": 42
+    },
+    {
+      "original_gid": 18,
+      "corrected_visual_gid": 18,
+      "environment_collision_gid": 19
+    },
+    {
+      "original_gid": 20,
+      "corrected_visual_gid": 20,
+      "environment_collision_gid": 37
+    },
+    {
+      "original_gid": 21,
+      "corrected_visual_gid": 21,
+      "environment_collision_gid": 38
+    },
+    {
+      "original_gid": 22,
+      "corrected_visual_gid": 22,
+      "environment_collision_gid": 39
+    },
+    {
+      "original_gid": 23,
+      "corrected_visual_gid": 23,
+      "environment_collision_gid": 40
+    },
+    {
+      "original_gid": 24,
+      "corrected_visual_gid": 24,
+      "environment_collision_gid": 41
+    },
+    {
+      "original_gid": 25,
+      "corrected_visual_gid": 25,
+      "environment_collision_gid": 26
+    },
+    {
+      "original_gid": 27,
+      "corrected_visual_gid": 27,
+      "environment_collision_gid": 36
+    },
+    {
+      "original_gid": 28,
+      "corrected_visual_gid": 28,
+      "environment_collision_gid": 29
+    },
+    {
+      "original_gid": 30,
+      "corrected_visual_gid": 30,
+      "environment_collision_gid": 33
+    },
+    {
+      "original_gid": 31,
+      "corrected_visual_gid": 31,
+      "environment_collision_gid": 34
+    },
+    {
+      "original_gid": 32,
+      "corrected_visual_gid": 32,
+      "environment_collision_gid": 35
+    },
+    {
+      "original_gid": 33,
+      "corrected_visual_gid": 47,
+      "environment_collision_gid": 95
+    },
+    {
+      "original_gid": 34,
+      "corrected_visual_gid": 48,
+      "environment_collision_gid": 96
+    },
+    {
+      "original_gid": 35,
+      "corrected_visual_gid": 49,
+      "environment_collision_gid": 97
+    },
+    {
+      "original_gid": 36,
+      "corrected_visual_gid": 50,
+      "environment_collision_gid": 98
+    },
+    {
+      "original_gid": 37,
+      "corrected_visual_gid": 51,
+      "environment_collision_gid": 93
+    },
+    {
+      "original_gid": 38,
+      "corrected_visual_gid": 52,
+      "environment_collision_gid": 94
+    },
+    {
+      "original_gid": 39,
+      "corrected_visual_gid": 53,
+      "environment_collision_gid": 89
+    },
+    {
+      "original_gid": 40,
+      "corrected_visual_gid": 54,
+      "environment_collision_gid": 90
+    },
+    {
+      "original_gid": 41,
+      "corrected_visual_gid": 55,
+      "environment_collision_gid": 91
+    },
+    {
+      "original_gid": 42,
+      "corrected_visual_gid": 56,
+      "environment_collision_gid": 92
+    },
+    {
+      "original_gid": 43,
+      "corrected_visual_gid": 57,
+      "environment_collision_gid": 76
+    },
+    {
+      "original_gid": 44,
+      "corrected_visual_gid": 58,
+      "environment_collision_gid": 77
+    },
+    {
+      "original_gid": 45,
+      "corrected_visual_gid": 59,
+      "environment_collision_gid": 78
+    },
+    {
+      "original_gid": 46,
+      "corrected_visual_gid": 60,
+      "environment_collision_gid": 79
+    },
+    {
+      "original_gid": 47,
+      "corrected_visual_gid": 61,
+      "environment_collision_gid": 80
+    },
+    {
+      "original_gid": 48,
+      "corrected_visual_gid": 62,
+      "environment_collision_gid": 63
+    },
+    {
+      "original_gid": 50,
+      "corrected_visual_gid": 64,
+      "environment_collision_gid": 81
+    },
+    {
+      "original_gid": 51,
+      "corrected_visual_gid": 65,
+      "environment_collision_gid": 82
+    },
+    {
+      "original_gid": 52,
+      "corrected_visual_gid": 66,
+      "environment_collision_gid": 83
+    },
+    {
+      "original_gid": 53,
+      "corrected_visual_gid": 67,
+      "environment_collision_gid": 84
+    },
+    {
+      "original_gid": 54,
+      "corrected_visual_gid": 68,
+      "environment_collision_gid": 85
+    },
+    {
+      "original_gid": 55,
+      "corrected_visual_gid": 69,
+      "environment_collision_gid": 70
+    },
+    {
+      "original_gid": 57,
+      "corrected_visual_gid": 71,
+      "environment_collision_gid": 72
+    },
+    {
+      "original_gid": 59,
+      "corrected_visual_gid": 73,
+      "environment_collision_gid": 86
+    },
+    {
+      "original_gid": 60,
+      "corrected_visual_gid": 74,
+      "environment_collision_gid": 87
+    },
+    {
+      "original_gid": 61,
+      "corrected_visual_gid": 75,
+      "environment_collision_gid": 88
+    },
+    {
+      "original_gid": 62,
+      "corrected_visual_gid": 99,
+      "environment_collision_gid": 129
+    },
+    {
+      "original_gid": 63,
+      "corrected_visual_gid": 100,
+      "environment_collision_gid": 130
+    },
+    {
+      "original_gid": 64,
+      "corrected_visual_gid": 101,
+      "environment_collision_gid": 131
+    },
+    {
+      "original_gid": 65,
+      "corrected_visual_gid": 102,
+      "environment_collision_gid": 132
+    },
+    {
+      "original_gid": 66,
+      "corrected_visual_gid": 103,
+      "environment_collision_gid": 104
+    },
+    {
+      "original_gid": 68,
+      "corrected_visual_gid": 105,
+      "environment_collision_gid": 128
+    },
+    {
+      "original_gid": 69,
+      "corrected_visual_gid": 106,
+      "environment_collision_gid": 123
+    },
+    {
+      "original_gid": 70,
+      "corrected_visual_gid": 107,
+      "environment_collision_gid": 124
+    },
+    {
+      "original_gid": 71,
+      "corrected_visual_gid": 108,
+      "environment_collision_gid": 125
+    },
+    {
+      "original_gid": 72,
+      "corrected_visual_gid": 109,
+      "environment_collision_gid": 126
+    },
+    {
+      "original_gid": 73,
+      "corrected_visual_gid": 110,
+      "environment_collision_gid": 127
+    },
+    {
+      "original_gid": 74,
+      "corrected_visual_gid": 111,
+      "environment_collision_gid": 122
+    },
+    {
+      "original_gid": 75,
+      "corrected_visual_gid": 112,
+      "environment_collision_gid": 113
+    },
+    {
+      "original_gid": 77,
+      "corrected_visual_gid": 114,
+      "environment_collision_gid": 119
+    },
+    {
+      "original_gid": 78,
+      "corrected_visual_gid": 115,
+      "environment_collision_gid": 116
+    },
+    {
+      "original_gid": 80,
+      "corrected_visual_gid": 117,
+      "environment_collision_gid": 120
+    },
+    {
+      "original_gid": 81,
+      "corrected_visual_gid": 118,
+      "environment_collision_gid": 121
+    }
+  ],
+  "integration_dt_s": 0.0005,
+  "contact_solref": [
+    0.002,
+    1
+  ],
+  "contact_solimp": [
+    0.99,
+    0.999,
+    0.0001,
+    0.5,
+    2
+  ]
+}

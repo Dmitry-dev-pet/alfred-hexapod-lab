@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10202c">
+<title>Hexapod Lab · SeBaJu · Переворот</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css?v=20261107b">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#10202c;color:#eaf5fc;font-family:system-ui,-apple-system,Arial,sans-serif}
+.layout{width:100%;height:100%;height:100dvh;position:relative}.stage{position:relative;width:100%;height:100%;overflow:hidden}
+#viewer{position:absolute;inset:0}#viewer canvas{display:block;width:100%;height:100%}.controls{display:none}
+.sebaju-tag,.sebaju-facts{position:absolute;z-index:3;border:1px solid #486477;border-radius:11px;background:#102a39e8;padding:9px 12px;pointer-events:none}
+.sebaju-tag{top:85px;left:12px;max-width:min(86vw,420px)}.sebaju-tag strong{display:block;color:#ffc58b;font-size:12px}.sebaju-tag small{display:block;color:#c1d4df;font-size:11px;margin-top:5px;line-height:1.45}
+.sebaju-facts{bottom:87px;left:12px;max-width:min(90vw,440px);font-variant-numeric:tabular-nums}.sebaju-facts strong{font-size:13px}.sebaju-facts p{margin:4px 0;font-size:11px;color:#bed4e2;line-height:1.4}
+.sebaju-err{position:absolute;left:10%;right:10%;top:32%;z-index:15;background:#763943;padding:12px;border-radius:12px;color:white}
+@media(max-height:540px){.sebaju-tag{top:57px;max-width:46vw}.sebaju-facts{bottom:68px;max-width:46vw}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head><body>
+<main class="layout" data-case-id="sebaju-tip20-long-v1"><section class="stage" aria-label="SeBaJu: измеренная физическая запись MuJoCo; потяните для вращения 3D камеры">
+<div id="viewer"></div>
+<div class="sebaju-tag"><strong>SEBAJU · MUJOCO · НЕ ВСТАЛ</strong><small>30 с · момент 20 Н·м в t=12,0 c · наклон в конце 180°. Длительное испытание: корпус остаётся перевёрнутым. Нет доказанного восстановления. 3D-геометрия схематическая, движение из реальных qpos.</small></div>
+<div class="sebaju-facts"><strong id="state">Загружаем физическую запись…</strong><p id="pose">Проверяем сохранённые положения</p><p id="contacts">Измеренные контакты и силы</p></div>
+<div id="error" class="sebaju-err" hidden role="alert"></div>
+</section>
+<section class="controls"><button id="play" aria-label="Пауза">Ⅱ</button>
+<input id="seek" type="range" min="0" max="30" step=".005" value="0">
+<select id="speed"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+<button id="reset-camera" type="button">Камера</button></section></main>
+<script type="module" src="/hexapod/sebaju-player.js"></script>
+<script src="/hexapod/player-shell.js?v=20261107b"></script>
+</body></html>

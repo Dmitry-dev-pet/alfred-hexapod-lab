@@ -1,0 +1,234 @@
+{
+  "joints": [
+    {
+      "a": 0,
+      "name": "left_hip_yaw",
+      "range_deg": [
+        -25.0,
+        29.999999999999996
+      ],
+      "limited": 1,
+      "pose": 0.0
+    },
+    {
+      "a": 1,
+      "name": "left_hip_roll",
+      "range_deg": [
+        -21.999999999996945,
+        22.000000000003052
+      ],
+      "limited": 1,
+      "pose": -0.08726646259971647
+    },
+    {
+      "a": 2,
+      "name": "left_hip_pitch",
+      "range_deg": [
+        -90.000000000003,
+        89.999999999997
+      ],
+      "limited": 1,
+      "pose": -0.457924
+    },
+    {
+      "a": 3,
+      "name": "left_knee",
+      "range_deg": [
+        -90.0000000000001,
+        89.9999999999999
+      ],
+      "limited": 1,
+      "pose": -0.00494
+    },
+    {
+      "a": 4,
+      "name": "left_ankle",
+      "range_deg": [
+        -90.00000000000055,
+        89.99999999999945
+      ],
+      "limited": 1,
+      "pose": 0.452984
+    },
+    {
+      "a": 5,
+      "name": "neck_pitch",
+      "range_deg": [
+        -90.00000000000006,
+        59.99999999999994
+      ],
+      "limited": 1,
+      "pose": 0.3490658503988659
+    },
+    {
+      "a": 6,
+      "name": "head_pitch",
+      "range_deg": [
+        -90.0,
+        90.0
+      ],
+      "limited": 1,
+      "pose": 0.3490658503988659
+    },
+    {
+      "a": 7,
+      "name": "head_yaw",
+      "range_deg": [
+        -170.00000000000006,
+        169.99999999999997
+      ],
+      "limited": 1,
+      "pose": 0.0
+    },
+    {
+      "a": 8,
+      "name": "head_roll",
+      "range_deg": [
+        -25.00000000000005,
+        24.99999999999995
+      ],
+      "limited": 1,
+      "pose": 0.0
+    },
+    {
+      "a": 9,
+      "name": "right_hip_yaw",
+      "range_deg": [
+        -29.999999999999897,
+        25.000000000000103
+      ],
+      "limited": 1,
+      "pose": 0.0
+    },
+    {
+      "a": 10,
+      "name": "right_hip_roll",
+      "range_deg": [
+        -21.999999999999897,
+        22.0000000000001
+      ],
+      "limited": 1,
+      "pose": 0.08726646259971647
+    },
+    {
+      "a": 11,
+      "name": "right_hip_pitch",
+      "range_deg": [
+        -90.00000000000249,
+        89.99999999999751
+      ],
+      "limited": 1,
+      "pose": 0.457924
+    },
+    {
+      "a": 12,
+      "name": "right_knee",
+      "range_deg": [
+        -90.00000000000213,
+        89.99999999999787
+      ],
+      "limited": 1,
+      "pose": 0.00494
+    },
+    {
+      "a": 13,
+      "name": "right_ankle",
+      "range_deg": [
+        -90.00000000000036,
+        89.99999999999964
+      ],
+      "limited": 1,
+      "pose": -0.452984
+    }
+  ],
+  "collision_geoms": [
+    {
+      "id": 0,
+      "name": "floor",
+      "body": "world",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 7,
+      "name": null,
+      "body": "trunk_base",
+      "contype": 2,
+      "conaffinity": 2
+    },
+    {
+      "id": 9,
+      "name": null,
+      "body": "trunk_base",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 19,
+      "name": null,
+      "body": "hip_l",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 26,
+      "name": null,
+      "body": "leg",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 29,
+      "name": "left_foot_collision",
+      "body": "ankle_left",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 49,
+      "name": null,
+      "body": "jaw_soft",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 56,
+      "name": null,
+      "body": "jaw_soft",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 58,
+      "name": null,
+      "body": "jaw_soft",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 67,
+      "name": null,
+      "body": "hip_l_2",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 76,
+      "name": null,
+      "body": "leg_2",
+      "contype": 1,
+      "conaffinity": 1
+    },
+    {
+      "id": 79,
+      "name": "right_foot_collision",
+      "body": "ankle_right",
+      "contype": 1,
+      "conaffinity": 1
+    }
+  ],
+  "initial_contacts": [],
+  "nexclude": 0,
+  "mass_kg": 0.7372431799999999,
+  "self_collision_note": "Upstream sparse convex collision meshes; visual STL is not a complete per-part self-collision model. No masks or exclusions altered."
+}
