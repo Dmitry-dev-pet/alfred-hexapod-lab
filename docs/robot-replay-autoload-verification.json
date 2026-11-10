@@ -1,0 +1,12 @@
+{
+  "schema": "robot-replay-autoload-verification/v1",
+  "package_sha256": "1abc147874c9a48891d1c8f0e9d6816cc9b431070ce56d255af9db7948442393",
+  "browser_preview": [
+    "library has 78 experiences including new HexArth group",
+    "clicking HexArth starts shared viewer without file chooser",
+    "all four clips present, default step-10mm plays with measured contact forces"
+  ],
+  "webgl_render_verified": false,
+  "public_file_path_authorized": true,
+  "new_per_robot_js": false
+}
