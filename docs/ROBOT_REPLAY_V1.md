@@ -60,6 +60,25 @@ Publish the file and optionally its catalog descriptor. No per-robot app/page
 or Site deployment is required for later compatible recordings.
 
 Existing legacy modules remain available. This is an additive common reader,
-not a claim that all earlier experiments have already been migrated. The large
-HexArth CAD package is delivered separately and is not committed to this public
-Site or public research source repository.
+not a claim that all earlier experiments have already been migrated. The HexArth package is hosted at its owner-authorized public Site path. CAD
+payloads are not placed in the public research source repository.
+
+
+## Automatic library opening
+
+The normal flow is library selection → shared `/replay/?recording=<id>` → one
+verified package download → immediate playback. File selection is optional.
+The main library merges `robot-replay-catalog/v1` descriptors with legacy entries;
+legacy catalogs, modules and service-worker constraints are preserved.
+
+`dist/replay/catalog.json` is a fast bundled fallback. The common catalog reader
+also reads `docs/replay/catalog.json` from the existing working GitHub branch,
+pinning the branch commit. Newer validated catalog revisions update automatically.
+Each entry contains id, title, detail, duration_s and a recording reference with
+schema, public URL, exact size and SHA-256 of the whole package. Package hosts
+must permit CORS for cross-origin reads. The player fetches no per-recording JS.
+
+The owner explicitly confirmed a public file path on 2026-11-10. The complete
+HexArth package is now staged for the existing public Site at
+`/replay/records/hexarth-1abc147874c9a488.robotreplay`; no CAD payload is placed
+in the public research GitHub repository. Catalog metadata may be public.

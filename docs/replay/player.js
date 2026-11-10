@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {loadReplay,sampleAt} from './format.js';
+import {readCatalog,libraryEntries,fetchRecording,readBoundedResponse} from './catalog.js';
 const $=id=>document.getElementById(id), area=$('viewer');
 let renderer,controls,loaded,clip,time=0,playing=false,last=null,generation=0,groups=[],environs=[];
 const scene=new THREE.Scene(),world=new THREE.Group(),camera=new THREE.PerspectiveCamera(45,1,.001,1000);
@@ -32,9 +33,15 @@ async function openBytes(bytes,name,ticket){try{const parsed=await loadReplay(by
  }catch(e){if(ticket!==generation)return;$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Не удалось открыть запись: '+e.message;}}
 function begin(){const ticket=++generation;setPlaying(false);$('error').hidden=true;$('loading').hidden=false;$('loading').textContent='Открываем запись…';document.documentElement.dataset.replayReady='false';return ticket;}
 async function openFile(file){if(!file)return;const ticket=begin();if(file.size>100*1024*1024){$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Файл больше 100 МБ';return;}await openBytes(await file.arrayBuffer(),file.name,ticket);}
-async function openURL(raw){const ticket=begin();try{const url=new URL(raw,location.href);if(!['http:','https:'].includes(url.protocol))throw Error('Нужна HTTP-ссылка на файл');const response=await fetch(url,{credentials:'omit',redirect:'error',signal:AbortSignal.timeout(60000)});if(!response.ok)throw Error('HTTP '+response.status);if(Number(response.headers.get('content-length'))>100*1024*1024)throw Error('Файл больше 100 МБ');await openBytes(await response.arrayBuffer(),url.pathname.split('/').pop(),ticket);}catch(e){if(ticket===generation){$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Не удалось загрузить файл: '+e.message;}}}
+async function openURL(raw,entry){const ticket=begin();try{const url=new URL(raw,location.href);if(!['http:','https:'].includes(url.protocol))throw Error('Нужна HTTP-ссылка на файл');const bytes=entry?await fetchRecording(entry):await readBoundedResponse(await fetch(url,{credentials:'same-origin',redirect:'error',signal:AbortSignal.timeout(60000)}));await openBytes(bytes,entry?.title||url.pathname.split('/').pop(),ticket);}catch(e){if(ticket===generation){$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Не удалось загрузить запись: '+e.message;}}}
+async function initCatalog(){
+ try{const catalog=await readCatalog();const entries=libraryEntries(catalog);$('recordings').replaceChildren(...entries.map(e=>{const a=document.createElement('a');a.href=e.href;a.className='recording-link';a.textContent=e.title;return a;}));
+ const id=new URLSearchParams(location.search).get('recording');if(id){const entry=entries.find(e=>e.id===id);if(!entry)throw Error('Запись не найдена в библиотеке');$('empty').hidden=true;await openURL(entry.recording.url,entry);}
+ }catch(e){$('catalog-status').textContent=e.message;}
+}
 function showOpen(){$('empty').hidden=false;setPlaying(false);}
 window.addEventListener('dragover',e=>e.preventDefault());window.addEventListener('drop',e=>{e.preventDefault();openFile(e.dataTransfer.files[0]);});
  $('choose').onclick=()=>$('file').click();$('file').onchange=()=>openFile($('file').files[0]);$('another').onclick=showOpen;$('show-url').onclick=()=>{$('url-form').hidden=false;$('url').focus();};$('url-form').onsubmit=e=>{e.preventDefault();openURL($('url').value);};$('play').onclick=()=>setPlaying(!playing);$('clip').onchange=()=>select($('clip').value);$('seek').oninput=()=>{time=Number($('seek').value);draw();};$('reset').onclick=resetCamera;
-const params=new URLSearchParams(location.search);if(params.get('file'))openURL(params.get('file'));
+window.addEventListener('robot-recording-catalog',()=>{if(!loaded)initCatalog();});
+const params=new URLSearchParams(location.search);if(params.get('file'))openURL(params.get('file'));else initCatalog();
 function tick(now){requestAnimationFrame(tick);if(clip&&playing&&last!==null){time+=Math.min(.1,(now-last)/1000)*Number($('speed').value);if(time>clip.duration_s)time=0;draw();}last=now;if(renderer&&clip){controls.update();renderer.render(scene,camera);}}requestAnimationFrame(tick);resize();
