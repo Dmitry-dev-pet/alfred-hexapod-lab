@@ -1,0 +1,16 @@
+{
+  "schema": "hexarth-lift-private-artifact/v1",
+  "filename": "HexArth_v2_lift_height_20261110.zip",
+  "sha256": "068e734c3ea69a444787985a421c2c44d73b6337e3fc1bb7db539e940a27934b",
+  "size_bytes": 35862135,
+  "drive_url": "https://drive.google.com/file/d/1rMyc5aK7oMSrpDBPXVdlFGyaPHQmz-vF/view?usp=drivesdk",
+  "source_commit": "7aae5a542f48e286f78b11e4d54e611d1e0e24e3",
+  "contents": [
+    "All six physical calculation traces and pose replays",
+    "Four accepted 1 ms cases as one standalone package",
+    "Half-timestep convergence case",
+    "IK rejection receipts for 24/30 mm targets",
+    "Code, hashes and verification"
+  ],
+  "note": "Normal hosted comparison selects only 20 and 22 mm; all four accepted cases remain in this archive."
+}

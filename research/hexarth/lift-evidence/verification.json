@@ -1,0 +1,21 @@
+{
+  "schema": "hexarth-lift-audit/v1",
+  "verified_frames": 7200,
+  "accepted_diagnostics": [
+    "lift-sweep/lift-12mm-step-20mm",
+    "lift-sweep/lift-18mm-step-20mm",
+    "fine-sweep/lift-20mm-step-20mm",
+    "fine-sweep/lift-22mm-step-20mm",
+    "convergence/lift-22mm-step-20mm"
+  ],
+  "excluded_diagnostics": [
+    "fine-sweep/lift-23mm-step-20mm"
+  ],
+  "infeasible_ik": [
+    "lift-sweep/lift-24mm-step-20mm",
+    "lift-sweep/lift-30mm-step-20mm"
+  ],
+  "convergence_forward_difference_m": 0.00011299999999997423,
+  "all_six_feet_cross_20mm_at_lift22": true,
+  "limits": "Contacts and poses sampled at 50 Hz; speeds tracked at every integrator step. These are model consistency checks, not hardware certification."
+}
