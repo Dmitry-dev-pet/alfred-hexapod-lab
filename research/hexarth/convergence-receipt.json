@@ -1,0 +1,46 @@
+{
+  "schema": "hexarth-timestep-sensitivity/v1",
+  "coarse_dt_s": 0.001,
+  "fine_dt_s": 0.0005,
+  "case": "walk-step-10mm",
+  "fine_result": {
+    "case": "walk-step-10mm-half-dt",
+    "duration_s": 24,
+    "frame_count": 1200,
+    "metrics": {
+      "displacement_m": [
+        -0.00726575,
+        0.48788756,
+        0.00674185
+      ],
+      "forward_after_settle_m": 0.487902,
+      "peak_torque_nm": 0.9100321143908947,
+      "peak_joint_speed_rad_s": 3.7519588201033707,
+      "actuator_saturated_step_fraction": 0.0,
+      "peak_self_penetration_m": 0.0,
+      "peak_external_penetration_m": 0.00047653107504579996,
+      "max_tilt_last_s_deg": 0.13267,
+      "max_tilt_deg": 1.98362,
+      "min_base_height_last_s_m": 0.10424683,
+      "nonfoot_ground_contact_frames": 0,
+      "max_ik_residual_m": 6.279345266288053e-11,
+      "ik_near_bound_samples": 0,
+      "feet_on_step_last_second": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mujoco_warnings": [],
+      "wall_s": 2.943
+    },
+    "diagnostic_stable_end": true,
+    "walk_forward_30mm": true,
+    "whole_robot_on_step": true,
+    "trace_sha256": "1916941845bccbdbbfcb92005b273203243b25c59115dfbdcf738ea9dc3cd29d"
+  },
+  "forward_difference_m": 0.00010100000000001774,
+  "same_whole_step_verdict": true
+}

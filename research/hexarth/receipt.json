@@ -1,0 +1,464 @@
+{
+  "schema": "hexarth-first-trial-receipt/v1",
+  "python": "3.12.14",
+  "mujoco": "3.3.7",
+  "timestep_s": 0.001,
+  "sample_s": 0.02,
+  "seed": null,
+  "actuator": {
+    "rated_torque_nm": 0.980665,
+    "stall_torque_nm": 2.941995,
+    "no_load_speed_rad_s": 4.717106086471161,
+    "kp_nm_per_rad": 24.0,
+    "kd_nm_s_per_rad": 0.07,
+    "envelope": "min(rated, stall*(1-signed_speed/no_load_speed))"
+  },
+  "joint_diagnostic_range_rad": [
+    -0.3490658503988659,
+    0.3490658503988659
+  ],
+  "gait": {
+    "type": "CAD-native diagnostic tripod; not an OEM firmware execution",
+    "cycle_s": 1.6,
+    "stride_m": 0.02,
+    "lift_m": 0.012,
+    "forward_axis": "OEM CAD +Y",
+    "start_s": 2.0,
+    "ramp_s": 1.0
+  },
+  "source_step_sha256": "00f9ca864b2fa92e2f2f4f939ae5378ee39540db808448186f9d12fbee02bb02",
+  "model": {
+    "inertias": [
+      {
+        "body": "base",
+        "mass_kg": 0.9,
+        "com_world_cad_m": [
+          3.578e-05,
+          0.01111823,
+          0.01665
+        ],
+        "diagonal_inertia_kg_m2": [
+          0.00297113,
+          0.00288328,
+          0.00475787
+        ]
+      },
+      {
+        "body": "leg0_coxa",
+        "mass_kg": 0.09,
+        "com_world_cad_m": [
+          -0.09593935,
+          -0.00127956,
+          0.01438414
+        ],
+        "diagonal_inertia_kg_m2": [
+          3.494e-05,
+          4.155e-05,
+          3.865e-05
+        ]
+      },
+      {
+        "body": "leg0_femur",
+        "mass_kg": 0.08,
+        "com_world_cad_m": [
+          -0.14893148,
+          -0.00127956,
+          0.00332149
+        ],
+        "diagonal_inertia_kg_m2": [
+          3.57e-05,
+          8.16e-05,
+          7.438e-05
+        ]
+      },
+      {
+        "body": "leg0_tibia",
+        "mass_kg": 0.03,
+        "com_world_cad_m": [
+          -0.19024989,
+          -0.00088577,
+          -0.03803817
+        ],
+        "diagonal_inertia_kg_m2": [
+          3.889e-05,
+          4.088e-05,
+          9.54e-06
+        ]
+      },
+      {
+        "body": "leg1_coxa",
+        "mass_kg": 0.09,
+        "com_world_cad_m": [
+          -0.06606283,
+          -0.0719668,
+          0.01438415
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.334e-05,
+          3.818e-05,
+          4.368e-05
+        ]
+      },
+      {
+        "body": "leg1_femur",
+        "mass_kg": 0.08,
+        "com_world_cad_m": [
+          -0.08447127,
+          -0.11352424,
+          0.00332153
+        ],
+        "diagonal_inertia_kg_m2": [
+          8.698e-05,
+          6.006e-05,
+          0.00010413
+        ]
+      },
+      {
+        "body": "leg1_tibia",
+        "mass_kg": 0.03,
+        "com_world_cad_m": [
+          -0.1029167,
+          -0.14627022,
+          -0.03803766
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.198e-05,
+          4.092e-05,
+          1.267e-05
+        ]
+      },
+      {
+        "body": "leg2_coxa",
+        "mass_kg": 0.09,
+        "com_world_cad_m": [
+          0.06582285,
+          -0.07214751,
+          0.01438415
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.365e-05,
+          3.771e-05,
+          4.351e-05
+        ]
+      },
+      {
+        "body": "leg2_femur",
+        "mass_kg": 0.08,
+        "com_world_cad_m": [
+          0.08449785,
+          -0.11344193,
+          0.00332153
+        ],
+        "diagonal_inertia_kg_m2": [
+          8.582e-05,
+          6.124e-05,
+          0.00010415
+        ]
+      },
+      {
+        "body": "leg2_tibia",
+        "mass_kg": 0.03,
+        "com_world_cad_m": [
+          0.1033553,
+          -0.1464335,
+          -0.03803811
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.147e-05,
+          4.144e-05,
+          1.268e-05
+        ]
+      },
+      {
+        "body": "leg3_coxa",
+        "mass_kg": 0.09,
+        "com_world_cad_m": [
+          0.0960109,
+          0.00120801,
+          0.01438414
+        ],
+        "diagonal_inertia_kg_m2": [
+          3.494e-05,
+          4.155e-05,
+          3.865e-05
+        ]
+      },
+      {
+        "body": "leg3_femur",
+        "mass_kg": 0.08,
+        "com_world_cad_m": [
+          0.14900303,
+          0.00120801,
+          0.00332149
+        ],
+        "diagonal_inertia_kg_m2": [
+          3.57e-05,
+          8.16e-05,
+          7.438e-05
+        ]
+      },
+      {
+        "body": "leg3_tibia",
+        "mass_kg": 0.03,
+        "com_world_cad_m": [
+          0.1903224,
+          0.00081423,
+          -0.03803747
+        ],
+        "diagonal_inertia_kg_m2": [
+          3.889e-05,
+          4.088e-05,
+          9.54e-06
+        ]
+      },
+      {
+        "body": "leg4_coxa",
+        "mass_kg": 0.09,
+        "com_world_cad_m": [
+          0.06545455,
+          0.07228751,
+          0.01438414
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.402e-05,
+          3.716e-05,
+          4.334e-05
+        ]
+      },
+      {
+        "body": "leg4_femur",
+        "mass_kg": 0.08,
+        "com_world_cad_m": [
+          0.08318316,
+          0.11424092,
+          0.00332149
+        ],
+        "diagonal_inertia_kg_m2": [
+          8.697e-05,
+          6.006e-05,
+          0.00010412
+        ]
+      },
+      {
+        "body": "leg4_tibia",
+        "mass_kg": 0.03,
+        "com_world_cad_m": [
+          0.10162938,
+          0.14698232,
+          -0.03803817
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.198e-05,
+          4.092e-05,
+          1.267e-05
+        ]
+      },
+      {
+        "body": "leg5_coxa",
+        "mass_kg": 0.09,
+        "com_world_cad_m": [
+          -0.06646107,
+          0.07166562,
+          0.01438414
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.295e-05,
+          3.879e-05,
+          4.389e-05
+        ]
+      },
+      {
+        "body": "leg5_femur",
+        "mass_kg": 0.08,
+        "com_world_cad_m": [
+          -0.0858152,
+          0.11256928,
+          0.00332149
+        ],
+        "diagonal_inertia_kg_m2": [
+          8.577e-05,
+          6.13e-05,
+          0.00010417
+        ]
+      },
+      {
+        "body": "leg5_tibia",
+        "mass_kg": 0.03,
+        "com_world_cad_m": [
+          -0.10402129,
+          0.14556307,
+          -0.03803747
+        ],
+        "diagonal_inertia_kg_m2": [
+          4.186e-05,
+          4.11e-05,
+          1.273e-05
+        ]
+      }
+    ],
+    "max_fk_crosscheck_error_m": 4.9184061888262256e-11,
+    "model_mass_kg": 2.1,
+    "collision_geometry": "MuJoCo convex hull of each CAD exterior part; visual geometry is original tessellation"
+  },
+  "cases": [
+    {
+      "case": "stand",
+      "duration_s": 10.0,
+      "frame_count": 500,
+      "metrics": {
+        "displacement_m": [
+          2.385e-05,
+          -1.503e-05,
+          -0.00335131
+        ],
+        "forward_after_settle_m": -0.0,
+        "peak_torque_nm": 0.43623136341470864,
+        "peak_joint_speed_rad_s": 1.9787247532544014,
+        "actuator_saturated_step_fraction": 0.0,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.00035330063342159206,
+        "max_tilt_last_s_deg": 0.02451,
+        "max_tilt_deg": 0.04127,
+        "min_base_height_last_s_m": 0.09594869,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 0.0,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 0.681
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": false,
+      "whole_robot_on_step": false,
+      "trace_sha256": "98457a8c42e03f19ee402fc76647496aa8b882c79a1bb8aab87baec8c5c11d6d"
+    },
+    {
+      "case": "walk-flat",
+      "duration_s": 10.0,
+      "frame_count": 500,
+      "metrics": {
+        "displacement_m": [
+          0.00059797,
+          0.1874895,
+          -0.00503636
+        ],
+        "forward_after_settle_m": 0.187505,
+        "peak_torque_nm": 0.6729474059255967,
+        "peak_joint_speed_rad_s": 1.9787247532544014,
+        "actuator_saturated_step_fraction": 0.0,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.00035330063342159206,
+        "max_tilt_last_s_deg": 0.1371,
+        "max_tilt_deg": 0.1371,
+        "min_base_height_last_s_m": 0.09424693,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 6.27626461703243e-11,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 0.835
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": false,
+      "trace_sha256": "b64d7454b90ac09e5a3ac38d78adf01fe22342dcc87abec7eaad4d88d4acd673"
+    },
+    {
+      "case": "walk-step-10mm",
+      "duration_s": 24.0,
+      "frame_count": 1200,
+      "metrics": {
+        "displacement_m": [
+          -0.00713264,
+          0.48778647,
+          0.00674893
+        ],
+        "forward_after_settle_m": 0.487801,
+        "peak_torque_nm": 0.9113516770444792,
+        "peak_joint_speed_rad_s": 3.7500880500121885,
+        "actuator_saturated_step_fraction": 0.0,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.00035330063342159206,
+        "max_tilt_last_s_deg": 0.13291,
+        "max_tilt_deg": 1.98313,
+        "min_base_height_last_s_m": 0.10424688,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 6.279345266288053e-11,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 2.02
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": true,
+      "trace_sha256": "417eff5fbc9beea459146282306c40cc966ec00d87711efcbf698182ef974461"
+    },
+    {
+      "case": "walk-step-20mm",
+      "duration_s": 24.0,
+      "frame_count": 1200,
+      "metrics": {
+        "displacement_m": [
+          0.00105196,
+          0.04119313,
+          -0.00252136
+        ],
+        "forward_after_settle_m": 0.041208,
+        "peak_torque_nm": 0.8554589320811382,
+        "peak_joint_speed_rad_s": 1.9787247532544014,
+        "actuator_saturated_step_fraction": 0.0,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.00035330063342159206,
+        "max_tilt_last_s_deg": 0.29418,
+        "max_tilt_deg": 0.34855,
+        "min_base_height_last_s_m": 0.09457288,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 6.279345266288053e-11,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 1.793
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": false,
+      "trace_sha256": "9fb09fef3ad5cb351272bf8ca90ae2689fbdd991a375d79e1c4b1e0c5e86cd63"
+    }
+  ],
+  "limitations": [
+    "Uncalibrated per-link masses, COM and box-estimated inertias; total 2.1 kg is a scenario.",
+    "Local +/-20 degree diagnostic ranges are not a validated firmware-to-hardware calibration.",
+    "Shoe-center geometry and OEM FK endpoint differ; no full firmware gait equivalence claimed.",
+    "No self-righting or autonomous obstacle perception in this baseline.",
+    "MuJoCo mesh collision uses convex hulls; compliance, backlash and thermal limits are unmeasured."
+  ]
+}

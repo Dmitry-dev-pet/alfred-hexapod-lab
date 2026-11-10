@@ -1,0 +1,11 @@
+{
+  "python": "3.12.14",
+  "cadquery": "2.7.0",
+  "mujoco": "3.3.7",
+  "trimesh": "4.9.0",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "blender": "4.3.2",
+  "physics": "CPU, local verified session runtime",
+  "oem_geometry": "Waveshare STEP; exact binary hashes in oem-sources.json"
+}

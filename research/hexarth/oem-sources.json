@@ -1,0 +1,81 @@
+{
+  "schema": "hexarth-oem-sources/v1",
+  "retrieved_date_utc": "2026-11-10",
+  "oem_resources": "https://docs.waveshare.com/HexArth/Resources-And-Documents",
+  "sources": [
+    {
+      "filename": "cad.zip",
+      "url": "https://files.waveshare.com/wiki/HexArth/HexArth_step-model.zip",
+      "sha256": "89b2dffd240f40431f4dad077a77b89819cc3157523f2c834457e70bdad81eeb",
+      "size_bytes": 4482187
+    },
+    {
+      "filename": "code.zip",
+      "url": "https://files.waveshare.com/wiki/HexArth/HexArth_example260211.zip",
+      "sha256": "e4ddeb21e0ba6395a3f7e04429890a6b884d2732d1c5e45639cb4a31b7172073",
+      "size_bytes": 10241418
+    },
+    {
+      "filename": "oem.step",
+      "url": null,
+      "sha256": "00f9ca864b2fa92e2f2f4f939ae5378ee39540db808448186f9d12fbee02bb02",
+      "size_bytes": 27481883
+    }
+  ],
+  "firmware": {
+    "joint_id_order": [
+      21,
+      22,
+      23,
+      31,
+      32,
+      33,
+      41,
+      42,
+      43,
+      71,
+      72,
+      73,
+      61,
+      62,
+      63,
+      51,
+      52,
+      53
+    ],
+    "servo_position_range": 4096,
+    "coxa_ticks_by_tens": {
+      "2,5": [
+        2047,
+        2779
+      ],
+      "3,6": [
+        1526,
+        2572
+      ],
+      "4,7": [
+        1324,
+        2047
+      ]
+    },
+    "femur_ticks": [
+      1023,
+      2047
+    ],
+    "tibia_ticks": [
+      1023,
+      3070
+    ],
+    "l1_mm": 32.966,
+    "l2_components_mm": [
+      43,
+      50
+    ],
+    "l3_components_mm": [
+      95.353,
+      3.257
+    ],
+    "note": "Firmware limit values are archived facts; simulation uses uncalibrated local +/-20 degree diagnostic motion."
+  },
+  "license_note": "Public OEM downloads; no explicit redistribution license found in the downloaded code archive. OEM bytes and generated STL remain in the private artifact, never in this public Git repository."
+}
