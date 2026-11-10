@@ -11,7 +11,8 @@ from urllib.parse import urlsplit
 def register(catalog_path, recording_path, public_url, recording_id):
     assert re.fullmatch(r'[a-z0-9-]{1,64}', recording_id), 'Invalid recording id'
     url=urlsplit(public_url)
-    assert (public_url.startswith('/') and not public_url.startswith('//')) or url.scheme=='https'
+    assert url.scheme=='https' and url.netloc, 'Recordings require an external public HTTPS URL'
+    assert not url.hostname.endswith('.chatgpt.site'), 'Recording payloads must not be hosted inside the Site'
     assert not url.username and not url.password and not url.fragment
     raw=pathlib.Path(recording_path).read_bytes()
     data=json.loads(gzip.decompress(raw) if raw[:2]==b'\x1f\x8b' else raw)

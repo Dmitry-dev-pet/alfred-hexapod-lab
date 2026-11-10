@@ -82,3 +82,36 @@ The owner explicitly confirmed a public file path on 2026-11-10. The complete
 HexArth package is now staged for the existing public Site at
 `/replay/records/hexarth-1abc147874c9a488.robotreplay`; no CAD payload is placed
 in the public research GitHub repository. Catalog metadata may be public.
+
+
+## External recording storage (owner correction, 2026-11-10)
+
+The Site contains the common player and small catalog fallback only. Standalone
+`.robotreplay` payloads MUST NOT be copied to `dist/`. Run
+`python scripts/check_recording_separation.py` before Site packaging. New
+registrations require an external public HTTPS URL. Site-relative URLs and
+chatgpt.site recording hosts are rejected by the registration helper.
+
+The player resolves the current GitHub branch and reads the catalog at its
+immutable commit before falling back to cached or bundled metadata. New entries
+are discovered without a Site deployment. Each file is requested without Site
+credentials and verified against its exact size and SHA-256 before decoding.
+
+The prepared read-only file service is
+`https://alfred-robot-recordings.vscode3kilo.workers.dev/records/<sha256>.robotreplay`.
+It uses independent immutable storage, not Site build assets. Its reusable
+source is `scripts/recording-worker.mjs`; it contains no provider credential
+and accepts no public writes. Object manifests name 8 MiB chunks, allowing
+files up to the common reader's 100 MiB limit.
+
+Producer steps: publish the verified standalone file in the authorized external
+store, verify its public URL and unchanged digest, then register its descriptor
+and commit the small catalog. No renderer, per-recording JavaScript or Site
+publication belongs in this path. Legacy modules remain compatible while their
+formats are migrated separately.
+
+Migration admission: transfer of the two existing HexArth payloads to this exact
+new public host was blocked by automatic approval review. The source files and
+production Site v30 remain intact; deploy this prepared version only after the
+owner explicitly authorizes that destination, the transfer finishes and public
+size/SHA-256 readback passes.

@@ -27,7 +27,8 @@ export async function readBoundedResponse(response,limit=MAX){
 }
 export async function fetchRecording(entry,{fetchImpl=fetch,base=globalThis.location?.href||'https://player.invalid/'}={}){
   validateCatalog({schema:'robot-replay-catalog/v1',revision:1,entries:[entry]});
-  const r=await fetchImpl(new URL(entry.recording.url,base),{credentials:'same-origin',redirect:'error',signal:AbortSignal.timeout(60000)});
+  const url=new URL(entry.recording.url,base);
+  const r=await fetchImpl(url,{credentials:url.origin===new URL(base).origin?'same-origin':'omit',redirect:'error',signal:AbortSignal.timeout(60000)});
   const bytes=await readBoundedResponse(r,entry.recording.size);
   if(bytes.byteLength!==entry.recording.size||await sha256(bytes)!==entry.recording.sha256)throw Error('Контрольная сумма записи не совпадает');
   return bytes;
@@ -37,10 +38,8 @@ export async function readCatalog({fetchImpl=fetch,storage=globalThis.localStora
   let local=null,cached=null;
   try{cached=validateCatalog(JSON.parse(storage?.getItem(CACHE)||'null'));}catch{}
   try{local=validateCatalog(await json('/replay/catalog.json'));}catch{}
-  // A bundled usable catalog opens instantly; refresh the external catalog without
-  // blocking the library. New data descriptors never require per-recording JS.
+  // GitHub is authoritative online. A bundled catalog must not hide new direct links.
   const remote=async()=>{const head=await json(API),sha=head?.commit?.sha;if(!/^[a-f0-9]{40}$/.test(sha))throw Error('Неверная ревизия каталога');return validateCatalog(await json(RAW+sha+'/docs/replay/catalog.json'));};
   const remember=doc=>{try{storage?.setItem(CACHE,JSON.stringify(doc));}catch{}return doc;};
-  if(local?.entries.length){const chosen=cached&&cached.revision>local.revision?cached:local;remote().then(doc=>{if(doc.revision>chosen.revision){remember(doc);globalThis.dispatchEvent?.(new CustomEvent('robot-recording-catalog',{detail:doc}));}}).catch(()=>{});return remember(chosen);}
-  try{const doc=await remote();if(cached&&cached.revision>doc.revision)return cached;return remember(doc);}catch{if(cached)return cached;if(local)return local;throw Error('Каталог записей недоступен');}
+  try{const doc=await remote();if(cached&&cached.revision>doc.revision)return cached;return remember(doc);}catch{const fallback=cached&&(!local||cached.revision>=local.revision)?cached:local;if(fallback)return remember(fallback);throw Error('Каталог записей недоступен');}
 }

@@ -5,10 +5,10 @@ import {loadReplay} from '../docs/replay/format.js';
 import {createHash} from 'node:crypto';
 const catalog=JSON.parse(await fs.readFile(new URL('../docs/replay/catalog.json',import.meta.url)));
 const [entry]=libraryEntries(catalog);assert.equal(entry.href,'/replay/?recording=hexarth-four-experiments-v1');
-let raw,hasPackage=true;try{raw=await fs.readFile(new URL('../docs'+entry.recording.url,import.meta.url));}catch(e){if(e.code!=='ENOENT')throw e;raw=Buffer.from('bounded catalog transport fixture');hasPackage=false;}
+let raw,hasPackage=true;try{raw=await fs.readFile(new URL('../dist'+entry.recording.url,import.meta.url));}catch(e){if(e.code!=='ENOENT')throw e;raw=Buffer.from('bounded catalog transport fixture');hasPackage=false;}
 const reference=hasPackage?entry:{...entry,recording:{...entry.recording,size:raw.length,sha256:createHash('sha256').update(raw).digest('hex')}};let requests=[];
 const fetched=await fetchRecording(reference,{base:'https://player.test/',fetchImpl:async(url,options)=>{requests.push({url:String(url),credentials:options.credentials});return new Response(raw);}});
-assert.deepEqual(Buffer.from(fetched),raw);assert.equal(requests.length,1);assert.equal(requests[0].credentials,'same-origin');
+assert.deepEqual(Buffer.from(fetched),raw);assert.equal(requests.length,1);assert.equal(requests[0].credentials,entry.recording.url.startsWith('https://')?'omit':'same-origin');
 if(hasPackage){const replay=await loadReplay(fetched);assert.equal(replay.clips.length,4);assert.equal(replay.meshes.length,19);}
 await assert.rejects(fetchRecording({...reference,recording:{...reference.recording,sha256:'0'.repeat(64)}},{fetchImpl:async()=>new Response(raw)}),/Контрольная сумма/);
 await assert.rejects(readBoundedResponse(new Response(new Uint8Array(10)),9),/слишком большой/);
