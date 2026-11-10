@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 59,
+  "revision": 60,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -2327,6 +2327,61 @@
           "path": "hexapod/microduck-single-support-v1/tracks-e7526f653a5fb3f3.json",
           "size": 658513,
           "sha256": "e7526f653a5fb3f36304ae9fca744ce3680750010ffbb8aca447256038b8607b"
+        }
+      ]
+    },
+    {
+      "id": "openbeni-recovery-v1",
+      "title": "OpenBeni · стойка и вставание",
+      "detail": "17 измеренных записей · авторская нейросеть · проверка контактов",
+      "duration_s": 10.5,
+      "href": "/hexapod/openbeni-recovery-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/data/openbeni-recovery-v1.json",
+          "sha256": "ca0c190e74370e7308275ae29c2b6a812bf7455986526526596350eaa8880ede",
+          "size": 635722
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/app.js",
+          "sha256": "f996232472f93649d0eee3eb0ea081c418e248564759a242dbd65b5a8d54fb00",
+          "size": 8750
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/index.html",
+          "sha256": "f3e31a66ff3c97627d5ec32adaf914895180a89ebe112ab830e566012d3dfbaf",
+          "size": 3355
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/record-loader.js",
+          "sha256": "9737e0eb04aa164ce9db31db234c94dfc7e14b17e0e02050fb891eed085fe77e",
+          "size": 3055
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/replay.css",
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056",
+          "size": 1797
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/replays.json",
+          "sha256": "0ebecefbb9dda2c12c9df315c9a26d236a59153eaadd622be33ea67d1011f30e",
+          "size": 34767
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/rig.json",
+          "sha256": "69c7597414e76f6fe3be1c36b0086ac26b07c90823f9095ab6389f0cd40ed8bc",
+          "size": 2278207
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/source-records.json",
+          "sha256": "237f933332434567195988a389d24bf98a845df99c9eea631f4b01d5a0d91d8b",
+          "size": 4020922
+        },
+        {
+          "path": "hexapod/openbeni-recovery-v1/stiff-records.json",
+          "sha256": "3215ab67b20467741df1481454032b76c622f4fe633e1b95502ea05e703c905e",
+          "size": 2248521
         }
       ]
     }
