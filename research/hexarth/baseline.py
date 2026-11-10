@@ -134,7 +134,7 @@ def build(assets,output,step_height):
     return manifest,model,path,inertia_rows,max(fk_errors)
 
 
-def gait_references(manifest,duration,walk):
+def gait_references(manifest,duration,walk,lift=.012):
     times=np.arange(0,duration+SAMPLE/2,SAMPLE)
     targets=[];max_residual=0.;range_limited=0
     old=np.zeros((6,3))
@@ -149,7 +149,7 @@ def gait_references(manifest,duration,walk):
                 local=phase_i*2 if swing else (phase_i-.5)*2
                 smooth=local*local*(3-2*local)
                 dy=.020*((smooth-.5) if swing else (.5-smooth))
-                dz=.012*4*local*(1-local) if swing else 0
+                dz=lift*4*local*(1-local) if swing else 0
                 target=np.array(leg['foot_center_mm'])*.001+amplitude*np.array([0,dy,dz])
                 # A nearly-zero warm start otherwise initializes an almost-zero
                 # trust region and can terminate before a meaningful IK step.
@@ -164,8 +164,8 @@ def gait_references(manifest,duration,walk):
     return times,np.array(targets),max_residual,range_limited
 
 
-def run_case(manifest,model,path,output,name,walk,duration):
-    times,refs,ik_error,ik_clips=gait_references(manifest,duration,walk)
+def run_case(manifest,model,path,output,name,walk,duration,lift=.012):
+    times,refs,ik_error,ik_clips=gait_references(manifest,duration,walk,lift)
     data=mujoco.MjData(model)
     mujoco.mj_forward(model,data)
     start=data.qpos[:3].copy();frames=[];peak_tau=0.;peak_speed=0.;sat_steps=0

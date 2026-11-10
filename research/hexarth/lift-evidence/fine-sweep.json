@@ -1,0 +1,159 @@
+{
+  "schema": "hexarth-lift-sweep/v1",
+  "baseline_commit": "bcb28c6e235bd413c8b74519f209a01a6034bbc3",
+  "python": "3.12.14",
+  "mujoco": "3.3.7",
+  "timestep_s": 0.001,
+  "duration_s": 24.0,
+  "sample_s": 0.02,
+  "source_step_sha256": "00f9ca864b2fa92e2f2f4f939ae5378ee39540db808448186f9d12fbee02bb02",
+  "model_file": "model-step-20mm.xml",
+  "model_sha256": "4cef407c7777a5e1626e7ef48a10b6d0ad5cddfb728a379ac6562209d2713040",
+  "mass_kg": 2.1,
+  "joint_range_rad": [
+    -0.3490658503988659,
+    0.3490658503988659
+  ],
+  "rated_torque_nm": 0.980665,
+  "stall_torque_nm": 2.941995,
+  "no_load_speed_rad_s": 4.717106086471161,
+  "max_fk_error_m": 4.9184061888262256e-11,
+  "gait": {
+    "stride_m": 0.02,
+    "cycle_s": 1.6,
+    "settle_s": 2.0,
+    "step_height_m": 0.02
+  },
+  "source_sha256": {
+    "baseline.py": "e8a147ac6708f18c6b7351e828e0eb29a28e53735e64fc2991e4a2dd3a3ce679",
+    "lift_sweep.py": "0de0df1d91ff2dba81d22d1feb004aafd5e5b7e8d561a7e4591d1666b05ff3d1"
+  },
+  "cases": [
+    {
+      "case": "lift-20mm-step-20mm",
+      "duration_s": 24.0,
+      "frame_count": 1200,
+      "metrics": {
+        "displacement_m": [
+          0.00233517,
+          0.04146106,
+          -0.00319476
+        ],
+        "forward_after_settle_m": 0.041476,
+        "peak_torque_nm": 0.7512995671233397,
+        "peak_joint_speed_rad_s": 4.319292795278316,
+        "actuator_saturated_step_fraction": 0.0,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.0005110269710757577,
+        "max_tilt_last_s_deg": 0.21928,
+        "max_tilt_deg": 0.24188,
+        "min_base_height_last_s_m": 0.09454476,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 1.579734582227063e-10,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 1.904
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": false,
+      "trace_sha256": "50587b5e9f8c8ded5d6da4c4bee0006ba73f510624d22db278b772ab7cf62ee2",
+      "status": "simulated",
+      "lift_mm": 20.0
+    },
+    {
+      "case": "lift-22mm-step-20mm",
+      "duration_s": 24.0,
+      "frame_count": 1200,
+      "metrics": {
+        "displacement_m": [
+          -0.00367229,
+          0.48758829,
+          0.01657635
+        ],
+        "forward_after_settle_m": 0.487603,
+        "peak_torque_nm": 0.980665,
+        "peak_joint_speed_rad_s": 3.8324068865374086,
+        "actuator_saturated_step_fraction": 0.00020833333333333335,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.00043408351080068564,
+        "max_tilt_last_s_deg": 0.13407,
+        "max_tilt_deg": 4.12481,
+        "min_base_height_last_s_m": 0.11425177,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 2.1300513154919544e-10,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 1.614
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": true,
+      "trace_sha256": "91c6682ea02e998e02db8823d5dc3eae0650fec8f752f390ae5a8de5e2bb5e1a",
+      "status": "simulated",
+      "lift_mm": 22.0
+    },
+    {
+      "case": "lift-23mm-step-20mm",
+      "duration_s": 24.0,
+      "frame_count": 1200,
+      "metrics": {
+        "displacement_m": [
+          -0.01072859,
+          0.4906383,
+          0.01653029
+        ],
+        "forward_after_settle_m": 0.490653,
+        "peak_torque_nm": 0.980665,
+        "peak_joint_speed_rad_s": 6.037260332503539,
+        "actuator_saturated_step_fraction": 0.000375,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.0011438145983145662,
+        "max_tilt_last_s_deg": 0.13343,
+        "max_tilt_deg": 4.08616,
+        "min_base_height_last_s_m": 0.11425217,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 6.172705163030013e-10,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 1.677
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": true,
+      "trace_sha256": "fa696ab195737766936624b68b61a3f4a466bcfd62c99355987eb9e889b31ae2",
+      "status": "simulated",
+      "lift_mm": 23.0
+    }
+  ],
+  "limitations": [
+    "Uncalibrated mass/COM/inertia and servo envelope.",
+    "Diagnostic +/-20 degree joint ranges, not hardware limits.",
+    "Fixed periodic gait; no terrain sensing or body height adaptation.",
+    "Collision uses convex hulls of individual CAD components."
+  ]
+}

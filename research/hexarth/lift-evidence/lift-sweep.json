@@ -1,0 +1,131 @@
+{
+  "schema": "hexarth-lift-sweep/v1",
+  "baseline_commit": "bcb28c6e235bd413c8b74519f209a01a6034bbc3",
+  "python": "3.12.14",
+  "mujoco": "3.3.7",
+  "timestep_s": 0.001,
+  "duration_s": 24.0,
+  "sample_s": 0.02,
+  "source_step_sha256": "00f9ca864b2fa92e2f2f4f939ae5378ee39540db808448186f9d12fbee02bb02",
+  "model_file": "model-step-20mm.xml",
+  "model_sha256": "4cef407c7777a5e1626e7ef48a10b6d0ad5cddfb728a379ac6562209d2713040",
+  "mass_kg": 2.1,
+  "joint_range_rad": [
+    -0.3490658503988659,
+    0.3490658503988659
+  ],
+  "rated_torque_nm": 0.980665,
+  "stall_torque_nm": 2.941995,
+  "no_load_speed_rad_s": 4.717106086471161,
+  "max_fk_error_m": 4.9184061888262256e-11,
+  "gait": {
+    "stride_m": 0.02,
+    "cycle_s": 1.6,
+    "settle_s": 2.0,
+    "step_height_m": 0.02
+  },
+  "source_sha256": {
+    "baseline.py": "e8a147ac6708f18c6b7351e828e0eb29a28e53735e64fc2991e4a2dd3a3ce679",
+    "lift_sweep.py": "0de0df1d91ff2dba81d22d1feb004aafd5e5b7e8d561a7e4591d1666b05ff3d1"
+  },
+  "cases": [
+    {
+      "case": "lift-12mm-step-20mm",
+      "duration_s": 24.0,
+      "frame_count": 1200,
+      "metrics": {
+        "displacement_m": [
+          0.00105196,
+          0.04119313,
+          -0.00252136
+        ],
+        "forward_after_settle_m": 0.041208,
+        "peak_torque_nm": 0.8554589320811382,
+        "peak_joint_speed_rad_s": 1.9787247532544014,
+        "actuator_saturated_step_fraction": 0.0,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.00035330063342159206,
+        "max_tilt_last_s_deg": 0.29418,
+        "max_tilt_deg": 0.34855,
+        "min_base_height_last_s_m": 0.09457288,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 6.279345266288053e-11,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 1.663
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": false,
+      "trace_sha256": "587bdc448fb526f7783826af7ef97e63c1da10c2f6fe60156674a7f135424656",
+      "status": "simulated",
+      "lift_mm": 12.0
+    },
+    {
+      "case": "lift-18mm-step-20mm",
+      "duration_s": 24.0,
+      "frame_count": 1200,
+      "metrics": {
+        "displacement_m": [
+          0.0020674,
+          0.04161903,
+          -0.00271372
+        ],
+        "forward_after_settle_m": 0.041634,
+        "peak_torque_nm": 0.883337745649048,
+        "peak_joint_speed_rad_s": 2.378602556445319,
+        "actuator_saturated_step_fraction": 0.0,
+        "peak_self_penetration_m": 0.0,
+        "peak_external_penetration_m": 0.00035330063342159206,
+        "max_tilt_last_s_deg": 0.24591,
+        "max_tilt_deg": 0.33207,
+        "min_base_height_last_s_m": 0.09456845,
+        "nonfoot_ground_contact_frames": 0,
+        "max_ik_residual_m": 1.0173453460718203e-10,
+        "ik_near_bound_samples": 0,
+        "feet_on_step_last_second": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "mujoco_warnings": [],
+        "wall_s": 1.65
+      },
+      "diagnostic_stable_end": true,
+      "walk_forward_30mm": true,
+      "whole_robot_on_step": false,
+      "trace_sha256": "c61aba64ff362787c028366db375a28065e7328962b49e6394c35dd138c80c2f",
+      "status": "simulated",
+      "lift_mm": 18.0
+    },
+    {
+      "case": "lift-24mm-step-20mm",
+      "status": "infeasible_ik",
+      "error": "IK target not reached: 4.2083286307573464e-05",
+      "lift_mm": 24.0
+    },
+    {
+      "case": "lift-30mm-step-20mm",
+      "status": "infeasible_ik",
+      "error": "IK target not reached: 0.005579597050395614",
+      "lift_mm": 30.0
+    }
+  ],
+  "limitations": [
+    "Uncalibrated mass/COM/inertia and servo envelope.",
+    "Diagnostic +/-20 degree joint ranges, not hardware limits.",
+    "Fixed periodic gait; no terrain sensing or body height adaptation.",
+    "Collision uses convex hulls of individual CAD components."
+  ]
+}
