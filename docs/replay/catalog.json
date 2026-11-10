@@ -1,0 +1,19 @@
+{
+  "schema": "robot-replay-catalog/v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "hexarth-four-experiments-v1",
+      "title": "HexArth · четыре опыта",
+      "detail": "Стойка, ходьба, ступени 1 и 2 см · исходная CAD-модель и измеренные кадры",
+      "duration_s": 24,
+      "status": "research",
+      "recording": {
+        "schema": "robot-replay/v1",
+        "url": "/replay/records/hexarth-1abc147874c9a488.robotreplay",
+        "size": 22918569,
+        "sha256": "1abc147874c9a48891d1c8f0e9d6816cc9b431070ce56d255af9db7948442393"
+      }
+    }
+  ]
+}
