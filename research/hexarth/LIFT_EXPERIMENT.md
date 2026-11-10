@@ -49,7 +49,9 @@ python research/hexarth/lift_sweep.py --assets hexarth_assets --output results/c
 python research/hexarth/verify_lift_sweep.py results
 ```
 
-The four accepted 1 ms cases use the common Robot Replay v1 reader. Their
+The four accepted 1 ms cases are preserved in the private result archive. The
+normal player comparison selects 20 mm (stop) and 22 mm (crossing), and uses the
+common Robot Replay v1 reader. Their
 geometry is copied byte for byte from the authorized baseline package, while
 every pose and contact sample comes from the new physical traces. The 23 mm
 case remains in the research evidence with its failed quality checks; it is

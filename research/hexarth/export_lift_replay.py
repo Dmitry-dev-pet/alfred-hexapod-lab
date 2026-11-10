@@ -7,7 +7,7 @@ from pathlib import Path
 import sys
 
 
-def export(baseline_package,results,output,source_commit,writer_directory):
+def export(baseline_package,results,output,source_commit,writer_directory,lifts=(20,22)):
     sys.path.insert(0,str(writer_directory))
     from robot_replay import block,write_package
     raw=baseline_package.read_bytes()
@@ -15,7 +15,9 @@ def export(baseline_package,results,output,source_commit,writer_directory):
     doc=json.loads(gzip.decompress(raw))
     assert len(doc['nodes'])==len(doc['meshes'])==19
     clips=[]
-    for folder,lift in [('lift-sweep',12),('lift-sweep',18),('fine-sweep',20),('fine-sweep',22)]:
+    for lift in lifts:
+        assert lift in (12,18,20,22)
+        folder='lift-sweep' if lift in (12,18) else 'fine-sweep'
         name=f'lift-{lift}mm-step-20mm'
         trace_path=results/folder/(name+'-trace.json')
         trace=json.loads(trace_path.read_text())
@@ -46,4 +48,5 @@ if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--baseline-package',type=Path,required=True)
     p.add_argument('--results',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--source-commit',required=True);p.add_argument('--writer-directory',type=Path,required=True)
-    a=p.parse_args();print(json.dumps(export(a.baseline_package,a.results,a.output,a.source_commit,a.writer_directory)))
+    p.add_argument('--lifts',nargs='+',type=int,default=[20,22])
+    a=p.parse_args();print(json.dumps(export(a.baseline_package,a.results,a.output,a.source_commit,a.writer_directory,a.lifts)))
