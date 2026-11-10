@@ -1,6 +1,6 @@
 {
   "schema": "hexapod-library/v1",
-  "revision": 60,
+  "revision": 61,
   "entries": [
     {
       "id": "bb8-mechanism-v1",
@@ -2380,6 +2380,56 @@
         },
         {
           "path": "hexapod/openbeni-recovery-v1/stiff-records.json",
+          "sha256": "3215ab67b20467741df1481454032b76c622f4fe633e1b95502ea05e703c905e",
+          "size": 2248521
+        }
+      ]
+    },
+    {
+      "id": "openbeni-colored-v1",
+      "title": "OpenBeni · цветная модель",
+      "detail": "Белый корпус, оранжевые ноги, графитовые колёса · те же 17 записей MuJoCo",
+      "duration_s": 10.5,
+      "href": "/hexapod/openbeni-colored-v1/",
+      "status": "research",
+      "files": [
+        {
+          "path": "hexapod/openbeni-colored-v1/index.html",
+          "sha256": "bb11b2857b22e9dcdc8492c169deace5cc131cef91e62454952bf2001144d1e9",
+          "size": 3375
+        },
+        {
+          "path": "hexapod/openbeni-colored-v1/app.js",
+          "sha256": "c7e0d4f7d5b7a50ca2b9bb19f467c5b4879d1722627ee8a0dff35f0972229c1e",
+          "size": 8764
+        },
+        {
+          "path": "hexapod/openbeni-colored-v1/replay.css",
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056",
+          "size": 1797
+        },
+        {
+          "path": "hexapod/openbeni-colored-v1/record-loader.js",
+          "sha256": "9737e0eb04aa164ce9db31db234c94dfc7e14b17e0e02050fb891eed085fe77e",
+          "size": 3055
+        },
+        {
+          "path": "hexapod/openbeni-colored-v1/replays.json",
+          "sha256": "508462bf0ba3f1039b025cf74eaf214d26843ee3e877174484b642a934880ab9",
+          "size": 34888
+        },
+        {
+          "path": "hexapod/openbeni-colored-v1/rig.json",
+          "sha256": "43b6b1fa24c8876a9f623a710f08d3507ed19e11b49777d6eb594cb80f35e754",
+          "size": 2278523
+        },
+        {
+          "path": "hexapod/openbeni-colored-v1/source-records.json",
+          "sha256": "237f933332434567195988a389d24bf98a845df99c9eea631f4b01d5a0d91d8b",
+          "size": 4020922
+        },
+        {
+          "path": "hexapod/openbeni-colored-v1/stiff-records.json",
           "sha256": "3215ab67b20467741df1481454032b76c622f4fe633e1b95502ea05e703c905e",
           "size": 2248521
         }
