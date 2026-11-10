@@ -1,0 +1,26 @@
+{
+  "schema": "robot-replay-verification/v1",
+  "package_sha256": "1abc147874c9a48891d1c8f0e9d6816cc9b431070ce56d255af9db7948442393",
+  "package_bytes": 22918569,
+  "frames": 3400,
+  "meshes": 19,
+  "triangles": 2634419,
+  "source_positions_indices_poses_contacts": "byte-identical mesh blocks; identical all saved pose/time/contact values",
+  "checks": [
+    "alternate two-body Y-up robot",
+    "interpolation and frame clamping",
+    "unknown version rejected",
+    "corrupt block hash rejected",
+    "invalid mesh index rejected",
+    "duplicate node rejected",
+    "invalid quaternion rejected",
+    "invalid frame stride rejected",
+    "browser local-file import",
+    "browser URL import",
+    "browser clip selection and seek to 24 seconds",
+    "browser unknown-format rejection"
+  ],
+  "webgl_render_verified": false,
+  "webgl_limit": "WebGL unavailable in cloud Chromium; actual 3D image and camera behavior unverified.",
+  "private_cad_published": false
+}
