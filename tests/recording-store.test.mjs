@@ -85,10 +85,12 @@ test('shell, models, other origins, unlisted paths and writes stay on their orig
 
 test('the first page visit loads a recording before service-worker control exists', async () => {
   const boot = await readFile(new URL('github-live-boot.js', source), 'utf8');
+  const relativeFile = {...file, path: '/hexapod/data/test.json'};
+  const bootManifest = {...manifest, files: [file, relativeFile]};
   const calls = [], window = {
     fetch: async input => {
       const url = String(input); calls.push(url);
-      return url.endsWith('/robots/recording-assets.json') ? Response.json(manifest) : new Response(bytes);
+      return url.endsWith('/robots/recording-assets.json') ? Response.json(bootManifest) : new Response(bytes);
     }
   };
   vm.runInNewContext(boot, {window, navigator: {}, location: {origin},
@@ -97,6 +99,9 @@ test('the first page visit loads a recording before service-worker control exist
   const response = await window.fetch(origin + file.path);
   assert.deepEqual(new Uint8Array(await response.arrayBuffer()), bytes);
   assert.deepEqual(calls, [origin + '/robots/recording-assets.json', remote]);
+  const relative = await window.fetch('../data/test.json');
+  assert.deepEqual(new Uint8Array(await relative.arrayBuffer()), bytes);
+  assert.equal(calls.at(-1), 'https://raw.githubusercontent.com/Dmitry-dev-pet/alfred-hexapod-lab/' + sha + '/recordings/site-v33/hexapod/data/test.json');
 });
 
 test('every migrated file has one integrity-checked alias', async () => {

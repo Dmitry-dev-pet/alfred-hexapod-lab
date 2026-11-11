@@ -10,7 +10,8 @@
     const url = new URL(typeof input?.url === 'string' ? input.url : String(input), document.baseURI);
     return url.origin === location.origin &&
       /^\/(?:assets\/robot-(?:replays|motions)\/|hexapod\/data\/|replay\/(?:records|fixtures)\/)/.test(url.pathname)
-      ? ready.then(fetchRecording => fetchRecording(input, init)) : originalFetch(input, init);
+      ? ready.then(fetchRecording => fetchRecording(typeof input?.url === 'string' ? input : url.href, init))
+      : originalFetch(input, init);
   };
   window.alfredRecordingFetchInstalled = true;
 })();
