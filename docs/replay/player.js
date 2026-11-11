@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {loadReplay,sampleAt} from './format.js';
 import {readCatalog,libraryEntries,fetchRecording,readBoundedResponse} from './catalog.js';
+import {readRobotLibrary} from '../robots/library.js';
 const $=id=>document.getElementById(id), area=$('viewer');
 let renderer,controls,loaded,clip,time=0,playing=false,last=null,generation=0,groups=[],environs=[];
 const scene=new THREE.Scene(),world=new THREE.Group(),camera=new THREE.PerspectiveCamera(45,1,.001,1000);
@@ -35,8 +36,53 @@ function begin(){const ticket=++generation;setPlaying(false);$('error').hidden=t
 async function openFile(file){if(!file)return;const ticket=begin();if(file.size>100*1024*1024){$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Файл больше 100 МБ';return;}await openBytes(await file.arrayBuffer(),file.name,ticket);}
 async function openURL(raw,entry){const ticket=begin();try{const url=new URL(raw,location.href);if(!['http:','https:'].includes(url.protocol))throw Error('Нужна HTTP-ссылка на файл');const bytes=entry?await fetchRecording(entry):await readBoundedResponse(await fetch(url,{credentials:'same-origin',redirect:'error',signal:AbortSignal.timeout(60000)}));await openBytes(bytes,entry?.title||url.pathname.split('/').pop(),ticket);}catch(e){if(ticket===generation){$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Не удалось загрузить запись: '+e.message;}}}
 async function initCatalog(){
- try{const catalog=await readCatalog();const entries=libraryEntries(catalog);$('recordings').replaceChildren(...entries.map(e=>{const a=document.createElement('a');a.href=e.href;a.className='recording-link';a.textContent=e.title;return a;}));
- const id=new URLSearchParams(location.search).get('recording');if(id){const entry=entries.find(e=>e.id===id);if(!entry)throw Error('Запись не найдена в библиотеке');$('empty').hidden=true;await openURL(entry.recording.url,entry);}
+ try{
+  let entries,source;
+  try{
+    const doc=await readRobotLibrary();
+    entries=doc.entries;
+    source=doc.source;
+  }catch(err){
+    const doc=await readCatalog();
+    entries=libraryEntries(doc).map(e=>({...e,kind:'recording',robot:'HexArth',availability:'published'}));
+    source='replay-only fallback';
+  }
+  const params=new URLSearchParams(location.search),selected=params.get('recording');
+  const families=new Map();
+  for(const entry of entries){
+    const key=entry.robot||'Другое';
+    if(!families.has(key))families.set(key,[]);
+    families.get(key).push(entry);
+  }
+  const blocks=[...families].sort((a,b)=>a[0].localeCompare(b[0],'ru')).map(([robot,items])=>{
+    const section=document.createElement('details');
+    section.className='robot-family';
+    section.open=!!selected&&items.some(e=>e.id===selected);
+    const summary=document.createElement('summary');
+    summary.textContent=robot+' · '+items.length;
+    section.append(summary);
+    for(const e of items){
+      const active=e.availability==='published';
+      const el=document.createElement(active?'a':'span');
+      el.className='recording-link'+(active?'':' pending');
+      el.textContent=e.title+(active?'':' · ещё не опубликовано');
+      if(active)el.href=e.href||('/replay/?recording='+encodeURIComponent(e.id));
+      else el.setAttribute('aria-disabled','true');
+      section.append(el);
+    }
+    return section;
+  });
+  $('recordings').replaceChildren(...blocks);
+  const ready=entries.filter(e=>e.availability==='published').length;
+  $('catalog-status').textContent=ready+' доступных записей'+
+    (entries.length>ready?' · '+(entries.length-ready)+' ожидают публикации':'')+
+    ' · '+source;
+  if(selected){
+    const entry=entries.find(e=>e.id===selected&&e.kind==='recording');
+    if(!entry)throw Error('Запись не найдена в библиотеке');
+    $('empty').hidden=true;
+    await openURL(entry.recording.url,entry);
+  }
  }catch(e){$('catalog-status').textContent=e.message;}
 }
 function showOpen(){$('empty').hidden=false;setPlaying(false);}
