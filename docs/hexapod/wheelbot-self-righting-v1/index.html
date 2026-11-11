@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101923">
+<title>Hexapod Lab · Mini Wheelbot · вставание</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101923;color:#eaf4f9;font-family:system-ui,-apple-system,Arial,sans-serif}
+.layout{width:100%;height:100%;height:100dvh;position:relative}.stage{height:100%;width:100%;position:relative;overflow:hidden}
+#viewer{position:absolute;inset:0}#viewer canvas{display:block;width:100%;height:100%}
+.controls{display:none}
+.wb-note{position:absolute;top:86px;left:12px;z-index:3;border:1px solid #46677c;background:#0d202cd9;border-radius:11px;padding:9px 11px;max-width:min(80vw,360px);pointer-events:none}
+.wb-note strong{display:block;font-size:12px}.wb-note .wb-desc{font-size:11px;color:#acccda;margin-top:4px;line-height:1.45}
+.wb-stat{position:absolute;bottom:87px;left:12px;z-index:3;border:1px solid #35566a;background:#0d202ce8;border-radius:11px;padding:9px 12px;max-width:min(86vw,420px);pointer-events:none;font-variant-numeric:tabular-nums}
+.wb-stat strong{font-size:13px}.wb-stat p{margin:3px 0;font-size:11px;color:#bfd5df;line-height:1.4}
+.wb-warning{color:#ffcb89!important}.wb-error{position:absolute;left:10%;top:30%;width:80%;padding:12px;color:#fff;border-radius:8px;background:#6f1b20;z-index:10}
+@media(max-height:550px){.wb-note{top:58px;max-width:49vw}.wb-stat{bottom:65px;max-width:49vw}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head><body><main class="layout"><section class="stage" aria-label="Mini Wheelbot: реальная записанная MuJoCo-траектория; перетаскивайте для поворота камеры">
+<div id="viewer"></div>
+<div class="wb-note"><strong>MINI WHEELBOT · MUJOCO · 10 С</strong><div class="wb-desc">Пробный физический подъём: старт на боку → импульс реакционного колеса → перехват вертикали. Упрощённая модель, не фирменный CAD.</div></div>
+<div class="wb-stat"><strong id="state">Загружаем физические кадры…</strong><p id="pose">—</p><p id="motors">—</p><p class="wb-warning">Обороты реакционного колеса существенно завышены — это исследовательская демонстрация, не подтверждение возможности на настоящем роботе.</p></div>
+<div id="wb-error" class="wb-error" hidden role="alert"></div></section>
+<section class="controls"><button id="play" aria-label="Пауза">Ⅱ</button><input id="seek" type="range" min="0" max="10" step="0.005" value="0"><select id="speed"><option value=".25">0.25</option><option value=".5">0.5</option><option value="1" selected>1</option><option value="2">2</option><option value="4">4</option></select><button id="reset-camera" type="button">Камера</button></section></main>
+<script type="module" src="/hexapod/wheelbot-self-righting-v1/app.js"></script>
+<script src="/hexapod/player-shell.js"></script>
+</body></html>

@@ -1,0 +1,334 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+
+// Replay only. All body poses are sampled from original MuJoCo FK of measured
+// qpos frames. Never simulate physics or generate a gait in the browser.
+// Original vendor STL bytes are loaded only onto this user's local device;
+// their SHA-256 is checked before decoding. No STL binary in this public repo.
+const q = s => document.querySelector(s);
+const VENDOR_COMMIT='447945fd40fb5585271dce4ea8cc82567916032a';
+const VENDOR_ROOT='https://raw.githubusercontent.com/'+'LuwuDynamics/luwu_mjlab/'+VENDOR_COMMIT+'/';
+const ASSET_ROOT='src/assets/robots/lite3/xmls/assets/';
+const ORIGINAL_MANIFEST='/hexapod/lite3-original-v1/asset-manifest.json';
+const MATERIALS_FILE='/hexapod/lite3-finish-v2/visual-finish.json';
+const CACHE_NAME='hexapod-lite3-original-'+VENDOR_COMMIT;
+const CACHE_KEY='/hexapod/.private-lite3-mesh-cache/';
+const DATA_ROOT='/hexapod/data/';
+const CASES={
+ 'original_baseline':'lite3-s2-original_baseline-seed20261106-v1.json',
+ 'friction_035':'lite3-s2-friction_035-seed20261106-v1.json',
+ 'friction_020':'lite3-s2-friction_020-seed20261106-v1.json',
+ 'uniform_mass_0610':'lite3-s2-uniform_mass_0610-seed20261106-v1.json',
+ 'actuator_cap_02256':'lite3-s2-actuator_cap_02256-seed20261106-v1.json',
+ 'combined_stress':'lite3-s2-combined_stress-seed20261106-v1.json'
+};
+const labels={
+ 'original_baseline':'Обычная модель · 345 г',
+ 'friction_035':'Трение μ = 0,35',
+ 'friction_020':'Трение μ = 0,20',
+ 'uniform_mass_0610':'Масса 610 г · условное распределение',
+ 'actuator_cap_02256':'Предел модели ±0,2256 Н·м',
+ 'combined_stress':'Совместный стресс-тест'
+};
+const stage=q('#viewer'), error=q('#lite3-error'), loading=q('#lite3-status');
+const play=q('#play'),seek=q('#seek'),speed=q('#speed'),sel=q('#lite3-case');
+const motion=q('#lite3-motion'),contact=q('#lite3-contact'),phase=q('#lite3-phase');
+const follow=q('#follow'),showContacts=q('#contacts'),showPath=q('#path');
+const scene=new THREE.Scene();scene.background=new THREE.Color('#101e2b');
+scene.fog=new THREE.Fog('#101e2b',2.5,9);
+const camera=new THREE.PerspectiveCamera(42,1,.01,25);
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.4));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+stage.appendChild(renderer.domElement);
+const orbit=new OrbitControls(camera,renderer.domElement);
+orbit.enableDamping=true;orbit.dampingFactor=.07;orbit.minDistance=.12;orbit.maxDistance=3;orbit.maxPolarAngle=Math.PI*.5;
+scene.add(new THREE.HemisphereLight(0xf1f8ff,0x42546e,2.8));
+const sun=new THREE.DirectionalLight(0xffffff,2.3);sun.position.set(-1,4,3);scene.add(sun);
+const rim=new THREE.DirectionalLight(0x91c9ed,1.15);rim.position.set(2,1,-2);scene.add(rim);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(15,15),new THREE.MeshStandardMaterial({color:0x152737,roughness:.94}));
+floor.rotation.x=-Math.PI/2;floor.position.y=-.003;scene.add(floor);
+const grid=new THREE.GridHelper(12,120,0x4b6f84,0x274357);grid.position.y=.001;scene.add(grid);
+const world=new THREE.Group();world.rotation.x=-Math.PI/2;scene.add(world); // MJ Z up → Three Y up
+const loader=new STLLoader();
+let finishSpec=null, decorationGroup=null;
+const colorCache=new Map();
+function paletteColor(hex){let c=colorCache.get(hex);if(!c){c=new THREE.Color(hex);colorCache.set(hex,c);}return c;}
+
+const modelMeshes=[];
+const loadedMaterial=new THREE.MeshStandardMaterial({color:0x65efb6,metalness:.15,roughness:.52});
+const markers=Array.from({length:4},()=>{
+ const m=new THREE.Mesh(new THREE.TorusGeometry(.014,.002,6,28),loadedMaterial);
+ world.add(m);m.visible=false;return m;
+});
+const qa=new THREE.Quaternion(),qb=new THREE.Quaternion();
+const aRoot=new THREE.Vector3(),previousRoot=new THREE.Vector3();
+let current=null,playing=false,time=0,last=null,trail=null,assetSpec=null,req=0,geometryReady=false;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.14;
+
+async function sha256(buf){
+ const digest=await crypto.subtle.digest('SHA-256',buf);
+ return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function verify(buf,spec){
+ if(buf.byteLength!==spec.size)throw Error('Размер STL не совпадает: '+spec.mesh);
+ if(await sha256(buf)!==spec.sha256)throw Error('SHA-256 не совпадает: '+spec.mesh);
+ return buf;
+}
+function validateSpec(obj){
+ if(obj?.schema!=='xgo-lite3-original-local-stl-assets-v1'||obj.commit!==VENDOR_COMMIT||
+    obj.vendor!=='LuwuDynamics/luwu_mjlab'||!Array.isArray(obj.meshes)||obj.meshes.length!==17)
+   throw Error('Неверный исходник STL');
+ const names=new Set(),bodies=new Set();
+ for(const m of obj.meshes){
+   if(typeof m.mesh!=='string'||!/^[A-Za-z][A-Za-z0-9_]*\.STL$/.test(m.mesh)||
+      !/^[0-9a-f]{64}$/.test(m.sha256)||!Number.isInteger(m.size)||m.size<1000||m.size>5000000||
+      typeof m.body!=='string'||!Array.isArray(m.rgba)||m.rgba.length!==4||names.has(m.mesh)||bodies.has(m.body))
+     throw Error('Некорректная запись исходной STL');
+   names.add(m.mesh);bodies.add(m.body);
+ }
+ return obj;
+}
+async function readAsset(spec){
+ const filename=spec.mesh;
+ // Optionally use a permanently installed private file on disk if available.
+ try{
+   const local=await fetch('/assets/lite3-original/'+filename,{cache:'no-store'});
+   if(local.ok)return await verify(await local.arrayBuffer(),spec);
+ }catch(e){if(e.message.startsWith('SHA-256')||e.message.startsWith('Размер STL'))throw e;}
+ let cache=null;
+ if('caches' in window){try{cache=await caches.open(CACHE_NAME);}catch{}}
+ const key=CACHE_KEY+filename;
+ if(cache){
+   const saved=await cache.match(key);
+   if(saved){
+     try{return await verify(await saved.arrayBuffer(),spec);}catch{await cache.delete(key);}
+   }
+ }
+ // Only the official public upstream source at the pinned immutable revision.
+ // Browser CacheStorage keeps the exact verified bytes private to local origin.
+ const url=VENDOR_ROOT+ASSET_ROOT+filename;
+ const reply=await fetch(url,{mode:'cors',cache:'no-store'});
+ if(!reply.ok)throw Error('Оригинальная STL недоступна: '+filename+' (HTTP '+reply.status+')');
+ const payload=await verify(await reply.arrayBuffer(),spec);
+ if(cache){
+   try{await cache.put(key,new Response(payload.slice(0),{headers:{'Content-Type':'application/octet-stream'}}));}
+   catch{console.warn('Lite3 cache quota exceeded; mesh will not persist offline',filename);}
+ }
+ return payload;
+}
+
+// Assign a photo-guided finish in a *single drawcall per original mesh*. Original
+// vertex positions remain byte-for-byte as decoded from pinned STL; only the
+// per-triangle vertex-color attribute is added. Colors are not manufacturer UVs.
+function appearanceKey(body){
+ if(body==='body')return 'body';
+ if(body==='mainarm'||body==='forearm')return body;
+ if(body==='L_calw'||body==='R_claw')return 'claw';
+ for(const suffix of ['hip','thigh','shank'])if(body.endsWith('_'+suffix))return suffix;
+ throw Error('Unknown original Lite3 visual body: '+body);
+}
+function decorateGeometry(geometry,body){
+ const spec=finishSpec.materials[appearanceKey(body)];
+ const pos=geometry.getAttribute('position');
+ if(!pos||pos.count%3!==0)throw Error('STL is not a triangle soup');
+ // Three.Color stores its values in linear space; vertexColors is correct.
+ const rgb=new Float32Array(pos.count*3);
+ const base=paletteColor(spec.base),side=spec.side?paletteColor(spec.side):base;
+ const bezel=paletteColor(finishSpec.materials.body.bezel);
+ const underneath=paletteColor(finishSpec.materials.body.underside);
+ const tip=spec.tip?paletteColor(spec.tip):base;
+ for(let i=0;i<pos.count;i+=3){
+  let x=0,y=0,z=0;
+  for(let k=0;k<3;k++){x+=pos.getX(i+k);y+=pos.getY(i+k);z+=pos.getZ(i+k);}
+  x/=3;y/=3;z/=3;
+  let color=base;
+  if(body==='body'){
+    if(x>0.098&&z>-.017&&z<.027)color=bezel; // front bezel
+    else if(z<-.015)color=underneath;
+    else if(Math.abs(y)>.026&&x<.08)color=side; // side aluminum chassis
+    else if(z>.028)color=side;
+  } else if(body==='mainarm'||body==='forearm'){
+    if(Math.abs(y)>.008)color=side;
+  } else if(body==='L_calw'||body==='R_claw'){
+    if(x>.015)color=tip;
+  } else if(body.endsWith('_hip')||body.endsWith('_thigh')){
+    if(Math.abs(y)>.012)color=side;
+  } else if(body.endsWith('_shank')){
+    if(x>.050)color=tip; // dark foot tip
+    else if(Math.abs(y)>.019)color=side;
+  }
+  for(let k=0;k<3;k++){
+    const j=3*(i+k);
+    rgb[j]=color.r;rgb[j+1]=color.g;rgb[j+2]=color.b;
+  }
+ }
+ geometry.setAttribute('color',new THREE.BufferAttribute(rgb,3));
+ return new THREE.MeshStandardMaterial({color:0xffffff,vertexColors:true,metalness:spec.metalness,roughness:spec.roughness,side:THREE.DoubleSide});
+}
+
+// Reconstructed details from official product photographs. These children follow
+// the actual 'body' rigid transform recorded by MuJoCo at each replay frame.
+function makeCanvasTexture(kind){
+ const canvas=document.createElement('canvas');canvas.width=512;canvas.height=320;
+ const c=canvas.getContext('2d');
+ if(!c)throw Error('Canvas 2D unsupported');
+ function round(x,y,w,h,r){c.beginPath();c.roundRect(x,y,w,h,r);}
+ if(kind==='screen'){
+  c.fillStyle='#080C14';c.fillRect(0,0,512,320);
+  c.fillStyle='#111827';round(12,13,488,294,28);c.fill();
+  const glow=c.createRadialGradient(256,148,18,256,148,198);glow.addColorStop(0,'#38336D');glow.addColorStop(1,'#14152E');c.fillStyle=glow;round(16,16,480,288,26);c.fill();
+  for(const cx of [160,352]){
+   c.save();c.shadowColor='#AD60FF';c.shadowBlur=28;c.fillStyle='#8F3BF4';round(cx-57,88,114,134,46);c.fill();c.restore();
+   c.fillStyle='#BD82FA';round(cx-38,99,70,48,22);c.fill();
+  }
+ }else{
+  c.clearRect(0,0,512,320);
+  c.fillStyle='#EEF4F7';c.font='900 132px system-ui';c.fillText('XGO',18,176);
+  c.fillStyle='#B8CCD9';c.font='600 75px system-ui';c.fillText('lite3',22,257);
+ }
+ const tx=new THREE.CanvasTexture(canvas);
+ tx.colorSpace=THREE.SRGBColorSpace;tx.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);
+ return tx;
+}
+function setFaceBasis(object,xAxis,yAxis,zAxis){
+ const matrix=new THREE.Matrix4().makeBasis(new THREE.Vector3(...xAxis),new THREE.Vector3(...yAxis),new THREE.Vector3(...zAxis));
+ object.quaternion.setFromRotationMatrix(matrix);
+}
+function installVisualDetails(){
+ decorationGroup=new THREE.Group();world.add(decorationGroup);
+ // Forward +X: a shallow display bezel, matte black screen with purple eyes.
+ const caseMaterial=new THREE.MeshStandardMaterial({color:0x0b1017,metalness:.18,roughness:.44});
+ const back=new THREE.Mesh(new THREE.BoxGeometry(.0026,.062,.044),caseMaterial);
+ back.position.set(.1104,0,.007);decorationGroup.add(back);
+ const panel=new THREE.Mesh(new THREE.PlaneGeometry(.053,.034),new THREE.MeshBasicMaterial({map:makeCanvasTexture('screen'),toneMapped:false,side:THREE.DoubleSide}));
+ panel.position.set(...finishSpec.display.body_local_xyz_m);
+ setFaceBasis(panel,[0,1,0],[0,0,1],[1,0,0]);decorationGroup.add(panel);
+ // Photo-guided branding; meshes remain precisely the same STL vertices.
+ const logoTexture=makeCanvasTexture('brand');
+ const logoMaterial=new THREE.MeshBasicMaterial({map:logoTexture,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+ for(const side of [-1,1]){
+  const decal=new THREE.Mesh(new THREE.PlaneGeometry(.050,.026),logoMaterial);
+  decal.position.set(-.020,side*.0355,.008);
+  if(side>0)setFaceBasis(decal,[-1,0,0],[0,0,1],[0,1,0]);
+  else setFaceBasis(decal,[1,0,0],[0,0,1],[0,-1,0]);
+  decorationGroup.add(decal);
+ }
+}
+
+async function loadModel(){
+ const finishResponse=await fetch(MATERIALS_FILE,{cache:"no-store"});
+ if(!finishResponse.ok)throw Error("Нет профиля заводского оформления");
+ finishSpec=await finishResponse.json();
+ if(finishSpec.schema!=="xgo-lite3-visual-finish-v2"||finishSpec.reference?.official_step_md5!=="f413d18e4546e7d7255ce1a4976ba887")throw Error("Неверная версия оформления");
+ const manifestResponse=await fetch(ORIGINAL_MANIFEST,{cache:'no-store'});
+ if(!manifestResponse.ok)throw Error('Нет манифеста оригинальных STL');
+ assetSpec=validateSpec(await manifestResponse.json());
+ let progress=0;
+ let index=0;
+ const completed=new Array(assetSpec.meshes.length);
+ const worker=async()=>{
+  while(index<assetSpec.meshes.length){
+   const i=index++,spec=assetSpec.meshes[i];
+   const bytes=await readAsset(spec);
+   const geom=loader.parse(bytes); // STL vertices are in original MJCF body-local coordinates.
+   geom.computeVertexNormals();
+   const mtl=decorateGeometry(geom,spec.body);
+   const mesh=new THREE.Mesh(geom,mtl);
+   mesh.frustumCulled=false;
+   completed[i]={mesh,body:spec.body};
+   loading.textContent='STL + материалы Lite3 · проверено '+(++progress)+' / 17 · локальное хранение';
+  }
+ };
+ await Promise.all([worker(),worker(),worker()]);
+ for(const item of completed){world.add(item.mesh);modelMeshes.push(item);}
+ installVisualDetails();
+ geometryReady=true;
+}
+function validateReplay(obj){
+ if(!obj||obj.format!=='xgo-lite3-original-stl-mujoco-replay-v1'||
+    obj.source?.vendor_commit!==VENDOR_COMMIT||
+    !Array.isArray(obj.frames)||obj.frames.length<60||
+    obj.experiment.frame_count!==obj.frames.length||
+    obj.layout?.mesh_body_pose_start!==31||obj.layout?.mesh_body_pose_stride!==7||obj.layout?.foot_site_pose_start!==150||obj.layout?.stride!==162||
+    obj.layout.body_names.length!==17||
+    obj.layout.body_names.some((n,i)=>n!==assetSpec.meshes[i].body))throw Error('Некорректный replay Lite3');
+ for(let i=0;i<obj.frames.length;i++){
+   const row=obj.frames[i];
+   if(row.length!==162||!row.every(Number.isFinite)||(i>0&&row[0]<=obj.frames[i-1][0]))throw Error('Повреждена физическая запись');
+ }
+ if(Math.abs(obj.frames.at(-1)[0]-obj.experiment.duration_s)>1e-5)throw Error('Не совпадает длительность физики');
+ return obj;
+}
+const getRow=t=>{const frames=current.frames;let lo=0,hi=frames.length-1;
+ while(hi-lo>1){const mid=(hi+lo)>>1;if(frames[mid][0]<t)lo=mid;else hi=mid;}
+ const a=frames[lo],b=frames[hi],k=Math.max(0,Math.min(1,(t-a[0])/(b[0]-a[0]||1)));
+ return {a,b,k,nearest:k<.5?a:b};
+};
+const interpolate=(a,b,i,k)=>a[i]+(b[i]-a[i])*k;
+const fmt=t=>`${String(Math.floor(t/60)).padStart(2,'0')}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+function resize(){const w=Math.max(1,stage.clientWidth),h=Math.max(1,stage.clientHeight);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);}
+addEventListener('resize',resize);resize();
+function cameraReset(){if(!current)return;const r=current.frames[0],x=r[31],y=r[32],z=r[33];
+ const center=new THREE.Vector3(x,z,-y);orbit.target.copy(center);
+ const aspect=stage.clientWidth/Math.max(1,stage.clientHeight),factor=aspect<.9?Math.min(1.75,.95/aspect):1;
+ camera.position.copy(center).add(new THREE.Vector3(.28,.20,.32).multiplyScalar(factor));previousRoot.copy(center);orbit.update();
+}
+function renderFrame(t){if(!current||!geometryReady)return;
+ const {a,b,k,nearest}=getRow(t);
+ for(let i=0;i<17;i++){
+   const mesh=modelMeshes[i].mesh,o=31+i*7;
+   mesh.position.set(interpolate(a,b,o,k),interpolate(a,b,o+1,k),interpolate(a,b,o+2,k));
+   qa.set(a[o+4],a[o+5],a[o+6],a[o+3]);
+   qb.set(b[o+4],b[o+5],b[o+6],b[o+3]);
+   mesh.quaternion.copy(qa).slerp(qb,k).normalize();
+ }
+ // The decorative face and side panels follow the original measured body pose.
+ if(decorationGroup){
+  decorationGroup.position.copy(modelMeshes[0].mesh.position);
+  decorationGroup.quaternion.copy(modelMeshes[0].mesh.quaternion);
+ }
+ const p=new THREE.Vector3(interpolate(a,b,31,k),interpolate(a,b,33,k),-interpolate(a,b,32,k));
+ if(follow.checked){const delta=p.clone().sub(previousRoot);camera.position.add(delta);orbit.target.add(delta);}
+ previousRoot.copy(p);
+ for(let i=0;i<4;i++){
+   const force=nearest[22+i],marker=markers[i];
+   // Foot site is from genuine MuJoCo FK, force magnitude from saved physics.
+   // Ring lies on floor as an XY projection, not a measured contact patch.
+   const site=150+3*i;
+   marker.position.set(nearest[site],nearest[site+1],.004);
+   marker.visible=showContacts.checked&&force>.2;
+ }
+ phase.textContent=labels[sel.value];
+ motion.textContent=`t=${t.toFixed(1)}с · наклон ${nearest[29].toFixed(2)}° · курс vx ${nearest[26].toFixed(2)} / vy ${nearest[27].toFixed(2)} / ω ${nearest[28].toFixed(2)}`;
+ contact.textContent=`Контакты (из MuJoCo): ${[0,1,2,3].map((i)=>['FL','FR','RR','RL'][i]+' '+nearest[22+i].toFixed(1)+'Н').join(' · ')}`;
+ seek.value=String(t);seek.style.setProperty('--pct',`${100*t/current.experiment.duration_s}%`);q('#clock').textContent=fmt(t);
+}
+function setPlaying(y){playing=!!y;play.textContent=playing?'Ⅱ':'▶';play.setAttribute('aria-label',playing?'Пауза':'Воспроизвести');}
+play.addEventListener('click',()=>setPlaying(!playing));
+seek.addEventListener('input',()=>{time=Number(seek.value);renderFrame(time);});
+showContacts.addEventListener('change',()=>renderFrame(time));
+showPath.addEventListener('change',()=>{if(trail)trail.visible=showPath.checked;});
+q('#reset-camera').addEventListener('click',cameraReset);
+addEventListener('keydown',e=>{if(e.code==='Space'&&!['INPUT','SELECT','BUTTON'].includes(document.activeElement?.tagName)){e.preventDefault();setPlaying(!playing);}});
+async function loadCase(key){const serial=++req;setPlaying(false);error.hidden=true;loading.textContent='Читаем оригинальные измеренные кадры…';
+ try{
+   const reply=await fetch(DATA_ROOT+CASES[key],{cache:'no-store'});
+   if(!reply.ok)throw Error('Физическая запись отсутствует: '+reply.status);
+   const payload=validateReplay(await reply.json());if(serial!==req)return;
+   current=payload;time=0;seek.max=String(payload.experiment.duration_s);q('#end-clock').textContent=fmt(payload.experiment.duration_s);
+   if(trail){scene.remove(trail);trail.geometry.dispose();trail.material.dispose();trail=null;}
+   const pts=payload.frames.map(row=>new THREE.Vector3(row[31],.006,-row[32]));
+   trail=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0x72d6bb,transparent:true,opacity:.78}));scene.add(trail);trail.visible=showPath.checked;
+   cameraReset();renderFrame(0);loading.hidden=true;setPlaying(true);
+ }catch(ex){if(serial!==req)return;loading.hidden=true;error.hidden=false;error.textContent='Ошибка физической записи Lite3: '+(ex.message||ex);}
+}
+sel.addEventListener('change',()=>loadCase(sel.value));
+async function init(){try{
+   if(!crypto?.subtle)throw Error('Для проверки исходных STL требуется браузер с Web Crypto (localhost).');
+   await loadModel();
+   await loadCase(sel.value);
+ }catch(e){loading.hidden=true;error.hidden=false;error.textContent='XGO-Lite3 с материалами не загружен: '+(e.message||e)+'\nПри первой установке нужен доступ к исходникам LuwuDynamics; проверенные STL затем сохраняются локально. Схематическая модель не подставляется.';setPlaying(false);}}
+function tick(ts){requestAnimationFrame(tick);if(last!==null&&playing&&current){const next=time+Math.min(.1,(ts-last)/1000)*Number(speed.value);time=next>=current.experiment.duration_s?next%current.experiment.duration_s:next;renderFrame(time);}last=ts;orbit.update();renderer.render(scene,camera);}
+requestAnimationFrame(tick);init();
