@@ -1,0 +1,2074 @@
+{
+  "schema": "microduck-step-goal-compact-summary/v1",
+  "trial_count": 37,
+  "fixed_neural_weights": true,
+  "selected": {
+    "params": {
+      "height_m": 0.01,
+      "edge_x_m": 0.18,
+      "approach_command_mps": 0.3,
+      "trigger_gap_m": 0.03,
+      "roll_duration_s": 2.0,
+      "recovery_command_mps": 0.0,
+      "motor_target_margin_rad": 0.07,
+      "seed": 0
+    },
+    "trigger_s": 2.66,
+    "actual_trigger": {
+      "qpos": [
+        0.11824046904888273,
+        -0.0012927273659944804,
+        0.11916074382532361,
+        0.9954691860447348,
+        0.02663443277024543,
+        0.011352687389536952,
+        0.09056943808745088,
+        -0.051876210581392884,
+        -0.017470483739697663,
+        -0.04186079217434332,
+        -0.017509738047323416,
+        -0.3192922677467634,
+        -0.01478463989402189,
+        0.42964841091312655,
+        -0.017485361500001465,
+        0.48201836368440243,
+        0.004843462803516467,
+        0.2447127426243661,
+        -0.017532680524356116,
+        0.4344876895933374,
+        0.01751607060007052,
+        0.011186087586340092,
+        -0.017484689099719442,
+        -0.059233000322195695,
+        -0.01620981773995219,
+        0.06223848419262392,
+        -0.008433588457585416,
+        0.03927534069562121,
+        0.013574887585729669,
+        0.3453490570195002,
+        0.01785755687109235,
+        0.0815433538998191,
+        -0.017534577802388353,
+        -0.3187716727880498,
+        0.01752497215757387
+      ],
+      "qvel": [
+        0.04477768237884419,
+        0.15381559677276355,
+        -0.04381680987753564,
+        -0.2787819764382327,
+        0.026856606377875104,
+        0.2870878280524518,
+        0.07317522862479152,
+        9.182154551787435e-05,
+        0.056106553398746886,
+        -6.751112989052092e-05,
+        -1.975399875309695,
+        -0.40564668252754826,
+        -0.18116382959573837,
+        0.0011651670696615638,
+        1.108688460548985,
+        0.16053983549529627,
+        2.976538539263751e-05,
+        0.0060704603342313646,
+        -0.00014838820035481472,
+        -9.348739170073272e-05,
+        1.0153485633737636,
+        -8.391836581878275e-06,
+        0.31504947485224477,
+        -0.28924832294548286,
+        0.4620426351368352,
+        -0.4841792034580934,
+        -1.656297679854197,
+        0.46918506480771766,
+        -0.6113232057906225,
+        -0.03099846485455047,
+        0.5192151794561267,
+        4.704745038482813e-05,
+        0.6328378575329406,
+        -0.003037765049982815
+      ],
+      "toe_gap_m": 0.02873161650282094
+    },
+    "handback_s": 4.64,
+    "standing_final_1s": true,
+    "step_goal_reached": true,
+    "quality_gate": true,
+    "status": "PASS",
+    "max_forward_rotation_deg": 364.50567193030344,
+    "final_forward_rotation_deg": 357.7402763286761,
+    "first_complete_top_support_s": 3.8400000000004497,
+    "longest_complete_top_support_s": 3.96,
+    "max_trunk_x_m": 0.681827262,
+    "final_position_m": [
+      0.680386022,
+      0.109092042,
+      0.126453833
+    ],
+    "max_environment_penetration_m": 0.000662725350941527,
+    "max_body_step_penetration_m": 0.000662725350941527,
+    "max_self_contact_penetration_m": 8.141517014714126e-05,
+    "max_motor_limit_overshoot_rad": 0.01700466775655518,
+    "peak_torque_nm": 0.9381775885216289,
+    "peak_sampled_environment_force_n": 162.513047574608,
+    "max_actual_approach_vx_mps": 0.15418512516956714,
+    "warnings": {},
+    "physics_reset_detected": false,
+    "duration_s": 9.0,
+    "frames": 450,
+    "trace_file": "search-v30-g03-d20.json",
+    "trace_sha256": "9a9fb5396d90dcf713c1ed5182be35d1a454d393a44665ce2d712574465c01d6"
+  },
+  "repeat": {
+    "trace_file": "search-v30-g03-d20.json",
+    "sha256": "9a9fb5396d90dcf713c1ed5182be35d1a454d393a44665ce2d712574465c01d6",
+    "byte_identical": true
+  },
+  "margin_refinement": {
+    "reason": "2 cm reaches the goal but exceeds the unchanged 1 degree overshoot gate",
+    "tested_margins_rad": [
+      0.105,
+      0.14,
+      0.21
+    ],
+    "selected_2cm": null,
+    "selected_byte_identical_repeat": false
+  },
+  "final_margin_check": {
+    "tested_margins_rad": [
+      0.28,
+      0.35
+    ],
+    "selected": null,
+    "byte_identical_repeat": false
+  },
+  "episodes": [
+    {
+      "duration_s": 9.0,
+      "final_forward_rotation_deg": 359.3866139865886,
+      "final_position_m": [
+        0.570982716,
+        -0.011347731,
+        0.116416583
+      ],
+      "first_complete_top_support_s": null,
+      "frames": 450,
+      "handback_s": 2.98,
+      "longest_complete_top_support_s": 0.0,
+      "max_actual_approach_vx_mps": -0.0001182227370860495,
+      "max_body_step_penetration_m": 0.0,
+      "max_environment_penetration_m": 0.0005497567734840392,
+      "max_forward_rotation_deg": 365.0759738221688,
+      "max_motor_limit_overshoot_rad": 0.014900507733041746,
+      "max_self_contact_penetration_m": 6.77707198995617e-05,
+      "max_trunk_x_m": 0.572787874,
+      "params": {
+        "approach_command_mps": 0.0,
+        "edge_x_m": 0.18,
+        "flat_control": true,
+        "height_m": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "recovery_command_mps": 0.0,
+        "roll_duration_s": 2.0,
+        "seed": 0,
+        "trigger_gap_m": 0.05
+      },
+      "peak_sampled_environment_force_n": 34.38792794663907,
+      "peak_torque_nm": 0.9634015946604082,
+      "physics_reset_detected": false,
+      "quality_gate": true,
+      "standing_final_1s": true,
+      "status": "PASS",
+      "step_goal_reached": false,
+      "trigger_s": 1.0,
+      "warnings": {},
+      "trace_file": "flat-control.json",
+      "trace_sha256": "fd0e0d4c56bbcaf46fcc9a88bdeb96ab15060bd2a4c79cf2fba7169b05c8537f",
+      "actual_trigger": {
+        "position_m": [
+          -0.0004946307581057869,
+          -0.0003887726237453357,
+          0.11641233662329528
+        ],
+        "velocity_mps": [
+          -0.0001182227370860495,
+          2.690826862493349e-05,
+          -8.505621743193418e-06
+        ],
+        "toe_gap_m": 0.14576153248423035
+      }
+    },
+    {
+      "duration_s": 9.0,
+      "final_forward_rotation_deg": 359.3916778659046,
+      "final_position_m": [
+        0.677526048,
+        0.012211808,
+        0.126442939
+      ],
+      "first_complete_top_support_s": 3.6000000000003696,
+      "frames": 450,
+      "handback_s": 4.4,
+      "longest_complete_top_support_s": 4.2,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "max_body_step_penetration_m": 0.0003676892710994581,
+      "max_environment_penetration_m": 0.0005909061117761479,
+      "max_forward_rotation_deg": 365.90104366597006,
+      "max_motor_limit_overshoot_rad": 0.02083767632981992,
+      "max_self_contact_penetration_m": 8.324144607664849e-05,
+      "max_trunk_x_m": 0.679611052,
+      "params": {
+        "approach_command_mps": 0.3,
+        "edge_x_m": 0.18,
+        "height_m": 0.01,
+        "motor_target_margin_rad": 0.07,
+        "recovery_command_mps": 0.0,
+        "roll_duration_s": 2.0,
+        "seed": 0,
+        "trigger_gap_m": 0.05
+      },
+      "peak_sampled_environment_force_n": 88.42529614179361,
+      "peak_torque_nm": 0.9313883457348406,
+      "physics_reset_detected": false,
+      "quality_gate": false,
+      "standing_final_1s": true,
+      "status": "FAIL",
+      "step_goal_reached": true,
+      "trigger_s": 2.42,
+      "warnings": {},
+      "trace_file": "step-1cm-baseline.json",
+      "trace_sha256": "1332b937d43f39ad5d1e5c4821a34aab875dd631695717bfb6acd0c685384691",
+      "actual_trigger": {
+        "position_m": [
+          0.09711194169611195,
+          0.012801347924786193,
+          0.12106839938731456
+        ],
+        "velocity_mps": [
+          0.1032396755578408,
+          -0.05151482050321664,
+          -0.0034879509602893885
+        ],
+        "toe_gap_m": 0.047235412637872676
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.18,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 1.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": null,
+      "handback_s": null,
+      "standing_final_1s": true,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 0.0,
+      "final_forward_rotation_deg": 0.0,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.007066333,
+      "final_position_m": [
+        0.000338524,
+        0.000221125,
+        0.115556702
+      ],
+      "max_environment_penetration_m": 0.00017192922259284902,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.17348486255814083,
+      "peak_sampled_environment_force_n": 5.6850523979678,
+      "max_actual_approach_vx_mps": 0.039241140236452296,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v18-g03-d10.json",
+      "trace_sha256": "380c5c87d2f30c7a51a330d0659ff5cda21b7647a4c4e58cbf90682038d09328",
+      "actual_trigger": null
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.18,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": null,
+      "handback_s": null,
+      "standing_final_1s": true,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 0.0,
+      "final_forward_rotation_deg": 0.0,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.007066333,
+      "final_position_m": [
+        0.000338524,
+        0.000221125,
+        0.115556702
+      ],
+      "max_environment_penetration_m": 0.00017192922259284902,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.17348486255814083,
+      "peak_sampled_environment_force_n": 5.6850523979678,
+      "max_actual_approach_vx_mps": 0.039241140236452296,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v18-g03-d20.json",
+      "trace_sha256": "6daf2d7c757ce09a7de569122a60d6d398d5a01a532ed8429a6f34c8ea0f7606",
+      "actual_trigger": null
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.18,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": null,
+      "handback_s": null,
+      "standing_final_1s": true,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 0.0,
+      "final_forward_rotation_deg": 0.0,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.007066333,
+      "final_position_m": [
+        0.000338524,
+        0.000221125,
+        0.115556702
+      ],
+      "max_environment_penetration_m": 0.00017192922259284902,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.17348486255814083,
+      "peak_sampled_environment_force_n": 5.6850523979678,
+      "max_actual_approach_vx_mps": 0.039241140236452296,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v18-g03-d30.json",
+      "trace_sha256": "edaf288d539c5bac897d2aab0b83c475cd01960c5e7cbc37109dafedfb73403a",
+      "actual_trigger": null
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.18,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 1.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": null,
+      "handback_s": null,
+      "standing_final_1s": true,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 0.0,
+      "final_forward_rotation_deg": 0.0,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.007066333,
+      "final_position_m": [
+        0.000338524,
+        0.000221125,
+        0.115556702
+      ],
+      "max_environment_penetration_m": 0.00017192922259284902,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.17348486255814083,
+      "peak_sampled_environment_force_n": 5.6850523979678,
+      "max_actual_approach_vx_mps": 0.039241140236452296,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v18-g07-d10.json",
+      "trace_sha256": "00b3f4d40dc5ca6401facbd52e25c058e3c31f43b796497372a604c16418dc6e",
+      "actual_trigger": null
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.18,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": null,
+      "handback_s": null,
+      "standing_final_1s": true,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 0.0,
+      "final_forward_rotation_deg": 0.0,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.007066333,
+      "final_position_m": [
+        0.000338524,
+        0.000221125,
+        0.115556702
+      ],
+      "max_environment_penetration_m": 0.00017192922259284902,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.17348486255814083,
+      "peak_sampled_environment_force_n": 5.6850523979678,
+      "max_actual_approach_vx_mps": 0.039241140236452296,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v18-g07-d20.json",
+      "trace_sha256": "85542bc3cfcceb88e8760c682ccbe777f72a26044ebaffbe7cd60305f5f1fda8",
+      "actual_trigger": null
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.18,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": null,
+      "handback_s": null,
+      "standing_final_1s": true,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 0.0,
+      "final_forward_rotation_deg": 0.0,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.007066333,
+      "final_position_m": [
+        0.000338524,
+        0.000221125,
+        0.115556702
+      ],
+      "max_environment_penetration_m": 0.00017192922259284902,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.17348486255814083,
+      "peak_sampled_environment_force_n": 5.6850523979678,
+      "max_actual_approach_vx_mps": 0.039241140236452296,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v18-g07-d30.json",
+      "trace_sha256": "659680dab08f086ec835f84fb752c64150ad09f4367440b644a53d48e93a5238",
+      "actual_trigger": null
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 1.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 3.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": true,
+      "status": "PASS",
+      "max_forward_rotation_deg": 332.0545465122156,
+      "final_forward_rotation_deg": 114.16043522771304,
+      "first_complete_top_support_s": 4.7600000000000815,
+      "longest_complete_top_support_s": 3.16,
+      "max_trunk_x_m": 0.616242224,
+      "final_position_m": [
+        0.472017629,
+        0.264918271,
+        0.125836571
+      ],
+      "max_environment_penetration_m": 0.0009663257924462984,
+      "max_body_step_penetration_m": 0.000662725350941527,
+      "max_self_contact_penetration_m": 3.177621761091005e-05,
+      "max_motor_limit_overshoot_rad": 0.01700466775655518,
+      "peak_torque_nm": 0.9634015946604082,
+      "peak_sampled_environment_force_n": 104.1270281324541,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v30-g03-d10.json",
+      "trace_sha256": "b90005bd03f708042df018b7bdf99b713fa8fea860e03faf9743393bd5d9dac9",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": true,
+      "status": "PASS",
+      "max_forward_rotation_deg": 364.50567193030344,
+      "final_forward_rotation_deg": 357.7402763286761,
+      "first_complete_top_support_s": 3.8400000000004497,
+      "longest_complete_top_support_s": 3.96,
+      "max_trunk_x_m": 0.681827262,
+      "final_position_m": [
+        0.680386022,
+        0.109092042,
+        0.126453833
+      ],
+      "max_environment_penetration_m": 0.000662725350941527,
+      "max_body_step_penetration_m": 0.000662725350941527,
+      "max_self_contact_penetration_m": 8.141517014714126e-05,
+      "max_motor_limit_overshoot_rad": 0.01700466775655518,
+      "peak_torque_nm": 0.9381775885216289,
+      "peak_sampled_environment_force_n": 162.513047574608,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v30-g03-d20.json",
+      "trace_sha256": "9a9fb5396d90dcf713c1ed5182be35d1a454d393a44665ce2d712574465c01d6",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 5.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": true,
+      "status": "PASS",
+      "max_forward_rotation_deg": 364.50567193030344,
+      "final_forward_rotation_deg": 357.89994974443994,
+      "first_complete_top_support_s": 3.8400000000004497,
+      "longest_complete_top_support_s": 3.62,
+      "max_trunk_x_m": 0.681735999,
+      "final_position_m": [
+        0.680278161,
+        0.108971762,
+        0.126543877
+      ],
+      "max_environment_penetration_m": 0.000662725350941527,
+      "max_body_step_penetration_m": 0.000662725350941527,
+      "max_self_contact_penetration_m": 8.141517014714126e-05,
+      "max_motor_limit_overshoot_rad": 0.01700466775655518,
+      "peak_torque_nm": 0.9381775885216289,
+      "peak_sampled_environment_force_n": 162.513047574608,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.66,
+      "frames": 483,
+      "trace_file": "search-v30-g03-d30.json",
+      "trace_sha256": "cc1518ab1bb3c2bd373ffad0c1c0ee0d43bd3168e71e79224c683d07b076672a",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 1.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.06,
+      "handback_s": 3.04,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 321.0768519728963,
+      "final_forward_rotation_deg": 141.02645232570688,
+      "first_complete_top_support_s": 4.5200000000002145,
+      "longest_complete_top_support_s": 3.42,
+      "max_trunk_x_m": 0.580346033,
+      "final_position_m": [
+        0.475133326,
+        0.123454363,
+        0.126529921
+      ],
+      "max_environment_penetration_m": 0.0009779277498198158,
+      "max_body_step_penetration_m": 0.0005754395156012724,
+      "max_self_contact_penetration_m": 0.00020734336932918488,
+      "max_motor_limit_overshoot_rad": 0.019068737180455653,
+      "peak_torque_nm": 0.9634015946604082,
+      "peak_sampled_environment_force_n": 85.56887135344142,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v30-g07-d10.json",
+      "trace_sha256": "6035c635dea2069d536474ae3dc487e628d374289814e2c5ede0993d9de0bc38",
+      "actual_trigger": {
+        "position_m": [
+          0.07056934363871821,
+          0.0019496286443163333,
+          0.1189017744844585
+        ],
+        "velocity_mps": [
+          0.10398895772346424,
+          -0.1943123201015665,
+          -0.04989598147434423
+        ],
+        "toe_gap_m": 0.06801242816681824
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.06,
+      "handback_s": 4.04,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 366.41792759204145,
+      "final_forward_rotation_deg": 359.48837873364903,
+      "first_complete_top_support_s": 3.260000000000256,
+      "longest_complete_top_support_s": 4.46,
+      "max_trunk_x_m": 0.648088439,
+      "final_position_m": [
+        0.645491319,
+        0.026116152,
+        0.126277605
+      ],
+      "max_environment_penetration_m": 0.0006056525573375269,
+      "max_body_step_penetration_m": 0.0005754395156012724,
+      "max_self_contact_penetration_m": 0.00017469802539263636,
+      "max_motor_limit_overshoot_rad": 0.019068737180455653,
+      "peak_torque_nm": 0.9378425133401174,
+      "peak_sampled_environment_force_n": 21.584237853213228,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v30-g07-d20.json",
+      "trace_sha256": "e200cbe82b1eaa4a47e66745331dc8c9ff3bc955063d7babf17b962ac5ccf35c",
+      "actual_trigger": {
+        "position_m": [
+          0.07056934363871821,
+          0.0019496286443163333,
+          0.1189017744844585
+        ],
+        "velocity_mps": [
+          0.10398895772346424,
+          -0.1943123201015665,
+          -0.04989598147434423
+        ],
+        "toe_gap_m": 0.06801242816681824
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.06,
+      "handback_s": 5.04,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 366.41792759204145,
+      "final_forward_rotation_deg": 359.533293141382,
+      "first_complete_top_support_s": 3.260000000000256,
+      "longest_complete_top_support_s": 3.42,
+      "max_trunk_x_m": 0.648457159,
+      "final_position_m": [
+        0.645564126,
+        0.026023449,
+        0.126252799
+      ],
+      "max_environment_penetration_m": 0.0006056525573375269,
+      "max_body_step_penetration_m": 0.0005754395156012724,
+      "max_self_contact_penetration_m": 0.00017469802539263636,
+      "max_motor_limit_overshoot_rad": 0.019068737180455653,
+      "peak_torque_nm": 0.9378425133401174,
+      "peak_sampled_environment_force_n": 21.584237853213228,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.06,
+      "frames": 453,
+      "trace_file": "search-v30-g07-d30.json",
+      "trace_sha256": "a6c6c23e866945b23ab162b91d6a2f9ba9d5f4e7b269d1a9f9e41f1fdbd18279",
+      "actual_trigger": {
+        "position_m": [
+          0.07056934363871821,
+          0.0019496286443163333,
+          0.1189017744844585
+        ],
+        "velocity_mps": [
+          0.10398895772346424,
+          -0.1943123201015665,
+          -0.04989598147434423
+        ],
+        "toe_gap_m": 0.06801242816681824
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.45,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 1.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 1.74,
+      "handback_s": 2.72,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 359.99478563304916,
+      "final_forward_rotation_deg": 357.75706931463367,
+      "first_complete_top_support_s": 3.5400000000003495,
+      "longest_complete_top_support_s": 5.4,
+      "max_trunk_x_m": 0.620642146,
+      "final_position_m": [
+        0.579454561,
+        -0.148532049,
+        0.125997166
+      ],
+      "max_environment_penetration_m": 0.000987298767302249,
+      "max_body_step_penetration_m": 0.0006618281536128462,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.020453360185199276,
+      "peak_torque_nm": 0.9634015946604082,
+      "peak_sampled_environment_force_n": 234.36343826006419,
+      "max_actual_approach_vx_mps": 0.2497217296243447,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v45-g03-d10.json",
+      "trace_sha256": "e01437f3651d1283bb17499c5be486662f9b3b747bcf09de032ccf2923722615",
+      "actual_trigger": {
+        "position_m": [
+          0.10512287643105453,
+          -0.023508219225577637,
+          0.12099702418630419
+        ],
+        "velocity_mps": [
+          0.15572947237000762,
+          0.09369661129157725,
+          -0.03027692007966182
+        ],
+        "toe_gap_m": 0.023741315177017108
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.45,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 1.74,
+      "handback_s": 3.72,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 363.87903503046715,
+      "final_forward_rotation_deg": 357.69931318426404,
+      "first_complete_top_support_s": 2.8600000000001224,
+      "longest_complete_top_support_s": 4.9,
+      "max_trunk_x_m": 0.646636173,
+      "final_position_m": [
+        0.644698348,
+        -0.193978593,
+        0.126363835
+      ],
+      "max_environment_penetration_m": 0.0006618281536128462,
+      "max_body_step_penetration_m": 0.0006618281536128462,
+      "max_self_contact_penetration_m": 3.1187942229136624e-05,
+      "max_motor_limit_overshoot_rad": 0.020453360185199276,
+      "peak_torque_nm": 0.9312130139719327,
+      "peak_sampled_environment_force_n": 99.45953161963064,
+      "max_actual_approach_vx_mps": 0.2497217296243447,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v45-g03-d20.json",
+      "trace_sha256": "306f1eb54e733e583bf32269dd24f3c29eb622924700abcfcbee95539d01603a",
+      "actual_trigger": {
+        "position_m": [
+          0.10512287643105453,
+          -0.023508219225577637,
+          0.12099702418630419
+        ],
+        "velocity_mps": [
+          0.15572947237000762,
+          0.09369661129157725,
+          -0.03027692007966182
+        ],
+        "toe_gap_m": 0.023741315177017108
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.45,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 1.74,
+      "handback_s": 4.72,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 363.87903503046715,
+      "final_forward_rotation_deg": 357.805882688506,
+      "first_complete_top_support_s": 2.8600000000001224,
+      "longest_complete_top_support_s": 3.8200000000000003,
+      "max_trunk_x_m": 0.646426703,
+      "final_position_m": [
+        0.644599159,
+        -0.193912544,
+        0.126349567
+      ],
+      "max_environment_penetration_m": 0.0006618281536128462,
+      "max_body_step_penetration_m": 0.0006618281536128462,
+      "max_self_contact_penetration_m": 3.1187942229136624e-05,
+      "max_motor_limit_overshoot_rad": 0.020453360185199276,
+      "peak_torque_nm": 0.9312130139719327,
+      "peak_sampled_environment_force_n": 99.45953161963064,
+      "max_actual_approach_vx_mps": 0.2497217296243447,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v45-g03-d30.json",
+      "trace_sha256": "5deadc993a05d7ca389ad078daadba84e71d57b8c7887d98490683dc3063d537",
+      "actual_trigger": {
+        "position_m": [
+          0.10512287643105453,
+          -0.023508219225577637,
+          0.12099702418630419
+        ],
+        "velocity_mps": [
+          0.15572947237000762,
+          0.09369661129157725,
+          -0.03027692007966182
+        ],
+        "toe_gap_m": 0.023741315177017108
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.45,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 1.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 1.56,
+      "handback_s": 2.54,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 346.730435359074,
+      "final_forward_rotation_deg": 126.77818704292159,
+      "first_complete_top_support_s": 3.9200000000004764,
+      "longest_complete_top_support_s": 4.46,
+      "max_trunk_x_m": 0.601598506,
+      "final_position_m": [
+        0.467416287,
+        0.043340733,
+        0.126299246
+      ],
+      "max_environment_penetration_m": 0.0010320569549258417,
+      "max_body_step_penetration_m": 0.0005773250966138021,
+      "max_self_contact_penetration_m": 0.00027642238421890985,
+      "max_motor_limit_overshoot_rad": 0.01962405695380931,
+      "peak_torque_nm": 0.9634015946604082,
+      "peak_sampled_environment_force_n": 102.55120329791927,
+      "max_actual_approach_vx_mps": 0.2497217296243447,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v45-g07-d10.json",
+      "trace_sha256": "9baa37ed627778c30b4a283b4d7679b009d3ef92f44a941ae0f52e586fc44804",
+      "actual_trigger": {
+        "position_m": [
+          0.08291585162847678,
+          -0.006908562803996311,
+          0.12048875677122065
+        ],
+        "velocity_mps": [
+          0.10685500683577316,
+          -0.2392795913485443,
+          -0.06891847308070963
+        ],
+        "toe_gap_m": 0.06496759132248313
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.45,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 1.56,
+      "handback_s": 3.54,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 364.5082708106445,
+      "final_forward_rotation_deg": 359.76339666097044,
+      "first_complete_top_support_s": 2.700000000000069,
+      "longest_complete_top_support_s": 4.5600000000000005,
+      "max_trunk_x_m": 0.648885113,
+      "final_position_m": [
+        0.647682335,
+        -0.026740114,
+        0.126238001
+      ],
+      "max_environment_penetration_m": 0.0005844377030728657,
+      "max_body_step_penetration_m": 0.0005773250966138021,
+      "max_self_contact_penetration_m": 4.2119932646289416e-05,
+      "max_motor_limit_overshoot_rad": 0.01962405695380931,
+      "peak_torque_nm": 0.939897394590857,
+      "peak_sampled_environment_force_n": 52.58524941525075,
+      "max_actual_approach_vx_mps": 0.2497217296243447,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v45-g07-d20.json",
+      "trace_sha256": "059907bd61457a4017052daa62c380ec5a55ad506443a85386a589a53b521f6d",
+      "actual_trigger": {
+        "position_m": [
+          0.08291585162847678,
+          -0.006908562803996311,
+          0.12048875677122065
+        ],
+        "velocity_mps": [
+          0.10685500683577316,
+          -0.2392795913485443,
+          -0.06891847308070963
+        ],
+        "toe_gap_m": 0.06496759132248313
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.45,
+        "trigger_gap_m": 0.07,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 1.56,
+      "handback_s": 4.54,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 364.5082708106445,
+      "final_forward_rotation_deg": 359.7459879191585,
+      "first_complete_top_support_s": 2.700000000000069,
+      "longest_complete_top_support_s": 3.88,
+      "max_trunk_x_m": 0.64896331,
+      "final_position_m": [
+        0.647603288,
+        -0.026788969,
+        0.126241078
+      ],
+      "max_environment_penetration_m": 0.0005844377030728657,
+      "max_body_step_penetration_m": 0.0005773250966138021,
+      "max_self_contact_penetration_m": 4.2119932646289416e-05,
+      "max_motor_limit_overshoot_rad": 0.01962405695380931,
+      "peak_torque_nm": 0.939897394590857,
+      "peak_sampled_environment_force_n": 52.58524941525075,
+      "max_actual_approach_vx_mps": 0.2497217296243447,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "search-v45-g07-d30.json",
+      "trace_sha256": "88bc1db58066f512b0306fa770990173baa2ce79155e035a0c2c0634d211f54c",
+      "actual_trigger": {
+        "position_m": [
+          0.08291585162847678,
+          -0.006908562803996311,
+          0.12048875677122065
+        ],
+        "velocity_mps": [
+          0.10685500683577316,
+          -0.2392795913485443,
+          -0.06891847308070963
+        ],
+        "toe_gap_m": 0.06496759132248313
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.12,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": true,
+      "status": "PASS",
+      "max_forward_rotation_deg": 364.50567193030344,
+      "final_forward_rotation_deg": 357.7402763286761,
+      "first_complete_top_support_s": 3.8400000000004497,
+      "longest_complete_top_support_s": 3.96,
+      "max_trunk_x_m": 0.681827262,
+      "final_position_m": [
+        0.680386022,
+        0.109092042,
+        0.126453833
+      ],
+      "max_environment_penetration_m": 0.000662725350941527,
+      "max_body_step_penetration_m": 0.000662725350941527,
+      "max_self_contact_penetration_m": 8.141517014714126e-05,
+      "max_motor_limit_overshoot_rad": 0.01700466775655518,
+      "peak_torque_nm": 0.9381775885216289,
+      "peak_sampled_environment_force_n": 162.513047574608,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "assist-r1-v12.json",
+      "trace_sha256": "8c2428bde6451654f280f213761d2bc00f78c570387fec0a3b5759ac0cd4a621",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.24,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": true,
+      "status": "PASS",
+      "max_forward_rotation_deg": 364.50567193030344,
+      "final_forward_rotation_deg": 357.7402763286761,
+      "first_complete_top_support_s": 3.8400000000004497,
+      "longest_complete_top_support_s": 3.96,
+      "max_trunk_x_m": 0.681827262,
+      "final_position_m": [
+        0.680386022,
+        0.109092042,
+        0.126453833
+      ],
+      "max_environment_penetration_m": 0.000662725350941527,
+      "max_body_step_penetration_m": 0.000662725350941527,
+      "max_self_contact_penetration_m": 8.141517014714126e-05,
+      "max_motor_limit_overshoot_rad": 0.01700466775655518,
+      "peak_torque_nm": 0.9381775885216289,
+      "peak_sampled_environment_force_n": 162.513047574608,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "assist-r1-v24.json",
+      "trace_sha256": "f92f84c7c0288411750031f24fa7ad1ebc99e82e7fe18525d11f2ebd8a592387",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.12,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 5.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": true,
+      "status": "PASS",
+      "max_forward_rotation_deg": 364.50567193030344,
+      "final_forward_rotation_deg": 357.89994974443994,
+      "first_complete_top_support_s": 3.8400000000004497,
+      "longest_complete_top_support_s": 3.62,
+      "max_trunk_x_m": 0.681735999,
+      "final_position_m": [
+        0.680278161,
+        0.108971762,
+        0.126543877
+      ],
+      "max_environment_penetration_m": 0.000662725350941527,
+      "max_body_step_penetration_m": 0.000662725350941527,
+      "max_self_contact_penetration_m": 8.141517014714126e-05,
+      "max_motor_limit_overshoot_rad": 0.01700466775655518,
+      "peak_torque_nm": 0.9381775885216289,
+      "peak_sampled_environment_force_n": 162.513047574608,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.66,
+      "frames": 483,
+      "trace_file": "assist-r2-v12.json",
+      "trace_sha256": "e187cce8bf87e5b1cdf866f8a17e6c96664830c93d5ae1be3257ca0e9b04b637",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 3.0,
+        "recovery_command_mps": 0.24,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 5.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": true,
+      "status": "PASS",
+      "max_forward_rotation_deg": 364.50567193030344,
+      "final_forward_rotation_deg": 357.89994974443994,
+      "first_complete_top_support_s": 3.8400000000004497,
+      "longest_complete_top_support_s": 3.62,
+      "max_trunk_x_m": 0.681735999,
+      "final_position_m": [
+        0.680278161,
+        0.108971762,
+        0.126543877
+      ],
+      "max_environment_penetration_m": 0.000662725350941527,
+      "max_body_step_penetration_m": 0.000662725350941527,
+      "max_self_contact_penetration_m": 8.141517014714126e-05,
+      "max_motor_limit_overshoot_rad": 0.01700466775655518,
+      "peak_torque_nm": 0.9381775885216289,
+      "peak_sampled_environment_force_n": 162.513047574608,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.66,
+      "frames": 483,
+      "trace_file": "assist-r2-v24.json",
+      "trace_sha256": "ce66ea0d3aaab0d2df9ba0532937bf6442bd2959b7c153557f3acdbc1c2925e2",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.02,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 364.3309298307863,
+      "final_forward_rotation_deg": 357.7260747006059,
+      "first_complete_top_support_s": 3.880000000000463,
+      "longest_complete_top_support_s": 3.94,
+      "max_trunk_x_m": 0.683852526,
+      "final_position_m": [
+        0.681607496,
+        0.159735468,
+        0.136543546
+      ],
+      "max_environment_penetration_m": 0.000500608772397309,
+      "max_body_step_penetration_m": 0.000500608772397309,
+      "max_self_contact_penetration_m": 0.0001294514477672589,
+      "max_motor_limit_overshoot_rad": 0.026840043030462724,
+      "peak_torque_nm": 0.8890836239514808,
+      "peak_sampled_environment_force_n": 104.1270281324541,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "height-2cm.json",
+      "trace_sha256": "508bad5a7dfacee82bb559281129b2807348e613ffd2e70732e206fea0468e8f",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.03,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": false,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 86.99265577922294,
+      "final_forward_rotation_deg": -2.5218567169852126,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.194561883,
+      "final_position_m": [
+        0.142816582,
+        0.00313682,
+        0.11585488
+      ],
+      "max_environment_penetration_m": 0.0004825657500074354,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.00013308753426772066,
+      "max_motor_limit_overshoot_rad": 0.01783051627471477,
+      "peak_torque_nm": 0.8656074850101263,
+      "peak_sampled_environment_force_n": 252.52095789631574,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "height-3cm.json",
+      "trace_sha256": "d062e4de37d8e3630a631b191505f89b23c82b0ee3e210c7aea72fe6e0c8364c",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.05,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": false,
+      "step_goal_reached": false,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 77.91538649116559,
+      "final_forward_rotation_deg": -3.5288713505769205,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.222666933,
+      "final_position_m": [
+        0.061694896,
+        0.029636558,
+        0.113008444
+      ],
+      "max_environment_penetration_m": 0.0010363497129843337,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0002808758767433736,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.9634015946604082,
+      "peak_sampled_environment_force_n": 164.6800923060493,
+      "max_actual_approach_vx_mps": 0.15418512516956714,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "height-5cm.json",
+      "trace_sha256": "00c284ecedb16015cbd6e473055cbaea5b8605c5d03ed99ce7f0496240da77e7",
+      "actual_trigger": {
+        "position_m": [
+          0.11824046904888273,
+          -0.0012927273659944804,
+          0.11916074382532361
+        ],
+        "velocity_mps": [
+          0.04477768237884419,
+          0.15381559677276355,
+          -0.04381680987753564
+        ],
+        "toe_gap_m": 0.02873161650282094
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 20261109
+      },
+      "trigger_s": 2.64,
+      "handback_s": 4.62,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 363.977589100631,
+      "final_forward_rotation_deg": 358.1913561774549,
+      "first_complete_top_support_s": 3.760000000000423,
+      "longest_complete_top_support_s": 5.1000000000000005,
+      "max_trunk_x_m": 0.68601301,
+      "final_position_m": [
+        0.684590907,
+        0.026619356,
+        0.126530364
+      ],
+      "max_environment_penetration_m": 0.0005579826780442635,
+      "max_body_step_penetration_m": 0.0003480305249606766,
+      "max_self_contact_penetration_m": 6.063200254789045e-05,
+      "max_motor_limit_overshoot_rad": 0.019533465758010626,
+      "peak_torque_nm": 0.9584055277281142,
+      "peak_sampled_environment_force_n": 181.26415025166494,
+      "max_actual_approach_vx_mps": 0.1439293078649035,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "perturb-20261109.json",
+      "trace_sha256": "9da358a6018e96742e92cbccb1e8b438153f262c989b222d4e53a09cee3df59d",
+      "actual_trigger": {
+        "position_m": [
+          0.1186335454078459,
+          -0.005635881982715409,
+          0.11975363478051514
+        ],
+        "velocity_mps": [
+          0.05669375928977483,
+          0.11266479631370023,
+          -0.0323272840879267
+        ],
+        "toe_gap_m": 0.026859172605832288
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 20261110
+      },
+      "trigger_s": 2.8,
+      "handback_s": 4.78,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 367.35832224271314,
+      "final_forward_rotation_deg": 359.85670959942934,
+      "first_complete_top_support_s": 3.96000000000049,
+      "longest_complete_top_support_s": 3.8000000000000003,
+      "max_trunk_x_m": 0.70076401,
+      "final_position_m": [
+        0.699475563,
+        -0.010153621,
+        0.126530035
+      ],
+      "max_environment_penetration_m": 0.0005231230411606776,
+      "max_body_step_penetration_m": 0.0005231230411606776,
+      "max_self_contact_penetration_m": 9.561177596767555e-05,
+      "max_motor_limit_overshoot_rad": 0.02166705837993388,
+      "peak_torque_nm": 0.9283547062369377,
+      "peak_sampled_environment_force_n": 20.903550519892992,
+      "max_actual_approach_vx_mps": 0.15049251200662087,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "perturb-20261110.json",
+      "trace_sha256": "1b5896ca16a29598253fc3855638e7ae48479f38bf03bb93d1e50e2fc039032b",
+      "actual_trigger": {
+        "position_m": [
+          0.11825086214583713,
+          0.00397168914361473,
+          0.12082865266173466
+        ],
+        "velocity_mps": [
+          0.09880832866982095,
+          -0.10479721606200607,
+          -0.03011297998084755
+        ],
+        "toe_gap_m": 0.02611665163225052
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.07,
+        "seed": 20261111
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 364.07909970777075,
+      "final_forward_rotation_deg": 358.3031495329126,
+      "first_complete_top_support_s": 3.8000000000004364,
+      "longest_complete_top_support_s": 3.7800000000000002,
+      "max_trunk_x_m": 0.681771589,
+      "final_position_m": [
+        0.680534089,
+        0.092854615,
+        0.126392996
+      ],
+      "max_environment_penetration_m": 0.00045784461662300684,
+      "max_body_step_penetration_m": 0.00045784461662300684,
+      "max_self_contact_penetration_m": 6.834467156955974e-05,
+      "max_motor_limit_overshoot_rad": 0.018894002922131836,
+      "peak_torque_nm": 0.9562706729722331,
+      "peak_sampled_environment_force_n": 27.66806407787753,
+      "max_actual_approach_vx_mps": 0.1551489889454878,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "perturb-20261111.json",
+      "trace_sha256": "aece42db23622a5e7c35c9e2efa2a794c5a1463b5639bc2c01da69bcafd9f913",
+      "actual_trigger": {
+        "position_m": [
+          0.1193813909473186,
+          -0.001194205929016756,
+          0.11958677457835921
+        ],
+        "velocity_mps": [
+          0.053932913840924315,
+          0.13453682743264342,
+          -0.035745235063251404
+        ],
+        "toe_gap_m": 0.02903846748968414
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.02,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.105,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 365.0536548658832,
+      "final_forward_rotation_deg": 357.62229831803825,
+      "first_complete_top_support_s": 4.020000000000492,
+      "longest_complete_top_support_s": 3.94,
+      "max_trunk_x_m": 0.699602158,
+      "final_position_m": [
+        0.697472047,
+        0.13784534,
+        0.13672223
+      ],
+      "max_environment_penetration_m": 0.0006907598172291551,
+      "max_body_step_penetration_m": 0.0006907598172291551,
+      "max_self_contact_penetration_m": 8.641363937876425e-05,
+      "max_motor_limit_overshoot_rad": 0.0247224416894698,
+      "peak_torque_nm": 0.8907378504220876,
+      "peak_sampled_environment_force_n": 41.133246876220475,
+      "max_actual_approach_vx_mps": 0.15589204948800428,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "margin-2cm-105.json",
+      "trace_sha256": "1e2f9832b115055d602caf7440cd4b96ca76eb53ec9d8960926461be1935da6b",
+      "actual_trigger": {
+        "position_m": [
+          0.11981982689886285,
+          -0.002952983387762525,
+          0.11928495932416514
+        ],
+        "velocity_mps": [
+          0.04956834714917189,
+          0.14395704690786945,
+          -0.03847072974090635
+        ],
+        "toe_gap_m": 0.027784836722299172
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.02,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.14,
+        "seed": 0
+      },
+      "trigger_s": 2.64,
+      "handback_s": 4.62,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 366.2000204031314,
+      "final_forward_rotation_deg": 357.4053681949879,
+      "first_complete_top_support_s": 4.300000000000336,
+      "longest_complete_top_support_s": 3.98,
+      "max_trunk_x_m": 0.709807885,
+      "final_position_m": [
+        0.708000391,
+        -0.016117038,
+        0.136418563
+      ],
+      "max_environment_penetration_m": 0.0006211697447072903,
+      "max_body_step_penetration_m": 0.0006211697447072903,
+      "max_self_contact_penetration_m": 0.00014349845169466473,
+      "max_motor_limit_overshoot_rad": 0.02336715455769456,
+      "peak_torque_nm": 0.8196085726273554,
+      "peak_sampled_environment_force_n": 181.03723063669835,
+      "max_actual_approach_vx_mps": 0.1512761576405413,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "margin-2cm-140.json",
+      "trace_sha256": "ec200bd2aab226dcc5fdd356b01cbeade98a285b21bf4c540d0d1ab657751eff",
+      "actual_trigger": {
+        "position_m": [
+          0.11881180969735529,
+          -0.006335042690773719,
+          0.11931104925453073
+        ],
+        "velocity_mps": [
+          0.05305297061116773,
+          0.10555772607525618,
+          -0.0284986522150924
+        ],
+        "toe_gap_m": 0.029635955750448
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.02,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.21,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": true,
+      "step_goal_reached": true,
+      "quality_gate": false,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 90.0610025047481,
+      "final_forward_rotation_deg": -3.4391634160838866,
+      "first_complete_top_support_s": 7.1199999999987735,
+      "longest_complete_top_support_s": 1.36,
+      "max_trunk_x_m": 0.271785253,
+      "final_position_m": [
+        0.271294661,
+        0.065911052,
+        0.136588985
+      ],
+      "max_environment_penetration_m": 0.0003901600429010602,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 9.194111793546529e-05,
+      "max_motor_limit_overshoot_rad": 0.01861217276790539,
+      "peak_torque_nm": 0.9183119110786316,
+      "peak_sampled_environment_force_n": 187.6040628123941,
+      "max_actual_approach_vx_mps": 0.1624396577494444,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "margin-2cm-210.json",
+      "trace_sha256": "566141f254d53ac4dac47d1f04babcb957b494a031d365fafb2badc6b339f50c",
+      "actual_trigger": {
+        "position_m": [
+          0.1179969282798539,
+          -0.00620135136122899,
+          0.11903280448145455
+        ],
+        "velocity_mps": [
+          0.05010863506056313,
+          0.13216974613458382,
+          -0.037113476864128685
+        ],
+        "toe_gap_m": 0.029529527980160952
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.28,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": false,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 102.42051284782501,
+      "final_forward_rotation_deg": 61.29885517992538,
+      "first_complete_top_support_s": 3.520000000000343,
+      "longest_complete_top_support_s": 3.08,
+      "max_trunk_x_m": 0.266417328,
+      "final_position_m": [
+        0.256622414,
+        0.029552971,
+        0.113954942
+      ],
+      "max_environment_penetration_m": 0.0003364104399415352,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.015379167289519824,
+      "peak_torque_nm": 0.7856554177633754,
+      "peak_sampled_environment_force_n": 22.109700863493913,
+      "max_actual_approach_vx_mps": 0.15003203570852428,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "final-h1-margin28.json",
+      "trace_sha256": "af759969190ae8f014bb7b5334cbecaf30b8dfe8c700693297f4215a975e763e",
+      "actual_trigger": {
+        "position_m": [
+          0.11832110643162572,
+          -0.001062271360933291,
+          0.11880897276922134
+        ],
+        "velocity_mps": [
+          0.05690826721525865,
+          0.13582772219781372,
+          -0.03280825585577456
+        ],
+        "toe_gap_m": 0.02789798944100394
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.01,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.35,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": false,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 86.76931720488375,
+      "final_forward_rotation_deg": 48.41868219874586,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.234117147,
+      "final_position_m": [
+        0.190849829,
+        0.038615087,
+        0.113675512
+      ],
+      "max_environment_penetration_m": 0.00037978059799530754,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 0.0,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.641712370707884,
+      "peak_sampled_environment_force_n": 103.87689925710792,
+      "max_actual_approach_vx_mps": 0.17235723744565323,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "final-h1-margin35.json",
+      "trace_sha256": "d4383cb4abe1e257965eb6dde858b314b46542510e85e7f07dce7c5b4f317c01",
+      "actual_trigger": {
+        "position_m": [
+          0.11459292909897104,
+          0.002947773087430945,
+          0.11751962632131789
+        ],
+        "velocity_mps": [
+          0.0638693483601328,
+          0.14846079088786854,
+          -0.04500288633758035
+        ],
+        "toe_gap_m": 0.028122702585014037
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.02,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.28,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": false,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 84.09876498758099,
+      "final_forward_rotation_deg": 46.197238725071365,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.213234622,
+      "final_position_m": [
+        0.158270721,
+        0.214920181,
+        0.112034904
+      ],
+      "max_environment_penetration_m": 0.0005852226128024768,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 6.76386781058139e-05,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.9554137087206721,
+      "peak_sampled_environment_force_n": 255.6695386169149,
+      "max_actual_approach_vx_mps": 0.15003203570852428,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "final-h2-margin28.json",
+      "trace_sha256": "a1350ae64d475074095e4b54942c8163fe6dfd298265b709fdb775b4f2912b40",
+      "actual_trigger": {
+        "position_m": [
+          0.11832110643162572,
+          -0.001062271360933291,
+          0.11880897276922134
+        ],
+        "velocity_mps": [
+          0.05690826721525865,
+          0.13582772219781372,
+          -0.03280825585577456
+        ],
+        "toe_gap_m": 0.02789798944100394
+      }
+    },
+    {
+      "params": {
+        "height_m": 0.02,
+        "edge_x_m": 0.18,
+        "approach_command_mps": 0.3,
+        "trigger_gap_m": 0.03,
+        "roll_duration_s": 2.0,
+        "recovery_command_mps": 0.0,
+        "motor_target_margin_rad": 0.35,
+        "seed": 0
+      },
+      "trigger_s": 2.66,
+      "handback_s": 4.64,
+      "standing_final_1s": false,
+      "step_goal_reached": false,
+      "quality_gate": true,
+      "status": "FAIL",
+      "max_forward_rotation_deg": 80.18198170103992,
+      "final_forward_rotation_deg": 37.49835122595146,
+      "first_complete_top_support_s": null,
+      "longest_complete_top_support_s": 0.0,
+      "max_trunk_x_m": 0.203868413,
+      "final_position_m": [
+        0.14661661,
+        0.078414877,
+        0.108839393
+      ],
+      "max_environment_penetration_m": 0.0005472941555714036,
+      "max_body_step_penetration_m": 0.0,
+      "max_self_contact_penetration_m": 2.5113792026377305e-05,
+      "max_motor_limit_overshoot_rad": 0.0,
+      "peak_torque_nm": 0.9634015946604082,
+      "peak_sampled_environment_force_n": 737.7327795394006,
+      "max_actual_approach_vx_mps": 0.17235723744565323,
+      "warnings": {},
+      "physics_reset_detected": false,
+      "duration_s": 9.0,
+      "frames": 450,
+      "trace_file": "final-h2-margin35.json",
+      "trace_sha256": "1fe47324d07af91b001c8c3f79194bad454407dd9cbd113c8ebf19b3c6377348",
+      "actual_trigger": {
+        "position_m": [
+          0.11459292909897104,
+          0.002947773087430945,
+          0.11751962632131789
+        ],
+        "velocity_mps": [
+          0.0638693483601328,
+          0.14846079088786854,
+          -0.04500288633758035
+        ],
+        "toe_gap_m": 0.028122702585014037
+      }
+    }
+  ]
+}

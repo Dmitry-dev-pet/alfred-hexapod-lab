@@ -1,0 +1,21 @@
+{
+  "repository": "Dmitry-dev-pet/alfred-hexapod-lab",
+  "commit": "471418514b7ad89ccdbca82985f4fce5327d1bd2",
+  "source_directory": "research/microduck/contact_v2",
+  "git_blob_sha1": {
+    "audit_model.py": "df4df73714c60a1a06c7ef8108313448e1756690",
+    "bam_backlash_cpu.py": "aabaf8d6a11b16a6ba6d8531fdcd3d810945f117",
+    "collision_model.py": "5718cd8bbc6d04a273de2d05e8cfd500143dcbcb",
+    "contact_cpu.py": "e37006faf38965a22abdec1f7ff7e433e0fff5d7",
+    "export_contact.py": "a49ac154ead444bb6d7b891ba17555fc1d3dcd41",
+    "fall_cpu.py": "8503d0e9e0ef90b5e03b6a9237bc3a2ab799ba1f",
+    "measure_clearance.py": "1506a527d18729a44e67d28e209d0cc642654362",
+    "render_comparison.py": "13bad35d80b91c9af6a6de922188102cc2567c14",
+    "standup_cpu.py": "77196dfab77667b72cef1ac8fc5bcef48e731051",
+    "step_cpu.py": "e227056b1bf08bbbe7bec3989680ed4cc660cbbd",
+    "verify_contacts.py": "d588a1a58da90af4f695d36ebd9c94324c86484e",
+    "verify_playback.py": "96d1aec5de1b17e2b4a5cb4fa0354165f7c57c42",
+    "wall_cpu.py": "fd3576e1a512f545a466418edc6479e99b4452e7"
+  },
+  "adapter_patch": "collision_model.py: use MICRODUCK_WORKSPACE and preloaded local wall_cpu; physics functions unchanged."
+}

@@ -1,0 +1,34 @@
+{
+  "pinned_commit": "471418514b7ad89ccdbca82985f4fce5327d1bd2",
+  "verified_helpers": {
+    "bam_backlash_cpu.py": {
+      "pinned_git_blob_sha1": "aabaf8d6a11b16a6ba6d8531fdcd3d810945f117",
+      "adapter_sha256": "c0b3e44b12602db72c06be8a9e3fa1d835c82348f673797f4ca7185cd157bf6f"
+    },
+    "collision_model.py": {
+      "pinned_git_blob_sha1": "5718cd8bbc6d04a273de2d05e8cfd500143dcbcb",
+      "adapter_sha256": "fda97e35310b9a675da841d88427b98f7747481419118073ac2effd6a06cf72d"
+    },
+    "fall_cpu.py": {
+      "pinned_git_blob_sha1": "8503d0e9e0ef90b5e03b6a9237bc3a2ab799ba1f",
+      "adapter_sha256": "51025ba1b6805dcfc5df13ad6d3d794ddb6977702c9fbc6e474713331882bd23"
+    },
+    "measure_clearance.py": {
+      "pinned_git_blob_sha1": "1506a527d18729a44e67d28e209d0cc642654362",
+      "adapter_sha256": "c3f0d4471ce392d886ecdaf26c85e9ad951c167bf678bf0d8701f2ec93f71619"
+    },
+    "standup_cpu.py": {
+      "pinned_git_blob_sha1": "77196dfab77667b72cef1ac8fc5bcef48e731051",
+      "adapter_sha256": "9cd18b69aec3d601798a279202bb69bc1825695af3b7a1d8862d6935a99e9787"
+    },
+    "step_cpu.py": {
+      "pinned_git_blob_sha1": "e227056b1bf08bbbe7bec3989680ed4cc660cbbd",
+      "adapter_sha256": "9b929df5ea5dc1f5582fb3d75b0f32c8b8e3e43efcab198e9c4da16f06b60942"
+    },
+    "wall_cpu.py": {
+      "pinned_git_blob_sha1": "fd3576e1a512f545a466418edc6479e99b4452e7",
+      "adapter_sha256": "5b37ab8e756d8325f24b7e884161829ef867a06f56a05f8023ed2a757dea7b20"
+    }
+  },
+  "adapter_scope": "filesystem resolution only; no physics function modifications"
+}
