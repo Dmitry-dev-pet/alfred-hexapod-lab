@@ -1,0 +1,2280 @@
+{
+  "schema": "robot-motion-snapshot/v1",
+  "source_site_version": 33,
+  "source_site_commit": "9c30d4008a6b7381334437e99271ef25fa6c8d25",
+  "source_repository": "Dmitry-dev-pet/alfred-hexapod-lab",
+  "prefix": "recordings/site-v33",
+  "rights": {
+    "motion_data": "Existing owner-authorized measured simulation recordings. No new physics or altered samples.",
+    "hexarth": "Owner explicitly confirmed permission to publish the embedded CAD in public GitHub in the current task on 2026-11-11.",
+    "standalone_mesh_policy": "Existing HexArth geometry is preserved byte-for-byte; other separate CAD/model packages are not part of this migration."
+  },
+  "files": [
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-drive-backward-895d880056e4.json",
+      "size": 436772,
+      "sha256": "895d880056e42bb8a360090352820b9d90089a6d711faaf83c30d8e8b126e22e",
+      "git_blob_sha1": "cdfbfd5afbe005100bc6a7b3792b8cff8d314409"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-drive-forward-c2db487606ed.json",
+      "size": 434107,
+      "sha256": "c2db487606ed8675c0e71f3c2ba4e78bdbaafd1d0a071b046076b0c9fe62923c",
+      "git_blob_sha1": "9bf3533ce0dae0fab49bb23639c8a4684be27454"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-drive-turn-left-0dc56c6842f7.json",
+      "size": 426765,
+      "sha256": "0dc56c6842f73cd1f9c586b3c1bfdb5d74a8eb68390f04e8a7bd579470d1f409",
+      "git_blob_sha1": "a26b0258b2f07c5ef03a18b9a60c288d0047be96"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-squat-cycle-d5585310db3b.json",
+      "size": 433087,
+      "sha256": "d5585310db3b5672740520a114069eddc1d63cadb42dedc2fe8fc50a440b7238",
+      "git_blob_sha1": "738ff80613a9f92642a043a9be6dea2405f3eb12"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-squat-turn-left-e78e406c401b.json",
+      "size": 425311,
+      "sha256": "e78e406c401bd8b6c13043b4f5495b1a55a235ba542ffd73304d910bb4294dcb",
+      "git_blob_sha1": "f808e64badbdd21730013f3d45d0fb65d9d02743"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-squat-turn-right-d604737f2db2.json",
+      "size": 426964,
+      "sha256": "d604737f2db257c6d5c0cbe8c94ac49b1401440a6fbd295491cb656bd3a78748",
+      "git_blob_sha1": "adfba8bc20ea362b3dd8fbdd36bbfb5621c21978"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-stand-low-6c98f66510e4.json",
+      "size": 433650,
+      "sha256": "6c98f66510e4d7f664b07492e42454ee5dc46e000b079212c7545f9a62537aa7",
+      "git_blob_sha1": "8f3094188987e86ba012ce1afc2828dcf7de50b3"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-stand-mid-27f0146a0977.json",
+      "size": 431796,
+      "sha256": "27f0146a097780b3e214e408951c7cebd79abf588099c4e978ed180f19123eae",
+      "git_blob_sha1": "d9e58df246a4ad0ce7cfd1254b288dda38be8f3f"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-turn-left-high-9656de6e9317.json",
+      "size": 422492,
+      "sha256": "9656de6e9317b69fb43a3cbaa9fb0fff2ac72a608d513ed685a2a922076babaf",
+      "git_blob_sha1": "ea6e4c836dda1d7d49f523967c451b10d912a8d3"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-turn-left-low-d18d792d4fba.json",
+      "size": 427356,
+      "sha256": "d18d792d4fba48b845553b5a712d4d3b32060f960f5f475df9d9edcb5521d328",
+      "git_blob_sha1": "dd6bef7ebd15ae461adaa4f85e26474fd87c6832"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-turn-left-mid-2f9c48545d8f.json",
+      "size": 424090,
+      "sha256": "2f9c48545d8fc8a57d99c96e169d21583a0f3a8c8be831abaafb37b56669473c",
+      "git_blob_sha1": "4eb511b9fa9924c2d8cb16529682d06f25b5185c"
+    },
+    {
+      "path": "/assets/robot-replays/en01-basic-v6/en01-basic-v6-turn-right-low-335df9108053.json",
+      "size": 429721,
+      "sha256": "335df9108053390028989701b0ea22233ecac6dec240b1a11b6a534ce336445c",
+      "git_blob_sha1": "d9360fdf27c27c7323d4f42a062dcd7191789831"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-crouch-22dd5ed09b2e.json",
+      "size": 435279,
+      "sha256": "22dd5ed09b2eae6b4f64c97cadcbd6dbe972f123c11679659aae1ebd5f671c17",
+      "git_blob_sha1": "c70a280daf4e5cd6190b9536220bf3429640bafe"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-forced-extend-90de14e37467.json",
+      "size": 435205,
+      "sha256": "90de14e37467f150b5ab03f93c2f40b7fc1d6ab91a1d8f8e80553e38b080ff7b",
+      "git_blob_sha1": "cf4a9276557c41b01abe00af9d721a43282b774a"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-forced-fold-e068d6f6f507.json",
+      "size": 435514,
+      "sha256": "e068d6f6f5076ac4ce6ae6abafdd57cfa75e793527d15822229c99e0f5231994",
+      "git_blob_sha1": "36a15a1ed3142ebde2ffd06a72e7e2c9d99ef9cc"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-jump-p1-26c09dc5ac12.json",
+      "size": 434879,
+      "sha256": "26c09dc5ac1243c1749ee7fe96f068e1e4ef3c0d93897ea039671777d0b35610",
+      "git_blob_sha1": "69e346566fae0a164e9a8a76b46e917960f33956"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-jump-p10-250e48dafdb2.json",
+      "size": 431980,
+      "sha256": "250e48dafdb25de7aea01f0164160ad0a37380978e004ef8aaf58dc1eed13644",
+      "git_blob_sha1": "ac50786cd5cc3dc804ba13ffa3c82f533d1abf95"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-jump-p2-a7220e517382.json",
+      "size": 435602,
+      "sha256": "a7220e517382ba008d7b24c2fc1b194cb404b4f084fdbed78d1c49676bcb99bb",
+      "git_blob_sha1": "6673335138b70f3a3b0058e4855f2acc35ec2fa1"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-jump-p5-a17294c9e6c9.json",
+      "size": 432799,
+      "sha256": "a17294c9e6c9a689965738b67985c039f7a86fa7989a5b58a50574cf4971cf82",
+      "git_blob_sha1": "7648c64ef7ced09bc97256b5723826b457a1d258"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-jump-p5-halfdt-5cb3a6378d2d.json",
+      "size": 433335,
+      "sha256": "5cb3a6378d2d45c4145e900b976a31924aab6c9aa505f1d7f448aa145e8e3aa5",
+      "git_blob_sha1": "2a898ebba6ce1429e62b286ec7d18ea810ebf41e"
+    },
+    {
+      "path": "/assets/robot-replays/en01-contact-v5/en01-contact-v5-stand-f049fbb1f28f.json",
+      "size": 433041,
+      "sha256": "f049fbb1f28f49e6122995ad45ff55cee3cf2a9cd79ff25a5aa4aa50391f72ab",
+      "git_blob_sha1": "4222f48a8eae633236333ea55a8d270de300ab4d"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-back-asymmetric-cfc1c28e20a6.json",
+      "size": 463197,
+      "sha256": "cfc1c28e20a6ca8d7693b19d63df9fabf5209725783846468450cb40e9be77ae",
+      "git_blob_sha1": "c997b2fca6c44a260e4ba475fd6ea8af1c9ff920"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-back-extend-backward-ac3b9e060db0.json",
+      "size": 461137,
+      "sha256": "ac3b9e060db077cdc3ae625bf5a56b91eec47d1d126207c893c830fdb9082baa",
+      "git_blob_sha1": "4b165f7bcfac0dd824e85b6ca608ed0df11c11fd"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-back-extend-forward-e2e62b4699be.json",
+      "size": 462059,
+      "sha256": "e2e62b4699be395fe1e082b44e74b0c544ae5fc8faabcbd791b8f8fd686deaa0",
+      "git_blob_sha1": "90c18ca650cfec9acf3c79bba4a2da7a656cbb13"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-back-idle-ddd71b36db23.json",
+      "size": 477904,
+      "sha256": "ddd71b36db237fb77c29670ca8e31630545289b483a1ebc38cdb8078021accfc",
+      "git_blob_sha1": "e233b6f3352815c29245f93bb2173949405ed946"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-back-rock-03a3ca2c9b30.json",
+      "size": 465107,
+      "sha256": "03a3ca2c9b3094a053a2162da8f04146facb86b60793f05d1428bc8a9da36755",
+      "git_blob_sha1": "62e0ef512acc1d0ebfcf62df7adead874b70dcbc"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-front-asymmetric-d333939a02d5.json",
+      "size": 456251,
+      "sha256": "d333939a02d5637776d49cfdfa2aa35502f507227d90e7aba0e9e1ce29323bd8",
+      "git_blob_sha1": "ff75526efcf2b411a97631717f5522a9f132ce9b"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-front-extend-backward-d7cb1b767afb.json",
+      "size": 462303,
+      "sha256": "d7cb1b767afb1b523712e8fccaee9a120ff1894e9aba1e77fda0fe66196fc3da",
+      "git_blob_sha1": "52d82c1626a4fcc3abf52f6471d8a0eb2c5a4cb2"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-front-extend-forward-24a136bb772e.json",
+      "size": 459941,
+      "sha256": "24a136bb772e033a03f9e0dccd7a776ef27a65f845845c68631de3e14c06923e",
+      "git_blob_sha1": "fa5e828af94549112ff22973b4a8f9dea7f21a69"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-front-idle-3f13ad6c3312.json",
+      "size": 472960,
+      "sha256": "3f13ad6c331286705cda0b6e33263fe6ebb4faae0993cfe481586ad2d6186230",
+      "git_blob_sha1": "8f81462169fbeee61cf1359b3c467ad7cc62c1d1"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-front-rock-f7d15523b6c3.json",
+      "size": 459337,
+      "sha256": "f7d15523b6c32935556b673ed5149153cec0e7c1d7780988db150c299dba045b",
+      "git_blob_sha1": "5ddec06377e7c5363c7cccbc07144d921f2ad07e"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-left-asymmetric-f62cd520b51c.json",
+      "size": 460813,
+      "sha256": "f62cd520b51cb9990e05578158e121b3d35a3f0707d147ea7a02a03cde2143b6",
+      "git_blob_sha1": "fa3798d0d4f40f0d7273005bc93e658c659f7d24"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-left-extend-backward-7fc844f80bcb.json",
+      "size": 458350,
+      "sha256": "7fc844f80bcba8f5137ebb8b1d155f78bee5c0347a49edcf0d71726e8601f823",
+      "git_blob_sha1": "d4e7a2503a682cf6e9bb6b35f47744d048973e8a"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-left-extend-forward-f7690cb5cda6.json",
+      "size": 455882,
+      "sha256": "f7690cb5cda6e12d7ec647fe691a208d3a5cf820e5992a54f647b6e7c518e412",
+      "git_blob_sha1": "ec7cb9c8060dc4c156725266d9ccc1d9136c9d67"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-left-idle-482889c741c5.json",
+      "size": 462077,
+      "sha256": "482889c741c5dc1bf1815215fbbf30a445bdb8c329eeb2438c9217433dabb700",
+      "git_blob_sha1": "548202093c2c9d3eb57896626a470dc53770eb81"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-left-rock-c9fbc59a7e34.json",
+      "size": 457647,
+      "sha256": "c9fbc59a7e349b0f187508de1557e2fce176b903eda4f9b4350489b87c1fc4e1",
+      "git_blob_sha1": "41bbbc790026eb95f56b69441cf3c8ae26fc9a84"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-right-asymmetric-a71695aafc71.json",
+      "size": 465465,
+      "sha256": "a71695aafc71ea878247b31d3cd4473fdd7d188fe62d68643ef39c074af8666a",
+      "git_blob_sha1": "a382263f7f04e78de93e9ca02b636685e750a288"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-right-extend-backward-0e3762f4005c.json",
+      "size": 463187,
+      "sha256": "0e3762f4005cc7e3766a742936d261e257b574fb24134e5ae49c7c4115fad845",
+      "git_blob_sha1": "a8d7af815d2b81dd5bc86d1f5a09d0fcff3438f7"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-right-extend-forward-d91a8fe70a88.json",
+      "size": 461619,
+      "sha256": "d91a8fe70a886cc01f67a52ec05262dc0140b2c191766ed641a603f4be1d0ee5",
+      "git_blob_sha1": "656acd82b304a8dccf97a24ab70779a68026d0c1"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-right-idle-7b931f6a07e7.json",
+      "size": 463942,
+      "sha256": "7b931f6a07e7f5a80ca395c4c0ec76795dd86f69b329de3c63fc265dd8adb961",
+      "git_blob_sha1": "69da2002d61b27e4d53baae7bba41d3ea1904f31"
+    },
+    {
+      "path": "/assets/robot-replays/en01-getup-v7/en01-getup-v7-right-rock-db8a8e8cf0a4.json",
+      "size": 462653,
+      "sha256": "db8a8e8cf0a4ff3fc5c90a2384b6b7466fcf84549970664dd995a775325ee314",
+      "git_blob_sha1": "cf4f4709dd7a0d754b38385cbb729fca469f0835"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p1-baseline-20261109-0e32aa84d34a.json",
+      "size": 430748,
+      "sha256": "0e32aa84d34a0493d42881d0b4a4464496b211f4f54a24b0c74c8428a97fe3ef",
+      "git_blob_sha1": "af302ba152784fd6245fc3d248f996e801d3bb81"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p1-jump-20261109-a2a72159032d.json",
+      "size": 433969,
+      "sha256": "a2a72159032d0d4b3538dee28ff0e1105d18ad4ee78c046fed09c7c2a48b36a8",
+      "git_blob_sha1": "a54b09f2d1dd2a545a119bd5929da4ae8b22f56a"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p10-baseline-20261109-643ecc8ba202.json",
+      "size": 431394,
+      "sha256": "643ecc8ba202bb22c829531e08aa445512896fed495c17780d3929f513d3aa87",
+      "git_blob_sha1": "4dd7df49826a52942afb9ebe242b79c0ca9f3a15"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p10-jump-20261109-2b4885dd75c1.json",
+      "size": 434162,
+      "sha256": "2b4885dd75c108a4e4a3e9fe0b6de63d86718a211db3840d42361a89573e16a9",
+      "git_blob_sha1": "e0cfa568d3310dc6f45c58ecce3f1016cdba48fb"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p2-baseline-20261109-9cb5af858f8b.json",
+      "size": 430386,
+      "sha256": "9cb5af858f8b058036062ab746c3b170508ff8584ea3a6c96fca3631ae03895b",
+      "git_blob_sha1": "980a25f3a02c6e3954b60100b650151391426dc9"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p2-jump-20261109-acd112d41a13.json",
+      "size": 433662,
+      "sha256": "acd112d41a13237247687c73a0a681bc1213c919415c80de918af7ffa3caf45b",
+      "git_blob_sha1": "ada0169794b7077e8a78f526ae3a1b0744e67d64"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p5-baseline-20261109-8b5089cc66d5.json",
+      "size": 430770,
+      "sha256": "8b5089cc66d5f6b4d7c750fdfa42dad99fdfad903fa63d54689990a50f277acf",
+      "git_blob_sha1": "b9ad9adc999ab277aad1a27ef17b5ba4b5d17ef0"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-neg004-p5-jump-20261109-bb28acec7430.json",
+      "size": 434630,
+      "sha256": "bb28acec7430f731085cd400d27b62ce571b60c1de861b6d60fbd6b9a9c0454b",
+      "git_blob_sha1": "e12235e678c524d1001129e446f5589c3bd4f50c"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p1-baseline-20261109-83635d4be348.json",
+      "size": 433048,
+      "sha256": "83635d4be3487e4fff18f7e7c3e44ef375e3051bfdc18131c26590024edbffbe",
+      "git_blob_sha1": "f556cd5c5c2b60aa4fe3900a9577507194f30cf8"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p1-jump-20261109-5d5b86595b71.json",
+      "size": 436207,
+      "sha256": "5d5b86595b71fd873928b79ed84bb9d582d07f6fd8384111a6569d994b6f4347",
+      "git_blob_sha1": "39c6885430bd4c479b4a7b5ce7337fa1dd0b2799"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p10-baseline-20261109-f7a7cb20f9e0.json",
+      "size": 433834,
+      "sha256": "f7a7cb20f9e06112266902e92b44cee38568590fc1844256d6f4ad8e0b1a4a7c",
+      "git_blob_sha1": "51d6add8e5c8efb49d793d02e28d2844557e0116"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p10-jump-20261109-b08c63ce8a09.json",
+      "size": 432464,
+      "sha256": "b08c63ce8a09299e3b906c364343041bd7dc22edf1b169f35fdc2508a35c988c",
+      "git_blob_sha1": "7be537f39830cf2f713eb9fcb1562fa65ca4d97f"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p2-baseline-20261109-dda30f78a7ba.json",
+      "size": 432758,
+      "sha256": "dda30f78a7baa3bb10f1d669497c6516580c4184f94f01aa4bd4d9f0c54928f0",
+      "git_blob_sha1": "8d7a0ec87136b7475f96fb5c2df73b86afb8114d"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p2-jump-20261109-67dce7defaf1.json",
+      "size": 433386,
+      "sha256": "67dce7defaf17fe2c88c465da0e541f7c753362f1c96dc0dbba6eb7217c4bfda",
+      "git_blob_sha1": "857eaf8871ea77d4afaa2546e518d55ef07bc7a8"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p5-baseline-20261109-cffc8d982b5c.json",
+      "size": 432960,
+      "sha256": "cffc8d982b5c7b063a9d0452fa78031fc7efd1e1774c8ab58d5ccd638f2313c7",
+      "git_blob_sha1": "8a128f492da9321881337fb71b68c211c5762e46"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-pos004-p5-jump-20261109-64d9ce95fe5d.json",
+      "size": 431822,
+      "sha256": "64d9ce95fe5d14d329ef7a3d152e79c6520dcfc5bced452827aa82fce8d2ab92",
+      "git_blob_sha1": "de2c3ccdb8671bfb080d82f87b06b6c44e119ebc"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p1-baseline-20261109-37a2fc55b718.json",
+      "size": 431509,
+      "sha256": "37a2fc55b7180469d784fb31726cd948ee8562dc70bb5c68ba4f0b6dc00bf10b",
+      "git_blob_sha1": "5224d417dbf934bbde7f4b8f0e1b8b4c66d22591"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p1-jump-20261109-deabb75d7767.json",
+      "size": 434005,
+      "sha256": "deabb75d7767c0d5f9292f3aac7b410688eb85dcaea53113102b2343763babe2",
+      "git_blob_sha1": "3d30d417ea3aefb8dbc358a9db8d8d4ba38fc5cb"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p10-baseline-20261109-90180fd60b2f.json",
+      "size": 431440,
+      "sha256": "90180fd60b2f46ed7d08429a0f6075ec2e472be6dde202897eb1400a6867eb8b",
+      "git_blob_sha1": "1e3ea529e10cb26fdc750a019628088dad1c96c9"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p10-jump-20261109-52874376d638.json",
+      "size": 436497,
+      "sha256": "52874376d63848278dacd735212c3942fdde64acc8cb82d196bb705c1da9f607",
+      "git_blob_sha1": "a743ec66a6a1214fef06834622f2281fa69b8bd9"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p2-baseline-20261109-ad9d7a8639c0.json",
+      "size": 432813,
+      "sha256": "ad9d7a8639c0b6179ade2481ad2101f187c14e5a4ae7189a367b6b80f26e4570",
+      "git_blob_sha1": "758e97d5fbc17a26d76226d5ea378fa031a4d342"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p2-jump-20261109-2c07fa45f4ae.json",
+      "size": 433754,
+      "sha256": "2c07fa45f4ae80461289da3f40de73cd206aa65cd4bd05e42335eafafe7f5682",
+      "git_blob_sha1": "925cfc77811d70c7e195909f7155d184402c614f"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p5-baseline-20261109-1a2b45fe0f44.json",
+      "size": 432595,
+      "sha256": "1a2b45fe0f447e627e6ebc3e6865fd2c187b6c0b7016c27fef944afdaae77cee",
+      "git_blob_sha1": "4de2ad661dae6ac65ada61b0701f90c2c0eb192b"
+    },
+    {
+      "path": "/assets/robot-replays/en01-jump-v4/en01-source-jump-v4-a-zero-p5-jump-20261109-31d4fabaf076.json",
+      "size": 434227,
+      "sha256": "31d4fabaf076a35c83980745e8c6b865358ced48cf6d12c8136544506cf448fa",
+      "git_blob_sha1": "ec9b678e7a6ed36875faca4464527ea4101570a1"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-com-back-computed-080-b82983aa2bf3.json.gz",
+      "size": 204929,
+      "sha256": "8bf9be4462c71dc37d3afe6c637d2c45edcc72f509fdb4a039cdc50707824b6b",
+      "git_blob_sha1": "0ffe8b704d4e5671862b5e9563fee0cc8bd56e38"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-com-back-computed-120-fb9e6745d189.json.gz",
+      "size": 202600,
+      "sha256": "adc24166d92342b3a0b7ab0c099024af33d9b4cb94ab663c2d8d98b0e7b227bd",
+      "git_blob_sha1": "294d1bd7fe1e2a171ef34fa11a90fefea6df39d2"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-com-front-computed-080-9196815e38d0.json.gz",
+      "size": 205766,
+      "sha256": "14063a896f430c63a8a8befafecc1550d5eef6b0e67ff47106556ecd6e91ad8e",
+      "git_blob_sha1": "858c5a5d44ad89002240796f2d56c34c316a58a0"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-com-front-computed-120-0dd3cd37c9ea.json.gz",
+      "size": 202053,
+      "sha256": "02adaae5fa5879d29d2ae3dc838173b39d61e741b7253a80d1c5cc1893efbb24",
+      "git_blob_sha1": "5bace881b32e94d9927ca688b2c6e52ef436a8a6"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-com-upright-upright-080-9901a553623a.json.gz",
+      "size": 214025,
+      "sha256": "b43c3fe5161576deb35dba331402b7d1e3722db728b9ab6ccecf2c3a3ab4b02f",
+      "git_blob_sha1": "327fe786180244e75a3140963f5e3a6379d8cf6c"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-com-upright-upright-120-f8984a20101a.json.gz",
+      "size": 214359,
+      "sha256": "8a7b5d54e4216b8fcec7197150987080c7f46cddc1f221e8a1089d6702cb8e08",
+      "git_blob_sha1": "0fec0e5343d51a30e061d43661d0b65d42e78b30"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-pitch-back-computed-080-eb4e0d138789.json.gz",
+      "size": 205927,
+      "sha256": "7cce462bbc108205da5463083d9ef057c3e522aeffea28ad79e5e4da0766cdfe",
+      "git_blob_sha1": "a90e1b3cbc6d0bc6dc56d57d43cdb7d45d84369f"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-pitch-back-computed-120-bcbbc428994f.json.gz",
+      "size": 202068,
+      "sha256": "07ed073a0040c625b866e99dc8a55c877c6e1230c7fbcc3f56c3b5644ee238a3",
+      "git_blob_sha1": "5a1bc94fa114b3fd87aef09deb2b5df1f18f4b00"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-pitch-front-computed-080-a2c3a83fde92.json.gz",
+      "size": 203632,
+      "sha256": "fd149b921fe96263a369f7ab9b2e05d5d91c0e6b197d118124999636ff40ae72",
+      "git_blob_sha1": "d512b720342e236b73d2582722b9c55ef3babfa8"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-pitch-front-computed-120-37eb9d5a75b4.json.gz",
+      "size": 204966,
+      "sha256": "3b47e8ba7243e581fd167f9105b037e29525a80029f02718053f6bb88162e413",
+      "git_blob_sha1": "f8a29d00b7699e419c2e8c7020c2e5b52322d211"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-pitch-upright-upright-080-923776c6856a.json.gz",
+      "size": 215649,
+      "sha256": "c3432d31e6a9daf9eb76d200e088fa8b668116d335eccd27c5605e90829204ea",
+      "git_blob_sha1": "93525ddad7a44fa99157a584b281a66f74700111"
+    },
+    {
+      "path": "/assets/robot-replays/en01-torque-v9/en01-torque-v9-pitch-upright-upright-120-4af3b18469b0.json.gz",
+      "size": 214852,
+      "sha256": "5a710db9d5926e8299fa34ca5a9ed51473e7ff3cb1e326ad78fb61bfbbbc55b7",
+      "git_blob_sha1": "6720a5f850618b8c2511d6bdca9f565b2a6890df"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-baseline-neg-150-74282f9c82f0.json.gz",
+      "size": 191963,
+      "sha256": "bf1c8198e8c29ca82b8e5499a57ec380a340c9defe0bae43436fe69ba42a9d2a",
+      "git_blob_sha1": "3bb6f26e77b6aebd87a0cb3ab0a1876fa23a442b"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-baseline-neg-500-40b59348fac1.json.gz",
+      "size": 195362,
+      "sha256": "0ee5545bd0d1188c2beedebada360d1d8fd89283ac746b0888efa5c0fb6069d5",
+      "git_blob_sha1": "50b3600f1a84efcb84f1d65f5202005433411d27"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-baseline-pos-150-68e5c01f9e6d.json.gz",
+      "size": 192929,
+      "sha256": "625fd362515b9b0c1d4b8e35a17fa9dc7265f44963a61ab5b45a5057e83bdd5d",
+      "git_blob_sha1": "2691f89658e13013f7bf80192a5305d749fbf7c9"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-baseline-pos-500-58f436e5de8f.json.gz",
+      "size": 193757,
+      "sha256": "05b523f0e75f6106556267eb551383be7538b24e0308c0e04689ad9c3928d826",
+      "git_blob_sha1": "9e0974341577efb5cdd3a3b76997ce746f574fc7"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-extend-neg-150-cd270897e9eb.json.gz",
+      "size": 199083,
+      "sha256": "89d6980f308f18cb491669bf6943ba59d6fff656af418e6f3a2e450ed687269d",
+      "git_blob_sha1": "b14d4f9dd563980b61f7a32089410ddc5767dcde"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-extend-neg-500-258d74cdf548.json.gz",
+      "size": 196464,
+      "sha256": "b02402a405190c8601316071c2283d7ef0a40cf8eb0fc6334406dadb79ad407f",
+      "git_blob_sha1": "edec284c1d5146a246b89d4b6d1fbd0b0ab57a94"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-extend-only-07f90d12779c.json.gz",
+      "size": 193929,
+      "sha256": "0d2d325932b968e7d5e5686fa4f0e632f0dfc8b32e7805d8a173b2a9191270e1",
+      "git_blob_sha1": "8a0f9fa9c3797f1731a25b5c5f69c402aca7b391"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-extend-pos-150-3a95ca469c7f.json.gz",
+      "size": 195541,
+      "sha256": "d3e0a27cf6c2cb5080e9df7224721151861e26f3863b760a2a3e909df1a2583d",
+      "git_blob_sha1": "733a65734b9cd54c1518b7237d60ab5830e8d1e1"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-extend-pos-500-0fafb5f1e4d4.json.gz",
+      "size": 197901,
+      "sha256": "1d2e7fc26d2577eef57cdffae345cbf4c98e3887d2c839cebe4dfa6cc356ec25",
+      "git_blob_sha1": "a972cd4c270f411ecf134884309bdf85455d6a09"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-idle-c7a61351f40b.json.gz",
+      "size": 191472,
+      "sha256": "0283aeebc87cce5b907ea21397f9b1c9205eab2e1e2be2f25d81c7c786fd6d83",
+      "git_blob_sha1": "887cbbdeea70135d8f1f9ab0859d270334df51b3"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-mid-neg-150-edc2553ea097.json.gz",
+      "size": 198728,
+      "sha256": "6404dc3e7bb6cbb7ef6b35c935f6b1b67974b3ebcdd09c8fe92ea76338fc110f",
+      "git_blob_sha1": "ac50804052e8871e54eef14f6272eb4a5bfd7a08"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-mid-neg-500-fc338c3d07b4.json.gz",
+      "size": 195802,
+      "sha256": "c6d86c54f4587de4e851dad91a5c735b650fae564742251087b9334afec0cbb9",
+      "git_blob_sha1": "a1035ac4061a7b5c8900e42fc7f1320a5995b17e"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-mid-pos-150-90cfacad64e1.json.gz",
+      "size": 192929,
+      "sha256": "2e4d0227f357fd168414df79e8cace7d9c30c4c05e92432da3bef2c47f738c98",
+      "git_blob_sha1": "565d1b62b21e995abc9dd571d0f70eea3493a263"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-mid-pos-500-8daf70449c75.json.gz",
+      "size": 194935,
+      "sha256": "0ef137bb6ae21f4aa2825bb42e9856d932dd119e9018bbcab6f2e4fd9de5a386",
+      "git_blob_sha1": "ac5c0e5dfa8c05c1834d96aa077f6c06b6384485"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-tuck-neg-150-1e39a5636183.json.gz",
+      "size": 178963,
+      "sha256": "be2a58a9a7a3b0ae360274d698b24a2d7a5415bf855983a88c9e5449f99f27b7",
+      "git_blob_sha1": "896b6b44b7b2e172eae1a01853ef8c59732c229b"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-tuck-neg-500-3bf942f50aea.json.gz",
+      "size": 197410,
+      "sha256": "06e70352e322d5145f83c0ee13d2fd7042ce8ba4896c006c2b9c3317e1e408c0",
+      "git_blob_sha1": "ce320904a33608731f7a6fa108d3ff98709f73e2"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-tuck-only-6ce6e267ba15.json.gz",
+      "size": 194880,
+      "sha256": "a210990d5fa87452ad9458d0960a7edb760eb73385d9f65286e231263bd86d7e",
+      "git_blob_sha1": "d17dc89a63d3c033907ddbe67434239e992ab1ba"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-tuck-pos-150-506d8048d14a.json.gz",
+      "size": 193675,
+      "sha256": "97b963aaa46120cc5823847e7bf2796107f59e280174c137b30fdba2a6572bd3",
+      "git_blob_sha1": "00db632d840cbe74d16b957c34d08359fc8117aa"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-back-tuck-pos-500-2aed07fec89e.json.gz",
+      "size": 195114,
+      "sha256": "111a3b35ae5469c2fc112c4954dc1a0cb43b96d1d55655b40bf5b40d97c90c89",
+      "git_blob_sha1": "ec1d3aaeaef2c18577c48333d6b7936359910911"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-baseline-neg-150-39c7ad324c2a.json.gz",
+      "size": 195626,
+      "sha256": "d692c0cdfe93e6065f313ccad6bee3093335fa9839a4e4649cbb834283ae1282",
+      "git_blob_sha1": "92eb996f1ff80e74096e4d3379b1ccbeeaddac28"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-baseline-neg-500-c83bbad37cd1.json.gz",
+      "size": 197765,
+      "sha256": "79798e1317e61c842c436aced4df711e1030323679c4f672e528da2a9a903075",
+      "git_blob_sha1": "1e5cbd3baf05be0c6c0e16a44574a4195f1de8f6"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-baseline-pos-150-25392933c9a6.json.gz",
+      "size": 198649,
+      "sha256": "8e4a4f481f733d35c77242b2c4a60e0b83b01ed8934c2596da40acaa66d5e47d",
+      "git_blob_sha1": "059228bf4584a605179e383604a268a76efcccd9"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-baseline-pos-500-2511ce250695.json.gz",
+      "size": 196971,
+      "sha256": "47244123605dd09926120ea43ea464d0afa6fcc2aa8fc6b4df6cedea84f3237e",
+      "git_blob_sha1": "1cfb4dc63af51220caa3ab0d5dc4e11f2de164c0"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-extend-neg-150-2ef553ccb5a6.json.gz",
+      "size": 199582,
+      "sha256": "f46fdd903bfc03c65facca8113f7834e253f25e35e4bdd8ad2d40bcab42fa841",
+      "git_blob_sha1": "a3b4a86cc7f30bc8dc81ee05eede4f04dd037be1"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-extend-neg-500-f83aeea44682.json.gz",
+      "size": 200084,
+      "sha256": "a0b8ccfe69f757480b990daab1185e2754402d6e3c16a9a219b3b500b1c3fc9d",
+      "git_blob_sha1": "f26546e3c34863dea47289d821c515384f925197"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-extend-only-5f0f42c9bcb9.json.gz",
+      "size": 198375,
+      "sha256": "b78e64075931d7612169e56c21144c0a69944c3bfad1a9d4aa7a5a1c995215de",
+      "git_blob_sha1": "62e61ab7250fe0756a5bcf5d598899ccf9faeb3f"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-extend-pos-150-5e07fa861929.json.gz",
+      "size": 194624,
+      "sha256": "c1c94bbd72d898ba11346e762ea4e65e228ee5e3d3de383825db6b53247b58a4",
+      "git_blob_sha1": "295388681d0544282b38bf32363d9541a17fafe7"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-extend-pos-500-2a1d8c7b9ad9.json.gz",
+      "size": 198545,
+      "sha256": "3b45de4af9ab20e5a701d4fd9e5b68e47ec9e7e9fac6edf71021a61a68b0e1da",
+      "git_blob_sha1": "487d4c78fbadaddcd63b6a711fe404b6e6867e81"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-idle-26babfcee450.json.gz",
+      "size": 198550,
+      "sha256": "e7f28a0f19cbf61abb843fab5ae0c34605a64e48e80a4441a032b2e0c57b652a",
+      "git_blob_sha1": "b5f34e6aff2b0ff3efde032b8b0a52e89c5afa9c"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-mid-neg-150-e03bf19693e2.json.gz",
+      "size": 197996,
+      "sha256": "b037aafbc56ee599aca746e728fc6fd4ee4e375cf03d1dbdad014148c9020898",
+      "git_blob_sha1": "e165a01a3df86e48a17a0ca81b32b124dfc49d65"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-mid-neg-500-13a5b1d5473e.json.gz",
+      "size": 199588,
+      "sha256": "3748480c65006e80e1fe7c98664a8fcb8766e1a21d7c4e5eb8c9309caa474b8c",
+      "git_blob_sha1": "7f7258bcf5ca994f0aea84540095a867e980f632"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-mid-pos-150-561e41c48c71.json.gz",
+      "size": 198011,
+      "sha256": "4cd2f5616021ad5538e3cd7f461406381296f163a59bd2a1960be341de45f42a",
+      "git_blob_sha1": "db40128640bda72cb70b934262acf30bdb0feae3"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-mid-pos-500-864feb5d4d29.json.gz",
+      "size": 198705,
+      "sha256": "ca2f932a002a75d5e4b34cdf4fab8cf6aeef63938148c626784409cb0dd54c1e",
+      "git_blob_sha1": "1b45bfa52cc05581eeff44141434d6cff1800693"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-tuck-neg-150-22df46628cf9.json.gz",
+      "size": 197060,
+      "sha256": "9fa7c3faf4027308a53e3c1b0288a52a9b3fc0d43a509a42da634b08914436f4",
+      "git_blob_sha1": "14cb13d685a9f87fe3cfc7436d632e677140be34"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-tuck-neg-500-0d6ed02a6bae.json.gz",
+      "size": 198321,
+      "sha256": "482a3151be1563d9b417610dd150bfb22c42632cbf3c99fbf171be211af6d98e",
+      "git_blob_sha1": "138aed32c6d69f99839bb62618fd980edd93f4a5"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-tuck-only-c66f71e8d9f2.json.gz",
+      "size": 194056,
+      "sha256": "52fa24578d02e04ec195d15e812784a5f8fe1539becff6ee8b9fde2ae419eaab",
+      "git_blob_sha1": "9a24857cef3c099d3d8d48013d462bfb6547e61a"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-tuck-pos-150-861c48d1e823.json.gz",
+      "size": 195694,
+      "sha256": "8fc45709a44046205089723627b053ff2acac9125ea8194ea5c8fee94c531374",
+      "git_blob_sha1": "19dd99f755e400bc3f86332b77af646f2ab311ee"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-front-tuck-pos-500-ac892befe9c2.json.gz",
+      "size": 195535,
+      "sha256": "23dcca41dfa3c15add44348b0cbb20a96819cf1692e981a4d0dcdb130c399efd",
+      "git_blob_sha1": "9fe9e7f85d86ede2f4eea6221d976171f35ff8cd"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-upright-balance-39105095fc62.json.gz",
+      "size": 191081,
+      "sha256": "fd7aad98d8fcb4cf92dd759f120742cfe480a9c806e106a4d9733f34db187d33",
+      "git_blob_sha1": "be194a2f01c5cd4b4a1d3bbef69dcd850c152c0c"
+    },
+    {
+      "path": "/assets/robot-replays/en01-tuck-v8/en01-tuck-v8-upright-idle-0ee54edd87a6.json.gz",
+      "size": 190880,
+      "sha256": "7ddc2db4f60d37ee364c0e121b0ecdd6c2644bbfa1617835db863519b9bc6296",
+      "git_blob_sha1": "0189c7a7f90e5036c919f3e975603f4ddbf82b14"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-fourbar-v2-crouch-20261109-a622cf8b8f16.json",
+      "size": 429450,
+      "sha256": "a622cf8b8f16b1c71005ede5a74d0ef59ac29d24649ecdfa9554ba05cf6b39e2",
+      "git_blob_sha1": "46cc6884ae4c6b9ea7d4caebfcd8f1a1dd00e0f8"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-fourbar-v2-drive-20261109-92fbc42b1917.json",
+      "size": 430842,
+      "sha256": "92fbc42b19175624d5aceb850efd04a444cfc7e9a70383d38fc2491487acaa59",
+      "git_blob_sha1": "472b0863baac161bf91fd3ecb7ebf44813af98fa"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-fourbar-v2-fall-20261109-08d701f0d649.json",
+      "size": 408262,
+      "sha256": "08d701f0d649805f03cec640eca40907ddc9b3ea0dfc4e8535de77d6dfe35c93",
+      "git_blob_sha1": "3a2a0c6cc339995877b33a8e452baa241ffc0a20"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-fourbar-v2-jump-20261109-a3cab879458d.json",
+      "size": 444730,
+      "sha256": "a3cab879458def582e9e0d06c9eff9df123d2bb168d0c6a4597a597485c3c079",
+      "git_blob_sha1": "572a41c7f0915eb2e63d79c8dd72c0f6b990664c"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-fourbar-v2-push-20261109-f3033e6221ad.json",
+      "size": 431146,
+      "sha256": "f3033e6221ad61759a1b3c1362e19ae8756d6d7c41e397c7f983f7f4ad7a4b6a",
+      "git_blob_sha1": "597868142abc4f6dfd37948b74247528de511cd5"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-fourbar-v2-stand-20261109-14aba7e8b7df.json",
+      "size": 431394,
+      "sha256": "14aba7e8b7df1d16b6c8fe80c5cf9a3fd19740c9c7ff0ff79230587f6465538a",
+      "git_blob_sha1": "dbc976fa6210fd652cdc3683e4aa575523acc128"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g00-crouch-20261109-9b126413224d.json",
+      "size": 429772,
+      "sha256": "9b126413224d2be06bda709acfaa7a61fdb1960556afd8628b8c549008c6e80a",
+      "git_blob_sha1": "f749c80bb0bfd0743f0c4cc36f67ee51851942bb"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g00-stand-20261109-f3fc5cd211e4.json",
+      "size": 431716,
+      "sha256": "f3fc5cd211e4f796a4c03880d5da398ecef505b20b695fdc94ab124796378e9c",
+      "git_blob_sha1": "a80f69645544a421d0a9d98ac9fb2a992bc96493"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g03-crouch-20261109-a2432728a519.json",
+      "size": 429019,
+      "sha256": "a2432728a519a76dcb2a7f81d153428fab29913a859bf914f82c684d192c91d4",
+      "git_blob_sha1": "51a60349dd736b32a9d8b0ed2a990fa5e32f2a61"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g03-stand-20261109-a300937fa862.json",
+      "size": 431884,
+      "sha256": "a300937fa862278ffa16c684de26791da5e71b68173726bdaa8acd8ece751201",
+      "git_blob_sha1": "dd4c45049229a0075d8fe76496bd7e547b84f8a4"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g10-crouch-20261109-ca8e5d4e8a77.json",
+      "size": 429417,
+      "sha256": "ca8e5d4e8a7719097bb38449c7b9667ca72e89c172b9ea111edc26cf545f70e6",
+      "git_blob_sha1": "140111479bbb75d93b81f4ebe5b9e880c7375a2a"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g10-stand-20261109-24a0e0d25fed.json",
+      "size": 431147,
+      "sha256": "24a0e0d25fed5f107af04f9bb5c1d23259ff4293498692dbffef23ef4971f263",
+      "git_blob_sha1": "435ff0aab8e290b6b639b0917b7815070421d0a4"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g30-crouch-20261109-f5127941400e.json",
+      "size": 429233,
+      "sha256": "f5127941400e19e0aa58a846dba1f42a5b93d7e42e26c73e1263cefb6ba76c31",
+      "git_blob_sha1": "5bda54409add355c0abf01d78a4d951662a8593f"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-g30-stand-20261109-90b2aa3fd36c.json",
+      "size": 431459,
+      "sha256": "90b2aa3fd36c43f1d1c2d8106f487c786367ea4bc2eb40fa86d0aba62e5b1f03",
+      "git_blob_sha1": "2933fad1831e7cdf1e7e88d1c6da776b531b34fd"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-friction-035-stand-20261109-269c7d50c5e6.json",
+      "size": 432592,
+      "sha256": "269c7d50c5e61d65562866ae90c6857eee9611984e92f92319cf4e4db924f272",
+      "git_blob_sha1": "d25f2d8af7eed18ed5c6f5f32ca4ae866b875a17"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-g30-crouch-20261109-342062e5a14c.json",
+      "size": 430496,
+      "sha256": "342062e5a14c43a30f88e241f5f04716eafb5d2a3e5cdfb6cb2b6635b2681715",
+      "git_blob_sha1": "744394dad2b6acb51afb3c1ad6cf30f739257d32"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-g30-drive-20261109-8b8e598c7263.json",
+      "size": 430513,
+      "sha256": "8b8e598c7263f7ae4687adffa9123a1902754351d238a5834fcfbdb85fe684f0",
+      "git_blob_sha1": "7dbf44833a76aff01f40184233aa4e18a93aaea5"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-g30-fall-20261109-4ff45991c4a6.json",
+      "size": 419248,
+      "sha256": "4ff45991c4a6c8c162a23a76a7e628c9357d2d21d8546b2fddbb8e7ff3d3c6ce",
+      "git_blob_sha1": "649029f729d4ea2d4b4f01a296dcf69299325775"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-g30-jump-20261109-c5c555105d6c.json",
+      "size": 431231,
+      "sha256": "c5c555105d6caa5be984d8ed1cd0707f7edbb5ad5589e4f0b14a889e7b71217d",
+      "git_blob_sha1": "2369bead96399705ae7fd2943416006890d81fcd"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-g30-push-20261109-a0c9709de08e.json",
+      "size": 431617,
+      "sha256": "a0c9709de08e2d10bf765c65b9bab3c4f106b084a00b7a7c7ac17da01897981b",
+      "git_blob_sha1": "a1a19d64c1495cd3de9a89585cf8004b4ebf6064"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-g30-stand-20261109-6a16d548c45b.json",
+      "size": 431458,
+      "sha256": "6a16d548c45b544b33df4f7b2b602d2fc0d0c4ed4229f325c53d70f3ed5eb989",
+      "git_blob_sha1": "29ba6ec016492002c788013856e45cb68c6589cb"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-mass-090-stand-20261109-832372ca11d0.json",
+      "size": 431441,
+      "sha256": "832372ca11d09960c0292bd7229d80208f113c609f36aa3c6e3608fac72c52da",
+      "git_blob_sha1": "dd3e2590b3daeb108781bf27ddfbc2ee736fa5ff"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-gated-mass-110-stand-20261109-e97b85278da2.json",
+      "size": 429302,
+      "sha256": "e97b85278da2fd5726a6dbde5e9fd6a79db14ade3a9eeeeb60a83862f5e14bb5",
+      "git_blob_sha1": "39c8cd94170176148d702c0d03d1e51d22280f3f"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-held-friction-035-g00-stand-20261109-06c4a3441d1f.json",
+      "size": 431107,
+      "sha256": "06c4a3441d1fa0900c5fc86eb9c48afb3a47cece7a71cc1e6ef5b55c53f8cea5",
+      "git_blob_sha1": "811b435b3cc7a4fea434d09af5377dd1360aea64"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-held-friction-035-g30-stand-20261109-4db281bede67.json",
+      "size": 432593,
+      "sha256": "4db281bede673b8414a12e4cc6014a6d0fac73b62157cf9faf44c24e937b45a3",
+      "git_blob_sha1": "dbdf58720cfe7b54cf93ba06fde31af3c84339ae"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-held-mass-090-g00-stand-20261109-f0fea31b25ce.json",
+      "size": 430235,
+      "sha256": "f0fea31b25ceda9ac394e8919658109d1b2c335e2784878a4cf9050c41e21208",
+      "git_blob_sha1": "268315015983699c84638bf00e2b3ea354f1a3c1"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-held-mass-090-g30-stand-20261109-44ee3349b1d7.json",
+      "size": 431442,
+      "sha256": "44ee3349b1d7ad9c4870c395bcdac1ff81f3e7886d90c3f9d235caa5d4962cc2",
+      "git_blob_sha1": "06715285fc4faa2ff265738aa0395d2e77c56931"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-held-mass-110-g00-stand-20261109-249f0ddbb41c.json",
+      "size": 425444,
+      "sha256": "249f0ddbb41cb79b46a51b1943db86ab5aae8e363e29d9c94b407b8cdf3e2d1c",
+      "git_blob_sha1": "e7c816a16ee16c28b8a25d8cbb26fce565fd138d"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-held-mass-110-g30-stand-20261109-9efd77045ae3.json",
+      "size": 425647,
+      "sha256": "9efd77045ae333aa1b31af5eaa84132fe86214c4dba57d3f6a44bbfe94c27388",
+      "git_blob_sha1": "c990aa63730caa324a00a2bc6eb91476cbe05312"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g00-drive-20261109-078861076c00.json",
+      "size": 431164,
+      "sha256": "078861076c002e7291ebb9958450c450069036efe466f19b1f24823a791e5f7d",
+      "git_blob_sha1": "b460599c233a559df47510750bce90395b1bfb94"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g00-fall-20261109-ab82a2a10a21.json",
+      "size": 408584,
+      "sha256": "ab82a2a10a213fd18a7f1bf129ac71abf177fbdc73c7c056adfe73b6e20b33b2",
+      "git_blob_sha1": "0f5fd572b85d3766b8676e22c25e1f84a1f35f2e"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g00-jump-20261109-e02163a56137.json",
+      "size": 445052,
+      "sha256": "e02163a56137680b5b89fbe91d9485a9e0e2a04a0ebcdf03fe33934ab2a9eac5",
+      "git_blob_sha1": "b901cacf1d35bc983e51f7b8e092173bf30b7aeb"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g00-push-20261109-cdfeedb43fb4.json",
+      "size": 431468,
+      "sha256": "cdfeedb43fb470fd8ad3b0c08a576fa43f1014d35ec031b095143537331d2a06",
+      "git_blob_sha1": "c5943d4ef05dcf2c14d05e7c8a762276f4c8e33e"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g30-drive-20261109-27ecf3ca7035.json",
+      "size": 430514,
+      "sha256": "27ecf3ca7035b9c4c26040376322b8012937c2e9c0fb4f75387b93a7616c66a0",
+      "git_blob_sha1": "1fbd9c810a18bcf160785362f5df5fa427610ae4"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g30-fall-20261109-51f039919ab8.json",
+      "size": 411023,
+      "sha256": "51f039919ab8a5f9d82e6db5746cca959ef104c607962bb75e14b0fa64b25e1a",
+      "git_blob_sha1": "5350192bef434493874bed8c52c7055a0cf3c984"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g30-jump-20261109-c364f80a0be9.json",
+      "size": 431716,
+      "sha256": "c364f80a0be9cc0dad586ae6d605acf78fbb1fd29c897856e76b5e8e00e0a4ec",
+      "git_blob_sha1": "e3aa492fdee4f1b1f8613ea7b0394334c07b2c6e"
+    },
+    {
+      "path": "/assets/robot-replays/en01-v2-v3/en01-v3-paired-g30-push-20261109-b24cea652cc9.json",
+      "size": 431618,
+      "sha256": "b24cea652cc9a2386f0f4cfb3233a5a4c690ab62e9ba4e76ea4790d23031b8d0",
+      "git_blob_sha1": "39c766b5f546f0e3d93eb8b18b6b388f1d4383b3"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-fold-20261109-7597fe066680.bin",
+      "size": 597616,
+      "sha256": "7597fe06668033e5baf64383bf8b3a679db0a5fc5e6e17379ff9e01fa8f997c8",
+      "git_blob_sha1": "5651a26d970b42eb6d4bb7883d20fd55a2bdc7b1"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-fold-20261110-462b5d0183f5.bin",
+      "size": 597616,
+      "sha256": "462b5d0183f5e707ebaf762d78c470481c984f613ab5c20ac015ce924ebb2a8b",
+      "git_blob_sha1": "4c471df160a985d449c246f558347e13cd281006"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-fold-20261111-9e1a9a0505f3.bin",
+      "size": 597616,
+      "sha256": "9e1a9a0505f3192de48cfc1487a26a10085545d743aca169bc9a5acbae4a6485",
+      "git_blob_sha1": "4981dff87fea3b0fd4ae11ea567e4ace88b7818f"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-pitch180-20261109-4f8024d1bc5e.bin",
+      "size": 597616,
+      "sha256": "4f8024d1bc5ee7e14ba5b6388b984d9cfdd7bb35e38a565f2efb788dedaf9456",
+      "git_blob_sha1": "915d35d42eb171186d70b42640fa3d1ead485b17"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-pitch180-20261110-268f952dada3.bin",
+      "size": 597616,
+      "sha256": "268f952dada3e2d83cf467ccdc44e2cc1f865b3bc99648fa704ae1466146f011",
+      "git_blob_sha1": "e739d2c983b62bc2ef4e3cc9e4f35d0599eb83e3"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-pitch180-20261111-39dd9a2f09a1.bin",
+      "size": 597616,
+      "sha256": "39dd9a2f09a1b0f5db9f4920538937ef433911746325d207435caf04e2a1a7de",
+      "git_blob_sha1": "2589a58c972c2e71e5ca668f54e6f1adc7790e6b"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-push-20261109-20b82bad9959.bin",
+      "size": 597616,
+      "sha256": "20b82bad9959fa43d261c48d46c07d27e314ab530239c52dd3d903b341fb7de2",
+      "git_blob_sha1": "c57519e927354de668d166f172912382a82497d9"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-push-20261110-ab081976af2a.bin",
+      "size": 597616,
+      "sha256": "ab081976af2a4ca0a6b4d9e7fb4bf3a724c31712723c05fd13d2090b02e54958",
+      "git_blob_sha1": "772dd0409a1ebb6fc94edf2f5273d9f15aa643f8"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-push-20261111-9bd24d26cedf.bin",
+      "size": 597616,
+      "sha256": "9bd24d26cedfc46973959fda32f55a617d97ffa7bf5a342a78c613dab4f72fa5",
+      "git_blob_sha1": "7ea42200686e6e98f43a5ac072089e0616bb096e"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-roll180-20261109-48c59e7f467d.bin",
+      "size": 597616,
+      "sha256": "48c59e7f467de17fcb4b572f9805cc80b4ac70d15aeeb7a042451ba882f7257c",
+      "git_blob_sha1": "0388589681ae105ad9277c6743f2a5940f7ce7f9"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-roll180-20261110-31f2b5dff788.bin",
+      "size": 597616,
+      "sha256": "31f2b5dff7889283c5100d794cea5e4058a54052a6d0f60e2f8209cfe056f8ac",
+      "git_blob_sha1": "5802c5f00a14af53db11e6a55ef1887919f09229"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-roll180-20261111-e280a380aecb.bin",
+      "size": 597616,
+      "sha256": "e280a380aecb56454f01423192d6787bef7ded576c19eee97eb54b460d9c1b6e",
+      "git_blob_sha1": "2d4ef5a6f05e7a88f69ec2b3efc48d55321efc2c"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-side90-20261109-806d771d0b20.bin",
+      "size": 597616,
+      "sha256": "806d771d0b20770149556c4c597d0335241c4d9f834fa7cf9684d3217d4600d6",
+      "git_blob_sha1": "949cae97a57a923b303911a51335ec51b74975aa"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-side90-20261110-424f5508b9f3.bin",
+      "size": 597616,
+      "sha256": "424f5508b9f3e2b11ba7ea66b22fe2d6f002681a2e9b3074cfa81d738737bfbd",
+      "git_blob_sha1": "9c5df47390d44311f1261cb0edfa83fc00e9f5d3"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-side90-20261111-d497e00b6d3a.bin",
+      "size": 597616,
+      "sha256": "d497e00b6d3a5642d1795fc3b43f1d9472e61195943dbdc28e838f90ffcffcb2",
+      "git_blob_sha1": "8c321cbb4e0ca04c601f2399a1ece6796edb2059"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-sit-20261109-56174d5c413b.bin",
+      "size": 597616,
+      "sha256": "56174d5c413b22d1209c8f6fadd4cd6991dd6d1baa7de13fc16db7d5e971bdc2",
+      "git_blob_sha1": "fb120c575966cef278de215cf1241f4b0b248240"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-sit-20261110-ee374ec5d1f7.bin",
+      "size": 597616,
+      "sha256": "ee374ec5d1f75c8435b0e527a0a67f174f7ae352d0be0ac5e417beac523ff4cd",
+      "git_blob_sha1": "427028172b2064b40a7897e5d50f7a2784a4914f"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-sit-20261111-b4f639935d46.bin",
+      "size": 597616,
+      "sha256": "b4f639935d46ac0426d3780f9877e96b7ab206de5743263c5dff870ac85fe552",
+      "git_blob_sha1": "9f1787727bcca1406b23f100b2a3ac4f497921e6"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-stand-20261109-962cc81955be.bin",
+      "size": 597616,
+      "sha256": "962cc81955be3173c2d5495dc1225f66806dc1432d32992a78c7e52483c96cea",
+      "git_blob_sha1": "2a8707595aecfe4be84cbc74c7dace87f0da8d0f"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-stand-20261110-46500ea99828.bin",
+      "size": 597616,
+      "sha256": "46500ea998286c4e00fa168734352e312afadcb835c2757689015a07b8a589a3",
+      "git_blob_sha1": "c79d140968cc10c52405e4d48d47229b2263b045"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam-stand-20261111-c5ed8da49421.bin",
+      "size": 597616,
+      "sha256": "c5ed8da494214c13ed34540bb502dbf9dc85c169db85c281e469b6b7159fdaed",
+      "git_blob_sha1": "d53d5d315b44d7a9c58ed7e4892c9e095a20a88d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-fold-20261109-cf4decbcfbd2.bin",
+      "size": 597616,
+      "sha256": "cf4decbcfbd26fa65586d9a6b2c3e435d5afd98e61a27da5da5254dff9acb96d",
+      "git_blob_sha1": "5c88cebe3d1cfecc9f84c942fe4d052bb7113091"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-fold-20261110-217e3073c7ba.bin",
+      "size": 597616,
+      "sha256": "217e3073c7bae06009c7a4fa41519b5cbf8708563d2e7326f1264955bf300996",
+      "git_blob_sha1": "149fda7b7694859a955efa393d150f7da50b0feb"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-fold-20261111-bbf66d0e6d08.bin",
+      "size": 597616,
+      "sha256": "bbf66d0e6d08a0b9aaf78f923ba8c9c293f183dba15df49e2073cd223ce325df",
+      "git_blob_sha1": "c61d093f9cb68917f66600b1d65430ae4452fb86"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-pitch180-20261109-38c4d78cd0ac.bin",
+      "size": 597616,
+      "sha256": "38c4d78cd0acc06a028244fe1d0146620e9ba06238cd3c49014ddc14459e3e7d",
+      "git_blob_sha1": "a933b51e7e32ec5261a2a1edf3c2856ecdad383b"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-pitch180-20261110-1a646fcfcca1.bin",
+      "size": 597616,
+      "sha256": "1a646fcfcca1a01cafcc31adf2668cac66a19b7c80c44a2f04ff6c689f99c043",
+      "git_blob_sha1": "4ccef1c47213818548c2fdf1f3c455e030985b6a"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-pitch180-20261111-65218b8915f2.bin",
+      "size": 597616,
+      "sha256": "65218b8915f216bbbd63c6dd33f184db96aefb1990eaac169a227398b4a1c96b",
+      "git_blob_sha1": "2e3c61c47dc6fbc80f8dead46788f7f0325584bc"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-push-20261109-c1c5b769273b.bin",
+      "size": 597616,
+      "sha256": "c1c5b769273b0bbf2b1300bbfb6784245d71102c0971fb3271d8b073a7e71c4e",
+      "git_blob_sha1": "b4efca93fd2671e53aae5002941654fe01dbfb85"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-push-20261110-de24d8f1817d.bin",
+      "size": 597616,
+      "sha256": "de24d8f1817d529b48cae489931bbf618124687fd28af7e6eb6c30c7d89718c7",
+      "git_blob_sha1": "df9a2ef151b9b411a50c14ac200e90266e029ba1"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-push-20261111-f0e80cd6b50b.bin",
+      "size": 597616,
+      "sha256": "f0e80cd6b50b92daf8e6a2941b83d2dfa54159bd126169efe4516719f9a54354",
+      "git_blob_sha1": "f6021c4b443cc8549de9c681baf6c31bb561fba2"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-roll180-20261109-203107379233.bin",
+      "size": 597616,
+      "sha256": "203107379233198d4cadb709e36387b0da9d3a41aaf7c0420dca19c8643dfefd",
+      "git_blob_sha1": "c014b6bdbb0c95517b7e966bb32f2c97ea0b3fc0"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-roll180-20261110-9a24af74ffe9.bin",
+      "size": 597616,
+      "sha256": "9a24af74ffe961e7855fe64f40f99aa5b44ce61b7dc438694d7ddac79fd48423",
+      "git_blob_sha1": "9fe0befbb46a4bcb5f5704fb651a6871b0c3c10d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-roll180-20261111-50496d3728c4.bin",
+      "size": 597616,
+      "sha256": "50496d3728c4765382efb2046e2873c0be50d7d29135efd7175ce800b493cd43",
+      "git_blob_sha1": "e44f421b95fda6428065053d6cfc11a4916cbe72"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-side90-20261109-0229d76286ea.bin",
+      "size": 597616,
+      "sha256": "0229d76286ea1be4f452c452680e0b81badbc60427169f03b298a76c70fab387",
+      "git_blob_sha1": "4a803478e98937726973a40eb8d4dc34959ad887"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-side90-20261110-1f9fb3994a1a.bin",
+      "size": 597616,
+      "sha256": "1f9fb3994a1ab5259f7488781a5701715bc216932023e3345dbd2f9eabb622e2",
+      "git_blob_sha1": "34f176d042868da2f81e2133ac21500b66ee3c5c"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-side90-20261111-da3d1d89c870.bin",
+      "size": 597616,
+      "sha256": "da3d1d89c8704b441868e7912302c655e0b3634540d6b62b7bba65536abe7f5b",
+      "git_blob_sha1": "0716e4bd6cd1e9b59a27a84af4dd48355eef54d3"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-sit-20261109-e21a49bb111c.bin",
+      "size": 597616,
+      "sha256": "e21a49bb111c56e02984820e92cc323575d55aa59525070dc149469cbcc232af",
+      "git_blob_sha1": "8d3c96c2ea675798c357b58995095f4a47a87bc8"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-sit-20261110-c2563d1223df.bin",
+      "size": 597616,
+      "sha256": "c2563d1223df1427624140c7252962f047566799fb2e60df342167ddc8545a65",
+      "git_blob_sha1": "52dcbbf210e7e059a23b60e40893de3d32b30a24"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-sit-20261111-44fb49547ddf.bin",
+      "size": 597616,
+      "sha256": "44fb49547ddf0c0f0bd546e28e0342fc0b037f0d5420092b0a0c9bd6cd9d5dc4",
+      "git_blob_sha1": "67103fe2ecc0b2c269d8aa6d726ab70d4f740514"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-stand-20261109-5882c4abe801.bin",
+      "size": 597616,
+      "sha256": "5882c4abe801e2d6bea8a32edcf021639a25a74e92b55efd7859c0caeac89a65",
+      "git_blob_sha1": "5c48cae326bba13715cf95f97a9ece555d4f3c86"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-stand-20261110-26d108b476cb.bin",
+      "size": 597616,
+      "sha256": "26d108b476cb5f2d4005dad308a2b27fb267d6d316efa56c255db10c6e05766c",
+      "git_blob_sha1": "499bdcc4e712e784710935bc6de8133e798361c0"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/bam_backlash-stand-20261111-388caad78694.bin",
+      "size": 597616,
+      "sha256": "388caad78694e960e8b2d7d2f507e56c9a1ddb3179171727de7ec1fb77445967",
+      "git_blob_sha1": "f0c5e337d164c5ba89163eb4bd377697ce4a9636"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-fold-20261109-2671b951e53b.bin",
+      "size": 597616,
+      "sha256": "2671b951e53b9d7b439888ea4edfb29830f1634b1ccf6d68415ab78a49015671",
+      "git_blob_sha1": "83342808f9715c6afd5c75e08a36a8b0315e8d0b"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-fold-20261110-95b959dd8986.bin",
+      "size": 597616,
+      "sha256": "95b959dd89866e1bee5ee614640a281d3f232b724015039e6136ec5e297f6ad7",
+      "git_blob_sha1": "b9eff6e3c6f06caea797ff1140a6560a0ff965b0"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-fold-20261111-d565e51c8739.bin",
+      "size": 597616,
+      "sha256": "d565e51c8739facc771e4d8017f1cfa10afdf1960fb70ff8b91f27f234147a16",
+      "git_blob_sha1": "ac277eceebd0318bcb4ff2dd41f3ca15390dda8b"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-pitch180-20261109-8e338d760943.bin",
+      "size": 597616,
+      "sha256": "8e338d760943c9916362b5c8f4f9f41505b5599b3d3cd838bb9dc6d2568e29ff",
+      "git_blob_sha1": "2c912befc90ee5b96bc9cd921ec7e144a5aace4e"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-pitch180-20261110-c64f0d2c8a6d.bin",
+      "size": 597616,
+      "sha256": "c64f0d2c8a6d8f35c5315a376ef35b91c48fc83ddf154aeb52f13e9d7c7ad8a9",
+      "git_blob_sha1": "dac9b7dc40cef41d37cef74988a993a1fdcfecda"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-pitch180-20261111-cbec23771223.bin",
+      "size": 597616,
+      "sha256": "cbec237712238407335e39c6cdae9a50cdbd2b8005d94210eb5ad798f6cc7202",
+      "git_blob_sha1": "d2a1fb21c96eb926b192e136f83d2d9f8e1f4fa4"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-push-20261109-580841dfc436.bin",
+      "size": 597616,
+      "sha256": "580841dfc4366fc6d253c7bb522f9dbc1e570162d78a987e060c5f42c30fa879",
+      "git_blob_sha1": "5db420d26db578fd2d637329867808f2808551d0"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-push-20261110-f322f26cf16b.bin",
+      "size": 597616,
+      "sha256": "f322f26cf16b14e8af3c56b08171169364099efc450ed86e372bc42d46f89e9d",
+      "git_blob_sha1": "53e09f104d67583a84a5a311d51634e84ad80309"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-push-20261111-8d1a587684a9.bin",
+      "size": 597616,
+      "sha256": "8d1a587684a9aefa88540b6bd4e5f6efc3183c7504d4ec3c3fedc76be948cad9",
+      "git_blob_sha1": "d633cf30add17203431b1d4daea42c242bfd21e8"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-roll180-20261109-bf12f086a1d5.bin",
+      "size": 597616,
+      "sha256": "bf12f086a1d507e9cd0eac81051f538215e0a0e3cfe049ee6ce17dbc716dc703",
+      "git_blob_sha1": "0ab9988806b371d15403da7d7d2ac8f126cf88b1"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-roll180-20261110-e90f44e78d03.bin",
+      "size": 597616,
+      "sha256": "e90f44e78d03772018e290388e60c5fdbadbaf8b8e770252f3ae24e0a1f2257a",
+      "git_blob_sha1": "b51c75d6fad2a786358490a5cfa4fc0196820c0e"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-roll180-20261111-c2edd122c56c.bin",
+      "size": 597616,
+      "sha256": "c2edd122c56c29d0ef0a892a921501386ef46d8897a9b0a237c4fba20509d32b",
+      "git_blob_sha1": "7b5d4d7aee19ba5f40bc2ac863fd456e24010564"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-side90-20261109-9d01ed0c0111.bin",
+      "size": 597616,
+      "sha256": "9d01ed0c011188d40541c09409d7eaf819b00349e5e27b3bf544bb10b916c8e2",
+      "git_blob_sha1": "d821595f295456ebfc52c4a7af29b9e50bcd167c"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-side90-20261110-a2f18769876c.bin",
+      "size": 597616,
+      "sha256": "a2f18769876ce0ec08de258b1207732375226cc8908a5122e2e76417dcd88e44",
+      "git_blob_sha1": "87443aebb5007630cb2e9bc79cd54fde0a3fb68a"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-side90-20261111-3b268d4f294b.bin",
+      "size": 597616,
+      "sha256": "3b268d4f294b7ec20cf4d9a94f71eb659a14c22edd7121376764157e777da364",
+      "git_blob_sha1": "dcfe5ab0f5d1f950d84390bd1491b23b116e4878"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-sit-20261109-ea9e0a917028.bin",
+      "size": 597616,
+      "sha256": "ea9e0a9170280c74504f1de78d0614959b548807992ad32a96a7e4d4ae87744d",
+      "git_blob_sha1": "34cf6b7a0a5a63ec55f2150d0f9975cabcabe736"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-sit-20261110-137c4be068bb.bin",
+      "size": 597616,
+      "sha256": "137c4be068bb122bc4bc72054b3c81c3dd7a707f1408fe37e7631554a7642283",
+      "git_blob_sha1": "3a9efb15f058dd5bb11dad1e28cfb603b298d8df"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-sit-20261111-7de049e969ba.bin",
+      "size": 597616,
+      "sha256": "7de049e969bad4aaf92504c3bf4d7017492c0090058824ced3ae05ccccab7e06",
+      "git_blob_sha1": "d8bb03dd666eae191548428d77d8dfca041b982c"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-stand-20261109-92b3d9adbe83.bin",
+      "size": 597616,
+      "sha256": "92b3d9adbe831ddf5f91a2534187d7225b21fa4979e7a799216241d4986a7b7a",
+      "git_blob_sha1": "3222ca5965a51060e0e9276b7f47b97b38d3b809"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-stand-20261110-f81bcc02b017.bin",
+      "size": 597616,
+      "sha256": "f81bcc02b01777093daeb1da52f7ec35d17d13e6242fe860ab818a91eeb8433b",
+      "git_blob_sha1": "55314be712ffd1f87b11e8ff14e6fda105d426f4"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-bam-v2/xml_pd-stand-20261111-f72f74bc29ba.bin",
+      "size": 597616,
+      "sha256": "f72f74bc29bac2e5b11a8308cea7e1053156f274168800aa935d4b8cbcadf786",
+      "git_blob_sha1": "06b94a9c2a2d29f919ab1f1dbf68c8b6980ca6b8"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/close-h10-c41ec0dfb035.bin",
+      "size": 996016,
+      "sha256": "c41ec0dfb0357e321ec21b517bca5f55b2858a6d0b2873561ade350cb40e991a",
+      "git_blob_sha1": "b757691f0adc96c294ac94e1e8c2c8ab8e588d5f"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/close-h100-8368e8394e03.bin",
+      "size": 996016,
+      "sha256": "8368e8394e039460980bc3b4453a2471a271bab8a4c9ef73c67ad1c66c2f8129",
+      "git_blob_sha1": "97f79e3adf4fcb25c08e5b4c812676fbf161f5a1"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/close-h20-70e45e0ec1a2.bin",
+      "size": 996016,
+      "sha256": "70e45e0ec1a26e84221253ee97fe6f472d0b7e1307d215aea40c6ff339797e76",
+      "git_blob_sha1": "b0cbc5363dadf109e4ec5e95de92582d7c044593"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/close-h250-c426fd1bf57f.bin",
+      "size": 996016,
+      "sha256": "c426fd1bf57f305a053dff0f6a96a1dde60e0c9d2b21509729b518e077a1b6d5",
+      "git_blob_sha1": "2bc6a8b85b1ed16eac8c30bf63a769457c994af7"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/close-h30-ac88554069bc.bin",
+      "size": 996016,
+      "sha256": "ac88554069bca28bb866856295cdda5a9afa4941981082e1c9d1e423f3df2169",
+      "git_blob_sha1": "34781887a86601ce404cd80589b3add7e22d5c70"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/close-h50-65d4086dd10e.bin",
+      "size": 996016,
+      "sha256": "65d4086dd10eb8eafdf2a40c306ed3cc5e803a9cd33c66ae077417bc427062c9",
+      "git_blob_sha1": "4bc4fa58840a718786e05b879cabede638f47ef4"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/flat-h0-703de0c4d93e.bin",
+      "size": 996016,
+      "sha256": "703de0c4d93ee6ce297c5e691cff9acd4e2658e6adc3f7beeab96c786e783e0c",
+      "git_blob_sha1": "ad1e9c66935455dd5c6a9e0374527a41f28b6093"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/reference-h10-9685c4eba23a.bin",
+      "size": 996016,
+      "sha256": "9685c4eba23a70cfeb0169d47a4a00d825422fc04af71d70c1a8e9b3045983f4",
+      "git_blob_sha1": "fae257861dd58c4d4cbd2cd2657f00a3eb71a153"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-contact-v2/reference-h20-fed41f324167.bin",
+      "size": 996016,
+      "sha256": "fed41f324167a81562622c1e60abf2b9e3422f301d1f9e9fe61bda14b86623f3",
+      "git_blob_sha1": "1effbe3ca4e02d50d17f90b7191143aea84d8251"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-back-1-da1eabff115b.bin",
+      "size": 996016,
+      "sha256": "da1eabff115b9417926f3ee4c325ec7c327e93f16f7fc01ad2178f01cc89f086",
+      "git_blob_sha1": "80fe44941501a7cfe7727de8835753a1ab28f8a3"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-back-2-c4be6c3513b9.bin",
+      "size": 996016,
+      "sha256": "c4be6c3513b9c4c6a86d81155545b016c0d4cae35c0c8cc6293d310ddbd945d6",
+      "git_blob_sha1": "c5385421c5b7cbe14eba8f2c656e5d2b74e1bc33"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-back-3-752f3d68b12a.bin",
+      "size": 996016,
+      "sha256": "752f3d68b12a0ea41ff8c3aec63d578d3a23cef5d18392f3b4e21b8d031e78d0",
+      "git_blob_sha1": "165514b5dd5022cdf384a988e1d8495a6884fbf2"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-back-4-97d20d984502.bin",
+      "size": 996016,
+      "sha256": "97d20d984502011359f188e503ea693e4fa794970c978c526d2faf1b16986c47",
+      "git_blob_sha1": "981c1d2076fda4f3f75578df8c134d7d1b664d5d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-back-5-7c8949fe0473.bin",
+      "size": 996016,
+      "sha256": "7c8949fe0473336e5c5e719234a70cb7112aca976b022e371329349571c2f474",
+      "git_blob_sha1": "d5533278ad013353548fffa57ce597e6aff483d6"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-back-6-2b3d4e5977c4.bin",
+      "size": 996016,
+      "sha256": "2b3d4e5977c440890fe74c15f15f0ab01f87aa0d24e9635219f7e5db83f563c9",
+      "git_blob_sha1": "4c7b9057b5ed6f2623c77d8c50f14881df9b7d55"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-left-1-3c8517894446.bin",
+      "size": 996016,
+      "sha256": "3c85178944464028c8e89c2b7a586c0556de86b4d0abe4d6e693e55f4900d863",
+      "git_blob_sha1": "322a3dd1ea28fe1e63e01541c222ba3df5cb8823"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-left-2-b2d0bad787e1.bin",
+      "size": 996016,
+      "sha256": "b2d0bad787e16119cf5f07565869c495321806a577faa3c02ed9b5a7b7299996",
+      "git_blob_sha1": "f314f92771033efab038decd8df6cdc1bfcc0c15"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-left-3-afa348cec829.bin",
+      "size": 996016,
+      "sha256": "afa348cec8298c858d00d4411bd4d1cd5f4936f47ba7e579b9a3d4593cd5ba66",
+      "git_blob_sha1": "1a9dfe44909fe578b0adffed3bb088b5f5043253"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-left-4-b1284fbb007a.bin",
+      "size": 996016,
+      "sha256": "b1284fbb007a09d95d239a0cbea59d6ba5831a48d6dcd704df5b546a53d14f3a",
+      "git_blob_sha1": "efdd2e6ebc36ae1ae3f1c3fb811b74b5666f6057"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-left-5-3f9f6aa105b0.bin",
+      "size": 996016,
+      "sha256": "3f9f6aa105b0cffdf859c63e8bd71d847c6c06b36fef7fe5db1d21dbe8d3a416",
+      "git_blob_sha1": "504b5f4f37be32c540bc1006be0a65b47f987b37"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-left-6-141558e77cd5.bin",
+      "size": 996016,
+      "sha256": "141558e77cd5b6acb37beed3a79bc9c78f0e688e6f9d1df57f4c4894a3e8fa0e",
+      "git_blob_sha1": "05642769e4e1bd9bee3bb6aea7e6b943e4645012"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-right-1-64d3db8cdc19.bin",
+      "size": 996016,
+      "sha256": "64d3db8cdc19005455e62a47654f77cf53a5e401a26074532e526e6eba01daf1",
+      "git_blob_sha1": "aaf71d1cac35667aa57f481088c48ed3a8f5db47"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-right-2-7bbe02fcf3f4.bin",
+      "size": 996016,
+      "sha256": "7bbe02fcf3f46207075e24c62c43dd098e351746214f40158c6ec7fe98ad2edf",
+      "git_blob_sha1": "f18ed892d406446d623d9c0f7b7910ab2f939478"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-right-3-f97f8c1e05cc.bin",
+      "size": 996016,
+      "sha256": "f97f8c1e05ccad9c304edf4899f16c6c85c7705187dd0fba2d94600bb1e79164",
+      "git_blob_sha1": "41333dfcc0b01bf415fbaf363ffb7d5ea00745fb"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-right-4-dbd34c779b33.bin",
+      "size": 996016,
+      "sha256": "dbd34c779b339ae850b16d08ffd6c8e0afc9327134e2fed4cc0c8af450c121fe",
+      "git_blob_sha1": "5e9b847b0c85cba073535f0d6865fdc8fc7a2140"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-right-5-1f7f87b23561.bin",
+      "size": 996016,
+      "sha256": "1f7f87b235615bc1279b57ca86fefa39dbc5ee661c7f036081a916e0dcd43341",
+      "git_blob_sha1": "b4b0a47acd161067220d0d74a504ccfc6501c80d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/flat-right-6-c893f554e665.bin",
+      "size": 996016,
+      "sha256": "c893f554e66585042f8ad9c4a949d4c74a91a61e9bef298b1f8c4d9364a0cf2d",
+      "git_blob_sha1": "1f92142091d07b8e4be27d5d39dd607426dad186"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/step10-back-499c1d1d3a7b.bin",
+      "size": 996016,
+      "sha256": "499c1d1d3a7b9dd1006abe05fa5ea55c0d159871773dbdc0975f27eb8b273f0e",
+      "git_blob_sha1": "02ed3b6ff023f6d9167b2b96210345c22fb9ebb2"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/step10-left-d37460bb72e1.bin",
+      "size": 996016,
+      "sha256": "d37460bb72e138ab6eda8213337b5dc49fa15a2c20d7350bb2149de7ad7533e0",
+      "git_blob_sha1": "78d362a70556b40d3e6d19b02284e613dba9fe43"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/step10-right-5462693b04b7.bin",
+      "size": 996016,
+      "sha256": "5462693b04b77b569955eeb1507de954cd595f5073720ae851fc45d8d9d948d5",
+      "git_blob_sha1": "02bdb829a430a28daf3665c6b7c2fe512b922474"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/step20-back-3238c83157ec.bin",
+      "size": 996016,
+      "sha256": "3238c83157ecf1197bdb38dd07ed450c068fb1637c8f1da51d6d69f7ade1e890",
+      "git_blob_sha1": "fb595fba70f3bd399332bacdee5ab6b1037d2c77"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/step20-left-a45cb7cf170c.bin",
+      "size": 996016,
+      "sha256": "a45cb7cf170cc3c03dcc430d2bd38329d7eca944bc7686788857409fdd257374",
+      "git_blob_sha1": "e58efe363f4151b8d0e59c4caa932cf34fb729f4"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-falls-v1/step20-right-3c5ac15df5ce.bin",
+      "size": 996016,
+      "sha256": "3c5ac15df5ce839eed0815fe37e578877996ba45fc50bbf7d16c19d841746bbb",
+      "git_blob_sha1": "437ca88976ed5428a123b8d713dcdfc4f0164c1f"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height10-firm-roll2s-6ccb36bc56d5.bin",
+      "size": 996016,
+      "sha256": "6ccb36bc56d5fc4d72ac28b3ef962767c4ec7920429c5dec9c6ea4f868b399b1",
+      "git_blob_sha1": "96c08ded31a70c2912ac8c42835fb237de16a2a4"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height100-firm-roll2s-e8552376e4b7.bin",
+      "size": 996016,
+      "sha256": "e8552376e4b7b286078bb358981d641b272fb57af5799d45b305239279e571f8",
+      "git_blob_sha1": "7f709fa80961a77cdf4e2c4298ad0549f5c3418d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height20-edge18-firm-roll2s-bf5af7185a4e.bin",
+      "size": 996016,
+      "sha256": "bf5af7185a4e4d9229e7c9dc12fba93ef4a5e300c5b849678c7c913f69afa8a1",
+      "git_blob_sha1": "6f66a5685bcf230366d36f05f35b8996ed71b324"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height20-edge8-firm-roll2s-906692fef05d.bin",
+      "size": 996016,
+      "sha256": "906692fef05d1a9721e87411bcba9a12345db810f42d77d3e2f7725b87c64d1d",
+      "git_blob_sha1": "a2921c6e3d7f27a43f465835932d7cbf8cb5e550"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height20-firm-roll2s-fe9d0463bf65.bin",
+      "size": 996016,
+      "sha256": "fe9d0463bf65f33a03bb94c59903d3c382b1928b71039430b18a9e7e55658055",
+      "git_blob_sha1": "eb355906aeb05af9fe3b56cb23d8b21abbca9f12"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height30-edge18-firm-roll2s-e5a92655da42.bin",
+      "size": 996016,
+      "sha256": "e5a92655da42919d53342a1041151d5f4545bab78674d53ec3f62bbedbcd333e",
+      "git_blob_sha1": "f5f235c0d163e16c6e0471866167f1b0f96a2c9e"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height30-edge8-firm-roll2s-248098b3ba24.bin",
+      "size": 996016,
+      "sha256": "248098b3ba24cd6f9afcb907189ce0faf36dacee8af6094e7e87b78a72e6e550",
+      "git_blob_sha1": "f8b6fa4ae1a0e809b200170860abd7d84c3e9b9b"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height30-firm-roll2s-5b5204c5c101.bin",
+      "size": 996016,
+      "sha256": "5b5204c5c101b601998f40502651a3533ebcd42bcdd88a0cdfc285d6e8d75e2f",
+      "git_blob_sha1": "1b3a017e417905a772d98e6e01fe232c11bbe56a"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height5-firm-roll2s-d814d0cb4fde.bin",
+      "size": 996016,
+      "sha256": "d814d0cb4fde78db3cca59a556aa6a3b8c911f5c7d4692c264668de43343faa8",
+      "git_blob_sha1": "62cc779f9d17ae033064e0d635b4b7f3ee1da90f"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height50-edge18-firm-roll2s-47c67497daac.bin",
+      "size": 996016,
+      "sha256": "47c67497daacbe22782e25f37efc2457b55cb4bb7a224a5464fb174e4c50f2b9",
+      "git_blob_sha1": "3d90bed6ead3bc96ed62ddd1fb1c768043b715ef"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height50-edge8-firm-roll2s-53075523cc19.bin",
+      "size": 996016,
+      "sha256": "53075523cc19c7359d40db80040b536b25b30b9ddccaa45d29bb37fb6ce78dd9",
+      "git_blob_sha1": "7f907c055aa3ad71eb09b46338cc6eaaceb59514"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height50-firm-roll2s-18785a976bd3.bin",
+      "size": 996016,
+      "sha256": "18785a976bd33dc5c8627509f735d3bdc9f6f6c1dd2fb162e90e1e88540380ff",
+      "git_blob_sha1": "621de366e8099528ffedc54839ee1ec9f6c9e0bf"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-heights-v1/height75-firm-roll2s-8b1c23305ab3.bin",
+      "size": 996016,
+      "sha256": "8b1c23305ab3d47bd5804d3a8cc132c968b7dfb951b3650ee37e61784dd8b9b9",
+      "git_blob_sha1": "e115fd6a5e895780b07f14c5c9d93e9c2d6243b9"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/flat-firm-roll1s-d3e7ea9a7d77.bin",
+      "size": 996016,
+      "sha256": "d3e7ea9a7d77cb095c09506c911468bb1a462f212749c569b0135d7c00bcb136",
+      "git_blob_sha1": "26282f494ebd478a8cb6f6b0ab5f502c9e04a5e6"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/flat-firm-roll2s-d476d1bd2e8d.bin",
+      "size": 996016,
+      "sha256": "d476d1bd2e8d70311270d09b88dae44a54937626c647d302f9c830135ad1f431",
+      "git_blob_sha1": "f6bf76cd5044c9ed821b21bec7501f6b0cccc849"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/flat-upstream-roll1s-173ab059a1ae.bin",
+      "size": 996016,
+      "sha256": "173ab059a1ae12a2abe533bebf7d303ae3d4960e6f8d539f4a86ce2ee44f6550",
+      "git_blob_sha1": "43ae820c079691753efea76e0334400591ad9d09"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/flat-upstream-roll2s-3d1cbc7c7711.bin",
+      "size": 996016,
+      "sha256": "3d1cbc7c7711267f7955234d65057551ab13b623562af20eea8766a2f882eb60",
+      "git_blob_sha1": "dc4d6c14af23422d4b4ae91f9d2a809eed52f769"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/step12-firm-roll1s-ac43128d898f.bin",
+      "size": 996016,
+      "sha256": "ac43128d898f1c62a712d4e2fcdb50a6c209759888fb429bcfb844a0cac2ac1e",
+      "git_blob_sha1": "ae9d063f26e2e40474a4b307ea67aef78715a764"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/step12-firm-roll2s-dd385d96e45a.bin",
+      "size": 996016,
+      "sha256": "dd385d96e45aa16327b7f7173102cdba8f7d3fa8cd34d8ed6c1ab4b8b8fb7895",
+      "git_blob_sha1": "61d443ead73eda0fd42257aeb36ba3a7afb67a87"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/step18-firm-roll1s-c95101d8cd62.bin",
+      "size": 996016,
+      "sha256": "c95101d8cd624893dbbcdc60899ef9859ea5019166ddc9d431a6c3c6d2628a7d",
+      "git_blob_sha1": "b5dce01e5a0d08f440df39b1b88d7d1e44d54a6d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/step18-firm-roll2s-35451f9f7db5.bin",
+      "size": 996016,
+      "sha256": "35451f9f7db5619f2a7882c1356163f168e85dd21982ec371b35142f1851bece",
+      "git_blob_sha1": "d7dfc33a9ac27d48a709a8325a6e5bcb9ba89a3b"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/step8-firm-roll1s-6ed7fdd4c300.bin",
+      "size": 996016,
+      "sha256": "6ed7fdd4c300bdc267030f4712dabed9db825fe062918c473507187807a1df7c",
+      "git_blob_sha1": "057acae511e3d665f219b1380caff5cae5a4d56e"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-roll-v1/step8-firm-roll2s-ad8c2cb1688b.bin",
+      "size": 996016,
+      "sha256": "ad8c2cb1688bc065b356841fb072f5c1c6f5ffb8f0d7dc90be8391561c91ba96",
+      "git_blob_sha1": "4b223d0791c23aa5f870600bcdfd001ae3e90e90"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-1-d0e90e773cf0.bin",
+      "size": 996016,
+      "sha256": "d0e90e773cf0872f51e78f4a272d2176f8ce4d1e55d2a7cf6cdceec5f456f0f7",
+      "git_blob_sha1": "3cf0cb932b8fbc3a6d4c4e0c6b81e8efea13ae9a"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-1-long-a9386b5c1ebd.bin",
+      "size": 1394416,
+      "sha256": "a9386b5c1ebd7f03a65705d47cbb222cbb073536b768db8a799e3676909ae544",
+      "git_blob_sha1": "da12721bd1d30ae54c2db500b2e7c433b4b7d15e"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-1-roll3-b39601b3a529.bin",
+      "size": 1593616,
+      "sha256": "b39601b3a529bfd02b4651e8afe10e4f0c242e4b9811c9237a3d8dcbcb218afc",
+      "git_blob_sha1": "64deffd0d43b9d74e60236cc130ad313258b9a02"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-1-roll4-3020f53b2ead.bin",
+      "size": 1593616,
+      "sha256": "3020f53b2ead50c0e5a5bba2514d00744789eabbfd26ab5a4b75d89ed4b1bce2",
+      "git_blob_sha1": "d7a331ca0a5fdf830fc30786803d07c8b095117d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-10-early-138e14543ff3.bin",
+      "size": 1394416,
+      "sha256": "138e14543ff38e4e9fb4c29f72a53cb26898e568e0f8172e0ced5bd73c61a3fe",
+      "git_blob_sha1": "76699c609d2cc7e860dd7744f571b3dbc03784b9"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-3-b75874eeb54f.bin",
+      "size": 996016,
+      "sha256": "b75874eeb54f884c374c10cd70e120c3a602f18bb6df3ff7c6ba27736a0de857",
+      "git_blob_sha1": "5ae302f2f4b2ae23c9a338013e7cdcb6259468b2"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-6-5182916c3ecb.bin",
+      "size": 996016,
+      "sha256": "5182916c3ecbf932a8604a2eed5c7f3ca497a36c721bac39840e4abb1bc93a39",
+      "git_blob_sha1": "ac0b9e99461bd140b866dbc96d8e6cc90377ba9d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-contact-d0e90e773cf0.bin",
+      "size": 996016,
+      "sha256": "d0e90e773cf0872f51e78f4a272d2176f8ce4d1e55d2a7cf6cdceec5f456f0f7",
+      "git_blob_sha1": "3cf0cb932b8fbc3a6d4c4e0c6b81e8efea13ae9a"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-contact-fast-9243e6e2d686.bin",
+      "size": 1394416,
+      "sha256": "9243e6e2d68685258a05b457ae337eee64ff101b5f26bfb2e4c72f043e045545",
+      "git_blob_sha1": "cbeb8bd302911f481b07e6339bd4a84f9b01fbee"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-contact-long-7b0513de14d9.bin",
+      "size": 1394416,
+      "sha256": "7b0513de14d93dfc4505f2741dc740663fc4f27f29b9c7f06df5ea459804ca40",
+      "git_blob_sha1": "3b583271ef0060f38984c739131964f66eb086c5"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-flat-dd78297a4dd4.bin",
+      "size": 996016,
+      "sha256": "dd78297a4dd4b39cf066bc9a921089db28bc5484c92644010dd9862e8f4ce0b9",
+      "git_blob_sha1": "01b613865f1cfc5ba42f98813a52c105fff6040b"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-runup-roll-v1/runup-flat-moving-a9c81801d8f0.bin",
+      "size": 1394416,
+      "sha256": "a9c81801d8f0b48b0212fde811aee27ff3fa66f34321f0d212280049666540f7",
+      "git_blob_sha1": "668b8d9b1bd23c15e7dc22de978c33fa90b91c98"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-step-v1/flat-20261109-0f9fd37e90b2.bin",
+      "size": 772912,
+      "sha256": "0f9fd37e90b22c67776500c2c3a05a9f2a4235b323f0e9ebec935fb63eb27280",
+      "git_blob_sha1": "a4c654775c1f0e791dc8398ba248209f7928a53d"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-step-v1/step5mm-20261109-78f9e79404f2.bin",
+      "size": 1494016,
+      "sha256": "78f9e79404f2e0d09c32c9e86b63931875e5f588c14c6fa63255fa3c8c0aed41",
+      "git_blob_sha1": "3fbebb1d49a1dda9a06f102b071f6526dd4ee8b7"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-step-v1/step5mm-20261110-7c7ff489b4ec.bin",
+      "size": 1494016,
+      "sha256": "7c7ff489b4ec625a218cfde8c69143fa5358d331cfea580cec5acc195ede0884",
+      "git_blob_sha1": "3e7de24d83511c3af6607fe2fe8b46e47cec1905"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-step-v1/step5mm-20261111-d79b4bf9c9da.bin",
+      "size": 695224,
+      "sha256": "d79b4bf9c9da2976906c18451969cce0bf713cd20ff9ceae262537add37e0f23",
+      "git_blob_sha1": "4fe0160dcda4b9594b120fab62f2170cdafecfa2"
+    },
+    {
+      "path": "/assets/robot-replays/microduck-step-v1/step5mm-firm-20261111-2ce21b983e8c.bin",
+      "size": 1494016,
+      "sha256": "2ce21b983e8c74880f89c78bfddccee07e4de92aee114d686ce09e21d904113c",
+      "git_blob_sha1": "1cd10d558955d505b22999a9386aea209c96299c"
+    },
+    {
+      "path": "/assets/robot-motions/microduck-controls-d64edad32dc60b1c3866c94c73a428f415b243d4e116df57600c940b1263503a.json",
+      "size": 594547,
+      "sha256": "d64edad32dc60b1c3866c94c73a428f415b243d4e116df57600c940b1263503a",
+      "git_blob_sha1": "4a1f012912ac39795138077bb9b8af98ac57d3c5"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-60s.json",
+      "size": 3098633,
+      "sha256": "0f1104ac0375c98fb19da8d2404d3e56708edb022b62a2b7f3d2982b039e4554",
+      "git_blob_sha1": "069b23d8e1102407aa4af49643ee3af260ba8011"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-claws-10s.json",
+      "size": 246381,
+      "sha256": "865599cde687b1b21159dddc5951de0e100bf98aa7689a23989a5594ef985798",
+      "git_blob_sha1": "b36a5bef1c18c6e4e0ad2772b0ffbd0df519467e"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-four.json",
+      "size": 139004,
+      "sha256": "273e7e27471aaf238f958f932a622b48fcca7a6ec8b4b2b02b078637f26cd39d",
+      "git_blob_sha1": "0941e557bd67ddda9b84edd5e9914d3bc1ef5917"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-three-middle-ml.json",
+      "size": 139604,
+      "sha256": "a0a7a2c88fb57c0e81cc46fecc31f0819ef1f9519aae9c3a8db71e598edeb748",
+      "git_blob_sha1": "0279d48b53971f789d4898bb978baa08d3d35d13"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-three-rear-bl.json",
+      "size": 139295,
+      "sha256": "f01aa726e457336db6cdcf80bc1320000f7fe5a541ce33b370283680b9350da9",
+      "git_blob_sha1": "2086204c8b21ee82a7bc4795e91ab8a231cf091e"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-two-diag-ml-br.json",
+      "size": 139686,
+      "sha256": "ef2a08194b71796bf553b9c7eccf43b7e9eb13b9e9c95d28f8e7d6bb14817f8d",
+      "git_blob_sha1": "613a049e0b9767ab4118f893338efb86c50693f9"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-two-diag-mr-bl.json",
+      "size": 139340,
+      "sha256": "569a9771c0f85f794c4517742fbe04b68b22f709b7ecf9dd40b6959ccd6eac4b",
+      "git_blob_sha1": "a3ba9caf3f4e440ac9fc6657a45eade540681247"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-two-left-ml-bl.json",
+      "size": 139537,
+      "sha256": "4dbe8f2fe5636bbff7033dbbbed8c06927cd1b61dbbd4ab81a83fd0373a556cc",
+      "git_blob_sha1": "49d0ff4f658eaae0aa6e2d7f42f04945a7fa16a8"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-two-middles-ml-mr.json",
+      "size": 138985,
+      "sha256": "f0d5cbcd5ea7ae87c6ffdf1bd2524c206951c2ec7a41406265c7f9e80e159819",
+      "git_blob_sha1": "e907d22d2d7625c326b4ded717d7946dc52b57bc"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-two-rears-bl-br.json",
+      "size": 138930,
+      "sha256": "972faa1ba7ad553927d30bf78cb721a90ff91ced2ea79bc62d1ea68291d92143",
+      "git_blob_sha1": "6355b2b873f99e444460303ff088a65a4cbb375e"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-contact-two-right-mr-br.json",
+      "size": 139373,
+      "sha256": "040b8205e690591c5acdb563d1f0888027bd9e2dac0fe508845473aa41d463e9",
+      "git_blob_sha1": "9570a088c6590b4ad006b12d2b9e22785ab71a82"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-dynamic-nominal.json",
+      "size": 413831,
+      "sha256": "78b5536eaa5e4eeb5a839abcb212d46b42c81f2b4144f43897a544f0d59c7079",
+      "git_blob_sha1": "6aa666c93c19a2c7ae5529db990d32bf462a9940"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-dynamic-slippery.json",
+      "size": 399993,
+      "sha256": "50b6ba714cb466accd46eb7458418f1aa059e85412fe129586b0d157e38be2f0",
+      "git_blob_sha1": "0041a0b9056fe812228e56a13c0d04ca401f8334"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-issue41-mu03.json",
+      "size": 386156,
+      "sha256": "f897c0d6d8dc87fd57a7e6d55af30e63cd0a10ba53de4a46079ef2d5c24b764a",
+      "git_blob_sha1": "e043d0fc8be9e98ecadc8473f942f4f7f5661550"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-issue41-mu06.json",
+      "size": 384589,
+      "sha256": "b566441022c726ea273300753cb7065a35dd08946c74ed8ed1b7126dbc1d4b96",
+      "git_blob_sha1": "8727d0a84fc06748d4922027eb19d78e3c7ada51"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-issue41-mu08.json",
+      "size": 385571,
+      "sha256": "65206037b0c70d86d7d43c42f54d6868c3abc3be4df347cb575eea25faf95cd3",
+      "git_blob_sha1": "e9a5a45978ad5c54423ecc9219340c21ad6e8dc4"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-issue41-rear10.json",
+      "size": 387947,
+      "sha256": "9438b871dbd46937d3709aa1f425ed68148b1792ae3ae9f89f3f1d4dfcb4ea02",
+      "git_blob_sha1": "5b58748d8e0cc24e60a89cc4b67c16898230fcd7"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-issue41-rear5.json",
+      "size": 387934,
+      "sha256": "59940dda227c21aa840c65cf07688e6983f865db825c6e8109465b27c4919a9d",
+      "git_blob_sha1": "34dc2edd27439a989140c4c4b3b02bfa4b769508"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-live-v1-slow.json",
+      "size": 287267,
+      "sha256": "f0bb95c76d276629cf2e2d226e78170981e411e81a84803112c3ab64b5d56abe",
+      "git_blob_sha1": "f9d5612c016d84d48fe6258e067d5ffda0ea4c08"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-power-loss-collapse-12s.json",
+      "size": 523443,
+      "sha256": "49483965de4bf814199eb572b5afa4277fdbf8d0842df44ffba9cbce733913f4",
+      "git_blob_sha1": "836a85c8e975fb2d4302070080f1ed344b063e76"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-six-to-four-7s.json",
+      "size": 184279,
+      "sha256": "2cd8dbe2b40bca5dfd96c59a2830ecfb33d70046c7472e475a4e35961f7c26ff",
+      "git_blob_sha1": "c97e35ef5b23c37bbaa6b2331ed3816e27fb5aef"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-wave-60s.json",
+      "size": 3111044,
+      "sha256": "fd64c5201028b19a5584ce2fcbd1fcd12486f74f87d14b0e179de66c2773173f",
+      "git_blob_sha1": "4f7b1ba940587888eacd08c74e7b23eca32de072"
+    },
+    {
+      "path": "/hexapod/data/cad-rig-wave-gated-60s.json",
+      "size": 3085700,
+      "sha256": "a7781252af08936418c0289ad83cbf8c0c59636b1c96f950d390515ca75610f0",
+      "git_blob_sha1": "846284b5f749f45916d694e116d525489fadabdf"
+    },
+    {
+      "path": "/hexapod/data/cheetah-idto-10s.json",
+      "size": 110025,
+      "sha256": "3e594d05e6846b2eaac5bbba108bc2bde5910a295b0c785b0b3e3aa5ffd411ef",
+      "git_blob_sha1": "0ee1eead617439b06f8c1cfb1b73bf0aee979393"
+    },
+    {
+      "path": "/hexapod/data/claws-10s.json",
+      "size": 73668,
+      "sha256": "1b4c7966e1223692f955aec7f4b6d69aa6f85c7b7e6863c111150d92b85c2535",
+      "git_blob_sha1": "ece878aa637970065d383a5e4168ecc39b85b9d2"
+    },
+    {
+      "path": "/hexapod/data/contact-four-points.json",
+      "size": 47816,
+      "sha256": "3a0b1ea96b90a8bc737481d394e91986391eef3b572e3f7f178c7bdfedac88eb",
+      "git_blob_sha1": "af074a8af2af3daa32fe8312ad6cbd0ff4106ffe"
+    },
+    {
+      "path": "/hexapod/data/contact-three-middle-ml-points.json",
+      "size": 47715,
+      "sha256": "25073080109b6471e47b3f9b2f4ba32dd33e379a3a74176e6c55e486b0ead7b1",
+      "git_blob_sha1": "51b1625e92da7becb32f8e48965430e59a4ad967"
+    },
+    {
+      "path": "/hexapod/data/contact-three-rear-bl-points.json",
+      "size": 47597,
+      "sha256": "fd0b58fff7779f6876b6df876730f956d93647837482974b51bf802ccab0bec2",
+      "git_blob_sha1": "3415ce048cb9275d8f868b8cac2de8ec43e81fe1"
+    },
+    {
+      "path": "/hexapod/data/contact-two-diag-ml-br-points.json",
+      "size": 47754,
+      "sha256": "421c58c72844cd3ce6a6fb12b05554745217699d2e62917b33136bc645161817",
+      "git_blob_sha1": "676dfa8c8716b9678c1f521dfc8c4a17a3134039"
+    },
+    {
+      "path": "/hexapod/data/contact-two-diag-mr-bl-points.json",
+      "size": 47663,
+      "sha256": "41b7b35f935f9698f3494781ee8f858ec7a77c31e893e5125e4777304bf6162b",
+      "git_blob_sha1": "48a1265952ca6fb4ba734049cf0e962b612fd747"
+    },
+    {
+      "path": "/hexapod/data/contact-two-left-ml-bl-points.json",
+      "size": 47741,
+      "sha256": "d6bc63ad1993fcc954e7cf36429857d9d6f71c92aa858ced619d9f32c4ba7a95",
+      "git_blob_sha1": "c87b775cd70b49780204e5459020f6f5a6d60b47"
+    },
+    {
+      "path": "/hexapod/data/contact-two-middles-ml-mr-points.json",
+      "size": 47825,
+      "sha256": "7ab295b96242c37213f5b241c45b98d12e0a01e201fa0ebac3dc33d28bb2e867",
+      "git_blob_sha1": "df56994d4ddcd974597f1281fe9e095e59e82c45"
+    },
+    {
+      "path": "/hexapod/data/contact-two-rears-bl-br-points.json",
+      "size": 47798,
+      "sha256": "28c4b697bf99c7cb7a6455018fe4a5d6f364c3d329408638583496dc0a1acf07",
+      "git_blob_sha1": "66c20c8d28e38417c282a62a9a1e180a1ef22d0c"
+    },
+    {
+      "path": "/hexapod/data/contact-two-right-mr-br-points.json",
+      "size": 47705,
+      "sha256": "0dc9c9181fd5f64d561ae6b8d55e105a23f7ad2dd568d0f0846ef0bb9953f144",
+      "git_blob_sha1": "d957ef40c950fb962b5e427b4ee64bfee0daf2f5"
+    },
+    {
+      "path": "/hexapod/data/dynamic-nominal-points.json",
+      "size": 201452,
+      "sha256": "4439bd1eb3fa6602ac90c2142502e8d16089011ba29c2cde24179dbb0dd52d34",
+      "git_blob_sha1": "194dddf371acb9730b3f6f272b4be62a282b3dc7"
+    },
+    {
+      "path": "/hexapod/data/dynamic-slippery-points.json",
+      "size": 194371,
+      "sha256": "25146947118e3ab0fe5eaff97fc28a2f0ade535934a03d73bdcc75e6cd20861e",
+      "git_blob_sha1": "fc78bc4ff6b9b5df9dbb99a74b9a06f8abc1e520"
+    },
+    {
+      "path": "/hexapod/data/freenove-original-v7-kit.json",
+      "size": 242700,
+      "sha256": "5f88588f17e1a1fcef73e20e0787413bc402fd2c676fff3a9c5463315a7b7d8c",
+      "git_blob_sha1": "6acb24f4187f156e1fbdaa0d903a7679a161860f"
+    },
+    {
+      "path": "/hexapod/data/issue41-mu03-points.json",
+      "size": 197363,
+      "sha256": "b87c5255a6b125b9b5f3f7d49749f7d3f5f381f158ee0f0637360ab0dae75b0e",
+      "git_blob_sha1": "98f10415323e2fe86a5a9b2997f465b6a39dfc12"
+    },
+    {
+      "path": "/hexapod/data/issue41-mu06-points.json",
+      "size": 196005,
+      "sha256": "60a361114b1da796c7a9c22e28ba008ba1ac825b56c0eec69a47276a92cb72ce",
+      "git_blob_sha1": "445e484bb40270809e1c69450aa45db8a987dfaa"
+    },
+    {
+      "path": "/hexapod/data/issue41-mu08-points.json",
+      "size": 195861,
+      "sha256": "c4bddbf3e9067a09289ccfe472121b5c70bba820a47e04acd6fc463348b5c726",
+      "git_blob_sha1": "aa7fdfe9f816731288daef1d09f79098d31588a7"
+    },
+    {
+      "path": "/hexapod/data/issue41-rear10-points.json",
+      "size": 197565,
+      "sha256": "1ba057310c8eb249d15df9fcf4c2078381c4af7cea55bfb4b20d73fd1c99791e",
+      "git_blob_sha1": "9e355c6d65c132d821e231cb38073e762445e233"
+    },
+    {
+      "path": "/hexapod/data/issue41-rear5-points.json",
+      "size": 197544,
+      "sha256": "6a5bb8fdc02bec380611639becbf708b45c38c8f139122320fe7bec4b06e0c0e",
+      "git_blob_sha1": "4fab8e600eb964492b4c98d800c7f51252947adb"
+    },
+    {
+      "path": "/hexapod/data/lite3-midstride-onnx-seed20261106-original-v1.json",
+      "size": 186213,
+      "sha256": "efbb161027b911dfde4c4fc5fd750079bebcfb31374b8a27d638f049bfe6c7f9",
+      "git_blob_sha1": "61f584bb2427a417fc13ce3a5d68b227e90467cc"
+    },
+    {
+      "path": "/hexapod/data/lite3-midstride-zero-seed20261106-original-v1.json",
+      "size": 188161,
+      "sha256": "963a0b9b7a4d9a48bd5177cb8d068402bac6422283f87ed0fe45d558b17a54b5",
+      "git_blob_sha1": "bd3797a80c42161b526dba8ecd4494be864f92a5"
+    },
+    {
+      "path": "/hexapod/data/lite3-s2-actuator_cap_02256-seed20261106-v1.json",
+      "size": 186386,
+      "sha256": "8cd7ddac1997625719cb3d781229d317be002ecb72315b0fc1a4ef6bee941805",
+      "git_blob_sha1": "cb23e1fbf087169d1cd4e1bffce3e543ef734551"
+    },
+    {
+      "path": "/hexapod/data/lite3-s2-combined_stress-seed20261106-v1.json",
+      "size": 186426,
+      "sha256": "5dfaf2726f487891caaba718d1fed00accc2ef8ddd4fe56f59afdbe71c592565",
+      "git_blob_sha1": "fb21d5c77467d41286995dc3ca048326c59c7afc"
+    },
+    {
+      "path": "/hexapod/data/lite3-s2-friction_020-seed20261106-v1.json",
+      "size": 186292,
+      "sha256": "d3d491b160d4cde53d6ee4d88b9a5048af2fe362df4b209da2e52c092ea0bb82",
+      "git_blob_sha1": "f90ff31c9161b6c4b2796e7db59501214906de3e"
+    },
+    {
+      "path": "/hexapod/data/lite3-s2-friction_035-seed20261106-v1.json",
+      "size": 186223,
+      "sha256": "ca4db7bee8e750a6e413e67293bdcc2739e8a811c551a07706f9dd6273cd6229",
+      "git_blob_sha1": "90358b4beb67ec416677b1e2f1f3a6e0b989a02a"
+    },
+    {
+      "path": "/hexapod/data/lite3-s2-original_baseline-seed20261106-v1.json",
+      "size": 186229,
+      "sha256": "220f7f7fea3229cfa3bcce8032ccddcd7854df048d794c83e818ec33971ca913",
+      "git_blob_sha1": "09ef9872c69ffd5bc816c2fd979d71a623ead57c"
+    },
+    {
+      "path": "/hexapod/data/lite3-s2-uniform_mass_0610-seed20261106-v1.json",
+      "size": 186512,
+      "sha256": "5003cea6959fedd19f3ac129cb3bc17c88ea78a36984a9b784fcc079475ac567",
+      "git_blob_sha1": "2d754ab86c2c1072252f8265ce0cbb0f6474d07e"
+    },
+    {
+      "path": "/hexapod/data/lite3-standard-onnx-seed20261106-original-v1.json",
+      "size": 158030,
+      "sha256": "2b5b4ddeadc0fe2efae13be5643fe0f02ca2fdcfafb60739963765e43b1fb94b",
+      "git_blob_sha1": "61e88845aa86cfba31e4e9e4e71f1630dbc0cf4d"
+    },
+    {
+      "path": "/hexapod/data/lite3-standard-zero-seed20261106-original-v1.json",
+      "size": 159039,
+      "sha256": "8267db12a16e766995c6570bae856711404531a086b26058ae09ee88a96aff63",
+      "git_blob_sha1": "a582cd76d1a9c8d8638c16a16d77d6eacbcc6cef"
+    },
+    {
+      "path": "/hexapod/data/live-v1-slow-points.json",
+      "size": 133968,
+      "sha256": "db9c7a5ef818d216aaa5de6c175fd0ca446f7f47f54225e66478eef04cb919ca",
+      "git_blob_sha1": "7eed194934d1199f766cef8686ffbf886f4da344"
+    },
+    {
+      "path": "/hexapod/data/live-v2-offline-kit.json",
+      "size": 71880,
+      "sha256": "eb85d1804f4d53ebee9250884f846ebb01a0d34bb6ee899cc7b32eedafbc7d2b",
+      "git_blob_sha1": "d37bf54af271702a141981077bca85892a7782fb"
+    },
+    {
+      "path": "/hexapod/data/live-v4-gaits-kit.json",
+      "size": 592924,
+      "sha256": "23a35f4049d58761338e4afeac4bb4075833b66077349768da87c3675d6f8581",
+      "git_blob_sha1": "40a3d534e972d6dee661039e4212d7a342b5511f"
+    },
+    {
+      "path": "/hexapod/data/live-v5-motion-kit.json",
+      "size": 5869,
+      "sha256": "644bce6f5f491d77e30125be2542ef5ac1ddbe10f570ab41b89a58d77368ce3b",
+      "git_blob_sha1": "6a3dc391fd5906fab18077b1c23cbe82a2a93fe7"
+    },
+    {
+      "path": "/hexapod/data/physics-v12-friction_035_full.json",
+      "size": 478210,
+      "sha256": "ecadbfc49f8d3569d4725bdd652b5453d620e18cd266ef6ec0dd17fa408620b2",
+      "git_blob_sha1": "acdfb3678b6627fffa52cacceff8889d1ce18fd6"
+    },
+    {
+      "path": "/hexapod/data/physics-v12-nominal_full.json",
+      "size": 1983868,
+      "sha256": "5b5fb834ba994a59fdb7af6c2b217a370403c10a3f1ba75d67660fc2dd0aba46",
+      "git_blob_sha1": "3c41af4b48aee817acc3782c867c19f7e8830bee"
+    },
+    {
+      "path": "/hexapod/data/physics-v12-torque_035_full.json",
+      "size": 477042,
+      "sha256": "89913ddff9d6d6bb040043ebe7c722da65bab8d945f2377acc54b043f5b3c35b",
+      "git_blob_sha1": "c4ba98e458f37c798e4e04f4f0b8cdff7f9d9bfc"
+    },
+    {
+      "path": "/hexapod/data/physics-v12-upper_mass_full.json",
+      "size": 680260,
+      "sha256": "846c13f659f9ae1b504e9e01b50a59ea6a5cfc93870daaa783ba5c866ce14e91",
+      "git_blob_sha1": "b44235e9f2579d00ba75157fe836f43ee9cc84fc"
+    },
+    {
+      "path": "/hexapod/data/power-loss-collapse-12s.json",
+      "size": 155648,
+      "sha256": "3b5e505cc7ac36171a284982c49c319eaf00c3289c1d44f9c6599718280064ad",
+      "git_blob_sha1": "664659dbbd972996b4c5a3db262f3e8eecb77d28"
+    },
+    {
+      "path": "/hexapod/data/pupper-barrier-25mm-jump-v1.json",
+      "size": 275759,
+      "sha256": "e0fd44be1edcf4f688bd8ec1a227ce2df05bf552782e79407441e4b58e0dbdf1",
+      "git_blob_sha1": "7d8de07e4a587d20506c6ee917b809df95999bbd"
+    },
+    {
+      "path": "/hexapod/data/pupper-barrier-25mm-walk-v1.json",
+      "size": 274651,
+      "sha256": "0b1e7a0b99db1bdf2d6c5ddcbc77be39b4b99dc2c1dd41cf8b7f9da0dfbaf8e8",
+      "git_blob_sha1": "98fcbe0099b8e5c7a69132b2306949e833914bc9"
+    },
+    {
+      "path": "/hexapod/data/pupper-barrier-50mm-fall-v1.json",
+      "size": 274849,
+      "sha256": "57b42838ac253ca94ac225483d6583ea637e729198e03a1f5657f94f2b7b077b",
+      "git_blob_sha1": "1d5844823b333ff2ac5720ec2a2be20ad6d9e38f"
+    },
+    {
+      "path": "/hexapod/data/pupper-jump-9s-v1.json",
+      "size": 277566,
+      "sha256": "b56f52dde1c47b7ab8558a32b3eeb3162130546c39bfc1d53516ed7e1b1a2646",
+      "git_blob_sha1": "e0cf9f8ef1d5ed86757cb041246b5e94a79204f8"
+    },
+    {
+      "path": "/hexapod/data/pupper-teleop-20s-v1.json",
+      "size": 601528,
+      "sha256": "e0b173b083d9d39f5655f952fa10176d254b3f041c1d7c9aba9db0ce293e0e14",
+      "git_blob_sha1": "7c40266214312fd50b4fde65f530ecf60dd3848b"
+    },
+    {
+      "path": "/hexapod/data/pupper-turn-fail-v1.json",
+      "size": 275597,
+      "sha256": "cbfbaa2c021dcb9a4b5eb950533de6826332205876eb92c789bd32df5d81203b",
+      "git_blob_sha1": "4c77aaa7bcfe53c7ee9a3ba79e94ad09163ff358"
+    },
+    {
+      "path": "/hexapod/data/pupper-v3-cpu-pretrained-walk-5s-v1.json",
+      "size": 301402,
+      "sha256": "23270ffcf273fe8be9805424d0760e3654ba5379be67ddb0c5ea03f47c6386ca",
+      "git_blob_sha1": "a971c0b561a6696f267a38c58b3d9e200fdcbbec"
+    },
+    {
+      "path": "/hexapod/data/pupper-v3-cpu-stance-5s-v1.json",
+      "size": 299677,
+      "sha256": "874b984c942cf3124f3c39b6bf40ea89ccfe3fc4ee20e9fa3e44812a4929ed52",
+      "git_blob_sha1": "f0b69bccd164efdeb178786eee01095da3020584"
+    },
+    {
+      "path": "/hexapod/data/rider2-linear-drive-12s.json",
+      "size": 78002,
+      "sha256": "be0521b6da742bd5501f6aa12141e0db405ac98d4f83a0bfb490a66cd21e124c",
+      "git_blob_sha1": "8ad0d6f942460cabeb24e312da17c2a45ed95690"
+    },
+    {
+      "path": "/hexapod/data/rider2-rl-corner-fail.json",
+      "size": 4899,
+      "sha256": "87da9366dd4957283e6a4e91a785b9447d8fc65a7617bac964f1f6a52558ddd8",
+      "git_blob_sha1": "be709a48001cec7837af83c4e0ec6e0816331dc5"
+    },
+    {
+      "path": "/hexapod/data/rider2-rl-drive-12s.json",
+      "size": 78168,
+      "sha256": "3f94fa4a920daada64869b0c016daaf9a256cca0a6b94d0d1169ce3df2efe7e2",
+      "git_blob_sha1": "910c340d7f50618ab196b661d395a80f41ed6049"
+    },
+    {
+      "path": "/hexapod/data/six-to-four-7s.json",
+      "size": 53053,
+      "sha256": "ed5b152195eb9e364873bf15d279a5eb61372126315196940b9feb4cdf9422f2",
+      "git_blob_sha1": "b9892de0bf5fbfd0d74349d61aad36b231c7577b"
+    },
+    {
+      "path": "/hexapod/data/tripod-60s.json",
+      "size": 964161,
+      "sha256": "b9caa35d8e18d70ed4edea47e0fcd8101765fe5fc276d6fef7cbb8326fa01082",
+      "git_blob_sha1": "b7eb21d56e7055f98d2ec10a384e48d6565bf274"
+    },
+    {
+      "path": "/hexapod/data/wave-60s-points.json",
+      "size": 970015,
+      "sha256": "d4196f27690e73a7f0c4fcc2729a892191b3ec358f179136cb53e4e4f2d73da5",
+      "git_blob_sha1": "9bf383a13cd2e9f96180ec7b6dad0b254880cb25"
+    },
+    {
+      "path": "/hexapod/data/wave-gated-60s-events.json",
+      "size": 7562,
+      "sha256": "7ab442a71103b29474da35e1c97e6d7f5380dec13237b32c28b7480b48c85f70",
+      "git_blob_sha1": "7b23c3d0641c6f1c96453c4fc1f89dc15f6e957b"
+    },
+    {
+      "path": "/hexapod/data/wave-gated-60s-points.json",
+      "size": 971057,
+      "sha256": "1e7f5ca044d734113ceb7cb178726488836c6d0b149cead31bd58362a89ce5e5",
+      "git_blob_sha1": "a83872bb54d0d87f555ee6395906f63137cc08f3"
+    },
+    {
+      "path": "/hexapod/data/wheelbot-self-righting-v1.json",
+      "size": 19660,
+      "sha256": "8377acfe629eaf0f85f32c149a035e893771e21c8ac1dc0908154be60d4edf71",
+      "git_blob_sha1": "5f0f16c49fcc70d4913fb3c0549138a3292d6f10"
+    },
+    {
+      "path": "/hexapod/data/wheelbot-v2-brake-feedback-90.json",
+      "size": 6714,
+      "sha256": "777babe4d60213f066e650ce071e1427f14b543330d9b994e0853d78241d97d0",
+      "git_blob_sha1": "a179401688168b0ef37b1bbef591336d25fccfd4"
+    },
+    {
+      "path": "/hexapod/data/wheelbot-v2-brake-short-90.json",
+      "size": 5630,
+      "sha256": "3a09b8a24387e8d4ae451910db69061e5a78bf3b38f625d8986b70497ae040bf",
+      "git_blob_sha1": "c1ec26439a17a0c806cd8cf8150e724ea61915c8"
+    },
+    {
+      "path": "/hexapod/data/wheelbot-v2-feedback-trial-90.json",
+      "size": 7350,
+      "sha256": "189b477de47a46c911461db4e7fb0ef19935d8133646484f7a01a9c6efeafe1d",
+      "git_blob_sha1": "d30f45efe00707da0d1ec89d1de66feb11404ab4"
+    },
+    {
+      "path": "/hexapod/data/wheelbot-v2-passive-90.json",
+      "size": 1974,
+      "sha256": "59bddc43cfa9e292da527bf88ac4e41be4e59a8e2a0db18a45c6852cdddc0146",
+      "git_blob_sha1": "215970872de8a6c59026253afa7f351218194b50"
+    },
+    {
+      "path": "/hexapod/data/wheelbot-v2-source-pulse-90.json",
+      "size": 6510,
+      "sha256": "9197bac2d6a7a07f2d4fe1606652cb7acdbe2b4fb46a6d3ded0970d722e57819",
+      "git_blob_sha1": "8976df2a77e74abf057f39bcbceba643267c3907"
+    },
+    {
+      "path": "/replay/records/hexarth-1abc147874c9a488.robotreplay",
+      "size": 22918569,
+      "sha256": "1abc147874c9a48891d1c8f0e9d6816cc9b431070ce56d255af9db7948442393",
+      "git_blob_sha1": "fd04e62161ce3c640760fb29470d22adb171ee5c"
+    },
+    {
+      "path": "/replay/records/hexarth-lift-ab2692f1f1edd32c.robotreplay",
+      "size": 22429399,
+      "sha256": "ab2692f1f1edd32c753223c8b27e7ae62f2816990febc4fcffed50cf45c921e2",
+      "git_blob_sha1": "46f0d924d19ca5e4885561f79c99a7e5b0b93412"
+    },
+    {
+      "path": "/replay/fixtures/freenove-stand-torso-2s.robotreplay",
+      "size": 4137,
+      "sha256": "1ac8e00b899b56f330a413951d2bb820de9cfe54f3253002315ae70c159dcebe",
+      "git_blob_sha1": "2a7035bb6788853413a56250b3d2d2839256c0fc"
+    }
+  ],
+  "totals": {
+    "files": 377,
+    "bytes": 244287539
+  }
+}
