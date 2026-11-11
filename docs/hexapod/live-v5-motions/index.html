@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101923">
+<title>Hexapod Lab — все движения · офлайн</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<link rel="stylesheet" href="/hexapod/live-v2-offline/pilot.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<style>body{margin:0;background:#101820}.stage{position:absolute;inset:0}#viewer{width:100%;height:100%;touch-action:none}.controls{display:none}.pilot-stats em{font-style:normal;color:#94c5c5}#pilot-rate{min-width:26px;color:#9ce7cf;text-align:right;font-weight:700}.pilot-speed-wrap input{width:95px}
+.pilot-mode-row{display:flex;gap:8px;align-items:center;max-width:100%;flex-wrap:wrap}
+.pilot-mode-row label{display:flex;flex-direction:column;gap:3px;font:600 10px/1.2 system-ui;color:#d0eaf0}
+.pilot-mode-row select{pointer-events:auto;touch-action:manipulation;background:#133643;color:#f0fbfe;border:1px solid #84bfc4aa;border-radius:10px;padding:7px 7px;min-height:37px;font:600 12px system-ui;max-width:145px}
+.pilot-readout-title{font-size:11px;color:#a8dede}
+@media(orientation:landscape){.pilot-right{gap:6px}.pilot-mode-row label{font-size:9px}.pilot-mode-row select{min-height:32px;padding:4px}.pilot-tag{top:calc(12px + env(safe-area-inset-top,0px))}}
+@media(max-width:460px){.pilot-mode-row{gap:5px}.pilot-mode-row select{max-width:120px;font-size:11px}.pilot-stats{max-width:52vw}.pilot-right{max-width:48%}}
+
+.pilot-mode-switch{display:flex;gap:5px;align-items:center;justify-content:space-between;width:100%;background:#18333edc;border:1px solid #83a5b54d;border-radius:12px;padding:4px 7px;box-sizing:border-box;}
+.pilot-mode-switch label{color:#dceff4;font-size:11px;font-weight:650}
+#pilot-mode{min-height:38px;background:#1c4551;color:#efffff;border:1px solid #91bac7b3;border-radius:9px;padding:5px 7px;font-size:13px;}
+.pilot-panel{width:100%;display:flex;flex-direction:column;gap:5px;pointer-events:auto}
+.pilot-panel[hidden]{display:none!important}
+.pilot-panel .pilot-mode-row{width:100%}
+.pilot-tuning{display:grid;grid-template-columns:1fr 1fr;gap:5px 8px;background:#142c38ee;padding:7px;border-radius:11px}
+.pilot-tuning label{min-width:0;display:flex;flex-direction:column;gap:1px;font-size:10px;color:#c9e6e9;white-space:nowrap}
+.pilot-tuning input[type=range]{width:100%;min-width:0;accent-color:#58d5bf}
+.pilot-right{width:min(44vw,250px);max-width:50vw;gap:6px;min-width:142px}
+.pilot-control-hint{color:#c9e6e9;font-size:10px;margin:2px 2px 4px;text-align:right}
+.pilot-statline{font-size:11px;color:#9dddcf}
+.pilot-mode-switch select,.pilot-panel select{touch-action:manipulation}
+.pilot-controls .pilot-reset,.pilot-controls .pilot-stop{min-height:38px}
+.pilot-mode-switch,.pilot-tuning,.pilot-control-hint{pointer-events:auto}
+.pilot-tuning output{font-variant-numeric:tabular-nums;color:#9de5dc}
+.pilot-stats{max-width:44vw;word-break:normal}
+@media(orientation:landscape){.pilot-controls{bottom:8px}.pilot-pad{width:min(29vh,136px);height:min(29vh,136px)}.pilot-right{width:min(42vw,300px)}.pilot-tuning{gap:2px 8px;padding:5px}.pilot-tuning label{font-size:9px}.pilot-speed-wrap{padding:3px 7px}}
+@media(max-width:520px){.pilot-right{width:48vw;max-width:48vw;min-width:138px}.pilot-controls{gap:4px;padding:0 9px}.pilot-pad{width:min(35vw,132px);height:min(35vw,132px)}.pilot-tag{font-size:8px;top:calc(78px + env(safe-area-inset-top,0px))}.pilot-stats{top:calc(125px + env(safe-area-inset-top,0px));font-size:9px}.pilot-control-hint{font-size:9px}}
+</style>
+</head><body>
+<main class="layout">
+ <section class="stage" aria-label="CAD30. Кинематический предпросмотр, не физическая симуляция.">
+  <div id="viewer" role="img" aria-label="3D модель гексапода. Поворот камеры — перетаскиванием вне джойстика."></div>
+  <div class="pilot-tag">🎮 УПРАВЛЕНИЕ · OFFLINE<br>ХОДЬБА · КОРПУС · НОГИ · ГОЛОВА<br>КИНЕМАТИКА · НЕ ФИЗИКА</div>
+  <div class="pilot-stats" aria-live="off"><strong id="pilot-state">Подготовка...</strong><span id="pilot-speed-readout">vx 0 · vy 0 · ω 0</span><br><em id="pilot-odom">Расчётный путь: 0 см</em></div>
+  <div class="pilot-load" id="pilot-load">Загружаем офлайн-таблицы и CAD30...</div>
+  <div class="pilot-controls" id="pilot-controls" aria-label="Джойстик на экране плеера">
+   <div class="pilot-pad-wrap"><div id="pilot-pad" class="pilot-pad" role="group" aria-label="Джойстик управления текущим режимом"><div id="pilot-thumb" class="pilot-thumb"></div></div><small>ДВИЖЕНИЕ</small></div>
+   <div class="pilot-right">
+     <div class="pilot-mode-switch"><label for="pilot-mode">РЕЖИМ</label><select id="pilot-mode" aria-label="Режим управления"><option value="walk">Ходьба</option><option value="body">Корпус</option><option value="leg">Нога</option><option value="head">Голова</option></select></div>
+     <section class="pilot-panel" data-mode="walk" aria-label="Настройки походки">
+       <div class="pilot-turn-wrap"><div class="pilot-turns"><button type="button" id="pilot-ccw" class="pilot-turn" aria-label="Вращать против часовой стрелки">↶</button><button type="button" id="pilot-cw" class="pilot-turn" aria-label="Вращать по часовой стрелке">↷</button></div></div>
+       <div class="pilot-mode-row">
+         <label for="pilot-gait">Походка<select id="pilot-gait"><option value="wave">Wave · 1</option><option value="ripple">Ripple · 2</option><option value="tripod">Tripod · 3</option></select></label>
+         <label for="pilot-stride">Шаг<select id="pilot-stride"><option value="15">15 мм</option><option value="25">25 мм</option><option value="35" selected>35 мм</option></select></label>
+       </div>
+       <div class="pilot-speed-wrap"><label for="pilot-gain">Темп</label><input type="range" id="pilot-gain" min="0.5" max="8" step="0.5" value="4"><output id="pilot-rate">4×</output></div>
+     </section>
+     <section class="pilot-panel" data-mode="body" aria-label="Поза корпуса" hidden>
+       <div class="pilot-control-hint">Джойстик: корпус вперёд/назад и вбок</div>
+       <div class="pilot-tuning">
+        <label>Высота <output id="pose-height-value">0 мм</output><input id="pose-height" type="range" min="-12" max="12" step="1" value="0"></label>
+        <label>Поворот <output id="pose-yaw-value">0°</output><input id="pose-yaw" type="range" min="-7" max="7" step="1" value="0"></label>
+        <label>Наклон вперёд <output id="pose-pitch-value">0°</output><input id="pose-pitch" type="range" min="-5" max="5" step="1" value="0"></label>
+        <label>Наклон вбок <output id="pose-roll-value">0°</output><input id="pose-roll" type="range" min="-5" max="5" step="1" value="0"></label>
+       </div>
+     </section>
+     <section class="pilot-panel" data-mode="leg" aria-label="Отдельная нога" hidden>
+       <div class="pilot-control-hint">Джойстик: стопа вперёд/назад и вбок</div>
+       <div class="pilot-mode-row"><label for="pilot-leg">Нога CAD<select id="pilot-leg"><option value="ml">ML · средн. L</option><option value="bl">BL · задн. L</option><option value="br">BR · задн. R</option><option value="mr">MR · средн. R</option><option value="fr">FR · передн. R</option><option value="fl">FL · передн. L</option></select></label></div>
+       <div class="pilot-tuning"><label style="grid-column:span 2">Подъём стопы <output id="pilot-lift-value">0 мм</output><input id="pilot-lift" type="range" min="0" max="13" step="1" value="0"></label></div>
+       <div class="pilot-control-hint">Коды CAD. Разгрузка опоры НЕ проверена</div>
+     </section>
+     <section class="pilot-panel" data-mode="head" aria-label="Управление головой" hidden>
+       <div class="pilot-control-hint">Джойстик: поворот головы ↔ и наклон ↑↓</div>
+       <div class="pilot-control-hint">Шея ±18°, голова ±16° (CAD)</div>
+     </section>
+     <div style="display:flex;gap:8px"><button type="button" id="pilot-stop" class="pilot-stop">СТОП / НУЛЬ</button><button type="button" id="reset-camera" class="pilot-reset">Камера</button></div>
+     <span class="pilot-danger">Кинематический предпросмотр. Нет физического расчёта нагрузок. Реальный робот не подключён.</span>
+   </div>
+  </div>
+  <div id="error" role="alert" hidden></div>
+ </section>
+ <section class="controls" hidden><button id="play" aria-label="Пауза">Ⅱ</button><input type="range" id="seek" min="0" max="3600" value="0"><select id="speed"><option value="1" selected>1×</option></select></section>
+</main>
+<script type="module" src="/hexapod/live-v5-motions/app.js"></script>
+<script src="/hexapod/player-shell.js"></script>
+</body></html>

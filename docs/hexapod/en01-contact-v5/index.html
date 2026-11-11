@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10212c"><title>EN01 · упоры и контакты · v5</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css"><link rel="stylesheet" href="./replay.css">
+<script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+<script src="/github-live-boot.js"></script><script src="/webgl-fallback.js"></script>
+</head><body><main class="layout"><section class="stage" aria-label="EN01: 9 записей с исправленными упорами и контактами">
+<div id="viewer" role="img" aria-label="Оригинальная модель EN01; вращайте камеру пальцем"></div>
+<div class="md-case en01-pickers"><label class="picker-title">Запись</label>
+<div class="choice"><span>Опыт</span><select id="case" aria-label="Запись EN01 v5" disabled></select></div></div>
+<div class="status-strip" aria-live="polite"><strong id="verdict">Загружаем записи…</strong><span id="metrics">—</span></div>
+<div class="telemetry"><span id="pose">—</span><span id="contact">—</span><span id="joints">—</span></div>
+<div class="replay-hud"><p id="scenario">9 опытов: стойка, приседание, упоры и четыре варианта команды прыжка.</p><p id="mode">MuJoCo 3.14.0 · 73 оригинальные детали · контакты деталей включены.</p>
+<p>Рабочие ограничения 0…0,65 рад удерживают ноги с запасом до пересечения корпуса. Для столкновений используются выпуклые внешние оболочки 28 деталей CAD. В 2700 сохранённых кадрах исходные треугольные модели не пересекаются вне соединений суставов.</p>
+<p>Цикл 5 мс даёт прыжок с устойчивой посадкой в этой модели. Варианты 1, 2 и 10 мс и стресс-тесты тоже сохранены. Ноль сервопривода, массы и динамика приводов не откалиброваны; это результат симуляции.</p>
+<p>Камера поворачивается пальцем. Между сохранёнными кадрами применяется интерполяция.</p><p id="provenance"></p></div>
+<div id="loading" role="status">Загружаем оригинальную модель и запись…</div><div id="replay-error" role="alert" hidden></div><div id="webgl-note" hidden>В этом браузере WebGL недоступен. Выбор записей и метрики работают; для изображения нужен браузер с WebGL.</div>
+</section><section class="controls" aria-label="Управление записью"><button id="play" aria-label="Пауза">Ⅱ</button><input id="seek" type="range" min="0" max="6" step=".005" value="0" aria-label="Время записи"><span id="time">0,0 / 6,0 с</span><select id="speed" aria-label="Скорость"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option></select><button id="reset-camera">Камера</button></section></main>
+<script type="module" src="./app.js"></script><script src="/hexapod/player-shell.js"></script></body></html>

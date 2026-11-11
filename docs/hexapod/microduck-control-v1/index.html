@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102330"><title>MicroDuck · джойстики, падения и вставания</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<style>
+:root{color-scheme:dark;--hx-scene-top:128px}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#102330;color:#eaf5fa;font:13px/1.4 system-ui,sans-serif}
+.layout,.stage{position:relative;width:100%;height:100%;height:100dvh}#viewer{position:absolute;inset:0;touch-action:none}#viewer canvas{display:block;width:100%;height:100%}.controls{display:none}
+.md-actions{position:absolute;top:calc(72px + env(safe-area-inset-top,0px));left:10px;right:10px;z-index:12;display:grid;grid-template-columns:minmax(80px,1fr) minmax(76px,1fr) minmax(76px,1fr);gap:6px;max-width:540px;margin:auto}
+.md-actions select,.md-actions button{min-width:0;min-height:44px;background:#204454;color:#f1fbff;border:1px solid #568090;border-radius:11px;padding:7px 8px;font:600 13px system-ui}
+.md-actions #md-rise{background:#235d50;border-color:#68a48a}.md-actions button:disabled{opacity:.45}
+.pilot-controls{position:absolute;bottom:calc(122px + env(safe-area-inset-bottom,0px));left:12px;right:12px;z-index:11;display:flex;justify-content:space-between;gap:20px;pointer-events:none}
+.pilot-pad-wrap{display:grid;justify-items:center;gap:5px;pointer-events:none}.pilot-pad-wrap small{font-size:10px;font-weight:600;color:#b8d4de;letter-spacing:.04em}
+.pilot-pad{position:relative;width:clamp(88px,28vw,130px);height:clamp(88px,28vw,130px);border-radius:50%;border:2px solid #6ca8b990;background:radial-gradient(circle,#476b7760 0 25%,#0e2a3acc 27% 66%,#6ca8b960 67% 69%,#0e2434df 71%);touch-action:none;pointer-events:auto;outline-offset:4px;user-select:none;-webkit-user-select:none}
+.pilot-thumb{position:absolute;left:50%;top:50%;width:30%;height:30%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid #e8faff;background:radial-gradient(circle at 35% 30%,#e8faff,#639eb3);pointer-events:none}
+.factory-right-stick .pilot-pad{border-color:#d9af75a0}.factory-right-stick .pilot-thumb{background:radial-gradient(circle at 35% 30%,#fff3d9,#ba995c)}
+.pilot-stop{display:none}.md-stat{position:absolute;top:128px;left:12px;z-index:5;max-width:540px}.md-stat p{margin:6px 0}.md-stat small{display:block;margin-top:8px;color:#c1d4dc}.md-stat a{color:#bcebdc}
+#pilot-load{position:absolute;left:12px;right:12px;top:45%;z-index:8;text-align:center;color:#d1e9f0}
+#md-error{position:absolute;left:12px;right:12px;top:35%;z-index:20;padding:12px;border:1px solid #b36e70;border-radius:12px;background:#572f38}
+#md-webgl{position:absolute;left:12px;right:12px;top:38%;z-index:5;padding:10px;text-align:center;color:#c1d7e0;pointer-events:none}
+.hx-mobile-player #viewer{--hx-scene-top:128px}.hx-native-options .md-reset{min-height:44px;border-radius:10px;background:#244756;border:1px solid #507080;color:#eaf5fa;padding:8px;width:100%}
+@media(orientation:landscape) and (max-height:520px){:root{--hx-scene-top:108px}.hx-mobile-player #viewer{--hx-scene-top:108px}.md-actions{top:59px;left:100px;right:100px}.md-actions select,.md-actions button{min-height:42px}.pilot-controls{bottom:calc(76px + env(safe-area-inset-bottom,0px))}.pilot-pad{width:min(25vh,106px);height:min(25vh,106px)}.pilot-pad-wrap small{font-size:9px}}
+</style>
+<script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+<script src="/github-live-boot.js"></script><script src="/webgl-fallback.js"></script>
+</head><body><main class="layout"><section class="stage" aria-label="MicroDuck · кинематическое управление">
+<div id="viewer" role="img" aria-label="Оригинальная модель MicroDuck"></div>
+<div class="md-actions"><select id="fall-mode" aria-label="Вариант падения"><option value="side90">На бок</option><option value="roll180">Крен 180°</option><option value="pitch180">Тангаж 180°</option></select><button id="md-fall" type="button" disabled>Упасть</button><button id="md-rise" type="button" disabled>Встать</button></div>
+<div class="pilot-controls"><div class="pilot-pad-wrap"><small>ДВИЖЕНИЕ · ПОВОРОТ</small><div id="pilot-pad" class="pilot-pad" tabindex="0" role="application" aria-label="Левый джойстик: движение и поворот"><span id="pilot-thumb" class="pilot-thumb"></span></div></div>
+<button id="factory-stop" class="pilot-stop" type="button">Стоп</button>
+<div class="pilot-pad-wrap factory-right-stick"><small>ГОЛОВА</small><div id="pilot-pad-right" class="pilot-pad" tabindex="0" role="application" aria-label="Правый джойстик: поворот и наклон головы"><span id="pilot-thumb-right" class="pilot-thumb"></span></div></div></div>
+<div class="md-stat"><strong id="pilot-state">Загружаем модель…</strong><p id="pilot-metric">—</p>
+<small><b>Кинематический режим.</b> Джойстики смешивают подготовленные движения. Падения и подъёмы воспроизводят рассчитанные траектории; переход в начало падения сглажен. Силы и устойчивость здесь не рассчитываются.</small>
+<small>Левый: вперёд/назад и поворот. Правый: голова. «Стоп» останавливает движение и ставит действие на паузу; «Продолжить» возобновляет его. «Встать» доступно после завершения падения. Назад используется обратный цикл ходьбы.</small>
+<small>Клавиатура: WASD — движение; стрелки — голова; F — падение; G — подъём; пробел — стоп; R — сброс.</small>
+<small>3D: <a href="https://github.com/pollen-robotics/microduck_rl" target="_blank" rel="noopener">Pollen Robotics</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>.</small></div>
+<div class="replay-console"><button id="reset-pose" class="md-reset" type="button">Сбросить робота</button></div>
+<div id="pilot-load" role="status">Загружаем модель и движения…</div><div id="md-error" hidden role="alert"></div>
+<div id="md-webgl" hidden role="status">В этом браузере нет WebGL. Управление и состояние доступны; для изображения нужен браузер с 3D.</div>
+</section><section class="controls"><button id="play" aria-label="Пауза" type="button">Ⅱ</button><input id="seek" type="range" min="0" max="3600" value="0"><select id="speed"><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option></select><button id="reset-camera" type="button">Вернуть камеру</button></section>
+</main><script type="module" src="/hexapod/microduck-control-v1/app.js"></script><script src="/hexapod/player-shell.js"></script></body></html>

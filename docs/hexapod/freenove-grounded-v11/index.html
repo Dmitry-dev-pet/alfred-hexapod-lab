@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101923"><title>Hexapod Lab — Freenove · опоры V11</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css"><link rel="stylesheet" href="/hexapod/live-v2-offline/pilot.css"><link rel="stylesheet" href="/hexapod/freenove-dual-v8/dual-stick.css"><link rel="stylesheet" href="/hexapod/freenove-combined-v9/overlay.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<style>
+body{margin:0;background:#101820}.stage{position:absolute;inset:0}#viewer{width:100%;height:100%;touch-action:none}
+.controls{display:none}.pilot-right{width:min(45vw,290px);max-width:50vw;min-width:145px;gap:7px}
+.pilot-mode-switch{background:#153440dc;border:1px solid #5fa2ac66;border-radius:11px;display:flex;align-items:center;justify-content:space-between;gap:5px;padding:5px 8px;width:100%;box-sizing:border-box}
+.pilot-mode-switch label{color:#ddedef;font-size:11px;font-weight:700}
+.pilot-mode-switch select,.factory-select{font:600 13px system-ui;color:#fff;background:#224855;border:1px solid #7cc3bd96;border-radius:9px;padding:5px 7px;min-height:38px}
+.factory-panel{display:flex;flex-direction:column;align-items:stretch;gap:6px;width:100%;pointer-events:auto}
+.factory-panel[hidden]{display:none!important}.factory-gait{display:flex;gap:7px;align-items:center}.factory-gait .factory-select{flex:1;min-width:0}
+.factory-params{display:grid;grid-template-columns:1fr 1fr;gap:5px 8px;background:#0d2632ea;padding:8px;border-radius:12px}
+.factory-params label{font-size:10px;color:#d2e4e9;display:flex;flex-direction:column;gap:3px;min-width:0}
+.factory-params input{width:100%;min-width:0;accent-color:#59d0b9}.factory-params output{color:#adf4de;font-size:12px;font-weight:650}
+.factory-stamp{position:absolute;right:12px;top:calc(20px + env(safe-area-inset-top,0px));color:#e6dcb9;background:#292c20dd;border:1px solid #bcaa76aa;padding:6px 9px;border-radius:11px;z-index:17;font:600 10px/1.35 system-ui;text-align:right;pointer-events:none}
+.factory-stats{position:absolute;top:calc(84px + env(safe-area-inset-top,0px));right:12px;max-width:51vw;background:#07141ddf;border-radius:11px;padding:9px 11px;color:#bfdadc;font:500 11px/1.5 system-ui;z-index:17;pointer-events:none}
+.factory-stats strong{display:block;font:650 13px system-ui;color:#f2f9fa}.factory-stats em{font-style:normal;color:#abdbce}
+.factory-note{font-size:10px;color:#cde0da;text-align:right}.factory-note a{color:#a6e6df;text-decoration:underline}
+.factory-stoprow{display:flex;gap:7px}.factory-stoprow button{flex:1}
+.factory-panel .pilot-speed-wrap{display:flex}.factory-panel .pilot-speed-wrap input{flex:1;width:auto}
+.pilot-controls{pointer-events:none}.pilot-controls button,.pilot-controls select,.pilot-controls input{pointer-events:auto}
+@media(max-width:520px){.pilot-right{width:48vw;max-width:48vw;min-width:138px}.pilot-controls{padding:0 9px;gap:5px}.pilot-pad{width:min(35vw,130px);height:min(35vw,130px)}.factory-stamp{top:calc(75px + env(safe-area-inset-top,0px));font-size:8px}.factory-stats{top:calc(121px + env(safe-area-inset-top,0px));max-width:52vw;font-size:9px}.factory-gait .factory-select{font-size:11px}.factory-params{gap:5px;padding:6px}}
+@media(orientation:landscape){.factory-stamp{top:calc(9px + env(safe-area-inset-top,0px))}.factory-stats{top:calc(53px + env(safe-area-inset-top,0px))}.pilot-controls{bottom:8px}.pilot-pad{width:min(29vh,135px);height:min(29vh,135px)}.factory-params{gap:3px;padding:5px}.factory-params label{font-size:9px}}
+</style>
+</head><body><main class="layout">
+<section class="stage" aria-label="Freenove Original на CAD30: кинематический предпросмотр заводских команд">
+<div id="viewer" role="img" aria-label="Трёхмерная модель с управлением джойстиком"></div>
+<div class="factory-stamp">FREENOVE · ФИКСАЦИЯ ОПОР · V11<br>OEM ХОДЬБА · ПОЗА КОРПУСА · НЕ ФИЗИКА</div>
+<div class="factory-stats"><strong id="pilot-state">Загрузка…</strong><span id="pilot-speed-readout">Команда: 0</span><br><em id="pilot-odom">Не физическая симуляция</em></div>
+<div class="pilot-load" id="pilot-load">Загружаем CAD30 и опорные траектории…</div>
+<div class="pilot-controls factory-dual-controls" id="pilot-controls" aria-label="Левый — ходьба и повороты, правый — корпус и голова">
+  <div class="pilot-pad-wrap factory-left-stick">
+    <div id="pilot-pad" class="pilot-pad" role="group" aria-label="Левый джойстик: вперёд и назад по вертикали, поворот по горизонтали"><div id="pilot-thumb" class="pilot-thumb"></div></div>
+    <small id="pad-label">ДВИЖЕНИЕ + ПОВОРОТ</small>
+  </div>
+  <section class="factory-center-controls" aria-label="Настройки двух джойстиков">
+    <div class="factory-row"><label for="steer-mode">Левый ↔</label><select id="steer-mode" class="factory-select"><option value="turn">Поворот</option><option value="strafe">Боковой ход</option></select></div>
+    <div class="factory-row"><label for="right-mode">Правый</label><select id="right-mode" class="factory-select"><option value="tilt">Корпус: наклон</option><option value="shift">Корпус: сдвиг</option><option value="head">Голова · V5</option></select></div>
+    <div class="factory-row"><label for="factory-gait">Походка</label><select id="factory-gait" class="factory-select"><option value="tripod">Tripod · OEM</option><option value="wave">Wave · OEM</option></select></div>
+    <div class="pilot-speed-wrap"><label for="factory-tempo">Темп</label><input type="range" id="factory-tempo" min="0.25" max="2" step="0.25" value="1"><output id="factory-rate">1×</output></div>
+    <div class="factory-params">
+      <label>Высота <output id="pose-height-value">0 мм</output><input id="pose-height" type="range" min="-20" max="20" step="1" value="0"></label>
+      <label>Разворот корпуса <output id="pose-yaw-value">0°</output><input id="pose-yaw" type="range" min="-15" max="15" step="1" value="0"></label>
+    </div>
+    <div class="factory-stoprow"><button type="button" id="factory-stop" class="pilot-stop">СТОП / НУЛЬ</button><button type="button" id="reset-pose" class="pilot-reset">Сброс позы</button></div>
+    <button type="button" id="reset-camera" class="pilot-reset">Камера</button>
+    <div class="factory-note factory-limits">Стопы рассчитываются относительно пола. При несовместимых позах появляется предупреждение.<br>Только геометрический предпросмотр, без контактов и сил.</div>
+  </section>
+  <div class="pilot-pad-wrap factory-right-stick">
+    <div id="pilot-pad-right" class="pilot-pad" role="group" aria-label="Правый джойстик: крен и тангаж корпуса"><div id="pilot-thumb-right" class="pilot-thumb"></div></div>
+    <small id="right-pad-label">КОРПУС · НАКЛОН</small>
+  </div>
+</div>
+<div id="error" role="alert" hidden></div>
+</section>
+<section class="controls" hidden><button id="play" aria-label="Пауза">▶</button><input type="range" id="seek" min="0" max="3600" value="0"><select id="speed"><option value="1" selected>1×</option></select></section>
+</main><script>
+// ES module fetch failures occur before app.js can render an error.
+window.addEventListener('error', function(event) {
+  const s = document.getElementById('pilot-load');
+  if (!s || s.hidden) return;
+  const msg = typeof event.message === 'string' && event.message ? event.message :
+    (event.target && event.target.src ? 'Ошибка загрузки '+event.target.src : 'Ошибка загрузки JavaScript');
+  s.textContent = 'Не удалось запустить плеер: ' + msg;
+}, true);
+window.addEventListener('unhandledrejection', function(event) {
+  const s = document.getElementById('pilot-load');
+  if (s && !s.hidden) s.textContent = 'Ошибка запуска: ' + (event.reason?.message || String(event.reason));
+});
+</script><script type="module" src="/hexapod/freenove-grounded-v11/app.js"></script><script src="/hexapod/player-shell.js"></script>
+</body></html>

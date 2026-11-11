@@ -1,0 +1,87 @@
+{
+  "schema": "xgo-lite3-visual-finish-v2",
+  "scope": "photographic material reconstruction layered over 17 untouched original vendor STL meshes; original measured MuJoCo replay remains unchanged",
+  "reference": {
+    "official_step_url": "https://downloads.xgorobot.com/cad/xgo-lite3/XGO-lite3_Assembly_v2026.09.18.step",
+    "official_step_md5": "f413d18e4546e7d7255ce1a4976ba887",
+    "official_step_sha256": "edccad2b4ba188fe1dc53d820d9e63aeb23f97f5edf292b4411e0fdbd1d151bf",
+    "step_rgb_unique": 1,
+    "step_rgb_srgb_approx": "#CAD1EE",
+    "step_rgb_colored_solids": 259,
+    "photo_url": "https://shop.xgorobot.com/cdn/shop/files/2S.85.png?v=1785986727&width=3840",
+    "photo_context": "Official Luwu product image, showing dark graphite chassis, brushed silver joints and screen with purple eye-like UI.",
+    "photo_another_url": "https://www.xgorobot.com/images/lite3/player-geek.webp",
+    "confidence": "Reference-based visual reconstruction and approximation, not manufacturer UV textures or color-validated digital twin"
+  },
+  "materials": {
+    "body": {
+      "base": "#293038",
+      "side": "#77848D",
+      "bezel": "#111820",
+      "underside": "#151A21",
+      "metalness": 0.39,
+      "roughness": 0.46
+    },
+    "mainarm": {
+      "base": "#353F49",
+      "side": "#87949E",
+      "metalness": 0.52,
+      "roughness": 0.32
+    },
+    "forearm": {
+      "base": "#414D57",
+      "side": "#A0ADB5",
+      "metalness": 0.51,
+      "roughness": 0.35
+    },
+    "claw": {
+      "base": "#818A93",
+      "tip": "#262B32",
+      "metalness": 0.64,
+      "roughness": 0.31
+    },
+    "hip": {
+      "base": "#7E8B95",
+      "side": "#BBC4CD",
+      "metalness": 0.6,
+      "roughness": 0.37
+    },
+    "thigh": {
+      "base": "#29343F",
+      "side": "#8897A2",
+      "metalness": 0.52,
+      "roughness": 0.35
+    },
+    "shank": {
+      "base": "#84939D",
+      "tip": "#20262D",
+      "side": "#A8B2BC",
+      "metalness": 0.5,
+      "roughness": 0.41
+    }
+  },
+  "display": {
+    "texture": "Procedural canvas (two violet eyes on dark screen), not vendor software screenshot",
+    "width_m": 0.052,
+    "height_m": 0.033,
+    "body_local_xyz_m": [
+      0.1112,
+      0,
+      0.007
+    ]
+  },
+  "side_mark": {
+    "texture": "Procedural XGO lite3 labels in both sides; design reconstruction, not a reproduced brand asset"
+  },
+  "compatibility": {
+    "source_library_revision": 21,
+    "original_stl_sha256_manifest": "/hexapod/lite3-original-v1/asset-manifest.json",
+    "observed_physics_frames": "The four immutable v1 physically measured datasets",
+    "no_motors_or_motion_computation": true
+  },
+  "limitations": [
+    "No manufacturer photo texture atlas in released STL/MJCF or STEP",
+    "No photometric measurements; face classification is visual reconstruction",
+    "The display screen is a decorative reconstructed face UI, not simulated real screen state"
+  ]
+}

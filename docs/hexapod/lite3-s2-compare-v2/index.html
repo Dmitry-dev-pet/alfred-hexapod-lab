@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111b27"><title>Hexapod Lab — XGO-Lite3 · Сравнение S2</title>
+<style>
+:root{color-scheme:dark;--bg:#111b27;--surface:#1c2c3a;--text:#edf5f8;--muted:#adbdca;--blue:#56dcf0;--orange:#ffbd76}
+*{box-sizing:border-box}body{margin:0;color:var(--text);background:var(--bg);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+button,select,input{font:inherit}button,select{color:inherit;background:#273d4e;border:1px solid #456173;border-radius:9px;padding:7px 10px}
+button{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+header{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;background:#142431;border-bottom:1px solid #2d4351}
+header strong{font-size:15px}header small{display:block;color:var(--muted);font-size:10px}
+header a{color:#bfeffc;font-size:12px;text-decoration:none}
+main{width:100%;max-width:1250px;margin:auto}.pick{display:grid;grid-template-columns:1fr;gap:6px;padding:10px 12px;background:#192938}
+.pick label{font-size:11px;color:var(--muted)}.pick select{width:100%;font-size:13px}
+#stage{height:min(60dvh,640px);min-height:300px;position:relative;overflow:hidden;background:radial-gradient(circle at 40% 45%,#203447,#111b27)}
+#scene{position:absolute;inset:0}#scene canvas{display:block;width:100%;height:100%}
+#legends{display:flex;gap:6px;position:absolute;top:7px;left:8px;right:8px;flex-wrap:wrap;pointer-events:none}
+.legend{background:#10202bdc;padding:5px 8px;border:1px solid #466073;border-radius:7px;font-size:11px}.blue{color:var(--blue)}.orange{color:var(--orange)}
+#notice{position:absolute;left:12px;right:12px;top:45%;margin:auto;max-width:560px;padding:12px;border-radius:10px;background:#132536ed;color:#ddeff5;z-index:2;font-size:13px}
+#err{white-space:pre-wrap;background:#522624;color:#fff1e8}#difference{position:absolute;bottom:9px;left:9px;right:9px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#101c27ea;border:1px solid #456073;border-radius:10px;padding:8px 10px;pointer-events:none}
+#difference span{font-size:11px;color:var(--muted)}#delta{font-size:24px;font-weight:700;line-height:1.12;font-variant-numeric:tabular-nums}#segment{max-width:54%;text-align:right;font-size:11px}
+#actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:9px 11px;border-bottom:1px solid #2f4353}#actions button[aria-pressed="true"]{color:#101b29;background:#b6d9e6}
+.transport{display:flex;gap:8px;align-items:center;padding:9px 11px}.transport input{min-width:0;flex:1;accent-color:#73d9eb}.transport select{padding:5px;max-width:84px}.transport button{min-width:44px}
+.transport small{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.options{display:flex;gap:13px;flex-wrap:wrap;padding:0 12px 9px;color:#c5dae3;font-size:12px}.options input{vertical-align:middle;accent-color:#56dcf0}
+#stats{padding:10px 12px 3px;background:#192a39}.metricgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.metric{border:1px solid #354e60;border-radius:8px;padding:7px;background:#213546}.metric span{display:block;color:var(--muted);font-size:10px}.metric strong{display:block;font-size:16px;font-variant-numeric:tabular-nums}
+#chartCard{padding:8px 12px 10px;background:#192a39}#chartHead{display:flex;gap:8px;justify-content:space-between;font-size:11px;color:var(--muted)}#chart{background:#152632;border-radius:9px;border:1px solid #344f62;width:100%;height:145px;display:block}
+#sources{padding:12px;color:#a6bbc9;font-size:11px;border-top:1px solid #36495a}#sources a{color:#a5ddef}
+@media(min-width:800px){.pick{grid-template-columns:2fr 1fr}.metric strong{font-size:18px}#stage{height:65vh}}
+@media(max-width:390px){#stage{height:53dvh;min-height:270px}.legend{font-size:10px}#difference{padding:7px}#delta{font-size:21px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+<header><div><strong>XGO-Lite3 · сравнение S2</strong><small>Две настоящие записи MuJoCo · одна временная шкала</small></div><a href="/hexapod/">Библиотека</a></header>
+<main>
+<div class="pick"><label for="variant">Сравнить исходную модель 345 г с экспериментом</label>
+<select id="variant">
+<option value="combined_stress">Совместный стресс-тест · наиболее заметно</option>
+<option value="uniform_mass_0610">Масса 610 г · модельное масштабирование</option>
+<option value="actuator_cap_02256">Предел привода 0,2256 Н·м</option>
+<option value="friction_020">Трение μ=0,20 · сильное скольжение</option>
+<option value="friction_035">Трение μ=0,35</option>
+</select></div>
+<div id="stage">
+<div id="scene" aria-label="Синхронное 3D сравнение исходных STL моделей по записанным физическим состояниям MuJoCo"></div>
+<div id="legends"><span class="legend blue">● Бирюзовый: исходная модель</span><span class="legend orange">● Оранжевая траектория: выбранный опыт</span></div>
+<div id="notice" role="status">Загружаем оригинальные STL и физические записи…</div><div id="err" role="alert" hidden></div>
+<div id="difference"><div><span>Разница положения корпуса сейчас</span><div id="delta">— мм</div></div><span id="segment">—</span></div></div>
+<div id="actions"><button id="overlay" aria-pressed="true">Наложение</button><button id="separate" aria-pressed="false">Два робота рядом</button><button id="top">Сверху</button><button id="camera">Вернуть камеру</button></div>
+<div class="transport"><button id="play" aria-label="Пауза">Ⅱ</button><small id="clock">00:00</small><input id="seek" type="range" min="0" max="9.5" step="0.01" value="0" aria-label="Перемотка"><small>00:09</small><select id="speed" aria-label="Скорость"><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></div>
+<div class="options"><label><input id="trails" type="checkbox" checked> Две траектории</label><label><input id="feet" type="checkbox" checked> Контакты</label><label><input id="follow" type="checkbox"> Следить за парой</label></div>
+<div id="stats"><div class="metricgrid"><div class="metric"><span>Отличие в конце</span><strong id="finaldelta">—</strong></div><div class="metric"><span>Скольжение* (база / опыт)</span><strong id="slip">—</strong></div><div class="metric"><span>Насыщение* (база / опыт)</span><strong id="saturation">—</strong></div></div></div>
+<div id="chartCard"><div id="chartHead"><span>XY: фактический путь корпуса (вид сверху)</span><span>Масштаб у двух линий общий</span></div><svg id="chart" viewBox="0 0 430 145" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Сопоставление двух измеренных траекторий на одной системе координат"></svg></div>
+<div id="sources">* Средние показатели по 10 прогонам: «скольжение» — доля нагруженных контактных измерений со скоростью стопы &gt;5 см/с, «насыщение» — доля физических шагов с достижением лимита хотя бы одного привода. Это не покадровые измерения данной записи. Бирюзовый контур — та же оригинальная 3D-геометрия, все движения обоих роботов взяты из записанных qpos. В режиме «рядом» модели сдвинуты на экране только ради просмотра. <strong>Никакой MP4 и выдуманной физики.</strong> Модель 610 г — условная, развесовка реального робота не подтверждена. <a href="https://github.com/Dmitry-dev-pet/alfred-hexapod-lab/pull/69">Данные и методика</a>.</div>
+</main><script type="module" src="/hexapod/lite3-s2-compare-v2/app.js"></script>
+</body></html>
