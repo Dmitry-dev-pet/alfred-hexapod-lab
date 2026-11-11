@@ -46,5 +46,11 @@ assert.ok(requests[2].includes('/'+sha+'/'));
 const offline=await readRobotLibrary({fetchImpl:async()=>{throw Error('offline');},storage});
 assert.equal(offline.source,'offline-cache');
 assert.deepEqual(offline.counts,all.counts);
+
+const poisoned=structuredClone(online);
+poisoned.entries.find(e=>e.kind==='legacy').href='javascript:alert(1)';
+const badStorage={getItem:()=>JSON.stringify(poisoned),setItem:()=>{}};
+await assert.rejects(readRobotLibrary({fetchImpl:async()=>{throw Error('offline');},storage:badStorage}),/Каталог недоступен|каталог недоступен/);
+
 console.log('PASS: unified catalog, 12 robot families, 79 legacy + '+replays.entries.length+
-  ' recordings, four pending, immutable main fetch, duplicate/scheme rejection, offline cache');
+  ' recordings, four pending, immutable main fetch, duplicate/scheme rejection, offline cache and poisoned-cache rejection');
