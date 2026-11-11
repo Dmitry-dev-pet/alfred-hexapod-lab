@@ -1,0 +1,194 @@
+{
+  "schema": "alfred-bb8-wheel-slip-check/v4",
+  "replay_sha256": "bb206c36edf0c65e92d64f4e1546c32400c817b186da367befcfcfb5a52904a6",
+  "force_weighted_wheel_slip_rms_m_s": 0.0007821716573711841,
+  "samples": [
+    {
+      "t": 3.0,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.684063025341082,
+      "force_weighted_tangential_slip_rms_m_s": 0.0001872801564508002
+    },
+    {
+      "t": 3.2,
+      "contacts": 20,
+      "total_wheel_normal_N": 12.880990003411219,
+      "force_weighted_tangential_slip_rms_m_s": 0.0002093244421099636
+    },
+    {
+      "t": 3.4,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.873986735481239,
+      "force_weighted_tangential_slip_rms_m_s": 0.000211050934279605
+    },
+    {
+      "t": 3.6,
+      "contacts": 20,
+      "total_wheel_normal_N": 12.753511819937499,
+      "force_weighted_tangential_slip_rms_m_s": 0.000255004137654074
+    },
+    {
+      "t": 3.8,
+      "contacts": 30,
+      "total_wheel_normal_N": 14.29741350944146,
+      "force_weighted_tangential_slip_rms_m_s": 0.0002554997652842625
+    },
+    {
+      "t": 4.0,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.229904515120829,
+      "force_weighted_tangential_slip_rms_m_s": 0.00017471197669827074
+    },
+    {
+      "t": 4.2,
+      "contacts": 30,
+      "total_wheel_normal_N": 12.56474127779672,
+      "force_weighted_tangential_slip_rms_m_s": 0.0035186344286213525
+    },
+    {
+      "t": 4.4,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.534570543628899,
+      "force_weighted_tangential_slip_rms_m_s": 0.0003716051767104718
+    },
+    {
+      "t": 4.6,
+      "contacts": 26,
+      "total_wheel_normal_N": 14.897878049766879,
+      "force_weighted_tangential_slip_rms_m_s": 0.0004014122525841004
+    },
+    {
+      "t": 4.8,
+      "contacts": 20,
+      "total_wheel_normal_N": 11.84422405058784,
+      "force_weighted_tangential_slip_rms_m_s": 0.0002355120685796492
+    },
+    {
+      "t": 5.0,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.55602401642908,
+      "force_weighted_tangential_slip_rms_m_s": 0.0004225546464857866
+    },
+    {
+      "t": 5.2,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.245874835671078,
+      "force_weighted_tangential_slip_rms_m_s": 0.00035613942476367025
+    },
+    {
+      "t": 5.4,
+      "contacts": 20,
+      "total_wheel_normal_N": 18.964408761135797,
+      "force_weighted_tangential_slip_rms_m_s": 0.001083862143028798
+    },
+    {
+      "t": 5.6,
+      "contacts": 20,
+      "total_wheel_normal_N": 11.937584163961294,
+      "force_weighted_tangential_slip_rms_m_s": 0.00015446077063872363
+    },
+    {
+      "t": 5.8,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.583625067151255,
+      "force_weighted_tangential_slip_rms_m_s": 0.0002445101191984779
+    },
+    {
+      "t": 6.0,
+      "contacts": 30,
+      "total_wheel_normal_N": 12.703980287422944,
+      "force_weighted_tangential_slip_rms_m_s": 0.0019057482864134198
+    },
+    {
+      "t": 6.2,
+      "contacts": 20,
+      "total_wheel_normal_N": 12.71931538696128,
+      "force_weighted_tangential_slip_rms_m_s": 0.00019094395486734473
+    },
+    {
+      "t": 6.4,
+      "contacts": 26,
+      "total_wheel_normal_N": 12.078710320486817,
+      "force_weighted_tangential_slip_rms_m_s": 0.00017299095353741768
+    },
+    {
+      "t": 6.6,
+      "contacts": 20,
+      "total_wheel_normal_N": 12.499155769253115,
+      "force_weighted_tangential_slip_rms_m_s": 0.00016472044797160882
+    },
+    {
+      "t": 6.8,
+      "contacts": 20,
+      "total_wheel_normal_N": 11.255839197918302,
+      "force_weighted_tangential_slip_rms_m_s": 0.00019805975433832395
+    },
+    {
+      "t": 7.0,
+      "contacts": 20,
+      "total_wheel_normal_N": 10.764705338662523,
+      "force_weighted_tangential_slip_rms_m_s": 0.0001456158714731222
+    },
+    {
+      "t": 7.2,
+      "contacts": 20,
+      "total_wheel_normal_N": 14.499507975878316,
+      "force_weighted_tangential_slip_rms_m_s": 0.0003967005425018981
+    },
+    {
+      "t": 7.4,
+      "contacts": 30,
+      "total_wheel_normal_N": 18.170038788404728,
+      "force_weighted_tangential_slip_rms_m_s": 0.000320183286140886
+    },
+    {
+      "t": 7.6,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.953944051671083,
+      "force_weighted_tangential_slip_rms_m_s": 0.0005886218713652332
+    },
+    {
+      "t": 7.8,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.679710739094201,
+      "force_weighted_tangential_slip_rms_m_s": 0.00041260068158691684
+    },
+    {
+      "t": 8.0,
+      "contacts": 20,
+      "total_wheel_normal_N": 12.888798280182797,
+      "force_weighted_tangential_slip_rms_m_s": 0.0003863857277126883
+    },
+    {
+      "t": 8.2,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.346517993624415,
+      "force_weighted_tangential_slip_rms_m_s": 0.00032834779699348146
+    },
+    {
+      "t": 8.4,
+      "contacts": 20,
+      "total_wheel_normal_N": 13.202335721249066,
+      "force_weighted_tangential_slip_rms_m_s": 0.00015508932450034933
+    },
+    {
+      "t": 8.6,
+      "contacts": 22,
+      "total_wheel_normal_N": 14.451023539974999,
+      "force_weighted_tangential_slip_rms_m_s": 0.0004272564628307871
+    },
+    {
+      "t": 8.8,
+      "contacts": 20,
+      "total_wheel_normal_N": 18.069593661102658,
+      "force_weighted_tangential_slip_rms_m_s": 0.0003071390596518158
+    },
+    {
+      "t": 9.0,
+      "contacts": 20,
+      "total_wheel_normal_N": 18.682161580935826,
+      "force_weighted_tangential_slip_rms_m_s": 0.0003756295994732568
+    }
+  ],
+  "method": "mj_jac at each wheel/shell contact, both point velocities in world coordinates, tangential projection weighted by normal force; sampled every 0.2 s from 3 to 9 s"
+}

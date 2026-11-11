@@ -1,0 +1,37 @@
+{
+  "schema": "alfred-bb8-bidirectional-settling/v5",
+  "scope": "Conditional manual trips from held upright initialization, with explicit passive floor resistance hypothesis; no hardware calibration or successful IMU speed controller claim",
+  "base_xml_physics": "v3 source-derived CAD contacts/inertias, free shell and chassis, wheel hinge motors only",
+  "floor_resistance_m": [
+    0,
+    5e-05,
+    0.0001
+  ],
+  "floor_law": "tau_xy=-b*N_ground*omega_xy/max(norm(omega_xy),.02 rad/s); power must be nonpositive",
+  "duration_s": 22,
+  "drive_window_s": [
+    2,
+    10
+  ],
+  "held_initial_pitch_deg": 0,
+  "drive_thresholds": {
+    "signed_x_at_least_m": 0.3,
+    "abs_y_at_most_m": 0.1,
+    "max_full_tilt_at_most_deg": 45,
+    "each_wheel_contact_at_least": 0.98,
+    "max_penetration_at_most_m": 0.0005
+  },
+  "stop_thresholds": {
+    "last_window_s": 2,
+    "rms_speed_at_most_m_s": 0.01,
+    "final_speed_at_most_m_s": 0.01,
+    "each_position_range_at_most_m": 0.01
+  },
+  "duration_choice": "22-second settling run selected after 18-second b=100um forward case narrowly failed RMS speed and range; thresholds unchanged",
+  "limits": [
+    "Floor resistance and component masses are scenarios, not hardware measurements",
+    "Baseline and 50um variants are negative at 18s",
+    "Reverse is sensitive to held-start orientation",
+    "Previously tried speed controllers remain unsuccessful"
+  ]
+}

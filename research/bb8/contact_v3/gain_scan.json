@@ -1,0 +1,492 @@
+[
+  {
+    "gains": {
+      "kp": 0.1,
+      "kd": 0.01,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 25.508688337276524,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 35.02983434412785,
+      "rms_pitch_error_deg": 20.50090598909123,
+      "max_IMU_pitch_error_deg": 1.8790899940313932,
+      "final_pitch_error_deg": -6.4985291858767065,
+      "final_shell_xy_m": [
+        -0.005860435900038522,
+        0.0007104206488106066
+      ],
+      "shell_xy_from_1s_m": [
+        0.04800905645151834,
+        -0.004182089598247743
+      ],
+      "final_speed_m_s": 0.05007782348185296,
+      "peak_speed_m_s": 0.08529054919499016,
+      "final_yaw_rad": 0.00029179605631817363,
+      "final_yaw_rate_rad_s": 0.0033151987966158138,
+      "max_abs_motor_torque_Nm": 0.06292998960905904,
+      "max_contact_penetration_m": 0.00023628214014419224,
+      "wheel_contact_fraction": {
+        "left": 0.9924030387844862,
+        "right": 0.991203518592563
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.0133706820051884,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": 0.1,
+      "kd": 0.04,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 21.47321963023615,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 33.72082837139877,
+      "rms_pitch_error_deg": 20.01968826470547,
+      "max_IMU_pitch_error_deg": 1.7360780977917394,
+      "final_pitch_error_deg": -4.4582438150491095,
+      "final_shell_xy_m": [
+        -0.010264881251410143,
+        -0.0006758673383753412
+      ],
+      "shell_xy_from_1s_m": [
+        0.04171877502152743,
+        -0.0057331175417585905
+      ],
+      "final_speed_m_s": 0.014535313655306829,
+      "peak_speed_m_s": 0.08294360550250858,
+      "final_yaw_rad": 0.017807356019863482,
+      "final_yaw_rate_rad_s": 0.026915743717162238,
+      "max_abs_motor_torque_Nm": 0.07216191879196064,
+      "max_contact_penetration_m": 0.00023628214014419224,
+      "wheel_contact_fraction": {
+        "left": 0.9924030387844862,
+        "right": 0.991203518592563
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.6827000369958114,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": 0.3,
+      "kd": 0.01,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 22.153468403921785,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 33.94977012594588,
+      "rms_pitch_error_deg": 20.251820151422386,
+      "max_IMU_pitch_error_deg": 1.743231183993443,
+      "final_pitch_error_deg": -3.5156296532482134,
+      "final_shell_xy_m": [
+        -0.015496446560579155,
+        -0.0003776113452108283
+      ],
+      "shell_xy_from_1s_m": [
+        0.038877247409943576,
+        -0.005479732671970425
+      ],
+      "final_speed_m_s": 0.019016482524993984,
+      "peak_speed_m_s": 0.08563651076463463,
+      "final_yaw_rad": 0.012842454639756716,
+      "final_yaw_rate_rad_s": 0.007332192163909002,
+      "max_abs_motor_torque_Nm": 0.17993458073037646,
+      "max_contact_penetration_m": 0.00023628214014419224,
+      "wheel_contact_fraction": {
+        "left": 0.9924030387844862,
+        "right": 0.991203518592563
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.8683658619993366,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": 0.3,
+      "kd": 0.04,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 20.817398697382703,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 34.52136250901451,
+      "rms_pitch_error_deg": 20.278607531643992,
+      "max_IMU_pitch_error_deg": 1.839549841440719,
+      "final_pitch_error_deg": -2.1493757154130115,
+      "final_shell_xy_m": [
+        -0.014701411366083529,
+        -0.0005750409148356783
+      ],
+      "shell_xy_from_1s_m": [
+        0.0344188754620045,
+        -0.005724658093307111
+      ],
+      "final_speed_m_s": 0.005387911657387111,
+      "peak_speed_m_s": 0.0854038893702588,
+      "final_yaw_rad": 0.00829631978886084,
+      "final_yaw_rate_rad_s": 0.005433525972293473,
+      "max_abs_motor_torque_Nm": 0.18808243919466833,
+      "max_contact_penetration_m": 0.00023628214014419224,
+      "wheel_contact_fraction": {
+        "left": 0.9924030387844862,
+        "right": 0.991203518592563
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.335716560992296,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": 0.7,
+      "kd": 0.04,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 22.250618370698174,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 34.601696669949135,
+      "rms_pitch_error_deg": 20.079291231151615,
+      "max_IMU_pitch_error_deg": 1.8846593217679395,
+      "final_pitch_error_deg": -4.938144725541321,
+      "final_shell_xy_m": [
+        -0.02873701504052396,
+        -0.0013931380809951023
+      ],
+      "shell_xy_from_1s_m": [
+        0.011951803622589473,
+        -0.006802773334832053
+      ],
+      "final_speed_m_s": 0.021713271395465604,
+      "peak_speed_m_s": 0.08825000283745775,
+      "final_yaw_rad": 0.022553653593467733,
+      "final_yaw_rate_rad_s": 0.011992569687423047,
+      "max_abs_motor_torque_Nm": 0.3,
+      "max_contact_penetration_m": 0.00023628214014419224,
+      "wheel_contact_fraction": {
+        "left": 0.9924030387844862,
+        "right": 0.991203518592563
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.3720360519946553,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": 0.7,
+      "kd": 0.1,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 25.96597696560535,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 40.155154459865805,
+      "rms_pitch_error_deg": 22.402056416243187,
+      "max_IMU_pitch_error_deg": 3.1333436862572834,
+      "final_pitch_error_deg": -1.9552769948092525,
+      "final_shell_xy_m": [
+        -0.034196503031358405,
+        0.0014024333363221258
+      ],
+      "shell_xy_from_1s_m": [
+        0.022410605038615222,
+        -0.005671236107057619
+      ],
+      "final_speed_m_s": 0.03563920549362162,
+      "peak_speed_m_s": 0.1490325402193737,
+      "final_yaw_rad": -0.012157543527254755,
+      "final_yaw_rate_rad_s": 0.01245238941099812,
+      "max_abs_motor_torque_Nm": 0.3,
+      "max_contact_penetration_m": 0.00023628214014419268,
+      "wheel_contact_fraction": {
+        "left": 0.9548180727708916,
+        "right": 0.955217912834866
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.477625364001142,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": 1.2,
+      "kd": 0.04,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 21.485356955177373,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 35.00218424467809,
+      "rms_pitch_error_deg": 20.41692450577475,
+      "max_IMU_pitch_error_deg": 1.9752428595571836,
+      "final_pitch_error_deg": -3.695137478640644,
+      "final_shell_xy_m": [
+        -0.03600689498433035,
+        -0.0056199340640270415
+      ],
+      "shell_xy_from_1s_m": [
+        0.011196935900685802,
+        -0.01120990811273816
+      ],
+      "final_speed_m_s": 0.010684324494026221,
+      "peak_speed_m_s": 0.09588052419446069,
+      "final_yaw_rad": 0.03029236893828763,
+      "final_yaw_rate_rad_s": 6.884197391240549e-05,
+      "max_abs_motor_torque_Nm": 0.3,
+      "max_contact_penetration_m": 0.00023628214014419224,
+      "wheel_contact_fraction": {
+        "left": 0.9924030387844862,
+        "right": 0.991203518592563
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.104287694004597,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": 1.2,
+      "kd": 0.1,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 24.749456001496828,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 39.19163220923483,
+      "rms_pitch_error_deg": 22.25040420417104,
+      "max_IMU_pitch_error_deg": 2.6764304203766365,
+      "final_pitch_error_deg": -1.057819026012198,
+      "final_shell_xy_m": [
+        -0.02173562042283,
+        0.0010571338547873555
+      ],
+      "shell_xy_from_1s_m": [
+        0.030935715408312265,
+        -0.006107319536997611
+      ],
+      "final_speed_m_s": 0.024990517973257877,
+      "peak_speed_m_s": 0.1454671758361032,
+      "final_yaw_rad": -0.03897892882211608,
+      "final_yaw_rate_rad_s": 0.011103015304051472,
+      "max_abs_motor_torque_Nm": 0.3,
+      "max_contact_penetration_m": 0.00023628214014419268,
+      "wheel_contact_fraction": {
+        "left": 0.9656137544982007,
+        "right": 0.9656137544982007
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.0859934680047445,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": -0.1,
+      "kd": -0.01,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 54.65418104566814,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 66.24016463719617,
+      "rms_pitch_error_deg": 38.29458707065101,
+      "max_IMU_pitch_error_deg": 6.208658678437256,
+      "final_pitch_error_deg": 54.82942481643506,
+      "final_shell_xy_m": [
+        0.08274256859253871,
+        0.0012068496488776735
+      ],
+      "shell_xy_from_1s_m": [
+        0.1107581863845619,
+        -0.002059884128564409
+      ],
+      "final_speed_m_s": 0.16359593975017123,
+      "peak_speed_m_s": 0.17896038251226032,
+      "final_yaw_rad": 0.010140207800960605,
+      "final_yaw_rate_rad_s": -0.04456428909860747,
+      "max_abs_motor_torque_Nm": 0.10964683505087407,
+      "max_contact_penetration_m": 0.00023628214014419224,
+      "wheel_contact_fraction": {
+        "left": 0.9136345461815274,
+        "right": 0.9272291083566573
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.1323978419968626,
+      "controller_enabled": true
+    }
+  },
+  {
+    "gains": {
+      "kp": -0.3,
+      "kd": -0.04,
+      "kv": 0.0,
+      "ki": 0.0
+    },
+    "score": 112.29196654115847,
+    "summary": {
+      "case": "hold",
+      "mass_profile": "nominal",
+      "total_mass_without_head_kg": 1.3269561752258163,
+      "max_pitch_error_deg": 99.0827658243922,
+      "rms_pitch_error_deg": 61.24563520275208,
+      "max_IMU_pitch_error_deg": 16.74001966307702,
+      "final_pitch_error_deg": 47.991792318670136,
+      "final_shell_xy_m": [
+        0.09167762767384179,
+        0.003110534822794957
+      ],
+      "shell_xy_from_1s_m": [
+        -0.10284703428234855,
+        -0.009280664095425566
+      ],
+      "final_speed_m_s": 0.510463313384064,
+      "peak_speed_m_s": 0.5352067724470151,
+      "final_yaw_rad": 0.07398232731019427,
+      "final_yaw_rate_rad_s": 0.20707125628632095,
+      "max_abs_motor_torque_Nm": 0.3,
+      "max_contact_penetration_m": 0.0003092020975084516,
+      "wheel_contact_fraction": {
+        "left": 0.7269092363054778,
+        "right": 0.7245101959216314
+      },
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "steps": 2500,
+      "frames": 126,
+      "runtime_s": 3.987952953990316,
+      "controller_enabled": true
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "schema": "alfred-bb8-contact-verification/v2",
+  "engine": "MuJoCo 3.14.0",
+  "tests_passed": 5,
+  "trace_and_xml_hashes_verified": 8,
+  "all_301_frame_streams_valid": true,
+  "exact_repeat": true,
+  "mass_model_ready": false,
+  "publication": "NOT_PUBLISHED_MASS_AUDIT_REQUIRED",
+  "physical_behavior_claims": "NOT_VALIDATED",
+  "source_code_sha256": {
+    "audit_geometry.py": "7ee3f288e6cf897284ad6701f23fc28f8b0c2950a5c008ccffc09da6f420be2b",
+    "audit_mass.py": "3a0b4cc37d86a7bea1695b29fe52b42ae9a40a2d7b80071c2217994037732674",
+    "battery.py": "56f1501411f1974a9b783a0199d32784b4162ee1301a55201516be7f469b70d6",
+    "experiment.py": "fcfbdf6de18cb8014201c92da9a62145ca887fa6a7f90d7a240da1eb0664a3ab",
+    "model.py": "28813bab95acf1b59368efcfc7839377969bd6aab1f1e85c14d56553b7822de9",
+    "test_contact.py": "6b7bdf75ed9ae97b6aaf66d845bb754e8f60b29156dc3a8bb3926d879bf35fb1"
+  }
+}

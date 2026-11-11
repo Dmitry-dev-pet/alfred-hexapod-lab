@@ -1,0 +1,473 @@
+{
+  "schema": "alfred-bb8-contact-battery/v2",
+  "engine": "MuJoCo 3.14.0",
+  "model_status": "UNCALIBRATED_DIAGNOSTIC",
+  "cases": 8,
+  "integrations": 9,
+  "steps": 54000,
+  "criteria": {
+    "max_chassis_pitch_deg": 20.0,
+    "max_final_speed_m_s": 0.01,
+    "max_internal_penetration_m": 0.0005,
+    "max_sampled_CAD_intrusion_m": 0.0005,
+    "minimum_both_wheel_contact_fraction": 0.8,
+    "source_masses_and_motor_calibrated": false
+  },
+  "passed_behavior_cases": 0,
+  "repeat_frames_and_model_exact": true,
+  "trace_hashes": {
+    "coast-L5-mu0.8": {
+      "trace_sha256": "220a5cdcec068c391c53ba75d45a03aeae389ef654cbaf0ee4fd65e543c0e1f8",
+      "xml_sha256": "e5202cf33dd6098a4d5e031719f1bd7e9016b56b46add2acfe711a37f9e87cac"
+    },
+    "pulse-L5-mu0.8": {
+      "trace_sha256": "3f4dab5ab8a7f0c50c5a53ea89e78255a5e978039976959324986de251b3e4a8",
+      "xml_sha256": "e5202cf33dd6098a4d5e031719f1bd7e9016b56b46add2acfe711a37f9e87cac"
+    },
+    "brake-L5-mu0.8": {
+      "trace_sha256": "3ad2fd0933475e3d72eb6527a230c57645499a8d78ac3963b9957bcc27146612",
+      "xml_sha256": "e5202cf33dd6098a4d5e031719f1bd7e9016b56b46add2acfe711a37f9e87cac"
+    },
+    "turn-L5-mu0.8": {
+      "trace_sha256": "f16ba2f0b411a236515879419461d167d11ab56615d99c771d584ee2553c41ae",
+      "xml_sha256": "e5202cf33dd6098a4d5e031719f1bd7e9016b56b46add2acfe711a37f9e87cac"
+    },
+    "forward-L5-mu0.8": {
+      "trace_sha256": "94560c089596ab2c1bce27800a93a9543d1b5ae3c1c19c3ef7df5faf4fe8a3a9",
+      "xml_sha256": "e5202cf33dd6098a4d5e031719f1bd7e9016b56b46add2acfe711a37f9e87cac"
+    },
+    "pulse-L5-mu0": {
+      "trace_sha256": "5fec4c1e9207c4b7561bf5c0d0917cc1fd17853bbbc017e4151bcc6af455211b",
+      "xml_sha256": "850009d75262c2e5d1ac60a2c99572c6d56de806d438099c3e81a2b49430e51e"
+    },
+    "pulse-L5-mu0.8-no-wheel-contact": {
+      "trace_sha256": "e5f47d02d64d49ba555e52733d88811be22bd5bbd6d509232d3d74c3d42da768",
+      "xml_sha256": "48258365a73226b7082f2e8b88cedc487f32ba18f841f3cafabcb1ddd55c796a"
+    },
+    "pulse-L4-mu0.8": {
+      "trace_sha256": "62bd04bda3d6b1f7f9f22f8e8d90742a2f75f5650fa4c89ef2462d464e9f3bce",
+      "xml_sha256": "90f1ab4dfcae5f88a3998959f898dff4ef77c251e67efd635e576c58ce2104d9"
+    }
+  },
+  "comparisons": {
+    "coast-L5-mu0.8": {
+      "max_time_aligned_shell_xy_difference_m": 0.010672794047486278,
+      "final_shell_xy_difference_m": 0.010244946601350904,
+      "max_first_1s_difference_m": 0.0,
+      "interpretation": "Diverging unstable trajectories; not a convergence or hardware validation"
+    },
+    "pulse-L5-mu0": {
+      "max_time_aligned_shell_xy_difference_m": 0.189738892049547,
+      "final_shell_xy_difference_m": 0.032696222669419496,
+      "max_first_1s_difference_m": 0.03747390700438782,
+      "interpretation": "Diverging unstable trajectories; not a convergence or hardware validation"
+    },
+    "pulse-L5-mu0.8-no-wheel-contact": {
+      "max_time_aligned_shell_xy_difference_m": 0.19608450127233107,
+      "final_shell_xy_difference_m": 0.12481626997106093,
+      "max_first_1s_difference_m": 0.0020132349024252665,
+      "interpretation": "Diverging unstable trajectories; not a convergence or hardware validation"
+    },
+    "pulse-L4-mu0.8": {
+      "max_time_aligned_shell_xy_difference_m": 0.35817545801136136,
+      "final_shell_xy_difference_m": 0.35817545801136136,
+      "max_first_1s_difference_m": 0.00504796814610346,
+      "interpretation": "Diverging unstable trajectories; not a convergence or hardware validation"
+    }
+  },
+  "results": [
+    {
+      "case": "coast",
+      "steps": 6000,
+      "runtime_s": 11.46977449300175,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        0.04336327061550877,
+        -0.0014855196128233524,
+        0.09995588114861073
+      ],
+      "shell_xy_after_settle_m": [
+        -0.01889141098655412,
+        -0.0008237361194239853
+      ],
+      "peak_xy_displacement_after_settle_m": 0.1949865272568649,
+      "peak_speed_xy_m_s": 0.195481051170767,
+      "final_speed_xy_m_s": 0.10647230113581042,
+      "max_chassis_pitch_deg": 157.89259906182716,
+      "max_axle_rpm": 15.798801208940544,
+      "wheel_contact_fraction": {
+        "left": 0.6170638226962173,
+        "right": 0.7368771871354775
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.00022017975406442595,
+      "max_single_contact_force_N": 6.926971612230423,
+      "max_abs_actuator_torque_Nm": 0.0,
+      "max_any_internal_contact_penetration_m": 0.00022017975406442595,
+      "max_any_internal_single_contact_force_N": 7.04355083502332,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.09802918105272829,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 2.9181052728283197e-05,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        0.004477788758063345,
+        -0.0006068265001865812,
+        -0.006881703512849974
+      ],
+      "id": "coast-L5-mu0.8",
+      "behavior_pass": false
+    },
+    {
+      "case": "pulse",
+      "steps": 6000,
+      "runtime_s": 11.813826897006948,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        0.04761300136335704,
+        -0.010807467876749967,
+        0.09995588048977382
+      ],
+      "shell_xy_after_settle_m": [
+        -0.014641680238705851,
+        -0.0101456843833506
+      ],
+      "peak_xy_displacement_after_settle_m": 0.19016073652876228,
+      "peak_speed_xy_m_s": 0.19557204437275905,
+      "final_speed_xy_m_s": 0.09265226693290522,
+      "max_chassis_pitch_deg": 155.04085579033523,
+      "max_axle_rpm": 62.27895254957992,
+      "wheel_contact_fraction": {
+        "left": 0.6542242959506749,
+        "right": 0.7633727712047992
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.00022017975406442595,
+      "max_single_contact_force_N": 6.926971612230423,
+      "max_abs_actuator_torque_Nm": 0.01195550835555325,
+      "max_any_internal_contact_penetration_m": 0.00022017975406442595,
+      "max_any_internal_single_contact_force_N": 7.612647689689168,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.09802918105272829,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 2.9181052728283197e-05,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        0.00398317838580875,
+        -0.00013372768881821095,
+        -0.0066937002738028245
+      ],
+      "id": "pulse-L5-mu0.8",
+      "behavior_pass": false
+    },
+    {
+      "case": "brake",
+      "steps": 6000,
+      "runtime_s": 11.736701708010514,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        0.052312841849361615,
+        -0.010925806173465117,
+        0.09995587805825122
+      ],
+      "shell_xy_after_settle_m": [
+        -0.009941839752701277,
+        -0.01026402268006575
+      ],
+      "peak_xy_displacement_after_settle_m": 0.18958787457177428,
+      "peak_speed_xy_m_s": 0.19557204437275905,
+      "final_speed_xy_m_s": 0.09694824002733123,
+      "max_chassis_pitch_deg": 154.70616607321392,
+      "max_axle_rpm": 62.27895254957992,
+      "wheel_contact_fraction": {
+        "left": 0.6615564072654557,
+        "right": 0.7758706882186303
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.00022017975406442595,
+      "max_single_contact_force_N": 6.926971612230423,
+      "max_abs_actuator_torque_Nm": 0.018428695887685732,
+      "max_any_internal_contact_penetration_m": 0.00022017975406442595,
+      "max_any_internal_single_contact_force_N": 7.612647689689168,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.09802918105272829,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 2.9181052728283197e-05,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        0.003655831994086693,
+        -0.00013317937737710936,
+        -0.006887349333742979
+      ],
+      "id": "brake-L5-mu0.8",
+      "behavior_pass": false
+    },
+    {
+      "case": "turn",
+      "steps": 6000,
+      "runtime_s": 12.45705715099757,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        0.04656360165270487,
+        -0.004965967582680286,
+        0.09995587992993715
+      ],
+      "shell_xy_after_settle_m": [
+        -0.01569107994935802,
+        -0.0043041840892809186
+      ],
+      "peak_xy_displacement_after_settle_m": 0.19271244279256491,
+      "peak_speed_xy_m_s": 0.19549031478539436,
+      "final_speed_xy_m_s": 0.10412194443005096,
+      "max_chassis_pitch_deg": 156.50596284478408,
+      "max_axle_rpm": 62.899216645120646,
+      "wheel_contact_fraction": {
+        "left": 0.6552241293117814,
+        "right": 0.7352107982003
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.00022017975406442595,
+      "max_single_contact_force_N": 6.926971612230423,
+      "max_abs_actuator_torque_Nm": 0.011955779324688902,
+      "max_any_internal_contact_penetration_m": 0.00022017975406442595,
+      "max_any_internal_single_contact_force_N": 7.411532418041905,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.09802918105272829,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 2.9181052728283197e-05,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        0.004205568596197279,
+        -0.0004344077938369167,
+        -0.006865599168361436
+      ],
+      "id": "turn-L5-mu0.8",
+      "behavior_pass": false
+    },
+    {
+      "case": "forward",
+      "steps": 6000,
+      "runtime_s": 12.060650932995486,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        -0.010125797571311813,
+        -0.0032486734241397317,
+        0.09995586628754478
+      ],
+      "shell_xy_after_settle_m": [
+        -0.007374323442115386,
+        -0.0024515624733753277
+      ],
+      "peak_xy_displacement_after_settle_m": 0.2662721404809799,
+      "peak_speed_xy_m_s": 0.19965933202655992,
+      "final_speed_xy_m_s": 0.027663422673377628,
+      "max_chassis_pitch_deg": 152.1213666438525,
+      "max_axle_rpm": 190.24466834133494,
+      "wheel_contact_fraction": {
+        "left": 0.995334110981503,
+        "right": 0.9836693884352607
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.0002201878674002516,
+      "max_single_contact_force_N": 6.935884255549807,
+      "max_abs_actuator_torque_Nm": 0.02,
+      "max_any_internal_contact_penetration_m": 0.0002201878674002516,
+      "max_any_internal_single_contact_force_N": 6.935884255549807,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.09803368061178068,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 3.368061178067594e-05,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        0.0017037126880877253,
+        -0.00043692276906978503,
+        -0.0038547103186258314
+      ],
+      "id": "forward-L5-mu0.8",
+      "behavior_pass": false
+    },
+    {
+      "case": "pulse",
+      "steps": 6000,
+      "runtime_s": 14.453321228007553,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        0.04182920426185209,
+        0.021373126709691166,
+        0.09995587204374408
+      ],
+      "shell_xy_after_settle_m": [
+        0.01671448275421053,
+        0.01704321005601666
+      ],
+      "peak_xy_displacement_after_settle_m": 0.04214785047163456,
+      "peak_speed_xy_m_s": 0.06517522991125975,
+      "final_speed_xy_m_s": 0.01745178247078514,
+      "max_chassis_pitch_deg": 99.86553988983103,
+      "max_axle_rpm": 73.20154759251075,
+      "wheel_contact_fraction": {
+        "left": 0.9775037493751042,
+        "right": 0.968338610231628
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.00023178750639656596,
+      "max_single_contact_force_N": 5.945887942930612,
+      "max_abs_actuator_torque_Nm": 0.010973225170165628,
+      "max_any_internal_contact_penetration_m": 0.00023178750639656596,
+      "max_any_internal_single_contact_force_N": 14.572366753369504,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.0980591384829713,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 5.9138482971302087e-05,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        -0.001574585135770433,
+        -0.0013477933677819784,
+        -0.008870722023998731
+      ],
+      "id": "pulse-L5-mu0",
+      "behavior_pass": false
+    },
+    {
+      "case": "pulse",
+      "steps": 6000,
+      "runtime_s": 8.933024138998007,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        0.17223651442515703,
+        -0.003873404016059487,
+        0.099955907290011
+      ],
+      "shell_xy_after_settle_m": [
+        0.11176813901045049,
+        -0.003654156311752684
+      ],
+      "peak_xy_displacement_after_settle_m": 0.1493153497578129,
+      "peak_speed_xy_m_s": 0.18390415916304387,
+      "final_speed_xy_m_s": 0.012908141068302341,
+      "max_chassis_pitch_deg": 134.4579007525771,
+      "max_axle_rpm": 34.776172766762826,
+      "wheel_contact_fraction": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.0,
+      "max_single_contact_force_N": 0.0,
+      "max_abs_actuator_torque_Nm": 0.006025144600256206,
+      "max_any_internal_contact_penetration_m": 0.00039453795471040826,
+      "max_any_internal_single_contact_force_N": 12.79873258618168,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.09867631421001824,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 0.0006763142100182362,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        -0.008450540718842353,
+        -0.0006408656332967211,
+        -0.004937833485372786
+      ],
+      "id": "pulse-L5-mu0.8-no-wheel-contact",
+      "behavior_pass": false
+    },
+    {
+      "case": "pulse",
+      "steps": 6000,
+      "runtime_s": 7.528114615997765,
+      "sampled_frames": 301,
+      "final_shell_xyz_m": [
+        0.4057883188090783,
+        -0.010490144216588027,
+        0.09995586622437713
+      ],
+      "shell_xy_after_settle_m": [
+        0.34857925571018583,
+        -0.009982361776884123
+      ],
+      "peak_xy_displacement_after_settle_m": 0.3487221602624527,
+      "peak_speed_xy_m_s": 0.18344112373267893,
+      "final_speed_xy_m_s": 0.11982494310712756,
+      "max_chassis_pitch_deg": 179.9949462452892,
+      "max_axle_rpm": 63.31259698461003,
+      "wheel_contact_fraction": {
+        "left": 0.4392601233127812,
+        "right": 0.44725879020163306
+      },
+      "floor_contact_fraction": 0.9991668055324112,
+      "max_wheel_penetration_m": 0.00032723127784668044,
+      "max_single_contact_force_N": 4.612275780138862,
+      "max_abs_actuator_torque_Nm": 0.011988667042025811,
+      "max_any_internal_contact_penetration_m": 0.00032723127784668044,
+      "max_any_internal_single_contact_force_N": 7.477290904896824,
+      "max_source_CAD_radius_from_shell_center_m_sampled": 0.0979989070299015,
+      "max_source_CAD_intrusion_into_wall_m_sampled": 0.0,
+      "escaped_chassis_steps": 0,
+      "warning_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_chassis_from_shell_m": [
+        0.003196026017348752,
+        -0.0009420063188259296,
+        0.0004487154597675874
+      ],
+      "id": "pulse-L4-mu0.8",
+      "behavior_pass": false
+    }
+  ],
+  "conclusion": "Mechanical contact baseline only; no reliable behavior or hardware capability established."
+}

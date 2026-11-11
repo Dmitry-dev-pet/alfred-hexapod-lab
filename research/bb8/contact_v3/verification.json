@@ -1,0 +1,21 @@
+{
+  "schema": "alfred-bb8-IMU-verification/v3",
+  "new_local_tests_passed": 7,
+  "prior_local_tests_passed": 5,
+  "trace_hashes_verified": 10,
+  "xml_hashes_verified": 3,
+  "frame_streams_finite_sized_and_timed": true,
+  "exact_hold_repeat": true,
+  "hardware_calibrated": false,
+  "rolling_behavior_passed": 0,
+  "fixture_only_pass": true,
+  "source_sha256": {
+    "masses.py": "cebec096168f11ebefc3a6d5a80f57cd675cbf0a98339f084401774f597ec4f8",
+    "simulate.py": "ae160ca0a1191e4af7e28c35e8f04b216e8f0905407ae1e3da796ef1a7fed0fa",
+    "tune.py": "82443a332081ec86b80ba5aa0317da807afd8b19805e61a506d2b3cb1777c269",
+    "test_imu_mass.py": "f2dff524096fadd8dd0078daa2bcb8535f217b7abfc1669c264b064f23257710",
+    "battery.py": "1250960d90183e800cb93f9c5513599ab5efbc3c01d9c2400b28db3b1ddc1060",
+    "diagnostics.py": "8508c0e4dc5ccdb1b50130edfa2efadb11f0083ea26647b0fa41bb74f616a8ea",
+    "imu_control.py": "0ee07141a9bf815c4336a8e1b391dff9530dd94f650131bf9866b8944b615c5f"
+  }
+}
