@@ -1,6 +1,6 @@
 {
   "schema": "robot-replay-catalog/v1",
-  "revision": 4,
+  "revision": 5,
   "entries": [
     {
       "id": "hexarth-four-experiments-v1",
@@ -10,7 +10,7 @@
       "status": "research",
       "recording": {
         "schema": "robot-replay/v1",
-        "url": "https://alfred-robot-player.curlyeave.chatgpt.site/replay/records/hexarth-1abc147874c9a488.robotreplay",
+        "url": "https://raw.githubusercontent.com/Dmitry-dev-pet/alfred-hexapod-lab/ba71e97eaaacabb5aa940e364042ace371fbd168/recordings/site-v33/replay/records/hexarth-1abc147874c9a488.robotreplay",
         "size": 22918569,
         "sha256": "1abc147874c9a48891d1c8f0e9d6816cc9b431070ce56d255af9db7948442393"
       }
@@ -22,7 +22,7 @@
       "duration_s": 24,
       "recording": {
         "schema": "robot-replay/v1",
-        "url": "https://alfred-robot-player.curlyeave.chatgpt.site/replay/records/hexarth-lift-ab2692f1f1edd32c.robotreplay",
+        "url": "https://raw.githubusercontent.com/Dmitry-dev-pet/alfred-hexapod-lab/ba71e97eaaacabb5aa940e364042ace371fbd168/recordings/site-v33/replay/records/hexarth-lift-ab2692f1f1edd32c.robotreplay",
         "size": 22429399,
         "sha256": "ab2692f1f1edd32c753223c8b27e7ae62f2816990febc4fcffed50cf45c921e2"
       }
@@ -35,7 +35,7 @@
       "status": "research",
       "recording": {
         "schema": "robot-replay/v1",
-        "url": "https://raw.githubusercontent.com/Dmitry-dev-pet/alfred-hexapod-lab/3685b73c40380e4a3ba595d9e11ca9bbc15e8601/docs/replay/fixtures/freenove-stand-torso-2s.robotreplay",
+        "url": "https://raw.githubusercontent.com/Dmitry-dev-pet/alfred-hexapod-lab/ba71e97eaaacabb5aa940e364042ace371fbd168/recordings/site-v33/replay/fixtures/freenove-stand-torso-2s.robotreplay",
         "size": 4137,
         "sha256": "1ac8e00b899b56f330a413951d2bb820de9cfe54f3253002315ae70c159dcebe"
       }
