@@ -10,7 +10,7 @@
     {id:'claws-10',title:'Клешни',detail:'Поднятые передние ноги · 10 с',duration_s:10,href:'/hexapod/claws/'},
     {id:'six-to-four',title:'Переход 6 → 4',detail:'Подготовка четырёхопорной стойки · 7 с',duration_s:7,href:'/hexapod/six-to-four/'}
   ];
-  const safeHref=(p)=>typeof p==='string'&&/^\/hexapod\/(?:[a-z0-9-]+\/)?$/.test(p);
+  const safeHref=(p)=>typeof p==='string'&&(/\/hexapod\/(?:[a-z0-9-]+\/)?$/.test(p)&&p.startsWith('/hexapod/')||/^\/replay\/\?recording=[a-z0-9-]{1,64}$/.test(p));
   const path=location.pathname;
   // The root address ALWAYS opens the established bottom-sheet library.
   // Never redirect the root back to a saved replay: standalone comparison pages
@@ -74,10 +74,11 @@
     list.replaceChildren();
     for(const item of entries){
       const row=document.createElement('button');row.type='button';row.className='hx-item';
+      if(item.site_status==='not-published'){row.disabled=true;row.title='Файлы этого исследования ещё не опубликованы на сайте';row.style.opacity='.55';}
       if(item.href===path)row.classList.add('hx-active');
       const info=document.createElement('span');info.className='hx-item-info';
       const name=document.createElement('strong');name.textContent=item.title;
-      const detail=document.createElement('small');detail.textContent=item.detail;
+      const detail=document.createElement('small');detail.textContent=item.detail+(item.site_status==='not-published'?' · ещё не опубликовано':'');
       const meta=document.createElement('span');meta.className='hx-item-meta';
       meta.textContent=item.href===path?'●':fmt(item.duration_s);
       info.append(name,detail);row.append(info,meta);
@@ -98,6 +99,13 @@
   shade.addEventListener('click',close);
   window.addEventListener('keydown',e=>{if(e.key==='Escape'&&opened)close();});
   async function readLibrary(){
+    try{
+      // All robot families are composed from GitHub main at one pinned commit.
+      // Site-local library.json remains only an offline/legacy fallback.
+      const {readUnifiedLibrary}=await import('../robot-library/catalog.js');
+      const unified=await readUnifiedLibrary();
+      entries=check(unified.entries);setTitle();if(opened)draw();return true;
+    }catch(error){console.warn('Unified robot library unavailable',error);}
     for(const url of ['/api/library','/hexapod/library.json']){
       try{
         const response=await fetch(url,{cache:'no-store'});
