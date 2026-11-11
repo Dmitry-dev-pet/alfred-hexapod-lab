@@ -1,0 +1,85 @@
+{
+  "schema": "robot-library-site-only/v1",
+  "revision": 1,
+  "site_catalog_url": "https://alfred-robot-player.curlyeave.chatgpt.site/hexapod/library.json",
+  "observed_site_revision": 60,
+  "source_description": "These two EN01 pages are published and listed on the existing Site, but no matching source directory exists in the older feature snapshot. Preserve their exact manifests without inventing GitHub source files.",
+  "entries": [
+    {
+      "id": "en01-physics-torque-v9",
+      "title": "EN01 · момент по физике · 12 записей",
+      "detail": "8 попыток подъёма + 4 старта из стойки · момент меняется по состоянию модели · полного успеха нет",
+      "duration_s": 6,
+      "href": "/hexapod/en01-torque-v9/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/en01-torque-v9/app.js",
+          "size": 9588,
+          "sha256": "15db164e02c0bba563ab4ea89e8f580c6cb090e18fedc68d518a3a7876f73d6c"
+        },
+        {
+          "path": "hexapod/en01-torque-v9/index.html",
+          "size": 3891,
+          "sha256": "5abd7b597088f48ca1366b8fea945104637fdbf633b7782e78a1a47b6b26703c"
+        },
+        {
+          "path": "hexapod/en01-torque-v9/record-loader.js",
+          "size": 5689,
+          "sha256": "604b7b71312f797e23f4e1c55c66994bb6f18ec39c92d386de048b916736c2d8"
+        },
+        {
+          "path": "hexapod/en01-torque-v9/replay.css",
+          "size": 1797,
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056"
+        },
+        {
+          "path": "hexapod/en01-torque-v9/replays.json",
+          "size": 14226,
+          "sha256": "32997f8c498309a6d77ae6a8b2e759456066f417065926b938ddd24b6c1d578f"
+        }
+      ]
+    },
+    {
+      "id": "en01-tuck-v8-recordings-20261109",
+      "title": "EN01 · ноги, затем импульс · 40 записей",
+      "detail": "38 лежачих проб и 2 контроля · порядок ног и импульса разделён · устойчивого вставания нет",
+      "duration_s": 6,
+      "href": "/hexapod/en01-tuck-v8/",
+      "status": "failed",
+      "files": [
+        {
+          "path": "hexapod/en01-tuck-v8/app.js",
+          "size": 9425,
+          "sha256": "7f154ec10380e60b7ff0bbc60f5e2766f7d464f2ce1b20d1cf940c1587b1f400"
+        },
+        {
+          "path": "hexapod/en01-tuck-v8/index.html",
+          "size": 3676,
+          "sha256": "123c14a9dd2b15cc4f31f37a90f16bc28058ab359babd30e9ca6ec101e4677f4"
+        },
+        {
+          "path": "hexapod/en01-tuck-v8/record-loader.js",
+          "size": 5563,
+          "sha256": "bc486937a9cfcb3a4e15144fbe145d0a35e2af6939f8188d1aeaa71d2ae59dce"
+        },
+        {
+          "path": "hexapod/en01-tuck-v8/replay.css",
+          "size": 1797,
+          "sha256": "132860e2a01e7ac4c39dec1b9fb36a1066433488e2ef1dbd9628d091b9b2e056"
+        },
+        {
+          "path": "hexapod/en01-tuck-v8/replays.json",
+          "size": 40301,
+          "sha256": "cb7972444170c86894d44c9e475b077a62cd4ad9b4e67e4677c8f4b186b9ccfe"
+        }
+      ]
+    }
+  ],
+  "unpublished_legacy_ids": [
+    "microduck-step-goal-v1",
+    "microduck-single-support-v1",
+    "openbeni-recovery-v1",
+    "openbeni-colored-v1"
+  ]
+}
