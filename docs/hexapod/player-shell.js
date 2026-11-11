@@ -10,7 +10,7 @@
     {id:'claws-10',title:'Клешни',detail:'Поднятые передние ноги · 10 с',duration_s:10,href:'/hexapod/claws/'},
     {id:'six-to-four',title:'Переход 6 → 4',detail:'Подготовка четырёхопорной стойки · 7 с',duration_s:7,href:'/hexapod/six-to-four/'}
   ];
-  const safeHref=(p)=>typeof p==='string'&&(/\/hexapod\/(?:[a-z0-9-]+\/)?$/.test(p)&&p.startsWith('/hexapod/')||/^\/replay\/\?recording=[a-z0-9-]{1,64}$/.test(p));
+  const safeHref=(p)=>typeof p==='string'&&(/^\/hexapod\/(?:[a-z0-9-]+\/)?$/.test(p)||/^\/replay\/\?recording=[a-z0-9-]{1,64}$/.test(p));
   const path=location.pathname;
   // The root address ALWAYS opens the established bottom-sheet library.
   // Never redirect the root back to a saved replay: standalone comparison pages
