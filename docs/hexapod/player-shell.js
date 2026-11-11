@@ -102,7 +102,7 @@
     try{
       // All robot families are composed from GitHub main at one pinned commit.
       // Site-local library.json remains only an offline/legacy fallback.
-      const {readUnifiedLibrary}=await import('../robot-library/catalog.js');
+      const {readUnifiedLibrary}=await import('/robot-library/catalog.js');
       const unified=await readUnifiedLibrary();
       entries=check(unified.entries);setTitle();if(opened)draw();return true;
     }catch(error){console.warn('Unified robot library unavailable',error);}
