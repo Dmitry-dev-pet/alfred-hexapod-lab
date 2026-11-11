@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10212c"><title>Hexapod Lab · Mini Wheelbot V2 · проба балансировки</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css?v=20261107b">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#10212c;color:#edf6fc;font-family:system-ui,-apple-system,Arial,sans-serif}
+.layout{width:100%;height:100%;height:100dvh;position:relative}.stage{height:100%;width:100%;position:relative;overflow:hidden}
+#viewer{position:absolute;inset:0}#viewer canvas{display:block;width:100%;height:100%}
+.controls{display:none}.wb-note,.wb-stat{position:absolute;z-index:3;border:1px solid #456476;background:#0e2734e8;border-radius:10px;padding:9px 11px;pointer-events:none}
+.wb-note{top:88px;left:12px;max-width:min(82vw,390px);line-height:1.4}
+.wb-note strong{display:block;color:#ffce95;font-size:12px}
+.wb-note small{display:block;margin-top:5px;color:#b5cdd9;font-size:11px}
+.wb-stat{left:12px;bottom:86px;max-width:min(90vw,430px);font-variant-numeric:tabular-nums}
+.wb-stat strong{font-size:13px}.wb-stat p{font-size:11px;color:#c0d4df;margin:4px 0;line-height:1.5}
+.wb-error{position:absolute;left:9%;right:9%;top:35%;z-index:11;background:#71353c;color:white;border-radius:12px;padding:14px;font-size:13px}
+@media(max-height:550px){.wb-note{top:58px;max-width:48vw}.wb-stat{bottom:65px;max-width:48vw}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head><body>
+<main class="layout" data-case-id="wheelbot-v2-feedback-trial-90"><section class="stage" aria-label="Mini Wheelbot: физический replay, неудачный эксперимент, камера вращается касанием">
+<div id="viewer"></div>
+<div class="wb-note"><strong>MUJOCO · ORIGINAL STL · НЕУДАЧНЫЙ ОПЫТ</strong>
+<small>Экспериментальное LQR-сопоставление · конечный наклон ≈49° · 8 с. Настоящие STL загружаются из официального GitHub при первом открытии, проверяются SHA-256 и сохраняются в кэше браузера. Физическая модель предварительная.</small></div>
+<div class="wb-stat"><strong id="state">Готовим воспроизведение…</strong><p id="pose">Запись 8 секунд · 161 настоящий кадр MuJoCo</p><p id="motors">Ограничения привода и контактов приближённые</p></div>
+<div class="wb-error" id="error" hidden role="alert"></div>
+</section>
+<section class="controls"><button id="play" aria-label="Пауза">Ⅱ</button>
+<input id="seek" type="range" min="0" max="8" step=".005" value="0">
+<select id="speed"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+<button id="reset-camera" type="button">Камера</button></section></main>
+<script type="module" src="/hexapod/wheelbot-v2-player.js"></script>
+<script src="/hexapod/player-shell.js?v=20261107b"></script>
+</body></html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101e2b">
+<title>Alfred Hexapod Lab · MicroDuck · падение и вставание</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;color:#ecf7fc;background:#101e2b;font:12px/1.45 system-ui,-apple-system,Arial,sans-serif}
+.layout,.stage{width:100%;height:100%;height:100dvh;position:relative}
+.stage{overflow:hidden}#viewer{position:absolute;inset:0;touch-action:none}
+#viewer canvas{display:block;width:100%;height:100%}.controls{display:none}
+.md-case{position:absolute;top:81px;right:12px;z-index:3;background:#102537f0;border:1px solid #466a7c;border-radius:11px;padding:9px;max-width:min(76vw,350px)}
+.md-case label{display:block;font-size:10px;color:#b9d6e8;letter-spacing:.04em;margin-bottom:5px}
+.md-case select{width:100%;background:#1e3b4b;color:#ecf7fc;border:1px solid #4c7389;border-radius:7px;padding:9px 8px;font-size:12px;min-height:40px}
+.md-stat{position:absolute;bottom:89px;left:10px;right:10px;max-width:520px;background:#0a202de8;border:1px solid #38586b;border-radius:11px;padding:9px 12px;z-index:2;pointer-events:none}
+.md-stat strong{font-size:13px;color:#e6fff2}.md-stat p{margin:3px 0;font-size:11px;color:#b9d5e2}
+.md-stat small{display:block;color:#ffcf96;font-size:10px;line-height:1.4}
+.md-loading{position:absolute;left:10px;bottom:208px;max-width:90%;background:#102837ef;border:1px solid #42687a;border-radius:9px;padding:9px;z-index:4}
+.md-error{position:absolute;left:10px;right:10px;top:40%;max-width:530px;margin:auto;border-radius:11px;border:1px solid #b35658;background:#541d24f2;color:white;z-index:9;padding:13px;white-space:pre-wrap}
+@media(max-height:590px){.md-case{top:60px}.md-stat{bottom:66px}.md-loading{bottom:160px}}
+
+.hx-scenario>.md-compare{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,1.7fr) minmax(0,.65fr);gap:6px!important}
+.md-picker-title{display:none!important}.md-choice{display:grid;gap:2px;min-width:0}.md-choice span{font-size:11px;color:#b9d6e8}
+.hx-has-scenario{--hx-scene-top:calc(124px + env(safe-area-inset-top,0px))}
+#md-webgl{position:absolute;top:46%;left:12px;right:12px;z-index:2;color:#cbdce7;text-align:center;padding:12px;background:#183142e8;border-radius:12px;pointer-events:none}
+@media(orientation:landscape) and (max-height:520px){.hx-has-scenario{--hx-scene-top:120px}.md-choice span{font-size:10px}}
+</style>
+<script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+<script src="/github-live-boot.js"></script><script src="/webgl-fallback.js"></script></head><body>
+<main class="layout"><section class="stage" aria-label="MicroDuck · оригинальные детали STL и записанные физические движения MuJoCo">
+<div id="viewer" role="img" aria-label="3D-модель MicroDuck, камера поворачивается пальцем"></div>
+<div class="md-case"><label>Направление и попытка</label><select id="microduck-case" aria-label="Направление и попытка"><option value="flat-back-4">Назад · ровный пол</option></select></div>
+<div id="md-webgl" hidden role="status">Этот браузер не поддерживает 3D. Данные записи доступны; для изображения нужен WebGL.</div>
+<div class="md-stat"><p style="color:#ffd09d">Архивная контактная модель: часть деталей не сталкивалась со ступенькой. Эти результаты прохождения не подтверждены. <a href="/hexapod/microduck-wall-v1/" style="color:inherit">Исправленные проверки</a>.</p><strong id="md-state">Загружаем 3D-модель…</strong>
+<p id="md-metric">—</p><p id="md-origin">MuJoCo 3.10 · ONNX v8 · 50 Гц</p>
+<small>Заваливание задают моторы в течение 1,2 с, затем включается исходная v8 политика вставания. Положение корпуса не переставляется, внешних толчков нет. Это падение и восстановление, полный кувырок не требуется.</small><small>Успех на полу: первое падение в пределах 45° от нужной стороны, контакт корпуса с опорой и спокойная стойка последнюю секунду. На ступеньке нужны обе полные стопы сверху. Команды ограничены с запасом 2°; мягкие ограничители суставов включены; столкновения проверяются по упрощённым исходным оболочкам. Результаты пока не проверены на настоящем роботе.</small><small>3D: <a href="https://github.com/pollen-robotics/microduck_rl" target="_blank" rel="noopener" style="color:inherit">Pollen Robotics</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color:inherit">CC BY-NC-SA 4.0</a>. Упаковка без изменения геометрии.</small></div>
+<div id="md-loading" class="md-loading" role="status">Загружаем единый пакет модели MicroDuck…</div>
+<div id="md-error" class="md-error" hidden role="alert"></div>
+</section>
+<section class="controls" aria-label="Воспроизведение">
+<button id="play" type="button" aria-label="Пауза">Ⅱ</button>
+<input id="seek" type="range" min="0" max="6" step="0.01" value="0">
+<select id="speed"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+<button id="reset-camera" type="button">Вернуть камеру</button>
+</section>
+</main>
+<script type="module" src="/hexapod/microduck-falls-v1/app.js"></script>
+<script src="/hexapod/player-shell.js"></script>
+</body></html>

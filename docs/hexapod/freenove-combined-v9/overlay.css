@@ -1,0 +1,12 @@
+/* V9: movement never switches away; right pad has independent pose/head modes. */
+.factory-dual-controls .factory-center-controls{max-height:min(67vh,410px)}
+.factory-dual-controls .factory-row{display:flex;align-items:center;justify-content:space-between;gap:5px;width:100%;font-size:11px}
+.factory-dual-controls .factory-row label{flex:0 0 60px;font-size:10px;color:#d7e8e9}
+.factory-dual-controls .factory-row select{flex:1;min-width:0;width:10px}
+.factory-dual-controls .pilot-pad-wrap small{white-space:normal;line-height:1.15;min-height:20px}
+.factory-dual-controls .factory-stoprow{display:flex;gap:6px}
+.factory-dual-controls #reset-camera{width:100%;min-height:29px;font-size:11px!important;padding:3px}
+.factory-dual-controls .factory-params{grid-template-columns:1fr 1fr}
+@media (orientation:landscape){.factory-dual-controls .factory-center-controls{max-height:72dvh}}
+@media(max-height:460px) and (orientation:landscape){.factory-dual-controls .factory-center-controls{max-height:69dvh}.factory-dual-controls .factory-note{display:none}}
+@media(max-width:520px){.factory-dual-controls .factory-row label{flex-basis:42px;font-size:9px}.factory-dual-controls .factory-row select{font-size:10px}.factory-dual-controls .factory-center-controls{max-height:55dvh}}

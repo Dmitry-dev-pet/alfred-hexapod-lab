@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101e2b">
+<title>Alfred Hexapod Lab · MicroDuck · вставание</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;color:#ecf7fc;background:#101e2b;font:12px/1.45 system-ui,-apple-system,Arial,sans-serif}
+.layout,.stage{width:100%;height:100%;height:100dvh;position:relative}
+.stage{overflow:hidden}#viewer{position:absolute;inset:0;touch-action:none}
+#viewer canvas{display:block;width:100%;height:100%}.controls{display:none}
+.md-case{position:absolute;top:81px;right:12px;z-index:3;background:#102537f0;border:1px solid #466a7c;border-radius:11px;padding:9px;max-width:min(76vw,350px)}
+.md-case label{display:block;font-size:10px;color:#b9d6e8;letter-spacing:.04em;margin-bottom:5px}
+.md-case select{width:100%;background:#1e3b4b;color:#ecf7fc;border:1px solid #4c7389;border-radius:7px;padding:9px 8px;font-size:12px;min-height:40px}
+.md-stat{position:absolute;bottom:89px;left:10px;right:10px;max-width:520px;background:#0a202de8;border:1px solid #38586b;border-radius:11px;padding:9px 12px;z-index:2;pointer-events:none}
+.md-stat strong{font-size:13px;color:#e6fff2}.md-stat p{margin:3px 0;font-size:11px;color:#b9d5e2}
+.md-stat small{display:block;color:#ffcf96;font-size:10px;line-height:1.4}
+.md-loading{position:absolute;left:10px;bottom:208px;max-width:90%;background:#102837ef;border:1px solid #42687a;border-radius:9px;padding:9px;z-index:4}
+.md-error{position:absolute;left:10px;right:10px;top:40%;max-width:530px;margin:auto;border-radius:11px;border:1px solid #b35658;background:#541d24f2;color:white;z-index:9;padding:13px;white-space:pre-wrap}
+@media(max-height:590px){.md-case{top:60px}.md-stat{bottom:66px}.md-loading{bottom:160px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head><body>
+<main class="layout"><section class="stage" aria-label="MicroDuck · оригинальные детали STL и записанные физические движения MuJoCo">
+<div id="viewer" role="img" aria-label="3D-модель MicroDuck, камера поворачивается пальцем"></div>
+<div class="md-case"><label for="microduck-case">MICRODUCK · 7 ФИЗИЧЕСКИХ ОПЫТОВ</label>
+<select id="microduck-case" aria-label="Выберите сценарий вставания">
+<option value="roll180">Переворот на 180° — крен</option>
+<option value="pitch180">Переворот на 180° — тангаж</option>
+<option value="side90">На боку — 90°</option>
+<option value="fold">Из сложенного положения</option>
+<option value="sit">Из положения сидя</option>
+<option value="push">После возмущения скорости</option>
+<option value="stand">Контрольная стойка</option>
+</select></div>
+<div class="md-stat"><strong id="md-state">Загружаем 3D-модель…</strong>
+<p id="md-metric">—</p><p id="md-origin">MuJoCo 3.10 · ONNX v8 · 50 Гц</p>
+<small>Тест на CPU с приближёнными позиционными приводами, без BAM. Это симуляция, не проверка настоящего робота.</small></div>
+<div id="md-loading" class="md-loading" role="status">Загружаем и проверяем оригинальные STL из Pollen Robotics…</div>
+<div id="md-error" class="md-error" hidden role="alert"></div>
+</section>
+<section class="controls" aria-label="Воспроизведение">
+<button id="play" type="button" aria-label="Пауза">Ⅱ</button>
+<input id="seek" type="range" min="0" max="6" step="0.01" value="0">
+<select id="speed"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+<button id="reset-camera" type="button">Вернуть камеру</button>
+</section>
+</main>
+<script type="module" src="/hexapod/microduck-standup-v1/app.js"></script>
+<script src="/hexapod/player-shell.js"></script>
+</body></html>

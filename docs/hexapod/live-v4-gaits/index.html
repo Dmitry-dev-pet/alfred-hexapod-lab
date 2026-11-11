@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101923">
+<title>Hexapod Lab — Джойстик · выбор походки и шага</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css">
+<link rel="stylesheet" href="/hexapod/live-v2-offline/pilot.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<style>body{margin:0;background:#101820}.stage{position:absolute;inset:0}#viewer{width:100%;height:100%;touch-action:none}.controls{display:none}.pilot-stats em{font-style:normal;color:#94c5c5}#pilot-rate{min-width:26px;color:#9ce7cf;text-align:right;font-weight:700}.pilot-speed-wrap input{width:95px}
+.pilot-mode-row{display:flex;gap:8px;align-items:center;max-width:100%;flex-wrap:wrap}
+.pilot-mode-row label{display:flex;flex-direction:column;gap:3px;font:600 10px/1.2 system-ui;color:#d0eaf0}
+.pilot-mode-row select{pointer-events:auto;touch-action:manipulation;background:#133643;color:#f0fbfe;border:1px solid #84bfc4aa;border-radius:10px;padding:7px 7px;min-height:37px;font:600 12px system-ui;max-width:145px}
+.pilot-readout-title{font-size:11px;color:#a8dede}
+@media(orientation:landscape){.pilot-right{gap:6px}.pilot-mode-row label{font-size:9px}.pilot-mode-row select{min-height:32px;padding:4px}.pilot-tag{top:calc(12px + env(safe-area-inset-top,0px))}}
+@media(max-width:460px){.pilot-mode-row{gap:5px}.pilot-mode-row select{max-width:120px;font-size:11px}.pilot-stats{max-width:52vw}.pilot-right{max-width:48%}}
+</style>
+</head><body>
+<main class="layout">
+ <section class="stage" aria-label="CAD30. Кинематический предпросмотр, не физическая симуляция.">
+  <div id="viewer" role="img" aria-label="3D модель гексапода. Поворот камеры — перетаскиванием вне джойстика."></div>
+  <div class="pilot-tag">🎮 УПРАВЛЕНИЕ · OFFLINE<br>WAVE / RIPPLE / TRIPOD · НЕ ФИЗИКА</div>
+  <div class="pilot-stats" aria-live="off"><strong id="pilot-state">Подготовка...</strong><span id="pilot-speed-readout">vx 0 · vy 0 · ω 0</span><br><em id="pilot-odom">Расчётный путь: 0 см</em></div>
+  <div class="pilot-load" id="pilot-load">Загружаем офлайн-таблицы и CAD30...</div>
+  <div class="pilot-controls" id="pilot-controls" aria-label="Джойстик на экране плеера">
+   <div class="pilot-pad-wrap"><div id="pilot-pad" class="pilot-pad" role="group" aria-label="Направление движения: вверх вперёд, вниз назад, вправо и влево боковой ход"><div id="pilot-thumb" class="pilot-thumb"></div></div><small>ДВИЖЕНИЕ</small></div>
+   <div class="pilot-right">
+     <div class="pilot-turn-wrap"><div class="pilot-turns"><button type="button" id="pilot-ccw" class="pilot-turn" aria-label="Вращать против часовой стрелки">↶</button><button type="button" id="pilot-cw" class="pilot-turn" aria-label="Вращать по часовой стрелке">↷</button></div><small>ПОВОРОТ</small></div>
+     <div class="pilot-mode-row" aria-label="Выбор походки и длины шага">
+       <label for="pilot-gait">Походка<select id="pilot-gait" aria-label="Тип походки"><option value="wave">Wave · 1 нога</option><option value="ripple">Ripple · 2 ноги</option><option value="tripod">Tripod · 3 ноги</option></select></label>
+       <label for="pilot-stride">Шаг<select id="pilot-stride" aria-label="Длина горизонтального шага"><option value="15">15 мм</option><option value="25">25 мм</option><option value="35" selected>35 мм</option></select></label>
+     </div>
+     <div class="pilot-speed-wrap"><label for="pilot-gain">Темп</label><input type="range" id="pilot-gain" min="0.5" max="8" step="0.5" value="4" aria-label="Множитель темпа походки от половины до восьми раз"><output id="pilot-rate" for="pilot-gain">4×</output></div>
+     <div style="display:flex;gap:8px"><button type="button" id="pilot-stop" class="pilot-stop">СТОП</button><button type="button" id="reset-camera" class="pilot-reset">Камера</button></div>
+     <span class="pilot-danger">Кинематический предпросмотр. Переходы и новые походки физически не проверены. Реальный робот не подключён.</span>
+   </div>
+  </div>
+  <div id="error" role="alert" hidden></div>
+ </section>
+ <section class="controls" hidden><button id="play" aria-label="Пауза">Ⅱ</button><input type="range" id="seek" min="0" max="3600" value="0"><select id="speed"><option value="1" selected>1×</option></select></section>
+</main>
+<script type="module" src="/hexapod/live-v4-gaits/app.js"></script>
+<script src="/hexapod/player-shell.js"></script>
+</body></html>

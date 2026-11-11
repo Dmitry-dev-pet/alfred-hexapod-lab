@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru" data-replay="/hexapod/data/pupper-barrier-25mm-jump-v1.json">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="2,5 см · без контактов · успешный частный опыт · реальные кадры MuJoCo и 3D-плеер">
+<title>Hexapod Lab · Stanford Pupper · прыжок через 2,5 см</title>
+<link rel="stylesheet" href="/hexapod/player-shell.css?v=20261107a">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+#viewer{width:100%;height:100%;touch-action:none}
+#pupper-hud{position:absolute;top:calc(105px + env(safe-area-inset-top,0px));left:12px;right:12px;display:flex;justify-content:space-between;gap:8px;z-index:6;pointer-events:none;font:12px/1.3 system-ui,sans-serif}
+.pupper-label{max-width:60%;padding:8px 10px;border:1px solid #566f7f;border-radius:10px;background:#111f2be8;color:#f3f6fa}
+.pupper-label strong{display:block;font-size:12px;color:#d7f3fa}
+.pupper-label small{display:block;margin-top:3px;color:#b3c9d4;font-size:10px}
+.pupper-metric{border:1px solid #566f7f;border-radius:10px;background:#111f2be8;color:#ecf6fa;padding:8px 9px;text-align:right}
+.pupper-metric strong{display:block;font-size:17px;line-height:1.15;font-variant-numeric:tabular-nums}.pupper-metric small{display:block;font-size:9px;color:#c3d5df}
+#pupper-bottom{position:absolute;bottom:calc(120px + env(safe-area-inset-bottom,0px));left:12px;right:12px;z-index:6;pointer-events:none;display:flex;flex-direction:column;align-items:flex-start;gap:6px;font:11px/1.3 system-ui,sans-serif}
+#pupper-status,#pupper-cmd,#pupper-load,#pupper-barrier{max-width:calc(100vw - 24px);padding:6px 9px;border-radius:9px;color:#c1dce9;background:#112430e3;border:1px solid #375267}
+.pupper-follow-label{pointer-events:auto;display:flex;align-items:center;gap:6px;max-width:calc(100vw - 24px);padding:6px 9px;color:#d7eef7;background:#142d3cf1;border:1px solid #537588;border-radius:9px}
+#pupper-error{position:absolute;top:44%;left:12px;right:12px;z-index:16;margin:auto;max-width:500px;padding:11px 13px;border-radius:10px;background:#592a2ae8;color:#fff;font:13px/1.5 system-ui,sans-serif}
+#pupper-error[hidden],#pupper-load[hidden]{display:none!important}#reset-camera{display:none}
+@media(max-width:400px){#pupper-hud{left:8px;right:8px}.pupper-metric strong{font-size:15px}#pupper-bottom{left:8px}}
+@media(max-height:530px){#pupper-hud{top:calc(82px + env(safe-area-inset-top,0px))}#pupper-bottom{bottom:83px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body>
+<main class="layout">
+ <section class="stage" aria-label="Физическая запись: Stanford Pupper · прыжок через 2,5 см через 2,5 см">
+  <div id="viewer" role="img" aria-label="Кинематика по сохранённым физическим состояниям MuJoCo, вращение камеры пальцем"></div>
+  <div id="pupper-hud"><div class="pupper-label"><strong id="pupper-label">Stanford Pupper</strong><small>Предобученная Stanford · физика с барьером · без нового обучения</small></div>
+   <div class="pupper-metric"><strong id="pupper-distance">—</strong><small>измеренное X</small><strong id="pupper-feet">—</strong><small>реальные контакты</small></div></div>
+  <div id="pupper-bottom"><div id="pupper-status">Загрузка физического опыта…</div><div id="pupper-cmd">Команда: —</div>
+   <div id="pupper-barrier">Успех: 0 контактов из 2250 физических шагов</div>
+   <label class="pupper-follow-label"><input id="pupper-follow" type="checkbox" checked> Следить камерой за роботом</label><div id="pupper-load">Запись 25 Гц · физика MuJoCo, исходные qpos/Fz и STL Stanford</div></div>
+  <div id="pupper-error" role="alert" hidden></div>
+ </section>
+ <section class="controls" aria-label="Управление записью"><div class="transport">
+  <button type="button" id="play" class="play" aria-label="Воспроизвести">▶</button>
+  <div class="scrubber"><input id="seek" type="range" min="0" max="9.0" step=".01" value="0" aria-label="Перемотка"></div>
+  <label class="speedlabel" for="speed">Скорость <select id="speed" aria-label="Скорость"><option value=".25">0,25×</option><option value=".5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+ </div><button id="reset-camera" type="button">Вернуть камеру</button></section>
+</main>
+<script type="module" src="/hexapod/pupper-barrier-player-v1.js"></script>
+<script src="/hexapod/player-shell.js?v=20261107a"></script>
+</body>
+</html>
