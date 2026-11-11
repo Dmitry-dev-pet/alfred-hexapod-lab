@@ -1,0 +1,418 @@
+{
+  "upstream_commit": "4545b86a131d05519050df11a424368ef9f06b4f",
+  "policy_sha256": "7b13d7934a2abd1a8adc41aa0377571194f8595e5d311ae40845d3f85a79b014",
+  "engine": "3.11.0",
+  "onnxruntime": "1.23.2",
+  "model_mass_kg": 1.6772252390000002,
+  "model_nq": 15,
+  "model_nv": 14,
+  "motor_config": {
+    "name": "BENI",
+    "physicsDt": 0.002,
+    "decimation": 5,
+    "commandDelaySteps": 2,
+    "kneeDampingScale": 1.2,
+    "jumpSupported": true,
+    "motors": {
+      "L1": {
+        "stiffness": 0.5,
+        "damping": 0.02,
+        "effort_limit": 1.375,
+        "armature": 0.0001625,
+        "frictionloss": 0.02
+      },
+      "R1": {
+        "stiffness": 0.5,
+        "damping": 0.02,
+        "effort_limit": 1.375,
+        "armature": 0.0001625,
+        "frictionloss": 0.02
+      },
+      "L2": {
+        "stiffness": 0.5,
+        "damping": 0.02,
+        "effort_limit": 3.6,
+        "simulation_effort_limit": 4.6,
+        "spring_scale": 1.0,
+        "armature": 0.0005375,
+        "frictionloss": 0.02
+      },
+      "R2": {
+        "stiffness": 0.5,
+        "damping": 0.02,
+        "effort_limit": 3.6,
+        "simulation_effort_limit": 4.6,
+        "spring_scale": 1.0,
+        "armature": 0.0005375,
+        "frictionloss": 0.02
+      },
+      "LW": {
+        "stiffness": 0.0,
+        "damping": 0.004,
+        "effort_limit": 0.6,
+        "armature": 0.0,
+        "frictionloss": 0.005
+      },
+      "RW": {
+        "stiffness": 0.0,
+        "damping": 0.004,
+        "effort_limit": 0.6,
+        "armature": 0.0,
+        "frictionloss": 0.005
+      },
+      "head_yaw_joint": {
+        "stiffness": 3.0,
+        "damping": 0.05,
+        "effort_limit": 0.1,
+        "armature": 0.0,
+        "frictionloss": 0.0
+      },
+      "head_roll_joint": {
+        "stiffness": 2.0,
+        "damping": 0.0,
+        "effort_limit": 1.0,
+        "armature": 0.0,
+        "frictionloss": 0.0
+      }
+    },
+    "policySha256": "7b13d7934a2abd1a8adc41aa0377571194f8595e5d311ae40845d3f85a79b014"
+  },
+  "protocol": {
+    "duration_s": 10.0,
+    "passive_settle_s": 0.5,
+    "measurement_hz": 100,
+    "physics_hz": 500,
+    "recovery_hold_s": 1,
+    "final_hold_s": 2,
+    "quiet_speed_limit_m_s": 0.1,
+    "quiet_angular_limit_rad_s": 1.0,
+    "terrain": "infinite flat plane, friction 1.0",
+    "contact_timeconstant_override": 0.005
+  },
+  "results": [
+    {
+      "recovered_1s": true,
+      "recovery_onset_s": 0.01,
+      "final_2s_ready": true,
+      "final_2s_quiet": true,
+      "final": {
+        "tilt_deg": 0.7315050689567677,
+        "height_m": 0.10941785158969047,
+        "speed_m_s": 0.021576462202206003,
+        "angular_rad_s": 0.07326580602571417,
+        "wheel_load_N": [
+          8.604129896268581,
+          7.560810722246021
+        ],
+        "body_load_N": 0.0,
+        "penetration_m": 4.2819232232191307e-05,
+        "ready": true,
+        "quiet": true,
+        "t": 10.0
+      },
+      "peak_penetration_m": 7.992652174390602e-05,
+      "max_tilt_deg": 1.7603868697827716,
+      "case": "upright",
+      "policy_enabled": true,
+      "active_at_s": 0.0,
+      "physics_steps": 5000,
+      "samples": 1001,
+      "peak_torque_Nm": [
+        0.1,
+        0.13678396892657296,
+        0.2783597770156123,
+        0.4064339495505128,
+        0.08724618567896283,
+        0.18561606091492625,
+        0.5891264164559349,
+        0.12069931442337893
+      ],
+      "peak_substep_penetration_m": 8.017870101122843e-05,
+      "peak_floor_penetration_m": 8.017870101122843e-05,
+      "peak_self_penetration_m": 0.0,
+      "peak_contact_pair": {
+        "t": 5.893999999999573,
+        "geoms": [
+          "floor",
+          "LW_collision"
+        ],
+        "bodies": [
+          "world",
+          "LW_Link"
+        ]
+      },
+      "warnings": {},
+      "trace_sha256": "21a7ad2ae9b14e72880185c8828e41b234bef5a50a1188540a2e968fadf746bb"
+    },
+    {
+      "recovered_1s": true,
+      "recovery_onset_s": 0.43,
+      "final_2s_ready": true,
+      "final_2s_quiet": true,
+      "final": {
+        "tilt_deg": 0.1583949927228325,
+        "height_m": 0.10853336009797583,
+        "speed_m_s": 0.0016256448588601868,
+        "angular_rad_s": 0.06762158416367055,
+        "wheel_load_N": [
+          8.586440398546205,
+          7.812057443552448
+        ],
+        "body_load_N": 0.0,
+        "penetration_m": 5.633183186593699e-05,
+        "ready": true,
+        "quiet": true,
+        "t": 10.5
+      },
+      "peak_penetration_m": 0.0011345181269920082,
+      "max_tilt_deg": 113.0576604796747,
+      "case": "front",
+      "policy_enabled": true,
+      "active_at_s": 0.5,
+      "physics_steps": 5250,
+      "samples": 1051,
+      "peak_torque_Nm": [
+        0.1,
+        0.13774859500995623,
+        0.8307767754608864,
+        0.7572512633072145,
+        0.29503003467761085,
+        0.9551386583464645,
+        0.9522132308211884,
+        0.6
+      ],
+      "peak_substep_penetration_m": 0.001200678182048151,
+      "peak_floor_penetration_m": 0.001200678182048151,
+      "peak_self_penetration_m": 0.0005000000000000235,
+      "peak_contact_pair": {
+        "t": 0.5560000000000004,
+        "geoms": [
+          "floor",
+          "head_collision"
+        ],
+        "bodies": [
+          "world",
+          "head"
+        ]
+      },
+      "warnings": {},
+      "trace_sha256": "5cb5f607ed9a28a9f6c3a6749ebf88f72f3971348f18c6efa7c1bbcaa8a163ba"
+    },
+    {
+      "recovered_1s": true,
+      "recovery_onset_s": 0.23,
+      "final_2s_ready": true,
+      "final_2s_quiet": true,
+      "final": {
+        "tilt_deg": 0.3972820660007064,
+        "height_m": 0.10688000035829415,
+        "speed_m_s": 0.0054607693581822095,
+        "angular_rad_s": 0.04240026436492125,
+        "wheel_load_N": [
+          8.054330786762437,
+          8.475523141696844
+        ],
+        "body_load_N": 0.0,
+        "penetration_m": 4.2121074256315505e-05,
+        "ready": true,
+        "quiet": true,
+        "t": 10.5
+      },
+      "peak_penetration_m": 0.0013424293309612298,
+      "max_tilt_deg": 104.53775420138942,
+      "case": "back",
+      "policy_enabled": true,
+      "active_at_s": 0.5,
+      "physics_steps": 5250,
+      "samples": 1051,
+      "peak_torque_Nm": [
+        0.1,
+        0.18254140480444198,
+        1.375,
+        0.4427884942342606,
+        0.1722010722712236,
+        1.375,
+        0.4290585814828064,
+        0.18234279759760785
+      ],
+      "peak_substep_penetration_m": 0.0013424293309612298,
+      "peak_floor_penetration_m": 0.0013424293309612298,
+      "peak_self_penetration_m": 0.0007465046144565495,
+      "peak_contact_pair": {
+        "t": 0.18200000000000013,
+        "geoms": [
+          "floor",
+          "RW_collision"
+        ],
+        "bodies": [
+          "world",
+          "RW_Link"
+        ]
+      },
+      "warnings": {},
+      "trace_sha256": "ae6abfc2b1c5fd73c3b671d136f1c4d9dedd5e05aea8cc9a43e66e967bcb8af5"
+    },
+    {
+      "recovered_1s": true,
+      "recovery_onset_s": 0.91,
+      "final_2s_ready": true,
+      "final_2s_quiet": true,
+      "final": {
+        "tilt_deg": 0.27710077038362996,
+        "height_m": 0.10607433736987959,
+        "speed_m_s": 0.0185880979836199,
+        "angular_rad_s": 0.052212431307128625,
+        "wheel_load_N": [
+          8.379925682987434,
+          8.108787101158445
+        ],
+        "body_load_N": 0.0,
+        "penetration_m": 5.33065256921178e-05,
+        "ready": true,
+        "quiet": true,
+        "t": 10.5
+      },
+      "peak_penetration_m": 0.0029703441472262865,
+      "max_tilt_deg": 108.46480504742428,
+      "case": "left",
+      "policy_enabled": true,
+      "active_at_s": 0.5,
+      "physics_steps": 5250,
+      "samples": 1051,
+      "peak_torque_Nm": [
+        0.1,
+        0.2881649002565703,
+        1.375,
+        1.50023119571556,
+        0.46124440093270397,
+        1.375,
+        2.511563185436361,
+        0.6
+      ],
+      "peak_substep_penetration_m": 0.003294936899825754,
+      "peak_floor_penetration_m": 0.003294936899825754,
+      "peak_self_penetration_m": 0.0022200436566342957,
+      "peak_contact_pair": {
+        "t": 0.7600000000000006,
+        "geoms": [
+          "floor",
+          "R1_collision"
+        ],
+        "bodies": [
+          "world",
+          "R1_Link"
+        ]
+      },
+      "warnings": {},
+      "trace_sha256": "e2fc752de02aa45c55080723d28219f45f737b778a31c62a30dcc9cff623f61c"
+    },
+    {
+      "recovered_1s": true,
+      "recovery_onset_s": 1.5,
+      "final_2s_ready": true,
+      "final_2s_quiet": true,
+      "final": {
+        "tilt_deg": 0.7852979951592581,
+        "height_m": 0.10788347493352725,
+        "speed_m_s": 0.05611595179975515,
+        "angular_rad_s": 0.05443848812176391,
+        "wheel_load_N": [
+          8.315222619651044,
+          8.186709651854251
+        ],
+        "body_load_N": 0.0,
+        "penetration_m": 5.0798148339595284e-05,
+        "ready": true,
+        "quiet": true,
+        "t": 10.5
+      },
+      "peak_penetration_m": 0.002376483045498312,
+      "max_tilt_deg": 118.94154956131197,
+      "case": "right",
+      "policy_enabled": true,
+      "active_at_s": 0.5,
+      "physics_steps": 5250,
+      "samples": 1051,
+      "peak_torque_Nm": [
+        0.1,
+        0.35537413624144,
+        1.1918836867994933,
+        1.3401495020595402,
+        0.4041361557022102,
+        1.375,
+        1.6390376457238036,
+        0.5030702177525409
+      ],
+      "peak_substep_penetration_m": 0.0024975362154311953,
+      "peak_floor_penetration_m": 0.0024975362154311953,
+      "peak_self_penetration_m": 0.0014723707374478515,
+      "peak_contact_pair": {
+        "t": 1.2040000000000008,
+        "geoms": [
+          "floor",
+          "LW_collision"
+        ],
+        "bodies": [
+          "world",
+          "LW_Link"
+        ]
+      },
+      "warnings": {},
+      "trace_sha256": "2009476689130f2c02986556173d37c9f23d4fb8d52b683405d110708bcf9e6c"
+    },
+    {
+      "recovered_1s": true,
+      "recovery_onset_s": 1.04,
+      "final_2s_ready": true,
+      "final_2s_quiet": false,
+      "final": {
+        "tilt_deg": 1.1235921718425812,
+        "height_m": 0.11104448830191348,
+        "speed_m_s": 0.11882380951988132,
+        "angular_rad_s": 0.18679751316274226,
+        "wheel_load_N": [
+          8.550737771568334,
+          8.477059594675666
+        ],
+        "body_load_N": 0.0,
+        "penetration_m": 5.194173407979674e-05,
+        "ready": true,
+        "quiet": false,
+        "t": 10.5
+      },
+      "peak_penetration_m": 0.0009426758876064367,
+      "max_tilt_deg": 179.37195109823278,
+      "case": "upside-down",
+      "policy_enabled": true,
+      "active_at_s": 0.5,
+      "physics_steps": 5250,
+      "samples": 1051,
+      "peak_torque_Nm": [
+        0.1,
+        0.3305292932902148,
+        1.1900430546672012,
+        3.264133969591859,
+        0.2756608589601278,
+        1.375,
+        2.71182646350758,
+        0.314111338473365
+      ],
+      "peak_substep_penetration_m": 0.0014203557911065812,
+      "peak_floor_penetration_m": 0.0014203557911065812,
+      "peak_self_penetration_m": 0.0008943660105271145,
+      "peak_contact_pair": {
+        "t": 0.7880000000000006,
+        "geoms": [
+          "floor",
+          "R1_collision"
+        ],
+        "bodies": [
+          "world",
+          "R1_Link"
+        ]
+      },
+      "warnings": {},
+      "trace_sha256": "3abfe5ad98181588825a108b0673d17b8f672f2ca26a73ec0040833ee0f820c8"
+    }
+  ]
+}

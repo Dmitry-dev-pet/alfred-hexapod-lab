@@ -1,0 +1,116 @@
+{
+  "repository": "Mondo-Robotics/open-beni",
+  "commit": "4545b86a131d05519050df11a424368ef9f06b4f",
+  "files": [
+    {
+      "path": "assets/beni_base/meshes/VIS_L1_Link_00_L1_VIS.obj",
+      "size": 26084,
+      "sha256": "435e64aec9193f81fcc01a6767f9d5cd8b46c75ad180a82928b02160991c71ca"
+    },
+    {
+      "path": "assets/beni_base/meshes/VIS_L2_Link_00_L1_VIS.obj",
+      "size": 13437,
+      "sha256": "0a5e79b8ea9877a8e434e8e9270f952c02eddcc9b1a16e4c582bddcedf7d0bdc"
+    },
+    {
+      "path": "assets/beni_base/meshes/VIS_LW_Link_00_LW_VIS.obj",
+      "size": 8366922,
+      "sha256": "bad4f55524740d787f64d968e328a960dc6f0305979ff49f8bceb15f3444e3d8"
+    },
+    {
+      "path": "assets/beni_base/meshes/VIS_R1_Link_00_R1_VIS.obj",
+      "size": 26098,
+      "sha256": "325e623dc162ab4b1cfb2f199af69facce990ac7303980a30c5a3da48a5fb473"
+    },
+    {
+      "path": "assets/beni_base/meshes/VIS_R2_Link_00_R2_VIS.obj",
+      "size": 13478,
+      "sha256": "846ee547e879292df6391726a789fe17637ec4a939b4f3f31b872788df97f3c8"
+    },
+    {
+      "path": "assets/beni_base/meshes/VIS_RW_Link_00_RW_VIS.obj",
+      "size": 8399998,
+      "sha256": "65ea0acf3a52a314c70e041d92ae8668c5075f16305895005aa71d1b08c44301"
+    },
+    {
+      "path": "assets/beni_base/meshes/VIS_base_link_00_BASE_VIS.obj",
+      "size": 37176,
+      "sha256": "e19a3c74b945ddeffcc8689b564a2eab785421c4b22094d86cca8b81b9cafa0a"
+    },
+    {
+      "path": "assets/beni_base/meshes/VIS_head_00_HEAD_VIS.obj",
+      "size": 54883,
+      "sha256": "460a06c337c7955c104184093c82a8c3805109bc2bfab1dbddf849584551ced2"
+    },
+    {
+      "path": "assets/beni_base/mjcf/beni.xml",
+      "size": 11530,
+      "sha256": "2085799f7f2024c6fba882de9261639c66958ea3dad2e587c27480e06ed7121d"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_Black.jpg",
+      "size": 326132,
+      "sha256": "bfeedf3141a9cb2082c0ac25b684c351b251dda987aaa5145895b59569791e40"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_Blue.jpg",
+      "size": 421015,
+      "sha256": "4970216c5077250d76ce7d713e5d5245577b73177a00e455c2553c83a5e8c813"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_Green.jpg",
+      "size": 405454,
+      "sha256": "b445162a5fbc13b7720d246f595ae492330fadbcf1af5c7b31fd39e08c5dd5d1"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_Purple.jpg",
+      "size": 409309,
+      "sha256": "f6c1613fec95fd43a94b77a38fbb2e039a8efc63f5bff33a18d518d259a30c0a"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_micai.jpg",
+      "size": 440331,
+      "sha256": "dcd803157dfe1073d63072ee0f3aee42aa8268a71033c607400ea21899948c24"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_red.jpg",
+      "size": 377216,
+      "sha256": "7a3971aec96233e7615487870cbb817f09cc8aa5f452cad7cd76426bebb06e5b"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_white.png",
+      "size": 404517,
+      "sha256": "cc5dad2bdf1f44cd2732a571456a3a2a5b7312aceb6cd7bd792f9a7fde2a01b8"
+    },
+    {
+      "path": "assets/beni_base/textures/beni_yellow.jpg",
+      "size": 409936,
+      "sha256": "1e93e053f9ee607ae2c2ba70d3fd5c77dfb4bb689395e014b81e31aedb9485cf"
+    },
+    {
+      "path": "assets/beni_base/textures/tex_beni_emissive.png",
+      "size": 20260,
+      "sha256": "465b4c85c90e0e933838543d8d24f63acf655fb07c637c4bf343231cf519ab15"
+    },
+    {
+      "path": "assets/beni_base/textures/tex_beni_normal.png",
+      "size": 1430508,
+      "sha256": "4ab793ac0853a84ff67983aad75bff4230e4bf051caa0ddaaac9d5c7c23f78ba"
+    },
+    {
+      "path": "assets/beni_base/textures/tex_beni_orm.png",
+      "size": 1160155,
+      "sha256": "04a5f12576693a1b7eb1d628e672d42f19042a1b7ff1b5e5b8d6b8efdc234a47"
+    },
+    {
+      "path": "assets/beni_base/urdf/beni.urdf",
+      "size": 9479,
+      "sha256": "8adfdb883092e8fe2ed76230dd54ebab6ada04d41ba4af2c06df37fc90e0a8e7"
+    },
+    {
+      "path": "assets/models/policy.onnx",
+      "size": 5117454,
+      "sha256": "7b13d7934a2abd1a8adc41aa0377571194f8595e5d311ae40845d3f85a79b014"
+    }
+  ]
+}
