@@ -1,6 +1,6 @@
 {
   "schema": "robot-replay-catalog/v1",
-  "revision": 3,
+  "revision": 4,
   "entries": [
     {
       "id": "hexarth-four-experiments-v1",
@@ -25,6 +25,19 @@
         "url": "https://alfred-robot-player.curlyeave.chatgpt.site/replay/records/hexarth-lift-ab2692f1f1edd32c.robotreplay",
         "size": 22429399,
         "sha256": "ab2692f1f1edd32c753223c8b27e7ae62f2816990febc4fcffed50cf45c921e2"
+      }
+    },
+    {
+      "id": "freenove-stand-torso-2s",
+      "title": "Freenove · стойка корпуса (контроль)",
+      "detail": "40 исходных измерений MuJoCo 3.14.0, 6 контактных сил · только корпус, без анимации суставов",
+      "duration_s": 2,
+      "status": "research",
+      "recording": {
+        "schema": "robot-replay/v1",
+        "url": "https://raw.githubusercontent.com/Dmitry-dev-pet/alfred-hexapod-lab/3685b73c40380e4a3ba595d9e11ca9bbc15e8601/docs/replay/fixtures/freenove-stand-torso-2s.robotreplay",
+        "size": 4137,
+        "sha256": "1ac8e00b899b56f330a413951d2bb820de9cfe54f3253002315ae70c159dcebe"
       }
     }
   ]
