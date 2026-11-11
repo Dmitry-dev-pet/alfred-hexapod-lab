@@ -1,0 +1,53 @@
+name: Research - MicroDuck CPU self-righting (review only)
+
+on:
+  pull_request:
+    paths:
+      - "research/microduck/**"
+      - ".github/workflows/microduck-standup.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  microduck-cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install minimal CPU runtime (no CUDA, no training)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy>=1.26,<3" "mujoco==3.10.0" "onnxruntime>=1.24.4"
+      - name: Fetch exact upstream model revision
+        run: |
+          git clone --filter=blob:none https://github.com/pollen-robotics/microduck_rl.git upstream_microduck_rl
+          git -C upstream_microduck_rl checkout bae39f5900b318f7e87fc485c30a31213cfa14eb
+          test "$(git -C upstream_microduck_rl rev-parse HEAD)" = "bae39f5900b318f7e87fc485c30a31213cfa14eb"
+      - name: Fetch exact v8 deployed policy and verify SHA-256
+        run: |
+          mkdir -p upstream_policies
+          curl --fail --location --retry 3 --retry-delay 2 \
+            "https://huggingface.co/pollen-robotics/microduck-policies/resolve/v8/velstand.onnx" \
+            -o upstream_policies/velstand.onnx
+          echo "2fc7f8ee6acd7d0d3f66a99927b5d5a56589aeed02ec714de329b252d5ccf492  upstream_policies/velstand.onnx" | sha256sum --check
+      - name: Run headless real MuJoCo/ONNX rollouts (NOT a BAM fidelity test)
+        run: |
+          python -m py_compile research/microduck/standup_cpu.py
+          python research/microduck/standup_cpu.py \
+            --rl-root upstream_microduck_rl \
+            --policy upstream_policies/velstand.onnx \
+            --seconds 6 \
+            --output results/microduck/standup-cpu.json
+      - name: Save raw observations and numerical receipt for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: microduck-standup-cpu-review-only
+          path: results/microduck/standup-cpu.json
+          if-no-files-found: warn
+          retention-days: 14
