@@ -67,6 +67,31 @@ export function joinRobotCatalogs(legacy, recordingCatalog) {
       recordings:recordings.length,legacy:legacy.entries.length}};
 }
 
+export function validateCombinedCatalog(doc) {
+  if(doc?.schema!==SCHEMA||!Number.isInteger(doc.revision)||doc.revision<1||
+     !Number.isInteger(doc.replay_revision)||doc.replay_revision<1||
+     !Array.isArray(doc.entries)||doc.entries.length>800)throw Error('Неверный объединённый каталог');
+  const ids=new Set();
+  for(const e of doc.entries) {
+    if(!ID.test(e.id)||ids.has(e.id)||typeof e.robot!=='string'||!e.robot||
+       typeof e.title!=='string'||!e.title||typeof e.detail!=='string'||
+       !Number.isFinite(e.duration_s)||e.duration_s<=0||
+       !['published','pending'].includes(e.availability))
+      throw Error('Неверная запись объединённого каталога');
+    ids.add(e.id);
+    if(e.kind==='legacy'){
+      if(!LEGACY.test(e.href))throw Error('Небезопасный маршрут в кэше');
+    }else if(e.kind==='recording'){
+      if(e.availability!=='published'||e.href!=='/replay/?recording='+encodeURIComponent(e.id))
+        throw Error('Неверная ссылка записи в кэше');
+      validateCatalog({schema:'robot-replay-catalog/v1',revision:doc.replay_revision,entries:[{
+        id:e.id,title:e.title,detail:e.detail,duration_s:e.duration_s,recording:e.recording
+      }]});
+    }else throw Error('Неизвестный тип записи');
+  }
+  return doc;
+}
+
 function siteIndex(legacy) {
   // Offline compatibility with the previous Site manifest. No extra HTML/JS is fetched.
   if(legacy?.schema!=='hexapod-library/v1'||!Array.isArray(legacy.entries)||legacy.entries.length>500)
@@ -88,9 +113,7 @@ async function requestJSON(fetchImpl,url,signal) {
 export async function readRobotLibrary({fetchImpl=fetch,storage=globalThis.localStorage,signal}={}) {
   let cached=null;
   try {
-    const doc=JSON.parse(storage?.getItem(KEY)||'null');
-    if(doc?.schema===SCHEMA&&Array.isArray(doc.entries)&&doc.entries.length<=800&&
-       Number.isInteger(doc.revision)&&doc.entries.every(e=>ID.test(e.id)))cached=doc;
+    cached=validateCombinedCatalog(JSON.parse(storage?.getItem(KEY)||'null'));
   }catch{}
   const keep=doc=>{try{storage?.setItem(KEY,JSON.stringify(doc));}catch{}return doc;};
   try {
