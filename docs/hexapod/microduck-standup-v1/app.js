@@ -1,17 +1,11 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { loadModelPackage } from '../model-package.js';
 
-// The browser ONLY replays MuJoCo FK computed from verified qpos traces.
-// Third-party STL bytes are fetched from the pinned upstream source,
-// validated with SHA256, stored in the user's private browser CacheStorage,
-// and NEVER committed into the Alfred Hexapod Lab Git repository.
-// No fake mesh/proxy robot is silently substituted.
-const PIN='bae39f5900b318f7e87fc485c30a31213cfa14eb';
-const ROOT='https://raw.githubusercontent.com/'+'pollen-robotics/microduck_rl/'+PIN+'/';
-const ASSETS='src/mjlab_microduck/robot/microduck/assets/';
-const CACHE='hexapod-microduck-original-'+PIN;
-const CACHE_KEY='/hexapod/.private-microduck-cache/';
+// A single immutable package retains all original STL bytes and instance links.
+const MODEL_PACKAGE={"schema":"robot-model-package-ref/v1","id":"microduck-original","url":"/assets/robot-models/microduck-original-e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b.json","sha256":"e1a968eb41538d4f6760e480babf21d7fc3d4d9b4ae208297b01fe4c2a669e6b","size":10340979,"source_revision":"bae39f5900b318f7e87fc485c30a31213cfa14eb","mesh_count":38,"instance_count":70,"license_spdx":"CC-BY-NC-SA-4.0"};
+const PIN=MODEL_PACKAGE.source_revision;
 const GEOMETRY_FORMAT='microduck-original-stl-mujoco-replay-v1';
 const NAMES={roll180:'На спине · крен 180°',pitch180:'На животе · тангаж 180°',
  side90:'На боку · 90°',fold:'Из сложенного положения',sit:'Из сидячего положения',
@@ -51,13 +45,6 @@ function resize(){
  camera.aspect=width/height;camera.updateProjectionMatrix();renderer.setSize(width,height,false);
 }
 addEventListener('resize',resize);resize();
-const sha256=async buf=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',buf)),
- b=>b.toString(16).padStart(2,'0')).join('');
-async function checkedFile(buffer,spec){
- if(buffer.byteLength!==spec.size)throw Error('Неверный размер оригинального STL: '+spec.file);
- if(await sha256(buffer)!==spec.sha256)throw Error('SHA-256 не совпадает: '+spec.file);
- return buffer;
-}
 function validNumberArray(x,n){return Array.isArray(x)&&x.length===n&&x.every(Number.isFinite);}
 function validateManifest(m){
  if(m?.schema!=='microduck-original-stl-assets-v1'||m.repo!=='pollen-robotics/microduck_rl'||
@@ -82,25 +69,6 @@ function validateManifest(m){
  }
  return m;
 }
-async function assetBytes(a,cache){
- const key=CACHE_KEY+a.file;
- if(cache){
-   const saved=await cache.match(key);
-   if(saved){
-     try{return await checkedFile(await saved.arrayBuffer(),a);}
-     catch{await cache.delete(key);}
-   }
- }
- // Only the original open source under the immutable upstream commit.
- const url=ROOT+ASSETS+a.file;
- const r=await fetch(url,{mode:'cors',cache:'no-store'});
- if(!r.ok)throw Error('Оригинальная STL недоступна: '+a.file+' (HTTP '+r.status+')');
- const bytes=await checkedFile(await r.arrayBuffer(),a);
- if(cache)try{
-   await cache.put(key,new Response(bytes.slice(0),{headers:{'Content-Type':'application/octet-stream'}}));
- }catch{console.warn('MicroDuck original STL cache full',a.file);}
- return bytes;
-}
 async function geometryFromBytes(bytes,source){
  const geom=loader.parse(bytes);
  // Convert original STL vertices into the mesh-normalized coordinates that
@@ -114,23 +82,15 @@ async function geometryFromBytes(bytes,source){
  return geom;
 }
 async function loadGeometry(){
- const response=await fetch('/hexapod/microduck-standup-v1/asset-manifest.json',{cache:'no-store'});
- if(!response.ok)throw Error('Нет манифеста оригинальной STL-геометрии');
- manifest=validateManifest(await response.json());
- if(!crypto?.subtle)throw Error('Нужен браузер с Web Crypto (localhost) для проверки STL');
- const cache='caches' in window?await caches.open(CACHE).catch(()=>null):null;
- const entries=Object.entries(manifest.meshes),loaded=new Map();
- let next=0,done=0;
- const worker=async()=>{
-   while(next<entries.length){
-     const i=next++,[name,a]=entries[i];
-     const bytes=await assetBytes(a,cache);
-     loaded.set(name,await geometryFromBytes(bytes,a));
-     loading.textContent='Оригинальная модель MicroDuck · '+(++done)+' / '+entries.length+
-       ' STL проверено';
-   }
- };
- await Promise.all([worker(),worker(),worker()]);
+ loading.textContent='Загружаем единый пакет модели MicroDuck…';
+ const pack=await loadModelPackage(MODEL_PACKAGE,{onProgress:(done,total)=>{
+   loading.textContent='Единый пакет MicroDuck · '+done+' / '+total+' STL проверено';
+ }});
+ manifest=validateManifest(pack.manifest);
+ const loaded=new Map();
+ for(const [name,source] of Object.entries(manifest.meshes)){
+   loaded.set(name,await geometryFromBytes(pack.meshes.get(name),source));
+ }
  for(const g of manifest.visible_geoms){
    const material=new THREE.MeshStandardMaterial({
      color:new THREE.Color(g.rgba[0],g.rgba[1],g.rgba[2]),
@@ -217,7 +177,7 @@ async function init(){
  try{await loadGeometry();await loadCase(selector.value);}
  catch(e){
   fail('Не удалось проверить оригинальную модель MicroDuck: '+(e.message||e)+
-       '\nПервоначальная загрузка STL требует интернет; затем проверенные детали сохраняются на планшете. Никакая схематическая модель не подставляется.');
+       '\nПервоначальная загрузка пакета требует интернет; затем проверенная модель сохраняется в браузере. Никакая схематическая модель не подставляется.');
  }
 }
 let lastTime=null;
