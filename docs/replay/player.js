@@ -2,9 +2,11 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {loadReplay,sampleAt} from './format.js';
 import {readCatalog,libraryEntries,fetchRecording,readBoundedResponse} from './catalog.js';
-import {readRobotLibrary} from '../robots/library.js';
+import {readRobotLibrary,robotFamily} from '../robots/library.js';
+import {createLibraryView} from './library-view.js';
 const $=id=>document.getElementById(id), area=$('viewer');
 let renderer,controls,loaded,clip,time=0,playing=false,last=null,generation=0,groups=[],environs=[];
+let catalogEntries=[],catalogGeneration=0;
 const scene=new THREE.Scene(),world=new THREE.Group(),camera=new THREE.PerspectiveCamera(45,1,.001,1000);
 scene.add(world);const follow=new THREE.Vector3(),qa=new THREE.Quaternion(),qb=new THREE.Quaternion();
 try{renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.4));renderer.outputColorSpace=THREE.SRGBColorSpace;area.append(renderer.domElement);controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;}catch{$('webgl').hidden=false;}
@@ -30,64 +32,173 @@ function resetCamera(){if(!clip||!controls)return;draw();camera.position.copy(fo
 function select(id){clip=loaded.clips.find(c=>c.id===id);time=0;last=null;for(const m of environs){world.remove(m);m.geometry.dispose();m.material.dispose();}environs=clip.environment.map(surface);world.add(...environs);$('seek').max=String(clip.duration_s);$('result').textContent=clip.result||'';$('metrics').textContent=clip.metrics?JSON.stringify(clip.metrics,null,2):'';$('provenance').textContent=clip.frame_count+' измеренных кадров'+(clip.source_trace_sha256?' · SHA-256 исходной трассы: '+clip.source_trace_sha256:'');document.documentElement.dataset.clip=clip.id;draw();resetCamera();setPlaying(true);}
 function resize(){if(!renderer)return;const w=Math.max(1,area.clientWidth),h=Math.max(1,area.clientHeight);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);}
 new ResizeObserver(resize).observe(area);
-async function openBytes(bytes,name,ticket){try{const parsed=await loadReplay(bytes,s=>{if(ticket===generation)$('loading').textContent=s;});if(ticket!==generation)return;loaded=parsed;clip=null;installModel();$('clip').replaceChildren(...loaded.clips.map(c=>{const o=document.createElement('option');o.value=c.id;o.textContent=c.title;return o;}));$('clip').value=loaded.doc.default_clip;$('title').textContent=loaded.doc.metadata.title;$('description').textContent=loaded.doc.metadata.description||name;for(const id of ['clip','seek','play','reset'])$(id).disabled=false;$('empty').hidden=true;$('loading').hidden=true;select(loaded.doc.default_clip);resize();document.documentElement.dataset.replayReady='true';document.documentElement.dataset.source=name;
- }catch(e){if(ticket!==generation)return;$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Не удалось открыть запись: '+e.message;}}
-function begin(){const ticket=++generation;setPlaying(false);$('error').hidden=true;$('loading').hidden=false;$('loading').textContent='Открываем запись…';document.documentElement.dataset.replayReady='false';return ticket;}
-async function openFile(file){if(!file)return;const ticket=begin();if(file.size>100*1024*1024){$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Файл больше 100 МБ';return;}await openBytes(await file.arrayBuffer(),file.name,ticket);}
-async function openURL(raw,entry){const ticket=begin();try{const url=new URL(raw,location.href);if(!['http:','https:'].includes(url.protocol))throw Error('Нужна HTTP-ссылка на файл');const bytes=entry?await fetchRecording(entry):await readBoundedResponse(await fetch(url,{credentials:'same-origin',redirect:'error',signal:AbortSignal.timeout(60000)}));await openBytes(bytes,entry?.title||url.pathname.split('/').pop(),ticket);}catch(e){if(ticket===generation){$('loading').hidden=true;$('error').hidden=false;$('error').textContent='Не удалось загрузить запись: '+e.message;}}}
-async function initCatalog(){
- try{
-  let entries,source;
-  try{
-    const doc=await readRobotLibrary();
-    entries=doc.entries;
-    source=doc.source;
-  }catch(err){
-    const doc=await readCatalog();
-    entries=libraryEntries(doc).map(e=>({...e,kind:'recording',robot:'HexArth',availability:'published'}));
-    source='replay-only fallback';
-  }
-  const params=new URLSearchParams(location.search),selected=params.get('recording');
-  const families=new Map();
-  for(const entry of entries){
-    const key=entry.robot||'Другое';
-    if(!families.has(key))families.set(key,[]);
-    families.get(key).push(entry);
-  }
-  const blocks=[...families].sort((a,b)=>a[0].localeCompare(b[0],'ru')).map(([robot,items])=>{
-    const section=document.createElement('details');
-    section.className='robot-family';
-    section.open=!!selected&&items.some(e=>e.id===selected);
-    const summary=document.createElement('summary');
-    summary.textContent=robot+' · '+items.length;
-    section.append(summary);
-    for(const e of items){
-      const active=e.availability==='published';
-      const el=document.createElement(active?'a':'span');
-      el.className='recording-link'+(active?'':' pending');
-      el.textContent=e.title+(active?'':' · ещё не опубликовано');
-      if(active)el.href=e.href||('/replay/?recording='+encodeURIComponent(e.id));
-      else el.setAttribute('aria-disabled','true');
-      section.append(el);
-    }
-    return section;
-  });
-  $('recordings').replaceChildren(...blocks);
-  const ready=entries.filter(e=>e.availability==='published').length;
-  $('catalog-status').textContent=ready+' доступных записей'+
-    (entries.length>ready?' · '+(entries.length-ready)+' ожидают публикации':'')+
-    ' · '+source;
-  if(selected){
-    const entry=entries.find(e=>e.id===selected&&e.kind==='recording');
-    if(!entry)throw Error('Запись не найдена в библиотеке');
-    $('empty').hidden=true;
-    await openURL(entry.recording.url,entry);
-  }
- }catch(e){$('catalog-status').textContent=e.message;}
+function setView(view) {
+  document.documentElement.dataset.view = view;
+  $('empty').hidden = view !== 'library';
+  $('library').hidden = view === 'library';
+  resize();
 }
-function showOpen(){$('empty').hidden=false;setPlaying(false);}
-window.addEventListener('dragover',e=>e.preventDefault());window.addEventListener('drop',e=>{e.preventDefault();openFile(e.dataTransfer.files[0]);});
- $('choose').onclick=()=>$('file').click();$('file').onchange=()=>openFile($('file').files[0]);$('another').onclick=showOpen;$('show-url').onclick=()=>{$('url-form').hidden=false;$('url').focus();};$('url-form').onsubmit=e=>{e.preventDefault();openURL($('url').value);};$('play').onclick=()=>setPlaying(!playing);$('clip').onchange=()=>select($('clip').value);$('seek').oninput=()=>{time=Number($('seek').value);draw();};$('reset').onclick=resetCamera;
-window.addEventListener('robot-recording-catalog',()=>{if(!loaded)initCatalog();});
-const params=new URLSearchParams(location.search);if(params.get('file'))openURL(params.get('file'));else initCatalog();
-function tick(now){requestAnimationFrame(tick);if(clip&&playing&&last!==null){time+=Math.min(.1,(now-last)/1000)*Number($('speed').value);if(time>clip.duration_s)time=0;draw();}last=now;if(renderer&&clip){controls.update();renderer.render(scene,camera);}}requestAnimationFrame(tick);resize();
+function enableTransport() {
+  for (const id of ['clip', 'seek', 'play', 'reset']) $(id).disabled = !clip;
+}
+function showFailure(message, ticket) {
+  if (ticket !== generation) return;
+  $('loading').hidden = true;
+  $('error').hidden = false;
+  $('error').textContent = message;
+  enableTransport();
+}
+function setAddress(key, value) {
+  const url = new URL(location.href);
+  url.searchParams.delete('recording');
+  url.searchParams.delete('file');
+  if (key) url.searchParams.set(key, value);
+  if (url.href !== location.href) history.pushState(null, '', url);
+}
+function begin() {
+  const ticket = ++generation;
+  setPlaying(false);
+  setView('player');
+  $('error').hidden = true;
+  $('loading').hidden = false;
+  $('loading').textContent = 'Открываем запись…';
+  for (const id of ['clip', 'seek', 'play', 'reset']) $(id).disabled = true;
+  return ticket;
+}
+async function openBytes(bytes, name, ticket) {
+  if (ticket !== generation) return false;
+  try {
+    const parsed = await loadReplay(bytes, status => {
+      if (ticket === generation) $('loading').textContent = status;
+    });
+    if (ticket !== generation) return false;
+    loaded = parsed;
+    clip = null;
+    installModel();
+    $('clip').replaceChildren(...loaded.clips.map(c => {
+      const option = document.createElement('option');
+      option.value = c.id; option.textContent = c.title;
+      return option;
+    }));
+    $('clip').value = loaded.doc.default_clip;
+    $('title').textContent = loaded.doc.metadata.title;
+    $('description').textContent = loaded.doc.metadata.description || name;
+    $('loading').hidden = true;
+    select(loaded.doc.default_clip);
+    enableTransport();
+    resize();
+    document.documentElement.dataset.replayReady = 'true';
+    document.documentElement.dataset.source = name;
+    $('title').tabIndex = -1;
+    $('title').focus({preventScroll: true});
+    return true;
+  } catch (error) {
+    showFailure('Не удалось открыть запись: ' + error.message, ticket);
+    return false;
+  }
+}
+async function openFile(file) {
+  if (!file) return;
+  const ticket = begin();
+  try {
+    if (file.size > 100 * 1024 * 1024) throw Error('Файл больше 100 МБ');
+    if (await openBytes(await file.arrayBuffer(), file.name, ticket)) {
+      setAddress();
+      libraryView.select(null);
+    }
+  } catch (error) { showFailure('Не удалось прочитать файл: ' + error.message, ticket); }
+}
+async function openURL(raw, entry, updateHistory = true) {
+  const ticket = begin();
+  try {
+    const url = new URL(raw, location.href);
+    if (!['http:', 'https:'].includes(url.protocol)) throw Error('Нужна HTTP-ссылка на файл');
+    const bytes = entry ? await fetchRecording(entry) : await readBoundedResponse(await fetch(url, {
+      credentials: 'same-origin', redirect: 'error', signal: AbortSignal.timeout(60000)
+    }));
+    if (await openBytes(bytes, entry?.title || url.pathname.split('/').pop(), ticket)) {
+      libraryView.select(entry?.id);
+      if (updateHistory) setAddress(entry ? 'recording' : 'file', entry?.id || url.href);
+    }
+  } catch (error) { showFailure('Не удалось загрузить запись: ' + error.message, ticket); }
+}
+async function initCatalog() {
+  const ticket = ++catalogGeneration;
+  let doc;
+  try { doc = await readRobotLibrary(); }
+  catch {
+    const fallback = await readCatalog();
+    doc = {
+      entries: libraryEntries(fallback).map(e => ({
+        ...e, kind: 'recording', robot: robotFamily(e.id), availability: 'published'
+      })),
+      source: 'replay-only fallback'
+    };
+  }
+  if (ticket !== catalogGeneration) return;
+  catalogEntries = doc.entries;
+  libraryView.update(doc);
+}
+function showLibrary(updateHistory = true) {
+  ++generation; // A previous download/decoder cannot replace the library after returning.
+  setPlaying(false);
+  $('loading').hidden = true;
+  $('error').hidden = true;
+  enableTransport();
+  setView('library');
+  if (updateHistory) setAddress();
+}
+async function openLocation() {
+  const params = new URLSearchParams(location.search);
+  if (params.get('file')) return openURL(params.get('file'), null, false);
+  const selected = params.get('recording');
+  if (!selected) return showLibrary(false);
+  const entry = catalogEntries.find(e => e.id === selected && e.kind === 'recording' && e.availability === 'published');
+  if (entry) return openURL(entry.recording.url, entry, false);
+  showLibrary(false);
+  libraryView.showError(Error('Запись не найдена в библиотеке'));
+}
+const libraryView = createLibraryView({
+  document, onOpen: entry => openURL(entry.recording.url, entry), onRefresh: initCatalog
+});
+window.addEventListener('dragover', event => event.preventDefault());
+window.addEventListener('drop', event => {
+  event.preventDefault();
+  openFile(event.dataTransfer?.files?.[0]);
+});
+$('choose').onclick = $('import-file').onclick = $('another').onclick = () => $('file').click();
+$('file').onchange = () => {
+  const file = $('file').files[0];
+  $('file').value = '';
+  openFile(file);
+};
+$('library').onclick = () => { showLibrary(); $('search').focus({preventScroll: true}); };
+$('show-url').onclick = () => { $('url-form').hidden = false; $('url').focus(); };
+$('url-form').onsubmit = event => { event.preventDefault(); openURL($('url').value); };
+$('play').onclick = () => setPlaying(!playing);
+$('clip').onchange = () => select($('clip').value);
+$('seek').oninput = () => { time = Number($('seek').value); last = null; draw(); };
+$('reset').onclick = resetCamera;
+window.addEventListener('robot-recording-catalog', () => initCatalog().catch(libraryView.showError));
+window.addEventListener('popstate', () => openLocation());
+const initialFile = new URLSearchParams(location.search).get('file');
+if (initialFile) {
+  openURL(initialFile, null, false);
+  initCatalog().catch(libraryView.showError);
+} else {
+  initCatalog().then(openLocation).catch(libraryView.showError);
+}
+function tick(now) {
+  requestAnimationFrame(tick);
+  if (clip && playing && last !== null) {
+    time += Math.min(.1, (now - last) / 1000) * Number($('speed').value);
+    if (time > clip.duration_s) time = 0;
+    draw();
+  }
+  last = now;
+  if (renderer && clip && document.documentElement.dataset.view === 'player') {
+    controls.update(); renderer.render(scene, camera);
+  }
+}
+requestAnimationFrame(tick);
+resize();

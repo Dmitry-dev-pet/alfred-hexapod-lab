@@ -1,4 +1,51 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><title>Открыть запись · Альфред</title><link rel="stylesheet" href="./player.css"><script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script></head>
-<body><header><a href="/hexapod/" aria-label="Вернуться в библиотеку">‹ Библиотека</a><strong>Альфред · Запись</strong><label class="button">Открыть файл<input id="file" type="file" accept=".robotreplay,.json,.gz,application/gzip,application/json" hidden></label></header>
-<main><div id="viewer"><div id="empty"><h1>Записи опытов</h1><div id="recordings" aria-label="Библиотека записей"></div><p id="catalog-status" role="status"></p><details><summary>Открыть другую запись</summary><p>Выберите файл или укажите ссылку.</p><button id="choose">Выбрать файл</button><button id="show-url" class="secondary">Открыть по ссылке</button><form id="url-form" hidden><label for="url">Ссылка на файл</label><input id="url" type="url" placeholder="https://…" required><button>Открыть</button></form><p class="hint">Выбранный файл обрабатывается на вашем устройстве.</p></details></div><p id="loading" hidden role="status"></p><p id="error" hidden role="alert"></p><p id="webgl" hidden>3D недоступно в этом браузере. Запись и перемотка работают; изображение не построено.</p></div>
-<section id="transport" aria-label="Воспроизведение"><div class="clip-row"><h2 id="title">Открыть запись</h2><select id="clip" aria-label="Опыт" disabled></select></div><input id="seek" type="range" min="0" max="1" value="0" step=".001" aria-label="Время записи" disabled><div class="buttons"><button id="play" aria-label="Воспроизвести" disabled>▶</button><span id="time">0:00 / 0:00</span><label>Скорость <select id="speed"><option value=".25">¼×</option><option value=".5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><button id="reset" disabled>Камера</button><button id="another" class="secondary">Другой файл</button></div><p id="result"></p><p id="contacts"></p><details><summary>Об опыте</summary><p id="description">Выберите файл записи.</p><pre id="metrics"></pre><p id="provenance"></p></details></section></main><script type="module" src="./player.js"></script></body></html>
+<!doctype html>
+<html lang="ru" data-view="library">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark"><meta name="theme-color" content="#142632">
+  <title>Роботы · Альфред</title>
+  <link rel="stylesheet" href="./player.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="/replay/">Альфред <span>/ Роботы</span></a>
+    <nav aria-label="Плеер">
+      <button id="library" class="secondary" hidden>‹ Библиотека</button>
+      <a class="video-link" href="/videos/">Видео</a>
+      <button id="choose" class="secondary">Открыть файл</button>
+      <input id="file" type="file" accept=".robotreplay,.json,.gz,application/gzip,application/json" hidden>
+    </nav>
+  </header>
+  <main>
+    <div id="viewer">
+      <section id="empty" aria-label="Библиотека записей">
+        <div class="library-heading">
+          <div><p class="eyebrow">Лаборатория движения</p><h1>Записи роботов</h1><p class="hint">Симуляции, измеренные движения и результаты опытов.</p></div>
+          <span id="library-count" class="library-count"></span>
+        </div>
+        <div class="library-tools">
+          <label class="search-field"><span>Найти опыт</span><input id="search" type="search" placeholder="Робот, ходьба, прыжок…" autocomplete="off" aria-controls="recordings"></label>
+          <label class="robot-field"><span>Робот</span><select id="robot-filter" aria-controls="recordings"><option value="">Все роботы</option></select></label>
+          <button id="refresh-library" class="secondary" aria-label="Проверить обновления библиотеки">Обновить</button>
+        </div>
+        <div class="library-status"><p id="catalog-status" role="status">Загружаем библиотеку…</p><span id="search-count" role="status"></span><button id="clear-search" class="text-button" hidden>Сбросить фильтры</button></div>
+        <p id="no-results" hidden>Таких записей нет. Попробуйте другое название или сбросьте фильтры.</p>
+        <div id="recordings"></div>
+        <details class="import-panel"><summary>Открыть свою запись</summary><p>Перетащите файл .robotreplay в окно или укажите ссылку.</p><button id="import-file">Выбрать файл</button><button id="show-url" class="secondary">Открыть по ссылке</button><form id="url-form" hidden><label for="url">Ссылка на файл</label><input id="url" type="url" placeholder="https://…" required><button>Открыть</button></form><p class="hint">Локальный файл обрабатывается на вашем устройстве.</p></details>
+      </section>
+      <p id="loading" hidden role="status"></p><p id="error" hidden role="alert"></p>
+      <p id="webgl" hidden>3D недоступно в этом браузере. Запись и перемотка работают; изображение не построено.</p>
+    </div>
+    <section id="transport" aria-label="Воспроизведение">
+      <div class="clip-row"><h2 id="title">Открыть запись</h2><select id="clip" aria-label="Опыт" disabled></select></div>
+      <input id="seek" type="range" min="0" max="1" value="0" step=".001" aria-label="Время записи" disabled>
+      <div class="buttons"><button id="play" aria-label="Воспроизвести" disabled>▶</button><span id="time">0:00 / 0:00</span><label>Скорость <select id="speed"><option value=".25">¼×</option><option value=".5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><button id="reset" disabled>Камера</button><button id="another" class="secondary">Другой файл</button></div>
+      <p id="result"></p><p id="contacts"></p>
+      <details><summary>Об опыте</summary><p id="description">Выберите файл записи.</p><pre id="metrics"></pre><p id="provenance"></p></details>
+    </section>
+  </main>
+  <script type="module" src="./player.js"></script>
+</body>
+</html>
